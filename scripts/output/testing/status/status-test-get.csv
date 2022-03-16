@@ -100,6 +100,7 @@ cowidev.testing.incremental.new_zealand,2.51,True,
 cowidev.testing.incremental.north_macedonia,5.34,True,
 cowidev.testing.incremental.pakistan,3.62,True,
 cowidev.testing.incremental.papua_new_guinea,22.83,False,"HTTPSConnectionPool(host='covid19.info.gov.pg', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x16233db80>, 'Connection to covid19.info.gov.pg timed out. (connect timeout=20)'))"
+cowidev.testing.incremental.paraguay,2.98,True,
 cowidev.testing.incremental.romania,13.72,True,
 cowidev.testing.incremental.russia,2.85,True,
 cowidev.testing.incremental.saint_kitts_nevis,0.45,True,
