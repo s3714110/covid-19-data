@@ -77,8 +77,8 @@ class Denmark(CountryVaxBase):
             .rename(
                 columns={
                     "Dato": "date",
-                    "Antal første vacc.": "people_vaccinated",
-                    "Antal færdigvacc.": "people_fully_vaccinated",
+                    "Antal 1. stik": "people_vaccinated",
+                    "Antal 2. stik": "people_fully_vaccinated",
                 }
             )
             .groupby("date", as_index=False)
@@ -99,7 +99,7 @@ class Denmark(CountryVaxBase):
         path = _build_filepath(path, "Revacc1_region_dag.csv")
         df_boosters = (
             _load_datafile(path)
-            .rename(columns={"Revacc. 1 dato": "date", "Antal revacc. 1": "total_boosters"})
+            .rename(columns={"3. stik dato": "date", "Antal 3. stik": "total_boosters"})
             .groupby("date", as_index=False)
             .sum()
             .sort_values("date")
@@ -126,7 +126,10 @@ class Denmark(CountryVaxBase):
         msk = df["Vaccinenavn"].replace(self.vaccines_mapping).isin(VACCINES_ONE_DOSE)
         # Check 1
         # assert (df.loc[msk, "Antal første vacc."] == df.loc[msk, "Antal faerdigvacc."]).all()
-        single_shots = df.loc[msk, "Antal første vacc."].sum()
+        if "Antal 1. stik" in df:
+            single_shots = df.loc[msk, "Antal 1. stik"].sum()
+        else:
+            single_shots = df.loc[msk, "Antal første vacc."].sum()
         # Check 2
         vaccines_wrong = set(df.Vaccinenavn).difference(self.vaccines_mapping)
         if vaccines_wrong:
