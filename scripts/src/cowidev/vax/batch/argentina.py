@@ -66,6 +66,8 @@ class Argentina(CountryVaxBase):
         dt = clean_date(data["fecha_inicial"], "%Y-%m-%dT%H:%M:%S%z", as_datetime=False)
         dates = pd.date_range(dt, periods=data["dias"], freq="D")
         # Build df
+        # Notes on differences adicional vs refuerzo:
+        # https://github.com/owid/covid-19-data/issues/2532#issuecomment-1074137207
         df = pd.DataFrame(
             {
                 "date": clean_date_series(list(dates)),
@@ -160,7 +162,10 @@ class Argentina(CountryVaxBase):
                 "date": dates,
                 "people_vaccinated": data["dosis1"],
                 "people_fully_vaccinated": data["esquemacompleto"],
-                "people_with_booster": [d + b for d, b in zip(data["refuerzo"], data["adicional"])],
+                # "people_with_booster": [d + b for d, b in zip(data["refuerzo"], data["adicional"])],
+                "people_with_booster": data[
+                    "refuerzo"
+                ],  # likely an under estimate (missing doses for immunocompromised)
             }
         ).assign(
             **{
