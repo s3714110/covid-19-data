@@ -19,7 +19,7 @@ class Mexico(CountryTestBase):
         return df_melt
 
     def read(self) -> pd.DataFrame:
-        yesterday = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%Y%m%d")
+        yesterday = (datetime.date.today() - datetime.timedelta(days=2)).strftime("%Y%m%d")
         base_url = "https://datos.covid-19.conacyt.mx/Downloads/Files/Casos_Diarios_Estado_Nacional_"
         return (
             pd.merge(

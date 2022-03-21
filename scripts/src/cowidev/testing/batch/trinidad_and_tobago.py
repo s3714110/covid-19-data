@@ -33,7 +33,7 @@ class TrinidadAndTobago(CountryTestBase):
         df["Positive rate"] = (
             df.positive.diff().rolling(7).sum().div(df["Cumulative total"].diff().rolling(7).sum()).round(3)
         ).fillna(0)
-        return df
+        return df.drop_duplicates(subset="Date")
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         """pipeline for data"""
