@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`9/118` scripts failed, `9/118` were skipped. Latest update was `2022-03-21T10:15:37`.
+`5/118` scripts failed, `9/118` were skipped. Latest update was `2022-03-21T11:10:50`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,22 +18,10 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.kenya</td>
-      <td>❌</td>
-      <td>49.68</td>
-      <td><details><summary>show</summary><pre>The format of the number seems to be not correct! Please review.</pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.switzerland</td>
       <td>❌</td>
       <td>47.57</td>
       <td><details><summary>show</summary><pre>No columns to parse from file</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.barbados</td>
-      <td>❌</td>
-      <td>26.82</td>
-      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.kosovo</td>
@@ -42,33 +30,21 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /10.230.0.57+9000/coviddashboard.html (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff7c3761240>: Failed to establish a new connection: [Errno 101] Network is unreachable'))</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.sri_lanka</td>
-      <td>❌</td>
-      <td>9.82</td>
-      <td><details><summary>show</summary><pre>Unknown column(s) found: {'ට ට්නිව් - V'}</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.el_salvador</td>
-      <td>❌</td>
-      <td>8.63</td>
-      <td><details><summary>show</summary><pre>'d58d673d-f6f7-44d2-8825-8f83ea806a69'</pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.laos</td>
       <td>❌</td>
       <td>1.71</td>
       <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.canada</td>
+      <td>cowidev.vax.incremental.barbados</td>
       <td>❌</td>
-      <td>1.63</td>
-      <td><details><summary>show</summary><pre>105 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check <br>           date  total_vaccinations  people_vaccinated  people_fully_vaccinated<br>678  2021-12-03            61829680         30612370.0                 29082569<br>679  2021-12-04            61953068         30668945.0                 29093311<br>680  2021-12-05            62058480         30732468.0                 29101944<br>681  2021-12-06            62238793         30819687.0                 29123034<br>682  2021-12-07            62421440         30877367.0                 29137200<br>..          ...                 ...                ...                      ...<br>778  2022-03-13            81666740         32635559.0                 31027767<br>779  2022-03-14            81706844         32638611.0                 31043079<br>780  2022-03-15            81734416         32642100.0                 31050853<br>781  2022-03-16            81763629         32646640.0                 31059248<br>782  2022-03-17            81716627         32617498.0                 31039461<br><br>[105 rows x 4 columns]</pre></details></td>
+      <td>1.59</td>
+      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.luxembourg</td>
       <td>❌</td>
-      <td>0.52</td>
+      <td>0.38</td>
       <td><details><summary>show</summary><pre>HTTP Error 404: NOT FOUND</pre></details></td>
     </tr>
     <tr>
@@ -171,6 +147,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.batch.denmark</td>
       <td>✅</td>
       <td>33.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kenya</td>
+      <td>✅</td>
+      <td>32.78</td>
       <td></td>
     </tr>
     <tr>
@@ -444,6 +426,12 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.sri_lanka</td>
+      <td>✅</td>
+      <td>3.20</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
       <td>3.03</td>
@@ -534,6 +522,12 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>1.69</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.incremental.faeroe_islands</td>
       <td>✅</td>
       <td>1.68</td>
@@ -615,6 +609,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.batch.singapore</td>
       <td>✅</td>
       <td>1.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.canada</td>
+      <td>✅</td>
+      <td>1.13</td>
       <td></td>
     </tr>
     <tr>
