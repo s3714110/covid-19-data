@@ -5,9 +5,11 @@ import pandas as pd
 
 from cowidev.utils import clean_date, clean_count, get_soup
 from cowidev.vax.utils.incremental import increment, enrich_data
+from cowidev.vax.utils.utils import add_latest_who_values
+from cowidev.vax.utils.base import CountryVaxBase
 
 
-class Philippines:
+class Philippines(CountryVaxBase):
     location: str = "Philippines"
     source_url: str = "https://e.infogram.com/_/yFVE69R1WlSdqY3aCsBF"
     source_url_ref: str = (
@@ -15,7 +17,7 @@ class Philippines:
     )
     metric_entities: dict = {
         "total_vaccinations": "4b9e949e-2990-4349-aa85-5aff8501068a",
-        #"people_vaccinated": "25d75a0a-cb56-4824-aed4-4410f395577a",
+        # "people_vaccinated": "25d75a0a-cb56-4824-aed4-4410f395577a",
         "people_fully_vaccinated": "68999d30-7787-4c3f-ba20-c8647ca21548",
         "total_boosters": "db3b7f4f-ee01-4a15-b050-f6b05a547c2e",
     }
@@ -70,7 +72,8 @@ class Philippines:
         return enrich_data(
             ds,
             "vaccine",
-            "Johnson&Johnson, Moderna, Oxford/AstraZeneca, Pfizer/BioNTech, Sinopharm/Beijing, Sinovac, Sputnik Light, Sputnik V",
+            "Johnson&Johnson, Moderna, Oxford/AstraZeneca, Pfizer/BioNTech, Sinopharm/Beijing, Sinovac, Sputnik Light,"
+            " Sputnik V",
         )
 
     def pipe_source(self, ds: pd.Series) -> pd.Series:
@@ -83,26 +86,19 @@ class Philippines:
 
     def pipeline(self, ds: pd.Series) -> pd.Series:
         """Pipeline for data"""
-        return ds.pipe(self.pipe_location).pipe(self.pipe_vaccine).pipe(self.pipe_source)
+        df = ds.pipe(self.pipe_location).pipe(self.pipe_vaccine).pipe(self.pipe_source)
+        df = add_latest_who_values(df, "Philippines", ["people_vaccinated"])
+        return df
 
     def export(self):
         """Exports data to CSV"""
-        data = self.read().pipe(self.pipeline)
-        increment(
-            location=data["location"],
-            total_vaccinations=data["total_vaccinations"],
-            #people_vaccinated=data["people_vaccinated"],
-            people_fully_vaccinated=data["people_fully_vaccinated"],
-            total_boosters=data["total_boosters"],
-            date=data["date"],
-            source_url=data["source_url"],
-            vaccine=data["vaccine"],
-        )
-        
+        df = self.read().pipe(self.pipeline)
+        self.export_datafile(df, attach=True)
 
 
 def main():
     Philippines().export()
+
 
 if __name__ == "__main__":
     main()
