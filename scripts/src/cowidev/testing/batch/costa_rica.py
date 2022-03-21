@@ -14,7 +14,7 @@ class CostaRica(CountryTestBase):
     source_label = "Ministry of Health"
 
     def read(self):
-        df = pd.read_csv(self.source_url, delimiter=";", usecols=["nue_posi", "conf_nexo", "nue_descar", "FECHA"])
+        df = pd.read_csv(self.source_url, delimiter=",", usecols=["nue_posi", "conf_nexo", "nue_descar", "FECHA"])
         return df
 
     @property
