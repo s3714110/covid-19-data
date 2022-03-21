@@ -73,5 +73,27 @@ class DESAdapter(HTTPAdapter):
         return super(DESAdapter, self).proxy_manager_for(*args, **kwargs)
 
 
-def get_base_url(url):
-    return f"https://{urlparse(url).netloc}"
+def get_base_url(url: str, scheme ="https")->str:
+    """
+    Parse a URL and return the base URL.
+
+    ## Parameters :
+
+            url: str
+                URL to parse.
+                <scheme>://<netloc>/<path>;<params>?<query>#<fragment> 
+            scheme : {'http', 'https'}, default 'https'
+                Scheme to use. 
+
+    ## Returns :
+
+            Base URL: str
+                <scheme>://<netloc>/
+    """
+
+    if scheme not in ["http", "https"]:
+        raise ValueError("Invalid scheme: {}".format(scheme))
+    elif scheme == "http":
+        return f"http://{urlparse(url).netloc}"
+    else:
+        return f"https://{urlparse(url).netloc}"
