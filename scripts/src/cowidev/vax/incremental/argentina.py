@@ -2,15 +2,31 @@ import requests
 
 import pandas as pd
 
-from cowidev.utils.clean.dates import localdate
+from cowidev.utils import clean_date
+from cowidev.utils.clean.dates import clean_date_series, localdate
 from cowidev.vax.utils.base import CountryVaxBase
-from cowidev.vax.utils.incremental import enrich_data, increment
+from cowidev.vax.utils.incremental import enrich_data
 
 
 class Argentina(CountryVaxBase):
     location = "Argentina"
     source_url_ref = "https://www.argentina.gob.ar/coronavirus/vacuna/aplicadas"
     source_url = "https://coronavirus.msal.gov.ar/vacunas/d/8wdHBOsMk/seguimiento-vacunacion-covid/api/datasources/proxy/1/query"
+    source_url_age = "https://covidstats.com.ar/ws/vacunadosargentina?porgrupoetario=1"
+    source_url_ref_2 = "https://covidstats.com.ar/ws/vacunadosargentina"
+    age_group_valid = {
+        "30-39",
+        "80-89",
+        "18-29",
+        "90-99",
+        "50-59",
+        "70-79",
+        "60-69",
+        ">=100",
+        "40-49",
+        "<12",
+        "12-17",
+    }
 
     def read(self) -> pd.DataFrame:
 
@@ -51,6 +67,13 @@ class Argentina(CountryVaxBase):
 
         return data
 
+    def read_age(self):
+        data = requests.get(self.source_url_age).json()
+        data = list(data.values())[:-1]
+        self._check_data_age(data)
+        data = self._parse_data_age(data)
+        return data
+
     def pipe_date(self, ds: pd.Series) -> pd.Series:
         return enrich_data(ds, "date", localdate("America/Argentina/Buenos_Aires"))
 
@@ -68,9 +91,72 @@ class Argentina(CountryVaxBase):
     def pipeline(self, ds: pd.Series) -> pd.Series:
         return ds.pipe(self.pipe_date).pipe(self.pipe_location).pipe(self.pipe_source).pipe(self.pipe_vaccines)
 
+    def _check_data_age(self, data):
+        ages = {d["denominacion"] for d in data}
+        age_wrong = ages.difference(self.age_group_valid | {"Otros (sin especificar)"})
+        if age_wrong:
+            raise ValueError(f"Unknown age group {age_wrong}")
+
+    def _parse_data_age(self, data):
+        # Merge
+        dfs = [self._build_df_age_group(d) for d in data if d["denominacion"] in self.age_group_valid]
+        df = pd.concat(dfs, ignore_index=True).assign(location=self.location)
+        df[["age_group_min", "age_group_max"]] = df[["age_group_min", "age_group_max"]].astype(str)
+        return df
+
+    def _build_df_age_group(self, data):
+        # Get metrics
+        dose_3 = data["adicional"]
+        booster = data["refuerzo"]
+        total_boosters = [d + b for d, b in zip(dose_3, booster)]
+        # Get dates
+        n_days = len(dose_3)
+        dt = clean_date(data["fecha_inicial"], "%Y-%m-%dT%H:%M:%S%z", as_datetime=False)
+        dates = pd.date_range(dt, periods=n_days, freq="D")
+        # Build df
+        df = pd.DataFrame(
+            {
+                "date": dates,
+                "people_vaccinated": data["dosis1"],
+                "people_fully_vaccinated": data["esquemacompleto"],
+                "people_with_booster": total_boosters,
+            }
+        ).assign(
+            **{
+                "age_group_min": data["desdeedad"],
+                "age_group_max": data["hastaedad"] if data["hastaedad"] is not None else "",
+                "age_group": data["denominacion"],
+            }
+        )
+        return df
+
+    def pipe_age_cumsum(self, df):
+        # cumsum
+        cols = ["people_vaccinated", "people_fully_vaccinated", "people_with_booster"]
+        df[cols] = df.sort_values("date").groupby("age_group")[cols].cumsum()
+        return df
+
+    def pipe_age_date(self, df):
+        return df.assign(date=clean_date_series(df.date))
+
+    def pipeline_age(self, df):
+        return df.pipe(self.pipe_age_cumsum).pipe(self.pipe_age_date).pipe(self.pipe_age_per_capita)
+
     def export(self):
+        # Main data
         data = self.read().pipe(self.pipeline)
-        self.export_datafile(data, attach=True)
+        # Age data
+        df_age = self.read_age().pipe(self.pipeline_age)
+        # Export
+        self.export_datafile(
+            data,
+            df_age=df_age,
+            meta_age={
+                "source_name": "Ministry of Health via https://covidstats.com.ar",
+                "source_url": self.source_url_ref_2,
+            },
+            attach=True,
+        )
 
 
 def main():

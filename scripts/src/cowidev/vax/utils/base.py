@@ -276,11 +276,11 @@ def _build_population_age_group_df(location, df):
     # Filter location
     pop_age = pop_age.loc[location]
     # Extract age groups of interest
-    # ages = df[["age_group_min", "age_group_max"]].drop_duplicates()
-    ages = df[["age_group_min", "age_group_max"]].drop_duplicates().replace("", 1000).astype(float).values.tolist()
-    # ages["age_group_max"] = ages["age_group_max"].replace("", 1000).astype(float).fillna(1000)
-    # ages["age_group_min"] = ages["age_group_min"].astype(float)
-    # ages = ages.values.tolist()
+    ages = df[["age_group_min", "age_group_max"]].drop_duplicates()
+    # ages = df[["age_group_min", "age_group_max"]].drop_duplicates().replace("", 1000).astype(float).values.tolist()
+    ages["age_group_max"] = ages["age_group_max"].replace("", 1000).astype(float).fillna(1000)
+    ages["age_group_min"] = ages["age_group_min"].replace("", -1000).astype(float).fillna(-1000)
+    ages = ages.values.tolist()
     # # Build population dataframe for age groups
     records = []
     for age_min, age_max in ages:
@@ -296,7 +296,10 @@ def _build_population_age_group_df(location, df):
     pop_age = pd.DataFrame(records)
     # return pop_age
     pop_age = pop_age.astype(int).astype({"age_group_min": str, "age_group_max": str})
-    pop_age = pop_age.assign(age_group_max=pop_age.age_group_max.replace("1000", ""))
+    pop_age = pop_age.assign(
+        age_group_max=pop_age.age_group_max.replace("1000", ""),
+        age_group_min=pop_age.age_group_min.replace("-1000", ""),
+    )
     return pop_age
 
 
