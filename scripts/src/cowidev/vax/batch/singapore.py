@@ -67,8 +67,6 @@ class Singapore(CountryVaxBase):
             except:
                 df_primary["vacc_date"] = clean_date_series(df_primary.vacc_date, "%d/%m/%Y")
             df_primary = df_primary.drop_duplicates(subset=["vacc_date"], keep=False)
-        else:
-            raise ValueError("Unknown date format. Please check!")
         df = pd.merge(df_primary, df_boosters, on="vacc_date", how="outer", validate="one_to_one")
         return df
 

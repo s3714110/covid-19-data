@@ -77,6 +77,8 @@ def add_latest_who_values(df: pd.DataFrame, who_location_name: str, metrics: lis
     """
     assert isinstance(metrics, list), "The `metrics` argument in add_latest_who_values should be a list!"
 
+    if isinstance(df, pd.Series):
+        df = df.to_frame().T
     df["date"] = df.date.astype(str)
     df = df.sort_values("date")
 
