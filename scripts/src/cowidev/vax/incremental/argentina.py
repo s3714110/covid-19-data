@@ -2,11 +2,12 @@ import requests
 
 import pandas as pd
 
-from cowidev.vax.utils.incremental import enrich_data, increment
 from cowidev.utils.clean.dates import localdate
+from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.incremental import enrich_data, increment
 
 
-class Argentina:
+class Argentina(CountryVaxBase):
     location = "Argentina"
     source_url_ref = "https://www.argentina.gob.ar/coronavirus/vacuna/aplicadas"
     source_url = "https://coronavirus.msal.gov.ar/vacunas/d/8wdHBOsMk/seguimiento-vacunacion-covid/api/datasources/proxy/1/query"
@@ -69,16 +70,7 @@ class Argentina:
 
     def export(self):
         data = self.read().pipe(self.pipeline)
-        increment(
-            location=data["location"],
-            total_vaccinations=data["total_vaccinations"],
-            people_vaccinated=data["people_vaccinated"],
-            people_fully_vaccinated=data["people_fully_vaccinated"],
-            total_boosters=data["total_boosters"],
-            date=data["date"],
-            source_url=data["source_url"],
-            vaccine=data["vaccine"],
-        )
+        self.export_datafile(data, attach=True)
 
 
 def main():
