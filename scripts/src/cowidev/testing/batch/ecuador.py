@@ -38,7 +38,7 @@ class Ecuador(CountryTestBase):
         tests_over_period = df["Cumulative total"].diff().rolling(7).sum()
         df = df.assign(**{"Positive rate": (cases_over_period / tests_over_period).round(3)}).fillna(0)
         df = df[df["Positive rate"] >= 0]
-        return df
+        return df.drop_duplicates(subset="Cumulative total")
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         """Pipeline for data"""
