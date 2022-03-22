@@ -87,13 +87,22 @@ class Indonesia(CountryVaxBase):
         df.loc[df.date == df.date.max(), "total_vaccinations"] = first_doses + second_doses + boosters
         return df
 
-    def pipeline(self, ds: pd.Series) -> pd.Series:
+    def pipe_merge_current(self, df: pd.DataFrame, df_current: pd.DataFrame) -> pd.DataFrame:
+        df = df.merge(df_current, on="date", how="left")
+        df = df.assign(
+            total_vaccinations=df.total_vaccinations.fillna(df.total_vaccinations_current),
+            total_boosters=df.total_boosters.fillna(df.total_boosters_current),
+        )
+        return df
+
+    def pipeline(self, df: pd.DataFrame, df_current: pd.DataFrame) -> pd.DataFrame:
         return (
-            ds.pipe(self.pipe_metadata)
+            df.pipe(self.pipe_metadata)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_add_latest_boosters)
             .pipe(make_monotonic)
             .pipe(self.pipe_merge_legacy)
+            .pipe(self.pipe_merge_current, df_current)
             .pipe(self.pipe_vaccine)[
                 [
                     "location",
@@ -108,8 +117,15 @@ class Indonesia(CountryVaxBase):
             ]
         )
 
+    def read_current(self):
+        return pd.read_csv(self.output_path, usecols=["date", "total_boosters", "total_vaccinations"]).rename(
+            columns={"total_boosters": "total_boosters_current", "total_vaccinations": "total_vaccinations_current"}
+        )
+
     def export(self):
-        df = self.read().pipe(self.pipeline)
+        # Read current
+        df_current = self.read_current()
+        df = self.read().pipe(self.pipeline, df_current)
         df.to_csv(self.output_path, index=False)
 
 
