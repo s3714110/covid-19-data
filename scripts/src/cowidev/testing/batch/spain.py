@@ -5,9 +5,9 @@ from cowidev.testing import CountryTestBase
 
 
 class Spain(CountryTestBase):
-    yesterday = (datetime.date.today() - datetime.timedelta(days=1)).strftime("%d%m%Y")
+    date = (datetime.date.today()).strftime("%d%m%Y")
     base_url = "https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov"
-    test_url = f"{base_url}/documentos/Datos_Pruebas_Realizadas_Historico_{yesterday}.csv"
+    test_url = f"{base_url}/documentos/Datos_Pruebas_Realizadas_Historico_{date}.csv"
 
     location = "Spain"
     units = "tests performed"

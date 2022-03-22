@@ -15,7 +15,7 @@ class Romania:
     location = "Romania"
     units = "tests performed"
     source_label = "Ministry of Internal Affairs"
-    source_url = "https://gov.ro/ro/media/comunicate?titlu=BULETIN+DE+PRES%C4%82&luna=0&an=0&page="
+    source_url = "https://gov.ro/ro/comunicate&page="
     _num_max_pages = 3
     regex = {
         "title": r"BULETIN DE PRESĂ",
