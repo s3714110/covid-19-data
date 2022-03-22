@@ -1,12 +1,11 @@
-import io
 import os
-import requests
 import tempfile
-import zipfile
 
 import pandas as pd
 
 from cowidev.utils.clean import clean_date_series
+from cowidev.utils.io import extract_zip
+
 
 METADATA = {
     "source_url": "https://covid19-dashboard.ages.at/data/data.zip",
@@ -18,9 +17,7 @@ METADATA = {
 
 def read() -> pd.DataFrame:
     with tempfile.TemporaryDirectory() as tf:
-        r = requests.get(METADATA["source_url"])
-        z = zipfile.ZipFile(io.BytesIO(r.content))
-        z.extractall(tf)
+        extract_zip(METADATA["source_url"], tf, verify=False, ciphers_low=True)
         df = pd.read_csv(
             os.path.join(tf, "CovidFallzahlen.csv"),
             sep=";",
