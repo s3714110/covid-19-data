@@ -132,7 +132,7 @@ class Argentina(CountryVaxBase):
             {
                 "Sputnik V": "2020-12-29",
                 "Sinopharm/Beijing": "2021-03-08",
-                "AstraZeneca/Oxford": "2021-03-08",
+                "Oxford/AstraZeneca": "2021-03-08",
                 "Moderna": "2021-08-03",
                 "CanSino": "2021-09-09",
                 "Pfizer/BioNTech": "2021-09-17",
