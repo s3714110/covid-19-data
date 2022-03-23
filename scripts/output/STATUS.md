@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/119` scripts failed, `9/119` were skipped. Latest update was `2022-03-23T10:19:15`.
+`3/119` scripts failed, `9/119` were skipped. Latest update was `2022-03-23T10:31:19`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -28,12 +28,6 @@ This file shows the latest status of the data pipeline.
       <td>❌</td>
       <td>1.68</td>
       <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.canada</td>
-      <td>❌</td>
-      <td>1.50</td>
-      <td><details><summary>show</summary><pre>82 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check <br>           date  ...  people_fully_vaccinated<br>704  2021-12-29  ...                 29391565<br>705  2021-12-30  ...                 29402591<br>706  2021-12-31  ...                 29414103<br>707  2022-01-01  ...                 29419071<br>708  2022-01-02  ...                 29420224<br>..          ...  ...                      ...<br>781  2022-03-16  ...                 31059248<br>782  2022-03-17  ...                 31067971<br>784  2022-03-19  ...                 31082802<br>785  2022-03-20  ...                 31090066<br>786  2022-03-21  ...                 31100669<br><br>[82 rows x 4 columns]</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.luxembourg</td>
@@ -573,6 +567,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.india</td>
       <td>✅</td>
       <td>1.25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.canada</td>
+      <td>✅</td>
+      <td>1.23</td>
       <td></td>
     </tr>
     <tr>
