@@ -4,21 +4,7 @@ cowidev.vax.batch.australia,1.93,True,
 cowidev.vax.batch.austria,,,
 cowidev.vax.batch.belgium,5.12,True,
 cowidev.vax.batch.bolivia,2.47,True,
-cowidev.vax.batch.canada,1.5,False,"82 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-           date  ...  people_fully_vaccinated
-704  2021-12-29  ...                 29391565
-705  2021-12-30  ...                 29402591
-706  2021-12-31  ...                 29414103
-707  2022-01-01  ...                 29419071
-708  2022-01-02  ...                 29420224
-..          ...  ...                      ...
-781  2022-03-16  ...                 31059248
-782  2022-03-17  ...                 31067971
-784  2022-03-19  ...                 31082802
-785  2022-03-20  ...                 31090066
-786  2022-03-21  ...                 31100669
-
-[82 rows x 4 columns]"
+cowidev.vax.batch.canada,1.23,True,
 cowidev.vax.batch.chile,0.7,True,
 cowidev.vax.batch.czechia,5.12,True,
 cowidev.vax.batch.denmark,15.92,True,

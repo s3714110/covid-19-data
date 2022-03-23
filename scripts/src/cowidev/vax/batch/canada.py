@@ -83,9 +83,9 @@ class Canada(CountryVaxBase):
         )
         return df
 
-    def pipe_filter_datapoint(self, df: pd.DataFrame):
-        date = "2022-03-18"
-        df = df[~(df.date == date)]
+    def pipe_filter_lastdate(self, df: pd.DataFrame):
+        # date = "2022-03-18"
+        df = df[~(df.date == df.date.max())]
         return df
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -94,7 +94,7 @@ class Canada(CountryVaxBase):
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_metadata)
-            .pipe(self.pipe_filter_datapoint)
+            .pipe(self.pipe_filter_lastdate)
             .pipe(self.make_monotonic)
             .sort_values("date")[
                 [
