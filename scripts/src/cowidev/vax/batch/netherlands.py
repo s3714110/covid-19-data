@@ -18,6 +18,7 @@ class Netherlands(CountryVaxBase):
         "Pfizer/BioNTech": "Pfizer/BioNTech",
         "Moderna": "Moderna",
         "Johnson&Johnson": "Johnson&Johnson",
+        "NVXD": "Novavax",
     }
 
     def read(self):
