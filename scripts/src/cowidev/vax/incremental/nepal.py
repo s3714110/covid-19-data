@@ -35,14 +35,15 @@ class Nepal(CountryVaxBase):
         href = links["data"][0]["english_file"]
         self.source_url_ref["manufacturer"] = "{}{}".format(self.source_url["base"], href)
         # Extract table data
-        ds = self._parse_pdf_table()
+        df = self._parse_pdf_table()
         # Clean data
-        df_main, df_manufacturer = self._parse_metrics(ds)
+        df_main, df_manufacturer = self._parse_metrics(df)
         return df_main, df_manufacturer
 
     def _parse_pdf_table(self) -> pd.Series:
         """Extract table from pdf url"""
-        df_list = tabula.read_pdf(self.source_url_ref["manufacturer"], pages="1-3", stream=True)
+        print(self.source_url_ref["manufacturer"])
+        df_list = tabula.read_pdf(self.source_url_ref["manufacturer"], pages="all", stream=True)
         df = [table for table in df_list if "Pfizer" in table.columns][0]
         # Checks data
         check_known_columns(
