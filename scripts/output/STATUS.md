@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/119` scripts failed, `9/119` were skipped. Latest update was `2022-03-23T10:19:15`.
+`11/119` scripts failed, `9/119` were skipped. Latest update was `2022-03-24T09:44:27`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -20,8 +20,50 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.vax.incremental.kenya</td>
       <td>❌</td>
-      <td>18.66</td>
-      <td><details><summary>show</summary><pre>Table 3 has changed, please check!</pre></details></td>
+      <td>17.42</td>
+      <td><details><summary>show</summary><pre>Table 1 has changed, please check!</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.taiwan</td>
+      <td>❌</td>
+      <td>16.31</td>
+      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='www.cdc.gov.tw', port=443): Max retries exceeded with url: /Category/Page/9jFXNbCe-sFK9EImRRi2Og (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f9d461eaad0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kosovo</td>
+      <td>❌</td>
+      <td>14.91</td>
+      <td><details><summary>show</summary><pre>Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found: b'<!DOCTYPE html>\n<html>\n<head>\n\t<meta charset="UTF-8">\n\t<link rel="profile" href="https://gmpg.org/xfn/11">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">\n    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/thomaspark/bootswatch@v3.4.1/lumen/bootstrap.min.css">\n\n    <link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700&display=swap" rel="stylesheet">\n    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic">\n\n\t<!-- FlexSlider -->\n\t<script defer src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/jquery.flexslider.js"></script>\n\t<script defer src="https://msh.rks-gov.net/wp-content/themes/msh/assets/css/flexslider.css"></script>\n\t\n    <link rel="stylesheet" href="https://msh.rks-gov.net/wp-content/themes/msh/assets/css/user.css">\n    \n    <link rel="stylesheet" href="https://msh.rks-gov.net/wp-content/themes/msh/assets/css/extra.css">\n    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">\n    \n\n\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js"></script>\n    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">\n\n\n    <!-- Syntax Highlighter -->\n    <script type="text/javascript" src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/shCore.js"></script>\n    <script type="text/javascript" src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/shBrushXml.js"></script>\n    <script type="text/javascript" src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/shBrushJScript.js"></script>\n\n    <!-- Optional FlexSlider Additions -->\n    <script src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/jquery.easing.js"></script>\n    <script src="https://msh.rks-gov.net/wp-content/themes/msh/assets/js/jquery.mousewheel.js"></script>\n\n\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>\n    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js.map"></script>\n\n    \n\n\n\n\t<script type="text/javascript">\n\tjQuery(function(){\n\t  SyntaxHighlighter.all();\n\t});\n\tjQuery(document).ready(function(){\n\t  jQuery(\'.flexsliders\').flexslider({\n\t    animation: "fade",\n\t    directionNav: false,\n\t    start: function(slider){\n\t      jQuery(\'body\').removeClass(\'loading\');\n\t    }\n\t  });\n\t});\n\t</script>\n    \n\t<title>Page not found &#8211; Ministria e Sh\xc3\xabndet\xc3\xabsis\xc3\xab</title>\n<link rel=\'dns-prefetch\' href=\'//www.google.com\' />\n<link rel=\'dns-prefetch\' href=\'//s.w.org\' />\n<link rel="alternate" type="application/rss+xml" title="Ministria e Sh\xc3\xabndet\xc3\xabsis\xc3\xab &raquo; Feed" href="https://msh.rks-gov.net/sq/feed/" />\n<link rel="alternate" type="application/rss+xml" title="Ministria e Sh\xc3\xabndet\xc3\xabsis\xc3\xab &raquo; Comments Feed" href="https://msh.rks-gov.net/sq/comments/feed/" />\n\t\t<script type="text/javascript">\n\t\t\twindow._wpemojiSettings = {"baseUrl":"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/13.0.0\\/72x72\\/","ext":".png","svgUrl":"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/13.0.0\\/svg\\/","svgExt":".svg","source":{"concatemoji":"https:\\/\\/msh.rks-gov.net\\/wp-includes\\/js\\/wp-emoji-release.min.js?ver=5.5.3"}};\n\t\t\t!function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);\n\t\t</script>\n\t\t<style type="text/css">\nimg.wp-smiley,\nimg.emoji {\n\tdisplay: inline !important;\n\tborder: none !important;\n\tbox-shadow: none !important;\n\theight: 1em !important;\n\twidth: 1em !important;\n\tmargin: 0 .07em !important;\n\tvertical-align: -0.1em !important;\n\tbackground: none !important;\n\tpadding: 0 !important;\n}\n</style>\n\t<link rel=\'stylesheet\' id=\'wp-block-library-css\'  href=\'https://msh.rks-gov.net/wp-includes/css/dist/block-library/style.min.css?ver=5.5.3\' type=\'text/css\' media=\'all\' />\n<link rel=\'stylesheet\' id=\'contact-form-7-css\'  href=\'https://msh.rks-gov.net/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.1.8\' type=\'text/css\' media=\'all\' />\n<link rel=\'stylesheet\' id=\'wpml-tm-admin-bar-css\'  href=\'https://msh.rks-gov.net/wp-content/plugins/wpml-translation-management/res/css/admin-bar-style.css?ver=2.9.6\' type=\'text/css\' media=\'all\' />\n<link rel=\'stylesheet\' id=\'msh-style-css\'  href=\'https://msh.rks-gov.net/wp-content/themes/msh/style.css?ver=5.5.3\' type=\'text/css\' media=\'all\' />\n<script type=\'text/javascript\' src=\'https://msh.rks-gov.net/wp-includes/js/jquery/jquery.js?ver=1.12.4-wp\' id=\'jquery-core-js\'></script>\n<link rel="https://api.w.org/" href="https://msh.rks-gov.net/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://msh.rks-gov.net/xmlrpc.php?rsd" />\n<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://msh.rks-gov.net/wp-includes/wlwmanifest.xml" /> \n<meta name="generator" content="WordPress 5.5.3" />\n<meta name="generator" content="WPML ver:4.3.12 stt:48,1,49;" />\n\t\t<style type="text/css" id="wp-custom-css">\n\t\t\t.home_shortcuts li {\n    width: 23.4% !important;\n}\t\t</style>\n\t\t\n\n</head>\n\n<body class="error404 hfeed no-sidebar">\n    <div class="container_main">\n    \t<a class="logo" href="https://msh.rks-gov.net"><img src="https://msh.rks-gov.net/wp-content/themes/msh/assets/img/logo.png" alt="logo" /></a>\n\t\t\n\t\t\t    \n\t    <div class="container container_nopadd">\n\n\t        <div class="head">\n\t            <div class="col-sm-6 col-md-6 col-lg-6">\n\t                <span class="repks">Republika e Kosov\xc3\xabs</span>\n\t                <h1>Ministria e Sh\xc3\xabndet\xc3\xabsis\xc3\xab</h1>\n\t            </div>\n\t            <div class="col-sm-6 col-md-6 col-lg-6 text-right">\n\t                <div class="languages">\n\t                    <ul>\n\t\t\t\t\t\t<li><a href="https://msh.rks-gov.net/sq/" title="">Shqip</a></li><li><a href="https://msh.rks-gov.net/en/" title="">English</a></li><li><a href="https://msh.rks-gov.net/sr/" title="">Srpski</a></li>\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t<a target="_blank" href="https://mail.rks-gov.net">\n\t\t\t\t\t\t\t\t\t<img style="max-width: 23px;" src="https://msh.rks-gov.net/wp-content/themes/msh/assets/img/env.png" alt="email" />\n\t\t\t\t\t\t\t\t</a>\n\t\t\t\t\t\t\t</li>                    \t\n\t                    </ul>\n\t                </div>\n\t                <div class="searchnav">\n\t                    <span class="search">\n\t                        <!-- <input type="text" placeholder="search..." name="search" /> -->\n\t                        <form role="search" method="get" class="searchform group" action="https://msh.rks-gov.net/sq/">\n\t\t\t\t\t\t\t <label>\n\t\t\t\t\t\t\t <!-- <span class="offscreen"></span> -->\n\t\t\t\t\t\t\t <input type="search" class="search-field"\n\t\t\t\t\t\t\t placeholder="K\xc3\xabrko"\n\t\t\t\t\t\t\t value="" name="s"\n\t\t\t\t\t\t\t title="Search for:" />\n\t\t\t\t\t\t\t </label>\n\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t</form>\n\t                        <svg xmlns="http://www.w3.org/2000/svg" id="Capa_1" enable-background="new 0 0 515.558 515.558" height="512px" viewBox="0 0 515.558 515.558" width="512px" class=""><g><path d="m378.344 332.78c25.37-34.645 40.545-77.2 40.545-123.333 0-115.484-93.961-209.445-209.445-209.445s-209.444 93.961-209.444 209.445 93.961 209.445 209.445 209.445c46.133 0 88.692-15.177 123.337-40.547l137.212 137.212 45.564-45.564c0-.001-137.214-137.213-137.214-137.213zm-168.899 21.667c-79.958 0-145-65.042-145-145s65.042-145 145-145 145 65.042 145 145-65.043 145-145 145z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#959595"/></g> </svg>\n\t                    </span>\n\t                    \n\t                    <span><a href="https://www.facebook.com/Ministria-e-Sh%C3%ABndet%C3%ABsis%C3%AB-597689407055317/?__tn__=%2Cd%2CP-R&eid=ARBu_ogjuG1CpXIJKUX1KnjZqqzsUWKp5ujt5kzJsr-VDB4-0nLwohaRcVm9H8mqWKiMvM7KOaef8gUF"><svg xmlns="http://www.w3.org/2000/svg" id="Bold" enable-background="new 0 0 24 24" height="512px" viewBox="0 0 24 24" width="512px"><g><path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" data-original="#000000" class="active-path" data-old_color="#000000" fill="#929292"/></g> </svg></a></span>\n\t                    \n\t                    <span><a href="">\n\t                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -47 512.00203 512" width="512px" height="512px" class=""><g><path d="m191.011719 419.042969c-22.140625 0-44.929688-1.792969-67.855469-5.386719-40.378906-6.335938-81.253906-27.457031-92.820312-33.78125l-30.335938-16.585938 32.84375-10.800781c35.902344-11.804687 57.742188-19.128906 84.777344-30.597656-27.070313-13.109375-47.933594-36.691406-57.976563-67.175781l-7.640625-23.195313 6.265625.957031c-5.941406-5.988281-10.632812-12.066406-14.269531-17.59375-12.933594-19.644531-19.78125-43.648437-18.324219-64.21875l1.4375-20.246093 12.121094 4.695312c-5.113281-9.65625-8.808594-19.96875-10.980469-30.777343-5.292968-26.359376-.863281-54.363282 12.476563-78.851563l10.558593-19.382813 14.121094 16.960938c44.660156 53.648438 101.226563 85.472656 168.363282 94.789062-2.742188-18.902343-.6875-37.144531 6.113281-53.496093 7.917969-19.039063 22.003906-35.183594 40.722656-46.691407 20.789063-12.777343 46-18.96875 70.988281-17.433593 26.511719 1.628906 50.582032 11.5625 69.699219 28.746093 9.335937-2.425781 16.214844-5.015624 25.511719-8.515624 5.59375-2.105469 11.9375-4.496094 19.875-7.230469l29.25-10.078125-19.074219 54.476562c1.257813-.105468 2.554687-.195312 3.910156-.253906l31.234375-1.414062-18.460937 25.230468c-1.058594 1.445313-1.328125 1.855469-1.703125 2.421875-1.488282 2.242188-3.339844 5.03125-28.679688 38.867188-6.34375 8.472656-9.511718 19.507812-8.921875 31.078125 2.246094 43.96875-3.148437 83.75-16.042969 118.234375-12.195312 32.625-31.09375 60.617187-56.164062 83.199219-31.023438 27.9375-70.582031 47.066406-117.582031 56.847656-23.054688 4.796875-47.8125 7.203125-73.4375 7.203125zm0 0" data-original="#000000" class="active-path" data-old_color="#000000" fill="#8B8B8B"/></g> </svg>\n\t                        </a>\n\t                    </span>\n\t                </div>\n\t            </div>\n\n\t        </div>\n\n\t        <div class="container container_nospace container_nopadd">\n\t        \t\n\t            <nav class="navbar navbar-default">\n\t                <div class="">\n\t                    <div class="navbar-header">\n\t                    \t<a class="logo-mob" href="https://msh.rks-gov.net">\n\t                    \t\t<img src="https://msh.rks-gov.net/wp-content/themes/msh/assets/img/embl.png" alt="logo" />\n\t                    \t</a>\n\t                        <button data-toggle="collapse" class="navbar-toggle collapsed" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>\n\t                    </div>\n\t                    <div class="collapse navbar-collapse" id="navcol-1">\n\n\n\t\t\t\t\t\t\t\t<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"></button> -->\n\t\t\t\t\t\t\t\t<div class="menu-main-menu-container"><ul id="primary-menu" class="nav navbar-nav navbar-right"><li id="menu-item-1481" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-1481"><a href="https://msh.rks-gov.net/sq/">Ballina</a></li>\n<li id="menu-item-6327" class="has-sub menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6327"><a href="https://msh.rks-gov.net/parimet-e-kujdesit-shendetesor/">P\xc3\xabr Ministrin\xc3\xab</a>\n<ul class="sub-menu">\n\t<li id="menu-item-6319" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6319"><a href="https://msh.rks-gov.net/sq/parimet-e-kujdesit-shendetesor/">Parimet e kujdesit sh\xc3\xabndet\xc3\xabsor</a></li>\n\t<li id="menu-item-6323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6323"><a href="https://msh.rks-gov.net/sq/prioritetet/">Prioritetet</a></li>\n\t<li id="menu-item-6326" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6326"><a href="https://msh.rks-gov.net/sq/fusheveprimi/">Fush\xc3\xabveprimi</a></li>\n\t<li id="menu-item-6274" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6274"><a href="https://msh.rks-gov.net/sq/organigrami/">Organogrami</a></li>\n</ul>\n</li>\n<li id="menu-item-1484" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1484"><a href="https://msh.rks-gov.net/sq/category/lajmet/">Lajmet</a></li>\n<li id="menu-item-46057" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-46057"><a href="#">Njoftime/Dokumente</a>\n<ul class="sub-menu">\n\t<li id="menu-item-46058" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46058"><a href="https://msh.rks-gov.net/sq/publikimet/komisioni-per-percaktimin-e-cmimeve-te-produkteve-medicinale/">Komisioni p\xc3\xabr p\xc3\xabrcaktimin e \xc3\xa7mimeve t\xc3\xab produkteve medicinale</a></li>\n\t<li id="menu-item-46059" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46059"><a href="https://msh.rks-gov.net/sq/publikimet/marreveshjet/">Marr\xc3\xabveshjet</a></li>\n\t<li id="menu-item-46060" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46060"><a href="https://msh.rks-gov.net/sq/publikimet/njoftime/">Njoftime</a></li>\n\t<li id="menu-item-46061" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46061"><a href="https://msh.rks-gov.net/sq/njoftimi-per-coronavirus/">Njoftime rreth Coronavirusit</a></li>\n\t<li id="menu-item-46062" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46062"><a href="https://msh.rks-gov.net/sq/publikimet/qarkoret-informative/">Qarkoret Informative</a></li>\n\t<li id="menu-item-46063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46063"><a href="https://msh.rks-gov.net/sq/publikimet/raportet/">Raportet</a></li>\n\t<li id="menu-item-46064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46064"><a href="https://msh.rks-gov.net/sq/publikimet/revidimi-i-listes-se-barnave-esenciale/">Revidimi i List\xc3\xabs s\xc3\xab Barnave Esenciale</a></li>\n\t<li id="menu-item-46065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46065"><a href="https://msh.rks-gov.net/sq/publikimet/vendime/">Vendime</a></li>\n\t<li id="menu-item-10678" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10678"><a href="https://msh.rks-gov.net/sq/category/projekti-i-shendetesise-kosovare-pshk/">Projekti i Sh\xc3\xabndet\xc3\xabsis\xc3\xab Kosovare (PShK)</a></li>\n</ul>\n</li>\n<li id="menu-item-6200" class="has-sub menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6200"><a href="https://msh.rks-gov.net/sq/legjislacioni/">Legjislacioni</a>\n<ul class="sub-menu">\n\t<li id="menu-item-6368" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6368"><a title="Zakoni" href="https://msh.rks-gov.net/sq/legjislacioni/ligjet/">Ligjet</a></li>\n\t<li id="menu-item-6370" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6370"><a href="https://msh.rks-gov.net/sq/legjislacioni/rregulloret/">Rregulloret</a></li>\n\t<li id="menu-item-6371" class="has-sub menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-6371"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/">Udh\xc3\xabzimet Administrative</a>\n\t<ul class="sub-menu">\n\t\t<li id="menu-item-7168" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7168"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-1999/">UA \xe2\x80\x93 1999</a></li>\n\t\t<li id="menu-item-7199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7199"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2000/">UA \xe2\x80\x93 2000</a></li>\n\t\t<li id="menu-item-7198" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7198"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2001/">UA \xe2\x80\x93 2001</a></li>\n\t\t<li id="menu-item-7197" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7197"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2002/">UA \xe2\x80\x93 2002</a></li>\n\t\t<li id="menu-item-7196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7196"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2003/">UA \xe2\x80\x93 2003</a></li>\n\t\t<li id="menu-item-7195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7195"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2004/">UA \xe2\x80\x93 2004</a></li>\n\t\t<li id="menu-item-7194" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7194"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2005/">UA \xe2\x80\x93 2005</a></li>\n\t\t<li id="menu-item-7193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7193"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2006/">UA \xe2\x80\x93 2006</a></li>\n\t\t<li id="menu-item-7192" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7192"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2007/">UA \xe2\x80\x93 2007</a></li>\n\t\t<li id="menu-item-7191" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7191"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2008/">UA \xe2\x80\x93 2008</a></li>\n\t\t<li id="menu-item-7202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7202"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2009/">UA \xe2\x80\x93 2009</a></li>\n\t\t<li id="menu-item-7190" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7190"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2010/">UA \xe2\x80\x93 2010</a></li>\n\t\t<li id="menu-item-6572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6572"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2011/">UA \xe2\x80\x93 2011</a></li>\n\t\t<li id="menu-item-6551" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6551"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2012/">UA &#8211;  2012</a></li>\n\t\t<li id="menu-item-6550" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6550"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2013/">UA \xe2\x80\x93 2013</a></li>\n\t\t<li id="menu-item-9975" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9975"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2015/">UA \xe2\x80\x93 2015</a></li>\n\t\t<li id="menu-item-10735" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10735"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2016/">UA &#8211;  2016</a></li>\n\t\t<li id="menu-item-11769" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11769"><a href="https://msh.rks-gov.net/sq/legjislacioni/udhezimet-administrative/ua-2017/">UA \xe2\x80\x93 2017</a></li>\n\t</ul>\n</li>\n</ul>\n</li>\n<li id="menu-item-6601" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6601"><a href="https://msh.rks-gov.net/sq/strategjite/">Strategjit\xc3\xab</a></li>\n<li id="menu-item-43984" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-43984"><a href="https://msh.rks-gov.net/sq/njoftimi-per-coronavirus/">COVID-19</a>\n<ul class="sub-menu">\n\t<li id="menu-item-52886" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-52886"><a href="https://msh.rks-gov.net/wp-content/uploads/2022/03/Strategjia-Shteterore-per-Parandalim-Menaxhim-dhe-Kontrollim-te-Pandemise-COVID-19_compressed-1-1.pdf">Strategjia Shtet\xc3\xabrore p\xc3\xabr Parandalim, Menaxhim dhe Kontrollim t\xc3\xab Pandemis\xc3\xab COVID-19</a></li>\n\t<li id="menu-item-50268" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50268"><a href="https://msh.rks-gov.net/sq/statistikat-covid-19/">Statistikat COVID-19</a></li>\n\t<li id="menu-item-50699" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50699"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/09/IPSH-te-Licencuara-14.09.2016-26.08.2021.xlsx">IPSH t\xc3\xab Licencuara 14.09.2016-26.08.2021</a></li>\n\t<li id="menu-item-49899" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49899"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/06/04.06.2021-Lista-e-Laboratoreve-testime-COVID-19.xlsx">04.06.2021 Lista e Laboratoreve p\xc3\xabr testim t\xc3\xab COVID-19</a></li>\n\t<li id="menu-item-49784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49784"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/05/Plani-i-veprimit-per-vaksinimin-e-qytetareve-ne-mase-me-vaksinen-kunder-COVID-19.pdf">Plani i veprimit p\xc3\xabr vaksinimin e qytetar\xc3\xabve n\xc3\xab mas\xc3\xab me vaksin\xc3\xabn kund\xc3\xabr COVID-19</a></li>\n\t<li id="menu-item-49248" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49248"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/04/Lista-e-perditesuar-e-laboratoreve-te-licencuara-per-SARS-CoV2-07.04.2021.xlsx">Lista e p\xc3\xabrdit\xc3\xabsuar e laborator\xc3\xabve t\xc3\xab licencuara p\xc3\xabr SARS-CoV2- 07.04.2021</a></li>\n\t<li id="menu-item-49154" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-49154"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/03/Lista-e-perditesuar-e-laboratoreve-te-licencuara-per-SARS-CoV2-18.03.2021.xlsx">Lista e p\xc3\xabrdit\xc3\xabsuar e laborator\xc3\xabve t\xc3\xab licencuara p\xc3\xabr SARS-CoV2-18.03.2021</a></li>\n\t<li id="menu-item-48861" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48861"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/02/Plani-Shteteror-i-Vaksinimit-kunder-Covid-19.pdf">Plani Shtet\xc3\xabror i Vaksinimit kund\xc3\xabr Covid-19</a></li>\n\t<li id="menu-item-48842" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48842"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/02/Lista-e-perditesuar-e-laboratoreve-te-licencuara-per-SARS-CoV2-18.02.2021.xlsx">Lista e p\xc3\xabrdit\xc3\xabsuar e laborator\xc3\xabve t\xc3\xab licencuara p\xc3\xabr SARS CoV2 18.02.2021</a></li>\n\t<li id="menu-item-48525" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48525"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/02/02.02.2021-Lista-e-Laboratoreve-testime-COVID-19.xlsx">Lista e p\xc3\xabrdit\xc3\xabsuar e laborator\xc3\xabve t\xc3\xab licencuara p\xc3\xabr SARS CoV2- 02.02.2021</a></li>\n\t<li id="menu-item-48431" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-48431"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/01/Lista-e-perditesuar-e-laboratoreve-te-licencuara-per-SARS-CoV2-Covid-19-13.01.2021.xlsx">Lista e p\xc3\xabrdit\xc3\xabsuar e laborator\xc3\xabve t\xc3\xab licencuara p\xc3\xabr SARS- CoV2 (Covid-19- 13.01.2021)</a></li>\n\t<li id="menu-item-47590" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47590"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/08/Lista-e-p%C3%ABrdit%C3%ABsuare-Laborator%C3%ABve-t%C3%AB-Licencuar-p%C3%ABr-teste-molekulare-PCR-dhe-serologjike-p%C3%ABr-SARS-COV2-COVID-19.doc">Laborator\xc3\xabt e Licencuar p\xc3\xabr SARS-COV2/(COVID-19)</a></li>\n\t<li id="menu-item-47345" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47345"><a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fmptfcovid.unkt.org%2F%3Flang%3Dsq%26fbclid%3DIwAR1lYYhjZr4pN8n9NJ5FVNqbeOfRQlowCA7NFDHDEZZvzsgdTU4I37tZvE0&#038;h=AT39tgRiGiVk3I7Qn-JpDBtghSGJ12PdJQQVNZLiTGuc19QN6YibBvGve4LWSV8Vyev5H88j237b62RckxD3NFAW--SUXWR86XZfPG8NIs9p7vtwZ46PESMDe7akcbECCkT5">UNKT COVID 19</a></li>\n\t<li id="menu-item-47332" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47332"><a href="https://masht.rks-gov.net/uploads/2020/08/udhezuesi-final-file-10-09-2020_1.pdf">UDH\xc3\x8bZUES I P\xc3\x8bRGJITHSH\xc3\x8bM I MASH</a></li>\n\t<li id="menu-item-47227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47227"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Prishtin%C3%ABs.pdf">Komuna e Prishtin\xc3\xabs</a></li>\n\t<li id="menu-item-47226" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47226"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Fush%C3%AB-Kosov%C3%ABs.pdf">Komuna e Fush\xc3\xab Kosov\xc3\xabs</a></li>\n\t<li id="menu-item-47225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47225"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Gjakov%C3%ABs.pdf">Komuna e Gjakov\xc3\xabs</a></li>\n\t<li id="menu-item-47223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47223"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Gjilanit.pdf">Komuna e Gjilanit</a></li>\n\t<li id="menu-item-47221" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47221"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Obiliqit.pdf">Komuna e Obiliqit</a></li>\n\t<li id="menu-item-47217" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47217"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Podujev%C3%ABs.pdf">Komuna e Podujev\xc3\xabs</a></li>\n\t<li id="menu-item-47212" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47212"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Komuna-e-Shtim%C3%ABs.pdf">Komuna e Shtimes</a></li>\n\t<li id="menu-item-47157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47157"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Vendimi-i-mbledhjes-s%C3%AB-41-t%C3%AB-Qeveris%C3%AB-1-1.pdf">Vendimi i mbledhjes s\xc3\xab 41 t\xc3\xab Qeveris\xc3\xab s\xc3\xab Kosov\xc3\xabs</a></li>\n\t<li id="menu-item-47072" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47072"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/11/Vendimi-i-mbledhjes-s%C3%AB-39-t%C3%AB-Qeveris%C3%AB-s%C3%AB-Kosov%C3%ABs.pdf">Vendimi i mbledhjes s\xc3\xab 39- t\xc3\xab Qeveris\xc3\xab s\xc3\xab Kosov\xc3\xabs</a></li>\n\t<li id="menu-item-46942" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46942"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/10/Qarkore-informative-rreth-Covid-19-1.pdf">Qarkore informative rreth Covid-19</a></li>\n\t<li id="menu-item-46845" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46845"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/09/Udhezuesi-p%C3%ABr-maska-final.docx">Udh\xc3\xabzuesi p\xc3\xabr maska</a></li>\n\t<li id="menu-item-46844" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46844"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/06/Manual-p\xc3\xabr-parandalimin-dhe-luftimin-e-COVID19.pdf">Manual p\xc3\xabr parandalimin dhe luftimin e COVID-19</a></li>\n\t<li id="menu-item-46846" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-46846"><a href="https://msh.rks-gov.net/wp-content/uploads/2020/09/Vendimi-i-Ministrit.doc">Vendimi i Ministrit</a></li>\n</ul>\n</li>\n<li id="menu-item-46825" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-46825"><a href="https://msh.rks-gov.net/sq/upk/">UPK</a>\n<ul class="sub-menu">\n\t<li id="menu-item-53062" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53062"><a href="https://msh.rks-gov.net/wp-content/uploads/2022/03/Protokoli-Klinik-Kombetar-Menaxhimi-i-Hemorragjise-Postpartale-Primare-N.1-Per-konsultime.docx">Protokoli Klinik Komb\xc3\xabtar Menaxhimi i Hemorragjis\xc3\xab Postpartale Primare\xe2\x80\x9d N.1 ( P\xc3\xabr konsultime)</a></li>\n\t<li id="menu-item-50516" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-50516"><a href="https://msh.rks-gov.net/wp-content/uploads/2021/08/UK-Menaxhimi-dhe-trajtimi-i-COVID-19-1.pdf">UK- Menaxhimi dhe trajtimi i COVID-19</a></li>\n</ul>\n</li>\n<li id="menu-item-6058" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6058"><a href="https://msh.rks-gov.net/sq/kontakti/">Kontakti</a></li>\n</ul></div>\n\t                        <!-- <ul class="nav navbar-nav navbar-right">\n\t                            <li class="active" role=""><a href="#">First Item</a></li>\n\t                            <li role=""><a href="#">Second Item</a></li>\n\t                            <li role=""><a href="http://google.com">Third Item</a></li>\n\t                            <li role=""><a href="#">Second Item</a></li>\n\t                            <li role=""><a href="http://google.com">Third Item</a></li>\n\t                            <li role=""><a href="#">Second Item</a></li>\n\t                            <li role=""><a href="http://google.com">Third Item</a></li>\n\t                        </ul> -->\n\t                    </div>\n\t                </div>\n\t            </nav>\n\t        </div>\n\n\n\n\n\t<div id="primary" class="content-area">\n\t\t<main id="main" class="site-main">\n\n\t\t\t<section class="error-404 not-found">\n\t\t\t\t<header class="page-header">\n\t\t\t\t\t<h1 class="page-title">Oops! That page can&rsquo;t be found.</h1>\n\t\t\t\t</header><!-- .page-header -->\n\n\t\t\t\t<div class="page-content">\n\t\t\t\t\t<p>It looks like nothing was found at this location. Maybe try one of the links below or a search?</p>\n\n\t\t\t\t\t<form role="search" method="get" class="search-form" action="https://msh.rks-gov.net/sq/">\n\t\t\t\t<label>\n\t\t\t\t\t<span class="screen-reader-text">Search for:</span>\n\t\t\t\t\t<input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />\n\t\t\t\t</label>\n\t\t\t\t<input type="submit" class="search-submit" value="Search" />\n\t\t\t</form>\n\t\t<div class="widget widget_recent_entries">\n\t\t<h2 class="widgettitle">Recent Posts</h2>\n\t\t<ul>\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t<a href="https://msh.rks-gov.net/sq/ministrat-latifi-e-koca-diskutojne-ne-ankara-per-bashkepunimin-kosove-turqi-ne-shendetesi/">Ministrat Latifi e Koca diskutojn\xc3\xab n\xc3\xab Ankara p\xc3\xabr bashk\xc3\xabpunimin Kosov\xc3\xab-Turqi n\xc3\xab sh\xc3\xabndet\xc3\xabsi</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t<a href="https://msh.rks-gov.net/sq/ministri-latifi-kosoves-i-duhet-funksionalizimi-i-qendres-se-traumes-dhe-emergjencave/">Ministri Latifi: Kosov\xc3\xabs i duhet funksionalizimi i\xc2\xa0Qendr\xc3\xabs s\xc3\xab Traum\xc3\xabs dhe Emergjencave</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t<a href="https://msh.rks-gov.net/sq/njoftim-per-kontrate-4/">Njoftim p\xc3\xabr kontrat\xc3\xab</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t<a href="https://msh.rks-gov.net/sq/ministri-latifi-dhe-ambasadorja-alshamsi-eba-bisedojne-per-bashkepunimin-ne-shendetesi/">Ministri Latifi dhe Ambasadorja Alshamsi (EBA) bisedojn\xc3\xab p\xc3\xabr bashk\xc3\xabpunimin n\xc3\xab sh\xc3\xabndet\xc3\xabsi</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t<a href="https://msh.rks-gov.net/sq/ministri-latifi-vaksinimi-kunder-covid-19-storie-suksesi-ne-kosove/">Ministri Latifi: Vaksinimi kund\xc3\xabr COVID-19, storie suksesi n\xc3\xab Kosov\xc3\xab</a>\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\n\t\t</div>\n\t\t\t\t\t<div class="widget widget_categories">\n\t\t\t\t\t\t<h2 class="widget-title">Most Used Categories</h2>\n\t\t\t\t\t\t<ul>\n\t\t\t\t\t\t\t\t<li class="cat-item cat-item-4"><a href="https://msh.rks-gov.net/sq/category/lajmet/">Lajmet</a> (868)\n<ul class=\'children\'>\n\t<li class="cat-item cat-item-23"><a href="https://msh.rks-gov.net/sq/category/lajmet/kumtesa/">Kumtesa</a> (1,520)\n</li>\n</ul>\n</li>\n\t<li class="cat-item cat-item-8"><a href="https://msh.rks-gov.net/sq/category/konkurse/">Konkurse</a> (413)\n<ul class=\'children\'>\n\t<li class="cat-item cat-item-36"><a href="https://msh.rks-gov.net/sq/category/konkurse/c26-konkurse/">Konkurse</a> (488)\n</li>\n</ul>\n</li>\n\t<li class="cat-item cat-item-1"><a href="https://msh.rks-gov.net/sq/category/uncategorized-sq/">Uncategorized @sq</a> (70)\n</li>\n\t<li class="cat-item cat-item-123"><a href="https://msh.rks-gov.net/sq/category/projekti-i-shendetesise-kosovare-pshk/">Projekti i Sh\xc3\xabndet\xc3\xabsis\xc3\xab Kosovare (PShK)</a> (41)\n</li>\n\t<li class="cat-item cat-item-48"><a href="https://msh.rks-gov.net/sq/category/viruset/a-h1n1/">A H1N1</a> (35)\n</li>\n\t<li class="cat-item cat-item-26"><a href="https://msh.rks-gov.net/sq/category/departamentet/sherbimet-shendetesore/">Departamenti i Sh\xc3\xabrbimeve sh\xc3\xabndet\xc3\xabsore</a> (11)\n</li>\n\t<li class="cat-item cat-item-29"><a href="https://msh.rks-gov.net/sq/category/departamentet/departamenti-i-farmacise/">Departamenti i Farmacis\xc3\xab</a> (5)\n</li>\n\t<li class="cat-item cat-item-24"><a href="https://msh.rks-gov.net/sq/category/inspektioratet/inspektoriati-sanitar/">Inspektoriati Sanitar</a> (5)\n</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t</div><!-- .widget -->\n\n\t\t\t\t\t<div class="widget widget_archive"><h2 class="widgettitle">Archives</h2><p>Try looking in the monthly archives. :)</p>\t\t<label class="screen-reader-text" for="archives-dropdown--1">Archives</label>\n\t\t<select id="archives-dropdown--1" name="archive-dropdown">\n\t\t\t\n\t\t\t<option value="">Select Month</option>\n\t\t\t\t<option value=\'https://msh.rks-gov.net/sq/2022/03/\'> March 2022 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2022/01/\'> January 2022 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/12/\'> December 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/11/\'> November 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/10/\'> October 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/09/\'> September 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/08/\'> August 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/07/\'> July 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/06/\'> June 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/05/\'> May 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/04/\'> April 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/03/\'> March 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/02/\'> February 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2021/01/\'> January 2021 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/12/\'> December 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/11/\'> November 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/10/\'> October 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/09/\'> September 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/08/\'> August 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/07/\'> July 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/06/\'> June 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/05/\'> May 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/04/\'> April 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/03/\'> March 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/02/\'> February 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2020/01/\'> January 2020 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/12/\'> December 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/11/\'> November 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/10/\'> October 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/09/\'> September 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/08/\'> August 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/07/\'> July 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/06/\'> June 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/05/\'> May 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/04/\'> April 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/03/\'> March 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2019/01/\'> January 2019 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/12/\'> December 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/11/\'> November 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/10/\'> October 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/09/\'> September 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/08/\'> August 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/07/\'> July 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/06/\'> June 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/05/\'> May 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/04/\'> April 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/03/\'> March 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/02/\'> February 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2018/01/\'> January 2018 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/12/\'> December 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/11/\'> November 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/10/\'> October 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/09/\'> September 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/08/\'> August 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/07/\'> July 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/06/\'> June 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/05/\'> May 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/04/\'> April 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/03/\'> March 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/02/\'> February 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2017/01/\'> January 2017 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/12/\'> December 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/11/\'> November 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/10/\'> October 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/09/\'> September 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/08/\'> August 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/07/\'> July 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/06/\'> June 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/05/\'> May 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/04/\'> April 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/03/\'> March 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/02/\'> February 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2016/01/\'> January 2016 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/12/\'> December 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/11/\'> November 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/10/\'> October 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/09/\'> September 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/08/\'> August 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/07/\'> July 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/06/\'> June 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/05/\'> May 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/04/\'> April 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/03/\'> March 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/02/\'> February 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2015/01/\'> January 2015 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/12/\'> December 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/11/\'> November 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/10/\'> October 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/09/\'> September 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/08/\'> August 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/07/\'> July 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/06/\'> June 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/05/\'> May 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/04/\'> April 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/03/\'> March 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/02/\'> February 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2014/01/\'> January 2014 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/12/\'> December 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/11/\'> November 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/09/\'> September 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/08/\'> August 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/07/\'> July 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/06/\'> June 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/05/\'> May 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/04/\'> April 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/03/\'> March 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/02/\'> February 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2013/01/\'> January 2013 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/12/\'> December 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/11/\'> November 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/10/\'> October 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/09/\'> September 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/08/\'> August 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/07/\'> July 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/06/\'> June 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/05/\'> May 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/04/\'> April 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/03/\'> March 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/02/\'> February 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2012/01/\'> January 2012 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/12/\'> December 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/11/\'> November 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/10/\'> October 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/09/\'> September 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/08/\'> August 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/07/\'> July 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/06/\'> June 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/05/\'> May 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/04/\'> April 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/03/\'> March 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/02/\'> February 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2011/01/\'> January 2011 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/12/\'> December 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/11/\'> November 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/10/\'> October 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/09/\'> September 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/08/\'> August 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/07/\'> July 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/06/\'> June 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/05/\'> May 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/04/\'> April 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/03/\'> March 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/02/\'> February 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2010/01/\'> January 2010 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2009/12/\'> December 2009 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2009/11/\'> November 2009 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2009/10/\'> October 2009 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2009/08/\'> August 2009 </option>\n\t<option value=\'https://msh.rks-gov.net/sq/2009/07/\'> July 2009 </option>\n\n\t\t</select>\n\n<script type="text/javascript">\n/* <![CDATA[ */\n(function() {\n\tvar dropdown = document.getElementById( "archives-dropdown--1" );\n\tfunction onSelectChange() {\n\t\tif ( dropdown.options[ dropdown.selectedIndex ].value !== \'\' ) {\n\t\t\tdocument.location.href = this.options[ this.selectedIndex ].value;\n\t\t}\n\t}\n\tdropdown.onchange = onSelectChange;\n})();\n/* ]]> */\n</script>\n\t\t\t</div><div class="widget widget_tag_cloud"><h2 class="widgettitle">Tags</h2><div class="tagcloud"><a href="https://msh.rks-gov.net/sq/tag/advertising-2/" class="tag-cloud-link tag-link-63 tag-link-position-1" style="font-size: 8pt;" aria-label="advertising (1 item)">advertising</a>\n<a href="https://msh.rks-gov.net/sq/tag/blog/" class="tag-cloud-link tag-link-64 tag-link-position-2" style="font-size: 22pt;" aria-label="blog (2 items)">blog</a>\n<a href="https://msh.rks-gov.net/sq/tag/engineer/" class="tag-cloud-link tag-link-66 tag-link-position-3" style="font-size: 8pt;" aria-label="engineer (1 item)">engineer</a>\n<a href="https://msh.rks-gov.net/sq/tag/news/" class="tag-cloud-link tag-link-68 tag-link-position-4" style="font-size: 8pt;" aria-label="news (1 item)">news</a>\n<a href="https://msh.rks-gov.net/sq/tag/people/" class="tag-cloud-link tag-link-69 tag-link-position-5" style="font-size: 8pt;" aria-label="people (1 item)">people</a>\n<a href="https://msh.rks-gov.net/sq/tag/photography-2/" class="tag-cloud-link tag-link-70 tag-link-position-6" style="font-size: 8pt;" aria-label="photography (1 item)">photography</a>\n<a href="https://msh.rks-gov.net/sq/tag/tech/" class="tag-cloud-link tag-link-71 tag-link-position-7" style="font-size: 22pt;" aria-label="tech (2 items)">tech</a>\n<a href="https://msh.rks-gov.net/sq/tag/web-design-2/" class="tag-cloud-link tag-link-73 tag-link-position-8" style="font-size: 8pt;" aria-label="web design (1 item)">web design</a></div>\n</div>\n\t\t\t\t</div><!-- .page-content -->\n\t\t\t</section><!-- .error-404 -->\n\n\t\t</main><!-- #main -->\n\t</div><!-- #primary -->\n\n\n        <div class="container b_module" style="">\n            <div class="row">\n                <div class="col-xsm-12 col-sm-12 col-md-4 col-lg-4">\n                    <h3>Galeria</h3>\n                    <div class="img_holder">\n                        <a href="https://msh.rks-gov.net/sq/galeria/"><img width="692" height="486" src="https://msh.rks-gov.net/wp-content/uploads/2020/03/Gallery-placeholder.png" class="attachment-full size-full wp-post-image" alt="" loading="lazy" /></a>\n                    </div>\n                    <a class="to_all to_all_blue" href="https://msh.rks-gov.net/sq/galeria/">T\xc3\xab gjitha Fotogalerit\xc3\xab</a>\n                </div>\n                <div class="col-xsm-12 col-sm-12 col-md-4 col-lg-4">\n                    <h3>Kampanjat</h3>\n                    <div class="img_holder">\n                        <a href="https://msh.rks-gov.net/sq/kampanjat/"><img width="694" height="486" src="https://msh.rks-gov.net/wp-content/uploads/2020/03/Campaigns-placeholder.png" class="attachment-full size-full wp-post-image" alt="" loading="lazy" /></a>\n                    </div>\n                        <p><a href="https://kosova.health/" target="_blank" rel="noopener noreferrer">kosova.health</a></p>\n                </div>\n                <div class="col-xsm-12 col-sm-12 col-md-4 col-lg-4">\n                    <h3>Videot</h3>\n                    <div class="img_holder">\n                        <a href="https://msh.rks-gov.net/sq/videot/"><img width="694" height="486" src="https://msh.rks-gov.net/wp-content/uploads/2020/03/Video-placeholder.png" class="attachment-full size-full wp-post-image" alt="" loading="lazy" /></a>\n                    </div>\n                    <a class="to_all to_all_blue" href="https://msh.rks-gov.net/sq/videot/">T\xc3\xab gjitha Videogalerit\xc3\xab</a>\n                </div>\n            </div>\n        </div>\n\n\n\n\n        \n    </div>\n    </div>\n\n    <footer class="site-footer">\n        <div class="container">\n            <div class="row">\n                <div class="col-sm-12">\n                    <img class="footer_logo" src="https://msh.rks-gov.net/wp-content/themes/msh/assets/img/emblwh.png" />\n                    <h5>Ministria e Sh\xc3\xabndet\xc3\xabsis\xc3\xab, Republika e Kosov\xc3\xabs<br /> Copyright \xc2\xa9 2022.</h5>\n                </div>\n            </div>\n        </div>\n    </footer>\n\n\n<script type=\'text/javascript\' id=\'contact-form-7-js-extra\'>\n/* <![CDATA[ */\nvar wpcf7 = {"apiSettings":{"root":"https:\\/\\/msh.rks-gov.net\\/wp-json\\/contact-form-7\\/v1","namespace":"contact-form-7\\/v1"}};\n/* ]]> */\n</script>\n<script type=\'text/javascript\' src=\'https://msh.rks-gov.net/wp-content/plugins/contact-form-7/includes/js/scripts.js?ver=5.1.8\' id=\'contact-form-7-js\'></script>\n<script type=\'text/javascript\' src=\'https://www.google.com/recaptcha/api.js?render=6LdADeIUAAAAAAuscD58e9rY9wMTykXzdAgHgWsZ&#038;ver=3.0\' id=\'google-recaptcha-js\'></script>\n<script type=\'text/javascript\' src=\'https://msh.rks-gov.net/wp-content/themes/msh/js/navigation.js?ver=20151215\' id=\'msh-navigation-js\'></script>\n<script type=\'text/javascript\' src=\'https://msh.rks-gov.net/wp-content/themes/msh/js/skip-link-focus-fix.js?ver=20151215\' id=\'msh-skip-link-focus-fix-js\'></script>\n<script type=\'text/javascript\' src=\'https://msh.rks-gov.net/wp-includes/js/wp-embed.min.js?ver=5.5.3\' id=\'wp-embed-js\'></script>\n<script type="text/javascript">\n( function( sitekey, actions ) {\n\n\tdocument.addEventListener( \'DOMContentLoaded\', function( event ) {\n\t\tvar wpcf7recaptcha = {\n\n\t\t\texecute: function( action ) {\n\t\t\t\tgrecaptcha.execute(\n\t\t\t\t\tsitekey,\n\t\t\t\t\t{ action: action }\n\t\t\t\t).then( function( token ) {\n\t\t\t\t\tvar event = new CustomEvent( \'wpcf7grecaptchaexecuted\', {\n\t\t\t\t\t\tdetail: {\n\t\t\t\t\t\t\taction: action,\n\t\t\t\t\t\t\ttoken: token,\n\t\t\t\t\t\t},\n\t\t\t\t\t} );\n\n\t\t\t\t\tdocument.dispatchEvent( event );\n\t\t\t\t} );\n\t\t\t},\n\n\t\t\texecuteOnHomepage: function() {\n\t\t\t\twpcf7recaptcha.execute( actions[ \'homepage\' ] );\n\t\t\t},\n\n\t\t\texecuteOnContactform: function() {\n\t\t\t\twpcf7recaptcha.execute( actions[ \'contactform\' ] );\n\t\t\t},\n\n\t\t};\n\n\t\tgrecaptcha.ready(\n\t\t\twpcf7recaptcha.executeOnHomepage\n\t\t);\n\n\t\tdocument.addEventListener( \'change\',\n\t\t\twpcf7recaptcha.executeOnContactform, false\n\t\t);\n\n\t\tdocument.addEventListener( \'wpcf7submit\',\n\t\t\twpcf7recaptcha.executeOnHomepage, false\n\t\t);\n\n\t} );\n\n\tdocument.addEventListener( \'wpcf7grecaptchaexecuted\', function( event ) {\n\t\tvar fields = document.querySelectorAll(\n\t\t\t"form.wpcf7-form input[name=\'g-recaptcha-response\']"\n\t\t);\n\n\t\tfor ( var i = 0; i < fields.length; i++ ) {\n\t\t\tvar field = fields[ i ];\n\t\t\tfield.setAttribute( \'value\', event.detail.token );\n\t\t}\n\t} );\n\n} )(\n\t\'6LdADeIUAAAAAAuscD58e9rY9wMTykXzdAgHgWsZ\',\n\t{"homepage":"homepage","contactform":"contactform"}\n);\n</script>\n</body>\n\n</html>\n'</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.cuba</td>
+      <td>❌</td>
+      <td>9.65</td>
+      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.united_arab_emirates</td>
+      <td>❌</td>
+      <td>8.38</td>
+      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.sri_lanka</td>
+      <td>❌</td>
+      <td>7.42</td>
+      <td><details><summary>show</summary><pre>Unknown column(s) found: {'Unnamed: 7', 'Unnamed: 9', 'Unnamed: 6', 'Unnamed: 5', 'Unnamed: 3', 'Unnamed: 10', 'Unnamed: 4', 'Unnamed: 8'}</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.serbia</td>
+      <td>❌</td>
+      <td>6.64</td>
+      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.albania</td>
+      <td>❌</td>
+      <td>4.89</td>
+      <td><details><summary>show</summary><pre>object of type 'NoneType' has no len()</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.laos</td>
@@ -30,15 +72,15 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.canada</td>
+      <td>cowidev.vax.batch.netherlands</td>
       <td>❌</td>
-      <td>1.50</td>
-      <td><details><summary>show</summary><pre>82 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check <br>           date  ...  people_fully_vaccinated<br>704  2021-12-29  ...                 29391565<br>705  2021-12-30  ...                 29402591<br>706  2021-12-31  ...                 29414103<br>707  2022-01-01  ...                 29419071<br>708  2022-01-02  ...                 29420224<br>..          ...  ...                      ...<br>781  2022-03-16  ...                 31059248<br>782  2022-03-17  ...                 31067971<br>784  2022-03-19  ...                 31082802<br>785  2022-03-20  ...                 31090066<br>786  2022-03-21  ...                 31100669<br><br>[82 rows x 4 columns]</pre></details></td>
+      <td>0.70</td>
+      <td><details><summary>show</summary><pre>Some unknown vaccines were found {'NVXD'}</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.luxembourg</td>
       <td>❌</td>
-      <td>0.53</td>
+      <td>0.52</td>
       <td><details><summary>show</summary><pre>HTTP Error 404: NOT FOUND</pre></details></td>
     </tr>
     <tr>
@@ -96,351 +138,339 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.new_zealand</td>
-      <td>✅</td>
-      <td>53.59</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.ecdc</td>
       <td>✅</td>
-      <td>52.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.united_states</td>
-      <td>✅</td>
-      <td>47.93</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.south_korea</td>
-      <td>✅</td>
-      <td>47.44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.slovakia</td>
-      <td>✅</td>
-      <td>47.25</td>
+      <td>52.56</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.switzerland</td>
       <td>✅</td>
-      <td>46.64</td>
+      <td>50.09</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.china</td>
+      <td>cowidev.vax.batch.slovakia</td>
       <td>✅</td>
-      <td>41.80</td>
+      <td>48.62</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.paho</td>
+      <td>cowidev.vax.batch.united_states</td>
       <td>✅</td>
-      <td>39.41</td>
+      <td>48.40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.south_korea</td>
+      <td>✅</td>
+      <td>47.65</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.romania</td>
       <td>✅</td>
-      <td>39.15</td>
+      <td>44.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>40.16</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.latvia</td>
       <td>✅</td>
-      <td>37.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>✅</td>
-      <td>33.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.spc</td>
-      <td>✅</td>
-      <td>28.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.azerbaijan</td>
-      <td>✅</td>
-      <td>26.36</td>
+      <td>30.83</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.bangladesh</td>
       <td>✅</td>
-      <td>24.64</td>
+      <td>29.93</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.sweden</td>
+      <td>✅</td>
+      <td>28.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.spc</td>
+      <td>✅</td>
+      <td>28.26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.azerbaijan</td>
+      <td>✅</td>
+      <td>25.46</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.barbados</td>
       <td>✅</td>
-      <td>23.33</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bulgaria</td>
-      <td>✅</td>
-      <td>22.89</td>
+      <td>24.37</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.monaco</td>
       <td>✅</td>
-      <td>22.10</td>
+      <td>22.51</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.united_arab_emirates</td>
+      <td>cowidev.vax.batch.new_zealand</td>
       <td>✅</td>
-      <td>20.07</td>
+      <td>20.97</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.denmark</td>
+      <td>cowidev.vax.incremental.bulgaria</td>
       <td>✅</td>
-      <td>15.92</td>
+      <td>20.54</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.suriname</td>
+      <td>cowidev.vax.incremental.china</td>
       <td>✅</td>
-      <td>13.52</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.sri_lanka</td>
-      <td>✅</td>
-      <td>13.50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.taiwan</td>
-      <td>✅</td>
-      <td>12.52</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.equatorial_guinea</td>
-      <td>✅</td>
-      <td>12.26</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.macao</td>
-      <td>✅</td>
-      <td>11.89</td>
+      <td>19.80</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.costa_rica</td>
       <td>✅</td>
-      <td>11.05</td>
+      <td>17.80</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.qatar</td>
+      <td>cowidev.vax.batch.denmark</td>
       <td>✅</td>
-      <td>10.41</td>
+      <td>15.20</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.albania</td>
+      <td>cowidev.vax.incremental.macao</td>
       <td>✅</td>
-      <td>9.07</td>
+      <td>13.98</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.cuba</td>
+      <td>cowidev.vax.incremental.suriname</td>
       <td>✅</td>
-      <td>8.82</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kosovo</td>
-      <td>✅</td>
-      <td>8.37</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.nepal</td>
-      <td>✅</td>
-      <td>7.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bahrain</td>
-      <td>✅</td>
-      <td>7.33</td>
+      <td>13.33</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.indonesia</td>
       <td>✅</td>
-      <td>7.00</td>
+      <td>12.96</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.israel</td>
+      <td>cowidev.vax.incremental.equatorial_guinea</td>
       <td>✅</td>
-      <td>6.77</td>
+      <td>12.44</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.south_africa</td>
+      <td>cowidev.vax.incremental.qatar</td>
       <td>✅</td>
-      <td>6.77</td>
+      <td>10.97</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.el_salvador</td>
+      <td>cowidev.vax.incremental.bahrain</td>
       <td>✅</td>
-      <td>6.67</td>
+      <td>10.13</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.hungary</td>
+      <td>cowidev.vax.incremental.kyrgyzstan</td>
       <td>✅</td>
-      <td>6.61</td>
+      <td>8.74</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.iran</td>
+      <td>cowidev.vax.incremental.nepal</td>
       <td>✅</td>
-      <td>6.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.serbia</td>
-      <td>✅</td>
-      <td>6.12</td>
+      <td>8.69</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.antigua_barbuda</td>
       <td>✅</td>
-      <td>6.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.myanmar</td>
-      <td>✅</td>
-      <td>6.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.united_kingdom</td>
-      <td>✅</td>
-      <td>6.00</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>✅</td>
-      <td>5.95</td>
+      <td>7.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.jamaica</td>
       <td>✅</td>
-      <td>5.66</td>
+      <td>7.36</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.kazakhstan</td>
+      <td>cowidev.vax.batch.israel</td>
       <td>✅</td>
-      <td>5.32</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.japan</td>
-      <td>✅</td>
-      <td>5.31</td>
+      <td>7.12</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.argentina</td>
       <td>✅</td>
-      <td>5.16</td>
+      <td>7.10</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.belgium</td>
+      <td>cowidev.vax.batch.united_kingdom</td>
       <td>✅</td>
-      <td>5.12</td>
+      <td>6.95</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.czechia</td>
+      <td>cowidev.vax.incremental.south_africa</td>
       <td>✅</td>
-      <td>5.12</td>
+      <td>6.94</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kazakhstan</td>
+      <td>✅</td>
+      <td>6.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.japan</td>
+      <td>✅</td>
+      <td>6.56</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.myanmar</td>
+      <td>✅</td>
+      <td>6.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>5.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.hungary</td>
+      <td>✅</td>
+      <td>5.62</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.georgia</td>
       <td>✅</td>
-      <td>5.08</td>
+      <td>5.00</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.vietnam</td>
+      <td>cowidev.vax.batch.belgium</td>
       <td>✅</td>
-      <td>4.39</td>
+      <td>4.96</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.italy</td>
+      <td>cowidev.vax.incremental.iran</td>
       <td>✅</td>
-      <td>3.99</td>
+      <td>4.93</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.who</td>
       <td>✅</td>
-      <td>3.82</td>
+      <td>4.90</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.libya</td>
+      <td>cowidev.vax.incremental.dominican_republic</td>
       <td>✅</td>
-      <td>3.78</td>
+      <td>4.81</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.uruguay</td>
+      <td>cowidev.vax.incremental.india</td>
       <td>✅</td>
-      <td>3.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.mexico</td>
-      <td>✅</td>
-      <td>3.64</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.greenland</td>
-      <td>✅</td>
-      <td>3.45</td>
+      <td>4.75</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.peru</td>
       <td>✅</td>
-      <td>3.34</td>
+      <td>4.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.libya</td>
+      <td>✅</td>
+      <td>4.21</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.vietnam</td>
+      <td>✅</td>
+      <td>4.15</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.lebanon</td>
       <td>✅</td>
-      <td>3.24</td>
+      <td>4.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.italy</td>
+      <td>✅</td>
+      <td>3.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.cyprus</td>
+      <td>✅</td>
+      <td>3.72</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.uruguay</td>
+      <td>✅</td>
+      <td>3.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.greenland</td>
+      <td>✅</td>
+      <td>3.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.mexico</td>
+      <td>✅</td>
+      <td>3.28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.guernsey</td>
+      <td>✅</td>
+      <td>3.26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.czechia</td>
+      <td>✅</td>
+      <td>3.02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2.71</td>
       <td></td>
     </tr>
     <tr>
@@ -450,117 +480,111 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.kyrgyzstan</td>
-      <td>✅</td>
-      <td>2.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.guernsey</td>
-      <td>✅</td>
-      <td>2.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.bolivia</td>
-      <td>✅</td>
-      <td>2.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2.33</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.spain</td>
       <td>✅</td>
-      <td>2.19</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.greece</td>
-      <td>✅</td>
-      <td>2.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>2.17</td>
+      <td>2.44</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.pakistan</td>
       <td>✅</td>
-      <td>1.95</td>
+      <td>2.42</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.australia</td>
+      <td>cowidev.vax.batch.bolivia</td>
       <td>✅</td>
-      <td>1.93</td>
+      <td>2.37</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.thailand</td>
+      <td>cowidev.vax.batch.hong_kong</td>
       <td>✅</td>
-      <td>1.82</td>
+      <td>2.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.russia</td>
+      <td>✅</td>
+      <td>2.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.germany</td>
+      <td>✅</td>
+      <td>2.08</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.greece</td>
+      <td>✅</td>
+      <td>2.04</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.iceland</td>
       <td>✅</td>
-      <td>1.75</td>
+      <td>2.04</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.moldova</td>
+      <td>cowidev.vax.incremental.thailand</td>
       <td>✅</td>
-      <td>1.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.philippines</td>
-      <td>✅</td>
-      <td>1.55</td>
+      <td>1.98</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.singapore</td>
       <td>✅</td>
-      <td>1.54</td>
+      <td>1.88</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.portugal</td>
+      <td>cowidev.vax.incremental.brazil</td>
       <td>✅</td>
-      <td>1.48</td>
+      <td>1.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.australia</td>
+      <td>✅</td>
+      <td>1.80</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ecuador</td>
       <td>✅</td>
-      <td>1.45</td>
+      <td>1.76</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.zambia</td>
+      <td>cowidev.vax.incremental.aruba</td>
       <td>✅</td>
-      <td>1.43</td>
+      <td>1.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.moldova</td>
+      <td>✅</td>
+      <td>1.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.curacao</td>
+      <td>✅</td>
+      <td>1.41</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>✅</td>
-      <td>1.36</td>
+      <td>1.37</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.cyprus</td>
+      <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
-      <td>1.36</td>
+      <td>1.35</td>
       <td></td>
     </tr>
     <tr>
@@ -570,165 +594,141 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.india</td>
+      <td>cowidev.vax.incremental.zambia</td>
       <td>✅</td>
-      <td>1.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.malta</td>
-      <td>✅</td>
-      <td>1.23</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.aruba</td>
-      <td>✅</td>
-      <td>1.20</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.netherlands</td>
-      <td>✅</td>
-      <td>1.17</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.brazil</td>
-      <td>✅</td>
-      <td>1.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.curacao</td>
-      <td>✅</td>
-      <td>1.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.germany</td>
-      <td>✅</td>
-      <td>1.12</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.russia</td>
-      <td>✅</td>
-      <td>1.10</td>
+      <td>1.14</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.lithuania</td>
       <td>✅</td>
-      <td>0.97</td>
+      <td>1.02</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.mongolia</td>
+      <td>cowidev.vax.batch.malta</td>
       <td>✅</td>
-      <td>0.94</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.malaysia</td>
-      <td>✅</td>
-      <td>0.92</td>
+      <td>1.01</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.isle_of_man</td>
       <td>✅</td>
-      <td>0.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.turkey</td>
-      <td>✅</td>
-      <td>0.81</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.estonia</td>
-      <td>✅</td>
-      <td>0.78</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.northern_cyprus</td>
-      <td>✅</td>
-      <td>0.74</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.jersey</td>
-      <td>✅</td>
-      <td>0.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.france</td>
-      <td>✅</td>
-      <td>0.71</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.zimbabwe</td>
-      <td>✅</td>
-      <td>0.71</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.chile</td>
-      <td>✅</td>
-      <td>0.70</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.finland</td>
-      <td>✅</td>
-      <td>0.68</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.norway</td>
-      <td>✅</td>
-      <td>0.65</td>
+      <td>1.01</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.slovenia</td>
       <td>✅</td>
-      <td>0.57</td>
+      <td>0.97</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.ireland</td>
+      <td>cowidev.vax.incremental.turkey</td>
       <td>✅</td>
-      <td>0.49</td>
+      <td>0.97</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.malaysia</td>
+      <td>✅</td>
+      <td>0.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.estonia</td>
+      <td>✅</td>
+      <td>0.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.zimbabwe</td>
+      <td>✅</td>
+      <td>0.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.jersey</td>
+      <td>✅</td>
+      <td>0.75</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.france</td>
+      <td>✅</td>
+      <td>0.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.chile</td>
+      <td>✅</td>
+      <td>0.72</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.mongolia</td>
+      <td>✅</td>
+      <td>0.69</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.croatia</td>
       <td>✅</td>
-      <td>0.38</td>
+      <td>0.64</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.northern_cyprus</td>
+      <td>✅</td>
+      <td>0.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.finland</td>
+      <td>✅</td>
+      <td>0.61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.philippines</td>
+      <td>✅</td>
+      <td>0.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.norway</td>
+      <td>✅</td>
+      <td>0.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.portugal</td>
+      <td>✅</td>
+      <td>0.45</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ireland</td>
+      <td>✅</td>
+      <td>0.44</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.poland</td>
       <td>✅</td>
-      <td>0.31</td>
+      <td>0.20</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.montenegro</td>
       <td>✅</td>
-      <td>0.16</td>
+      <td>0.18</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.fiji</td>
       <td>✅</td>
-      <td>0.01</td>
+      <td>0.00</td>
       <td></td>
     </tr>
   </tbody>
