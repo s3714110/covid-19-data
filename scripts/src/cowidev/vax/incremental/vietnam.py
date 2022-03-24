@@ -15,10 +15,17 @@ class Vietnam:
     regex = {
         "title": r"Ngày",
         "date": r"(\d{2}/\d{2}/\d{4})",
+        # "metrics": {
+        #     "total": r"tổng số liều (vắc xin|vaccine) đã được tiêm là ([\d\.]+) liều, ",
+        #     "adult": r"tuổi trở lên là \d+ liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+) liều; Mũi 3 là ([\d\.]+) liều; Mũi bổ sung là ([\d\.]+) liều; Mũi nhắc lại là ([\d\.]+) liều",
+        #     "adolescent": r"tuổi là \d+ liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+) liều.",
+        # },
         "metrics": {
-            "total": r"tổng số liều (vắc xin|vaccine) đã được tiêm là ([\d\.]+) liều, ",
-            "adult": r"tuổi trở lên là \d+ liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+) liều; Mũi 3 là ([\d\.]+) liều; Mũi bổ sung là ([\d\.]+) liều; Mũi nhắc lại là ([\d\.]+) liều",
-            "adolescent": r"tuổi là \d+ liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+) liều.",
+            "adult": (
+                r"tuổi trở lên là\s?(\d+) liều, trong đó Mũi 1: ([\d\.]+) liều; Mũi 2: ([\d\.]+) liều; Mũi bổ sung:"
+                r" ([\d\.]+) liều và Mũi 3: ([\d\.]+) liều;"
+            ),
+            "adolescent": r"12\-17 tuổi là (\d+) liều, gồm Mũi 1: (\d+) liều; Mũi 2: (\d+) liều;",
         },
     }
 
@@ -70,10 +77,11 @@ class Vietnam:
         adults = [clean_count(num) for num in re.search(self.regex["metrics"]["adult"], text).group(1, 2, 3, 4, 5)]
         adolescents = [clean_count(num) for num in re.search(self.regex["metrics"]["adolescent"], text).group(1, 2)]
         metrics = {
-            "total_vaccinations": clean_count(re.search(self.regex["metrics"]["total"], text).group(2)),
-            "people_vaccinated": adults[0] + adolescents[0],
-            "people_fully_vaccinated": adults[1] + adults[2] + adolescents[1],
-            "total_boosters": adults[3] + adults[4],
+            # "total_vaccinations": clean_count(re.search(self.regex["metrics"]["total"], text).group(2)),
+            "total_vaccinations": adults[0] + adolescents[0],
+            "people_vaccinated": adults[1] + adolescents[1],
+            # "people_fully_vaccinated": adults[2] + adults[2] + adolescents[1],
+            # "total_boosters": adults[3] + adults[4],
         }
         return metrics
 
@@ -103,8 +111,8 @@ class Vietnam:
             vaccine=data["vaccine"],
             source_url=data["source_url"],
             people_vaccinated=data["people_vaccinated"],
-            people_fully_vaccinated=data["people_fully_vaccinated"],
-            total_boosters=data["total_boosters"],
+            # people_fully_vaccinated=data["people_fully_vaccinated"],
+            # total_boosters=data["total_boosters"],
         )
 
 
