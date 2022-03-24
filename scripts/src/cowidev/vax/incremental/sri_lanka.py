@@ -53,6 +53,8 @@ class SriLanka(CountryVaxBase):
         dfs = tabula.read_pdf(pdf_path)
         df = dfs[0]
 
+        # Fix header
+        df = self._fix_header(df)
         # All calculations below assume a fixed shape of the PDF's table, and a specific order for
         # the columns and vaccines. If the following test fails, then the table should be checked
         # for potential changes.
@@ -112,6 +114,23 @@ class SriLanka(CountryVaxBase):
                 "total_boosters": total_boosters,
             }
         )
+
+    def _fix_header(self, df):
+        cond = all("Unnamed: " in col for col in df.columns)
+        while cond:
+            df.columns = df.iloc[0]
+            df = df[1:]
+            cond = all("Unnamed: " in col for col in df.columns)
+        cols = []
+        cont = 0
+        for col in df.columns:
+            if pd.isna(col):
+                cols.append(f"Unnamed: {cont}")
+                cont += 1
+            else:
+                cols.append(col)
+        df.columns = cols
+        return df
 
     def export(self):
         df = self.read()
