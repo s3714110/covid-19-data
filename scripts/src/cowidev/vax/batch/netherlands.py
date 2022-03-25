@@ -38,6 +38,8 @@ class Netherlands(CountryVaxBase):
         if vax_wrong:
             raise ValueError(f"Some unknown vaccines were found {vax_wrong}")
         self.vax_timeline = df_[["vaccine", "date"]].groupby("vaccine").min().to_dict()["date"]
+        self.vax_timeline = {self.vaccines_mapping[vax]: date for vax, date in self.vax_timeline.items()}
+        print(self.vax_timeline)
         return df
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
