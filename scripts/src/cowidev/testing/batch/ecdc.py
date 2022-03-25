@@ -56,7 +56,8 @@ class ECDC(CountryTestBase):
 
     def pipe_cumsum(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate cumulative sum of tests."""
-        return df.assign(**{"Cumulative total": df.groupby(["location"])["Cumulative total"].cumsum()})
+        df = df.assign(**{"Cumulative total": df.groupby(["location"])["Cumulative total"].cumsum()})
+        return df.drop_duplicates(subset="Date")
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
         """Add metadata to DataFrame."""

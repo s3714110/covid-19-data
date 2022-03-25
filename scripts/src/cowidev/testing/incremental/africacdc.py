@@ -63,6 +63,9 @@ ACDC_COUNTRIES = {
     "Sudan": {  # Automate
         "name": "Sudan",
     },
+    "Tanzania": {  # Automate
+        "name": "Tanzania",
+    },
     "Uganda": {  # Automate
         "name": "Uganda",
     },

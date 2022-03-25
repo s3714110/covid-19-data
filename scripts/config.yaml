@@ -66,6 +66,9 @@ pipeline:
         - Andorra
         #- Jordan
         - Benin
+        - Vanuatu #source no longer updated
+        - Guatemala #source no longer updated
+        - Indonesia #source no longer updated
     process:
     generate:
     export:
