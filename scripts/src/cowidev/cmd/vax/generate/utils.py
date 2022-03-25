@@ -309,8 +309,11 @@ class DatasetGenerator:
             raise ValueError("Negative values found! Check values in `total_vaccinations`.")
         if not (df_to_check.new_vaccinations_smoothed.dropna() >= 0).all():
             raise ValueError("Negative values found! Check values in `new_vaccinations_smoothed`.")
-        if not (df_to_check.new_vaccinations_smoothed_per_million.dropna() <= 120000).all():
-            raise ValueError(" Huge values found! Check values in `new_vaccinations_smoothed_per_million`.")
+        if not (msk := (x := df_to_check.new_vaccinations_smoothed_per_million.dropna()) <= 120000).all():
+            example = df_to_check.loc[x[~msk].index, ["date", "location", "new_vaccinations_smoothed_per_million"]]
+            raise ValueError(
+                f"Huge values found! Check values in `new_vaccinations_smoothed_per_million`: \n{example}"
+            )
         return df
 
     def pipe_to_int(self, df: pd.DataFrame) -> pd.DataFrame:
