@@ -8,3 +8,6 @@ __CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 __EMRO_CONFIG = os.path.join(__CURRENT_DIR, "emro_config.yaml")
 EMRO_COUNTRIES = countries_mapping(__EMRO_CONFIG)
 
+#ECDC
+__ECDC_CONFIG = os.path.join(__CURRENT_DIR, "ecdc_config.yaml")
+ECDC_COUNTRIES = countries_mapping(__ECDC_CONFIG)
