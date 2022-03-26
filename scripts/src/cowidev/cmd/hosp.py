@@ -1,8 +1,11 @@
 import click
 
 from cowidev.cmd.commons.utils import OrderedGroup
+from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption
+from cowidev.utils.params import CONFIG
 from cowidev.hosp.etl import run_etl
 from cowidev.hosp.grapher import run_db_updater, run_grapheriser
+from cowidev.hosp.countries import MODULES_NAME, country_to_module
 
 
 @click.group(name="hosp", chain=True, cls=OrderedGroup)
@@ -13,8 +16,21 @@ def click_hosp(ctx):
 
 
 @click.command(name="generate", short_help="Step 1: Get and generate hospitalization dataset.")
+@click.argument(
+    "countries",
+    nargs=-1,
+    # help="List of countries to skip (comma-separated)",
+    # default=CONFIG.pipeline.vaccinations.get.countries,
+)
+@click.option(
+    "--skip-countries",
+    "-s",
+    default=CONFIG.pipeline.hospitalizations.generate.skip_countries,
+    help="List of countries to skip (comma-separated)",
+    cls=PythonLiteralOption,
+)
 @click.pass_context
-def click_hosp_generate(ctx):
+def click_hosp_generate(ctx, countries, skip_countries):
     """Runs scraping scripts to collect the data from the primary sources, transforms it and exports the result to
     public/data/hospitalizations/.
 
@@ -24,7 +40,20 @@ def click_hosp_generate(ctx):
 
     OPTIONS passed via command line will overwrite those from configuration file.
     """
-    run_etl(ctx.obj["parallel"], ctx.obj["n_jobs"])
+    if countries == ():
+        countries = CONFIG.pipeline.hospitalizations.generate.countries
+    c2m = Country2Module(
+        modules_name=MODULES_NAME,
+        country_to_module=country_to_module,
+    )
+    modules = c2m.parse(countries)
+    modules_skip = c2m.parse(skip_countries)
+    run_etl(
+        parallel=ctx.obj["parallel"],
+        n_jobs=ctx.obj["n_jobs"],
+        modules=modules,
+        modules_skip=modules_skip,
+    )
 
 
 @click.command(name="grapher-io", short_help="Step 2: Generate grapher-ready files.")

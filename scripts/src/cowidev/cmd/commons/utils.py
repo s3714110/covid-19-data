@@ -78,9 +78,9 @@ def _comma_separated_to_list(x):
 @dataclass
 class Country2Module:
     modules_name: list
-    modules_name_incremental: list
-    modules_name_batch: list
     country_to_module: list
+    modules_name_incremental: list = None
+    modules_name_batch: list = None
 
     def parse(self, countries):
         if isinstance(countries, str):

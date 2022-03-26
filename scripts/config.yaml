@@ -72,3 +72,9 @@ pipeline:
     process:
     generate:
     export:
+  
+  hospitalizations:
+    generate:
+      countries:
+      skip_countries:
+        - Singapore

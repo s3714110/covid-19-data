@@ -34,6 +34,11 @@ class VaccinationsGetConfig(BaseGetConfig):
 
 
 @dataclass()
+class HospitalizationsGenerateConfig(BaseGetConfig):
+    pass
+
+
+@dataclass()
 class Base4Config:
     get: BaseGetConfig
     process: dict
@@ -76,13 +81,28 @@ class VaccinationsConfig(Base4Config):
 
 
 @dataclass()
+class HospitalizationsConfig:
+    generate: HospitalizationsGenerateConfig
+
+    def __post_init__(self):
+        # Generate
+        if self.generate["countries"] is None:
+            self.generate["countries"] = ["all"]
+        if self.generate["skip_countries"] is None:
+            self.generate["skip_countries"] = []
+        self.generate = HospitalizationsGenerateConfig(**self.generate)
+
+
+@dataclass()
 class PipelineConfig:
     testing: TestingConfig
     vaccinations: VaccinationsConfig
+    hospitalizations: HospitalizationsConfig
 
     def __post_init__(self):
         self.testing = TestingConfig(**self.testing)
         self.vaccinations = VaccinationsConfig(**self.vaccinations)
+        self.hospitalizations = HospitalizationsConfig(**self.hospitalizations)
 
 
 @dataclass()

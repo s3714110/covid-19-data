@@ -1,4 +1,5 @@
 import os
+from sys import modules
 import time
 import importlib
 import json
@@ -9,10 +10,7 @@ from pandas.api.types import is_string_dtype
 
 from cowidev import PATHS
 from cowidev.utils.log import get_logger
-from cowidev.hosp.sources import __all__ as sources
 
-
-sources = [f"cowidev.hosp.sources.{s}" for s in sources]
 
 logger = get_logger()
 
@@ -20,8 +18,10 @@ logger = get_logger()
 class HospETL:
     def extract(
         self,
+        modules: list,
         parallel: bool = False,
         n_jobs: int = -2,
+        modules_skip: list = [],
     ):
         """Get the data for all locations.
 
@@ -29,27 +29,32 @@ class HospETL:
         - Build metadata dataframe with locations metadata (source url, source name, etc.)
         """
         t0 = time.time()
+        # Sources
+        modules = [s for s in modules if s not in modules_skip]
+        if modules == []:
+            logger.info("HOSP - No data to be collected (check skipped countries)...")
+            return None
         # Get data
-        modules_execution_results = self.extract_collect(parallel, n_jobs)
+        modules_execution_results = self.extract_collect(parallel, n_jobs, modules=modules)
         self._execution_summary(t0, modules_execution_results)
         # Export data (checkpoint)
         self.extract_export_checkpoint(modules_execution_results)
         # Process output
         df, df_meta = self.extract_process()
-        return df, df_meta
+        return {"df": df, "meta": df_meta}
 
-    def extract_collect(self, parallel, n_jobs):
+    def extract_collect(self, parallel, n_jobs, modules):
         """Collects data for all countries"""
         logger.info("HOSP - Collecting data...")
         if parallel:
             modules_execution_results = Parallel(n_jobs=n_jobs, backend="threading")(
                 delayed(self._extract_entity)(
-                    source,
+                    m,
                 )
-                for source in sources
+                for m in modules
             )
         else:
-            modules_execution_results = [self._extract_entity(source) for source in sources]
+            modules_execution_results = [self._extract_entity(m) for m in modules]
         return modules_execution_results
 
     def extract_export_checkpoint(self, modules_execution_results):
@@ -233,14 +238,15 @@ class HospETL:
         # Export data
         df.to_csv(output_path, index=False)
 
-    def run(self, parallel: bool, n_jobs: int):
-        df, df_meta = self.extract(parallel, n_jobs)
-        df = self.transform(df)
-        df_meta = self.transform_meta(df_meta, df, PATHS.DATA_HOSP_META_FILE)
-        self.load(df, PATHS.DATA_HOSP_MAIN_FILE)
-        self.load(df_meta, PATHS.DATA_HOSP_META_FILE)
+    def run(self, parallel: bool, n_jobs: int, modules, modules_skip=[]):
+        data = self.extract(parallel=parallel, n_jobs=n_jobs, modules=modules, modules_skip=modules_skip)
+        if data is not None:
+            df = self.transform(data["df"])
+            df_meta = self.transform_meta(data["meta"], df, PATHS.DATA_HOSP_META_FILE)
+            self.load(df, PATHS.DATA_HOSP_MAIN_FILE)
+            self.load(df_meta, PATHS.DATA_HOSP_META_FILE)
 
 
-def run_etl(parallel: bool, n_jobs: int):
+def run_etl(parallel: bool, n_jobs: int, modules: list, modules_skip: list = []):
     etl = HospETL()
-    etl.run(parallel, n_jobs)
+    etl.run(parallel, n_jobs, modules=modules, modules_skip=modules_skip)
