@@ -1,35 +1,35 @@
 module,execution_time (sec),success,error
-cowidev.vax.batch.argentina,6.68,True,
-cowidev.vax.batch.australia,2.04,True,
+cowidev.vax.batch.argentina,4.62,True,
+cowidev.vax.batch.australia,7.03,True,
 cowidev.vax.batch.austria,,,
-cowidev.vax.batch.belgium,6.08,True,
-cowidev.vax.batch.bolivia,2.71,True,
-cowidev.vax.batch.canada,2.0,False,"327 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-           date  ...  people_fully_vaccinated
-463  2021-05-02  ...                  1161709
-464  2021-05-03  ...                  1170449
-465  2021-05-04  ...                  1190321
-466  2021-05-05  ...                  1208779
-467  2021-05-06  ...                  1231759
-..          ...  ...                      ...
-785  2022-03-20  ...                 31090066
-786  2022-03-21  ...                 31100669
-787  2022-03-22  ...                 31106512
-788  2022-03-23  ...                 31115625
-789  2022-03-24  ...                 31120915
+cowidev.vax.batch.belgium,4.5,True,
+cowidev.vax.batch.bolivia,2.61,True,
+cowidev.vax.batch.canada,1.7,False,"327 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
+           date  total_vaccinations  people_vaccinated  people_fully_vaccinated
+463  2021-05-02            13945048         12783247.0                  1161709
+464  2021-05-03            14172299         13001756.0                  1170449
+465  2021-05-04            14407259         13216836.0                  1190321
+466  2021-05-05            14694142         13485254.0                  1208779
+467  2021-05-06            15054064         13822189.0                  1231759
+..          ...                 ...                ...                      ...
+785  2022-03-20            81867127         32661533.0                 31090066
+786  2022-03-21            81894769         32663794.0                 31100669
+787  2022-03-22            81916479         32667145.0                 31106512
+788  2022-03-23            81950685         32671905.0                 31115625
+789  2022-03-24            81967208         32675317.0                 31120915
 
 [327 rows x 4 columns]"
-cowidev.vax.batch.chile,0.92,True,
-cowidev.vax.batch.czechia,2.84,True,
-cowidev.vax.batch.denmark,24.07,True,
-cowidev.vax.batch.ecdc,42.42,False,No columns to parse from file
-cowidev.vax.batch.ecuador,1.45,True,
-cowidev.vax.batch.estonia,0.88,True,
-cowidev.vax.batch.france,0.88,True,
-cowidev.vax.batch.germany,1.18,True,
-cowidev.vax.batch.greece,6.08,True,
-cowidev.vax.batch.hong_kong,2.29,True,
-cowidev.vax.batch.indonesia,131.28,False,"[Errno Expecting value] <html>
+cowidev.vax.batch.chile,0.7,True,
+cowidev.vax.batch.czechia,2.72,True,
+cowidev.vax.batch.denmark,7.16,True,
+cowidev.vax.batch.ecdc,53.58,True,
+cowidev.vax.batch.ecuador,1.94,True,
+cowidev.vax.batch.estonia,0.97,True,
+cowidev.vax.batch.france,0.72,True,
+cowidev.vax.batch.germany,1.33,True,
+cowidev.vax.batch.greece,1.94,True,
+cowidev.vax.batch.hong_kong,2.32,True,
+cowidev.vax.batch.indonesia,8.43,False,"[Errno Expecting value] <html>
 <head><title>502 Bad Gateway</title></head>
 <body>
 <center><h1>502 Bad Gateway</h1></center>
@@ -37,106 +37,105 @@ cowidev.vax.batch.indonesia,131.28,False,"[Errno Expecting value] <html>
 </body>
 </html>
 : 0"
-cowidev.vax.batch.ireland,0.55,True,
-cowidev.vax.batch.israel,5.2,True,
-cowidev.vax.batch.italy,5.1,True,
-cowidev.vax.batch.jersey,0.61,True,
-cowidev.vax.batch.latvia,50.83,True,
-cowidev.vax.batch.lithuania,2.27,True,
-cowidev.vax.batch.luxembourg,0.42,False,HTTP Error 404: NOT FOUND
-cowidev.vax.batch.malaysia,0.73,True,
-cowidev.vax.batch.malta,1.88,True,
-cowidev.vax.batch.netherlands,1.88,True,
-cowidev.vax.batch.new_zealand,21.3,True,
-cowidev.vax.batch.norway,2.21,True,
-cowidev.vax.batch.peru,4.02,True,
-cowidev.vax.batch.portugal,1.36,True,
-cowidev.vax.batch.romania,32.69,True,
-cowidev.vax.batch.saudi_arabia,2.18,True,
-cowidev.vax.batch.singapore,1.16,True,
-cowidev.vax.batch.slovakia,46.57,True,
-cowidev.vax.batch.slovenia,0.76,True,
-cowidev.vax.batch.south_korea,46.47,True,
-cowidev.vax.batch.spc,28.32,True,
-cowidev.vax.batch.sweden,25.25,True,
-cowidev.vax.batch.switzerland,37.55,True,
-cowidev.vax.batch.trinidad_and_tobago,0.63,True,
+cowidev.vax.batch.ireland,0.52,True,
+cowidev.vax.batch.israel,3.59,True,
+cowidev.vax.batch.italy,5.29,True,
+cowidev.vax.batch.jersey,5.69,True,
+cowidev.vax.batch.latvia,37.64,True,
+cowidev.vax.batch.lithuania,1.03,True,
+cowidev.vax.batch.luxembourg,0.48,False,HTTP Error 404: NOT FOUND
+cowidev.vax.batch.malaysia,0.69,True,
+cowidev.vax.batch.malta,1.62,True,
+cowidev.vax.batch.netherlands,1.52,True,
+cowidev.vax.batch.new_zealand,18.24,True,
+cowidev.vax.batch.norway,1.32,True,
+cowidev.vax.batch.peru,3.26,True,
+cowidev.vax.batch.portugal,0.55,True,
+cowidev.vax.batch.romania,42.72,True,
+cowidev.vax.batch.saudi_arabia,2.25,True,
+cowidev.vax.batch.singapore,1.55,True,
+cowidev.vax.batch.slovakia,47.73,True,
+cowidev.vax.batch.slovenia,15.51,True,
+cowidev.vax.batch.south_korea,48.27,True,
+cowidev.vax.batch.spc,29.62,True,
+cowidev.vax.batch.sweden,25.18,True,
+cowidev.vax.batch.switzerland,57.18,True,
+cowidev.vax.batch.trinidad_and_tobago,0.7,True,
 cowidev.vax.batch.ukraine,,,
-cowidev.vax.batch.united_kingdom,6.03,True,
-cowidev.vax.batch.united_states,46.87,True,
-cowidev.vax.batch.uruguay,3.05,True,
-cowidev.vax.batch.zimbabwe,1.13,True,
+cowidev.vax.batch.united_kingdom,12.7,True,
+cowidev.vax.batch.united_states,49.13,True,
+cowidev.vax.batch.uruguay,3.13,True,
+cowidev.vax.batch.zimbabwe,1.21,True,
 cowidev.vax.incremental.africacdc,,,
-cowidev.vax.incremental.albania,5.94,False,object of type 'NoneType' has no len()
-cowidev.vax.incremental.antigua_barbuda,6.68,True,
+cowidev.vax.incremental.albania,4.38,False,object of type 'NoneType' has no len()
+cowidev.vax.incremental.antigua_barbuda,5.53,True,
 cowidev.vax.incremental.argentina,2.67,True,
-cowidev.vax.incremental.aruba,1.41,True,
-cowidev.vax.incremental.azerbaijan,18.89,True,
-cowidev.vax.incremental.bahrain,7.1,True,
-cowidev.vax.incremental.bangladesh,24.18,True,
-cowidev.vax.incremental.barbados,13.95,True,
-cowidev.vax.incremental.brazil,1.3,True,
-cowidev.vax.incremental.bulgaria,11.68,True,
-cowidev.vax.incremental.china,302.09,False,"Message: TimedPromise timed out after 300000 ms
-"
+cowidev.vax.incremental.aruba,1.09,True,
+cowidev.vax.incremental.azerbaijan,32.69,True,
+cowidev.vax.incremental.bahrain,5.06,True,
+cowidev.vax.incremental.bangladesh,23.6,True,
+cowidev.vax.incremental.barbados,24.84,True,
+cowidev.vax.incremental.brazil,0.85,True,
+cowidev.vax.incremental.bulgaria,22.97,True,
+cowidev.vax.incremental.china,23.47,True,
 cowidev.vax.incremental.colombia,,,
-cowidev.vax.incremental.costa_rica,4.69,True,
-cowidev.vax.incremental.croatia,0.52,True,
-cowidev.vax.incremental.cuba,7.24,True,
-cowidev.vax.incremental.curacao,0.85,True,
-cowidev.vax.incremental.cyprus,1.23,True,
-cowidev.vax.incremental.dominican_republic,4.69,True,
-cowidev.vax.incremental.el_salvador,7.26,True,
-cowidev.vax.incremental.equatorial_guinea,16.1,True,
-cowidev.vax.incremental.faeroe_islands,1.2,True,
+cowidev.vax.incremental.costa_rica,24.03,True,
+cowidev.vax.incremental.croatia,1.6,True,
+cowidev.vax.incremental.cuba,12.59,True,
+cowidev.vax.incremental.curacao,1.38,True,
+cowidev.vax.incremental.cyprus,7.94,True,
+cowidev.vax.incremental.dominican_republic,5.07,True,
+cowidev.vax.incremental.el_salvador,8.29,True,
+cowidev.vax.incremental.equatorial_guinea,9.79,True,
+cowidev.vax.incremental.faeroe_islands,2.58,True,
 cowidev.vax.incremental.fiji,0.01,True,
-cowidev.vax.incremental.finland,0.68,True,
+cowidev.vax.incremental.finland,0.89,True,
 cowidev.vax.incremental.gabon,,,
-cowidev.vax.incremental.georgia,5.1,True,
-cowidev.vax.incremental.greenland,3.01,True,
+cowidev.vax.incremental.georgia,5.36,True,
+cowidev.vax.incremental.greenland,3.33,True,
 cowidev.vax.incremental.guatemala,,,
-cowidev.vax.incremental.guernsey,3.1,True,
-cowidev.vax.incremental.hungary,8.56,True,
-cowidev.vax.incremental.iceland,2.01,True,
-cowidev.vax.incremental.india,4.14,True,
-cowidev.vax.incremental.iran,9.65,True,
-cowidev.vax.incremental.isle_of_man,1.89,True,
-cowidev.vax.incremental.jamaica,9.51,True,
-cowidev.vax.incremental.japan,9.18,True,
-cowidev.vax.incremental.kazakhstan,9.14,True,
-cowidev.vax.incremental.kenya,8.65,False,'NoneType' object has no attribute 'groups'
-cowidev.vax.incremental.kosovo,7.68,True,
-cowidev.vax.incremental.kyrgyzstan,6.88,True,
-cowidev.vax.incremental.laos,2.46,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
-cowidev.vax.incremental.lebanon,3.27,True,
-cowidev.vax.incremental.libya,3.97,True,
-cowidev.vax.incremental.macao,12.21,True,
-cowidev.vax.incremental.mexico,3.36,True,
-cowidev.vax.incremental.moldova,1.3,True,
-cowidev.vax.incremental.monaco,20.77,True,
-cowidev.vax.incremental.mongolia,1.04,True,
-cowidev.vax.incremental.montenegro,0.29,True,
+cowidev.vax.incremental.guernsey,2.64,True,
+cowidev.vax.incremental.hungary,4.45,True,
+cowidev.vax.incremental.iceland,2.09,True,
+cowidev.vax.incremental.india,0.7,True,
+cowidev.vax.incremental.iran,6.25,True,
+cowidev.vax.incremental.isle_of_man,1.11,True,
+cowidev.vax.incremental.jamaica,5.53,True,
+cowidev.vax.incremental.japan,8.39,True,
+cowidev.vax.incremental.kazakhstan,5.3,True,
+cowidev.vax.incremental.kenya,4.97,False,'NoneType' object has no attribute 'groups'
+cowidev.vax.incremental.kosovo,4.62,True,
+cowidev.vax.incremental.kyrgyzstan,6.92,True,
+cowidev.vax.incremental.laos,2.83,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+cowidev.vax.incremental.lebanon,3.43,True,
+cowidev.vax.incremental.libya,4.24,True,
+cowidev.vax.incremental.macao,13.05,True,
+cowidev.vax.incremental.mexico,3.15,True,
+cowidev.vax.incremental.moldova,11.42,True,
+cowidev.vax.incremental.monaco,26.59,True,
+cowidev.vax.incremental.mongolia,0.94,True,
+cowidev.vax.incremental.montenegro,0.3,True,
 cowidev.vax.incremental.morocco,,,
-cowidev.vax.incremental.myanmar,6.26,True,
-cowidev.vax.incremental.nepal,9.48,True,
+cowidev.vax.incremental.myanmar,9.68,True,
+cowidev.vax.incremental.nepal,8.33,True,
 cowidev.vax.incremental.north_macedonia,,,
-cowidev.vax.incremental.northern_cyprus,0.72,True,
-cowidev.vax.incremental.paho,40.52,True,
-cowidev.vax.incremental.pakistan,2.5,True,
-cowidev.vax.incremental.philippines,0.81,True,
-cowidev.vax.incremental.poland,0.21,True,
-cowidev.vax.incremental.qatar,10.6,True,
-cowidev.vax.incremental.russia,2.08,True,
+cowidev.vax.incremental.northern_cyprus,0.74,True,
+cowidev.vax.incremental.paho,40.34,True,
+cowidev.vax.incremental.pakistan,1.98,True,
+cowidev.vax.incremental.philippines,1.06,True,
+cowidev.vax.incremental.poland,0.4,True,
+cowidev.vax.incremental.qatar,11.1,True,
+cowidev.vax.incremental.russia,1.34,True,
 cowidev.vax.incremental.saint_lucia,,,
-cowidev.vax.incremental.serbia,7.76,True,
-cowidev.vax.incremental.south_africa,11.4,True,
-cowidev.vax.incremental.spain,2.18,True,
-cowidev.vax.incremental.sri_lanka,10.35,False,Unknown column(s) found: {'Unnamed: 3'}
-cowidev.vax.incremental.suriname,13.41,True,
-cowidev.vax.incremental.taiwan,15.47,True,
-cowidev.vax.incremental.thailand,1.92,True,
-cowidev.vax.incremental.turkey,1.35,True,
-cowidev.vax.incremental.united_arab_emirates,18.0,True,
-cowidev.vax.incremental.vietnam,4.44,False,'NoneType' object has no attribute 'group'
-cowidev.vax.incremental.who,3.68,True,
-cowidev.vax.incremental.zambia,1.36,True,
+cowidev.vax.incremental.serbia,6.02,True,
+cowidev.vax.incremental.south_africa,9.62,True,
+cowidev.vax.incremental.spain,1.64,True,
+cowidev.vax.incremental.sri_lanka,10.09,False,Unknown column(s) found: {'Unnamed: 3'}
+cowidev.vax.incremental.suriname,13.52,True,
+cowidev.vax.incremental.taiwan,12.02,True,
+cowidev.vax.incremental.thailand,2.0,True,
+cowidev.vax.incremental.turkey,0.59,True,
+cowidev.vax.incremental.united_arab_emirates,17.44,True,
+cowidev.vax.incremental.vietnam,12.95,False,'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.who,3.84,True,
+cowidev.vax.incremental.zambia,1.02,True,
