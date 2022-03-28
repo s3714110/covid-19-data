@@ -168,7 +168,7 @@ fi
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-python -m cowidev.hosp grapher-db
+cowid hosp grapher-db
 
 # =====================================================================
 # UK subnational data
