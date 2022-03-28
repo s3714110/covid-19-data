@@ -158,8 +158,8 @@ hour=$(date +%H)
 if [ $hour == 07 ] || [ $hour == 16 ] ; then
   # Download CSV
   echo "Generating hospital & ICU export..."
-  python -m cowidev.hosp etl
-  python -m cowidev.hosp grapher-file
+  cowid hosp generate
+  cowid hosp grapher-io
   git add .
   git commit -m "data(hosp): automated update"
   git push
