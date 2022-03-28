@@ -30,6 +30,7 @@ class SouthKorea(CountryTestBase):
             "https://docs.google.com/spreadsheets/d/10c9jNi8VnV0YYCfV_7AZrzBY5l18dOFHEJMIJsP4THI/export?format=csv&gid=512078862",
             usecols=[
                 "Date",
+                "Total",
                 "선별진료소(통합)",
                 "의심신고 검사자 수",
                 "임시선별검사소 검사건수",
@@ -40,10 +41,13 @@ class SouthKorea(CountryTestBase):
         df = df.assign(Date=clean_date_series(df["Date"], "%Y-%m-%d"))
         # 2021-04-21 < data < 2021-10-25; 'Number of testing at temporary screening stations' (임시선별검사소 검사건수) = 'Number of inspections by temporary screening and inspection centers in the metropolitan area'
         # (수도권 임시선별검사소 검사건수) + 'Non-Metropolitan Temporary Screening Center' (비수도권 임시선별검사소)
-        df.iloc[:, 3].fillna((df.iloc[:, 4] + df.iloc[:, 5]), inplace=True)
+        df.iloc[:, 4].fillna((df.iloc[:, 5] + df.iloc[:, 6]), inplace=True)
 
         ## 2020-12-17 < data < 2022-02-08; 'Number of testing at screening stations' (Aggregate) (선별진료소(통합)) = 'Number of suspicious report testing' (의심신고 검사자 수) + 'Number of testing at temporary screening stations' (임시선별검사소 검사건수)
-        df.iloc[:, 1].fillna((df.iloc[:, 2] + df.iloc[:, 3]), inplace=True)
+        df.iloc[:, 2].fillna((df.iloc[:, 3] + df.iloc[:, 4]), inplace=True)
+
+        ## Use 'total' after 2022-02-06
+        df.loc[df["Date"] > "2022-02-06", "선별진료소(통합)"] = df["Total"]
 
         df["Daily change in cumulative total"] = df["선별진료소(통합)"]
         return df[["Date", "Daily change in cumulative total"]]
