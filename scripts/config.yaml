@@ -19,7 +19,7 @@ pipeline:
         # - Faeroe Islands
         - Austria  # Move to ECDC
         # - Denmark  # Move to ECDC
-        - Colombia  # Move to PAHO
+        # - Colombia  # Move to PAHO
     process:
       skip_complete:
         - Pitcairn

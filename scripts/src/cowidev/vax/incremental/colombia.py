@@ -28,7 +28,9 @@ class Colombia:
                     total_vaccinations = row[-1]
                     if type(total_vaccinations) != int:
                         total_vaccinations = clean_count(total_vaccinations)
-                elif value == "Total dosis acumuladas segundas dosis":
+                    date_raw = row[-2]
+                    date_str = clean_date(date_raw, "Total dosis aplicadas al %d-%m-%Y")
+                elif value == "Total dosis segundas dosis acumuladas":
                     second_doses = row[-1]
                     if type(second_doses) != int:
                         second_doses = clean_count(second_doses)
@@ -39,10 +41,7 @@ class Colombia:
                 elif value == "Aplicación Refuerzos":
                     boosters = row[-1]
                     if type(boosters) != int:
-                        boosters = clean_count(boosters)
-                elif "Dosis Entregadas a" in str(value):
-                    date_raw = row[-1]
-                    date_str = clean_date(date_raw, "%d/%m/%Y")
+                        boosters = clean_count(boosters)                    
         first_doses = total_vaccinations - second_doses - unique_doses - boosters
         people_vaccinated = first_doses + unique_doses
         people_fully_vaccinated = second_doses + unique_doses
