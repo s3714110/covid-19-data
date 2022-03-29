@@ -47,14 +47,16 @@ class Denmark(CountryVaxBase):
         if bfill:
             df_bfill = self._read_single_shots_bfill(index=gap_days)
             df = df.merge(df_bfill, on="date", how="left")
-            df = df.assign(single_shots=df.single_shots_x.fillna(df.single_shots_y))
+            df = df.assign(
+                single_shots=df.single_shots_x.fillna(df.single_shots_y),
+                single_shots_2nd=df.single_shots_2nd_x.fillna(df.single_shots_2nd_y),
+            )
         return df
 
     def _load_data(self, path):
-        df_ppl = self._read_people_vax(path)
-        df_boosters = self._read_boosters(path)
+        df = self._read_data(path)
         df_ss = pd.DataFrame([self._read_single_shots_daily(path)])
-        df = df_ppl.merge(df_boosters, on="date", how="left").merge(df_ss, on="date", how="left")
+        df = df.merge(df_ss, on="date", how="left")
         return df
 
     def _parse_link_zip(self) -> str:
@@ -68,9 +70,8 @@ class Denmark(CountryVaxBase):
         z = zipfile.ZipFile(io.BytesIO(r.content))
         z.extractall(output_path)
 
-    def _read_people_vax(self, path) -> pd.DataFrame:
-        """Read firstly & fully vaccinated people"""
-        path = _build_filepath(path, "FoersteVacc_FaerdigVacc_region_aldgrp_dag.csv")
+    def _read_data(self, path) -> pd.DataFrame:
+        path = _build_filepath(path, "Vaccine_dato.csv")
 
         df = (
             _load_datafile(path)
@@ -79,39 +80,28 @@ class Denmark(CountryVaxBase):
                     "Dato": "date",
                     "Antal 1. stik": "people_vaccinated",
                     "Antal 2. stik": "people_fully_vaccinated",
+                    "Antal 3. stik": "total_boosters",
                 }
             )
-            .groupby("date", as_index=False)
-            .sum()
+            # .groupby("date", as_index=False)
+            # .sum()
             .sort_values("date")
             .transform(
                 {
                     "date": lambda x: x,
                     "people_vaccinated": lambda x: x.cumsum(),
                     "people_fully_vaccinated": lambda x: x.cumsum(),
+                    "total_boosters": lambda x: x.cumsum(),
                 }
             )
         )
         return df
 
-    def _read_boosters(self, path) -> pd.DataFrame:
-        """Read booster doses."""
-        path = _build_filepath(path, "Revacc1_region_dag.csv")
-        df_boosters = (
-            _load_datafile(path)
-            .rename(columns={"3. stik dato": "date", "Antal 3. stik": "total_boosters"})
-            .groupby("date", as_index=False)
-            .sum()
-            .sort_values("date")
-            .transform({"date": lambda x: x, "total_boosters": lambda x: x.cumsum()})
-        )
-        return df_boosters
-
     def _read_single_shots_bfill(self, index=None, date_limit=None):
         """Read single shots using bfill (iterates over old links)"""
         links = self._get_file_links_bfill(index=index, date_limit=date_limit)
         records = []
-        for link in links:
+        for link in links[:1]:
             print("Back filling (single shots)", link)
             with tempfile.TemporaryDirectory() as tf:
                 self._download_and_extract_data(link, tf)
@@ -121,29 +111,26 @@ class Denmark(CountryVaxBase):
 
     def _read_single_shots_daily(self, path) -> dict:
         # single shots
-        path_ = _build_filepath(path, "Vaccinationstyper_regioner.csv")
+        path_ = _build_filepath(path, "Vaccine_type_region.csv")
         df = _load_datafile(path_)
         msk = df["Vaccinenavn"].replace(self.vaccines_mapping).isin(VACCINES_ONE_DOSE)
-        # Check 1
-        # assert (df.loc[msk, "Antal første vacc."] == df.loc[msk, "Antal faerdigvacc."]).all()
-        if "Antal 1. stik" in df:
-            single_shots = df.loc[msk, "Antal 1. stik"].sum()
-        else:
-            single_shots = df.loc[msk, "Antal første vacc."].sum()
-        # Check 2
+        single_shots = df.loc[msk, "Antal 1. stik"].sum()
+        single_shots_2nd = df.loc[msk, "Antal 2. stik"].sum()
+        # Check vaccine names
         vaccines_wrong = set(df.Vaccinenavn).difference(self.vaccines_mapping)
         if vaccines_wrong:
             raise ValueError(f"Unknown vaccine(s) {vaccines_wrong}")
-        regions_wrong = set(df.Regionsnavn).difference(self.regions_accepted)
+        regions_wrong = set(df.Region).difference(self.regions_accepted)
         if vaccines_wrong:
             raise ValueError(f"Unknown region(s) {regions_wrong}")
         # Load date
-        path_ = _build_filepath(path, "FaerdigVacc_daekning_DK_prdag.csv")
+        path_ = _build_filepath(path, "Vaccine_dato.csv")
         df = _load_datafile(path_)
-        date = df.Vaccinedato.max()
+        date = df.Dato.max()
         return {
             "date": date,
             "single_shots": single_shots,
+            "single_shots_2nd": single_shots_2nd,
         }
 
     def _get_file_links_bfill(self, index=None, date_limit=None):
@@ -173,12 +160,25 @@ class Denmark(CountryVaxBase):
     def pipe_metrics(self, df: pd.DataFrame, df_current: pd.DataFrame) -> pd.DataFrame:
         # Merge current data with new
         df = df.merge(df_current, on="date", how="left")
-        df = df.assign(single_shots=df.single_shots.fillna(df.single_shots_current))
         df = df.assign(
-            total_vaccinations=df.people_vaccinated.ffill().fillna(0)
-            + df.people_fully_vaccinated.ffill().fillna(0)
-            + df.total_boosters.ffill().fillna(0)
-            - df.single_shots.ffill().fillna(0)
+            single_shots=df.single_shots.fillna(df.single_shots_current),
+            single_shots_2nd=df.single_shots_2nd.fillna(df.single_shots_2nd_current),
+        )
+        df = df.assign(
+            total_vaccinations=(
+                df.people_vaccinated.ffill().fillna(0)  # first dose + single shots
+                + df.people_fully_vaccinated.ffill().fillna(0)  # second doses (inc. from single shot vax)
+                + df.total_boosters.ffill().fillna(0)  # third dose
+            ),
+            people_fully_vaccinated=(
+                df.people_fully_vaccinated.ffill().fillna(0)  # second doses (inc. from single shot vax)
+                + df.single_shots.ffill().fillna(0)  # single shots
+                - df.single_shots_2nd.ffill().fillna(0)  # secon doses of single shots
+            ),
+            total_boosters=(
+                df.total_boosters.ffill().fillna(0)  # single shots
+                + df.single_shots_2nd.ffill().fillna(0)  # secon doses of single shots
+            ),
         )
         return df
 
@@ -200,13 +200,14 @@ class Denmark(CountryVaxBase):
                     "people_fully_vaccinated",
                     "total_boosters",
                     "single_shots",
+                    "single_shots_2nd",
                 ]
             ]
         )
 
     def read_current(self):
-        return pd.read_csv(self.output_path, usecols=["date", "single_shots"]).rename(
-            columns={"single_shots": "single_shots_current"}
+        return pd.read_csv(self.output_path, usecols=["date", "single_shots", "single_shots_2nd"]).rename(
+            columns={"single_shots": "single_shots_current", "single_shots_2nd": "single_shots_2nd_current"}
         )
 
     def _get_num_gap_days(self, df_current):
@@ -217,6 +218,7 @@ class Denmark(CountryVaxBase):
     def export(self):
         # Read current
         df_current = self.read_current()
+        print(df_current.columns)
         index = self._get_num_gap_days(df_current)
         # Read new
         df = self.read(index).pipe(self.pipeline, df_current)
