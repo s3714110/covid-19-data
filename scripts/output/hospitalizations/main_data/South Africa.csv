@@ -1,102 +1,304 @@
-date,value,indicator,entity
-2020-04-25,269,Weekly new hospital admissions,South Africa
-2020-05-02,390,Weekly new hospital admissions,South Africa
-2020-05-09,462,Weekly new hospital admissions,South Africa
-2020-05-16,1081,Weekly new hospital admissions,South Africa
-2020-05-23,1426,Weekly new hospital admissions,South Africa
-2020-05-30,1991,Weekly new hospital admissions,South Africa
-2020-06-06,2328,Weekly new hospital admissions,South Africa
-2020-06-13,3025,Weekly new hospital admissions,South Africa
-2020-06-20,4344,Weekly new hospital admissions,South Africa
-2020-06-27,5940,Weekly new hospital admissions,South Africa
-2020-07-04,7241,Weekly new hospital admissions,South Africa
-2020-07-11,8256,Weekly new hospital admissions,South Africa
-2020-07-18,8864,Weekly new hospital admissions,South Africa
-2020-07-25,8608,Weekly new hospital admissions,South Africa
-2020-08-01,7342,Weekly new hospital admissions,South Africa
-2020-08-08,6023,Weekly new hospital admissions,South Africa
-2020-08-15,4482,Weekly new hospital admissions,South Africa
-2020-08-22,3720,Weekly new hospital admissions,South Africa
-2020-08-29,2912,Weekly new hospital admissions,South Africa
-2020-09-05,2506,Weekly new hospital admissions,South Africa
-2020-09-12,2271,Weekly new hospital admissions,South Africa
-2020-09-19,1969,Weekly new hospital admissions,South Africa
-2020-09-26,1863,Weekly new hospital admissions,South Africa
-2020-10-03,1700,Weekly new hospital admissions,South Africa
-2020-10-10,1912,Weekly new hospital admissions,South Africa
-2020-10-17,1882,Weekly new hospital admissions,South Africa
-2020-10-24,1998,Weekly new hospital admissions,South Africa
-2020-10-31,2091,Weekly new hospital admissions,South Africa
-2020-11-07,2172,Weekly new hospital admissions,South Africa
-2020-11-14,2512,Weekly new hospital admissions,South Africa
-2020-11-21,3131,Weekly new hospital admissions,South Africa
-2020-11-28,3820,Weekly new hospital admissions,South Africa
-2020-12-05,5022,Weekly new hospital admissions,South Africa
-2020-12-12,7541,Weekly new hospital admissions,South Africa
-2020-12-19,10079,Weekly new hospital admissions,South Africa
-2020-12-26,12863,Weekly new hospital admissions,South Africa
-2021-01-02,16077,Weekly new hospital admissions,South Africa
-2021-01-09,18184,Weekly new hospital admissions,South Africa
-2021-01-16,16857,Weekly new hospital admissions,South Africa
-2021-01-23,11889,Weekly new hospital admissions,South Africa
-2021-01-30,7328,Weekly new hospital admissions,South Africa
-2021-02-06,5284,Weekly new hospital admissions,South Africa
-2021-02-13,3922,Weekly new hospital admissions,South Africa
-2021-02-20,3025,Weekly new hospital admissions,South Africa
-2021-02-27,2435,Weekly new hospital admissions,South Africa
-2021-03-06,2133,Weekly new hospital admissions,South Africa
-2021-03-13,1946,Weekly new hospital admissions,South Africa
-2021-03-20,1912,Weekly new hospital admissions,South Africa
-2021-03-27,1758,Weekly new hospital admissions,South Africa
-2021-04-03,1666,Weekly new hospital admissions,South Africa
-2021-04-10,1761,Weekly new hospital admissions,South Africa
-2021-04-17,1971,Weekly new hospital admissions,South Africa
-2021-04-24,2173,Weekly new hospital admissions,South Africa
-2021-05-01,2246,Weekly new hospital admissions,South Africa
-2021-05-08,2577,Weekly new hospital admissions,South Africa
-2021-05-15,2970,Weekly new hospital admissions,South Africa
-2021-05-22,3667,Weekly new hospital admissions,South Africa
-2021-05-29,4418,Weekly new hospital admissions,South Africa
-2021-06-05,4982,Weekly new hospital admissions,South Africa
-2021-06-12,6530,Weekly new hospital admissions,South Africa
-2021-06-19,8083,Weekly new hospital admissions,South Africa
-2021-06-26,10635,Weekly new hospital admissions,South Africa
-2021-07-03,12719,Weekly new hospital admissions,South Africa
-2021-07-10,14728,Weekly new hospital admissions,South Africa
-2021-07-17,14282,Weekly new hospital admissions,South Africa
-2021-07-24,13144,Weekly new hospital admissions,South Africa
-2021-07-31,11520,Weekly new hospital admissions,South Africa
-2021-08-07,10402,Weekly new hospital admissions,South Africa
-2021-08-14,9509,Weekly new hospital admissions,South Africa
-2021-08-21,9835,Weekly new hospital admissions,South Africa
-2021-08-28,8609,Weekly new hospital admissions,South Africa
-2021-09-04,6901,Weekly new hospital admissions,South Africa
-2021-09-11,5519,Weekly new hospital admissions,South Africa
-2021-09-18,3846,Weekly new hospital admissions,South Africa
-2021-09-25,2559,Weekly new hospital admissions,South Africa
-2021-10-02,2062,Weekly new hospital admissions,South Africa
-2021-10-09,1474,Weekly new hospital admissions,South Africa
-2021-10-16,1170,Weekly new hospital admissions,South Africa
-2021-10-23,855,Weekly new hospital admissions,South Africa
-2021-10-30,630,Weekly new hospital admissions,South Africa
-2021-11-06,608,Weekly new hospital admissions,South Africa
-2021-11-13,613,Weekly new hospital admissions,South Africa
-2021-11-20,783,Weekly new hospital admissions,South Africa
-2021-11-27,1575,Weekly new hospital admissions,South Africa
-2021-12-04,4208,Weekly new hospital admissions,South Africa
-2021-12-11,8195,Weekly new hospital admissions,South Africa
-2021-12-18,9788,Weekly new hospital admissions,South Africa
-2021-12-25,9778,Weekly new hospital admissions,South Africa
-2022-01-01,8430,Weekly new hospital admissions,South Africa
-2022-01-08,7289,Weekly new hospital admissions,South Africa
-2022-01-15,5350,Weekly new hospital admissions,South Africa
-2022-01-22,3589,Weekly new hospital admissions,South Africa
-2022-01-29,3060,Weekly new hospital admissions,South Africa
-2022-02-05,2472,Weekly new hospital admissions,South Africa
-2022-02-12,2132,Weekly new hospital admissions,South Africa
-2022-02-19,1795,Weekly new hospital admissions,South Africa
-2022-02-26,1520,Weekly new hospital admissions,South Africa
-2022-03-05,1204,Weekly new hospital admissions,South Africa
-2022-03-12,1069,Weekly new hospital admissions,South Africa
-2022-03-19,852,Weekly new hospital admissions,South Africa
-2022-03-26,548,Weekly new hospital admissions,South Africa
+date,indicator,value,entity
+2020-04-25,Weekly new hospital admissions,269.0,South Africa
+2020-05-02,Weekly new hospital admissions,390.0,South Africa
+2020-05-09,Weekly new hospital admissions,462.0,South Africa
+2020-05-16,Weekly new hospital admissions,1081.0,South Africa
+2020-05-23,Weekly new hospital admissions,1426.0,South Africa
+2020-05-30,Weekly new hospital admissions,1991.0,South Africa
+2020-06-06,Weekly new hospital admissions,2328.0,South Africa
+2020-06-13,Weekly new hospital admissions,3025.0,South Africa
+2020-06-20,Weekly new hospital admissions,4344.0,South Africa
+2020-06-27,Weekly new hospital admissions,5940.0,South Africa
+2020-07-04,Weekly new hospital admissions,7241.0,South Africa
+2020-07-11,Weekly new hospital admissions,8256.0,South Africa
+2020-07-18,Weekly new hospital admissions,8864.0,South Africa
+2020-07-25,Weekly new hospital admissions,8608.0,South Africa
+2020-08-01,Weekly new hospital admissions,7342.0,South Africa
+2020-08-08,Weekly new hospital admissions,6023.0,South Africa
+2020-08-15,Weekly new hospital admissions,4482.0,South Africa
+2020-08-22,Weekly new hospital admissions,3720.0,South Africa
+2020-08-29,Weekly new hospital admissions,2912.0,South Africa
+2020-09-05,Weekly new hospital admissions,2506.0,South Africa
+2020-09-12,Weekly new hospital admissions,2271.0,South Africa
+2020-09-19,Weekly new hospital admissions,1969.0,South Africa
+2020-09-26,Weekly new hospital admissions,1863.0,South Africa
+2020-10-03,Weekly new hospital admissions,1700.0,South Africa
+2020-10-10,Weekly new hospital admissions,1912.0,South Africa
+2020-10-17,Weekly new hospital admissions,1882.0,South Africa
+2020-10-24,Weekly new hospital admissions,1998.0,South Africa
+2020-10-31,Weekly new hospital admissions,2091.0,South Africa
+2020-11-07,Weekly new hospital admissions,2172.0,South Africa
+2020-11-14,Weekly new hospital admissions,2512.0,South Africa
+2020-11-21,Weekly new hospital admissions,3131.0,South Africa
+2020-11-28,Weekly new hospital admissions,3820.0,South Africa
+2020-12-05,Weekly new hospital admissions,5022.0,South Africa
+2020-12-12,Weekly new hospital admissions,7541.0,South Africa
+2020-12-19,Weekly new hospital admissions,10079.0,South Africa
+2020-12-26,Weekly new hospital admissions,12863.0,South Africa
+2021-01-02,Weekly new hospital admissions,16077.0,South Africa
+2021-01-09,Weekly new hospital admissions,18184.0,South Africa
+2021-01-16,Weekly new hospital admissions,16857.0,South Africa
+2021-01-23,Weekly new hospital admissions,11889.0,South Africa
+2021-01-30,Weekly new hospital admissions,7328.0,South Africa
+2021-02-06,Weekly new hospital admissions,5284.0,South Africa
+2021-02-13,Weekly new hospital admissions,3922.0,South Africa
+2021-02-20,Weekly new hospital admissions,3025.0,South Africa
+2021-02-27,Weekly new hospital admissions,2435.0,South Africa
+2021-03-06,Weekly new hospital admissions,2133.0,South Africa
+2021-03-13,Weekly new hospital admissions,1946.0,South Africa
+2021-03-20,Weekly new hospital admissions,1912.0,South Africa
+2021-03-27,Weekly new hospital admissions,1758.0,South Africa
+2021-04-03,Weekly new hospital admissions,1666.0,South Africa
+2021-04-10,Weekly new hospital admissions,1761.0,South Africa
+2021-04-17,Weekly new hospital admissions,1971.0,South Africa
+2021-04-24,Weekly new hospital admissions,2173.0,South Africa
+2021-05-01,Weekly new hospital admissions,2246.0,South Africa
+2021-05-08,Weekly new hospital admissions,2577.0,South Africa
+2021-05-15,Weekly new hospital admissions,2970.0,South Africa
+2021-05-22,Weekly new hospital admissions,3667.0,South Africa
+2021-05-29,Weekly new hospital admissions,4418.0,South Africa
+2021-06-05,Weekly new hospital admissions,4982.0,South Africa
+2021-06-12,Weekly new hospital admissions,6530.0,South Africa
+2021-06-19,Weekly new hospital admissions,8083.0,South Africa
+2021-06-26,Weekly new hospital admissions,10635.0,South Africa
+2021-07-03,Weekly new hospital admissions,12719.0,South Africa
+2021-07-10,Weekly new hospital admissions,14728.0,South Africa
+2021-07-17,Weekly new hospital admissions,14282.0,South Africa
+2021-07-24,Weekly new hospital admissions,13144.0,South Africa
+2021-07-31,Weekly new hospital admissions,11520.0,South Africa
+2021-08-07,Weekly new hospital admissions,10402.0,South Africa
+2021-08-14,Weekly new hospital admissions,9509.0,South Africa
+2021-08-21,Weekly new hospital admissions,9835.0,South Africa
+2021-08-28,Weekly new hospital admissions,8609.0,South Africa
+2021-09-04,Weekly new hospital admissions,6901.0,South Africa
+2021-09-11,Weekly new hospital admissions,5519.0,South Africa
+2021-09-18,Weekly new hospital admissions,3846.0,South Africa
+2021-09-25,Weekly new hospital admissions,2559.0,South Africa
+2021-10-02,Weekly new hospital admissions,2062.0,South Africa
+2021-10-09,Weekly new hospital admissions,1474.0,South Africa
+2021-10-16,Weekly new hospital admissions,1170.0,South Africa
+2021-10-23,Weekly new hospital admissions,855.0,South Africa
+2021-10-30,Weekly new hospital admissions,630.0,South Africa
+2021-11-06,Weekly new hospital admissions,608.0,South Africa
+2021-11-13,Weekly new hospital admissions,613.0,South Africa
+2021-11-20,Weekly new hospital admissions,783.0,South Africa
+2021-11-27,Weekly new hospital admissions,1575.0,South Africa
+2021-12-04,Weekly new hospital admissions,4208.0,South Africa
+2021-12-11,Weekly new hospital admissions,8195.0,South Africa
+2021-12-18,Weekly new hospital admissions,9788.0,South Africa
+2021-12-25,Weekly new hospital admissions,9778.0,South Africa
+2022-01-01,Weekly new hospital admissions,8430.0,South Africa
+2022-01-08,Weekly new hospital admissions,7289.0,South Africa
+2022-01-15,Weekly new hospital admissions,5350.0,South Africa
+2022-01-22,Weekly new hospital admissions,3589.0,South Africa
+2022-01-29,Weekly new hospital admissions,3060.0,South Africa
+2022-02-05,Weekly new hospital admissions,2472.0,South Africa
+2022-02-12,Weekly new hospital admissions,2132.0,South Africa
+2022-02-19,Weekly new hospital admissions,1795.0,South Africa
+2022-02-26,Weekly new hospital admissions,1520.0,South Africa
+2022-03-05,Weekly new hospital admissions,1204.0,South Africa
+2022-03-12,Weekly new hospital admissions,1069.0,South Africa
+2022-03-19,Weekly new hospital admissions,852.0,South Africa
+2022-03-26,Weekly new hospital admissions,548.0,South Africa
+2020-04-25,Daily hospital occupancy,260.0,South Africa
+2020-05-02,Daily hospital occupancy,328.0,South Africa
+2020-05-09,Daily hospital occupancy,378.0,South Africa
+2020-05-16,Daily hospital occupancy,566.0,South Africa
+2020-05-23,Daily hospital occupancy,790.0,South Africa
+2020-05-30,Daily hospital occupancy,1424.0,South Africa
+2020-06-06,Daily hospital occupancy,1807.0,South Africa
+2020-06-13,Daily hospital occupancy,2446.0,South Africa
+2020-06-20,Daily hospital occupancy,3047.0,South Africa
+2020-06-27,Daily hospital occupancy,4068.0,South Africa
+2020-07-04,Daily hospital occupancy,5675.0,South Africa
+2020-07-11,Daily hospital occupancy,6648.0,South Africa
+2020-07-18,Daily hospital occupancy,6790.0,South Africa
+2020-07-25,Daily hospital occupancy,8200.0,South Africa
+2020-08-01,Daily hospital occupancy,10528.0,South Africa
+2020-08-08,Daily hospital occupancy,9577.0,South Africa
+2020-08-15,Daily hospital occupancy,8500.0,South Africa
+2020-08-22,Daily hospital occupancy,7461.0,South Africa
+2020-08-29,Daily hospital occupancy,7233.0,South Africa
+2020-09-05,Daily hospital occupancy,5975.0,South Africa
+2020-09-12,Daily hospital occupancy,5706.0,South Africa
+2020-09-19,Daily hospital occupancy,4772.0,South Africa
+2020-09-26,Daily hospital occupancy,4634.0,South Africa
+2020-10-03,Daily hospital occupancy,4185.0,South Africa
+2020-10-10,Daily hospital occupancy,6176.0,South Africa
+2020-10-17,Daily hospital occupancy,6176.0,South Africa
+2020-10-24,Daily hospital occupancy,3992.0,South Africa
+2020-10-31,Daily hospital occupancy,4647.0,South Africa
+2020-11-07,Daily hospital occupancy,4832.0,South Africa
+2020-11-14,Daily hospital occupancy,5016.0,South Africa
+2020-11-21,Daily hospital occupancy,5281.0,South Africa
+2020-11-28,Daily hospital occupancy,5281.0,South Africa
+2020-12-05,Daily hospital occupancy,5281.0,South Africa
+2020-12-12,Daily hospital occupancy,6151.0,South Africa
+2020-12-19,Daily hospital occupancy,6151.0,South Africa
+2020-12-26,Daily hospital occupancy,7777.0,South Africa
+2021-01-02,Daily hospital occupancy,12871.0,South Africa
+2021-01-09,Daily hospital occupancy,14995.0,South Africa
+2021-01-16,Daily hospital occupancy,17222.0,South Africa
+2021-01-23,Daily hospital occupancy,16788.0,South Africa
+2021-01-30,Daily hospital occupancy,14889.0,South Africa
+2021-02-06,Daily hospital occupancy,12191.0,South Africa
+2021-02-13,Daily hospital occupancy,10258.0,South Africa
+2021-02-20,Daily hospital occupancy,8906.0,South Africa
+2021-02-27,Daily hospital occupancy,7637.0,South Africa
+2021-03-06,Daily hospital occupancy,6119.0,South Africa
+2021-03-13,Daily hospital occupancy,4943.0,South Africa
+2021-03-20,Daily hospital occupancy,4088.0,South Africa
+2021-03-27,Daily hospital occupancy,3995.0,South Africa
+2021-04-03,Daily hospital occupancy,3769.0,South Africa
+2021-04-10,Daily hospital occupancy,3614.0,South Africa
+2021-04-17,Daily hospital occupancy,3566.0,South Africa
+2021-04-24,Daily hospital occupancy,3677.0,South Africa
+2021-05-01,Daily hospital occupancy,3750.0,South Africa
+2021-05-08,Daily hospital occupancy,4080.0,South Africa
+2021-05-15,Daily hospital occupancy,4275.0,South Africa
+2021-05-22,Daily hospital occupancy,4829.0,South Africa
+2021-05-29,Daily hospital occupancy,5561.0,South Africa
+2021-06-05,Daily hospital occupancy,6593.0,South Africa
+2021-06-12,Daily hospital occupancy,7445.0,South Africa
+2021-06-19,Daily hospital occupancy,9323.0,South Africa
+2021-06-26,Daily hospital occupancy,11149.0,South Africa
+2021-07-03,Daily hospital occupancy,13846.0,South Africa
+2021-07-10,Daily hospital occupancy,16321.0,South Africa
+2021-07-17,Daily hospital occupancy,16819.0,South Africa
+2021-07-24,Daily hospital occupancy,17064.0,South Africa
+2021-07-31,Daily hospital occupancy,15923.0,South Africa
+2021-08-07,Daily hospital occupancy,14954.0,South Africa
+2021-08-14,Daily hospital occupancy,14402.0,South Africa
+2021-08-21,Daily hospital occupancy,13642.0,South Africa
+2021-08-28,Daily hospital occupancy,13250.0,South Africa
+2021-09-04,Daily hospital occupancy,11901.0,South Africa
+2021-09-11,Daily hospital occupancy,10629.0,South Africa
+2021-09-18,Daily hospital occupancy,8742.0,South Africa
+2021-09-25,Daily hospital occupancy,7218.0,South Africa
+2021-10-02,Daily hospital occupancy,6340.0,South Africa
+2021-10-09,Daily hospital occupancy,5637.0,South Africa
+2021-10-16,Daily hospital occupancy,4986.0,South Africa
+2021-10-23,Daily hospital occupancy,4323.0,South Africa
+2021-10-30,Daily hospital occupancy,3857.0,South Africa
+2021-11-06,Daily hospital occupancy,3827.0,South Africa
+2021-11-13,Daily hospital occupancy,3629.0,South Africa
+2021-11-20,Daily hospital occupancy,2685.0,South Africa
+2021-11-27,Daily hospital occupancy,2229.0,South Africa
+2021-12-04,Daily hospital occupancy,3255.0,South Africa
+2021-12-11,Daily hospital occupancy,5434.0,South Africa
+2021-12-18,Daily hospital occupancy,7915.0,South Africa
+2021-12-25,Daily hospital occupancy,9114.0,South Africa
+2022-01-01,Daily hospital occupancy,9378.0,South Africa
+2022-01-08,Daily hospital occupancy,8948.0,South Africa
+2022-01-15,Daily hospital occupancy,8096.0,South Africa
+2022-01-22,Daily hospital occupancy,6659.0,South Africa
+2022-01-29,Daily hospital occupancy,5866.0,South Africa
+2022-02-05,Daily hospital occupancy,4940.0,South Africa
+2022-02-12,Daily hospital occupancy,4393.0,South Africa
+2022-02-19,Daily hospital occupancy,3717.0,South Africa
+2022-02-26,Daily hospital occupancy,3510.0,South Africa
+2022-03-05,Daily hospital occupancy,3655.0,South Africa
+2022-03-12,Daily hospital occupancy,2399.0,South Africa
+2022-03-19,Daily hospital occupancy,2020.0,South Africa
+2022-03-26,Daily hospital occupancy,1965.0,South Africa
+2020-04-25,Daily ICU occupancy,19.0,South Africa
+2020-05-02,Daily ICU occupancy,42.0,South Africa
+2020-05-09,Daily ICU occupancy,65.0,South Africa
+2020-05-16,Daily ICU occupancy,121.0,South Africa
+2020-05-23,Daily ICU occupancy,167.0,South Africa
+2020-05-30,Daily ICU occupancy,202.0,South Africa
+2020-06-06,Daily ICU occupancy,237.0,South Africa
+2020-06-13,Daily ICU occupancy,304.0,South Africa
+2020-06-20,Daily ICU occupancy,480.0,South Africa
+2020-06-27,Daily ICU occupancy,654.0,South Africa
+2020-07-04,Daily ICU occupancy,870.0,South Africa
+2020-07-11,Daily ICU occupancy,878.0,South Africa
+2020-07-18,Daily ICU occupancy,1167.0,South Africa
+2020-07-25,Daily ICU occupancy,2634.0,South Africa
+2020-08-01,Daily ICU occupancy,2681.0,South Africa
+2020-08-08,Daily ICU occupancy,1515.0,South Africa
+2020-08-15,Daily ICU occupancy,1444.0,South Africa
+2020-08-22,Daily ICU occupancy,1291.0,South Africa
+2020-08-29,Daily ICU occupancy,1225.0,South Africa
+2020-09-05,Daily ICU occupancy,979.0,South Africa
+2020-09-12,Daily ICU occupancy,949.0,South Africa
+2020-09-19,Daily ICU occupancy,712.0,South Africa
+2020-09-26,Daily ICU occupancy,698.0,South Africa
+2020-10-03,Daily ICU occupancy,600.0,South Africa
+2020-10-10,Daily ICU occupancy,530.0,South Africa
+2020-10-17,Daily ICU occupancy,530.0,South Africa
+2020-10-24,Daily ICU occupancy,549.0,South Africa
+2020-10-31,Daily ICU occupancy,469.0,South Africa
+2020-11-07,Daily ICU occupancy,475.0,South Africa
+2020-11-14,Daily ICU occupancy,422.0,South Africa
+2020-11-21,Daily ICU occupancy,451.0,South Africa
+2020-11-28,Daily ICU occupancy,451.0,South Africa
+2020-12-05,Daily ICU occupancy,451.0,South Africa
+2020-12-12,Daily ICU occupancy,764.0,South Africa
+2020-12-19,Daily ICU occupancy,764.0,South Africa
+2020-12-26,Daily ICU occupancy,764.0,South Africa
+2021-01-02,Daily ICU occupancy,1808.0,South Africa
+2021-01-09,Daily ICU occupancy,2054.0,South Africa
+2021-01-16,Daily ICU occupancy,2437.0,South Africa
+2021-01-23,Daily ICU occupancy,2460.0,South Africa
+2021-01-30,Daily ICU occupancy,2296.0,South Africa
+2021-02-06,Daily ICU occupancy,1957.0,South Africa
+2021-02-13,Daily ICU occupancy,1641.0,South Africa
+2021-02-20,Daily ICU occupancy,1352.0,South Africa
+2021-02-27,Daily ICU occupancy,1129.0,South Africa
+2021-03-06,Daily ICU occupancy,925.0,South Africa
+2021-03-13,Daily ICU occupancy,804.0,South Africa
+2021-03-20,Daily ICU occupancy,654.0,South Africa
+2021-03-27,Daily ICU occupancy,654.0,South Africa
+2021-04-03,Daily ICU occupancy,647.0,South Africa
+2021-04-10,Daily ICU occupancy,620.0,South Africa
+2021-04-17,Daily ICU occupancy,592.0,South Africa
+2021-04-24,Daily ICU occupancy,610.0,South Africa
+2021-05-01,Daily ICU occupancy,630.0,South Africa
+2021-05-08,Daily ICU occupancy,698.0,South Africa
+2021-05-15,Daily ICU occupancy,757.0,South Africa
+2021-05-22,Daily ICU occupancy,882.0,South Africa
+2021-05-29,Daily ICU occupancy,1038.0,South Africa
+2021-06-05,Daily ICU occupancy,1241.0,South Africa
+2021-06-12,Daily ICU occupancy,1425.0,South Africa
+2021-06-19,Daily ICU occupancy,1705.0,South Africa
+2021-06-26,Daily ICU occupancy,1868.0,South Africa
+2021-07-03,Daily ICU occupancy,2236.0,South Africa
+2021-07-10,Daily ICU occupancy,2495.0,South Africa
+2021-07-17,Daily ICU occupancy,2370.0,South Africa
+2021-07-24,Daily ICU occupancy,2117.0,South Africa
+2021-07-31,Daily ICU occupancy,2390.0,South Africa
+2021-08-07,Daily ICU occupancy,2209.0,South Africa
+2021-08-14,Daily ICU occupancy,2182.0,South Africa
+2021-08-21,Daily ICU occupancy,1906.0,South Africa
+2021-08-28,Daily ICU occupancy,1716.0,South Africa
+2021-09-04,Daily ICU occupancy,1651.0,South Africa
+2021-09-11,Daily ICU occupancy,1510.0,South Africa
+2021-09-18,Daily ICU occupancy,1222.0,South Africa
+2021-09-25,Daily ICU occupancy,1056.0,South Africa
+2021-10-02,Daily ICU occupancy,924.0,South Africa
+2021-10-09,Daily ICU occupancy,835.0,South Africa
+2021-10-16,Daily ICU occupancy,725.0,South Africa
+2021-10-23,Daily ICU occupancy,589.0,South Africa
+2021-10-30,Daily ICU occupancy,521.0,South Africa
+2021-11-06,Daily ICU occupancy,490.0,South Africa
+2021-11-13,Daily ICU occupancy,414.0,South Africa
+2021-11-20,Daily ICU occupancy,264.0,South Africa
+2021-11-27,Daily ICU occupancy,228.0,South Africa
+2021-12-04,Daily ICU occupancy,278.0,South Africa
+2021-12-11,Daily ICU occupancy,401.0,South Africa
+2021-12-18,Daily ICU occupancy,532.0,South Africa
+2021-12-25,Daily ICU occupancy,593.0,South Africa
+2022-01-01,Daily ICU occupancy,741.0,South Africa
+2022-01-08,Daily ICU occupancy,722.0,South Africa
+2022-01-15,Daily ICU occupancy,664.0,South Africa
+2022-01-22,Daily ICU occupancy,575.0,South Africa
+2022-01-29,Daily ICU occupancy,471.0,South Africa
+2022-02-05,Daily ICU occupancy,398.0,South Africa
+2022-02-12,Daily ICU occupancy,345.0,South Africa
+2022-02-19,Daily ICU occupancy,310.0,South Africa
+2022-02-26,Daily ICU occupancy,311.0,South Africa
+2022-03-05,Daily ICU occupancy,313.0,South Africa
+2022-03-12,Daily ICU occupancy,227.0,South Africa
+2022-03-19,Daily ICU occupancy,203.0,South Africa
+2022-03-26,Daily ICU occupancy,189.0,South Africa
