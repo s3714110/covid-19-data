@@ -40,9 +40,15 @@ class HongKong(CountryVaxBase):
                 "Sinovac 1st dose",
                 "Sinovac 2nd dose",
                 "Sinovac 3rd dose",
+                "Sinovac 4th dose",
+                "Sinovac 5th dose",
+                "Sinovac 6th dose",
                 "BioNTech 1st dose",
                 "BioNTech 2nd dose",
                 "BioNTech 3rd dose",
+                "BioNTech 4th dose",
+                "BioNTech 5th dose",
+                "BioNTech 6th dose",
             ],
         )
         return df
@@ -68,16 +74,19 @@ class HongKong(CountryVaxBase):
 
     def pipe_calculate_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         df = (
-            df.groupby(["date", "dose"], as_index=False)
-            .sum()
-            .pivot(index="date", columns="dose", values="total_vaccinations")
-            .rename(
-                columns={
+            df.replace(
+                {
                     "1st dose": "people_vaccinated",
                     "2nd dose": "people_fully_vaccinated",
                     "3rd dose": "total_boosters",
+                    "4th dose": "total_boosters",
+                    "5th dose": "total_boosters",
+                    "6th dose": "total_boosters",
                 }
             )
+            .groupby(["date", "dose"], as_index=False)
+            .sum()
+            .pivot(index="date", columns="dose", values="total_vaccinations")
             .reset_index()
         )
         df["total_vaccinations"] = df.people_vaccinated + df.people_fully_vaccinated + df.total_boosters
