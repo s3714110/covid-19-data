@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`6/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-29T09:48:36`.
+`5/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-29T11:35:45`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -46,12 +46,6 @@ This file shows the latest status of the data pipeline.
       <td>❌</td>
       <td>2.78</td>
       <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.denmark</td>
-      <td>❌</td>
-      <td>0.62</td>
-      <td><details><summary>show</summary><pre>[Errno 2] No such file or directory: '/var/folders/k4/qk9943zx3txcxt_bsp057t6r0000gn/T/tmp5j84goj3/Vaccine_DB/FoersteVacc_FaerdigVacc_region_aldgrp_dag.csv'</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
@@ -501,6 +495,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.batch.lithuania</td>
       <td>✅</td>
       <td>1.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.denmark</td>
+      <td>✅</td>
+      <td>1.48</td>
       <td></td>
     </tr>
     <tr>
