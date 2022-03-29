@@ -738,7 +738,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`9/123` scripts failed, `3/123` were skipped. Latest update was `2022-03-25T13:25:15`.
+`11/123` scripts failed, `7/123` were skipped. Latest update was `2022-03-28T20:57:46`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -751,21 +751,45 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.testing.batch.indonesia</td>
+      <td>cowidev.testing.batch.liechtenstein</td>
       <td>❌</td>
-      <td>131.70</td>
-      <td><details><summary>show</summary><pre>[Errno Expecting value] <html>\r<br><head><title>502 Bad Gateway</title></head>\r<br><body>\r<br><center><h1>502 Bad Gateway</h1></center>\r<br><hr><center>nginx</center>\r<br></body>\r<br></html>\r<br>: 0</pre></details></td>
+      <td>53.44</td>
+      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='www.covid19.admin.ch', port=443): Read timed out.</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.guatemala</td>
+      <td>cowidev.testing.batch.netherlands</td>
       <td>❌</td>
-      <td>40.52</td>
+      <td>50.16</td>
+      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='data.rivm.nl', port=443): Read timed out.</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.luxembourg</td>
+      <td>❌</td>
+      <td>41.43</td>
       <td><details><summary>show</summary><pre>list index out of range</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.south_korea</td>
+      <td>❌</td>
+      <td>35.65</td>
+      <td><details><summary>show</summary><pre>HTTP Error 400: Bad Request</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.kosovo</td>
+      <td>❌</td>
+      <td>21.69</td>
+      <td><details><summary>show</summary><pre>local variable 'count' referenced before assignment</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.singapore</td>
+      <td>❌</td>
+      <td>20.85</td>
+      <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.ecdc</td>
       <td>❌</td>
-      <td>20.38</td>
+      <td>20.48</td>
       <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Read timed out. (read timeout=20)</pre></details></td>
     </tr>
     <tr>
@@ -775,10 +799,16 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='gov.ro', port=443): Read timed out. (read timeout=20)</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.vanuatu</td>
+      <td>cowidev.testing.batch.slovenia</td>
       <td>❌</td>
-      <td>7.45</td>
-      <td><details><summary>show</summary><pre>'Cumulative'</pre></details></td>
+      <td>19.48</td>
+      <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))</pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
+      <td>❌</td>
+      <td>8.68</td>
+      <td><details><summary>show</summary><pre>Unable to extract data from text, please update the regex.</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.tanzania</td>
@@ -787,25 +817,19 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Unable to extract data from text, please update the regex.</pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.vietnam</td>
-      <td>❌</td>
-      <td>4.65</td>
-      <td><details><summary>show</summary><pre>'NoneType' object has no attribute 'group'</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.lithuania</td>
-      <td>❌</td>
-      <td>0.85</td>
-      <td><details><summary>show</summary><pre>Usecols do not match columns, columns expected but not found: ['dgn_tot_day', 'dgn_pos_day', 'date']</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.ukraine</td>
-      <td>❌</td>
-      <td>0.35</td>
-      <td><details><summary>show</summary><pre>Source https://covid19.gov.ua/en not reached! Error code 403 Forbidden: b'<!DOCTYPE html>\n<html lang="en-US">\n   <head>\n      <title>Access was denied</title>\n      <meta http-equiv="content-type" content="text/html; charset=UTF-8" />\n      <meta http-equiv="X-UA-Compatible" content="IE=Edge" />\n      <meta name="robots" content="noindex, nofollow" />\n      <meta name="viewport" content="width=device-width,initial-scale=1" />\n      <link rel="stylesheet" href="/cdn-cgi/styles/errors.new.min.css" type="text/css" media="screen" />\n      <script type="text/javascript">\n(function(){if(document.addEventListener&&window.XMLHttpRequest&&JSON&&JSON.stringify){var e=function(a){var c=document.getElementById("error-feedback-survey"),d=document.getElementById("error-feedback-success"),b=new XMLHttpRequest;a={event:"feedback clicked",properties:{errorCode:1020,helpful:a,version:2}};b.open("POST","https://sparrow.cloudflare.com/api/v1/event");b.setRequestHeader("Content-Type","application/json");b.setRequestHeader("Sparrow-Source-Key","c771f0e4b54944bebf4261d44bd79a1e");\nb.send(JSON.stringify(a));c.classList.add("feedback-hidden");d.classList.remove("feedback-hidden")};document.addEventListener("DOMContentLoaded",function(){var a=document.getElementById("error-feedback"),c=document.getElementById("feedback-button-yes"),d=document.getElementById("feedback-button-no");"classList"in a&&(a.classList.remove("feedback-hidden"),c.addEventListener("click",function(){e(!0)}),d.addEventListener("click",function(){e(!1)}))})}})();\n</script>\n\n      <script type="text/javascript">\n         (function(){if(document.addEventListener){var c=function(){var b=document.getElementById("copy-label");document.getElementById("plain-ray-id");if(navigator.clipboard)navigator.clipboard.writeText("6f17ade5fa60c710");else{var a=document.createElement("textarea");a.value="6f17ade5fa60c710";a.style.top="0";a.style.left="0";a.style.position="fixed";document.body.appendChild(a);a.focus();a.select();document.execCommand("copy");document.body.removeChild(a)}b.innerText="Copied"};document.addEventListener("DOMContentLoaded",\nfunction(){var b=document.getElementById("plain-ray-id"),a=document.getElementById("click-to-copy-btn"),d=document.getElementById("reload-btn");"classList"in b&&(b.classList.add("hidden"),a.classList.remove("hidden"),d.classList.remove("hidden"),a.addEventListener("click",c))})}})();\n      </script>\n      <script defer src="https://api.radar.cloudflare.com/beacon.js"></script>\n   <script async src=\'/cdn-cgi/bm/cv/669835187/api.js\'></script></head>\n\n   <body>\n      <div class="main-wrapper" role="main">\n         <div class="header section">\n            <h1>\n               <span class="error-description">Access was denied</span>\n               <span class="code-label">Error code <span>1020</span></span>\n            </h1>\n            <div class="large-font">\n               <p>You do not have access to covid19.gov.ua.</p><p>The site owner may have set restrictions that prevent you from accessing the site. Contact the site owner for access or try loading the page again.</p>\n            </div>\n            <button class="px-4 rounded reload-button hidden"\n               id="reload-btn"\n               onclick="location.reload();"\n               type="button">\n               Reload page\n            </button>\n         </div>\n      </div>\n\n      <div>\n         <div class="clearfix section">\n            <div class="column know-more">\n               <h2 class="large-font">Additional information</h2>\n               <p>The access policies of a site define which visits are allowed. Your current visit is not allowed according to those policies.</p><p>Only the site owner can change site access policies.</p>\n            </div>\n            <div class="column know-more">\n               <h2 class="large-font">I am the site owner</h2>\n               <p class="ray-id-wrapper">\n                  Ray ID:\n                  <span class="plain-ray-id" id="plain-ray-id">\n                     6f17ade5fa60c710\n                  </span>\n                  <button class="click-to-copy-btn hidden" id="click-to-copy-btn" title="Click to copy Ray ID" type="button">\n                     <span class="ray-id">6f17ade5fa60c710</span><span class="copy-label" id="copy-label">Copy</span>\n                  </button>\n               </p>\n               <ol>\n                  <li>\n                     Search the\n                     <a rel="noopener noreferrer" href="https://dash.cloudflare.com/?to=/:account/:zone/firewall" target="_blank">Firewall Events Log</a>\n                     <img class="external-link" title="Opens in new tab" src="/cdn-cgi/images/external.png" alt="External link">\n                     for the above Ray ID.\n                  </li>\n                  <li>Examine and assess the details of the access policy.</li>\n               </ol>\n               <br>\n               <a rel="noopener noreferrer" href="https://support.cloudflare.com/hc/articles/360029779472-Troubleshooting-Cloudflare-1XXX-errors#error1020" target="_blank">Troubleshooting guide</a>\n               <img class="external-link" title="Opens in new tab" src="/cdn-cgi/images/external.png" alt="External link">\n            </div>\n         </div>\n\n         <div class="clearfix footer section" role="contentinfo">\n            <div class="column">\n               <div class="feedback-hidden py-8 text-center" id="error-feedback">\n    <div id="error-feedback-survey" class="footer-line-wrapper">\n        Was this page helpful?\n        <button class="border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded" id="feedback-button-yes" type="button">Yes</button>\n        <button class="border border-solid bg-white cf-button cursor-pointer ml-4 px-4 py-2 rounded" id="feedback-button-no" type="button">No</button>\n    </div>\n    <div class="feedback-success feedback-hidden" id="error-feedback-success">\n        Thank you for your feedback!\n    </div>\n</div>\n\n            </div>\n            <div class="column footer-line-wrapper text-center">\n               Performance &amp; security by <a rel="noopener noreferrer" href="https://www.cloudflare.com" target="_blank">Cloudflare</a>\n               <img class="external-link" title="Opens in new tab" src="/cdn-cgi/images/external.png" alt="External link">\n            </div>\n         </div>\n      </div>\n   <script type="text/javascript">(function(){window[\'__CF$cv$params\']={r:\'6f17ade5fa60c710\',m:\'r360FTv_Mxe3tiKQTAAcyRxy1pbSiXV2Y9TxKODJHc8-1648211651-0-AVl3OB9wY8y50qRFWXDA2kc6gBChPLJFJ1eHz7q7a6Zq8oh75y59B0Q1/ogtXj2zuOEZD8GvQs4j/l/rmb4ZmCrLfLBCjkQue1MsZok0xEuErHQO5xoYjCFAXNOk0HN97w==\',s:[0x216998e966,0xed584b34cd],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon=\'{"rayId":"6f17ade5fa60c710","token":"b70405c697e04d2f9a854a66900dc461","version":"2021.12.0","si":100}\' crossorigin="anonymous"></script>\n</body>\n</html>\n'</pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.testing.batch.andorra</td>
+      <td>⚠️</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.guatemala</td>
+      <td>⚠️</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.indonesia</td>
       <td>⚠️</td>
       <td>NaN</td>
       <td></td>
@@ -823,577 +847,601 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.testing.incremental.ukraine</td>
+      <td>⚠️</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.vanuatu</td>
+      <td>⚠️</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.testing.batch.argentina</td>
       <td>✅</td>
-      <td>54.95</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.luxembourg</td>
-      <td>✅</td>
-      <td>34.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.netherlands</td>
-      <td>✅</td>
-      <td>30.71</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.liechtenstein</td>
-      <td>✅</td>
-      <td>19.46</td>
+      <td>119.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.philippines</td>
       <td>✅</td>
-      <td>18.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.peru</td>
-      <td>✅</td>
-      <td>17.65</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.kosovo</td>
-      <td>✅</td>
-      <td>15.95</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.nepal</td>
-      <td>✅</td>
-      <td>13.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.qatar</td>
-      <td>✅</td>
-      <td>12.79</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.cape_verde</td>
-      <td>✅</td>
-      <td>11.53</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.moldova</td>
-      <td>✅</td>
-      <td>9.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bahamas</td>
-      <td>✅</td>
-      <td>8.82</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.croatia</td>
-      <td>✅</td>
-      <td>7.33</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.cambodia</td>
-      <td>✅</td>
-      <td>7.29</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.fiji</td>
-      <td>✅</td>
-      <td>7.05</td>
+      <td>60.77</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.united_states</td>
       <td>✅</td>
-      <td>6.73</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.emro</td>
-      <td>✅</td>
-      <td>6.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.lebanon</td>
-      <td>✅</td>
-      <td>6.41</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.haiti</td>
-      <td>✅</td>
-      <td>5.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.papua_new_guinea</td>
-      <td>✅</td>
-      <td>5.83</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.thailand</td>
-      <td>✅</td>
-      <td>5.58</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.new_zealand</td>
-      <td>✅</td>
-      <td>5.46</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.timor</td>
-      <td>✅</td>
-      <td>5.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.canada</td>
-      <td>✅</td>
-      <td>5.33</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.rwanda</td>
-      <td>✅</td>
-      <td>5.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.myanmar</td>
-      <td>✅</td>
-      <td>4.88</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.turkey</td>
-      <td>✅</td>
-      <td>4.77</td>
+      <td>40.34</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.switzerland</td>
       <td>✅</td>
-      <td>4.74</td>
+      <td>39.44</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.bosnia_herzegovina</td>
+      <td>cowidev.testing.batch.peru</td>
       <td>✅</td>
-      <td>4.27</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.libya</td>
-      <td>✅</td>
-      <td>3.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.south_korea</td>
-      <td>✅</td>
-      <td>3.73</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.albania</td>
-      <td>✅</td>
-      <td>3.17</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.antigua_barbuda</td>
-      <td>✅</td>
-      <td>3.14</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
-      <td>✅</td>
-      <td>3.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.mongolia</td>
-      <td>✅</td>
-      <td>3.08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.cyprus</td>
-      <td>✅</td>
-      <td>2.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.georgia</td>
-      <td>✅</td>
-      <td>2.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.paraguay</td>
-      <td>✅</td>
-      <td>2.75</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.pakistan</td>
-      <td>✅</td>
-      <td>2.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.france</td>
-      <td>✅</td>
-      <td>2.53</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.barbados</td>
-      <td>✅</td>
-      <td>2.52</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.iran</td>
-      <td>✅</td>
-      <td>2.35</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.costa_rica</td>
-      <td>✅</td>
-      <td>2.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.sri_lanka</td>
-      <td>✅</td>
-      <td>2.29</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.mexico</td>
-      <td>✅</td>
-      <td>2.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.belarus</td>
-      <td>✅</td>
-      <td>2.23</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.brazil</td>
-      <td>✅</td>
-      <td>2.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.denmark</td>
-      <td>✅</td>
-      <td>2.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.armenia</td>
-      <td>✅</td>
-      <td>2.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.colombia</td>
-      <td>✅</td>
-      <td>2.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2.04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.singapore</td>
-      <td>✅</td>
-      <td>2.00</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.laos</td>
-      <td>✅</td>
-      <td>1.98</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.cuba</td>
-      <td>✅</td>
-      <td>1.97</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.uruguay</td>
-      <td>✅</td>
-      <td>1.94</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.estonia</td>
-      <td>✅</td>
-      <td>1.91</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.hungary</td>
-      <td>✅</td>
-      <td>1.90</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.maldives</td>
-      <td>✅</td>
-      <td>1.90</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.tunisia</td>
-      <td>✅</td>
-      <td>1.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.north_macedonia</td>
-      <td>✅</td>
-      <td>1.86</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.jordan</td>
-      <td>✅</td>
-      <td>1.82</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.zambia</td>
-      <td>✅</td>
-      <td>1.76</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_arab_emirates</td>
-      <td>✅</td>
-      <td>1.71</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.israel</td>
-      <td>✅</td>
-      <td>1.63</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.taiwan</td>
-      <td>✅</td>
-      <td>1.58</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.iceland</td>
-      <td>✅</td>
-      <td>1.46</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.belize</td>
-      <td>✅</td>
-      <td>1.44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bulgaria</td>
-      <td>✅</td>
-      <td>1.43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_lucia</td>
-      <td>✅</td>
-      <td>1.41</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.equatorial_guinea</td>
-      <td>✅</td>
-      <td>1.39</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.faeroe_islands</td>
-      <td>✅</td>
-      <td>1.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.finland</td>
-      <td>✅</td>
-      <td>1.34</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.austria</td>
-      <td>✅</td>
-      <td>1.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.el_salvador</td>
-      <td>✅</td>
-      <td>1.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.azerbaijan</td>
-      <td>✅</td>
-      <td>1.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bangladesh</td>
-      <td>✅</td>
-      <td>1.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.japan</td>
-      <td>✅</td>
-      <td>1.28</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.morocco</td>
-      <td>✅</td>
-      <td>1.22</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.ecuador</td>
-      <td>✅</td>
-      <td>1.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.norway</td>
-      <td>✅</td>
-      <td>1.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.russia</td>
-      <td>✅</td>
-      <td>1.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.trinidad_and_tobago</td>
-      <td>✅</td>
-      <td>1.11</td>
+      <td>37.90</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.spain</td>
       <td>✅</td>
-      <td>1.08</td>
+      <td>37.56</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.united_kingdom</td>
+      <td>cowidev.testing.incremental.myanmar</td>
       <td>✅</td>
-      <td>1.08</td>
+      <td>31.35</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.latvia</td>
+      <td>cowidev.testing.incremental.nepal</td>
       <td>✅</td>
-      <td>1.04</td>
+      <td>29.72</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.togo</td>
+      <td>cowidev.testing.incremental.haiti</td>
       <td>✅</td>
-      <td>0.99</td>
+      <td>29.29</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.suriname</td>
+      <td>cowidev.testing.batch.estonia</td>
       <td>✅</td>
-      <td>0.95</td>
+      <td>22.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.south_africa</td>
+      <td>✅</td>
+      <td>22.46</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.papua_new_guinea</td>
+      <td>✅</td>
+      <td>18.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bahamas</td>
+      <td>✅</td>
+      <td>17.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.mexico</td>
+      <td>✅</td>
+      <td>17.47</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.fiji</td>
+      <td>✅</td>
+      <td>16.40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.barbados</td>
+      <td>✅</td>
+      <td>15.20</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.libya</td>
+      <td>✅</td>
+      <td>12.44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.canada</td>
+      <td>✅</td>
+      <td>12.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.turkey</td>
+      <td>✅</td>
+      <td>12.02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.russia</td>
+      <td>✅</td>
+      <td>11.80</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.pakistan</td>
+      <td>✅</td>
+      <td>11.10</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.slovakia</td>
       <td>✅</td>
-      <td>0.92</td>
+      <td>10.98</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.bahrain</td>
+      <td>cowidev.testing.incremental.paraguay</td>
       <td>✅</td>
-      <td>0.92</td>
+      <td>10.80</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.gibraltar</td>
+      <td>cowidev.testing.batch.taiwan</td>
       <td>✅</td>
-      <td>0.92</td>
+      <td>10.36</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.serbia</td>
+      <td>cowidev.testing.incremental.new_zealand</td>
       <td>✅</td>
-      <td>0.91</td>
+      <td>10.11</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.africacdc</td>
+      <td>cowidev.testing.batch.thailand</td>
       <td>✅</td>
-      <td>0.91</td>
+      <td>9.93</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.belgium</td>
+      <td>cowidev.testing.incremental.vietnam</td>
       <td>✅</td>
-      <td>0.89</td>
+      <td>9.01</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.chile</td>
+      <td>cowidev.testing.incremental.cape_verde</td>
       <td>✅</td>
-      <td>0.87</td>
+      <td>7.58</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bangladesh</td>
+      <td>✅</td>
+      <td>7.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_arab_emirates</td>
+      <td>✅</td>
+      <td>7.50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.france</td>
+      <td>✅</td>
+      <td>7.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.belarus</td>
+      <td>✅</td>
+      <td>7.08</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.croatia</td>
+      <td>✅</td>
+      <td>7.04</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.cambodia</td>
+      <td>✅</td>
+      <td>6.38</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.emro</td>
+      <td>✅</td>
+      <td>5.83</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.tunisia</td>
+      <td>✅</td>
+      <td>5.58</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.bosnia_herzegovina</td>
+      <td>✅</td>
+      <td>5.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.timor</td>
+      <td>✅</td>
+      <td>4.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.albania</td>
+      <td>✅</td>
+      <td>4.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_lucia</td>
+      <td>✅</td>
+      <td>4.54</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.antigua_barbuda</td>
+      <td>✅</td>
+      <td>4.15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.qatar</td>
+      <td>✅</td>
+      <td>3.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.azerbaijan</td>
+      <td>✅</td>
+      <td>3.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.colombia</td>
+      <td>✅</td>
+      <td>3.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_kitts_nevis</td>
+      <td>✅</td>
+      <td>3.62</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>3.33</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.cyprus</td>
+      <td>✅</td>
+      <td>3.32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.costa_rica</td>
+      <td>✅</td>
+      <td>3.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.brazil</td>
+      <td>✅</td>
+      <td>3.20</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hong_kong</td>
+      <td>✅</td>
+      <td>3.18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.suriname</td>
+      <td>✅</td>
+      <td>3.06</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.trinidad_and_tobago</td>
+      <td>✅</td>
+      <td>2.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.cuba</td>
+      <td>✅</td>
+      <td>2.95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.iran</td>
+      <td>✅</td>
+      <td>2.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.georgia</td>
+      <td>✅</td>
+      <td>2.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.armenia</td>
+      <td>✅</td>
+      <td>2.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.sweden</td>
+      <td>✅</td>
+      <td>2.62</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.iceland</td>
+      <td>✅</td>
+      <td>2.56</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_kingdom</td>
+      <td>✅</td>
+      <td>2.41</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.rwanda</td>
+      <td>✅</td>
+      <td>2.37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.laos</td>
+      <td>✅</td>
+      <td>2.37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.sri_lanka</td>
+      <td>✅</td>
+      <td>2.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.north_macedonia</td>
+      <td>✅</td>
+      <td>2.32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.israel</td>
+      <td>✅</td>
+      <td>2.18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hungary</td>
+      <td>✅</td>
+      <td>2.11</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.mongolia</td>
+      <td>✅</td>
+      <td>2.10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.denmark</td>
+      <td>✅</td>
+      <td>1.95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.uruguay</td>
+      <td>✅</td>
+      <td>1.88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.lithuania</td>
+      <td>✅</td>
+      <td>1.82</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.portugal</td>
       <td>✅</td>
-      <td>0.87</td>
+      <td>1.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.maldives</td>
+      <td>✅</td>
+      <td>1.77</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bulgaria</td>
+      <td>✅</td>
+      <td>1.74</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.zambia</td>
+      <td>✅</td>
+      <td>1.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.belize</td>
+      <td>✅</td>
+      <td>1.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.malta</td>
+      <td>✅</td>
+      <td>1.57</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.jordan</td>
+      <td>✅</td>
+      <td>1.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.moldova</td>
+      <td>✅</td>
+      <td>1.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.austria</td>
+      <td>✅</td>
+      <td>1.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.ecuador</td>
+      <td>✅</td>
+      <td>1.35</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.africacdc</td>
+      <td>✅</td>
+      <td>1.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.togo</td>
+      <td>✅</td>
+      <td>1.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.chile</td>
+      <td>✅</td>
+      <td>1.31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.serbia</td>
+      <td>✅</td>
+      <td>1.28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.finland</td>
+      <td>✅</td>
+      <td>1.21</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.equatorial_guinea</td>
+      <td>✅</td>
+      <td>1.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bahrain</td>
+      <td>✅</td>
+      <td>1.07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>1.05</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.gibraltar</td>
+      <td>✅</td>
+      <td>1.05</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.belgium</td>
+      <td>✅</td>
+      <td>1.03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.latvia</td>
+      <td>✅</td>
+      <td>1.03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.faeroe_islands</td>
+      <td>✅</td>
+      <td>0.97</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.greece</td>
+      <td>✅</td>
+      <td>0.95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.senegal</td>
+      <td>✅</td>
+      <td>0.93</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.italy</td>
+      <td>✅</td>
+      <td>0.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.czechia</td>
+      <td>✅</td>
+      <td>0.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.india</td>
+      <td>✅</td>
+      <td>0.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.malaysia</td>
+      <td>✅</td>
+      <td>0.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.japan</td>
       <td>✅</td>
       <td>0.77</td>
       <td></td>
@@ -1401,91 +1449,43 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.testing.batch.australia</td>
       <td>✅</td>
+      <td>0.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.lebanon</td>
+      <td>✅</td>
+      <td>0.74</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.morocco</td>
+      <td>✅</td>
       <td>0.71</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.senegal</td>
-      <td>✅</td>
-      <td>0.70</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_kitts_nevis</td>
-      <td>✅</td>
-      <td>0.70</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.italy</td>
-      <td>✅</td>
-      <td>0.69</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.slovenia</td>
-      <td>✅</td>
-      <td>0.69</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.germany</td>
       <td>✅</td>
-      <td>0.60</td>
+      <td>0.70</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.india</td>
+      <td>cowidev.testing.batch.norway</td>
       <td>✅</td>
-      <td>0.60</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.bolivia</td>
-      <td>✅</td>
-      <td>0.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.malaysia</td>
-      <td>✅</td>
-      <td>0.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.sweden</td>
-      <td>✅</td>
-      <td>0.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.czechia</td>
-      <td>✅</td>
-      <td>0.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.malta</td>
-      <td>✅</td>
-      <td>0.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>0.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.south_africa</td>
-      <td>✅</td>
-      <td>0.54</td>
+      <td>0.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.ireland</td>
       <td>✅</td>
-      <td>0.42</td>
+      <td>0.57</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.bolivia</td>
+      <td>✅</td>
+      <td>0.54</td>
       <td></td>
     </tr>
   </tbody>
