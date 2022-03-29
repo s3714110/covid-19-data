@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`6/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-29T05:36:12`.
+`6/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-29T09:48:36`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -138,12 +138,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.romania</td>
-      <td>✅</td>
-      <td>19.52</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.macao</td>
       <td>✅</td>
       <td>17.98</td>
@@ -153,6 +147,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.batch.spc</td>
       <td>✅</td>
       <td>15.61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.romania</td>
+      <td>✅</td>
+      <td>15.24</td>
       <td></td>
     </tr>
     <tr>
@@ -450,12 +450,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>2.27</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.zimbabwe</td>
       <td>✅</td>
       <td>2.26</td>
@@ -591,6 +585,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.curacao</td>
       <td>✅</td>
       <td>1.02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>0.89</td>
       <td></td>
     </tr>
     <tr>
