@@ -2,7 +2,7 @@ import pandas as pd
 
 from cowidev.utils.utils import check_known_columns
 from cowidev.utils.web import request_json
-from cowidev.vax.utils.utils import make_monotonic
+from cowidev.vax.utils.utils import make_monotonic, add_latest_who_values
 from cowidev.vax.utils.base import CountryVaxBase
 
 
@@ -56,9 +56,11 @@ class SaudiArabia(CountryVaxBase):
 
         df = df[df.total_vaccinations > 0].sort_values("date")
 
-        df = make_monotonic(df)
-
-        df = df[
+        return df.pipe(make_monotonic).pipe(
+            add_latest_who_values,
+            who_location_name="Saudi Arabia",
+            metrics=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated"],
+        )[
             [
                 "location",
                 "date",
