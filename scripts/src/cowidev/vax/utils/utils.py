@@ -100,7 +100,7 @@ def add_latest_who_values(df: pd.DataFrame, who_location_name: str, metrics: lis
 
     last_who_report_date = who.DATE_UPDATED.values[0]
 
-    who_row = df[df.date >= last_who_report_date].head(1).copy()
+    who_row = df[df.date <= last_who_report_date].tail(1).copy()
     original_rows = df[df.date != last_who_report_date].copy()
 
     who_row["date"] = last_who_report_date
