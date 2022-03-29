@@ -7,7 +7,7 @@ from cowidev.vax.utils.base import CountryVaxBase
 
 class Luxembourg(CountryVaxBase):
     location = "Luxembourg"
-    source_url = "https://data.public.lu/en/datasets/r/2635e6af-bd22-4e62-8525-48fd3cb063e6"
+    source_url = "https://data.public.lu/en/datasets/r/af7cd843-dfe5-440a-9ab2-d22ffef8844c"
     source_url_ref = "https://data.public.lu/en/datasets/donnees-covid19/#_"
 
     def read(self) -> pd.DataFrame:
