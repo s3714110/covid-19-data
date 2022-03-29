@@ -155,7 +155,7 @@ run_python 'import sweden; sweden.update_db()'
 # Hospital & ICU data
 
 hour=$(date +%H)
-if [ $hour == 07 ] || [ $hour == 16 ] ; then
+ if [ $hour == 06 ] || [ $hour == 18 ] ; then
   # Download CSV
   echo "Generating hospital & ICU export..."
   cowid hosp generate
@@ -217,7 +217,7 @@ python -m cowidev.gmobility grapher-db
 # Variants
 # If there are any unstaged changes in the repo, then one of
 # the CSVs has changed, and we need to run the update script.
-if [ $hour == 14 ] ; then
+ if [ $hour == 20 ] ; then
   echo "Generating CoVariants dataset..."
   python -m cowidev.variants etl
   python -m cowidev.variants grapher-file
@@ -232,7 +232,7 @@ fi
 # This basically download the vaccination data needed for some countries
 # The idea is that here we put extremely slow scripts, so their updates are managed separately
 hour=$(date +%H)
-if [ $hour == 08 ] ; then
+if [ $hour == 03 ] ; then
   echo "Generating ICE vaccination data..."
   python -m cowidev.vax.icer
 fi
@@ -241,7 +241,7 @@ fi
 # Decoupling charts
 
 hour=$(date +%H)
-if [ $hour == 09 ] ; then
+if [ $hour == 02 ] ; then
   echo "Generating decoupling dataset..."
   run_python 'import decoupling; decoupling.main()'
   git add .
