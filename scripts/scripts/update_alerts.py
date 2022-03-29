@@ -12,7 +12,10 @@ VAX_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/da
 TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv"
 
 
-def check_updated(url, date_col, allowed_days) -> None:
+def check_updated(url, date_col, allowed_days, weekends) -> None:
+    if not weekends and datetime.datetime.today().weekday() in [5, 6]:
+        print("Today is a weekend, skipping...")
+        return
     df = pd.read_csv(url)
     max_date = df[date_col].max()
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
@@ -26,11 +29,11 @@ def check_updated(url, date_col, allowed_days) -> None:
 
 def main():
     if args.data == "jhu":
-        check_updated(JHU_URL, "date", allowed_days=1)
+        check_updated(JHU_URL, "date", allowed_days=1, weekends=True)
     elif args.data == "vax":
-        check_updated(VAX_URL, "date", allowed_days=1)
+        check_updated(VAX_URL, "date", allowed_days=1, weekends=False)
     elif args.data == "testing":
-        check_updated(TESTING_URL, "Date", allowed_days=7)
+        check_updated(TESTING_URL, "Date", allowed_days=7, weekends=False)
     else:
         raise Exception("Wrong data type used! Use one of: [jhu, vax, testing]")
 
