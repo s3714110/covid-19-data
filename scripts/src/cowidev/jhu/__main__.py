@@ -397,14 +397,12 @@ def download_csv():
 
 
 def update_db():
-    time_str = datetime.now().astimezone(pytz.timezone("Europe/London")).strftime("%-d %B, %H:%M")
-    source_name = f"Johns Hopkins University CSSE COVID-19 Data – Last updated {time_str} (London time)"
     import_dataset(
         dataset_name=DATASET_NAME,
         namespace="owid",
         csv_path=os.path.join(OUTPUT_PATH, DATASET_NAME + ".csv"),
         default_variable_display={"yearIsDay": True, "zeroDay": ZERO_DAY},
-        source_name=source_name,
+        source_name="Johns Hopkins University CSSE COVID-19 Data",
     )
 
 
