@@ -738,7 +738,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`11/123` scripts failed, `7/123` were skipped. Latest update was `2022-03-28T20:57:46`.
+`11/124` scripts failed, `7/124` were skipped. Latest update was `2022-03-30T13:13:56`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -1078,6 +1078,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.testing.batch.bosnia_herzegovina</td>
       <td>✅</td>
       <td>5.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.puerto_rico</td>
+      <td>✅</td>
+      <td>5.32</td>
       <td></td>
     </tr>
     <tr>
