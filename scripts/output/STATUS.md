@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-30T10:04:11`.
+`4/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-30T10:29:03`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -40,12 +40,6 @@ This file shows the latest status of the data pipeline.
       <td>❌</td>
       <td>2.20</td>
       <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.who</td>
-      <td>❌</td>
-      <td>0.76</td>
-      <td><details><summary>show</summary><pre>Unknown column(s) found: {'PERSONS_BOOSTER_ADD_DOSE', 'PERSONS_BOOSTER_ADD_DOSE_PER100'}</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
@@ -435,6 +429,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.colombia</td>
       <td>✅</td>
       <td>3.55</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.who</td>
+      <td>✅</td>
+      <td>3.08</td>
       <td></td>
     </tr>
     <tr>
