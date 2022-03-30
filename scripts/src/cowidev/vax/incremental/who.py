@@ -51,6 +51,8 @@ class WHO(CountryVaxBase):
                 "PERSONS_VACCINATED_1PLUS_DOSE",
                 "VACCINES_USED",
                 "DATE_UPDATED",
+                "PERSONS_BOOSTER_ADD_DOSE",
+                "PERSONS_BOOSTER_ADD_DOSE_PER100",
             ],
         )
         if len(df) > 300:
@@ -121,9 +123,12 @@ class WHO(CountryVaxBase):
         df[["people_vaccinated", "people_fully_vaccinated"]] = (
             df[["PERSONS_VACCINATED_1PLUS_DOSE", "PERSONS_FULLY_VACCINATED"]].astype("Int64").fillna(pd.NA)
         )
-        df.loc[:, "total_vaccinations"] = df["TOTAL_VACCINATIONS"].fillna(np.nan)
+        df = df.assign(
+            source_url=self.source_url_ref,
+            total_vaccinations=df["TOTAL_VACCINATIONS"].astype("Int64").fillna(np.nan),
+            total_boosters=df["PERSONS_BOOSTER_ADD_DOSE"].astype("Int64").fillna(np.nan),
+        )
         df = df.pipe(self.pipe_rename_columns)
-        df = df.assign(source_url=self.source_url_ref, total_boosters=pd.NA)
         return df
 
     def pipe_add_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -149,7 +154,7 @@ class WHO(CountryVaxBase):
             .pipe(self.pipe_vaccine_checks)
             .pipe(self.pipe_map_vaccines)
             .pipe(self.pipe_calculate_metrics)
-            .pipe(self.pipe_add_boosters)
+            # .pipe(self.pipe_add_boosters)
         )
 
     def export(self):
