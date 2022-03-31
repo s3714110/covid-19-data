@@ -17,9 +17,10 @@ pipeline:
         - Ukraine # server down
         - Saint Lucia # switched to paho. previous source not reporting boosters.
         # - Faeroe Islands
-        - Austria  # Move to ECDC
-        # - Denmark  # Move to ECDC
-        # - Colombia  # Move to PAHO
+        - Austria  # Moved to ECDC
+        # - Denmark  # Moved to ECDC
+        # - Colombia  # Moved to PAHO
+        - Vietnam  # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
