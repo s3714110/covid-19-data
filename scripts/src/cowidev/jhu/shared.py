@@ -400,7 +400,7 @@ def _inject_growth(df, prefix, periods):
         df[["location", cases_colname, deaths_colname]]
         .groupby("location")[[cases_colname, deaths_colname]]
         .pct_change(periods=periods, fill_method=None)
-        .round(1)
+        .round(3)
         .replace([np.inf, -np.inf], pd.NA)
         * 100
     )
