@@ -392,7 +392,7 @@ def _inject_growth(df, prefix, periods):
     df[[cases_colname, deaths_colname]] = (
         df[["location", "new_cases", "new_deaths"]]
         .groupby("location")[["new_cases", "new_deaths"]]
-        .rolling(window=periods, min_periods=periods - 1, center=False)
+        .rolling(window=periods, min_periods=periods, center=False)
         .sum()
         .reset_index(level=0, drop=True)
     )
