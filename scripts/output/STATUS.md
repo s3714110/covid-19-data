@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/119` scripts failed, `8/119` were skipped. Latest update was `2022-03-31T10:07:39`.
+`5/119` scripts failed, `7/119` were skipped. Latest update was `2022-03-31T11:14:51`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -36,6 +36,12 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Unknown column(s) found: {'Unnamed: 3'}</pre></details></td>
     </tr>
     <tr>
+      <td>cowidev.vax.batch.ukraine</td>
+      <td>❌</td>
+      <td>14.42</td>
+      <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.incremental.vietnam</td>
       <td>❌</td>
       <td>4.43</td>
@@ -43,12 +49,6 @@ This file shows the latest status of the data pipeline.
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ukraine</td>
       <td>⚠️</td>
       <td>NaN</td>
       <td></td>
@@ -504,12 +504,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.who</td>
-      <td>✅</td>
-      <td>1.95</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
       <td>1.89</td>
@@ -567,6 +561,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.south_africa</td>
       <td>✅</td>
       <td>1.41</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.who</td>
+      <td>✅</td>
+      <td>1.32</td>
       <td></td>
     </tr>
     <tr>
