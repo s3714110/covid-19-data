@@ -193,15 +193,23 @@ def localdate(
 
 
 def clean_date_series(
-    ds: Union[pd.Series, list], format_input: str = None, format_output: str = DATE_FORMAT, **kwargs
+    ds: Union[pd.Series, list],
+    format_input: str = None,
+    format_output: str = DATE_FORMAT,
+    as_datetime: bool = False,
+    **kwargs
 ) -> Union[pd.Series, list]:
+    is_list = isinstance(ds, list)
     if format_output is None:
         format_output = DATE_FORMAT
     ds_new = pd.to_datetime(ds, format=format_input, **kwargs)
-    if isinstance(ds, list):
-        return pd.Series(ds_new).dt.strftime(format_output).tolist()
-    elif isinstance(ds, pd.Series):
-        return ds_new.dt.strftime(format_output)
+    if is_list:
+        ds_new = pd.Series(ds_new)
+    if not as_datetime:
+        ds_new = ds_new.dt.strftime(format_output)
+    if is_list:
+        return ds_new.tolist()
+    return ds_new
 
 
 @contextmanager
