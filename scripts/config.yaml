@@ -21,6 +21,8 @@ pipeline:
         # - Denmark  # Moved to ECDC
         # - Colombia  # Moved to PAHO
         - Vietnam  # Moved to WHO
+        - Sri Lanka  # Moved to WHO
+        - Ukraine  # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
