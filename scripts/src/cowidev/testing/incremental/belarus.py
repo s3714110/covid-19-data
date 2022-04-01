@@ -50,7 +50,7 @@ class Belarus(CountryTestBase):
     def _parse_date(self, soup: BeautifulSoup) -> str:
         """Parse date from soup"""
         date = soup.find(text=re.compile(self.regex["date"]))
-        return clean_date(date, "%d.%m.%Yг.")
+        return clean_date(date, "на 7.00 \n%d.%m.%Yг.")
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         """Pipeline for data processing"""
