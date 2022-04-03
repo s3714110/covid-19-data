@@ -738,7 +738,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`3/124` scripts failed, `7/124` were skipped. Latest update was `2022-04-01T17:40:13`.
+`3/128` scripts failed, `7/128` were skipped. Latest update was `2022-04-03T16:21:40`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -847,6 +847,12 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.testing.batch.guam</td>
+      <td>✅</td>
+      <td>12.65</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.testing.batch.cuba</td>
       <td>✅</td>
       <td>11.62</td>
@@ -874,6 +880,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.testing.incremental.haiti</td>
       <td>✅</td>
       <td>8.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.marshall_islands</td>
+      <td>✅</td>
+      <td>7.80</td>
       <td></td>
     </tr>
     <tr>
@@ -943,9 +955,21 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.testing.batch.united_states_virgin_islands</td>
+      <td>✅</td>
+      <td>5.74</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.testing.batch.south_korea</td>
       <td>✅</td>
       <td>5.70</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.northern_mariana_islands</td>
+      <td>✅</td>
+      <td>5.63</td>
       <td></td>
     </tr>
     <tr>
