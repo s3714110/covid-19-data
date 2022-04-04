@@ -253,3 +253,15 @@ fi
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
 run_python 'import decoupling; decoupling.update_db()'
+
+# =====================================================================
+# Vaccinations
+
+hour=$(date +%H)
+if [ $hour == 08 ] ; then
+  echo "Generating Vaccination (get step)..."
+  cowid vax get
+  git add .
+  git commit -m "data(vax): automated update (get)"
+  git push
+fi
