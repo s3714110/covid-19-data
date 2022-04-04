@@ -86,5 +86,4 @@ class UnitedKingdom(CountryVaxBase):
 
 
 def main():
-    locale.setlocale(locale.LC_ALL, "en_GB")
     UnitedKingdom().export()
