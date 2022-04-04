@@ -48,7 +48,9 @@ vaccines:
       - "Moderna - mRNA-1273"
       - "Moderna - Spikevax"
   - owid_name: "Novavax"
-    org_name: "Novavax - Covavax"
+    org_name: 
+      - "Novavax - Covavax"
+      - "Novavax-NUVAXOVID"
   - owid_name: "Pfizer/BioNTech"
     org_name: "Pfizer BioNTech - Comirnaty"
   - owid_name: "QazVac"
