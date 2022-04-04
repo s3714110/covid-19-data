@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`6/119` scripts failed, `10/119` were skipped. Latest update was `2022-04-04T10:14:11`.
+`6/119` scripts failed, `10/119` were skipped. Latest update was `2022-04-04T17:03:28`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -158,7 +158,7 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.vax.incremental.paho</td>
       <td>✅</td>
-      <td>38.87</td>
+      <td>39.45</td>
       <td></td>
     </tr>
     <tr>
@@ -504,6 +504,12 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.who</td>
+      <td>✅</td>
+      <td>1.87</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
       <td>1.84</td>
@@ -519,12 +525,6 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.moldova</td>
       <td>✅</td>
       <td>1.67</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.who</td>
-      <td>✅</td>
-      <td>1.63</td>
       <td></td>
     </tr>
     <tr>
