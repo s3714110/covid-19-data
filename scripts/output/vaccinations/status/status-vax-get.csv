@@ -28,7 +28,7 @@ cowidev.vax.batch.malta,0.63,True,
 cowidev.vax.batch.netherlands,0.46,True,
 cowidev.vax.batch.new_zealand,30.42,True,
 cowidev.vax.batch.norway,3.15,True,
-cowidev.vax.batch.peru,3.47,False,Check `people_vaccinated_per_hundred` field! Found values above 100%.
+cowidev.vax.batch.peru,1.66,True,
 cowidev.vax.batch.portugal,1.57,True,
 cowidev.vax.batch.romania,97.52,True,
 cowidev.vax.batch.saudi_arabia,7.02,True,
@@ -56,12 +56,11 @@ cowidev.vax.incremental.bangladesh,9.4,True,
 cowidev.vax.incremental.barbados,1.55,True,
 cowidev.vax.incremental.brazil,0.06,True,
 cowidev.vax.incremental.bulgaria,1.01,True,
-cowidev.vax.incremental.china,0.06,False,"Message: 'geckodriver' executable needs to be in PATH. 
-"
+cowidev.vax.incremental.china,16.82,True,
 cowidev.vax.incremental.colombia,1.92,True,
-cowidev.vax.incremental.costa_rica,4.61,False,"HTTPSConnectionPool(host='www.ccss.sa.cr', port=443): Max retries exceeded with url: /web/coronavirus/vacunacion (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f78394ff760>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
-cowidev.vax.incremental.croatia,20.05,False,"HTTPSConnectionPool(host='www.koronavirus.hr', port=443): Read timed out. (read timeout=20)"
-cowidev.vax.incremental.cuba,2.81,False,'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.costa_rica,1.8,True,
+cowidev.vax.incremental.croatia,0.21,True,
+cowidev.vax.incremental.cuba,2.49,False,'NoneType' object has no attribute 'group'
 cowidev.vax.incremental.curacao,0.53,True,
 cowidev.vax.incremental.cyprus,0.84,True,
 cowidev.vax.incremental.dominican_republic,5.3,True,
@@ -86,7 +85,7 @@ cowidev.vax.incremental.kazakhstan,9.14,True,
 cowidev.vax.incremental.kenya,16.91,False,"Table 1 has changed, please check!"
 cowidev.vax.incremental.kosovo,24.2,True,
 cowidev.vax.incremental.kyrgyzstan,1.04,True,
-cowidev.vax.incremental.laos,0.76,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+cowidev.vax.incremental.laos,1.12,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
 cowidev.vax.incremental.lebanon,1.42,True,
 cowidev.vax.incremental.libya,3.6,True,
 cowidev.vax.incremental.macao,14.83,True,
@@ -101,11 +100,11 @@ cowidev.vax.incremental.nepal,25.93,True,
 cowidev.vax.incremental.north_macedonia,,,
 cowidev.vax.incremental.northern_cyprus,0.85,True,
 cowidev.vax.incremental.paho,40.96,True,
-cowidev.vax.incremental.pakistan,3.28,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f787da0adc0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
+cowidev.vax.incremental.pakistan,1.23,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7e886a68c0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
 cowidev.vax.incremental.philippines,0.51,True,
 cowidev.vax.incremental.poland,0.13,True,
 cowidev.vax.incremental.qatar,8.55,True,
-cowidev.vax.incremental.russia,0.51,False,Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway: b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+cowidev.vax.incremental.russia,2.93,True,
 cowidev.vax.incremental.saint_lucia,,,
 cowidev.vax.incremental.serbia,6.4,True,
 cowidev.vax.incremental.south_africa,3.64,True,
