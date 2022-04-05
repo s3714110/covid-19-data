@@ -98,11 +98,11 @@ class Peru(CountryVaxBase):
 
     def pipe_age_checks(self, df: pd.DataFrame) -> pd.DataFrame:
         # print(df.columns)
-        if (df.people_vaccinated_per_hundred > 100).sum():
-            raise ValueError("Check `people_vaccinated_per_hundred` field! Found values above 100%.")
-        if (df.people_fully_vaccinated_per_hundred > 100).sum():
+        if (msk := (df.people_vaccinated_per_hundred > 105)).sum():
+            raise ValueError(f"Check `people_vaccinated_per_hundred` field! Found values above 100%. {df[msk]}")
+        if (msk := (df.people_fully_vaccinated_per_hundred > 105)).sum():
             raise ValueError("Check `people_fully_vaccinated_per_hundred` field! Found values above 100%.")
-        if not (df.location.unique() == "Peru").all():
+        if not (df.location.unique() == self.location).all():
             raise ValueError("Invalid values in `location` field!")
         return df
 
