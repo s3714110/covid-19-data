@@ -44,6 +44,9 @@ class UnitedStates(CountryVaxBase):
                 "Booster_Daily",
                 "Booster_Cumulative",
                 "Booster_7_Day_Rolling_Average",
+                "Series_Complete_Pop_Pct",
+                "Administered_Dose1_Pop_Pct\u200b",
+                "Additional_Doses_Vax_Pct",
             ],
         )
         return df[
