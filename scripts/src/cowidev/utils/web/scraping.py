@@ -72,7 +72,7 @@ def get_soup(
         BeautifulSoup: Website soup.
     """
     response = get_response(source, request_method, **kwargs)
-    content = response.content
+    content = response.text
     soup = BeautifulSoup(content, parser, from_encoding=from_encoding)
     if soup.text == "":
         soup = BeautifulSoup(content, "html.parser", from_encoding=from_encoding)
