@@ -36,7 +36,7 @@ The vaccination pipeline is probably the most complete one, where we scrape and 
 dataset.
 
 The pipeline is executed manually, by [@edomt](https://github.com/edomt) or [@lucasrodes](https://github.com/lucasrodes)
-evry weekday (i.e. Monday until Friday) before 12 UTC.
+every weekday (i.e. Monday until Friday) before 12 UTC.
 
 ### Execution steps
 ```
