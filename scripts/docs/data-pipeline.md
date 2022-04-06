@@ -19,7 +19,7 @@ tasks.
 
 | **Pipeline**              | **Frequency**                | **Tasks**                             |
 |---------------------------|------------------------------|------------------------------------------|
-| [Vaccinations](#vaccinations-pipeline)               | daily at 12:00 UTC           | {abbr}`Collection (Scraping primary sources (e.g. country governmental sites) and extracting relevant datapoints.)`, {abbr}`transformation (Transforming and cleaning the downloaded data into a human-readable format.)`, {abbr}`presentation (Presenting the cleaned data to the public (e.g. charts, dataset files, etc.).)` |
+| [Vaccinations](#vaccinations-pipeline)               | every weekday at 12:00 UTC           | {abbr}`Collection (Scraping primary sources (e.g. country governmental sites) and extracting relevant datapoints.)`, {abbr}`transformation (Transforming and cleaning the downloaded data into a human-readable format.)`, {abbr}`presentation (Presenting the cleaned data to the public (e.g. charts, dataset files, etc.).)` |
 | [Testing](#testing-pipeline)                   | 3 times per week             | Collection, transformation, presentation |
 | [Hospitalization & ICU](#hospitalization-icu-pipeline)     | daily at 06:00 and 18:00 UTC | Collection, transformation, presentation |
 | [Cases & Deaths (JHU)](#cases-deaths-jhu-pipeline)      | every hour (if new data)     | Transformation, presentation             |
@@ -35,8 +35,8 @@ You can find all the automation details [in this file](https://github.com/owid/c
 The vaccination pipeline is probably the most complete one, where we scrape and extract data for each country in the
 dataset.
 
-The pipeline is executed manually, by [@edomt](https://github.com/edomt) or [@lucasrodes](https://github.com/lucasrodes) on
-a daily basis before 12 UTC.
+The pipeline is executed manually, by [@edomt](https://github.com/edomt) or [@lucasrodes](https://github.com/lucasrodes)
+every weekday (i.e. Monday until Friday) before 12 UTC.
 
 ### Execution steps
 ```

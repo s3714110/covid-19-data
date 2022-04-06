@@ -7,7 +7,7 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 
 | Metrics                     | Source                                                    | Updated | Countries |
 |-----------------------------|-----------------------------------------------------------|---------|-----------|
-| Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
+| Vaccinations                | Official data collated by the Our World in Data team      | Every weekday   | 218       |
 | Tests & positivity          | Official data collated by the Our World in Data team      | Weekly  | 178       |
 | Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
 | Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 216        |
@@ -186,6 +186,7 @@ If you are interested in the individual files that make up the complete dataset,
 - On 28 September 2021, we changed the way we estimate the excess mortality. More details [here](https://github.com/owid/covid-19-data/tree/master/public/data/excess_mortality#how-p-scores-are-defined-and-calculated). We also added 3 new variables to our complete dataset: `excess_mortality_cumulative` (cumulative % of excess deaths), `excess_mortality_cumulative_absolute` (cumulative count of absolute excess deaths), `excess_mortality_cumulative_per_million` (cumulative count of excess deaths per million people).
 - On 15 November 2021, we added the metrics `new_people_vaccinated_smoothed` and `new_people_vaccinated_smoothed_per_hundred` to our vaccination data. They count the daily number of people receiving their first vaccine dose.
 - On 27 December 2021, we added a [specific folder for our hospitalizations & ICU data](https://github.com/owid/covid-19-data/tree/master/public/data/hospitalizations).
+- Since 29 March 2022, vaccination data is no longer updated on a daily basis. Updates now are only on weekdays (Monday until Friday).
 
 ## Data alterations
 
