@@ -42,7 +42,7 @@ cowidev.vax.batch.switzerland,35.33,True,
 cowidev.vax.batch.trinidad_and_tobago,2.66,True,
 cowidev.vax.batch.ukraine,,,
 cowidev.vax.batch.united_kingdom,8.19,True,
-cowidev.vax.batch.united_states,24.41,False,"Unknown column(s) found: {'Administered_Dose1_Pop_Pct\u200b', 'Series_Complete_Pop_Pct', 'Additional_Doses_Vax_Pct'}"
+cowidev.vax.batch.united_states,4.34,False,"Unknown column(s) found: {'Series_Complete_Pop_Pct', 'Additional_Doses_Vax_Pct', 'Administered_Dose1_Pop_Pct\u200b'}"
 cowidev.vax.batch.uruguay,1.22,True,
 cowidev.vax.batch.zimbabwe,0.58,True,
 cowidev.vax.incremental.africacdc,,,
@@ -56,12 +56,12 @@ cowidev.vax.incremental.bangladesh,9.38,True,
 cowidev.vax.incremental.barbados,1.18,True,
 cowidev.vax.incremental.brazil,0.03,True,
 cowidev.vax.incremental.bulgaria,0.79,True,
-cowidev.vax.incremental.china,0.05,False,"Message: 'geckodriver' executable needs to be in PATH. 
+cowidev.vax.incremental.china,181.64,False,"Message: Reached error page: about:neterror?e=netTimeout&u=http%3A//www.nhc.gov.cn/xcs/yqjzqk/list_gzbd.shtml&c=UTF-8&d=The%20server%20at%20www.nhc.gov.cn%20is%20taking%20too%20long%20to%20respond.
 "
 cowidev.vax.incremental.colombia,2.02,True,
-cowidev.vax.incremental.costa_rica,4.04,False,"HTTPSConnectionPool(host='www.ccss.sa.cr', port=443): Max retries exceeded with url: /web/coronavirus/vacunacion (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f78f6fc5160>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
+cowidev.vax.incremental.costa_rica,1.87,True,
 cowidev.vax.incremental.croatia,0.1,True,
-cowidev.vax.incremental.cuba,2.87,False,'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.cuba,4.44,False,'NoneType' object has no attribute 'group'
 cowidev.vax.incremental.curacao,0.51,True,
 cowidev.vax.incremental.cyprus,0.89,True,
 cowidev.vax.incremental.dominican_republic,6.22,True,
@@ -97,22 +97,22 @@ cowidev.vax.incremental.mongolia,2.07,True,
 cowidev.vax.incremental.montenegro,0.13,True,
 cowidev.vax.incremental.morocco,,,
 cowidev.vax.incremental.myanmar,7.71,True,
-cowidev.vax.incremental.nepal,20.65,False,"HTTPSConnectionPool(host='covid19.mohp.gov.np', port=443): Max retries exceeded with url: /covid/api/ministryrelease (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f78f7234e20>, 'Connection to covid19.mohp.gov.np timed out. (connect timeout=20)'))"
+cowidev.vax.incremental.nepal,10.39,True,
 cowidev.vax.incremental.north_macedonia,,,
 cowidev.vax.incremental.northern_cyprus,0.83,True,
 cowidev.vax.incremental.paho,40.7,True,
-cowidev.vax.incremental.pakistan,1.1,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f79063b6040>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
+cowidev.vax.incremental.pakistan,0.91,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fd1d8700520>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
 cowidev.vax.incremental.philippines,0.52,True,
 cowidev.vax.incremental.poland,0.13,True,
 cowidev.vax.incremental.qatar,17.93,True,
-cowidev.vax.incremental.russia,1.81,False,Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway: b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
+cowidev.vax.incremental.russia,2.71,True,
 cowidev.vax.incremental.saint_lucia,,,
 cowidev.vax.incremental.serbia,5.75,True,
 cowidev.vax.incremental.south_africa,72.43,True,
 cowidev.vax.incremental.spain,5.8,True,
 cowidev.vax.incremental.sri_lanka,,,
 cowidev.vax.incremental.suriname,14.24,True,
-cowidev.vax.incremental.taiwan,4.76,False,"HTTPSConnectionPool(host='www.cdc.gov.tw', port=443): Max retries exceeded with url: /Category/Page/9jFXNbCe-sFK9EImRRi2Og (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f7904891520>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
+cowidev.vax.incremental.taiwan,11.13,True,
 cowidev.vax.incremental.thailand,1.35,True,
 cowidev.vax.incremental.turkey,0.52,True,
 cowidev.vax.incremental.united_arab_emirates,16.32,True,
