@@ -6,7 +6,7 @@ from joblib import Parallel, delayed
 import pandas as pd
 
 from cowidev.utils.log import get_logger, print_eoe
-from cowidev.utils.utils import export_timestamp
+from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
 from cowidev.vax.countries import MODULES_NAME
 
@@ -28,7 +28,7 @@ class CountryDataGetter:
     def _skip_module(self, module_name):
         return module_name in self.modules_skip
 
-    def run(self, module_name: str):
+    def run(self, module_name: str, num_retries: int = 2):
         t0 = time.time()
         # Check country skipping
         if self._skip_module(module_name):
@@ -37,16 +37,21 @@ class CountryDataGetter:
         # Start country scraping
         logger.info(f"{self.log_header} - {module_name}: started")
         module = importlib.import_module(module_name)
-        try:
-            module.main()
-        except Exception as err:
-            success = False
-            logger.error(f"{self.log_header} - {module_name}: ❌ {err}", exc_info=True)
-            error_msg = err
-        else:
-            success = True
+        error_msg = ""
+        for i in range(num_retries):
+            try:
+                module.main()
+            except Exception as err:
+                logger.error(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
+                success = False
+                error_msg = get_traceback(err)
+            else:
+                success = True
+                break
+        if success:
             logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")
-            error_msg = ""
+        else:
+            logger.error(f"{self.log_header} - {module_name}: ❌ FAILED after {i+1} tries: {error_msg}", exc_info=True)
         t = round(time.time() - t0, 2)
         return {"module_name": module_name, "success": success, "skipped": False, "time": t, "error": error_msg}
 
