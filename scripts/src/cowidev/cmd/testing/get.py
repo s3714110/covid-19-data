@@ -60,6 +60,7 @@ def click_test_get(ctx, countries, skip_countries):
     modules = c2m.parse(countries)
     modules_skip = c2m.parse(skip_countries)
     main_get_data(
+        modules_valid=MODULES_NAME,
         parallel=ctx.obj["parallel"],
         n_jobs=ctx.obj["n_jobs"],
         modules=modules,

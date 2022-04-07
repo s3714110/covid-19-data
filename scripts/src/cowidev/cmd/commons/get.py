@@ -53,6 +53,7 @@ class CountryDataGetter:
 
 def main_get_data(
     modules: list,
+    modules_valid: list,
     parallel: bool = False,
     n_jobs: int = -2,
     modules_skip: list = [],
@@ -89,7 +90,7 @@ def main_get_data(
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
     if output_status is not None:
-        export_status(modules_execution_results, output_status, output_status_ts)
+        export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
     # Retry failed modules
     _retry_modules_failed(modules_execution_results, country_data_getter)
     # Print timing details
@@ -97,7 +98,7 @@ def main_get_data(
     print_eoe()
 
 
-def export_status(modules_execution_results, output_status, output_status_ts):
+def export_status(modules_execution_results, modules_valid, output_status, output_status_ts):
     # Get status of executed scripts
     df_status = _build_df_status(modules_execution_results)
     # Load current status
@@ -108,7 +109,7 @@ def export_status(modules_execution_results, output_status, output_status_ts):
     df_status = pd.concat([df_status, df_status_now], ignore_index=True).sort_values("module")
 
     # Filter only running modules & set index
-    df_status = df_status[df_status.module.isin(MODULES_NAME)].set_index("module")
+    df_status = df_status[df_status.module.isin(modules_valid)].set_index("module")
 
     # Export
     df_status.to_csv(output_status)

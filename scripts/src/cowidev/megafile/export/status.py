@@ -18,8 +18,8 @@ def load_status_get(path, path_ts):
             status_id=df.success.replace({True: 1, False: 0}).fillna(0.5),
             error=df.error.apply(lambda x: _msg_err(x)),
         )
-        .sort_values(["status_id", "execution_time (sec)"], ascending=[True, False])
-        .drop(columns=["success", "status_id"])[["module", "status", "execution_time (sec)", "error"]]
+        .sort_values(["status_id", "timestamp", "execution_time (sec)"], ascending=[True, False, False])
+        .drop(columns=["success", "status_id"])[["module", "status", "timestamp", "execution_time (sec)", "error"]]
     )
     table = df.to_html(index=False, escape=False)
     n_fail = (df.status == "❌").sum()
