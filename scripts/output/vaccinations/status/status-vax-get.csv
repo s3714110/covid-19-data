@@ -85,9 +85,9 @@ cowidev.vax.incremental.kazakhstan,7.55,True,
 cowidev.vax.incremental.kenya,16.91,False,"Table 1 has changed, please check!"
 cowidev.vax.incremental.kosovo,9.5,True,
 cowidev.vax.incremental.kyrgyzstan,4.49,True,
-cowidev.vax.incremental.laos,2.03,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
+cowidev.vax.incremental.laos,1.08,False,"('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))"
 cowidev.vax.incremental.lebanon,3.42,True,
-cowidev.vax.incremental.libya,24.79,False,"HTTPSConnectionPool(host='ncdc.org.ly', port=443): Read timed out."
+cowidev.vax.incremental.libya,3.1,True,
 cowidev.vax.incremental.macao,14.72,True,
 cowidev.vax.incremental.mexico,9.76,True,
 cowidev.vax.incremental.moldova,6.05,True,
@@ -100,7 +100,7 @@ cowidev.vax.incremental.nepal,11.53,True,
 cowidev.vax.incremental.north_macedonia,,,
 cowidev.vax.incremental.northern_cyprus,4.88,True,
 cowidev.vax.incremental.paho,39.89,True,
-cowidev.vax.incremental.pakistan,1.45,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe690ae70a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
+cowidev.vax.incremental.pakistan,1.04,False,"HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc54efb6ad0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
 cowidev.vax.incremental.philippines,3.75,True,
 cowidev.vax.incremental.poland,1.01,True,
 cowidev.vax.incremental.qatar,9.89,True,
@@ -111,10 +111,10 @@ cowidev.vax.incremental.south_africa,5.9,True,
 cowidev.vax.incremental.spain,3.04,True,
 cowidev.vax.incremental.sri_lanka,,,
 cowidev.vax.incremental.suriname,13.47,True,
-cowidev.vax.incremental.taiwan,21.81,False,<urlopen error [Errno -3] Temporary failure in name resolution>
+cowidev.vax.incremental.taiwan,13.41,True,
 cowidev.vax.incremental.thailand,1.98,True,
 cowidev.vax.incremental.turkey,0.68,True,
 cowidev.vax.incremental.united_arab_emirates,17.77,True,
 cowidev.vax.incremental.vietnam,,,
-cowidev.vax.incremental.who,1.67,True,
+cowidev.vax.incremental.who,1.34,True,
 cowidev.vax.incremental.zambia,0.65,True,

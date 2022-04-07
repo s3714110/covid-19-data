@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/119` scripts failed, `11/119` were skipped. Latest update was `2022-04-06T14:02:33`.
+`3/119` scripts failed, `11/119` were skipped. Latest update was `2022-04-07T09:30:13`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,18 +18,6 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.libya</td>
-      <td>❌</td>
-      <td>24.79</td>
-      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='ncdc.org.ly', port=443): Read timed out.</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.taiwan</td>
-      <td>❌</td>
-      <td>21.81</td>
-      <td><details><summary>show</summary><pre><urlopen error [Errno -3] Temporary failure in name resolution></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.kenya</td>
       <td>❌</td>
       <td>16.91</td>
@@ -38,14 +26,14 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.vax.incremental.laos</td>
       <td>❌</td>
-      <td>2.03</td>
+      <td>1.08</td>
       <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.pakistan</td>
       <td>❌</td>
-      <td>1.45</td>
-      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe690ae70a0>: Failed to establish a new connection: [Errno -2] Name or service not known'))</pre></details></td>
+      <td>1.04</td>
+      <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc54efb6ad0>: Failed to establish a new connection: [Errno -2] Name or service not known'))</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
@@ -195,6 +183,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.suriname</td>
       <td>✅</td>
       <td>13.47</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.taiwan</td>
+      <td>✅</td>
+      <td>13.41</td>
       <td></td>
     </tr>
     <tr>
@@ -456,6 +450,12 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.libya</td>
+      <td>✅</td>
+      <td>3.10</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.incremental.spain</td>
       <td>✅</td>
       <td>3.04</td>
@@ -522,12 +522,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.who</td>
-      <td>✅</td>
-      <td>1.67</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
       <td>1.53</td>
@@ -543,6 +537,12 @@ This file shows the latest status of the data pipeline.
       <td>cowidev.vax.incremental.aruba</td>
       <td>✅</td>
       <td>1.37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.who</td>
+      <td>✅</td>
+      <td>1.34</td>
       <td></td>
     </tr>
     <tr>
