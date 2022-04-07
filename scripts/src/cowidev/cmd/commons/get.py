@@ -1,14 +1,14 @@
 import time
 import importlib
-import traceback
+from datetime import datetime
 
 from joblib import Parallel, delayed
 import pandas as pd
 
-from cowidev.utils.log import get_logger, print_eoe, system_details
+from cowidev.utils.log import get_logger, print_eoe
 from cowidev.utils.utils import export_timestamp
-from cowidev.utils.s3 import obj_from_s3, obj_to_s3
-from cowidev.utils.clean.dates import localdate
+from cowidev.utils.s3 import obj_from_s3
+from cowidev.vax.countries import MODULES_NAME
 
 
 # Logger
@@ -105,7 +105,10 @@ def export_status(modules_execution_results, output_status, output_status_ts):
     msk = ~df_status_now.module.isin(df_status.module)
     df_status_now = df_status_now[msk]
     # Merge
-    df_status = pd.concat([df_status, df_status_now], ignore_index=True).sort_values("module").set_index("module")
+    df_status = pd.concat([df_status, df_status_now], ignore_index=True).sort_values("module")
+
+    # Filter only running modules & set index
+    df_status = df_status[df_status.module.isin(MODULES_NAME)].set_index("module")
 
     # Export
     df_status.to_csv(output_status)
@@ -133,6 +136,7 @@ def _build_df_status(modules_execution_results):
                 "module": m["module_name"],
                 "execution_time (sec)": m["time"],
                 "success": m["success"],
+                "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
                 "error": m["error"],
             }
             for m in modules_execution_results
