@@ -45,7 +45,7 @@ class UnitedStates(CountryVaxBase):
                 "Booster_Cumulative",
                 "Booster_7_Day_Rolling_Average",
                 "Series_Complete_Pop_Pct",
-                "Administered_Dose1_Pop_Pct\u200b",
+                "Administered_Dose1_Pop_Pct",
                 "Additional_Doses_Vax_Pct",
             ],
         )
