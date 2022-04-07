@@ -1,3 +1,4 @@
+import traceback
 from datetime import datetime, timedelta
 import json
 import ntpath
@@ -111,3 +112,8 @@ def check_known_columns(df: pd.DataFrame, known_cols: list) -> None:
     unknown_cols = set(df.columns).difference(set(known_cols))
     if len(unknown_cols) > 0:
         raise Exception(f"Unknown column(s) found: {unknown_cols}")
+
+
+def get_traceback(e):
+    lines = traceback.format_exception(type(e), e, e.__traceback__)
+    return ''.join(lines)
