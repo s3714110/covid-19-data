@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-07T11:15:48`.
+`3/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-07T13:49:31`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -31,20 +31,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-04-07T10:30:06</td>
       <td>29.57</td>
       <td><details><summary>show</summary><pre>HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /10.230.0.57+9000/coviddashboard.html (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f1446aaf0a0>: Failed to establish a new connection: [Errno 101] Network is unreachable'))</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.united_states</td>
-      <td>❌</td>
-      <td>2022-04-07T10:30:06</td>
-      <td>8.41</td>
-      <td><details><summary>show</summary><pre>Unknown column(s) found: {'Administered_Dose1_Pop_Pct'}</pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.laos</td>
-      <td>❌</td>
-      <td>2022-04-07T10:30:06</td>
-      <td>1.09</td>
-      <td><details><summary>show</summary><pre>('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))</pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.pakistan</td>
@@ -121,6 +107,20 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-04-07T10:30:06</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.united_states</td>
+      <td>✅</td>
+      <td>2022-04-07T13:49:31</td>
+      <td>6.83</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.laos</td>
+      <td>✅</td>
+      <td>2022-04-07T13:46:38</td>
+      <td>1.65</td>
       <td></td>
     </tr>
     <tr>
