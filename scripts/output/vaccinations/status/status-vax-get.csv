@@ -19,27 +19,7 @@ cowidev.vax.batch.indonesia,7.19,True,2022-04-08T08:19:44,
 cowidev.vax.batch.ireland,0.39,True,2022-04-08T08:19:44,
 cowidev.vax.batch.israel,7.23,True,2022-04-08T08:19:44,
 cowidev.vax.batch.italy,4.5,True,2022-04-08T08:19:44,
-cowidev.vax.batch.jersey,0.77,False,2022-04-08T08:19:44,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 231, in main
-    Jersey().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 223, in export
-    df_age = df_base.pipe(self.pipeline_age)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 202, in pipeline_age
-    .pipe(self.pipe_age_fix_dp)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 184, in pipe_age_fix_dp
-    raise ValueError(f""Check fixed datapoints ({dt_min}<date<{dt_max}), they might be already fine!"")
-ValueError: Check fixed datapoints (2021-09-05<date<2021-09-22), they might be already fine!
-"
+cowidev.vax.batch.jersey,0.46,True,2022-04-08T11:26:30,
 cowidev.vax.batch.latvia,16.4,True,2022-04-08T08:19:44,
 cowidev.vax.batch.lithuania,1.6,True,2022-04-08T08:19:44,
 cowidev.vax.batch.luxembourg,2.14,True,2022-04-08T08:19:44,
@@ -251,27 +231,7 @@ Traceback (most recent call last):
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covid.gov.pkcovid-vaccination-en.php', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f686c50ad40>: Failed to establish a new connection: [Errno -2] Name or service not known'))
 "
-cowidev.vax.incremental.philippines,0.67,False,2022-04-08T08:19:44,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 100, in main
-    Philippines().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 95, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 30, in read
-    data = self._parse_data(json_data)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 35, in _parse_data
-    data = {**self._parse_metrics(json_data), ""date"": self._parse_date(json_data)}
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 63, in _parse_date
-    date = clean_date(value.lower(), ""as of %b. %d, %Y"")
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
-    dt = datetime.strptime(date_or_text, fmt) - timedelta(days=minus_days)
-  File ""/usr/lib/python3.10/_strptime.py"", line 568, in _strptime_datetime
-    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File ""/usr/lib/python3.10/_strptime.py"", line 349, in _strptime
-    raise ValueError(""time data %r does not match format %r"" %
-ValueError: time data 'as of april 7, 2022' does not match format 'as of %b. %d, %Y'
-"
+cowidev.vax.incremental.philippines,1.03,True,2022-04-08T11:27:51,
 cowidev.vax.incremental.poland,0.17,True,2022-04-08T08:19:44,
 cowidev.vax.incremental.qatar,7.54,True,2022-04-08T08:19:44,
 cowidev.vax.incremental.russia,2.84,True,2022-04-08T08:19:44,
