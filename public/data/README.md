@@ -13,7 +13,7 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 | Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 216        |
 | Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 216       |
 | Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily   | 191        |
-| Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily   | 79        |
+| Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily   | 187        |
 | Other variables of interest | International organizations (UN, World Bank, OECD, IHME…) | Fixed   | 241       |
 
 A [specific section of this repository](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations) is also dedicated to **vaccinations**, with a lighter dataset containing only vaccination data.
