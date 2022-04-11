@@ -245,13 +245,19 @@ class CountryVaxBase:
                 raise ValueError(f"Please check class attribute {field_raw}, it can't be None!")
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
+        if is_series := isinstance(df, pd.Series):
+            df = pd.DataFrame(df).T
         mapping = {
             "location": self.location,
             "source_url": self.source_url_ref,
         }
         mapping = {k: v for k, v in mapping.items() if k not in df}
         self._check_attributes(mapping)
-        return df.assign(**mapping)
+        df = df.assign(**mapping)
+        if is_series:
+            return df.iloc[0]
+        else:
+            return df
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.rename_columns)
