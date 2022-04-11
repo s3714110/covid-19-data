@@ -95,22 +95,8 @@ cowidev.vax.incremental.iceland,4.87,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.india,3.66,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.iran,9.13,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.isle_of_man,2.28,True,2022-04-11T08:48:29,
-cowidev.vax.incremental.jamaica,2.82,False,2022-04-11T10:52:43,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/jamaica.py"", line 62, in main
-    data = read(source).pipe(pipeline, source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/jamaica.py"", line 10, in read
-    return connect_parse_data(source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/jamaica.py"", line 20, in connect_parse_data
-    total_vaccinations = clean_count(counters[0][""data-to-value""])
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/numbers.py"", line 91, in clean_count
-    return cleaner.run(count)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/numbers.py"", line 83, in run
-    raise ValueError(""The format of the number seems to be not correct! Please review."")
-ValueError: The format of the number seems to be not correct! Please review.
-"
-cowidev.vax.incremental.japan,9.32,False,2022-04-11T08:48:29,"Traceback (most recent call last):
+cowidev.vax.incremental.jamaica,0.85,True,2022-04-11T14:18:20,
+cowidev.vax.incremental.japan,1.99,False,2022-04-11T14:06:17,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
     module.main()
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/japan.py"", line 74, in main
