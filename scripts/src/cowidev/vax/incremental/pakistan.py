@@ -5,12 +5,13 @@ import pandas as pd
 from cowidev.utils.clean import clean_count
 from cowidev.utils.web.scraping import get_soup
 from cowidev.vax.utils.incremental import enrich_data, increment
+from cowidev.vax.utils.base import CountryVaxBase
 
 
-class Pakistan:
-    def __init__(self) -> None:
-        self.location = "Pakistan"
-        self.source_url = "https://ncoc.gov.pk/covid-vaccination-en.php"
+class Pakistan(CountryVaxBase):
+    location = "Pakistan"
+    source_url = "https://covid.gov.pk/vaccine-details"
+    source_url_ref = source_url
 
     def read(self):
         soup = get_soup(self.source_url)
@@ -38,9 +39,6 @@ class Pakistan:
 
         return data
 
-    def pipe_location(self, ds: pd.Series) -> pd.Series:
-        return enrich_data(ds, "location", "Pakistan")
-
     def pipe_vaccine(self, ds: pd.Series) -> pd.Series:
         return enrich_data(
             ds,
@@ -49,20 +47,11 @@ class Pakistan:
         )
 
     def pipeline(self, ds: pd.Series) -> pd.Series:
-        return ds.pipe(self.pipe_location).pipe(self.pipe_vaccine)
+        return ds.pipe(self.pipe_vaccine).pipe(self.pipe_metadata)
 
     def export(self):
         data = self.read().pipe(self.pipeline)
-        increment(
-            location=data["location"],
-            total_vaccinations=data["total_vaccinations"],
-            people_vaccinated=data["people_vaccinated"],
-            people_fully_vaccinated=data["people_fully_vaccinated"],
-            total_boosters=data["total_boosters"],
-            date=data["date"],
-            source_url=data["source_url"],
-            vaccine=data["vaccine"],
-        )
+        self.export_datafile(df=data, attach=True)
 
 
 def main():
