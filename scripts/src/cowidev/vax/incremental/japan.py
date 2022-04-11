@@ -24,7 +24,7 @@ class Japan:
     def _parse_metrics(self, soup):
         df = pd.read_html(str(soup.find(class_="vaccination-count")))[0]
         df = df.dropna(axis=1, how="all")
-        assert df.shape == (4, 7)
+        assert df.shape == (4, 8)
 
         values = df.iloc[:, 1].values
         total_vaccinations = values[0]
