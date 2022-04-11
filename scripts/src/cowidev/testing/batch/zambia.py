@@ -55,6 +55,7 @@ class Zambia(CountryTestBase):
         df = df.groupby("Date", as_index=False).min()
         # manual fix: drop incorrect data point on 2021-10-30
         df = df.drop(index=df[df["Date"] == "2021-10-30"].index.values)
+        df = df.drop(index=df[df["Date"] == "2022-04-03"].index.values)
         df = make_monotonic(df)
         return df
 
