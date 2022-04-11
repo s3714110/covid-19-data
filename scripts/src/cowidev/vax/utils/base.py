@@ -118,6 +118,7 @@ class CountryVaxBase:
         if not valid_cols_only:
             cols += [col for col in df.columns if col not in COLUMNS_ORDER]
         df = df[cols]
+        df = df.drop_duplicates()
         return df
 
     def _postprocessing_age(self, df):
