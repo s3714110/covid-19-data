@@ -52,21 +52,7 @@ cowidev.vax.incremental.aruba,1.47,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.azerbaijan,16.21,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.bahrain,1.08,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.bangladesh,11.24,True,2022-04-11T08:48:29,
-cowidev.vax.incremental.barbados,2.98,False,2022-04-11T08:52:18,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 82, in main
-    Barbados().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 77, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 23, in read
-    df = self._parse_data(soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 35, in _parse_data
-    metrics = self._parse_metrics(soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 50, in _parse_metrics
-    people_vaccinated = clean_count(re.search(self.regex[""people_vaccinated""], text).group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-"
+cowidev.vax.incremental.barbados,3.95,True,2022-04-11T10:44:45,
 cowidev.vax.incremental.brazil,0.26,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.bulgaria,0.95,True,2022-04-11T08:48:29,
 cowidev.vax.incremental.china,365.43,False,2022-04-11T08:48:29,"Traceback (most recent call last):
