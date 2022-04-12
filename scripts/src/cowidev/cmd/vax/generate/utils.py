@@ -688,7 +688,7 @@ class DatasetGenerator:
                     "COVID-19 - Vaccinations by age group.csv",
                 ),
             ),
-            (html_table, PATHS.INTERNAL_OUTPUT_VAX_TABLE_FILE),
+            (html_table, PATHS.DATA_INTERNAL_VAX_TABLE),
         ]
         for obj, path in files:
             if path.endswith(".csv"):

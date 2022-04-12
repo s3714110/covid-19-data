@@ -20,7 +20,7 @@ def click_vax_export():
 def main_source_table_html(url):
     # Read html content
     print("-- Reading HTML table... --")
-    with open(PATHS.INTERNAL_OUTPUT_VAX_TABLE_FILE, "r") as f:
+    with open(PATHS.DATA_INTERNAL_VAX_TABLE, "r") as f:
         html = f.read()
     logger.info("Redirecting to owid editing platform...")
     try:
@@ -29,7 +29,7 @@ def main_source_table_html(url):
     except:
         print(
             f"Can't copy content and open browser. Please visit {url} and copy the content from"
-            f" {PATHS.INTERNAL_OUTPUT_VAX_TABLE_FILE}"
+            f" {PATHS.DATA_INTERNAL_VAX_TABLE}"
         )
 
 
