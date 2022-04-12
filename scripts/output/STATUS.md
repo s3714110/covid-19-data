@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-11T14:37:19`.
+`0/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-12T09:37:07`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,822 +19,822 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.china</td>
-      <td>❌</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>365.43</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 43, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 66, in main<br>    China().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 58, in export<br>    df = self.read(last_update)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 22, in read<br>    driver.get(self.source_url)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get<br>    self.execute(Command.GET, {'url': url})<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&u=http%3A//www.nhc.gov.cn/xcs/yqjzqk/list_gzbd.shtml&c=UTF-8&d=The%20server%20at%20www.nhc.gov.cn%20is%20taking%20too%20long%20to%20respond.<br><br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.austria</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ukraine</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.africacdc</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.gabon</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.guatemala</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.morocco</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.north_macedonia</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.saint_lucia</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.sri_lanka</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.vietnam</td>
       <td>⚠️</td>
-      <td>2022-04-11T08:48:29</td>
+      <td>2022-04-12T08:49:12</td>
       <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.pakistan</td>
-      <td>✅</td>
-      <td>2022-04-11T14:37:19</td>
-      <td>1.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.japan</td>
-      <td>✅</td>
-      <td>2022-04-11T14:28:03</td>
-      <td>1.19</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.jamaica</td>
-      <td>✅</td>
-      <td>2022-04-11T14:18:20</td>
-      <td>0.85</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.barbados</td>
-      <td>✅</td>
-      <td>2022-04-11T10:44:45</td>
-      <td>3.95</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.trinidad_and_tobago</td>
-      <td>✅</td>
-      <td>2022-04-11T08:55:07</td>
-      <td>1.04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>43.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>40.76</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.united_states</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>38.90</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.monaco</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>33.82</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.latvia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>33.38</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.spc</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>30.20</td>
+      <td>2022-04-12T09:37:07</td>
+      <td>13.34</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.slovakia</td>
+      <td>cowidev.vax.incremental.barbados</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>21.40</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.equatorial_guinea</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>18.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.united_arab_emirates</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>17.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.azerbaijan</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>16.21</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.cyprus</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>15.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.macao</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>12.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.taiwan</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>12.86</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.suriname</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>12.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.nepal</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.belgium</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bangladesh</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.antigua_barbuda</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.costa_rica</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>11.11</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.georgia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>10.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.hungary</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>10.65</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.el_salvador</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>9.61</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kosovo</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>9.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.iran</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>9.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.cuba</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>9.10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.mexico</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>7.70</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.laos</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>7.46</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn<br>    conn.connect()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 416, in connect<br>    self.sock = ssl_wrap_socket(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket<br>    ssl_sock = _ssl_wrap_socket_impl(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl<br>    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)<br>  File "/usr/lib/python3.10/ssl.py", line 512, in wrap_socket<br>    return self.sslsocket_class._create(<br>  File "/usr/lib/python3.10/ssl.py", line 1070, in _create<br>    self.do_handshake()<br>  File "/usr/lib/python3.10/ssl.py", line 1341, in do_handshake<br>    self._sslobj.do_handshake()<br>ConnectionResetError: [Errno 104] Connection reset by peer<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 785, in urlopen<br>    retries = retries.increment(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 550, in increment<br>    raise six.reraise(type(error), error, _stacktrace)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/packages/six.py", line 769, in reraise<br>    raise value.with_traceback(tb)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn<br>    conn.connect()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 416, in connect<br>    self.sock = ssl_wrap_socket(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket<br>    ssl_sock = _ssl_wrap_socket_impl(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl<br>    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)<br>  File "/usr/lib/python3.10/ssl.py", line 512, in wrap_socket<br>    return self.sslsocket_class._create(<br>  File "/usr/lib/python3.10/ssl.py", line 1070, in _create<br>    self.do_handshake()<br>  File "/usr/lib/python3.10/ssl.py", line 1341, in do_handshake<br>    self._sslobj.do_handshake()<br>urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 43, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 101, in main<br>    Laos().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 88, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 21, in read<br>    soup = get_soup(self.source_url)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 74, in get_soup<br>    response = get_response(source, request_method, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 44, in get_response<br>    raise err<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 38, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 501, in send<br>    raise ConnectionError(err, request=request)<br>requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.qatar</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>7.43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.argentina</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>7.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.libya</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.81</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.lithuania</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.myanmar</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.64</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.indonesia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.52</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.greenland</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.romania</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.35</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kazakhstan</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.33</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.israel</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.21</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.new_zealand</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.20</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.serbia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.south_korea</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>6.02</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.switzerland</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>5.91</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>5.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.denmark</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>5.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.south_africa</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>5.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.iceland</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.guernsey</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.74</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kyrgyzstan</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.moldova</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.47</td>
+      <td>2022-04-12T09:35:55</td>
+      <td>1.30</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.italy</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.10</td>
+      <td>2022-04-12T09:27:32</td>
+      <td>2.40</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.united_kingdom</td>
+      <td>cowidev.vax.incremental.china</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.07</td>
+      <td>2022-04-12T09:26:33</td>
+      <td>199.58</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 43, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 66, in main<br>    China().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 58, in export<br>    df = self.read(last_update)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 22, in read<br>    driver.get(self.source_url)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 333, in get<br>    self.execute(Command.GET, {'url': url})<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.WebDriverException: Message: Reached error page: about:neterror?e=netTimeout&u=http%3A//www.nhc.gov.cn/xcs/yqjzqk/list_gzbd.shtml&c=UTF-8&d=The%20server%20at%20www.nhc.gov.cn%20is%20taking%20too%20long%20to%20respond.<br><br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.costa_rica</td>
+      <td>✅</td>
+      <td>2022-04-12T09:26:33</td>
+      <td>1.79</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>cowidev.vax.incremental.serbia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>4.02</td>
+      <td>2022-04-12T09:22:42</td>
+      <td>9.21</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.russia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.90</td>
+      <td>2022-04-12T09:22:42</td>
+      <td>2.72</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ecdc</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>72.32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.slovakia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>47.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>42.05</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.south_korea</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>36.71</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.switzerland</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>31.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.monaco</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>27.40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.united_states</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>25.06</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.latvia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>19.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.new_zealand</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>15.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.macao</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>15.79</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.nepal</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>14.67</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.suriname</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>14.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.united_arab_emirates</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>14.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.sweden</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>14.25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.romania</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>13.43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kosovo</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>11.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.qatar</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>10.94</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bangladesh</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>10.06</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kazakhstan</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>7.35</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.taiwan</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>7.28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.myanmar</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>7.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.indonesia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>6.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>6.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.united_kingdom</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>6.35</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.israel</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>5.84</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.peru</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.73</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>5.58</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.india</td>
+      <td>cowidev.vax.incremental.dominican_republic</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.luxembourg</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.17</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.czechia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>3.10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.bolivia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.spain</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.68</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.lebanon</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.colombia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.isle_of_man</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.28</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.australia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>2.12</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecuador</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.98</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.thailand</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.98</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>5.41</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.albania</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.91</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>4.94</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.northern_cyprus</td>
+      <td>cowidev.vax.batch.belgium</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.85</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>4.68</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.greece</td>
+      <td>cowidev.vax.incremental.mexico</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.75</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>4.58</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.who</td>
+      <td>cowidev.vax.incremental.south_africa</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.71</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>4.17</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.singapore</td>
+      <td>cowidev.vax.batch.denmark</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.65</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.93</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.azerbaijan</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.antigua_barbuda</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.56</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.greenland</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.spain</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.argentina</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.27</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.uruguay</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.54</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.23</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.luxembourg</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>3.03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.libya</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.90</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.aruba</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.47</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.70</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.slovenia</td>
+      <td>cowidev.vax.incremental.who</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.45</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.68</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.mongolia</td>
+      <td>cowidev.vax.incremental.laos</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.43</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.33</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 416, in connect<br>    self.sock = ssl_wrap_socket(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket<br>    ssl_sock = _ssl_wrap_socket_impl(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl<br>    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 500, in wrap_socket<br>    return self.sslsocket_class._create(<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 1040, in _create<br>    self.do_handshake()<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 1309, in do_handshake<br>    self._sslobj.do_handshake()<br>ConnectionResetError: [Errno 104] Connection reset by peer<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen<br>    retries = retries.increment(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 532, in increment<br>    raise six.reraise(type(error), error, _stacktrace)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/packages/six.py", line 769, in reraise<br>    raise value.with_traceback(tb)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 416, in connect<br>    self.sock = ssl_wrap_socket(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 449, in ssl_wrap_socket<br>    ssl_sock = _ssl_wrap_socket_impl(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/ssl_.py", line 493, in _ssl_wrap_socket_impl<br>    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 500, in wrap_socket<br>    return self.sslsocket_class._create(<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 1040, in _create<br>    self.do_handshake()<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/ssl.py", line 1309, in do_handshake<br>    self._sslobj.do_handshake()<br>urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 43, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 101, in main<br>    Laos().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 88, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py", line 21, in read<br>    soup = get_soup(self.source_url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 74, in get_soup<br>    response = get_response(source, request_method, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 44, in get_response<br>    raise err<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 38, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 501, in send<br>    raise ConnectionError(err, request=request)<br>requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iran</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.29</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.canada</td>
+      <td>cowidev.vax.incremental.colombia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.35</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.25</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.faeroe_islands</td>
+      <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.30</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.24</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.germany</td>
+      <td>cowidev.vax.batch.czechia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.25</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.06</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.curacao</td>
+      <td>cowidev.vax.batch.bolivia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.19</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.05</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.bahrain</td>
+      <td>cowidev.vax.batch.hong_kong</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>1.08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.philippines</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.98</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.estonia</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.95</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>2.02</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.bulgaria</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.95</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.87</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.malaysia</td>
+      <td>cowidev.vax.incremental.cuba</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.89</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.85</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.malta</td>
+      <td>cowidev.vax.incremental.thailand</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.87</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.59</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.turkey</td>
+      <td>cowidev.vax.incremental.pakistan</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.83</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.52</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.zambia</td>
+      <td>cowidev.vax.incremental.lebanon</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.79</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.50</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.jersey</td>
+      <td>cowidev.vax.batch.slovenia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.77</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.49</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.chile</td>
+      <td>cowidev.vax.incremental.equatorial_guinea</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.70</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.41</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.finland</td>
+      <td>cowidev.vax.incremental.isle_of_man</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.70</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.31</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.netherlands</td>
+      <td>cowidev.vax.incremental.jamaica</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.69</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.31</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.france</td>
+      <td>cowidev.vax.incremental.mongolia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.66</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.30</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.ireland</td>
+      <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.66</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.27</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.montenegro</td>
+      <td>cowidev.vax.batch.greece</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.61</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.27</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.zimbabwe</td>
+      <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.portugal</td>
-      <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.47</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.20</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.norway</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.43</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.16</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.brazil</td>
+      <td>cowidev.vax.incremental.bahrain</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.26</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ecuador</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.09</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.hungary</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.09</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.japan</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.08</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.moldova</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>1.07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.singapore</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kyrgyzstan</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.germany</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.90</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.zimbabwe</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.cyprus</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.85</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.india</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.portugal</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.northern_cyprus</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.74</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.malta</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.70</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.philippines</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.65</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.chile</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.estonia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.netherlands</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.georgia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.zambia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.malaysia</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.lithuania</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.45</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.turkey</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.france</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.38</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.curacao</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.33</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ireland</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.faeroe_islands</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.guernsey</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.jersey</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.finland</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iceland</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.poland</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.24</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.croatia</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.20</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.16</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.montenegro</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.brazil</td>
+      <td>✅</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.05</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.fiji</td>
       <td>✅</td>
-      <td>2022-04-11T08:48:29</td>
-      <td>0.01</td>
+      <td>2022-04-12T08:49:12</td>
+      <td>0.00</td>
       <td></td>
     </tr>
   </tbody>
