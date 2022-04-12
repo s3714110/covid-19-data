@@ -17,6 +17,7 @@ class Italy(CountryVaxBase):
         "pregressa_infezione",
         "dose_addizionale_booster",
         "booster_immuno",
+        "d2_booster",
     ]
     columns_rename: dict = {
         "data_somministrazione": "date",
@@ -55,6 +56,7 @@ class Italy(CountryVaxBase):
                 "codice_regione_ISTAT",
                 "nome_area",
                 "booster_immuno",
+                "d2_booster",
             ],
         )
         return df[self.columns]
@@ -78,8 +80,9 @@ class Italy(CountryVaxBase):
             + df.seconda_dose
             + df.pregressa_infezione
             + df.dose_addizionale_booster
-            + df.booster_immuno,
-            total_boosters=df.dose_addizionale_booster + df.booster_immuno,
+            + df.booster_immuno
+            + df.d2_booster,
+            total_boosters=df.dose_addizionale_booster + df.booster_immuno + df.d2_booster,
         )
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
