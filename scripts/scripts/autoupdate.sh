@@ -10,6 +10,7 @@ SCRIPTS_DIR=$ROOT_DIR/scripts
 export OWID_COVID_PROJECT_DIR=${ROOT_DIR}
 export OWID_COVID_CONFIG=${OWID_COVID_PROJECT_DIR}/scripts/config.yaml
 export OWID_COVID_SECRETS=${OWID_COVID_PROJECT_DIR}/scripts/secrets.yaml
+export PATH=$PATH:/usr/local/bin/  # so geckodriver is correctly found
 
 has_changed() {
   git diff --name-only --exit-code $1 >/dev/null 2>&1
