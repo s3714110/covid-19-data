@@ -13,8 +13,15 @@ class Barbados(CountryVaxBase):
     source_url_ref: str = None
     regex: dict = {
         "title": r"COVID-19 Update",
-        "people_vaccinated": r"at least one dose is (\d+)",
-        "people_fully_vaccinated": r"fully (vaccinated|vaccinated persons) is (\d+)",
+        "people_vaccinated": r"at least one dose is ([\d,]+)",
+        "people_fully_vaccinated": r"fully (?:vaccinated|vaccinated persons) is ([\d,]+)",
+        # "people_vaccinated": (
+        #     r"(\d+) persons \((?:[\d.]+) per cent of the eligible population\) have received at least one dose"
+        # ),
+        # "people_fully_vaccinated": (
+        #     r"(\d+) individuals – (?:[\d]+) males and (?:[\d]+) females \((?:[\d.]+) per cent of the total"
+        #     r" population or (?:[\d.]+) per cent of the eligible population\) are fully vaccinated"
+        # ),
     }
 
     def read(self) -> pd.DataFrame:
@@ -48,7 +55,7 @@ class Barbados(CountryVaxBase):
         text = soup.get_text()
         text = re.sub(r"(\d),(\d)", r"\1\2", text)
         people_vaccinated = clean_count(re.search(self.regex["people_vaccinated"], text).group(1))
-        people_fully_vaccinated = clean_count(re.search(self.regex["people_fully_vaccinated"], text).group(2))
+        people_fully_vaccinated = clean_count(re.search(self.regex["people_fully_vaccinated"], text).group(1))
         total_vaccinations = people_vaccinated + people_fully_vaccinated
         df = {
             "people_vaccinated": [people_vaccinated],

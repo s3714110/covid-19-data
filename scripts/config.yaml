@@ -49,7 +49,7 @@ pipeline:
           - date: 2021-12-14
             metrics: total_boosters
         Luxembourg:
-          - date: 2022-03-27
+          - date: 2022-04-03
             metrics: people_fully_vaccinated
         Nigeria:
           - date: 2021-06-15
@@ -72,6 +72,7 @@ pipeline:
         - Vanuatu #source no longer updated
         - Guatemala #source no longer updated
         - Indonesia #source no longer updated
+        - Gibraltar #source no longer updated
     process:
     generate:
     export:

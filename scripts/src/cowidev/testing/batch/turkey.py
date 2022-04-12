@@ -1,5 +1,6 @@
 import pandas as pd
-import dateparser
+
+from cowidev.utils.clean.dates import clean_date
 from cowidev.testing import CountryTestBase
 from cowidev.utils.web.scraping import get_driver
 
@@ -34,10 +35,19 @@ class Turkey(CountryTestBase):
     def pipe_date(self, df: pd.DataFrame):
         df["Date"] = (
             df["Date"]
-            .str.replace("MAYIS", "mayıs")
-            .str.replace("KASIM", "kasım")
-            .str.replace("ARALIK", "aralık")
-            .apply(dateparser.parse, languages=["tr"])
+            .str.replace("OCAK", "Jan")
+            .str.replace("ŞUBAT", "Feb")
+            .str.replace("MART", "Mar")
+            .str.replace("NİSAN", "Apr")
+            .str.replace("MAYIS", "May")
+            .str.replace("HAZİRAN", "Jun")
+            .str.replace("TEMMUZ", "Jul")
+            .str.replace("AĞUSTOS", "Aug")
+            .str.replace("EYLÜL", "Sep")
+            .str.replace("EKİM", "oct")
+            .str.replace("KASIM", "Nov")
+            .str.replace("ARALIK", "Dec")
+            .apply(clean_date, fmt="%d %b %Y")
         )
         return df
 

@@ -256,25 +256,25 @@ rolling_avg_spec = {
     "new_cases_7_day_avg_right": {
         "col": "new_cases",
         "window": 7,
-        "min_periods": 7,
+        "min_periods": 6,
         "center": False,
     },
     "new_deaths_7_day_avg_right": {
         "col": "new_deaths",
         "window": 7,
-        "min_periods": 7,
+        "min_periods": 6,
         "center": False,
     },
     "new_cases_per_million_7_day_avg_right": {
         "col": "new_cases_per_million",
         "window": 7,
-        "min_periods": 7,
+        "min_periods": 6,
         "center": False,
     },
     "new_deaths_per_million_7_day_avg_right": {
         "col": "new_deaths_per_million",
         "window": 7,
-        "min_periods": 7,
+        "min_periods": 6,
         "center": False,
     },
 }
@@ -392,7 +392,7 @@ def _inject_growth(df, prefix, periods):
     df[[cases_colname, deaths_colname]] = (
         df[["location", "new_cases", "new_deaths"]]
         .groupby("location")[["new_cases", "new_deaths"]]
-        .rolling(window=periods, min_periods=periods, center=False)
+        .rolling(window=periods, min_periods=periods - 1, center=False)
         .sum()
         .reset_index(level=0, drop=True)
     )

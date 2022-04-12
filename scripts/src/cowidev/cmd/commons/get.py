@@ -37,7 +37,6 @@ class CountryDataGetter:
         # Start country scraping
         logger.info(f"{self.log_header} - {module_name}: started")
         module = importlib.import_module(module_name)
-        error_msg = ""
         for i in range(num_retries):
             try:
                 module.main()
@@ -47,6 +46,7 @@ class CountryDataGetter:
                 error_msg = get_traceback(err)
             else:
                 success = True
+                error_msg = ""
                 break
         if success:
             logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")

@@ -1,128 +1,357 @@
 module,execution_time (sec),success,timestamp,error
-cowidev.testing.batch.andorra,,,,
-cowidev.testing.batch.argentina,27.9,True,,
-cowidev.testing.batch.armenia,3.91,True,,
-cowidev.testing.batch.australia,0.81,True,,
-cowidev.testing.batch.austria,0.41,True,2022-04-07T13:05:50,
-cowidev.testing.batch.belgium,1.39,True,,
-cowidev.testing.batch.bolivia,0.81,True,,
-cowidev.testing.batch.bosnia_herzegovina,6.36,True,,
-cowidev.testing.batch.brazil,3.07,True,,
-cowidev.testing.batch.canada,2.7,True,,
-cowidev.testing.batch.chile,1.08,True,,
-cowidev.testing.batch.colombia,3.28,True,,
-cowidev.testing.batch.costa_rica,2.43,True,,
-cowidev.testing.batch.cuba,11.62,True,,
-cowidev.testing.batch.cyprus,3.19,True,,
-cowidev.testing.batch.czechia,1.18,True,,
-cowidev.testing.batch.denmark,2.68,True,,
-cowidev.testing.batch.ecdc,4.17,True,,
-cowidev.testing.batch.ecuador,1.68,True,,
-cowidev.testing.batch.estonia,5.57,True,,
-cowidev.testing.batch.finland,3.31,True,,
-cowidev.testing.batch.france,3.58,True,,
-cowidev.testing.batch.germany,1.92,True,,
-cowidev.testing.batch.guam,12.65,True,,
-cowidev.testing.batch.guatemala,,,,
-cowidev.testing.batch.hong_kong,3.42,True,,
-cowidev.testing.batch.hungary,2.82,True,,
-cowidev.testing.batch.iceland,1.59,True,,
-cowidev.testing.batch.india,1.16,True,,
-cowidev.testing.batch.indonesia,,,,
-cowidev.testing.batch.ireland,0.56,True,,
-cowidev.testing.batch.israel,2.93,True,,
-cowidev.testing.batch.italy,0.7,True,,
-cowidev.testing.batch.japan,2.11,True,,
-cowidev.testing.batch.kazakhstan,,,,
-cowidev.testing.batch.latvia,2.11,True,,
-cowidev.testing.batch.liechtenstein,18.72,True,,
-cowidev.testing.batch.lithuania,2.45,True,,
-cowidev.testing.batch.luxembourg,6.14,True,,
-cowidev.testing.batch.malaysia,0.58,True,,
-cowidev.testing.batch.malta,1.56,True,,
-cowidev.testing.batch.marshall_islands,7.8,True,,
-cowidev.testing.batch.mexico,6.02,True,,
-cowidev.testing.batch.netherlands,14.54,True,,
-cowidev.testing.batch.northern_mariana_islands,5.63,True,,
-cowidev.testing.batch.norway,1.5,True,,
-cowidev.testing.batch.peru,4.97,True,,
-cowidev.testing.batch.philippines,26.12,True,,
-cowidev.testing.batch.portugal,1.44,True,,
-cowidev.testing.batch.puerto_rico,10.79,True,,
-cowidev.testing.batch.qatar,4.67,True,,
-cowidev.testing.batch.rwanda,3.04,True,,
-cowidev.testing.batch.saudi_arabia,1.86,True,,
-cowidev.testing.batch.senegal,1.88,True,,
-cowidev.testing.batch.serbia,2.04,True,,
-cowidev.testing.batch.singapore,6.84,True,,
-cowidev.testing.batch.slovakia,1.78,True,,
-cowidev.testing.batch.slovenia,5.14,True,,
-cowidev.testing.batch.south_africa,1.48,True,,
-cowidev.testing.batch.south_korea,5.7,True,,
-cowidev.testing.batch.spain,3.29,True,,
-cowidev.testing.batch.sri_lanka,2.68,True,,
-cowidev.testing.batch.switzerland,6.09,True,,
-cowidev.testing.batch.taiwan,2.65,True,,
-cowidev.testing.batch.thailand,3.46,True,,
-cowidev.testing.batch.trinidad_and_tobago,1.75,True,,
-cowidev.testing.batch.turkey,7.07,True,,
-cowidev.testing.batch.united_arab_emirates,3.18,True,,
-cowidev.testing.batch.united_kingdom,2.12,True,,
-cowidev.testing.batch.united_states,5.81,True,,
-cowidev.testing.batch.united_states_virgin_islands,5.74,True,,
-cowidev.testing.batch.uruguay,2.38,True,,
-cowidev.testing.batch.zambia,1.33,True,,
-cowidev.testing.incremental.africacdc,1.88,True,,
-cowidev.testing.incremental.albania,2.69,True,,
-cowidev.testing.incremental.antigua_barbuda,5.18,True,,
-cowidev.testing.incremental.azerbaijan,1.83,True,,
-cowidev.testing.incremental.bahamas,29.97,True,,
-cowidev.testing.incremental.bahrain,1.34,True,,
-cowidev.testing.incremental.bangladesh,1.38,True,,
-cowidev.testing.incremental.barbados,4.8,True,,
-cowidev.testing.incremental.belarus,1.15,True,,
-cowidev.testing.incremental.belize,5.87,True,,
-cowidev.testing.incremental.benin,,,,
-cowidev.testing.incremental.bulgaria,1.84,True,,
-cowidev.testing.incremental.cambodia,4.38,True,,
-cowidev.testing.incremental.cape_verde,8.43,True,,
-cowidev.testing.incremental.croatia,5.26,True,,
-cowidev.testing.incremental.el_salvador,2.58,True,,
-cowidev.testing.incremental.emro,6.24,True,,
-cowidev.testing.incremental.equatorial_guinea,1.78,True,,
-cowidev.testing.incremental.faeroe_islands,1.97,True,,
-cowidev.testing.incremental.fiji,6.68,True,,
-cowidev.testing.incremental.georgia,2.55,True,,
-cowidev.testing.incremental.gibraltar,1.64,True,,
-cowidev.testing.incremental.greece,1.89,True,,
-cowidev.testing.incremental.haiti,8.3,True,,
-cowidev.testing.incremental.iran,2.76,True,,
-cowidev.testing.incremental.jordan,2.96,True,,
-cowidev.testing.incremental.kosovo,16.87,True,,
-cowidev.testing.incremental.laos,2.62,False,,"('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))"
-cowidev.testing.incremental.lebanon,1.02,True,,
-cowidev.testing.incremental.libya,5.21,True,,
-cowidev.testing.incremental.maldives,1.77,True,,
-cowidev.testing.incremental.moldova,2.16,True,,
-cowidev.testing.incremental.mongolia,2.99,True,,
-cowidev.testing.incremental.morocco,0.46,True,,
-cowidev.testing.incremental.myanmar,5.54,True,,
-cowidev.testing.incremental.nepal,10.61,True,,
-cowidev.testing.incremental.new_zealand,4.94,True,,
+cowidev.testing.batch.andorra,,,2022-04-11T13:10:19,
+cowidev.testing.batch.argentina,5.65,True,2022-04-11T13:10:19,
+cowidev.testing.batch.armenia,2.18,True,2022-04-11T13:10:19,
+cowidev.testing.batch.australia,0.76,True,2022-04-11T13:10:19,
+cowidev.testing.batch.austria,1.52,True,2022-04-11T13:10:19,
+cowidev.testing.batch.belgium,1.34,True,2022-04-11T13:10:19,
+cowidev.testing.batch.bolivia,0.43,True,2022-04-11T13:10:19,
+cowidev.testing.batch.bosnia_herzegovina,4.07,True,2022-04-11T13:10:19,
+cowidev.testing.batch.brazil,1.0,True,2022-04-11T13:10:19,
+cowidev.testing.batch.canada,2.12,True,2022-04-11T13:10:19,
+cowidev.testing.batch.chile,0.7,True,2022-04-11T13:10:19,
+cowidev.testing.batch.colombia,1.61,True,2022-04-11T13:10:19,
+cowidev.testing.batch.costa_rica,150.38,False,2022-04-11T13:10:19,"Traceback (most recent call last):
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1037, in _send_output
+    self.send(msg)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 975, in send
+    self.connect()
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1447, in connect
+    super().connect()
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 941, in connect
+    self.sock = self._create_connection(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py"", line 845, in create_connection
+    raise err
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/socket.py"", line 833, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py"", line 60, in main
+    CostaRica().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py"", line 55, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py"", line 17, in read
+    df = pd.read_csv(self.source_url, delimiter="","", usecols=[""nue_posi"", ""conf_nexo"", ""nue_descar"", ""FECHA""])
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+    return func(*args, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 51, in __init__
+    self._open_handles(src, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 222, in _open_handles
+    self.handles = get_handle(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 609, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
+    with urlopen(req_info) as req:
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 519, in open
+    response = self._open(req, data)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 496, in _call_chain
+    result = func(*args)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 60] Operation timed out>
+"
+cowidev.testing.batch.cuba,7.13,True,2022-04-11T13:10:19,
+cowidev.testing.batch.cyprus,2.71,True,2022-04-11T13:10:19,
+cowidev.testing.batch.czechia,0.93,True,2022-04-11T13:10:19,
+cowidev.testing.batch.denmark,3.32,True,2022-04-11T13:10:19,
+cowidev.testing.batch.ecdc,3.06,True,2022-04-11T13:10:19,
+cowidev.testing.batch.ecuador,1.0,True,2022-04-11T13:10:19,
+cowidev.testing.batch.estonia,1.51,True,2022-04-11T13:10:19,
+cowidev.testing.batch.finland,2.11,True,2022-04-11T13:10:19,
+cowidev.testing.batch.france,1.36,True,2022-04-11T13:10:19,
+cowidev.testing.batch.germany,0.73,True,2022-04-11T13:10:19,
+cowidev.testing.batch.guam,4.33,True,2022-04-11T13:10:19,
+cowidev.testing.batch.guatemala,,,2022-04-11T13:10:19,
+cowidev.testing.batch.hong_kong,2.4,True,2022-04-11T13:10:19,
+cowidev.testing.batch.hungary,2.31,True,2022-04-11T13:10:19,
+cowidev.testing.batch.iceland,1.07,True,2022-04-11T13:10:19,
+cowidev.testing.batch.india,0.46,True,2022-04-11T13:10:19,
+cowidev.testing.batch.indonesia,,,2022-04-11T13:10:19,
+cowidev.testing.batch.ireland,0.39,True,2022-04-11T13:10:19,
+cowidev.testing.batch.israel,1.15,True,2022-04-11T13:10:19,
+cowidev.testing.batch.italy,0.41,True,2022-04-11T13:10:19,
+cowidev.testing.batch.japan,0.67,True,2022-04-11T13:10:19,
+cowidev.testing.batch.kazakhstan,,,2022-04-11T13:10:19,
+cowidev.testing.batch.latvia,0.95,True,2022-04-11T13:10:19,
+cowidev.testing.batch.liechtenstein,16.58,True,2022-04-11T13:10:19,
+cowidev.testing.batch.lithuania,1.21,True,2022-04-11T13:10:19,
+cowidev.testing.batch.luxembourg,2.7,True,2022-04-11T13:10:19,
+cowidev.testing.batch.malaysia,0.34,True,2022-04-11T13:10:19,
+cowidev.testing.batch.malta,0.55,True,2022-04-11T13:10:19,
+cowidev.testing.batch.marshall_islands,6.08,True,2022-04-11T13:10:19,
+cowidev.testing.batch.mexico,2.64,True,2022-04-11T13:10:19,
+cowidev.testing.batch.netherlands,5.29,True,2022-04-11T13:10:19,
+cowidev.testing.batch.northern_mariana_islands,5.89,True,2022-04-11T13:10:19,
+cowidev.testing.batch.norway,0.88,True,2022-04-11T13:10:19,
+cowidev.testing.batch.peru,0.81,True,2022-04-11T13:10:19,
+cowidev.testing.batch.philippines,16.21,True,2022-04-11T13:10:19,
+cowidev.testing.batch.portugal,0.68,True,2022-04-11T13:10:19,
+cowidev.testing.batch.puerto_rico,11.71,True,2022-04-11T13:10:19,
+cowidev.testing.batch.qatar,2.93,True,2022-04-11T13:10:19,
+cowidev.testing.batch.rwanda,2.23,True,2022-04-11T13:10:19,
+cowidev.testing.batch.saudi_arabia,0.85,True,2022-04-11T13:10:19,
+cowidev.testing.batch.senegal,1.63,True,2022-04-11T13:10:19,
+cowidev.testing.batch.serbia,1.13,True,2022-04-11T13:10:19,
+cowidev.testing.batch.slovakia,1.14,True,2022-04-11T13:10:19,
+cowidev.testing.batch.slovenia,1.35,True,2022-04-11T13:10:19,
+cowidev.testing.batch.south_africa,0.72,True,2022-04-11T13:10:19,
+cowidev.testing.batch.south_korea,2.59,True,2022-04-11T13:10:19,
+cowidev.testing.batch.spain,1.34,False,2022-04-11T13:10:19,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 51, in main
+    Spain().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 46, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 19, in read
+    df = pd.read_csv(self.test_url, encoding=""cp1252"", delimiter="";"")
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+    return func(*args, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 51, in __init__
+    self._open_handles(src, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 222, in _open_handles
+    self.handles = get_handle(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 609, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
+    with urlopen(req_info) as req:
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 525, in open
+    response = meth(req, response)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 634, in http_response
+    response = self.parent.error(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 563, in error
+    return self._call_chain(*args)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 496, in _call_chain
+    result = func(*args)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not found
+"
+cowidev.testing.batch.sri_lanka,2.16,True,2022-04-11T13:10:19,
+cowidev.testing.batch.switzerland,6.23,True,2022-04-11T13:10:19,
+cowidev.testing.batch.taiwan,2.36,True,2022-04-11T13:10:19,
+cowidev.testing.batch.thailand,2.09,True,2022-04-11T13:10:19,
+cowidev.testing.batch.trinidad_and_tobago,0.6,True,2022-04-11T13:10:19,
+cowidev.testing.batch.turkey,6.3,True,2022-04-11T13:10:19,
+cowidev.testing.batch.united_arab_emirates,2.26,True,2022-04-11T13:10:19,
+cowidev.testing.batch.united_kingdom,1.61,True,2022-04-11T13:10:19,
+cowidev.testing.batch.united_states,14.51,True,2022-04-11T13:10:19,
+cowidev.testing.batch.united_states_virgin_islands,4.25,True,2022-04-11T13:10:19,
+cowidev.testing.batch.uruguay,0.89,True,2022-04-11T13:10:19,
+cowidev.testing.batch.zambia,0.7,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.africacdc,0.91,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.albania,5.17,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.antigua_barbuda,3.74,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.azerbaijan,1.58,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.bahamas,9.46,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.bahrain,2.34,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.bangladesh,1.27,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.barbados,5.0,True,2022-04-11T13:25:54,
+cowidev.testing.incremental.belarus,1.02,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.belize,3.9,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.benin,,,2022-04-11T13:10:19,
+cowidev.testing.incremental.bulgaria,1.24,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.cambodia,3.76,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.cape_verde,8.29,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.croatia,5.0,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.el_salvador,1.51,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.emro,12.78,False,2022-04-11T13:10:19,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 155, in main
+    EMRO().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 150, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 54, in read
+    df = self._parse_data(soup)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 66, in _parse_data
+    df = self._parse_metrics(df_list)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 92, in _parse_metrics
+    df = [table for table in df_list if self.columns_to_check[""tests""] in table.columns][0]
+IndexError: list index out of range
+"
+cowidev.testing.incremental.equatorial_guinea,0.98,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.faeroe_islands,1.74,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.fiji,6.9,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.georgia,3.53,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.gibraltar,,,2022-04-11T13:10:19,
+cowidev.testing.incremental.greece,1.69,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.haiti,5.38,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.iran,3.49,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.jordan,2.3,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.kosovo,29.87,False,2022-04-11T13:10:19,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 74, in main
+    Kosovo().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 69, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 30, in read
+    df = self._parse_data(driver)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 43, in _parse_data
+    if not count or not date_str:
+UnboundLocalError: local variable 'count' referenced before assignment
+"
+cowidev.testing.incremental.laos,4.11,True,2022-04-11T13:10:19,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
+    httplib_response = self._make_request(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
+    self._validate_conn(conn)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
+    conn.connect()
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 512, in wrap_socket
+    return self.sslsocket_class._create(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1070, in _create
+    self.do_handshake()
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1341, in do_handshake
+    self._sslobj.do_handshake()
+ConnectionResetError: [Errno 54] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
+    retries = retries.increment(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/packages/six.py"", line 769, in reraise
+    raise value.with_traceback(tb)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
+    httplib_response = self._make_request(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
+    self._validate_conn(conn)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
+    conn.connect()
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 512, in wrap_socket
+    return self.sslsocket_class._create(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1070, in _create
+    self.do_handshake()
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1341, in do_handshake
+    self._sslobj.do_handshake()
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/laos.py"", line 80, in main
+    Laos().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/laos.py"", line 67, in export
+    data = self.read()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/laos.py"", line 23, in read
+    soup = get_soup(self._source_url)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 74, in get_soup
+    response = get_response(source, request_method, **kwargs)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 44, in get_response
+    raise err
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 38, in get_response
+    response = requests.get(source, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+"
+cowidev.testing.incremental.lebanon,1.83,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.libya,3.36,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.maldives,1.69,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.moldova,3.47,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.mongolia,1.71,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.morocco,0.31,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.myanmar,3.5,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.nepal,9.27,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.new_zealand,3.68,True,2022-04-11T13:10:19,
 cowidev.testing.incremental.nicaragua,7.88,True,2022-04-12T10:18:33,
-cowidev.testing.incremental.north_macedonia,4.1,True,,
-cowidev.testing.incremental.pakistan,3.34,True,,
-cowidev.testing.incremental.papua_new_guinea,4.69,True,,
-cowidev.testing.incremental.paraguay,3.34,True,,
-cowidev.testing.incremental.russia,2.22,True,,
-cowidev.testing.incremental.saint_kitts_nevis,1.62,True,,
-cowidev.testing.incremental.saint_lucia,2.14,True,,
-cowidev.testing.incremental.saint_vincent_and_the_grenadines,3.75,True,,
-cowidev.testing.incremental.suriname,1.6,True,,
-cowidev.testing.incremental.sweden,1.04,True,,
-cowidev.testing.incremental.timor,3.63,True,,
-cowidev.testing.incremental.togo,3.22,True,,
-cowidev.testing.incremental.tunisia,2.52,True,,
-cowidev.testing.incremental.ukraine,,,,
-cowidev.testing.incremental.vanuatu,,,,
-cowidev.testing.incremental.vietnam,6.67,True,,
+cowidev.testing.incremental.north_macedonia,1.96,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.pakistan,2.24,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.papua_new_guinea,6.23,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.paraguay,2.79,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.russia,1.52,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.saint_kitts_nevis,0.71,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.saint_lucia,1.75,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.saint_vincent_and_the_grenadines,11.02,False,2022-04-11T13:26:22,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 43, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/saint_vincent_and_the_grenadines.py"", line 101, in main
+    SaintVincentAndTheGrenadines().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/saint_vincent_and_the_grenadines.py"", line 95, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/saint_vincent_and_the_grenadines.py"", line 31, in read
+    df = self._parse_data(soup)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/saint_vincent_and_the_grenadines.py"", line 45, in _parse_data
+    count = self._parse_metrics(text)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/saint_vincent_and_the_grenadines.py"", line 78, in _parse_metrics
+    raise ValueError(""Unable to extract data from text, please update the regex."")
+ValueError: Unable to extract data from text, please update the regex.
+"
+cowidev.testing.incremental.singapore,1.54,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.suriname,1.23,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.sweden,5.12,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.timor,4.96,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.togo,4.97,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.tunisia,4.42,True,2022-04-11T13:10:19,
+cowidev.testing.incremental.ukraine,,,2022-04-11T13:10:19,
+cowidev.testing.incremental.vanuatu,,,2022-04-11T13:10:19,
+cowidev.testing.incremental.vietnam,4.34,True,2022-04-11T13:10:19,

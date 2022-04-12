@@ -60,7 +60,7 @@ class Philippines(CountryVaxBase):
         value = json_data["elements"]["content"]["content"]["entities"][self.date_entity]["props"]["content"][
             "blocks"
         ][0]["text"]
-        date = clean_date(value.lower(), "as of %b. %d, %Y")
+        date = clean_date(value.lower(), "as of %B %d, %Y")
         return date
 
     def pipe_location(self, ds: pd.Series) -> pd.Series:
