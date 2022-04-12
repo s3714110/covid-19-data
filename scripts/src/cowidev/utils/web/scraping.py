@@ -141,7 +141,9 @@ def sel_options(headless: bool = True, firefox: bool = False):
     return op
 
 
-def get_driver(headless: bool = True, download_folder: str = None, options=None, firefox: bool = False):
+def get_driver(
+    headless: bool = True, download_folder: str = None, options=None, firefox: bool = False, timeout: int = None
+):
     if options is None:
         options = sel_options(headless=headless, firefox=firefox)
     if firefox:
@@ -150,6 +152,8 @@ def get_driver(headless: bool = True, download_folder: str = None, options=None,
         driver = webdriver.Chrome(options=options)
     if download_folder:
         set_download_settings(driver, download_folder, firefox)
+    if timeout is not None:
+        driver.set_page_load_timeout(timeout)
     return driver
 
 
