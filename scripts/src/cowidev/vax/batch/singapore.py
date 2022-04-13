@@ -59,7 +59,10 @@ class Singapore(CountryVaxBase):
             try:
                 df_boosters["vacc_date"] = clean_date_series(df_boosters.vacc_date, "%d-%b-%y")
             except:
-                df_boosters["vacc_date"] = clean_date_series(df_boosters.vacc_date, "%d/%m/%Y")
+                try:
+                    df_boosters["vacc_date"] = clean_date_series(df_boosters.vacc_date, "%d/%m/%Y")
+                except:
+                    df_boosters["vacc_date"] = clean_date_series(df_boosters.vacc_date, "%d%b%Y")
             df_boosters = df_boosters.drop_duplicates(subset=["vacc_date"], keep=False)
         if not df_primary.vacc_date.str.match(r"\d{4}-\d{2}-\d{2}").all():
             try:
