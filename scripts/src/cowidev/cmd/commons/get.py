@@ -8,7 +8,6 @@ import pandas as pd
 from cowidev.utils.log import get_logger, print_eoe
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
-from cowidev.vax.countries import MODULES_NAME
 
 
 # Logger
