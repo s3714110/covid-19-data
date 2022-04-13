@@ -1,16 +1,16 @@
 import os
+from datetime import datetime
 
 import pandas as pd
-
-import click
 from pandas.core.base import DataError
 from pandas.errors import ParserError
+import click
 
 from cowidev import PATHS
 from cowidev.utils.log import get_logger, print_eoe
+from cowidev.utils.params import CONFIG
+from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.cmd.vax.process.utils import process_location, VaccinationGSheet
-from cowidev.utils.params import CONFIG, SECRETS
-
 
 logger = get_logger()
 
@@ -31,6 +31,14 @@ def click_vax_process():
         cowid vax process
     """
     main_process_data(
+        path_input_files=PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR,
+        path_output_files=PATHS.DATA_VAX_COUNTRY_DIR,
+        path_output_meta=PATHS.INTERNAL_OUTPUT_VAX_META_FILE,
+        column_location="location",
+        process_location=process_location,
+        path_output_status=PATHS.INTERNAL_OUTPUT_VAX_STATUS_PROCESS,
+        path_output_status_ts=PATHS.INTERNAL_OUTPUT_VAX_STATUS_PROCESS_TS,
+        log_header="VAX",
         skip_complete=CONFIG.pipeline.vaccinations.process.skip_complete,
         skip_monotonic=CONFIG.pipeline.vaccinations.process.skip_monotonic_check,
         skip_anomaly=CONFIG.pipeline.vaccinations.process.skip_anomaly_check,
@@ -38,59 +46,90 @@ def click_vax_process():
 
 
 def main_process_data(
+    path_input_files: str,
+    path_output_files: str,
+    path_output_meta: str,
+    column_location: str,
+    process_location: callable,
+    path_output_status: str,
+    path_output_status_ts: str,
+    log_header: str,
     skip_complete: list = None,
     skip_monotonic: dict = {},
     skip_anomaly: dict = {},
 ):
     # TODO: Generalize
     print("-- Processing data... --")
-    # Get data from sheets
+    # Get data from sheets (i.e. manual data)
     logger.info("Getting data from Google Spreadsheet...")
     gsheet = VaccinationGSheet()
-    df_manual_list = gsheet.df_list()
-
+    dfs_manual = gsheet.df_list()
     # Get automated-country data
-    logger.info("Getting data from output...")
+    logger.info("Getting data from internal output...")
     automated = gsheet.automated_countries
-    filepaths_auto = [PATHS.out_vax(country) for country in automated]
-    df_auto_list = [read_csv(filepath) for filepath in filepaths_auto]
-
-    # Concatenate
-    vax = df_manual_list + df_auto_list
+    filepaths_auto = [os.path.join(path_input_files, f"{country}.csv") for country in automated]
+    dfs_auto = [read_csv(filepath) for filepath in filepaths_auto]
+    # Concatenate list of dataframes
+    dfs = dfs_manual + dfs_auto
 
     # Check that no location is present in both manual and automated data
-    manual_locations = set([df.location[0] for df in df_manual_list])
-    auto_locations = os.listdir(PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR)
-    auto_locations = set([loc.replace(".csv", "") for loc in auto_locations])
-    common_locations = auto_locations.intersection(manual_locations)
-    if len(common_locations) > 0:
-        raise DataError(f"The following locations have data in both output/main_data and GSheet: {common_locations}")
+    _check_no_overlapping_manual_auto(dfs_manual, dfs_auto)
 
     # vax = [v for v in vax if v.location.iloc[0] == "Pakistan"]  # DEBUG
     # Process locations
-    def _process_location(df):
-        monotonic_check_skip = skip_monotonic.get(df.loc[0, "location"], [])
-        anomaly_check_skip = skip_anomaly.get(df.loc[0, "location"], [])
-        return process_location(df, monotonic_check_skip, anomaly_check_skip)
-
-    logger.info("Processing and exporting data...")
-    vax_valid = []
-    for df in vax:
-        if "location" not in df:
-            raise ValueError(f"Column `location` missing. df: {df.tail(5)}")
-        country = df.loc[0, "location"]
+    def _process_location_and_move_file(df):
+        if column_location not in df:
+            raise ValueError(f"Column `{column_location}` missing. df: {df.tail(5)}")
+        country = df.loc[0, column_location]
         if country.lower() not in skip_complete:
-            df = _process_location(df)
-            vax_valid.append(df)
-            # Export
-            df.to_csv(PATHS.out_vax(country, public=True), index=False)
-            logger.info(f"{country}: SUCCESS ✅")
+            # Process dataframe
+            monotonic_check_skip = skip_monotonic.get(df.loc[0, column_location], [])
+            anomaly_check_skip = skip_anomaly.get(df.loc[0, column_location], [])
+            try:
+                df = process_location(df, monotonic_check_skip, anomaly_check_skip)
+            except Exception as err:
+                success = False
+                error_msg = get_traceback(err)
+                logger.info(f"{log_header} - {country}: FAILED ❌ {err}")
+            except:
+                success = False
+                error_msg = "Error"
+            else:
+                # Export
+                df.to_csv(os.path.join(path_output_files, f"{country}.csv"), index=False)
+                logger.info(f"{country}: SUCCESS ✅")
+                success = True
+                error_msg = ""
+            finally:
+                return {
+                    "location": country,
+                    "success": success,
+                    "skipped": False,
+                    "error": error_msg,
+                    "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+                }
         else:
             logger.info(f"{country}: SKIPPED 🚧")
-    df = pd.concat(vax_valid).sort_values(by=["location", "date"])
-    df.to_csv(PATHS.INTERNAL_TMP_VAX_MAIN_FILE, index=False)
-    gsheet.metadata.to_csv(PATHS.INTERNAL_TMP_VAX_META_FILE, index=False)
+            return {
+                "location": country,
+                "success": None,
+                "skipped": True,
+                "error": "",
+                "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+            }
+        # return {"location": country, "error": ""}
+
+    logger.info("Processing and exporting data...")
+    # Process all countries
+    df_status = pd.DataFrame([_process_location_and_move_file(df) for df in dfs])
+
+    # Export metadata
+    gsheet.metadata.to_csv(path_output_meta, index=False)
     logger.info("Exported ✅")
+
+    # Export status
+    df_status.to_csv(path_output_status, index=False)
+    export_timestamp(path_output_status_ts)
     print_eoe()
 
 
@@ -99,3 +138,11 @@ def read_csv(filepath):
         return pd.read_csv(filepath)
     except:
         raise ParserError(f"Error tokenizing data from file {filepath}")
+
+
+def _check_no_overlapping_manual_auto(dfs_manual, dfs_auto):
+    locations_manual = set([df.location[0] for df in dfs_manual])
+    locations_auto = set([df.location[0] for df in dfs_auto])
+    locations_common = locations_auto.intersection(locations_manual)
+    if len(locations_common) > 0:
+        raise DataError(f"The following locations have data in both output/main_data and GSheet: {locations_common}")
