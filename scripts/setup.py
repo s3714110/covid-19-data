@@ -53,7 +53,6 @@ setup(
     entry_points={
         "console_scripts": [
             "cowidev-grapher-db=cowidev.grapher.db.__main__:main",
-            "cowid-vax=cowidev.vax.cmd.__main__:main",
             "cowid=cowidev.cmd.__main__:cli",
         ]
     },
