@@ -7,6 +7,10 @@ This file shows the latest status of the data pipeline.
 
 {status-vax-get}
 
+### Process (Checks)
+
+{status-vax-process}
+
 ## Testing
 ### Get (scraping)
 
