@@ -247,7 +247,7 @@ $ cowid-vax get process
 ## 4. Other functions
 ### Tracking
 It is extremely useful to get some insights on which data are we tracking (and which are we not). This can be done with
-the tool `cowid-vax-track`. Find below some use cases.
+the tool `cowid vax track`. Find below some use cases.
 
 *Note*: Use uption `--to-csv` to export results as csv files (a default filename is used).
 
@@ -256,7 +256,7 @@ the tool `cowid-vax-track`. Find below some use cases.
 Run 
 
 ```
-$ cowid-vax-track countries-missing
+$ cowid vax track countries-missing
 ```
 Countries are given from most to least populated.
 </details>
@@ -267,7 +267,7 @@ Get the list of countries sorted by least frequently updated. The update frequen
 number of days with an update and the number of days of observation (i.e. days since first update).
 
 ```
-$ cowid-vax-track countries-least-updatedfreq
+$ cowid vax track countries-least-updatedfreq
 ```
 
 Countries are given from least to most frequently updated.
@@ -278,7 +278,7 @@ Countries are given from least to most frequently updated.
 Get the list of countries and their last update by running:
 
 ```
-$ cowid-vax-track countries-last-updated
+$ cowid vax track countries-last-updated
 ```
 
 Countries are given from least to most recently updated.
@@ -289,7 +289,7 @@ Countries are given from least to most recently updated.
 Get the list of countries least updated (in absolute counts):
 
 ```
-$ cowid-vax-track countries-least-updated
+$ cowid vax track countries-least-updated
 ```
 
 Countries are given from least to most frequently updated.
@@ -300,7 +300,7 @@ Countries are given from least to most frequently updated.
 Get the list of countries with missing vaccines:
 
 ```
-$ cowid-vax-track vaccines-missing
+$ cowid vax track vaccines-missing
 ```
 
 Countries are given from the one with the least to the one with he most number of untracked vaccines.

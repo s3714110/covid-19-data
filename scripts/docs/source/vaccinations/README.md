@@ -44,7 +44,7 @@ Check for new updates and manually add them in the internal spreadsheet:
 - Look for new data based on previously-used source URLs.
 
 ### Automated process
-Once all manual processes have been finished, it  is time to leverage the tool `cowid-vax`. The automation step is
+Once all manual processes have been finished, it  is time to leverage the tool `cowid vax`. The automation step is
 further broken into 4 sub-steps, which we explain below. While these can all be run at once, we recommend running them
 one by one. Prior to running these, make sure you are correctly using your [configuration file](#configuration-file).
 
@@ -56,15 +56,15 @@ automated step.
 To correctly use the configuration in your [config.yaml](../../config.yaml), you can:
   - Set environment variable `${OWID_COVID_VAX_CONFIG_FILE}` to file's path.
   - Save configuration under `~/.config/cowid/config.yaml` and run.
-  - Run `$ cowid-vax --config config.yaml`, explicitly specifying the path to the config file.
+  - Run `$ cowid vax --config config.yaml`, explicitly specifying the path to the config file.
 If above was not possible, use arguments passed via the command call, i.e. `--parallel`, `--countries`, etc.
 
 
 <details closed>
-<summary markdown='span'>For more details run: cowid-vax --help</summary>
+<summary markdown='span'>For more details run: cowid vax --help</summary>
 
 ```txt
-usage: cowid-vax [-h] [-c COUNTRIES] [-p] [-j NJOBS] [-s] [--config CONFIG] [--credentials CREDENTIALS] [--checkr]
+usage: cowid vax [-h] [-c COUNTRIES] [-p] [-j NJOBS] [-s] [--config CONFIG] [--credentials CREDENTIALS] [--checkr]
                  {get-data,process-data,generate-dataset,export,all}
 
 Execute COVID-19 vaccination data collection pipeline.
@@ -104,7 +104,7 @@ optional arguments:
 Run: 
 
 ```
-$ cowid-vax get
+$ cowid vax get
 ```
 This step runs the scrips for [batch](../../src/cowidev/vax/batch) and [incremental](../../src/cowidev/vax/incremental) updates. It will then generate
 individual country files and save them in [`output`](output/vaccinations/main_data/).
@@ -116,7 +116,7 @@ individual country files and save them in [`output`](output/vaccinations/main_da
 Run: 
 
 ```
-$ cowid-vax process
+$ cowid vax process
 ```
 
 Collect manually updated data from the spreadsheet and data generated in (1). Process this data, and generate public country data in
@@ -128,7 +128,7 @@ Collect manually updated data from the spreadsheet and data generated in (1). Pr
 Run: 
 
 ```
-$ cowid-vax generate
+$ cowid vax generate
 ```
 
 Generate pipeline output files.
@@ -138,7 +138,7 @@ Generate pipeline output files.
 Run: 
 
 ```
-$ cowid-vax export
+$ cowid vax export
 ```
 
 Final pipeline step. This updates few more output files. Also, this opens OWID's vaccination website, in order to update
@@ -165,13 +165,13 @@ Once the automation is successfully executed, the following files and directorie
 You can run several steps at once, e.g.
 
 ```sh
-$ cowid-vax get process
+$ cowid vax get process
 ```
 
 ## 4. Other functions
 ### Tracking
 It is extremely useful to get some insights on which data are we tracking (and which are we not). This can be done with
-the tool `cowid-vax-track`. Find below some use cases.
+the tool `cowid vax track`. Find below some use cases.
 
 *Note*: Use uption `--to-csv` to export results as csv files (a default filename is used).
 
@@ -180,7 +180,7 @@ the tool `cowid-vax-track`. Find below some use cases.
 Run 
 
 ```
-$ cowid-vax-track countries-missing
+$ cowid vax track countries-missing
 ```
 Countries are given from most to least populated.
 </details>
@@ -191,7 +191,7 @@ Get the list of countries sorted by least frequently updated. The update frequen
 number of days with an update and the number of days of observation (i.e. days since first update).
 
 ```
-$ cowid-vax-track countries-least-updatedfreq
+$ cowid vax track countries-least-updatedfreq
 ```
 
 Countries are given from least to most frequently updated.
@@ -202,7 +202,7 @@ Countries are given from least to most frequently updated.
 Get the list of countries and their last update by running:
 
 ```
-$ cowid-vax-track countries-last-updated
+$ cowid vax track countries-last-updated
 ```
 
 Countries are given from least to most recently updated.
@@ -213,7 +213,7 @@ Countries are given from least to most recently updated.
 Get the list of countries least updated (in absolute counts):
 
 ```
-$ cowid-vax-track countries-least-updated
+$ cowid vax track countries-least-updated
 ```
 
 Countries are given from least to most frequently updated.
@@ -224,7 +224,7 @@ Countries are given from least to most frequently updated.
 Get the list of countries with missing vaccines:
 
 ```
-$ cowid-vax-track vaccines-missing
+$ cowid vax track vaccines-missing
 ```
 
 Countries are given from the one with the least to the one with he most number of untracked vaccines.

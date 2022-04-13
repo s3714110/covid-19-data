@@ -155,7 +155,7 @@ Next, follow the steps below:
 4. Test that it is working and that it is stable. For this you need to have the [library
    installed](README.md#2-development-environment). Run
     ```
-    cowid-vax get -c [country-name]
+    cowid vax get [country-name]
     ``` 
 5. Issue a pull request and wait for a review.
 
