@@ -32,40 +32,7 @@ cowidev.vax.batch.peru,2.46,True,2022-04-13T08:22:09,
 cowidev.vax.batch.portugal,0.82,True,2022-04-13T08:22:09,
 cowidev.vax.batch.romania,16.51,True,2022-04-13T08:22:09,
 cowidev.vax.batch.saudi_arabia,9.02,True,2022-04-13T08:22:09,
-cowidev.vax.batch.singapore,3.73,False,2022-04-13T08:22:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 509, in _to_datetime_with_format
-    values, tz = conversion.datetime_to_datetime64(arg)
-  File ""pandas/_libs/tslibs/conversion.pyx"", line 359, in pandas._libs.tslibs.conversion.datetime_to_datetime64
-TypeError: Unrecognized value type: <class 'str'>
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 42, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 115, in main
-    Singapore().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 110, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 54, in read
-    df = self._merge_primary_and_boosters(df_primary, df_boosters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 62, in _merge_primary_and_boosters
-    df_boosters[""vacc_date""] = clean_date_series(df_boosters.vacc_date, ""%d/%m/%Y"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 205, in clean_date_series
-    ds_new = pd.to_datetime(ds, format=format_input, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 887, in to_datetime
-    values = convert_listlike(arg._values, format)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 393, in _convert_listlike_datetimes
-    res = _to_datetime_with_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 513, in _to_datetime_with_format
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 500, in _to_datetime_with_format
-    res = _array_strptime_with_fallback(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/tools/datetimes.py"", line 436, in _array_strptime_with_fallback
-    result, timezones = array_strptime(arg, fmt, exact=exact, errors=errors)
-  File ""pandas/_libs/tslibs/strptime.pyx"", line 150, in pandas._libs.tslibs.strptime.array_strptime
-ValueError: time data '14sep2021' does not match format '%d/%m/%Y' (match)
-"
+cowidev.vax.batch.singapore,0.71,True,2022-04-13T09:18:11,
 cowidev.vax.batch.slovakia,48.43,True,2022-04-13T08:22:09,
 cowidev.vax.batch.slovenia,1.63,True,2022-04-13T08:22:09,
 cowidev.vax.batch.south_korea,34.66,True,2022-04-13T08:22:09,
@@ -88,88 +55,26 @@ cowidev.vax.incremental.bangladesh,10.52,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.barbados,2.17,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.brazil,0.17,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.bulgaria,1.87,True,2022-04-13T08:22:09,
-cowidev.vax.incremental.china,56.22,False,2022-04-13T08:22:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 42, in run
+cowidev.vax.incremental.china,64.11,False,2022-04-13T09:16:57,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 42, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 126, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 126, in main
     China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 122, in export
-    self.export_datafile(df, attach=True)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 177, in export_datafile
-    self._export_datafile_main(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 201, in _export_datafile_main
-    df = merge_with_current_data(df, filename)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 334, in merge_with_current_data
-    df_current = df_current[~df_current.date.isin(df.date)]
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5487, in __getattr__
-    return object.__getattribute__(self, name)
-AttributeError: 'DataFrame' object has no attribute 'date'
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 108, in export
+    df = self.read(last_update)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 32, in read
+    driver.get(self.source_url)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 333, in get
+    self.execute(Command.GET, {'url': url})
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: TimedPromise timed out after 30000 ms
+
 "
 cowidev.vax.incremental.colombia,1.57,True,2022-04-13T08:22:09,
-cowidev.vax.incremental.costa_rica,3.86,False,2022-04-13T08:22:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 73, in create_connection
-    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/socket.py"", line 953, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -3] Temporary failure in name resolution
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
-    httplib_response = self._make_request(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
-    self._validate_conn(conn)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
-    conn.connect()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 186, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f79fad0e7c0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
-    retries = retries.increment(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.ccss.sa.cr', port=443): Max retries exceeded with url: /web/coronavirus/vacunacion (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f79fad0e7c0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 42, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 75, in main
-    CostaRica().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 61, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 16, in read
-    soup = get_soup(self.source_url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 74, in get_soup
-    response = get_response(source, request_method, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 44, in get_response
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 38, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 519, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.ccss.sa.cr', port=443): Max retries exceeded with url: /web/coronavirus/vacunacion (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f79fad0e7c0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
-"
+cowidev.vax.incremental.costa_rica,1.82,True,2022-04-13T09:16:57,
 cowidev.vax.incremental.croatia,0.21,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.cuba,1.89,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.curacao,0.34,True,2022-04-13T08:22:09,
@@ -214,19 +119,7 @@ cowidev.vax.incremental.pakistan,1.41,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.philippines,0.69,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.poland,0.17,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.qatar,10.38,True,2022-04-13T08:22:09,
-cowidev.vax.incremental.russia,0.8,False,2022-04-13T08:22:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 42, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 74, in get_soup
-    response = get_response(source, request_method, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 46, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway: b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n<hr><center>nginx</center>\r\n</body>\r\n</html>\r\n'
-"
+cowidev.vax.incremental.russia,2.96,True,2022-04-13T09:16:57,
 cowidev.vax.incremental.saint_lucia,,,2022-04-13T08:22:09,
 cowidev.vax.incremental.serbia,5.75,True,2022-04-13T08:22:09,
 cowidev.vax.incremental.south_africa,5.58,True,2022-04-13T08:22:09,
