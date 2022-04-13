@@ -260,9 +260,10 @@ run_python 'import decoupling; decoupling.update_db()'
 
 hour=$(date +%H)
 if [ $hour == 08 ] ; then
-  echo "Generating Vaccination (get step)..."
+  echo "Generating Vaccination (get & process step)..."
   cowid vax get
+  cowid vax process
   git add .
-  git commit -m "data(vax): automated update (get)"
+  git commit -m "data(vax): automated update (get,process)"
   git push
 fi
