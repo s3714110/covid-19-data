@@ -710,8 +710,10 @@ class DatasetGenerator:
         print("-- Generating dataset... --")
         logger.info("1/10 Loading input data...")
         try:
-            df_metadata = pd.read_csv(PATHS.INTERNAL_TMP_VAX_META_FILE)
-            df_vaccinations = pd.read_csv(PATHS.INTERNAL_TMP_VAX_MAIN_FILE, parse_dates=["date"])
+            df_metadata = pd.read_csv(PATHS.INTERNAL_OUTPUT_VAX_META_FILE)
+            df_vaccinations = pd.concat(
+                [pd.read_csv(path, parse_dates=["date"]) for path in glob.glob(PATHS.DATA_VAX_COUNTRY_DIR + "/*.csv")]
+            ).sort_values(by=["location", "date"])
         except FileNotFoundError:
             raise FileNotFoundError(
                 "Internal files not found! Make sure to run `proccess-data` step prior to running `generate-dataset`."
