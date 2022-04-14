@@ -128,6 +128,9 @@ google:
   client_secrets:  # Path to google client_secrets.json file
   mail:  # Email (str), OPTIONAL
 
+scraperapi:
+  token:  # Token for https://www.scraperapi.com/ services (free plan)
+  
 # Vaccination configuration (dict), OPTIONAL
 vaccinations:
   post:  # OWID Vaccination internal post link (str)
@@ -161,6 +164,10 @@ your personal Google credentials. To obtain it, you can follow [`gsheets` docume
 
 We recommend saving the downloaded file in a safe directory, with a simplified name, e.g.
 `~/.config/owid/client_secrets.json`.
+
+### What is `scraperapi.token`?
+Scraper API is a service with a friendly proxy that allows you to access any HTML without being blocked. Four our
+pipeline you need to [register](https://www.scraperapi.com/) and get their TOKEN. The free plan should be OK! 
 
 ## Verify installation
 Once you have installed the library, configured the configuration and secrets files accordingly along with the
