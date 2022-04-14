@@ -22,7 +22,7 @@ class China(CountryVaxBase):
         "vaccinated": r"接种(?:疫苗)?的?总人数达到?([\d\.亿零]+万)",
         "boosters": r"完成加强免疫接种(?:的是)?([\d\.亿零]+万)人(?:，|。)(?:其中，?)?(?:60岁|序贯)",
     }
-    num_links_complete = 16
+    num_links_complete = 6
     timeout = 30
 
     def read(self, last_update: str):
@@ -120,13 +120,7 @@ class China(CountryVaxBase):
             df = pd.concat([df_complete, df.loc[msk]])
         # Export
         self.export_datafile(df, attach=True)
-        return last_update, df, df_complete # Debug
 
 
 def main():
     China().export()
-
-
-# Debug
-if __name__ == '__main__':
-    last_update, df, df_complete = China().export()
