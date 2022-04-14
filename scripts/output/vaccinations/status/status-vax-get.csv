@@ -119,7 +119,20 @@ cowidev.vax.incremental.pakistan,2.54,True,2022-04-14T08:52:32,
 cowidev.vax.incremental.philippines,0.79,True,2022-04-14T08:52:32,
 cowidev.vax.incremental.poland,0.2,True,2022-04-14T08:52:32,
 cowidev.vax.incremental.qatar,7.28,True,2022-04-14T08:52:32,
-cowidev.vax.incremental.russia,2.93,True,2022-04-14T08:52:32,
+cowidev.vax.incremental.russia,2.3,False,2022-04-14T10:17:49,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 41, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
+    data = read(source).pipe(pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
+    soup = get_soup(1, use_proxy=True)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 82, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+    raise ValueError(
+ValueError: Source 1 not reached! Scraper API was used!
+Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'
+"
 cowidev.vax.incremental.saint_lucia,,,2022-04-14T08:52:32,
 cowidev.vax.incremental.serbia,5.56,True,2022-04-14T08:52:32,
 cowidev.vax.incremental.south_africa,2.13,True,2022-04-14T08:52:32,
