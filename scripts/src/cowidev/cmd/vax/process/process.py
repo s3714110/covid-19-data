@@ -12,11 +12,16 @@ from cowidev.utils.params import CONFIG
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.cmd.vax.process.utils import process_location, VaccinationGSheet
 
-logger = get_logger()
 
-
+@click.option(
+    "--log-only-errors/--log-all",
+    "-O",
+    default=False,
+    help="Optimize processes based on older logging times.",
+    show_default=True,
+)
 @click.command(name="process", short_help="Step 2: Process scraped vaccination data from primary sources.")
-def click_vax_process():
+def click_vax_process(log_only_errors):
     """Process data in folder scripts/output/vaccinations/.
 
     By default, the default values for OPTIONS are those specified in the configuration file. The configuration file is
@@ -30,6 +35,11 @@ def click_vax_process():
 
         cowid vax process
     """
+    if log_only_errors:
+        logger = get_logger("error")
+    else:
+        logger = get_logger()
+
     main_process_data(
         path_input_files=PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR,
         path_output_files=PATHS.DATA_VAX_COUNTRY_DIR,
@@ -42,6 +52,7 @@ def click_vax_process():
         skip_complete=CONFIG.pipeline.vaccinations.process.skip_complete,
         skip_monotonic=CONFIG.pipeline.vaccinations.process.skip_monotonic_check,
         skip_anomaly=CONFIG.pipeline.vaccinations.process.skip_anomaly_check,
+        logger=logger,
     )
 
 
@@ -54,12 +65,13 @@ def main_process_data(
     path_output_status: str,
     path_output_status_ts: str,
     log_header: str,
+    logger,
     skip_complete: list = None,
     skip_monotonic: dict = {},
     skip_anomaly: dict = {},
 ):
     # TODO: Generalize
-    print("-- Processing data... --")
+    logger.info("-- Processing data... --")
     # Get data from sheets (i.e. manual data)
     logger.info("Getting data from Google Spreadsheet...")
     gsheet = VaccinationGSheet()
@@ -90,7 +102,7 @@ def main_process_data(
             except Exception as err:
                 success = False
                 error_msg = get_traceback(err)
-                logger.info(f"{log_header} - {country}: FAILED ❌ {err}")
+                logger.error(f"{log_header} - {country}: FAILED ❌ {err}")
             except:
                 success = False
                 error_msg = "Error"
