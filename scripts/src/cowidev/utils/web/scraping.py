@@ -32,6 +32,7 @@ def get_response(
     use_proxy: bool = False,
     **kwargs,
 ):
+    source_orig = source
     kwargs["headers"] = kwargs.get("headers", get_headers())
     kwargs["verify"] = kwargs.get("verify", True)
     kwargs["timeout"] = kwargs.get("timeout", 20)
@@ -47,8 +48,9 @@ def get_response(
     except Exception as err:
         raise err
     if not response.ok:
+        scrapapi_used = "Scraper API was used!\n" if use_proxy else ""
         raise ValueError(
-            f"Source {source} not reached! Error code {response.status_code} {response.reason}: {response.content}",
+            f"Source {source_orig} not reached! {scrapapi_used}Error code {response.status_code} {response.reason}: {response.content}",
         )
     return response
 
