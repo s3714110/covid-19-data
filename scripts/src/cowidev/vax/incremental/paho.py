@@ -6,13 +6,14 @@ import pandas as pd
 
 from cowidev.utils.clean import clean_date
 from cowidev.utils.web.scraping import get_soup, get_driver
-from cowidev.utils.log import get_logger
+
+# from cowidev.utils.log import get_logger
 from cowidev.vax.utils.files import get_file_encoding
 from cowidev.vax.utils.incremental import increment
 from cowidev.vax.utils.orgs import WHO_VACCINES, PAHO_COUNTRIES
 
 
-logger = get_logger()
+# logger = get_logger()
 
 
 class PAHO:
@@ -165,7 +166,7 @@ class PAHO:
                 source_url=row["source_url"],
             )
             country = row["location"]
-            logger.info(f"\tVAX - vax.incremental.paho.{country}: SUCCESS ✅")
+            # logger.info(f"\tVAX - vax.incremental.paho.{country}: SUCCESS ✅")
 
     def export(self):
         df = self.read().pipe(self.pipeline)

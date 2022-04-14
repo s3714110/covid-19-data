@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
 
-from cowidev.utils.log import get_logger
+# from cowidev.utils.log import get_logger
 from cowidev.utils.utils import check_known_columns
 from cowidev.vax.utils.extra_source import add_latest_from_acdc
 from cowidev.vax.utils.checks import VACCINES_ONE_DOSE
 from cowidev.vax.utils.orgs import WHO_VACCINES, WHO_COUNTRIES
 from cowidev.vax.utils.base import CountryVaxBase
 
-logger = get_logger()
+# logger = get_logger()
 
 
 # Sometimes the WHO doesn't yet include a vaccine in a country's metadata
@@ -144,7 +144,7 @@ class WHO(CountryVaxBase):
             )
             if not df_c.empty:
                 self.export_datafile(df_c, filename=location, attach=True, valid_cols_only=True)
-                logger.info(f"\tcowidev.vax.incremental.who.{location}: SUCCESS ✅")
+                # logger.info(f"\tcowidev.vax.incremental.who.{location}: SUCCESS ✅")
 
     def pipeline(self, df: pd.DataFrame):
         return (

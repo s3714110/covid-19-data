@@ -6,10 +6,6 @@ from cowidev.utils.clean import clean_date
 from cowidev.utils.web import request_json
 from cowidev.vax.utils.incremental import increment
 from cowidev.vax.utils.orgs import WHO_VACCINES, ACDC_COUNTRIES, ACDC_VACCINES
-from cowidev.utils.log import get_logger
-
-
-logger = get_logger()
 
 
 class AfricaCDC:
@@ -157,7 +153,7 @@ class AfricaCDC:
                 source_url=row["source_url"],
             )
             country = row["location"]
-            logger.info(f"\tvax.incremental.africacdc.{country}: SUCCESS ✅")
+            # logger.info(f"\tvax.incremental.africacdc.{country}: SUCCESS ✅")
 
     def export(self):
         df = self.read().pipe(self.pipeline)
