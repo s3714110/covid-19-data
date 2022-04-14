@@ -251,8 +251,6 @@ class ECDC(CountryVaxBase):
             ]
         ]
 
-        return df
-
     def pipe_rename_vaccines(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(vaccine=df.vaccine.replace(self.vaccine_mapping))
 
@@ -408,7 +406,7 @@ class ECDC(CountryVaxBase):
         # Export
         locations = df_age.location.unique()
         for location in locations:
-            df_c = df_age[df_age.location == location].pipe(self._filter_age_targetgroup)
+            df_c = df_age[df_age.location == location].pipe(self._filter_age_targetgroup).copy()
             self.export_datafile(
                 df_age=df_c,
                 filename=location,
@@ -423,7 +421,7 @@ class ECDC(CountryVaxBase):
         # Export
         locations = df_manufacturer.location.unique()
         for location in locations:
-            df_c = df_manufacturer[df_manufacturer.location == location]
+            df_c = df_manufacturer[df_manufacturer.location == location].copy()
             self.export_datafile(
                 df_manufacturer=df_c,
                 filename=location,
@@ -438,7 +436,7 @@ class ECDC(CountryVaxBase):
         # Export
         locations = df.location.unique()
         for location in locations:
-            df_c = df[df.location == location]
+            df_c = df[df.location == location].copy()
             self.export_datafile(df_c, filename=location)
 
     def export(self):
