@@ -22,7 +22,7 @@ tasks.
 | [Vaccinations](#vaccinations-pipeline)               | every weekday at 12:00 UTC           | {abbr}`Collection (Scraping primary sources (e.g. country governmental sites) and extracting relevant datapoints.)`, {abbr}`transformation (Transforming and cleaning the downloaded data into a human-readable format.)`, {abbr}`presentation (Presenting the cleaned data to the public (e.g. charts, dataset files, etc.).)` |
 | [Testing](#testing-pipeline)                   | 3 times per week             | Collection, transformation, presentation |
 | [Hospitalization & ICU](#hospitalization-icu-pipeline)     | daily at 06:00 and 18:00 UTC | Collection, transformation, presentation |
-| [Cases & Deaths (JHU)](#cases-deaths-jhu-pipeline)      | every hour (if new data)     | Transformation, presentation             |
+| [Cases & Deaths (JHU)](#cases-deaths-jhu-pipeline)      | daily at 04:00, 10:00, 16:00 and 22:00 UTC     | Transformation, presentation             |
 | [Excess mortality](#excess-mortality-pipeline)          | weekly | Transformation, presentation             |
 | [Variants](#variants-pipeline)                  | daily at 20:00 UTC           | Transformation, presentation             |
 | [Reproduction rate](#reproduction-rate-pipeline)         | daily                        | Presentation                             |
