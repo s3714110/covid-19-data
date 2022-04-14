@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import os
 from cpuinfo import get_cpu_info
 import psutil
@@ -16,14 +17,23 @@ import logging
 #     return logger
 
 
-def get_logger():
+def get_logger(mode="info"):
+    # print(mode)
     # create logger
     logger = logging.getLogger(name="cowidev-logger")
-    logger.setLevel(logging.INFO)
-
     # create console handler and set level to debug
     ch = logging.StreamHandler()
-    ch.setLevel(logging.DEBUG)
+    if mode == "info":
+        logger.setLevel(logging.INFO)
+        ch.setLevel(logging.INFO)
+    elif mode == "warn":
+        logger.setLevel(logging.WARNING)
+        ch.setLevel(logging.WARNING)
+    elif mode == "error":
+        logger.setLevel(logging.ERROR)
+        ch.setLevel(logging.ERROR)
+    else:
+        raise ValueError(f"Invalid mode: {mode}")
 
     # create formatter
     formatter = logging.Formatter("%(asctime)s %(levelname)-8s %(message)s")
@@ -31,7 +41,7 @@ def get_logger():
     # add formatter to ch
     ch.setFormatter(formatter)
 
-    # add ch to logger
+    # # add ch to logger
     if not logger.handlers:
         logger.addHandler(ch)
 

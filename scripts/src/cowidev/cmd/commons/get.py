@@ -9,10 +9,6 @@ from cowidev.utils.log import get_logger
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
 
-
-# Logger
-logger = get_logger()
-
 # S3 paths
 LOG_MACHINES = "s3://covid-19/log/machines.json"
 LOG_GET_COUNTRIES = "s3://covid-19/log/{}-get-data-countries.csv"
@@ -27,7 +23,7 @@ class CountryDataGetter:
     def _skip_module(self, module_name):
         return module_name in self.modules_skip
 
-    def run(self, module_name: str, num_retries: int = 2):
+    def run(self, module_name: str, logger, num_retries: int = 2):
         t0 = time.time()
         # Check country skipping
         if self._skip_module(module_name):
@@ -40,7 +36,7 @@ class CountryDataGetter:
             try:
                 module.main()
             except Exception as err:
-                logger.error(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
+                logger.info(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
                 success = False
                 error_msg = get_traceback(err)
             else:
@@ -50,7 +46,9 @@ class CountryDataGetter:
         if success:
             logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")
         else:
-            logger.error(f"{self.log_header} - {module_name}: ❌ FAILED after {i+1} tries: {error_msg}", exc_info=True)
+            logger.warning(
+                f"{self.log_header} - {module_name}: ❌ FAILED after {i+1} tries: {error_msg}", exc_info=True
+            )
         t = round(time.time() - t0, 2)
         return {"module_name": module_name, "success": success, "skipped": False, "time": t, "error": error_msg}
 
@@ -65,46 +63,45 @@ def main_get_data(
     log_s3_path=None,
     output_status: str = None,
     output_status_ts: str = None,
+    logging_mode: str = "info",
 ):
     """Get data from sources and export to output folder.
 
     Is equivalent to script `run_python_scripts.py`
     """
+    # Logger
+    logger = get_logger(logging_mode)
     t0 = time.time()
-    print("-- Getting data... --")
+    logger.info("-- Getting data... --")
     country_data_getter = CountryDataGetter(modules_skip, log_header)
     if log_s3_path:
         modules = _load_modules_order(modules, log_s3_path)
     if parallel:
         modules_execution_results = Parallel(n_jobs=n_jobs, backend="threading")(
-            delayed(country_data_getter.run)(
-                module_name,
-            )
-            for module_name in modules
+            delayed(country_data_getter.run)(module_name, logger) for module_name in modules
         )
     else:
         modules_execution_results = []
         for module_name in modules:
-            modules_execution_results.append(
-                country_data_getter.run(
-                    module_name,
-                )
-            )
+            modules_execution_results.append(country_data_getter.run(module_name, logger))
     t_sec_1 = round(time.time() - t0, 2)
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
     # Retry failed modules
-    summary_log_1, modules_execution_results_retry = _retry_modules_failed(
+    retry_log, error_log, modules_execution_results_retry = _retry_modules_failed(
         modules_execution_results, country_data_getter
     )
+    logger.warning(retry_log)
+    if error_log is not None:
+        logger.error(error_log)
     # Status
     if output_status is not None:
         modules_execution_results += modules_execution_results_retry
         export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
     # Print timing details
-    t_sec_1, t_min_1, t_sec_2, t_min_2, summary_log_2 = _print_timing(t0, t_sec_1, df_exec)
-    summary_log = summary_log_1 + summary_log_2
-    print(summary_log)
+    t_sec_1, t_min_1, t_sec_2, t_min_2, timing_log = _print_timing(t0, t_sec_1, df_exec)
+    # summary_log = summary_log_1 + summary_log_2
+    logger.info(f"{timing_log}")
 
 
 def export_status(modules_execution_results, modules_valid, output_status, output_status_ts):
@@ -162,33 +159,41 @@ def _build_df_status(modules_execution_results):
 
 def _retry_modules_failed(modules_execution_results, country_data_getter):
     modules_failed = [m["module_name"] for m in modules_execution_results if m["success"] is False]
-    summary_log = f"\n---\n\nRETRIES ({len(modules_failed)})\n"
+    retried_str = "\n".join([f"* {m}" for m in modules_failed])
+    retry_log = f"""RETRIES ({len(modules_failed)})
+
+The following scripts were re-executed:
+{retried_str}
+--------------------------------------
+"""
     modules_execution_results = []
     for module_name in modules_failed:
         modules_execution_results.append(country_data_getter.run(module_name))
     modules_failed_retrial = [m["module_name"] for m in modules_execution_results if m["success"] is False]
     if len(modules_failed_retrial) > 0:
         failed_str = "\n".join([f"* {m}" for m in modules_failed_retrial])
-        summary_log += (
-            "\n---\n\nFAILED\n------\n\nThe following scripts failed"
-            f" ({len(modules_failed_retrial)}):\n{failed_str}\n\n"
-        )
-    return summary_log, modules_execution_results
+        error_log = f"""FAILED ({len(modules_failed_retrial)})
+
+The following scripts failed:
+{failed_str}
+--------------------------------------
+"""
+    else:
+        error_log = None
+    return retry_log, error_log, modules_execution_results
 
 
 def _print_timing(t0, t_sec_1, df_time):
     t_min_1 = round(t_sec_1 / 60, 2)
     t_sec_2 = round(time.time() - t0, 2)
     t_min_2 = round(t_sec_2 / 60, 2)
-    summary_log = f"""\nTIMING DETAILS
---------------
-* Took {t_sec_1} seconds (i.e. {t_min_1} minutes).
+    summary_log = f"""TIMING DETAILS
 
+* Took {t_sec_1} seconds (i.e. {t_min_1} minutes).
 * Top 20 most time consuming scripts:
 {df_time[["execution_time (sec)"]].head(20)}
-
 * Took {t_sec_2} seconds (i.e. {t_min_2} minutes) [AFTER RETRIALS].
----
+--------------------------------------
 """
     return t_sec_1, t_min_1, t_sec_2, t_min_2, summary_log
 

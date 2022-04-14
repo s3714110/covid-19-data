@@ -30,6 +30,13 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     cls=PythonLiteralOption,
 )
 @click.option(
+    "--log-only-errors/--log-all",
+    "-O",
+    default=False,
+    help="Optimize processes based on older logging times.",
+    show_default=True,
+)
+@click.option(
     "--optimize/--no-optimize",
     "-O",
     default=False,
@@ -37,7 +44,7 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     show_default=True,
 )
 @click.pass_context
-def click_vax_get(ctx, countries, skip_countries, optimize):
+def click_vax_get(ctx, countries, skip_countries, optimize, log_only_errors):
     """Runs scraping scripts to collect the data from the primary sources of COUNTRIES. Data is exported to project
     folder scripts/output/vaccinations/. By default, all countries are scraped.
 
@@ -65,7 +72,6 @@ def click_vax_get(ctx, countries, skip_countries, optimize):
         modules_name_batch=MODULES_NAME_BATCH,
         country_to_module=country_to_module,
     )
-    print(countries)
     modules = c2m.parse(countries)
     modules_skip = c2m.parse(skip_countries)
     main_get_data(
@@ -78,4 +84,5 @@ def click_vax_get(ctx, countries, skip_countries, optimize):
         log_s3_path="s3://covid-19/log/vax-get-data-countries.csv" if optimize else None,
         output_status=paths.INTERNAL_OUTPUT_VAX_STATUS_GET,
         output_status_ts=paths.INTERNAL_OUTPUT_VAX_STATUS_GET_TS,
+        logging_mode="error" if log_only_errors else "info",
     )
