@@ -20,7 +20,7 @@ def click_jhu_download(ctx):
 
 @click.command(name="generate", short_help="Step 2: Generate dataset.")
 def click_jhu_generate():
-    main()
+    main(skip_download=True)
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
