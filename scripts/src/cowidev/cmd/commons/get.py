@@ -5,7 +5,7 @@ from datetime import datetime
 from joblib import Parallel, delayed
 import pandas as pd
 
-from cowidev.utils.log import get_logger, print_eoe
+from cowidev.utils.log import get_logger
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
 
@@ -93,13 +93,18 @@ def main_get_data(
     t_sec_1 = round(time.time() - t0, 2)
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
-    if output_status is not None:
-        export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
     # Retry failed modules
-    _retry_modules_failed(modules_execution_results, country_data_getter)
+    summary_log_1, modules_execution_results_retry = _retry_modules_failed(
+        modules_execution_results, country_data_getter
+    )
+    # Status
+    if output_status is not None:
+        modules_execution_results += modules_execution_results_retry
+        export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
     # Print timing details
-    t_sec_1, t_min_1, t_sec_2, t_min_2 = _print_timing(t0, t_sec_1, df_exec)
-    print_eoe()
+    t_sec_1, t_min_1, t_sec_2, t_min_2, summary_log_2 = _print_timing(t0, t_sec_1, df_exec)
+    summary_log = summary_log_1 + summary_log_2
+    print(summary_log)
 
 
 def export_status(modules_execution_results, modules_valid, output_status, output_status_ts):
@@ -135,45 +140,57 @@ def _build_df_execution(modules_execution_results):
 
 
 def _build_df_status(modules_execution_results):
-    df_exec = pd.DataFrame(
-        [
-            {
-                "module": m["module_name"],
-                "execution_time (sec)": m["time"],
-                "success": m["success"],
-                "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
-                "error": m["error"],
-            }
-            for m in modules_execution_results
-        ]
-    ).sort_values(by="execution_time (sec)", ascending=False)
+    df_exec = (
+        pd.DataFrame(
+            [
+                {
+                    "module": m["module_name"],
+                    "execution_time (sec)": m["time"],
+                    "success": m["success"],
+                    "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+                    "error": m["error"],
+                }
+                for m in modules_execution_results
+            ]
+        )
+        .sort_values(by="timestamp", ascending=True)
+        .drop_duplicates(subset=["module"], keep="last")
+        .sort_values(by="execution_time (sec)", ascending=False)
+    )
     return df_exec
 
 
 def _retry_modules_failed(modules_execution_results, country_data_getter):
     modules_failed = [m["module_name"] for m in modules_execution_results if m["success"] is False]
-    logger.info(f"\n---\n\nRETRIES ({len(modules_failed)})")
+    summary_log = f"\n---\n\nRETRIES ({len(modules_failed)})\n"
     modules_execution_results = []
     for module_name in modules_failed:
         modules_execution_results.append(country_data_getter.run(module_name))
     modules_failed_retrial = [m["module_name"] for m in modules_execution_results if m["success"] is False]
     if len(modules_failed_retrial) > 0:
         failed_str = "\n".join([f"* {m}" for m in modules_failed_retrial])
-        print(f"\n---\n\nFAILED\nThe following scripts failed to run ({len(modules_failed_retrial)}):\n{failed_str}")
+        summary_log += (
+            "\n---\n\nFAILED\n------\n\nThe following scripts failed"
+            f" ({len(modules_failed_retrial)}):\n{failed_str}\n\n"
+        )
+    return summary_log, modules_execution_results
 
 
 def _print_timing(t0, t_sec_1, df_time):
     t_min_1 = round(t_sec_1 / 60, 2)
     t_sec_2 = round(time.time() - t0, 2)
     t_min_2 = round(t_sec_2 / 60, 2)
-    print("---")
-    print("TIMING DETAILS")
-    print(f"Took {t_sec_1} seconds (i.e. {t_min_1} minutes).")
-    print(f"Top 20 most time consuming scripts:")
-    print(df_time[["execution_time (sec)"]].head(20))
-    print(f"\nTook {t_sec_2} seconds (i.e. {t_min_2} minutes) [AFTER RETRIALS].")
-    print("---")
-    return t_sec_1, t_min_1, t_sec_2, t_min_2
+    summary_log = f"""\nTIMING DETAILS
+--------------
+* Took {t_sec_1} seconds (i.e. {t_min_1} minutes).
+
+* Top 20 most time consuming scripts:
+{df_time[["execution_time (sec)"]].head(20)}
+
+* Took {t_sec_2} seconds (i.e. {t_min_2} minutes) [AFTER RETRIALS].
+---
+"""
+    return t_sec_1, t_min_1, t_sec_2, t_min_2, summary_log
 
 
 def _load_modules_order(modules_name, path_log):
