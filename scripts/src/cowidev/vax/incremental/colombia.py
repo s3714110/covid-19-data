@@ -1,4 +1,4 @@
-import re
+import logging
 
 import pandas as pd
 
@@ -41,7 +41,7 @@ class Colombia:
                 elif value == "Aplicación Refuerzos":
                     boosters = row[-1]
                     if type(boosters) != int:
-                        boosters = clean_count(boosters)                    
+                        boosters = clean_count(boosters)
         first_doses = total_vaccinations - second_doses - unique_doses - boosters
         people_vaccinated = first_doses + unique_doses
         people_fully_vaccinated = second_doses + unique_doses
@@ -86,7 +86,7 @@ class Colombia:
                 vaccine=data["vaccine"],
             )
         else:
-            print("skipped")
+            logging.info("skipped")
 
 
 def main():

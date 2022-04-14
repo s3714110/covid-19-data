@@ -49,7 +49,7 @@ class SriLanka(CountryVaxBase):
         return data
 
     def parse_metrics_from_pdf(self, pdf_path):
-        print(pdf_path)
+        # print(pdf_path)
         dfs = tabula.read_pdf(pdf_path)
         df = dfs[0]
 

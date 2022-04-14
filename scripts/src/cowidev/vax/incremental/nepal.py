@@ -42,7 +42,7 @@ class Nepal(CountryVaxBase):
 
     def _parse_pdf_table(self) -> pd.Series:
         """Extract table from pdf url"""
-        print(self.source_url_ref["manufacturer"])
+        # print(self.source_url_ref["manufacturer"])
         df_list = tabula.read_pdf(self.source_url_ref["manufacturer"], pages="all", stream=True)
         df = [table for table in df_list if "Pfizer" in table.columns][0]
         # Checks data

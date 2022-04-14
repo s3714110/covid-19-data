@@ -1,9 +1,6 @@
 import pandas as pd
 
 from cowidev.vax.utils.base import CountryVaxBase
-from cowidev.utils.log import get_logger
-
-logger = get_logger()
 
 
 vaccine_mapping = {
@@ -162,7 +159,7 @@ class Latvia(CountryVaxBase):
         return df
 
     def export(self):
-        logger.info("read")
+        # logger.info("read")
         # df = self.read()
         df = self.from_ice()  # temporary
         df_base = df.pipe(self.pipe_base)

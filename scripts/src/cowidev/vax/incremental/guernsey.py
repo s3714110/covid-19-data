@@ -13,14 +13,14 @@ class Guernsey:
     def read(self) -> pd.Series:
         soup = get_soup(self.source_url)
         df = self.parse_data(soup)
-        print(df)
+        # print(df)
         return df
 
     def parse_data(self, soup):
         # Get table
         tables = soup.find_all("table")
         ds = pd.read_html(str(tables[0]))[0].squeeze()
-        print(ds.loc[ds[0] == "Total doses", 1].values[0])
+        # print(ds.loc[ds[0] == "Total doses", 1].values[0])
         # Rename, add/remove columns
         return pd.Series(
             {

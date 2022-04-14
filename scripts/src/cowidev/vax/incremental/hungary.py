@@ -24,7 +24,7 @@ class Hungary(CountryVaxBase):
     def read(self, last_update: str) -> pd.DataFrame:
         data = []
         for cnt in range(0, self._num_max_pages):
-            print(f"page: {cnt}")
+            # print(f"page: {cnt}")
             url = f"{self.source_url}/hirek?page={cnt}/"
             soup = get_soup(url)
             data_, proceed = self.parse_data(soup, last_update)

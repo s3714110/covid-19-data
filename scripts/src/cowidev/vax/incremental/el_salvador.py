@@ -15,7 +15,7 @@ class ElSalvador:
     def read(self) -> pd.Series:
         soup = get_soup(self.source_url)
         link = self.parse_infogram_link(soup)
-        print(link)
+        # print(link)
         soup = get_soup(link)
         infogram_data = self.parse_infogram_data(soup)
         return pd.Series(

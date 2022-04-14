@@ -1,3 +1,4 @@
+import logging
 import re
 from datetime import datetime, timedelta
 from urllib.error import HTTPError
@@ -37,7 +38,8 @@ class Spain(CountryVaxBase):
                 try:
                     df_ = pd.read_excel(source, index_col=0, parse_dates=[self._date_field_raw])
                 except HTTPError:
-                    print(f"Date {date_it} not available!")
+                    # print(f"Date {date_it} not available!")
+                    logging.info(f"Date {date_it} not available!")
                 else:
                     # print("Adding!")
                     self._check_vaccine_names(df_)

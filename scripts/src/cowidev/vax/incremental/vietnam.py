@@ -40,7 +40,7 @@ class Vietnam:
         # Get relevant link
         url = self._get_relevant_link(soup)
         # Extract text from url
-        print(url)
+        # print(url)
         text = self._get_text_from_url(url)
         # Extract date from text
         date = self._parse_date_from_text(text)

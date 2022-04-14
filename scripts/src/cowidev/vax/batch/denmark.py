@@ -102,7 +102,7 @@ class Denmark(CountryVaxBase):
         links = self._get_file_links_bfill(index=index, date_limit=date_limit)
         records = []
         for link in links[:1]:
-            print("Back filling (single shots)", link)
+            # print("Back filling (single shots)", link)
             with tempfile.TemporaryDirectory() as tf:
                 self._download_and_extract_data(link, tf)
                 records.append(self._read_single_shots_daily(tf))
@@ -218,7 +218,7 @@ class Denmark(CountryVaxBase):
     def export(self):
         # Read current
         df_current = self.read_current()
-        print(df_current.columns)
+        # print(df_current.columns)
         index = self._get_num_gap_days(df_current)
         # Read new
         df = self.read(index).pipe(self.pipeline, df_current)

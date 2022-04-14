@@ -47,14 +47,15 @@ class Macao:
         date = self._parse_date(element)
         # Extract table data
         df = self._parse_pdf_table(url)
-        try:
-            total_vaccinations = clean_count(df.loc["Total de doses administradas", "Unnamed: 4"])
-            people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos", "Unnamed: 4"])
-            people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 4"])
-            people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 4"])
-        except Exception as e:
-            print(e)
-            print(df.index)
+        # try:
+        total_vaccinations = clean_count(df.loc["Total de doses administradas", "Unnamed: 4"])
+        people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos", "Unnamed: 4"])
+        people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 4"])
+        people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 4"])
+        # except Exception as e:
+        #     print(e)
+        #     print(df.index)
+
         data = {
             "total_vaccinations": total_vaccinations,
             "people_vaccinated": people_vaccinated,
