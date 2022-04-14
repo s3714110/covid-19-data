@@ -1,11 +1,12 @@
 import json
-from urllib.error import URLError
+import requests
 
 from bs4 import BeautifulSoup
-import requests
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChroOpt
 from selenium.webdriver.firefox.options import Options as FireOpt
+
+from cowidev.utils.params import SECRETS
 
 
 def get_headers() -> dict:
@@ -28,11 +29,14 @@ def get_headers() -> dict:
 def get_response(
     source: str,
     request_method: str = "get",
+    use_proxy: bool = False,
     **kwargs,
 ):
     kwargs["headers"] = kwargs.get("headers", get_headers())
     kwargs["verify"] = kwargs.get("verify", True)
     kwargs["timeout"] = kwargs.get("timeout", 20)
+    if use_proxy:
+        source = f"http://api.scraperapi.com?api_key={SECRETS.scraperapi.token}&url={source}"
     try:
         if request_method == "get":
             response = requests.get(source, **kwargs)
@@ -55,6 +59,7 @@ def get_soup(
     # parser="html.parser",
     parser="lxml",
     request_method: str = "get",
+    use_proxy: bool = False,
     **kwargs,
 ) -> BeautifulSoup:
     """Get soup from website.
@@ -66,12 +71,13 @@ def get_soup(
                                 #installing-a-parser. Defaults to 'lxml'.
         request_method (str, optional): Request method. Options are 'get' and 'post'. Defaults to GET method. For POST
                                         method, make sure to specify a header (default one does not work).
+        use_proxy(bool):
         kwargs (dict): Extra arguments passed to requests.get method. Default values for `headers`, `verify` and
                         `timeout` are used.
     Returns:
         BeautifulSoup: Website soup.
     """
-    response = get_response(source, request_method, **kwargs)
+    response = get_response(source, request_method, use_proxy, **kwargs)
     content = response.text
     soup = BeautifulSoup(content, parser, from_encoding=from_encoding)
     if soup.text == "":
