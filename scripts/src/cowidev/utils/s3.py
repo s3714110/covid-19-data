@@ -85,7 +85,7 @@ class S3:
             s3_path (Union[str, list]): File location to load object from.
             local_path (Union[str, list]): Path where to save file locally.
         """
-        print("Downloading from S3…")
+        logger.info("Downloading from S3…")
         # Checks
         _check_s3_local_files(local_path, s3_path)
         # Obtain bucket & file
