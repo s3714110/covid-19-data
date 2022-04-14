@@ -14,16 +14,15 @@ class China(CountryVaxBase):
     source_url_complete: str = "http://www.nhc.gov.cn/xcs/s2906/new_list.shtml"
     regex: dict = {
         "date": r"截至(20\d{2})年(\d{1,2})月(\d{1,2})日",
-        "total_vaccinations": "([\d\.]+\s*万)剂次",
+        "total_vaccinations": r"([\d\.]+\s*万)剂次",
     }
     regex_complete = {
-        "title": r"国务院联防联控机制(20\d\d)年(\d{1,2})月(\d{1,2})日新闻发布会文字实录",
-        "doses": r"截至(\d{1,2})月(\d{1,2})日.*计报告接种新冠疫苗([\d\.]+)亿([\d\.]+)万剂次",
-        "people": r"接种总人数达([\d\.]+)亿([\d\.]+)万",
-        "fully": r"已完成全程接种([\d\.]+)亿([\d\.]+)万人，覆盖人数占全国总人口的",
-        "boosters": r"完成加强免疫接种([\d\.]+)亿([\d\.]+)万人，其中序贯加强免疫接种",
+        "title": r"国务院联防联控机制(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会文字实录",
+        "summary": r"截至(\d{1,2})月(\d{1,2})日.*疫苗([\d\.亿零]+万)剂次.*全程接种的人数为([\d\.亿零]+万)人",
+        "vaccinated": r"接种(?:疫苗)?的?总人数达到?([\d\.亿零]+万)",
+        "boosters": r"完成加强免疫接种(?:的是)?([\d\.亿零]+万)人(?:，|。)(?:其中，?)?(?:60岁|序贯)",
     }
-    num_links_complete = 3
+    num_links_complete = 16
     timeout = 30
 
     def read(self, last_update: str):
@@ -67,27 +66,28 @@ class China(CountryVaxBase):
         return [elem.get_property("href") for elem in elems if re.search(self.regex_complete["title"], elem.text)]
 
     def _parse_data_complete(self, driver, url):
-        def _estimate_metric(position_1, position_2):
-            return int(float(position_1) * 1e8 + float(position_2) * 1e4)
+        def _clean_count(num_as_str):
+            num = float(re.search(r"([\d\.]+)万", num_as_str).group(1)) * 1e4
+            if re.search(r"([\d\.]+)亿零?", num_as_str) is not None:
+                num += float(re.search(r"([\d\.]+)亿零?", num_as_str).group(1)) * 1e8
+            return int(num)
 
         driver.get(url)
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
-        month, day, total_vaccinations_1, total_vaccinations_2 = re.search(
-            self.regex_complete["doses"], elem.text
+        year = re.search(self.regex_complete["title"], driver.title).group(1)
+        month, day, total_vaccinations, people_fully_vaccinated = re.search(
+            self.regex_complete["summary"], elem.text
         ).groups()
-        people_vaccinated_1, people_vaccinated_2 = re.search(self.regex_complete["people"], elem.text).groups()
-        people_fully_vaccinated_1, people_fully_vaccinated_2 = re.search(
-            self.regex_complete["fully"], elem.text
-        ).groups()
-        total_boosters_1, total_boosters_2 = re.search(self.regex_complete["boosters"], elem.text).groups()
+        has_vaccinated = re.search(self.regex_complete["vaccinated"], elem.text) is not None
+        has_boosters = re.search(self.regex_complete["boosters"], elem.text) is not None
         # Get metrics
         metrics = {
-            "total_vaccinations": _estimate_metric(total_vaccinations_1, total_vaccinations_2),
-            "people_vaccinated": _estimate_metric(people_vaccinated_1, people_vaccinated_2),
-            "people_fully_vaccinated": _estimate_metric(people_fully_vaccinated_1, people_fully_vaccinated_2),
-            "total_boosters": _estimate_metric(total_boosters_1, total_boosters_2),
-            "date": clean_date(f"2022-{month}-{day}", "%Y-%m-%d"),
+            "total_vaccinations": _clean_count(total_vaccinations),
+            "people_vaccinated": _clean_count(re.search(self.regex_complete["vaccinated"], elem.text).group(1)) if has_vaccinated else None,
+            "people_fully_vaccinated": _clean_count(people_fully_vaccinated),
+            "total_boosters": _clean_count(re.search(self.regex_complete["boosters"], elem.text).group(1)) if has_boosters else None,
+            "date": clean_date(f"{year}-{month}-{day}", "%Y-%m-%d"),
             "source_url": url,
         }
         return metrics
@@ -120,7 +120,13 @@ class China(CountryVaxBase):
             df = pd.concat([df_complete, df.loc[msk]])
         # Export
         self.export_datafile(df, attach=True)
+        return last_update, df, df_complete # Debug
 
 
 def main():
     China().export()
+
+
+# Debug
+if __name__ == '__main__':
+    last_update, df, df_complete = China().export()
