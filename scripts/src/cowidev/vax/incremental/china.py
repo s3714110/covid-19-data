@@ -20,7 +20,7 @@ class China(CountryVaxBase):
         "title": r"国务院联防联控机制(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会文字实录",
         "summary": r"截至(\d{1,2})月(\d{1,2})日.*疫苗([\d\.亿零]+万)剂次.*全程接种的?人数(?:为|超过\d+亿，达到)([\d\.亿零]+万)人",
         "vaccinated": r"(?:接种|疫苗)的?总人数达到?([\d\.亿零]+万)",
-        "boosters": r"加强免疫接种(?:的是)?([\d\.亿零]+万)人",
+        "boosters": r"加强免疫(?:已经)?接种(?:的是)?([\d\.亿零]+万)人",
     }
     num_links_complete = 6
     timeout = 30
@@ -58,7 +58,9 @@ class China(CountryVaxBase):
             time.sleep(5)
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
-                records.append(self._parse_data_complete(driver, link))
+                record = self._parse_data_complete(driver, link)
+                if record is not None:
+                    records.append(record)
         return pd.DataFrame(records)
 
     def _get_links_complete(self, driver):
@@ -76,9 +78,11 @@ class China(CountryVaxBase):
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
         year = re.search(self.regex_complete["title"], driver.title).group(1)
-        month, day, total_vaccinations, people_fully_vaccinated = re.search(
-            self.regex_complete["summary"], elem.text
-        ).groups()
+        summary = re.search(self.regex_complete["summary"], elem.text)
+        if summary is not None:
+            month, day, total_vaccinations, people_fully_vaccinated = summary.groups()
+        else:
+            return
         people_vaccinated = re.search(self.regex_complete["vaccinated"], elem.text)
         total_boosters = re.search(self.regex_complete["boosters"], elem.text)
         # Get metrics
@@ -115,11 +119,12 @@ class China(CountryVaxBase):
         # Merge
         if df.empty:
             df = df_complete
-        else:
+        elif not df_complete.empty:
             msk = ~df.date.isin(df_complete.date)
             df = pd.concat([df_complete, df.loc[msk]])
         # Export
-        self.export_datafile(df, attach=True)
+        if not df.empty:
+            self.export_datafile(df, attach=True)
 
 
 def main():
