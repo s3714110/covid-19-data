@@ -88,7 +88,6 @@ def export_metadata(df: pd.DataFrame, source_name: str, source_url: str, output_
         df_current = pd.read_csv(output_path)
         df_current = df_current.loc[~df_current.location.isin(df.location)]
         df = pd.concat([df_current, df])
-
     df.sort_values("location")[["location", "last_observation_date", "source_name", "source_url"]].to_csv(
         output_path, index=False
     )
