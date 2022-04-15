@@ -7,13 +7,14 @@ from ._parser import _parse_args
 
 
 FILE_DS = os.path.join(PATHS.INTERNAL_INPUT_BSG_DIR, "latest.csv")
+FILE_DIFF_DS = os.path.join(PATHS.INTERNAL_INPUT_BSG_DIR, "latest-differentiated.csv")
 FILE_GRAPHER = os.path.join(PATHS.INTERNAL_GRAPHER_DIR, "COVID Government Response (OxBSG).csv")
 FILE_COUNTRY_STD = os.path.join(PATHS.INTERNAL_INPUT_BSG_DIR, "bsg_country_standardised.csv")
 
 
 def run_step(step: str):
     if step == "etl":
-        run_etl(FILE_DS)
+        run_etl(FILE_DS, FILE_DIFF_DS)
     elif step == "grapher-file":
         run_grapheriser(FILE_DS, FILE_COUNTRY_STD, FILE_GRAPHER)
     elif step == "grapher-db":
