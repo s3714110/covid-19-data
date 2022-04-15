@@ -648,7 +648,7 @@ class DatasetGenerator:
         html_table = f"<table><tbody>{header}{body}</tbody></table>"
         coverage_info = f"Vaccination against COVID-19 has now started in {len(self._countries_covered)} locations."
         html_table = (
-            f'<div class="wp-block-full-content-width"><p><strong>{coverage_info}</strong></p>{html_table}</div>\n'
+            f'<p><strong>{coverage_info}</strong></p><div class="tableContainer">{html_table}</div>\n'
         ).replace("  ", " ")
         return html_table
 
