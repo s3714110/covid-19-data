@@ -40,6 +40,17 @@ internal_files_columns = {
         ],
         "dropna": "all",
     },
+    "stringency": {
+        "columns": [
+            "location",
+            "date",
+            "stringency_index",
+            "stringency_index_nonvac",
+            "stringency_index_vac",
+            "stringency_index_weighted_avg",
+        ],
+        "dropna": "all",
+    },
     "deaths": {
         "columns": [
             "continent",

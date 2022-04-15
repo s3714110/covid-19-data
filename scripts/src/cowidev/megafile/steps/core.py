@@ -39,6 +39,7 @@ def get_base_dataset():
     print("Fetching OxCGRT dataset…")
     cgrt = get_cgrt(
         bsg_latest=os.path.join(INPUT_DIR, "bsg", "latest.csv"),
+        bsg_diff_latest=os.path.join(INPUT_DIR, "bsg", "latest-differentiated.csv"),
         country_mapping=os.path.join(INPUT_DIR, "bsg", "bsg_country_standardised.csv"),
     )
 

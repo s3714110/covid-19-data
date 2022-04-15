@@ -130,6 +130,9 @@ def generate_megafile():
         "estimated_daily_excess_deaths_per_100k",
         "estimated_daily_excess_deaths_ci_95_top_per_100k",
         "estimated_daily_excess_deaths_ci_95_bot_per_100k",
+        "stringency_index_nonvac",
+        "stringency_index_vac",
+        "stringency_index_weighted_avg",
     ]
     all_covid = all_covid.drop(columns=cols_drop)
 
