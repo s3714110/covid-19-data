@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-14T08:52:32`.
+`2/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-14T10:17:49`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,6 +18,13 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>cowidev.vax.incremental.russia</td>
+      <td>❌</td>
+      <td>2022-04-14T10:17:49</td>
+      <td>2.30</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 41, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 64, in main<br>    data = read(source).pipe(pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 11, in read<br>    soup = get_soup(1, use_proxy=True)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 82, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source 1 not reached! Scraper API was used!<br>Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'<br></pre></details></td>
+    </tr>
     <tr>
       <td>cowidev.vax.incremental.china</td>
       <td>❌</td>
@@ -506,13 +513,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-04-14T08:52:32</td>
       <td>2.99</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.russia</td>
-      <td>✅</td>
-      <td>2022-04-14T08:52:32</td>
-      <td>2.93</td>
       <td></td>
     </tr>
     <tr>
