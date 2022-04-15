@@ -16,27 +16,28 @@ LOG_GET_GLOBAL = "s3://covid-19/log/{}-get-data-global.csv"
 
 
 class CountryDataGetter:
-    def __init__(self, modules_skip: list = [], log_header: str = ""):
+    def __init__(self, logger, modules_skip: list = [], log_header: str = ""):
+        self.logger = logger
         self.modules_skip = modules_skip
         self.log_header = log_header
 
     def _skip_module(self, module_name):
         return module_name in self.modules_skip
 
-    def run(self, module_name: str, logger, num_retries: int = 2):
+    def run(self, module_name: str, num_retries: int = 2):
         t0 = time.time()
         # Check country skipping
         if self._skip_module(module_name):
-            logger.info(f"{self.log_header} - {module_name}: skipped! ⚠️")
+            self.logger.info(f"{self.log_header} - {module_name}: skipped! ⚠️")
             return {"module_name": module_name, "success": None, "skipped": True, "time": None, "error": ""}
         # Start country scraping
-        logger.info(f"{self.log_header} - {module_name}: started")
+        self.logger.info(f"{self.log_header} - {module_name}: started")
         module = importlib.import_module(module_name)
         for i in range(num_retries):
             try:
                 module.main()
             except Exception as err:
-                logger.info(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
+                self.logger.info(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
                 success = False
                 error_msg = get_traceback(err)
             else:
@@ -44,9 +45,9 @@ class CountryDataGetter:
                 error_msg = ""
                 break
         if success:
-            logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")
+            self.logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")
         else:
-            logger.warning(
+            self.logger.warning(
                 f"{self.log_header} - {module_name}: ❌ FAILED after {i+1} tries: {error_msg}", exc_info=True
             )
         t = round(time.time() - t0, 2)
@@ -73,17 +74,17 @@ def main_get_data(
     logger = get_logger(logging_mode)
     t0 = time.time()
     logger.info("-- Getting data... --")
-    country_data_getter = CountryDataGetter(modules_skip, log_header)
+    country_data_getter = CountryDataGetter(logger, modules_skip, log_header)
     if log_s3_path:
         modules = _load_modules_order(modules, log_s3_path)
     if parallel:
         modules_execution_results = Parallel(n_jobs=n_jobs, backend="threading")(
-            delayed(country_data_getter.run)(module_name, logger) for module_name in modules
+            delayed(country_data_getter.run)(module_name) for module_name in modules
         )
     else:
         modules_execution_results = []
         for module_name in modules:
-            modules_execution_results.append(country_data_getter.run(module_name, logger))
+            modules_execution_results.append(country_data_getter.run(module_name))
     t_sec_1 = round(time.time() - t0, 2)
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
