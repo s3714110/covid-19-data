@@ -18,9 +18,9 @@ class China(CountryVaxBase):
     }
     regex_complete = {
         "title": r"国务院联防联控机制(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会文字实录",
-        "summary": r"截至(\d{1,2})月(\d{1,2})日.*疫苗([\d\.亿零]+万)剂次.*全程接种的?人数(?:为|超过\d+亿，达到)([\d\.亿零]+万)人",
+        "summary": r"截至(\d{1,2})月(\d{1,2})日.*疫苗([\d\.亿零]+万)剂次.*全程接种的?人数(?:为|.{0,9}达到)([\d\.亿零]+万)人",
         "vaccinated": r"(?:接种|疫苗)的?总人数达到?([\d\.亿零]+万)",
-        "boosters": r"加强免疫(?:已经)?接种(?:的是)?([\d\.亿零]+万)人",
+        "boosters": r"加强免疫(?:已经)?接种的?是?([\d\.亿零]+万)人",
     }
     num_links_complete = 6
     timeout = 30
@@ -59,7 +59,7 @@ class China(CountryVaxBase):
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
                 record = self._parse_data_complete(driver, link)
-                if record is not None:
+                if record:
                     records.append(record)
         return pd.DataFrame(records)
 
@@ -70,8 +70,9 @@ class China(CountryVaxBase):
     def _parse_data_complete(self, driver, url):
         def _clean_count(num_as_str):
             num = float(re.search(r"([\d\.]+)万", num_as_str).group(1)) * 1e4
-            if re.search(r"([\d\.]+)亿零?", num_as_str) is not None:
-                num += float(re.search(r"([\d\.]+)亿零?", num_as_str).group(1)) * 1e8
+            num_100m = re.search(r"([\d\.]+)亿零?", num_as_str)
+            if num_100m:
+                num += float(num_100m.group(1)) * 1e8
             return int(num)
 
         driver.get(url)
@@ -79,18 +80,18 @@ class China(CountryVaxBase):
         # Apply regex
         year = re.search(self.regex_complete["title"], driver.title).group(1)
         summary = re.search(self.regex_complete["summary"], elem.text)
-        if summary is not None:
+        if summary:
             month, day, total_vaccinations, people_fully_vaccinated = summary.groups()
         else:
             return
-        people_vaccinated = re.search(self.regex_complete["vaccinated"], elem.text)
-        total_boosters = re.search(self.regex_complete["boosters"], elem.text)
+        vaccinated = re.search(self.regex_complete["vaccinated"], elem.text)
+        boosters = re.search(self.regex_complete["boosters"], elem.text)
         # Get metrics
         metrics = {
             "total_vaccinations": _clean_count(total_vaccinations),
-            "people_vaccinated": _clean_count(people_vaccinated.group(1)) if people_vaccinated is not None else None,
+            "people_vaccinated": _clean_count(vaccinated.group(1)) if vaccinated else None,
             "people_fully_vaccinated": _clean_count(people_fully_vaccinated),
-            "total_boosters": _clean_count(total_boosters.group(1)) if total_boosters is not None else None,
+            "total_boosters": _clean_count(boosters.group(1)) if boosters else None,
             "date": clean_date(f"{year}-{month}-{day}", "%Y-%m-%d"),
             "source_url": url,
         }
