@@ -17,6 +17,7 @@ ADDITIONAL_VACCINES_USED = {
     "Cayman Islands": ["Oxford/AstraZeneca"],
     "Gambia": ["Johnson&Johnson"],
     "Ethiopia": ["Sinovac"],
+    "Burundi": ["Johnson&Johnson"],
 }
 
 
