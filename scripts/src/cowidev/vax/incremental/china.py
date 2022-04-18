@@ -103,7 +103,7 @@ class China(CountryVaxBase):
         )
 
     def pipe_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(vaccine="BioKangtai, CanSino, IMBCAMS, Sinopharm/Beijing, Sinopharm/Wuhan, Sinovac, ZF2001")
+        return df.assign(vaccine="CanSino, IMBCAMS, KCONVAC, Sinopharm/Beijing, Sinopharm/Wuhan, Sinovac, ZF2001")
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.pipe(self.pipe_metadata).pipe(self.pipe_vaccine)

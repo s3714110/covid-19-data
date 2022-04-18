@@ -8,7 +8,6 @@ METRICS = ["total_vaccinations", "people_vaccinated", "people_fully_vaccinated",
 
 VACCINES_ACCEPTED = [
     "Abdala",
-    "BioKangtai",
     "CanSino",
     "Covaxin",
     "COVIran Barekat",
@@ -16,6 +15,7 @@ VACCINES_ACCEPTED = [
     "FAKHRAVAC",
     "IMBCAMS",
     "Johnson&Johnson",
+    "KCONVAC",
     "Medigen",
     "Moderna",
     "Novavax",
