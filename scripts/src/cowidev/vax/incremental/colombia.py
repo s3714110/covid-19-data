@@ -90,7 +90,8 @@ class Colombia:
                 vaccine=data["vaccine"],
             )
         else:
-            logging.info("skipped")
+            pass
+        #logging.info("skipped")
 
 
 def main():
