@@ -62,15 +62,7 @@ cowidev.vax.incremental.croatia,0.23,True,2022-04-18T09:10:33,
 cowidev.vax.incremental.cuba,10.06,True,2022-04-18T08:44:47,
 cowidev.vax.incremental.curacao,1.42,True,2022-04-18T08:44:47,
 cowidev.vax.incremental.cyprus,3.59,True,2022-04-18T08:44:47,
-cowidev.vax.incremental.dominican_republic,9.35,False,2022-04-18T09:34:16,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 38, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 62, in main
-    data = read(source).pipe(pipeline, source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 38, in read
-    ""total_vaccinations"": total_vaccinations,
-UnboundLocalError: local variable 'total_vaccinations' referenced before assignment
-"
+cowidev.vax.incremental.dominican_republic,4.59,True,2022-04-18T10:03:41,
 cowidev.vax.incremental.el_salvador,6.9,True,2022-04-18T08:44:47,
 cowidev.vax.incremental.equatorial_guinea,11.24,True,2022-04-18T08:44:47,
 cowidev.vax.incremental.faeroe_islands,1.61,True,2022-04-18T08:44:47,

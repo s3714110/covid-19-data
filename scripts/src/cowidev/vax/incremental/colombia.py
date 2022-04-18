@@ -38,14 +38,18 @@ class Colombia:
                     unique_doses = row[-1]
                     if type(unique_doses) != int:
                         unique_doses = clean_count(unique_doses)
-                elif value == "Aplicación Refuerzos":
+                elif value == "Reporte dosis Refuerzo":
                     boosters = row[-1]
                     if type(boosters) != int:
                         boosters = clean_count(boosters)
-        first_doses = total_vaccinations - second_doses - unique_doses - boosters
+                elif value == "Reporte 2dos Refuerzos":
+                    boosters_2 = row[-1]
+                    if type(boosters_2) != int:
+                        boosters_2 = clean_count(boosters_2)
+        first_doses = total_vaccinations - second_doses - unique_doses - boosters - boosters_2
         people_vaccinated = first_doses + unique_doses
         people_fully_vaccinated = second_doses + unique_doses
-        total_boosters = boosters
+        total_boosters = boosters + boosters_2
 
         if total_vaccinations is None or second_doses is None or unique_doses is None:
             raise ValueError("Date is not where it is expected be! Check worksheet")
