@@ -22,13 +22,13 @@ def read(source: str) -> pd.Series:
             if "Primera dosis" in h5.text:
                 people_vaccinated = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
 
-            elif "Total dosis aplicadas" in h5.text:
+            elif "Cantidad total de dosis administradas" in h5.text:
                 total_vaccinations = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
 
             elif "Población completamente vacunada" in h5.text:
                 people_fully_vaccinated = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
 
-            elif "Dosis refuerzo" in h5.text:
+            elif "Dosis de refuerzo" in h5.text:
                 total_boosters = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
 
     data = {
