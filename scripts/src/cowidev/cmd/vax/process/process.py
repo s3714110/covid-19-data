@@ -109,7 +109,7 @@ def main_process_data(
             else:
                 # Export
                 df.to_csv(os.path.join(path_output_files, f"{country}.csv"), index=False)
-                logger.info(f"{country}: SUCCESS ✅")
+                logger.info(f"{log_header} - {country}: SUCCESS ✅")
                 success = True
                 error_msg = ""
             finally:
