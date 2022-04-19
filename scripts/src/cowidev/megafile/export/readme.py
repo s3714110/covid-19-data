@@ -74,16 +74,28 @@ def load_macro_df():
 
 
 def get_variable_section():
-    template = """### {title}\n{table}"""
+    template = """### {title}\n{table}\n{notes}"""
     df = pd.read_csv(CODEBOOK_CSV).rename(columns={"description": "Description"})
+    df_notes = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_COVID_NOTES_FILE, index_col="category")
     df = df.assign(Variable=df.column.apply(lambda x: f"`{x}`"))
     variable_description = []
     categories = list(filter(lambda x: x != "Others", sorted(df.category.unique()))) + ["Others"]
     for cat in categories:
         df_ = df[df.category == cat]
         table = df_[["Variable", "Description"]].to_markdown(index=False)
-        variable_description.append(template.format(title=cat, table=table))
+        notes = _generate_category_notes(df_notes, cat)
+        variable_description.append(template.format(title=cat, table=table, notes=notes))
     return variable_description
+
+
+def _generate_category_notes(df_notes, category):
+    notes_pretty = "\n#### Notes:\n"
+    if category in df_notes.index:
+        notes = df_notes.loc[category]
+        for note in notes:
+            notes_pretty += f"* {note}\n"
+        return notes_pretty
+    return ""
 
 
 def get_placeholder():

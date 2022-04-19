@@ -131,6 +131,7 @@ INTERNAL_INPUT_OWID_EU_FILE = os.path.join(INTERNAL_INPUT_OWID_DIR, "eu_countrie
 INTERNAL_INPUT_OWID_ANNOTATIONS_FILE = os.path.join(INTERNAL_DIR, "scripts", "annotations_internal.yaml")
 INTERNAL_INPUT_OWID_READ_FILE = os.path.join(INTERNAL_DIR, "scripts", "README.md.template")
 INTERNAL_INPUT_OWID_TESTCUT_FILE = os.path.join(INTERNAL_INPUT_OWID_DIR, "testing_cutoffs.csv")
+INTERNAL_INPUT_OWID_COVID_NOTES_FILE = os.path.join(INTERNAL_INPUT_OWID_DIR, "covid_category_notes.csv")
 INTERNAL_INPUT_UN_DIR = os.path.join(INTERNAL_INPUT_DIR, "un")
 INTERNAL_INPUT_UN_POPULATION_FILE = os.path.join(INTERNAL_INPUT_UN_DIR, "population_latest.csv")
 INTERNAL_INPUT_UN_POPULATION_AGE_FILE = os.path.join(INTERNAL_INPUT_UN_DIR, "population_age_latest.csv")
