@@ -118,7 +118,7 @@ class CountryVaxBase:
         if not valid_cols_only:
             cols += [col for col in df.columns if col not in COLUMNS_ORDER]
         df = df[cols]
-        df = df.drop_duplicates()
+        df = df.drop_duplicates(subset=[m for m in METRICS if m in df.columns])
         return df
 
     def _postprocessing_age(self, df):
@@ -201,6 +201,8 @@ class CountryVaxBase:
             df = merge_with_current_data(df, filename)
         if not isinstance(df, pd.DataFrame):
             raise TypeError(f"df must be a pandas DataFrame!. Isntead {type(df).__name__} was detected.")
+        if "Cayman" in filename:
+            print(filename, df.shape)
         df = self._postprocessing(df, valid_cols_only)
         if reset_index:
             df = df.reset_index(drop=True)
