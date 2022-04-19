@@ -6,7 +6,7 @@ from selenium.webdriver.chrome.options import Options
 
 from cowidev.utils.clean import clean_count
 from cowidev.vax.utils.incremental import enrich_data, increment
-from cowidev.utils.clean.dates import localdate
+from cowidev.utils.clean.dates import clean_date
 
 
 def read(source: str) -> pd.Series:
@@ -16,23 +16,24 @@ def read(source: str) -> pd.Series:
     with webdriver.Chrome(options=op) as driver:
         driver.get(source)
         time.sleep(3)
+        metric_names = [e.text for e in driver.find_elements_by_class_name("jss73")]
+        metric_values = [e.text for e in driver.find_elements_by_class_name("jss74")]
+        for name, value in zip(metric_names, metric_values):
+            if "Primera dosis" == name:
+                people_vaccinated = clean_count(value)
+            elif "Cantidad total de dosis administradas" == name:
+                total_vaccinations = clean_count(value)
+            elif "Población completamente vacunada" in name:
+                people_fully_vaccinated = clean_count(value)
+            elif "Dosis de refuerzo" in name:
+                total_boosters = clean_count(value)
 
-        for h5 in driver.find_elements_by_tag_name("h5"):
-
-            if "Primera dosis" in h5.text:
-                people_vaccinated = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
-
-            elif "Cantidad total de dosis administradas" in h5.text:
-                total_vaccinations = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
-
-            elif "Población completamente vacunada" in h5.text:
-                people_fully_vaccinated = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
-
-            elif "Dosis de refuerzo" in h5.text:
-                total_boosters = clean_count(h5.find_element_by_xpath("./preceding-sibling::div").text)
-
+        dt_candidates = [e.text for e in driver.find_elements_by_tag_name("h3")]
+        for dt_candidate in dt_candidates:
+            if "Estadísticas nacionales | Acumulados" in dt_candidate:
+                date = clean_date(dt_candidate, "Estadísticas nacionales | Acumulados al %d de %B de %Y", lang="es")
     data = {
-        "date": localdate("America/Santo_Domingo"),
+        "date": date,
         "people_vaccinated": people_vaccinated,
         "people_fully_vaccinated": people_fully_vaccinated,
         "total_vaccinations": total_vaccinations,
