@@ -29,7 +29,14 @@ class CountryDataGetter:
         # Check country skipping
         if self._skip_module(module_name):
             self.logger.info(f"{self.log_header} - {module_name}: skipped! ⚠️")
-            return {"module_name": module_name, "success": None, "skipped": True, "time": None, "error": ""}
+            return {
+                "module_name": module_name,
+                "success": None,
+                "skipped": True,
+                "time": None,
+                "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+                "error": "",
+            }
         # Start country scraping
         self.logger.info(f"{self.log_header} - {module_name}: started")
         module = importlib.import_module(module_name)
@@ -51,7 +58,14 @@ class CountryDataGetter:
                 f"{self.log_header} - {module_name}: ❌ FAILED after {i+1} tries: {error_msg}", exc_info=True
             )
         t = round(time.time() - t0, 2)
-        return {"module_name": module_name, "success": success, "skipped": False, "time": t, "error": error_msg}
+        return {
+            "module_name": module_name,
+            "success": success,
+            "skipped": False,
+            "time": t,
+            "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+            "error": error_msg,
+        }
 
 
 def main_get_data(
@@ -145,7 +159,7 @@ def _build_df_status(modules_execution_results):
                     "module": m["module_name"],
                     "execution_time (sec)": m["time"],
                     "success": m["success"],
-                    "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
+                    "timestamp": m["success"],
                     "error": m["error"],
                 }
                 for m in modules_execution_results
