@@ -32,6 +32,9 @@ def get_logger(mode="info"):
     elif mode == "error":
         logger.setLevel(logging.ERROR)
         ch.setLevel(logging.ERROR)
+    elif mode == "critical":
+        logger.setLevel(logging.CRITICAL)
+        ch.setLevel(logging.CRITICAL)
     else:
         raise ValueError(f"Invalid mode: {mode}")
 
