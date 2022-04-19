@@ -24,6 +24,11 @@ class ScraperAPISecrets:
 
 
 @dataclass()
+class SlackSecrets:
+    token: str = ""
+
+
+@dataclass()
 class VaccinationsSecrets:
     post: str = None
     sheet_id: str = None
@@ -48,6 +53,7 @@ class TwitterSecrets:
 class Secrets:
     google: GoogleSecrets = field(default_factory=dict)
     scraperapi: ScraperAPISecrets = field(default_factory=dict)
+    slack: SlackSecrets = field(default_factory=dict)
     vaccinations: VaccinationsSecrets = field(default_factory=dict)
     testing: TestingSecrets = field(default_factory=dict)
     twitter: TwitterSecrets = field(default_factory=dict)
@@ -55,6 +61,7 @@ class Secrets:
     def __post_init__(self):
         self.google = GoogleSecrets(**self.google)
         self.scraperapi = ScraperAPISecrets(**self.scraperapi)
+        self.slack = SlackSecrets(**self.slack)
         self.vaccinations = VaccinationsSecrets(**self.vaccinations)
         self.testing = TestingSecrets(**self.testing)
         self.twitter = TwitterSecrets(**self.twitter)

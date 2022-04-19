@@ -131,6 +131,9 @@ google:
 scraperapi:
   token:  # Token for https://www.scraperapi.com/ services (free plan)
   
+slack:
+  token:  # Token to send messages to slack
+
 # Vaccination configuration (dict), OPTIONAL
 vaccinations:
   post:  # OWID Vaccination internal post link (str)
