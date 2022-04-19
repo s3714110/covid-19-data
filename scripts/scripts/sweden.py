@@ -34,9 +34,7 @@ def generate_dataset():
 
     df = df.sort_values("Date")
     df.loc[:, "Deaths"] = df["Deaths"].rolling(7).mean().round(1)
-    df.loc[
-        df["Date"] >= (datetime.now() - timedelta(days=15)), "Incomplete deaths"
-    ] = df["Deaths"]
+    df.loc[df["Date"] >= (datetime.now() - timedelta(days=15)), "Incomplete deaths"] = df["Deaths"]
     df.loc[df["Date"] >= (datetime.now() - timedelta(days=14)), "Deaths"] = np.nan
 
     df["Country"] = "Sweden"
@@ -48,14 +46,8 @@ def generate_dataset():
 
 
 def update_db():
-    time_str = (
-        datetime.now()
-        .astimezone(pytz.timezone("Europe/London"))
-        .strftime("%-d %B, %H:%M")
-    )
-    source_name = (
-        f"Swedish Public Health Agency – Last updated {time_str} (London time)"
-    )
+    time_str = datetime.now().astimezone(pytz.timezone("Europe/London")).strftime("%-d %B %Y")
+    source_name = f"Swedish Public Health Agency – Last updated {time_str}"
     import_dataset(
         dataset_name=DATASET_NAME,
         namespace="owid",

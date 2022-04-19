@@ -216,8 +216,8 @@ def generate_dataset():
 
 
 def update_db():
-    time_str = datetime.now().astimezone(pytz.timezone("Europe/London")).strftime("%-d %B, %H:%M")
-    source_name = f"UK Government COVID-19 Dashboard – Last updated {time_str} (London time)"
+    time_str = datetime.now().astimezone(pytz.timezone("Europe/London")).strftime("%-d %B %Y")
+    source_name = f"UK Government COVID-19 Dashboard – Last updated {time_str}"
     import_dataset(
         dataset_name=DATASET_NAME,
         namespace="owid",
