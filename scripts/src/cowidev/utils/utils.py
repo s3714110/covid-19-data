@@ -65,11 +65,7 @@ def export_timestamp(timestamp_filename: str, force_directory: str = None):
 
 
 def time_str_grapher():
-    return (
-        (datetime.now() - timedelta(minutes=10))
-        .astimezone(pytz.timezone("Europe/London"))
-        .strftime("%-d %B %Y, %H:%M")
-    )
+    return (datetime.now() - timedelta(minutes=10)).astimezone(pytz.timezone("Europe/London")).strftime("%-d %B %Y")
 
 
 def get_filename(filepath: str, remove_extension: bool = True):
@@ -116,4 +112,4 @@ def check_known_columns(df: pd.DataFrame, known_cols: list) -> None:
 
 def get_traceback(e):
     lines = traceback.format_exception(type(e), e, e.__traceback__)
-    return ''.join(lines)
+    return "".join(lines)

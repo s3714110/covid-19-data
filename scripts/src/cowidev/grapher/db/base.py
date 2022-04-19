@@ -47,9 +47,7 @@ class GrapherBaseUpdater:
     @property
     def time_str(self):
         return (
-            (datetime.now() - timedelta(minutes=10))
-            .astimezone(pytz.timezone("Europe/London"))
-            .strftime("%-d %B %Y, %H:%M")
+            (datetime.now() - timedelta(minutes=10)).astimezone(pytz.timezone("Europe/London")).strftime("%-d %B %Y")
         )
 
     def run(self):

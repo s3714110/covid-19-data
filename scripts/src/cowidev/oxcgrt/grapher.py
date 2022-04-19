@@ -105,7 +105,7 @@ def run_db_updater(input_path: str):
         dataset_name=dataset_name,
         source_name=(
             "Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, University of Oxford"
-            f" – Last updated {time_str_grapher()} (London time)"
+            f" – Last updated {time_str_grapher()}"
         ),
         zero_day=ZERO_DAY,
         slack_notifications=False,
