@@ -18,8 +18,8 @@ class Philippines(CountryVaxBase):
     metric_entities: dict = {
         "total_vaccinations": "4b9e949e-2990-4349-aa85-5aff8501068a",
         # "people_vaccinated": "25d75a0a-cb56-4824-aed4-4410f395577a",
-        "people_fully_vaccinated": "68999d30-7787-4c3f-ba20-c8647ca21548",
-        "total_boosters": "db3b7f4f-ee01-4a15-b050-f6b05a547c2e",
+        "people_fully_vaccinated": "1d6e2083-6212-429f-8599-109454eaef84a586833a-32b3-43c9-ac61-4d3703c816e8",
+        "total_boosters": "2f9ba834-59ea-4898-b916-0da3c7394d38fe0b539e-b42c-4f0f-a390-e36c62750b86",
     }
     date_entity: str = "01ff1d02-e027-4eee-9de1-5e19f7fdd5e8"
 
@@ -29,6 +29,13 @@ class Philippines(CountryVaxBase):
         json_data = self._get_json_data(soup)
         data = self._parse_data(json_data)
         return pd.Series(data)
+
+    def _print_entitiy_ids(self, json_data):
+        entities = json_data["elements"]["content"]["content"]["entities"]
+        for k, v in entities.items():
+            vv = v["props"]
+            if "content" in vv:
+                print(k, vv["content"]["blocks"][0]["text"])
 
     def _parse_data(self, json_data: dict) -> dict:
         """Parses data from JSON"""
