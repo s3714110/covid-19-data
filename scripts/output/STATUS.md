@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`3/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-19T11:34:43`.
+`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-19T11:53:55`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,20 +18,6 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cowidev.vax.incremental.kosovo</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>40.30</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>OSError: [Errno 101] Network is unreachable<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn<br>    conn.connect()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 358, in connect<br>    conn = self._new_conn()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn<br>    raise NewConnectionError(<br>urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fe4c4949a80>: Failed to establish a new connection: [Errno 101] Network is unreachable<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 785, in urlopen<br>    retries = retries.increment(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /sq/statistikat-covid-19/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe4c4949a80>: Failed to establish a new connection: [Errno 101] Network is unreachable'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 45, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py", line 82, in main<br>    Kosovo().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py", line 77, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py", line 22, in read<br>    soup = get_soup(self.source_url)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 82, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 519, in send<br>    raise ConnectionError(e, request=request)<br>requests.exceptions.ConnectionError: HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /sq/statistikat-covid-19/ (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fe4c4949a80>: Failed to establish a new connection: [Errno 101] Network is unreachable'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.philippines</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>4.17</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 45, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py", line 100, in main<br>    Philippines().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py", line 95, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py", line 30, in read<br>    data = self._parse_data(json_data)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py", line 35, in _parse_data<br>    data = {**self._parse_metrics(json_data), "date": self._parse_date(json_data)}<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py", line 51, in _parse_metrics<br>    value = json_data["elements"]["content"]["content"]["entities"][entity]["props"]["content"]["blocks"][0][<br>KeyError: '68999d30-7787-4c3f-ba20-c8647ca21548'<br></pre></details></td>
-    </tr>
     <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>❌</td>
@@ -107,6 +93,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>NaN</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kosovo</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>54.27</td>
       <td></td>
     </tr>
     <tr>
@@ -779,6 +772,13 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>True</td>
       <td>0.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.philippines</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>0.66</td>
       <td></td>
     </tr>
     <tr>
