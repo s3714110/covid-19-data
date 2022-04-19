@@ -154,7 +154,7 @@ cowid hosp grapher-db
 hour=$(date +%H)
 if [ $hour == 07 ] ; then
   echo "Generating Vaccination (get & process step)..."
-  cowid vax get --log-only-errors
+  cowid vax get --server-mode
   cowid vax process --log-only-errors
   git add .
   git commit -m "data(vax): automated update (get,process)"
