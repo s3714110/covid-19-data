@@ -8,6 +8,7 @@ import pandas as pd
 from cowidev.utils.log import get_logger
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
+from cowidev.cmd.commons.utils import StepReport
 
 # S3 paths
 LOG_MACHINES = "s3://covid-19/log/machines.json"
@@ -110,13 +111,40 @@ def main_get_data(
     if error_log is not None:
         logger.error(error_log)
     # Status
-    if output_status is not None:
-        modules_execution_results += modules_execution_results_retry
-        export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
+    modules_execution_results += modules_execution_results_retry
+    df_status = export_status(modules_execution_results, modules_valid, output_status, output_status_ts)
     # Print timing details
     t_sec_1, t_min_1, t_sec_2, t_min_2, timing_log = _print_timing(t0, t_sec_1, df_exec)
     # summary_log = summary_log_1 + summary_log_2
     logger.info(f"{timing_log}")
+    # Build report
+    if log_header == "VAX":
+        domain = "Vaccinations"
+    elif log_header == "TEST":
+        domain = "Testing"
+    report_msg = _build_server_message(df_status, domain)
+    return report_msg
+
+
+def _build_server_message(df_status, domain):
+    if (df_status.success == False).any():
+        dix_failed = df_status.loc[df_status.success == False, "error"].to_dict()
+        module_error_log = ""
+        for module, error in dix_failed.items():
+            module_error_log += f"* {module}\n {error}\n"
+            module_error_log += "--------------------------------------------------------\n\n"
+        title = f"{domain}: `get` step failed"
+        text = f"Some modules failed:\n\n```{module_error_log}```"
+        type = "error"
+    else:
+        title = f"{domain}: `get` step run successfully"
+        text = "All modules executed successfully"
+        type = "success"
+    return StepReport(
+        title=title,
+        text=text,
+        type=type,
+    )
 
 
 def export_status(modules_execution_results, modules_valid, output_status, output_status_ts):
@@ -133,8 +161,11 @@ def export_status(modules_execution_results, modules_valid, output_status, outpu
     df_status = df_status[df_status.module.isin(modules_valid)].set_index("module")
 
     # Export
-    df_status.to_csv(output_status)
-    export_timestamp(output_status_ts)
+    if output_status is not None:
+        df_status.to_csv(output_status)
+        export_timestamp(output_status_ts)
+
+    return df_status
 
 
 def _build_df_execution(modules_execution_results):

@@ -1,7 +1,7 @@
 import click
 
 from cowidev.cmd.commons.get import main_get_data
-from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption
+from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption, send_report
 from cowidev.utils.params import CONFIG
 from cowidev.utils import paths
 from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME_INCREMENTAL, country_to_module
@@ -30,10 +30,10 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     cls=PythonLiteralOption,
 )
 @click.option(
-    "--log-only-errors/--log-all",
+    "--server-mode/--no-server-mode",
     "-O",
     default=False,
-    help="Optimize processes based on older logging times.",
+    help="Only critical log and final message.",
     show_default=True,
 )
 @click.option(
@@ -44,7 +44,7 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     show_default=True,
 )
 @click.pass_context
-def click_vax_get(ctx, countries, skip_countries, optimize, log_only_errors):
+def click_vax_get(ctx, countries, skip_countries, optimize, server_mode):
     """Runs scraping scripts to collect the data from the primary sources of COUNTRIES. Data is exported to project
     folder scripts/output/vaccinations/. By default, all countries are scraped.
 
@@ -74,7 +74,7 @@ def click_vax_get(ctx, countries, skip_countries, optimize, log_only_errors):
     )
     modules = c2m.parse(countries)
     modules_skip = c2m.parse(skip_countries)
-    main_get_data(
+    report_msg = main_get_data(
         modules_valid=MODULES_NAME,
         parallel=ctx.obj["parallel"],
         n_jobs=ctx.obj["n_jobs"],
@@ -84,5 +84,8 @@ def click_vax_get(ctx, countries, skip_countries, optimize, log_only_errors):
         log_s3_path="s3://covid-19/log/vax-get-data-countries.csv" if optimize else None,
         output_status=paths.INTERNAL_OUTPUT_VAX_STATUS_GET,
         output_status_ts=paths.INTERNAL_OUTPUT_VAX_STATUS_GET_TS,
-        logging_mode="error" if log_only_errors else "info",
+        logging_mode="critical" if server_mode else "info",
     )
+    if server_mode:
+        send_report(report_msg)
+        print(report_msg)

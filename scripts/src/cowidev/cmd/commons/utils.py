@@ -3,6 +3,8 @@ import ast
 from dataclasses import dataclass
 import click
 
+from cowidev.utils.slackapi import SlackAPI
+
 
 class OptionEatAll(click.Option):
     """From https://stackoverflow.com/a/48394004/5056599"""
@@ -119,3 +121,34 @@ class OrderedGroup(click.Group):
 
     def list_commands(self, ctx):
         return self.commands
+
+
+class StepReport:
+    title: str
+    text: str
+    type: str
+
+    def __init__(self, title: str, text: str, type: str):
+        self.title = title
+        self.text = text
+        self.type = type
+
+    def __str__(self):
+        return f"{self.type}: {self.text}"
+
+
+def send_report(report, channel="#corona-data-updates"):
+    client = SlackAPI()
+    kwargs = {
+        "channel": channel,
+        "title": report.title,
+        "message": report.text,
+    }
+    if report.type == "error":
+        client.send_error(**kwargs)
+    elif report.type == "warning":
+        client.send_warning(**kwargs)
+    elif report.type == "success":
+        client.send_success(**kwargs)
+    else:
+        raise ValueError(f"Unknown report status: {report.type}")
