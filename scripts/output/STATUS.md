@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`2/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-19T07:03:04`.
+`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-19T10:46:02`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,13 +18,6 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2022-04-19T07:03:04</td>
-      <td>9.65</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 38, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 62, in main<br>    data = read(source).pipe(pipeline, source)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 36, in read<br>    "people_vaccinated": people_vaccinated,<br>UnboundLocalError: local variable 'people_vaccinated' referenced before assignment<br></pre></details></td>
-    </tr>
     <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>❌</td>
@@ -100,6 +93,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-04-19T07:03:04</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2022-04-19T10:46:02</td>
+      <td>4.57</td>
       <td></td>
     </tr>
     <tr>
