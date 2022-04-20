@@ -1,192 +1,220 @@
 module,execution_time (sec),success,timestamp,error
-cowidev.vax.batch.argentina,3.41,True,True,
-cowidev.vax.batch.australia,1.28,True,True,
+cowidev.vax.batch.argentina,2.29,True,True,
+cowidev.vax.batch.australia,1.44,True,True,
 cowidev.vax.batch.austria,,,,
-cowidev.vax.batch.belgium,4.53,True,True,
-cowidev.vax.batch.bolivia,1.73,True,True,
-cowidev.vax.batch.canada,1.21,True,True,
-cowidev.vax.batch.chile,0.77,True,True,
-cowidev.vax.batch.czechia,2.21,True,True,
-cowidev.vax.batch.denmark,2.39,True,True,
-cowidev.vax.batch.ecdc,73.91,True,True,
-cowidev.vax.batch.ecuador,1.26,True,True,
-cowidev.vax.batch.estonia,0.54,True,True,
-cowidev.vax.batch.france,0.32,True,True,
-cowidev.vax.batch.germany,1.29,True,True,
-cowidev.vax.batch.greece,1.42,True,True,
-cowidev.vax.batch.hong_kong,1.99,True,True,
-cowidev.vax.batch.indonesia,7.75,True,True,
-cowidev.vax.batch.ireland,0.68,True,True,
-cowidev.vax.batch.israel,6.24,True,True,
-cowidev.vax.batch.italy,7.4,True,True,
-cowidev.vax.batch.jersey,0.47,True,True,
-cowidev.vax.batch.latvia,21.69,True,True,
-cowidev.vax.batch.lithuania,1.39,True,True,
-cowidev.vax.batch.luxembourg,1.88,True,True,
-cowidev.vax.batch.malaysia,0.41,True,True,
-cowidev.vax.batch.malta,0.55,True,True,
-cowidev.vax.batch.netherlands,0.45,True,True,
-cowidev.vax.batch.new_zealand,14.49,True,True,
-cowidev.vax.batch.norway,1.83,True,True,
-cowidev.vax.batch.peru,5.04,True,True,
-cowidev.vax.batch.portugal,0.6,True,True,
-cowidev.vax.batch.romania,14.24,True,True,
-cowidev.vax.batch.saudi_arabia,7.68,True,True,
-cowidev.vax.batch.singapore,2.16,True,True,
-cowidev.vax.batch.slovakia,47.32,True,True,
-cowidev.vax.batch.slovenia,1.53,True,True,
-cowidev.vax.batch.south_korea,22.3,True,True,
-cowidev.vax.batch.spc,4.7,True,True,
-cowidev.vax.batch.sweden,9.98,True,True,
-cowidev.vax.batch.switzerland,27.23,True,True,
-cowidev.vax.batch.trinidad_and_tobago,1.36,False,False,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.belgium,11.25,True,True,
+cowidev.vax.batch.bolivia,1.8,True,True,
+cowidev.vax.batch.canada,3.04,True,True,
+cowidev.vax.batch.chile,0.59,True,True,
+cowidev.vax.batch.czechia,1.48,True,True,
+cowidev.vax.batch.denmark,1.82,True,True,
+cowidev.vax.batch.ecdc,56.58,True,True,
+cowidev.vax.batch.ecuador,0.99,True,True,
+cowidev.vax.batch.estonia,0.56,True,True,
+cowidev.vax.batch.france,0.19,True,True,
+cowidev.vax.batch.germany,1.01,True,True,
+cowidev.vax.batch.greece,1.47,True,True,
+cowidev.vax.batch.hong_kong,2.0,True,True,
+cowidev.vax.batch.indonesia,5.31,True,True,
+cowidev.vax.batch.ireland,0.67,True,True,
+cowidev.vax.batch.israel,3.07,True,True,
+cowidev.vax.batch.italy,4.13,True,True,
+cowidev.vax.batch.jersey,0.23,True,True,
+cowidev.vax.batch.latvia,13.46,True,True,
+cowidev.vax.batch.lithuania,1.73,True,True,
+cowidev.vax.batch.luxembourg,2.43,True,True,
+cowidev.vax.batch.malaysia,1.32,True,True,
+cowidev.vax.batch.malta,0.58,True,True,
+cowidev.vax.batch.netherlands,0.39,True,True,
+cowidev.vax.batch.new_zealand,3.44,True,True,
+cowidev.vax.batch.norway,0.25,True,True,
+cowidev.vax.batch.peru,1.98,True,True,
+cowidev.vax.batch.portugal,0.4,True,True,
+cowidev.vax.batch.romania,2.14,True,True,
+cowidev.vax.batch.saudi_arabia,1.36,True,True,
+cowidev.vax.batch.singapore,0.77,True,True,
+cowidev.vax.batch.slovakia,17.27,True,True,
+cowidev.vax.batch.slovenia,0.46,True,True,
+cowidev.vax.batch.south_korea,21.29,True,True,
+cowidev.vax.batch.spc,11.08,True,True,
+cowidev.vax.batch.sweden,9.17,True,True,
+cowidev.vax.batch.switzerland,33.11,True,True,
+cowidev.vax.batch.trinidad_and_tobago,3.11,False,False,"Traceback (most recent call last):
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 139, in main
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 139, in main
     TrinidadTobago().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 134, in export
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 134, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 120, in pipeline
-    df.pipe(self.pipe_date)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 130, in pipeline
+    .pipe(make_monotonic)
+  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 44, in make_monotonic
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 44, in make_monotonic
     raise Exception(
 Exception: 27 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-                location        date  ... people_fully_vaccinated total_boosters
-291  Trinidad and Tobago  2022-01-31  ...                690218.0       110422.0
-344  Trinidad and Tobago  2022-03-25  ...                708327.0       144274.0
-345  Trinidad and Tobago  2022-03-26  ...                708516.0       144651.0
-346  Trinidad and Tobago  2022-03-27  ...                708598.0       144912.0
-347  Trinidad and Tobago  2022-03-28  ...                708598.0       147912.0
-348  Trinidad and Tobago  2022-03-29  ...                708762.0       145222.0
-349  Trinidad and Tobago  2022-03-30  ...                708940.0       145568.0
-350  Trinidad and Tobago  2022-03-31  ...                708940.0       145568.0
-351  Trinidad and Tobago  2022-04-01  ...                709101.0       145843.0
-352  Trinidad and Tobago  2022-04-02  ...                709263.0       146079.0
-353  Trinidad and Tobago  2022-04-03  ...                709334.0       146350.0
-354  Trinidad and Tobago  2022-04-04  ...                709334.0       146079.0
-355  Trinidad and Tobago  2022-04-05  ...                709471.0       146642.0
-356  Trinidad and Tobago  2022-04-06  ...                709616.0       146889.0
-357  Trinidad and Tobago  2022-04-07  ...                709733.0       147101.0
-358  Trinidad and Tobago  2022-04-08  ...                709871.0       147327.0
-359  Trinidad and Tobago  2022-04-09  ...                710000.0       147591.0
-360  Trinidad and Tobago  2022-04-09  ...                710000.0       147591.0
-361  Trinidad and Tobago  2022-04-10  ...                710060.0       147782.0
-362  Trinidad and Tobago  2022-04-10  ...                710060.0       147782.0
-363  Trinidad and Tobago  2022-04-11  ...                710060.0       147782.0
-365  Trinidad and Tobago  2022-04-13  ...                710340.0       148346.0
-366  Trinidad and Tobago  2022-04-14  ...                710444.0       148563.0
-367  Trinidad and Tobago  2022-04-15  ...                710556.0       148817.0
-368  Trinidad and Tobago  2022-04-16  ...                710556.0       148817.0
-369  Trinidad and Tobago  2022-04-17  ...                710556.0       148817.0
-370  Trinidad and Tobago  2022-04-18  ...                710556.0       140817.0
+                location        date                                            vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters
+291  Trinidad and Tobago  2022-01-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          736406.0                 690218.0        110422.0
+344  Trinidad and Tobago  2022-03-25  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745772.0                 708327.0        144274.0
+345  Trinidad and Tobago  2022-03-26  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745958.0                 708516.0        144651.0
+346  Trinidad and Tobago  2022-03-27  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        144912.0
+347  Trinidad and Tobago  2022-03-28  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        147912.0
+348  Trinidad and Tobago  2022-03-29  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746106.0                 708762.0        145222.0
+349  Trinidad and Tobago  2022-03-30  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0
+350  Trinidad and Tobago  2022-03-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0
+351  Trinidad and Tobago  2022-04-01  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746249.0                 709101.0        145843.0
+352  Trinidad and Tobago  2022-04-02  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746331.0                 709263.0        146079.0
+353  Trinidad and Tobago  2022-04-03  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146350.0
+354  Trinidad and Tobago  2022-04-04  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146079.0
+355  Trinidad and Tobago  2022-04-05  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746446.0                 709471.0        146642.0
+356  Trinidad and Tobago  2022-04-06  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746495.0                 709616.0        146889.0
+357  Trinidad and Tobago  2022-04-07  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746561.0                 709733.0        147101.0
+358  Trinidad and Tobago  2022-04-08  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746626.0                 709871.0        147327.0
+359  Trinidad and Tobago  2022-04-09  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746688.0                 710000.0        147591.0
+360  Trinidad and Tobago  2022-04-09  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746688.0                 710000.0        147591.0
+361  Trinidad and Tobago  2022-04-10  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0
+362  Trinidad and Tobago  2022-04-10  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0
+363  Trinidad and Tobago  2022-04-11  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0
+365  Trinidad and Tobago  2022-04-13  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746859.0                 710340.0        148346.0
+366  Trinidad and Tobago  2022-04-14  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746916.0                 710444.0        148563.0
+367  Trinidad and Tobago  2022-04-15  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
+368  Trinidad and Tobago  2022-04-16  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
+369  Trinidad and Tobago  2022-04-17  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
+370  Trinidad and Tobago  2022-04-18  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          747294.0                 710556.0        140817.0
 
 [27 rows x 8 columns]
 "
 cowidev.vax.batch.ukraine,,,,
-cowidev.vax.batch.united_kingdom,5.02,True,True,
-cowidev.vax.batch.united_states,31.44,True,True,
-cowidev.vax.batch.uruguay,2.93,True,True,
-cowidev.vax.batch.zimbabwe,0.83,True,True,
+cowidev.vax.batch.united_kingdom,6.28,True,True,
+cowidev.vax.batch.united_states,37.83,True,True,
+cowidev.vax.batch.uruguay,2.3,True,True,
+cowidev.vax.batch.zimbabwe,0.78,True,True,
 cowidev.vax.incremental.africacdc,,,,
-cowidev.vax.incremental.albania,7.7,True,True,
-cowidev.vax.incremental.antigua_barbuda,4.67,True,True,
-cowidev.vax.incremental.aruba,1.14,True,True,
-cowidev.vax.incremental.azerbaijan,12.51,True,True,
-cowidev.vax.incremental.bahrain,4.37,True,True,
-cowidev.vax.incremental.bangladesh,15.16,True,True,
-cowidev.vax.incremental.barbados,1.88,True,True,
-cowidev.vax.incremental.brazil,0.08,True,True,
-cowidev.vax.incremental.bulgaria,1.45,True,True,
-cowidev.vax.incremental.china,20.34,True,True,
-cowidev.vax.incremental.colombia,3.1,False,False,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.albania,6.06,True,True,
+cowidev.vax.incremental.antigua_barbuda,6.09,True,True,
+cowidev.vax.incremental.aruba,2.66,True,True,
+cowidev.vax.incremental.azerbaijan,10.4,True,True,
+cowidev.vax.incremental.bahrain,2.23,True,True,
+cowidev.vax.incremental.bangladesh,22.19,True,True,
+cowidev.vax.incremental.barbados,8.01,True,True,
+cowidev.vax.incremental.brazil,0.46,True,True,
+cowidev.vax.incremental.bulgaria,5.29,True,True,
+cowidev.vax.incremental.china,73.95,True,True,
+cowidev.vax.incremental.colombia,3.67,False,False,"Traceback (most recent call last):
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 98, in main
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 98, in main
     Colombia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 79, in export
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 79, in export
     data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 21, in read
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 21, in read
     df = self._parse_data(ws)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 49, in _parse_data
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/colombia.py"", line 49, in _parse_data
     first_doses = total_vaccinations - second_doses - unique_doses - boosters - boosters_2
 UnboundLocalError: local variable 'unique_doses' referenced before assignment
 "
-cowidev.vax.incremental.costa_rica,2.41,True,True,
-cowidev.vax.incremental.croatia,0.28,True,True,
-cowidev.vax.incremental.cuba,1.95,True,True,
-cowidev.vax.incremental.curacao,0.34,True,True,
-cowidev.vax.incremental.cyprus,0.94,True,True,
-cowidev.vax.incremental.dominican_republic,5.14,True,True,
-cowidev.vax.incremental.el_salvador,0.99,True,True,
-cowidev.vax.incremental.equatorial_guinea,2.55,True,True,
-cowidev.vax.incremental.faeroe_islands,0.31,True,True,
-cowidev.vax.incremental.fiji,0.0,True,True,
-cowidev.vax.incremental.finland,0.2,True,True,
-cowidev.vax.incremental.gabon,,,,
-cowidev.vax.incremental.georgia,0.44,True,True,
-cowidev.vax.incremental.greenland,1.61,True,True,
-cowidev.vax.incremental.guatemala,,,,
-cowidev.vax.incremental.guernsey,0.12,True,True,
-cowidev.vax.incremental.hungary,0.82,True,True,
-cowidev.vax.incremental.iceland,0.26,True,True,
-cowidev.vax.incremental.india,0.86,True,True,
-cowidev.vax.incremental.iran,1.96,True,True,
-cowidev.vax.incremental.isle_of_man,0.77,True,True,
-cowidev.vax.incremental.jamaica,2.25,True,True,
-cowidev.vax.incremental.japan,1.07,True,True,
-cowidev.vax.incremental.kazakhstan,10.48,True,True,
-cowidev.vax.incremental.kosovo,4.97,True,True,
-cowidev.vax.incremental.kyrgyzstan,0.89,True,True,
-cowidev.vax.incremental.laos,2.24,True,True,
-cowidev.vax.incremental.lebanon,2.16,True,True,
-cowidev.vax.incremental.libya,2.63,True,True,
-cowidev.vax.incremental.macao,14.4,True,True,
-cowidev.vax.incremental.mexico,7.11,False,False,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.costa_rica,2.46,False,False,"Traceback (most recent call last):
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 100, in main
-    Mexico().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 87, in export
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 75, in main
+    CostaRica().export()
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 61, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 26, in read
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 16, in read
+    soup = get_soup(self.source_url, use_proxy=True)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 82, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+    raise ValueError(
+ValueError: Source https://www.ccss.sa.cr/web/coronavirus/vacunacion not reached! Scraper API was used!
+Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'
+"
+cowidev.vax.incremental.croatia,0.48,True,True,
+cowidev.vax.incremental.cuba,8.36,True,True,
+cowidev.vax.incremental.curacao,0.98,True,True,
+cowidev.vax.incremental.cyprus,3.23,True,True,
+cowidev.vax.incremental.dominican_republic,7.12,True,True,
+cowidev.vax.incremental.el_salvador,5.61,True,True,
+cowidev.vax.incremental.equatorial_guinea,4.95,True,True,
+cowidev.vax.incremental.faeroe_islands,1.17,True,True,
+cowidev.vax.incremental.fiji,0.0,True,True,
+cowidev.vax.incremental.finland,0.68,True,True,
+cowidev.vax.incremental.gabon,,,,
+cowidev.vax.incremental.georgia,2.24,True,True,
+cowidev.vax.incremental.greenland,2.68,True,True,
+cowidev.vax.incremental.guatemala,,,,
+cowidev.vax.incremental.guernsey,1.37,True,True,
+cowidev.vax.incremental.hungary,1.45,True,True,
+cowidev.vax.incremental.iceland,0.48,True,True,
+cowidev.vax.incremental.india,0.82,True,True,
+cowidev.vax.incremental.iran,3.05,True,True,
+cowidev.vax.incremental.isle_of_man,0.27,True,True,
+cowidev.vax.incremental.jamaica,2.41,True,True,
+cowidev.vax.incremental.japan,0.29,True,True,
+cowidev.vax.incremental.kazakhstan,8.77,True,True,
+cowidev.vax.incremental.kosovo,7.16,True,True,
+cowidev.vax.incremental.kyrgyzstan,6.47,True,True,
+cowidev.vax.incremental.laos,4.57,True,True,
+cowidev.vax.incremental.lebanon,1.37,True,True,
+cowidev.vax.incremental.libya,3.46,True,True,
+cowidev.vax.incremental.macao,20.51,True,True,
+cowidev.vax.incremental.mexico,2.79,False,False,"Traceback (most recent call last):
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 100, in main
+    Mexico().export()
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 87, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 26, in read
     return self._parse_data(link)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 52, in _parse_data
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 52, in _parse_data
     ""people_fully_vaccinated"": clean_count(re.search(self.regex[""people_fully_vaccinated""], text).group(1)),
 AttributeError: 'NoneType' object has no attribute 'group'
 "
-cowidev.vax.incremental.moldova,1.08,True,True,
-cowidev.vax.incremental.monaco,26.56,True,True,
-cowidev.vax.incremental.mongolia,1.54,True,True,
-cowidev.vax.incremental.montenegro,0.13,True,True,
+cowidev.vax.incremental.moldova,1.29,True,True,
+cowidev.vax.incremental.monaco,20.59,True,True,
+cowidev.vax.incremental.mongolia,0.93,True,True,
+cowidev.vax.incremental.montenegro,0.1,True,True,
 cowidev.vax.incremental.morocco,,,,
-cowidev.vax.incremental.myanmar,10.42,True,True,
-cowidev.vax.incremental.nepal,17.36,True,True,
+cowidev.vax.incremental.myanmar,11.96,True,True,
+cowidev.vax.incremental.nepal,27.43,True,True,
 cowidev.vax.incremental.north_macedonia,,,,
-cowidev.vax.incremental.northern_cyprus,0.86,True,True,
-cowidev.vax.incremental.paho,41.83,True,True,
-cowidev.vax.incremental.pakistan,1.37,True,True,
-cowidev.vax.incremental.philippines,0.56,True,True,
-cowidev.vax.incremental.poland,0.08,True,True,
-cowidev.vax.incremental.qatar,10.37,True,True,
-cowidev.vax.incremental.russia,14.66,True,True,
+cowidev.vax.incremental.northern_cyprus,1.14,True,True,
+cowidev.vax.incremental.paho,42.89,True,True,
+cowidev.vax.incremental.pakistan,2.17,True,True,
+cowidev.vax.incremental.philippines,0.72,True,True,
+cowidev.vax.incremental.poland,0.4,True,True,
+cowidev.vax.incremental.qatar,9.64,True,True,
+cowidev.vax.incremental.russia,2.44,False,False,"Traceback (most recent call last):
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
+    data = read(source).pipe(pipeline)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
+    soup = get_soup(source, use_proxy=True)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 82, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+    raise ValueError(
+ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Scraper API was used!
+Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'
+"
 cowidev.vax.incremental.saint_lucia,,,,
-cowidev.vax.incremental.serbia,6.27,True,True,
-cowidev.vax.incremental.south_africa,4.09,True,True,
-cowidev.vax.incremental.spain,3.98,True,True,
+cowidev.vax.incremental.serbia,6.05,True,True,
+cowidev.vax.incremental.south_africa,0.68,True,True,
+cowidev.vax.incremental.spain,6.0,True,True,
 cowidev.vax.incremental.sri_lanka,,,,
-cowidev.vax.incremental.suriname,13.83,True,True,
-cowidev.vax.incremental.taiwan,7.69,True,True,
-cowidev.vax.incremental.thailand,1.51,True,True,
-cowidev.vax.incremental.turkey,2.05,True,True,
-cowidev.vax.incremental.united_arab_emirates,18.73,True,True,
+cowidev.vax.incremental.suriname,13.74,True,True,
+cowidev.vax.incremental.taiwan,8.82,True,True,
+cowidev.vax.incremental.thailand,2.9,True,True,
+cowidev.vax.incremental.turkey,1.3,True,True,
+cowidev.vax.incremental.united_arab_emirates,17.11,True,True,
 cowidev.vax.incremental.vietnam,,,,
-cowidev.vax.incremental.who,2.19,True,True,
-cowidev.vax.incremental.zambia,0.74,True,True,
+cowidev.vax.incremental.who,1.63,True,True,
+cowidev.vax.incremental.zambia,0.81,True,True,
