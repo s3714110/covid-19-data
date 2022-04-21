@@ -18,6 +18,7 @@ class Malta(CountryVaxBase):
         "Fully vaccinated (2 of 2 or 1 of 1)": "people_fully_vaccinated",
         "Received one dose (1 of 2 or 1 of 1)": "people_vaccinated",
         "Total Booster doses": "total_boosters",
+        "Total 2nd Booster doses": "total_boosters_2",
     }
 
     def read(self) -> pd.DataFrame:
@@ -32,6 +33,7 @@ class Malta(CountryVaxBase):
                 "Fully vaccinated (2 of 2 or 1 of 1)",
                 "Received one dose (1 of 2 or 1 of 1)",
                 "Total Booster doses",
+                "Total 2nd Booster doses",
             ],
         )
         return df
@@ -50,6 +52,7 @@ class Malta(CountryVaxBase):
             (df.people_fully_vaccinated == 0) | df.people_fully_vaccinated.isnull(),
             "people_vaccinated",
         ] = df.total_vaccinations
+        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2)
         return df
 
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -96,7 +99,7 @@ class Malta(CountryVaxBase):
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df)
+        self.export_datafile(df, valid_cols_only=True)
 
 
 def main():

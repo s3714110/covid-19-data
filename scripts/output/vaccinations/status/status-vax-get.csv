@@ -24,19 +24,7 @@ cowidev.vax.batch.latvia,12.03,True,True,
 cowidev.vax.batch.lithuania,0.6,True,True,
 cowidev.vax.batch.luxembourg,1.51,True,True,
 cowidev.vax.batch.malaysia,0.52,True,True,
-cowidev.vax.batch.malta,0.44,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 103, in main
-    Malta().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 98, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 27, in read
-    check_known_columns(
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 110, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Total 2nd Booster doses'}
-"
+cowidev.vax.batch.malta,0.36,True,True,
 cowidev.vax.batch.netherlands,0.46,True,True,
 cowidev.vax.batch.new_zealand,4.59,True,True,
 cowidev.vax.batch.norway,0.61,True,True,
