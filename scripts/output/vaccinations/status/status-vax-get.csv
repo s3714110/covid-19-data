@@ -105,32 +105,17 @@ cowidev.vax.incremental.brazil,0.51,True,True,
 cowidev.vax.incremental.bulgaria,6.79,True,True,
 cowidev.vax.incremental.china,43.37,True,True,
 cowidev.vax.incremental.colombia,1.88,True,True,
-cowidev.vax.incremental.costa_rica,2.51,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 75, in main
-    CostaRica().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 61, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py"", line 16, in read
-    soup = get_soup(self.source_url, use_proxy=True)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 82, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://www.ccss.sa.cr/web/coronavirus/vacunacion not reached! Scraper API was used!
-Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'
-"
+cowidev.vax.incremental.costa_rica,3.06,True,True,
 cowidev.vax.incremental.croatia,0.4,True,True,
 cowidev.vax.incremental.cuba,7.08,True,True,
 cowidev.vax.incremental.curacao,1.1,True,True,
 cowidev.vax.incremental.cyprus,1.46,True,True,
-cowidev.vax.incremental.dominican_republic,9.32,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.dominican_republic,9.37,False,False,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 63, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 63, in main
     data = read(source).pipe(pipeline, source)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 37, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 37, in read
     ""people_vaccinated"": people_vaccinated,
 UnboundLocalError: local variable 'people_vaccinated' referenced before assignment
 "
@@ -158,16 +143,16 @@ cowidev.vax.incremental.laos,5.01,True,True,
 cowidev.vax.incremental.lebanon,2.07,True,True,
 cowidev.vax.incremental.libya,2.88,True,True,
 cowidev.vax.incremental.macao,16.22,True,True,
-cowidev.vax.incremental.mexico,2.85,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.mexico,3.59,False,False,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 100, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 100, in main
     Mexico().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 87, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 87, in export
     data = self.read().pipe(self.pipeline)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 26, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 26, in read
     return self._parse_data(link)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 52, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 52, in _parse_data
     ""people_fully_vaccinated"": clean_count(re.search(self.regex[""people_fully_vaccinated""], text).group(1)),
 AttributeError: 'NoneType' object has no attribute 'group'
 "
@@ -185,20 +170,7 @@ cowidev.vax.incremental.pakistan,1.85,True,True,
 cowidev.vax.incremental.philippines,0.55,True,True,
 cowidev.vax.incremental.poland,0.08,True,True,
 cowidev.vax.incremental.qatar,8.3,True,True,
-cowidev.vax.incremental.russia,2.41,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
-    data = read(source).pipe(pipeline)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source, use_proxy=True)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 82, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Scraper API was used!
-Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'
-"
+cowidev.vax.incremental.russia,22.62,True,True,
 cowidev.vax.incremental.saint_lucia,,,,
 cowidev.vax.incremental.serbia,5.46,True,True,
 cowidev.vax.incremental.south_africa,0.51,True,True,
