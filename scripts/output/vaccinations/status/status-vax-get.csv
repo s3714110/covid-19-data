@@ -110,15 +110,7 @@ cowidev.vax.incremental.croatia,0.4,True,True,
 cowidev.vax.incremental.cuba,7.08,True,True,
 cowidev.vax.incremental.curacao,1.1,True,True,
 cowidev.vax.incremental.cyprus,1.46,True,True,
-cowidev.vax.incremental.dominican_republic,9.37,False,False,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 63, in main
-    data = read(source).pipe(pipeline, source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 37, in read
-    ""people_vaccinated"": people_vaccinated,
-UnboundLocalError: local variable 'people_vaccinated' referenced before assignment
-"
+cowidev.vax.incremental.dominican_republic,4.67,True,True,
 cowidev.vax.incremental.el_salvador,4.83,True,True,
 cowidev.vax.incremental.equatorial_guinea,7.26,True,True,
 cowidev.vax.incremental.faeroe_islands,0.86,True,True,
