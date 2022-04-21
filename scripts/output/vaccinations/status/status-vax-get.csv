@@ -11,7 +11,7 @@ cowidev.vax.batch.denmark,2.26,True,True,
 cowidev.vax.batch.ecdc,55.5,True,True,
 cowidev.vax.batch.ecuador,1.12,True,True,
 cowidev.vax.batch.estonia,0.53,True,True,
-cowidev.vax.batch.france,0.17,True,True,
+cowidev.vax.batch.france,0.62,True,True,
 cowidev.vax.batch.germany,0.96,True,True,
 cowidev.vax.batch.greece,1.35,True,True,
 cowidev.vax.batch.hong_kong,4.3,True,True,
@@ -39,55 +39,7 @@ cowidev.vax.batch.south_korea,27.06,True,True,
 cowidev.vax.batch.spc,11.47,True,True,
 cowidev.vax.batch.sweden,9.4,True,True,
 cowidev.vax.batch.switzerland,11.85,True,True,
-cowidev.vax.batch.trinidad_and_tobago,1.36,False,False,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 139, in main
-    TrinidadTobago().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 134, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 130, in pipeline
-    .pipe(make_monotonic)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 44, in make_monotonic
-    raise Exception(
-Exception: 25 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-                location        date                                            vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters
-291  Trinidad and Tobago  2022-01-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          736406.0                 690218.0        110422.0
-344  Trinidad and Tobago  2022-03-25  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745772.0                 708327.0        144274.0
-345  Trinidad and Tobago  2022-03-26  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745958.0                 708516.0        144651.0
-346  Trinidad and Tobago  2022-03-27  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        144912.0
-347  Trinidad and Tobago  2022-03-28  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        147912.0
-348  Trinidad and Tobago  2022-03-29  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746106.0                 708762.0        145222.0
-349  Trinidad and Tobago  2022-03-30  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0
-350  Trinidad and Tobago  2022-03-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0
-351  Trinidad and Tobago  2022-04-01  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746249.0                 709101.0        145843.0
-352  Trinidad and Tobago  2022-04-02  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746331.0                 709263.0        146079.0
-353  Trinidad and Tobago  2022-04-03  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146350.0
-354  Trinidad and Tobago  2022-04-04  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146079.0
-355  Trinidad and Tobago  2022-04-05  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746446.0                 709471.0        146642.0
-356  Trinidad and Tobago  2022-04-06  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746495.0                 709616.0        146889.0
-357  Trinidad and Tobago  2022-04-07  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746561.0                 709733.0        147101.0
-358  Trinidad and Tobago  2022-04-08  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746626.0                 709871.0        147327.0
-359  Trinidad and Tobago  2022-04-09  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746688.0                 710000.0        147591.0
-360  Trinidad and Tobago  2022-04-10  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0
-361  Trinidad and Tobago  2022-04-11  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0
-363  Trinidad and Tobago  2022-04-13  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746859.0                 710340.0        148346.0
-364  Trinidad and Tobago  2022-04-14  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746916.0                 710444.0        148563.0
-365  Trinidad and Tobago  2022-04-15  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
-366  Trinidad and Tobago  2022-04-16  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
-367  Trinidad and Tobago  2022-04-17  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0
-368  Trinidad and Tobago  2022-04-18  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          747294.0                 710556.0        140817.0
-
-[25 rows x 8 columns]
-"
+cowidev.vax.batch.trinidad_and_tobago,0.98,True,True,
 cowidev.vax.batch.ukraine,,,,
 cowidev.vax.batch.united_kingdom,4.61,True,True,
 cowidev.vax.batch.united_states,9.8,True,True,
