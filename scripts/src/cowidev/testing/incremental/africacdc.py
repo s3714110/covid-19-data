@@ -1,125 +1,128 @@
+from datetime import datetime
+import os
+
 import pandas as pd
 
-from cowidev.vax.incremental.africacdc import AfricaCDC as AfricaCDCVax
-from cowidev.testing.utils.incremental import increment
+from cowidev.utils.clean import clean_date
+from cowidev.utils.web import request_json
+from cowidev.utils.log import get_logger
+from cowidev import PATHS
+from cowidev.testing.utils.orgs import ACDC_COUNTRIES
+from cowidev.testing.utils.base import CountryTestBase
+
+logger = get_logger()
 
 
-ACDC_COUNTRIES = {
-    "Algeria": {"name": "Algeria"},
-    "Angola": {"name": "Angola", "notes": ""},  # New
-    "Benin": {"name": "Benin"},  # Automate
-    "Botswana": {"name": "Botswana"},  # Automate
-    "Burundi": {  # New
-        "name": "Burundi",
-    },
-    "Burkina Faso": {  # New
-        "name": "Burkina Faso",
-    },
-    "Cameroon": {"name": "Cameroon"},
-    "Central African Republic": {  # New
-        "name": "Central African Republic",
-    },
-    "Chad": {  # New
-        "name": "Chad",
-    },
-    "Cote d'Ivoire": {"name": "Cote d'Ivoire"},  # Automate
-    "Comoros": {"name": "Comoros"},
-    # "Congo Republic": {"name": "Congo Republic"},
-    "Djibouti": {"name": "Djibouti"},  # Automate
-    "Democratic Republic of the Congo": {"name": "Democratic Republic of the Congo"},  # Manual
-    "Egypt": {"name": "Egypt"},
-    "Ethiopia": {"name": "Ethiopia"},  # Change source to Africa CDC
-    # "Equatorial Guinea": {"name": "Equatorial Guinea"},  # Change source to Africa CDC
-    "Eritrea": {"name": "Eritrea"},
-    "Eswatini": {"name": "Eswatini"},
-    "Gabon": {"name": "Gabon"},  # Automate
-    "Gambia": {"name": "Gambia"},  # Automate
-    "Ghana": {"name": "Ghana"},  # Automate
-    "Guinea": {"name": "Guinea"},
-    "Guinea-Bissau": {"name": "Guinea-Bissau"},
-    "Kenya": {
-        "name": "Kenya",
-    },
-    "Madagascar": {"name": "Madagascar"},  # Automate
-    "Lesotho": {"name": "Lesotho"},
-    "Liberia": {"name": "Liberia"},
-    "Malawi": {  # Deprecate R script + change "samples tested" -> "tests performed"
-        "name": "Malawi",
-    },
-    "Mali": {"name": "Mali"},
-    "Mauritius": {"name": "Mauritius"},
-    "Mauritania": {
-        "name": "Mauritania",
-    },  # Deprecate R script
-    "Mozambique": {"name": "Mozambique"},  # Automate
-    "Namibia": {"name": "Namibia"},  # Automate
-    "Niger": {"name": "Niger"},  # Automate
-    "Nigeria": {"name": "Nigeria"},  # Automate
-    "Sierra Leone": {"name": "Sierra Leone"},
-    "Somalia": {"name": "Somalia"},
-    "South Sudan": {  # Deprecate R script
-        "name": "South Sudan",
-    },
-    "Sudan": {  # Automate
-        "name": "Sudan",
-    },
-    "Tanzania": {  # Automate
-        "name": "Tanzania",
-    },
-    "Uganda": {  # Automate
-        "name": "Uganda",
-    },
-    # "Sahrawi Republic": {"name": "Sahrawi Republic"},
-    "Zimbabwe": {"name": "Zimbabwe"},  # Automate
-}
-country_mapping = {country: metadata["name"] for country, metadata in ACDC_COUNTRIES.items()}
-
-
-class AfricaCDC(AfricaCDCVax):
+class AfricaCDC(CountryTestBase):
+    location: str = "ACDC"  # Arbitrary location to pass checks
+    units: str = "tests performed"
     _base_url = (
         "https://services8.arcgis.com/vWozsma9VzGndzx7/ArcGIS/rest/services/"
         "DailyCOVIDDashboard_5July21_1/FeatureServer/0/"
     )
-    source_url_ref = "https://africacdc.org/covid-19/"
-    source_label = "Africa Centres for Disease Control and Prevention"
-    columns_use = [
+    source_url_ref: str = "https://africacdc.org/covid-19/"
+    source_label: str = "Africa Centres for Disease Control and Prevention"
+    date: str = None
+    columns_use: list = [
         "Country",
         "Tests_Conducted",
-        "Date",
     ]
-    columns_rename = {
+    rename_columns: dict = {
         "Country": "location",
         "Tests_Conducted": "Cumulative total",
-        "Date": "date",
     }
-    units = "tests performed"
-    notes = ""
 
-    def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
-        return (
-            df.pipe(self.pipe_filter_columns)
-            .pipe(self.pipe_rename)
-            .pipe(self.pipe_filter_countries, country_mapping)
-            .pipe(self.pipe_date)
-        )
+    @property
+    def source_url(self):
+        return f"{self._base_url}/query?f=json&where=1=1&outFields=*"
+
+    @property
+    def source_url_date(self):
+        return f"{self._base_url}?f=pjson"
+
+    def read(self) -> pd.DataFrame:
+        # Pull data from API
+        data = request_json(self.source_url)
+        df = self._parse_data(data)
+        return df
+
+    def _parse_data(self, data) -> pd.DataFrame:
+        res = [d["attributes"] for d in data["features"]]
+        df = pd.DataFrame(res)
+        # Parse date
+        self.date = self._parse_date()
+        # Parse metrics
+        df = self._parse_metrics(df)
+        return df
+
+    def pipe_filter_columns(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df[self.columns_use]
+
+    def pipe_rename_countries(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Renames countries to match OWID naming convention."""
+        df["location"] = df.location.replace(ACDC_COUNTRIES)
+        return df
+
+    def pipe_filter_entries(self, df: pd.DataFrame) -> pd.DataFrame:
+        """
+        Gets valid entries:
+
+        - Countries not coming from OWID (avoid loop)
+        """
+        df = df[df.location.isin(ACDC_COUNTRIES.values())]
+        return df
+
+    def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df.assign(date=self._parse_date())
+
+    def _parse_date(self) -> str:
+        res = request_json(self.source_url_date)
+        edit_ts = res["editingInfo"]["lastEditDate"]
+        date = clean_date(datetime.fromtimestamp(edit_ts / 1000))
+        return date
+
+    def _parse_metrics(self, df: list) -> pd.DataFrame:
+        df = df.loc[:, self.columns_use]
+        return df
+
+    def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Adds metadata to DataFrame"""
+        mapping = {
+            "Country": df["location"],
+            "Units": self.units,
+            "Notes": self.notes,
+            "Source URL": self.source_url_ref,
+            "Source label": self.source_label,
+            "Date": self.date,
+        }
+        mapping = {k: v for k, v in mapping.items() if k not in df}
+        self._check_attributes(mapping)
+        return df.assign(**mapping)
 
     def increment_countries(self, df: pd.DataFrame):
-        for row in df.sort_values("location").iterrows():
-            row = row[1]
-            country = row["location"]
-            # print(country, row["Cumulative total"])
-            notes = ACDC_COUNTRIES[country].get("notes", self.notes)
-            units = ACDC_COUNTRIES[country].get("units", self.units)
-            increment(
-                count=row["Cumulative total"],
-                sheet_name=country,
-                country=country,
-                units=units,
-                date=row["date"],
-                source_url=self.source_url_ref,
-                source_label=self.source_label,
-                notes=notes,
+        """Exports data to the relevant csv and logs the confirmation."""
+        locations = set(df.location)
+        for location in locations:
+            df_c = df[df.location == location]
+            df_c = df_c.dropna(
+                subset=["Cumulative total"],
+                how="all",
             )
+            df_current = pd.read_csv(os.path.join(PATHS.INTERNAL_OUTPUT_TEST_MAIN_DIR, f"{location}.csv"))
+            print(df_current["Cumulative total"].max())
+            print(df_c["Cumulative total"].max())
+            if not df_c.empty and df_c["Cumulative total"].max() > df_current["Cumulative total"].max():
+                self.export_datafile(df_c, filename=location, attach=True)
+                logger.info(f"\tcowidev.testing.incremental.africacdc.{location}: SUCCESS ✅")
+
+    def pipeline(self, df: pd.DataFrame):
+        """Pipeline for data"""
+        return (
+            df.pipe(self.pipe_rename_columns)
+            .pipe(self.pipe_rename_countries)
+            .pipe(self.pipe_filter_entries)
+            .pipe(self.pipe_metadata)
+        )
 
     def export(self):
         df = self.read().pipe(self.pipeline)
