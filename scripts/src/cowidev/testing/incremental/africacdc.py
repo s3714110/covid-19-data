@@ -111,6 +111,7 @@ class AfricaCDC(CountryTestBase):
             df_current = pd.read_csv(os.path.join(PATHS.INTERNAL_OUTPUT_TEST_MAIN_DIR, f"{location}.csv"))
             print(df_current["Cumulative total"].max())
             print(df_c["Cumulative total"].max())
+            # Ensure that cumulative total has changed since last update
             if not df_c.empty and df_c["Cumulative total"].max() > df_current["Cumulative total"].max():
                 self.export_datafile(df_c, filename=location, attach=True)
                 logger.info(f"\tcowidev.testing.incremental.africacdc.{location}: SUCCESS ✅")
