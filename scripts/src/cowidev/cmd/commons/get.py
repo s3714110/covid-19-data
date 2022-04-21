@@ -104,9 +104,7 @@ def main_get_data(
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
     # Retry failed modules
-    error_log, modules_execution_results_retry = _retry_modules_failed(
-        modules_execution_results, country_data_getter
-    )
+    error_log, modules_execution_results_retry = _retry_modules_failed(modules_execution_results, country_data_getter)
     if error_log is not None:
         logger.error(error_log)
     # Status
@@ -133,7 +131,7 @@ def _build_server_message(df_status, domain):
             module_error_log += f"* {module}\n {error}\n"
             module_error_log += "--------------------------------------------------------\n\n"
         title = f"{domain}: `get` step failed"
-        text = f"Some modules failed:\n\n```{module_error_log}```"
+        text = f"Mmodules failed: {len(dix_failed)}\n\n```{module_error_log}```"
         type = "error"
     else:
         title = f"{domain}: `get` step run successfully"
@@ -205,11 +203,13 @@ def _build_df_status(modules_execution_results):
 def _retry_modules_failed(modules_execution_results, country_data_getter):
     modules_failed = [m["module_name"] for m in modules_execution_results if m["success"] is False]
     retried_str = "\n".join([f"* {m}" for m in modules_failed])
-    country_data_getter.logger.warning(f"""\n\n--------------------------------------\nRETRIES ({len(modules_failed)})
+    country_data_getter.logger.warning(
+        f"""\n\n--------------------------------------\nRETRIES ({len(modules_failed)})
 
 The following modules will be re-executed:
 {retried_str}
-""")
+"""
+    )
     modules_execution_results = []
     for module_name in modules_failed:
         modules_execution_results.append(country_data_getter.run(module_name))
