@@ -127,7 +127,7 @@ class TrinidadTobago(CountryVaxBase):
             .pipe(self.pipe_filter_dp)
             .pipe(self.pipe_out_columns)
             .pipe(self.pipe_data_correction)
-            .pipe(make_monotonic)
+            .pipe(make_monotonic, 30)
         )
 
     def export(self):
