@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`6/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-21T07:47:34`.
+`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-21T10:00:24`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,46 +19,11 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>9.32</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 63, in main<br>    data = read(source).pipe(pipeline, source)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 37, in read<br>    "people_vaccinated": people_vaccinated,<br>UnboundLocalError: local variable 'people_vaccinated' referenced before assignment<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.mexico</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>2.85</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py", line 100, in main<br>    Mexico().export()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py", line 87, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py", line 26, in read<br>    return self._parse_data(link)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py", line 52, in _parse_data<br>    "people_fully_vaccinated": clean_count(re.search(self.regex["people_fully_vaccinated"], text).group(1)),<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.costa_rica</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>2.51</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py", line 75, in main<br>    CostaRica().export()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py", line 61, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/costa_rica.py", line 16, in read<br>    soup = get_soup(self.source_url, use_proxy=True)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 82, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://www.ccss.sa.cr/web/coronavirus/vacunacion not reached! Scraper API was used!<br>Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.russia</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>2.41</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 64, in main<br>    data = read(source).pipe(pipeline)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 11, in read<br>    soup = get_soup(source, use_proxy=True)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 82, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Scraper API was used!<br>Error code 401 Unauthorized: b'Unauthorized request, please make sure your API key is valid.'<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>❌</td>
       <td>False</td>
       <td>1.36</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py", line 139, in main<br>    TrinidadTobago().export()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py", line 134, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py", line 130, in pipeline<br>    .pipe(make_monotonic)<br>  File "/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 44, in make_monotonic<br>    raise Exception(<br>Exception: 25 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check <br>                location        date                                            vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters<br>291  Trinidad and Tobago  2022-01-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          736406.0                 690218.0        110422.0<br>344  Trinidad and Tobago  2022-03-25  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745772.0                 708327.0        144274.0<br>345  Trinidad and Tobago  2022-03-26  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          745958.0                 708516.0        144651.0<br>346  Trinidad and Tobago  2022-03-27  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        144912.0<br>347  Trinidad and Tobago  2022-03-28  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746020.0                 708598.0        147912.0<br>348  Trinidad and Tobago  2022-03-29  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746106.0                 708762.0        145222.0<br>349  Trinidad and Tobago  2022-03-30  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0<br>350  Trinidad and Tobago  2022-03-31  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746182.0                 708940.0        145568.0<br>351  Trinidad and Tobago  2022-04-01  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746249.0                 709101.0        145843.0<br>352  Trinidad and Tobago  2022-04-02  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746331.0                 709263.0        146079.0<br>353  Trinidad and Tobago  2022-04-03  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146350.0<br>354  Trinidad and Tobago  2022-04-04  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746368.0                 709334.0        146079.0<br>355  Trinidad and Tobago  2022-04-05  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746446.0                 709471.0        146642.0<br>356  Trinidad and Tobago  2022-04-06  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746495.0                 709616.0        146889.0<br>357  Trinidad and Tobago  2022-04-07  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746561.0                 709733.0        147101.0<br>358  Trinidad and Tobago  2022-04-08  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746626.0                 709871.0        147327.0<br>359  Trinidad and Tobago  2022-04-09  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746688.0                 710000.0        147591.0<br>360  Trinidad and Tobago  2022-04-10  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0<br>361  Trinidad and Tobago  2022-04-11  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746711.0                 710060.0        147782.0<br>363  Trinidad and Tobago  2022-04-13  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746859.0                 710340.0        148346.0<br>364  Trinidad and Tobago  2022-04-14  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746916.0                 710444.0        148563.0<br>365  Trinidad and Tobago  2022-04-15  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0<br>366  Trinidad and Tobago  2022-04-16  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0<br>367  Trinidad and Tobago  2022-04-17  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          746977.0                 710556.0        148817.0<br>368  Trinidad and Tobago  2022-04-18  Johnson&Johnson, Oxford/AstraZeneca, Pfizer/Bi...  ...          747294.0                 710556.0        140817.0<br><br>[25 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.malta</td>
-      <td>❌</td>
-      <td>False</td>
-      <td>0.44</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py", line 103, in main<br>    Malta().export()<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py", line 98, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/malta.py", line 27, in read<br>    check_known_columns(<br>  File "/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/utils.py", line 110, in check_known_columns<br>    raise Exception(f"Unknown column(s) found: {unknown_cols}")<br>Exception: Unknown column(s) found: {'Total 2nd Booster doses'}<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
@@ -170,6 +135,13 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>True</td>
       <td>22.83</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.russia</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>22.62</td>
       <td></td>
     </tr>
     <tr>
@@ -306,13 +278,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.spain</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>5.96</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.kosovo</td>
       <td>✅</td>
       <td>True</td>
@@ -362,6 +327,13 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>4.67</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.united_kingdom</td>
       <td>✅</td>
       <td>True</td>
@@ -376,17 +348,17 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.turkey</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.46</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.hong_kong</td>
       <td>✅</td>
       <td>True</td>
       <td>4.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.spain</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>4.07</td>
       <td></td>
     </tr>
     <tr>
@@ -436,6 +408,13 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>True</td>
       <td>3.12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.costa_rica</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>3.06</td>
       <td></td>
     </tr>
     <tr>
@@ -499,6 +478,13 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>True</td>
       <td>2.10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.mexico</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>2.09</td>
       <td></td>
     </tr>
     <tr>
@@ -768,6 +754,13 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.incremental.turkey</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>0.49</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.incremental.finland</td>
       <td>✅</td>
       <td>True</td>
@@ -796,6 +789,20 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.batch.malta</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>0.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.france</td>
+      <td>✅</td>
+      <td>True</td>
+      <td>0.35</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.slovenia</td>
       <td>✅</td>
       <td>True</td>
@@ -807,13 +814,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>True</td>
       <td>0.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.france</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.17</td>
       <td></td>
     </tr>
     <tr>
