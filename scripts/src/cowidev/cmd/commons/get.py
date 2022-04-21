@@ -104,10 +104,9 @@ def main_get_data(
     # Get timing dataframe
     df_exec = _build_df_execution(modules_execution_results)
     # Retry failed modules
-    retry_log, error_log, modules_execution_results_retry = _retry_modules_failed(
+    error_log, modules_execution_results_retry = _retry_modules_failed(
         modules_execution_results, country_data_getter
     )
-    logger.warning(retry_log)
     if error_log is not None:
         logger.error(error_log)
     # Status
@@ -206,27 +205,28 @@ def _build_df_status(modules_execution_results):
 def _retry_modules_failed(modules_execution_results, country_data_getter):
     modules_failed = [m["module_name"] for m in modules_execution_results if m["success"] is False]
     retried_str = "\n".join([f"* {m}" for m in modules_failed])
-    retry_log = f"""RETRIES ({len(modules_failed)})
+    country_data_getter.logger.warning(f"""\n\n--------------------------------------\nRETRIES ({len(modules_failed)})
 
-The following scripts were re-executed:
+The following modules will be re-executed:
 {retried_str}
---------------------------------------
-"""
+""")
     modules_execution_results = []
     for module_name in modules_failed:
         modules_execution_results.append(country_data_getter.run(module_name))
     modules_failed_retrial = [m["module_name"] for m in modules_execution_results if m["success"] is False]
     if len(modules_failed_retrial) > 0:
         failed_str = "\n".join([f"* {m}" for m in modules_failed_retrial])
-        error_log = f"""FAILED ({len(modules_failed_retrial)})
+        error_log = f"""\n\n--------------------------------------
 
-The following scripts failed:
+FAILED ({len(modules_failed_retrial)})
+
+The following modules failed:
 {failed_str}
 --------------------------------------
 """
     else:
         error_log = None
-    return retry_log, error_log, modules_execution_results
+    return error_log, modules_execution_results
 
 
 def _print_timing(t0, t_sec_1, df_time):
