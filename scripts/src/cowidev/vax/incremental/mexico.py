@@ -6,10 +6,11 @@ from pdfminer.high_level import extract_text
 
 from cowidev.utils import clean_count, clean_date, get_soup
 from cowidev.utils.web.download import download_file_from_url
-from cowidev.vax.utils.incremental import enrich_data, increment
+from cowidev.vax.utils.incremental import enrich_data
+from cowidev.vax.utils.base import CountryVaxBase
 
 
-class Mexico:
+class Mexico(CountryVaxBase):
     location: str = "Mexico"
     source_page: str = "https://www.gob.mx/salud/documentos/presentaciones-2022"
     regex = {
@@ -17,6 +18,7 @@ class Mexico:
         "total_vaccinations": r"(?:COVID-19 )?(\d+) Total de dosis aplicadas reportadas",
         "people_vaccinated": r"(?:Nuevos esquemas )?(\d+) Personas vacunadas reportadas",
         "people_fully_vaccinated": r"(\d+) Personas vacunadas con esq\. completo",
+        "total_boosters": r"(\d+) Total de refuerzos aplicados",
     }
 
     def read(self):
@@ -49,7 +51,12 @@ class Mexico:
         data = {
             "total_vaccinations": clean_count(re.search(self.regex["total_vaccinations"], text).group(1)),
             "people_vaccinated": clean_count(re.search(self.regex["people_vaccinated"], text).group(1)),
-            "people_fully_vaccinated": clean_count(re.search(self.regex["people_fully_vaccinated"], text).group(1)),
+            "people_fully_vaccinated": (
+                clean_count(match.group(1))
+                if (match := re.search(self.regex["people_fully_vaccinated"], text))
+                else None
+            ),
+            "total_boosters": clean_count(re.search(self.regex["total_boosters"], text).group(1)),
             "date": clean_date(re.search(self.regex["date"], text).group(1), "%d %B, %Y", lang="es"),
         }
         self._check_data(data)
@@ -58,9 +65,10 @@ class Mexico:
     def _check_data(self, data):
         assert data["total_vaccinations"] >= 94300526
         assert data["people_vaccinated"] >= 61616895
-        assert data["people_fully_vaccinated"] >= 41115211
         assert data["people_vaccinated"] <= data["total_vaccinations"]
-        assert data["people_fully_vaccinated"] >= 0.5 * data["people_vaccinated"]
+        if data["people_fully_vaccinated"] is not None:
+            assert data["people_fully_vaccinated"] >= 41115211
+            assert data["people_fully_vaccinated"] >= 0.5 * data["people_vaccinated"]
 
     def pipe_location(self, ds: pd.Series) -> pd.Series:
         """Pipe location to the data"""
@@ -85,15 +93,7 @@ class Mexico:
     def export(self):
         """Export the data to a csv"""
         data = self.read().pipe(self.pipeline)
-        increment(
-            location=data["location"],
-            total_vaccinations=data["total_vaccinations"],
-            people_vaccinated=data["people_vaccinated"],
-            people_fully_vaccinated=data["people_fully_vaccinated"],
-            date=data["date"],
-            source_url=data["source_url"],
-            vaccine=data["vaccine"],
-        )
+        self.export_datafile(data, attach=True)
 
 
 def main():
