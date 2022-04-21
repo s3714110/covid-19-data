@@ -135,19 +135,7 @@ cowidev.vax.incremental.laos,5.01,True,True,
 cowidev.vax.incremental.lebanon,2.07,True,True,
 cowidev.vax.incremental.libya,2.88,True,True,
 cowidev.vax.incremental.macao,16.22,True,True,
-cowidev.vax.incremental.mexico,3.59,False,False,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 100, in main
-    Mexico().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 87, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 26, in read
-    return self._parse_data(link)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/mexico.py"", line 52, in _parse_data
-    ""people_fully_vaccinated"": clean_count(re.search(self.regex[""people_fully_vaccinated""], text).group(1)),
-AttributeError: 'NoneType' object has no attribute 'group'
-"
+cowidev.vax.incremental.mexico,2.09,True,True,
 cowidev.vax.incremental.moldova,1.27,True,True,
 cowidev.vax.incremental.monaco,20.69,True,True,
 cowidev.vax.incremental.mongolia,0.61,True,True,
