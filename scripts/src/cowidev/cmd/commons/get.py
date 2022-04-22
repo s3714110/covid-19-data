@@ -133,7 +133,7 @@ def _build_server_message(df_status, domain):
             module_error_log += f"* {module}\n {error}\n"
             module_error_log += "--------------------------------------------------------\n\n"
         module_list = ", ".join(dix_failed.keys())
-        title = f"{domain}: `get` step failed"
+        title = f"{domain}: [get] step failed"
         text = f"Modules failed: {len(dix_failed)}\n{module_list}\n\n```{module_error_log}```"
         type = "error"
     else:

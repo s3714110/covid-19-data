@@ -7,21 +7,22 @@ from pandas.errors import ParserError
 import click
 
 from cowidev import PATHS
-from cowidev.utils.log import get_logger, print_eoe
+from cowidev.utils.log import get_logger
 from cowidev.utils.params import CONFIG
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.cmd.vax.process.utils import process_location, VaccinationGSheet
+from cowidev.cmd.commons.utils import StepReport
 
 
 @click.option(
-    "--log-only-errors/--log-all",
+    "--server-mode/--no-server-mode",
     "-O",
     default=False,
-    help="Optimize processes based on older logging times.",
+    help="Only critical log and final message.",
     show_default=True,
 )
 @click.command(name="process", short_help="Step 2: Process scraped vaccination data from primary sources.")
-def click_vax_process(log_only_errors):
+def click_vax_process(server_mode):
     """Process data in folder scripts/output/vaccinations/.
 
     By default, the default values for OPTIONS are those specified in the configuration file. The configuration file is
@@ -35,12 +36,12 @@ def click_vax_process(log_only_errors):
 
         cowid vax process
     """
-    if log_only_errors:
-        logger = get_logger("error")
+    if server_mode:
+        logger = get_logger("critical")
     else:
         logger = get_logger()
 
-    main_process_data(
+    report_msg = main_process_data(
         path_input_files=PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR,
         path_output_files=PATHS.DATA_VAX_COUNTRY_DIR,
         path_output_meta=PATHS.INTERNAL_OUTPUT_VAX_META_FILE,
@@ -54,6 +55,9 @@ def click_vax_process(log_only_errors):
         skip_anomaly=CONFIG.pipeline.vaccinations.process.skip_anomaly_check,
         logger=logger,
     )
+    if server_mode:
+        report_msg.to_slack()
+        print(report_msg)
 
 
 def main_process_data(
@@ -102,6 +106,7 @@ def main_process_data(
             except Exception as err:
                 success = False
                 error_msg = get_traceback(err)
+                error_short_msg = str(err)
                 logger.error(f"{log_header} - {country}: FAILED ❌ {err}")
             except:
                 success = False
@@ -111,13 +116,14 @@ def main_process_data(
                 df.to_csv(os.path.join(path_output_files, f"{country}.csv"), index=False)
                 logger.info(f"{log_header} - {country}: SUCCESS ✅")
                 success = True
-                error_msg = ""
+                error_msg = error_short_msg = ""
             finally:
                 return {
                     "location": country,
                     "success": success,
                     "skipped": False,
                     "error": error_msg,
+                    "error_short": error_short_msg,
                     "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
                 }
         else:
@@ -133,16 +139,40 @@ def main_process_data(
 
     logger.info("Processing and exporting data...")
     # Process all countries
-    df_status = pd.DataFrame([_process_location_and_move_file(df) for df in dfs])
+    df_status = pd.DataFrame([_process_location_and_move_file(df) for df in dfs]).set_index("location")
 
     # Export metadata
     gsheet.metadata.to_csv(path_output_meta, index=False)
     logger.info("Exported ✅")
 
     # Export status
-    df_status.to_csv(path_output_status, index=False)
+    df_status.to_csv(path_output_status)
     export_timestamp(path_output_status_ts)
-    print_eoe()
+    # print_eoe()
+    report_msg = _build_server_message(df_status, domain="VAX")
+    return report_msg
+
+
+def _build_server_message(df_status, domain):
+    if (df_status.success == False).any():
+        dix_failed = df_status.loc[df_status.success == False, "error_short"].to_dict()
+        module_error_log = ""
+        for module, error in dix_failed.items():
+            module_error_log += f"* {module}\n {error}\n"
+            module_error_log += "--------------------------------------------------------\n\n"
+        module_list = ", ".join(dix_failed.keys())
+        title = f"{domain}: [process] step failed"
+        text = f"Modules failed: {len(dix_failed)}\n{module_list}\n\n```{module_error_log}```"
+        type = "error"
+    else:
+        title = f"{domain}: `get` step run successfully"
+        text = "All modules executed successfully"
+        type = "success"
+    return StepReport(
+        title=title,
+        text=text,
+        type=type,
+    )
 
 
 def read_csv(filepath):
