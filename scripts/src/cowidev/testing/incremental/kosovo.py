@@ -34,7 +34,7 @@ class Kosovo(CountryTestBase):
         """Parse data from source"""
         # Extract data
         for block in driver.find_elements_by_class_name("kpimetric"):
-            if self.regex["count"] in block.text:
+            if self.regex["count"] in block.find_element_by_class_name("kpi-label").text:
                 count = clean_count(block.find_element_by_class_name("valueLabel").text)
         for block in driver.find_elements_by_class_name("cell"):
             if self.regex["date"] in block.text:

@@ -15,7 +15,7 @@ class Morocco(CountryTestBase):
     source_url: str = "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
     source_url_ref: str = "http://www.covidmaroc.ma/Pages/AccueilAR.aspx"
     regex: dict = {
-        "date": r"(\d{1,2}\-\d{2}\-20\d{2})",
+        "date": r"00 (\d{1,2}\-\d{2}\-20\d{2})",
         "count": r"\s+",
     }
 
@@ -47,7 +47,7 @@ class Morocco(CountryTestBase):
 
     def _parse_date(self, soup: BeautifulSoup) -> str:
         """Parse date from soup"""
-        date_str = soup.find("table").find("span").text
+        date_str = soup.find("table").find("span").text.replace("\u200b", "")
         return extract_clean_date(date_str, self.regex["date"], "%d-%m-%Y")
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
