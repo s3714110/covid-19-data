@@ -136,19 +136,18 @@ class StepReport:
     def __str__(self):
         return f"{self.type}: {self.text}"
 
-
-def send_report(report, channel="#corona-data-updates"):
-    client = SlackAPI()
-    kwargs = {
-        "channel": channel,
-        "title": report.title,
-        "message": report.text,
-    }
-    if report.type == "error":
-        client.send_error(**kwargs)
-    elif report.type == "warning":
-        client.send_warning(**kwargs)
-    elif report.type == "success":
-        client.send_success(**kwargs)
-    else:
-        raise ValueError(f"Unknown report status: {report.type}")
+    def to_slack(report, channel="#corona-data-updates"):
+        client = SlackAPI()
+        kwargs = {
+            "channel": channel,
+            "title": report.title,
+            "message": report.text,
+        }
+        if report.type == "error":
+            client.send_error(**kwargs)
+        elif report.type == "warning":
+            client.send_warning(**kwargs)
+        elif report.type == "success":
+            client.send_success(**kwargs)
+        else:
+            raise ValueError(f"Unknown report status: {report.type}")

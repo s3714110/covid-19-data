@@ -48,9 +48,10 @@ class CountryDataGetter:
                 self.logger.info(f"{self.log_header} - {module_name}: Attempt #{i+1} failed")
                 success = False
                 error_msg = get_traceback(err)
+                error_msg_short = str(err)
             else:
                 success = True
-                error_msg = ""
+                error_msg = error_msg_short = ""
                 break
         if success:
             self.logger.info(f"{self.log_header} - {module_name}: SUCCESS ✅")
@@ -66,6 +67,7 @@ class CountryDataGetter:
             "time": t,
             "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
             "error": error_msg,
+            "error_short": error_msg_short,
         }
 
 
@@ -125,13 +127,14 @@ def main_get_data(
 
 def _build_server_message(df_status, domain):
     if (df_status.success == False).any():
-        dix_failed = df_status.loc[df_status.success == False, "error"].to_dict()
+        dix_failed = df_status.loc[df_status.success == False, "error_short"].to_dict()
         module_error_log = ""
         for module, error in dix_failed.items():
             module_error_log += f"* {module}\n {error}\n"
             module_error_log += "--------------------------------------------------------\n\n"
+        module_list = ", ".join(dix_failed.keys())
         title = f"{domain}: `get` step failed"
-        text = f"Mmodules failed: {len(dix_failed)}\n\n```{module_error_log}```"
+        text = f"Modules failed: {len(dix_failed)}\n{module_list}\n\n```{module_error_log}```"
         type = "error"
     else:
         title = f"{domain}: `get` step run successfully"
@@ -189,6 +192,7 @@ def _build_df_status(modules_execution_results):
                     "success": m["success"],
                     "timestamp": m["success"],
                     "error": m["error"],
+                    "error_short": m["error_short"],
                 }
                 for m in modules_execution_results
             ]

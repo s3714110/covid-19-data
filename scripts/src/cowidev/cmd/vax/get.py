@@ -1,7 +1,7 @@
 import click
 
 from cowidev.cmd.commons.get import main_get_data
-from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption, send_report
+from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption
 from cowidev.utils.params import CONFIG
 from cowidev.utils import paths
 from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME_INCREMENTAL, country_to_module
@@ -87,5 +87,5 @@ def click_vax_get(ctx, countries, skip_countries, optimize, server_mode):
         logging_mode="critical" if server_mode else "info",
     )
     if server_mode:
-        send_report(report_msg)
+        report_msg.to_slack()
         print(report_msg)
