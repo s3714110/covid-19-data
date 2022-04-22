@@ -1,5 +1,6 @@
 import time
 import re
+import random
 
 import pandas as pd
 
@@ -23,13 +24,13 @@ class China(CountryVaxBase):
         "boosters": r"加强免疫(?:已经)?接种的?是?([\d\.亿零]+万)人",
     }
     num_links_complete = 6
-    timeout = 30
+    timeout = 45
 
     def read(self, last_update: str):
         data = []
         with get_driver(firefox=True, timeout=self.timeout) as driver:
             driver.get(self.source_url)
-            time.sleep(5)
+            time.sleep(random.randint(5, 10))
             links = self._get_links(driver)
             for link in links:
                 data_ = self._parse_data(driver, link)
@@ -40,6 +41,7 @@ class China(CountryVaxBase):
 
     def _parse_data(self, driver, url):
         driver.get(url)
+        time.sleep(random.randint(5, 10))
         elem = driver.find_element_by_id("xw_box")
         return {
             "date": extract_clean_date(elem.text, self.regex["date"], "%Y %m %d"),
