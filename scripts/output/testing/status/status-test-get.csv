@@ -194,19 +194,7 @@ cowidev.testing.incremental.greece,1.99,True,True,
 cowidev.testing.incremental.haiti,28.0,True,True,
 cowidev.testing.incremental.iran,3.04,True,True,
 cowidev.testing.incremental.jordan,0.99,True,True,
-cowidev.testing.incremental.kosovo,29.71,False,False,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 72, in main
-    Kosovo().export()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 67, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 30, in read
-    df = self._parse_data(driver)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/kosovo.py"", line 44, in _parse_data
-    date = self._parse_date(date_str)
-UnboundLocalError: local variable 'date_str' referenced before assignment
-"
+cowidev.testing.incremental.kosovo,19.31,True,True,
 cowidev.testing.incremental.laos,5.32,True,True,
 cowidev.testing.incremental.lebanon,1.99,True,True,
 cowidev.testing.incremental.libya,5.41,True,True,
