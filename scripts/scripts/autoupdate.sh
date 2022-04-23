@@ -153,13 +153,11 @@ cowid hosp grapher-db
 
 hour=$(date +%H)
 if [ $hour == 07 ] ; then
-  echo "Generating Vaccination (get & process step)..."
+  echo "Generating Vaccination (get, process, generate, export step)..."
   cowid --server-mode vax get
-  cowid --server-mode vax process
-  cowid --server-mode vax generate
-  cowid --server-mode vax export
+  cowid --server-mode vax process generate export
   git add .
-  git commit -m "data(vax): automated update (get,process,generate)"
+  git commit -m "data(vax): automated update"
   git push
 fi
 
