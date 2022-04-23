@@ -128,10 +128,11 @@ class StepReport:
     text: str
     type: str
 
-    def __init__(self, title: str, text: str, type: str):
+    def __init__(self, title: str, text: str, type: str, trace: str = ""):
         self.title = title
         self.text = text
         self.type = type
+        self.trace = trace
 
     def __str__(self):
         return f"{self.type}: {self.text}"
@@ -142,6 +143,7 @@ class StepReport:
             "channel": channel,
             "title": report.title,
             "message": report.text,
+            "trace": report.trace,
         }
         if report.type == "error":
             client.send_error(**kwargs)
