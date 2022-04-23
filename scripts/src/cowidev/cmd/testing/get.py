@@ -68,4 +68,5 @@ def click_test_get(ctx, countries, skip_countries):
         log_header="TEST",
         output_status=paths.INTERNAL_OUTPUT_TEST_STATUS_GET,
         output_status_ts=paths.INTERNAL_OUTPUT_TEST_STATUS_GET_TS,
+        logger=ctx.obj["logger"],
     )
