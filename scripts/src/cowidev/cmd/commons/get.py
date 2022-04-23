@@ -136,7 +136,7 @@ def _build_server_message(df_status, domain):
         title = f"{domain} - [get] step failed"
         text = f"Modules failed: {len(dix_failed)}\n{module_list}"
         trace = module_error_log
-        type = "error"
+        type = "warning"
     else:
         title = f"{domain} - [get] step ran successfully"
         text = "All modules executed successfully"
