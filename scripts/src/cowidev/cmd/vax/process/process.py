@@ -14,15 +14,9 @@ from cowidev.cmd.vax.process.utils import process_location, VaccinationGSheet
 from cowidev.cmd.commons.utils import StepReport
 
 
-@click.option(
-    "--server-mode/--no-server-mode",
-    "-O",
-    default=False,
-    help="Only critical log and final message.",
-    show_default=True,
-)
 @click.command(name="process", short_help="Step 2: Process scraped vaccination data from primary sources.")
-def click_vax_process(server_mode):
+@click.pass_context
+def click_vax_process(ctx):
     """Process data in folder scripts/output/vaccinations/.
 
     By default, the default values for OPTIONS are those specified in the configuration file. The configuration file is
@@ -36,10 +30,6 @@ def click_vax_process(server_mode):
 
         cowid vax process
     """
-    if server_mode:
-        logger = get_logger("critical")
-    else:
-        logger = get_logger()
 
     report_msg = main_process_data(
         path_input_files=PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR,
@@ -53,9 +43,9 @@ def click_vax_process(server_mode):
         skip_complete=CONFIG.pipeline.vaccinations.process.skip_complete,
         skip_monotonic=CONFIG.pipeline.vaccinations.process.skip_monotonic_check,
         skip_anomaly=CONFIG.pipeline.vaccinations.process.skip_anomaly_check,
-        logger=logger,
+        logger=ctx.obj["logger"],
     )
-    if server_mode:
+    if ctx.obj["server_mode"]:
         report_msg.to_slack()
         print(report_msg)
 

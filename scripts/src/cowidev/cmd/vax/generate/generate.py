@@ -6,26 +6,15 @@ from cowidev.utils.log import get_logger
 from cowidev.utils.utils import get_traceback
 
 
-@click.option(
-    "--server-mode/--no-server-mode",
-    "-O",
-    default=False,
-    help="Only critical log and final message to slack.",
-    show_default=True,
-)
 @click.command(name="generate", short_help="Step 3: Generate vaccination dataset.")
-def click_vax_generate(server_mode):
-    # Get logger
-    if server_mode:
-        logger = get_logger("critical")
-    else:
-        logger = get_logger()
+@click.pass_context
+def click_vax_generate(ctx):
     # Select columns
-    generator = DatasetGenerator(logger)
+    generator = DatasetGenerator(ctx.obj["logger"])
     try:
         generator.run()
     except Exception as err:
-        if server_mode:
+        if ctx.obj["server_mode"]:
             StepReport(
                 title="Vaccinations - [generate] step failed",
                 trace=get_traceback(err),
@@ -34,7 +23,7 @@ def click_vax_generate(server_mode):
         else:
             raise err
     else:
-        if server_mode:
+        if ctx.obj["server_mode"]:
             StepReport(
                 title="Vaccinations - [generate] step ran successfully",
                 text="Intermediate vaccinations files were correctly generated.",

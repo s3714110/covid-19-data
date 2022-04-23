@@ -1,6 +1,7 @@
 import click
 
 from cowidev.utils.params import CONFIG
+from cowidev.utils.log import get_logger
 from cowidev.cmd.commons.utils import OrderedGroup
 from cowidev.cmd.testing import click_test
 from cowidev.cmd.vax import click_vax
@@ -26,12 +27,24 @@ from cowidev.megafile.generate import generate_megafile
     help="Number of threads to use.",
     show_default=True,
 )
+@click.option(
+    "--server-mode/--no-server-mode",
+    "-S",
+    default=False,
+    help="Only critical log and final message to slack.",
+    show_default=True,
+)
 @click.pass_context
-def cli(ctx, parallel, n_jobs):
+def cli(ctx, parallel, n_jobs, server_mode):
     """COVID-19 Data pipeline tool by Our World in Data."""
     ctx.ensure_object(dict)
     ctx.obj["parallel"] = parallel
     ctx.obj["n_jobs"] = n_jobs
+    ctx.obj["server_mode"] = server_mode
+    if ctx.obj['server_mode']:
+        ctx.obj["logger"] = get_logger("critical")
+    else:
+        ctx.obj["logger"] = get_logger()
 
 
 @click.command(name="megafile")

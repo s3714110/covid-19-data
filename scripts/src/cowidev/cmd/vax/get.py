@@ -30,13 +30,6 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     cls=PythonLiteralOption,
 )
 @click.option(
-    "--server-mode/--no-server-mode",
-    "-O",
-    default=False,
-    help="Only critical log and final message.",
-    show_default=True,
-)
-@click.option(
     "--optimize/--no-optimize",
     "-O",
     default=False,
@@ -44,7 +37,7 @@ from cowidev.vax.countries import MODULES_NAME, MODULES_NAME_BATCH, MODULES_NAME
     show_default=True,
 )
 @click.pass_context
-def click_vax_get(ctx, countries, skip_countries, optimize, server_mode):
+def click_vax_get(ctx, countries, skip_countries, optimize):
     """Runs scraping scripts to collect the data from the primary sources of COUNTRIES. Data is exported to project
     folder scripts/output/vaccinations/. By default, all countries are scraped.
 
@@ -84,8 +77,8 @@ def click_vax_get(ctx, countries, skip_countries, optimize, server_mode):
         log_s3_path="s3://covid-19/log/vax-get-data-countries.csv" if optimize else None,
         output_status=paths.INTERNAL_OUTPUT_VAX_STATUS_GET,
         output_status_ts=paths.INTERNAL_OUTPUT_VAX_STATUS_GET_TS,
-        logging_mode="critical" if server_mode else "info",
+        logger=ctx.obj["logger"],
     )
-    if server_mode:
+    if ctx.obj["server_mode"]:
         report_msg.to_slack()
         print(report_msg)

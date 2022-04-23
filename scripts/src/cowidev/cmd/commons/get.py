@@ -75,6 +75,7 @@ class CountryDataGetter:
 def main_get_data(
     modules: list,
     modules_valid: list,
+    logger,
     parallel: bool = False,
     n_jobs: int = -2,
     modules_skip: list = [],
@@ -88,8 +89,6 @@ def main_get_data(
 
     Is equivalent to script `run_python_scripts.py`
     """
-    # Logger
-    logger = get_logger(logging_mode)
     t0 = time.time()
     logger.info("-- Getting data... --")
     country_data_getter = CountryDataGetter(logger, modules_skip, log_header)
