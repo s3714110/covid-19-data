@@ -28,9 +28,9 @@ README_TMP = PATHS.INTERNAL_INPUT_OWID_READ_FILE
 README_FILE = PATHS.DATA_READ_FILE
 
 
-def generate_megafile():
+def generate_megafile(logger):
     """Generate megafile data."""
-    all_covid = get_base_dataset()
+    all_covid = get_base_dataset(logger)
 
     # Remove today's datapoint
     all_covid = all_covid[all_covid["date"] < str(date.today())]
@@ -40,18 +40,18 @@ def generate_megafile():
     all_covid = all_covid[-all_covid.location.isin(excluded)]
 
     # Add ISO codes
-    print("Adding ISO codes…")
+    logger.info("Adding ISO codes…")
     iso_codes = pd.read_csv(PATHS.INTERNAL_INPUT_ISO_FILE)
 
     missing_iso = set(all_covid.location).difference(set(iso_codes.location))
     if len(missing_iso) > 0:
-        print(missing_iso)
-        raise Exception("Missing ISO code for some locations")
+        # print(missing_iso)
+        raise Exception(f"Missing ISO code for some locations: {missing_iso}")
 
     all_covid = iso_codes.merge(all_covid, on="location")
 
     # Add continents
-    print("Adding continents…")
+    logger.info("Adding continents…")
     continents = pd.read_csv(
         PATHS.INTERNAL_INPUT_OWID_CONT_FILE,
         names=["_1", "iso_code", "_2", "continent"],
@@ -99,12 +99,13 @@ def generate_megafile():
     # Check that we only have 1 unique row for each location/date pair
     assert all_covid.drop_duplicates(subset=["location", "date"]).shape == all_covid.shape
 
-    print("Creating internal files…")
+    logger.info("Creating internal files…")
     create_internal(
         df=all_covid,
         output_dir=os.path.join(DATA_DIR, "internal"),
         annotations_path=ANNOTATIONS_PATH,
         country_data=DATA_VAX_COUNTRIES_DIR,
+        logger=logger,
     )
 
     # Drop columns not included in final dataset
@@ -137,24 +138,24 @@ def generate_megafile():
     all_covid = all_covid.drop(columns=cols_drop)
 
     # Create light versions of complete dataset with only the latest data point
-    print("Writing latest…")
-    create_latest(all_covid)
+    logger.info("Writing latest…")
+    create_latest(all_covid, logger)
 
     # Create datasets
-    create_dataset(all_covid, macro_variables)
+    create_dataset(all_covid, macro_variables, logger)
 
     # Store the last updated time
     export_timestamp(PATHS.DATA_TIMESTAMP_OLD_FILE, force_directory=PATHS.DATA_DIR)  # @deprecate
 
     # Update readme
-    print("Generating public/data/README.md")
+    logger.info("Generating public/data/README.md")
     generate_readme(readme_template=README_TMP, readme_output=README_FILE)
 
     # Update readme
-    print("Generating scripts/STATUS.md")
+    logger.info("Generating scripts/STATUS.md")
     generate_status(template=PATHS.INTERNAL_INPUT_TEMPLATE_STATUS, output=PATHS.INTERNAL_STATUS_FILE)
 
     # Export timestamp
     export_timestamp(PATHS.DATA_TIMESTAMP_ROOT_FILE)
 
-    print("All done!")
+    logger.info("All done!")

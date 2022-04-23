@@ -207,7 +207,7 @@ internal_files_columns = {
 }
 
 
-def create_internal(df: pd.DataFrame, output_dir: str, annotations_path: str, country_data: str):
+def create_internal(df: pd.DataFrame, output_dir: str, annotations_path: str, country_data: str, logger):
     # Ensure internal/ dir is created
     os.makedirs(output_dir, exist_ok=True)
 
@@ -216,7 +216,7 @@ def create_internal(df: pd.DataFrame, output_dir: str, annotations_path: str, co
     non_value_columns = ["iso_code", "continent", "location", "date", "population"]
 
     # Load annotations
-    annotator = AnnotatorInternal.from_yaml(annotations_path)
+    annotator = AnnotatorInternal.from_yaml(annotations_path, logger)
 
     # Copy df
     df = df.copy()

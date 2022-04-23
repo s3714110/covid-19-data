@@ -24,14 +24,15 @@ class AnnotatorInternal:
     Keys in config should match those in `internal_files_columns`.
     """
 
-    def __init__(self, config: dict):
+    def __init__(self, config: dict, logger=None):
         self._config = config
+        self._logger = logger
 
     @classmethod
-    def from_yaml(cls, path):
+    def from_yaml(cls, path, logger=None):
         with open(path, "r") as f:
             dix = yaml.safe_load(f)
-        return cls(dix)
+        return cls(dix, logger)
 
     @property
     def config(self):
@@ -113,7 +114,7 @@ class AnnotatorInternal:
 
     def add_annotations(self, df: pd.DataFrame, stream: str) -> pd.DataFrame:
         if stream in self.streams:
-            print(f"Adding annotation for {stream}")
+            self._logger.info(f"Adding annotation for {stream}")
             return self._add_annotations(df, stream)
         return df
 

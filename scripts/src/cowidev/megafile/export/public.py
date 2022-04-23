@@ -11,20 +11,20 @@ from cowidev.utils.utils import dict_to_compact_json
 DATA_DIR = PATHS.DATA_DIR
 
 
-def create_dataset(df, macro_variables):
+def create_dataset(df, macro_variables, logger):
     """Export dataset as CSV, XLSX and JSON (complete time series)."""
-    print("Writing to CSV…")
+    logger.info("Writing to CSV…")
     filename = os.path.join(DATA_DIR, "owid-covid-data.csv")
     df.to_csv(filename, index=False)
     S3().upload_to_s3(filename, "s3://covid-19/public/owid-covid-data.csv", public=True)
 
-    print("Writing to XLSX…")
+    logger.info("Writing to XLSX…")
     # filename = os.path.join(DATA_DIR, "owid-covid-data.xlsx")
     # all_covid.to_excel(os.path.join(DATA_DIR, "owid-covid-data.xlsx"), index=False, engine="xlsxwriter")
     # upload_to_s3(filename, "public/owid-covid-data.xlsx", public=True)
     obj_to_s3(df, s3_path="s3://covid-19/public/owid-covid-data.xlsx", public=True)
 
-    print("Writing to JSON…")
+    logger.info("Writing to JSON…")
     data = df_to_dict(
         df,
         macro_variables.keys(),
@@ -33,7 +33,7 @@ def create_dataset(df, macro_variables):
     obj_to_s3(data, "s3://covid-19/public/owid-covid-data.json", public=True)
 
 
-def create_latest(df):
+def create_latest(df, logger):
     """Export dataset as CSV, XLSX and JSON (latest data points)."""
     df = df[df.date >= str(date.today() - timedelta(weeks=2))]
     df = df.sort_values("date")
@@ -42,7 +42,7 @@ def create_latest(df):
     latest = pd.concat(latest)
     latest = latest.sort_values("location").rename(columns={"date": "last_updated_date"})
 
-    print("Writing latest version…")
+    logger.info("Writing latest version…")
     # CSV
     latest.to_csv(os.path.join(DATA_DIR, "latest", "owid-covid-latest.csv"), index=False)
     S3().upload_to_s3(

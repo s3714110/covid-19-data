@@ -15,35 +15,35 @@ GRAPHER_DIR = PATHS.INTERNAL_GRAPHER_DIR
 DATA_DIR = PATHS.DATA_DIR
 
 
-def get_base_dataset():
+def get_base_dataset(logger):
     """Get owid datasets from: jhu, reproduction rate, hospitalizations, testing ,vaccinations, CGRT."""
-    print("Fetching JHU dataset…")
+    logger.info("Fetching JHU dataset…")
     jhu = get_jhu(jhu_dir=PATHS.DATA_JHU_DIR)
 
-    print("Fetching reproduction rate…")
+    logger.info("Fetching reproduction rate…")
     reprod = get_reprod(
         file_url="https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
         country_mapping=os.path.join(INPUT_DIR, "reproduction", "reprod_country_standardized.csv"),
     )
 
-    print("Fetching hospital dataset…")
+    logger.info("Fetching hospital dataset…")
     hosp = get_hosp(data_file=os.path.join(GRAPHER_DIR, "COVID-2019 - Hospital & ICU.csv"))
 
-    print("Fetching testing dataset…")
+    logger.info("Fetching testing dataset…")
     testing = get_testing()
 
-    print("Fetching vaccination dataset…")
+    logger.info("Fetching vaccination dataset…")
     vax = get_vax(data_file=os.path.join(DATA_DIR, "vaccinations", "vaccinations.csv"))
     vax = vax[-vax.location.isin(["England", "Northern Ireland", "Scotland", "Wales"])]
 
-    print("Fetching OxCGRT dataset…")
+    logger.info("Fetching OxCGRT dataset…")
     cgrt = get_cgrt(
         bsg_latest=os.path.join(INPUT_DIR, "bsg", "latest.csv"),
         bsg_diff_latest=os.path.join(INPUT_DIR, "bsg", "latest-differentiated.csv"),
         country_mapping=os.path.join(INPUT_DIR, "bsg", "bsg_country_standardised.csv"),
     )
 
-    print("Fetching variants dataset…")
+    logger.info("Fetching variants dataset…")
     variants = get_variants(
         variants_file="s3://covid-19/internal/variants/covid-variants.csv",
         cases_file=os.path.join(DATA_DIR, "jhu", "full_data.csv"),
