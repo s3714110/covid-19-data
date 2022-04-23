@@ -37,6 +37,7 @@ class CountryDataGetter:
                 "time": None,
                 "timestamp": datetime.utcnow().replace(microsecond=0).isoformat(),
                 "error": "",
+                "error_short": "",
             }
         # Start country scraping
         self.logger.info(f"{self.log_header} - {module_name}: started")
