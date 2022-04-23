@@ -193,7 +193,7 @@ def _build_df_status(modules_execution_results):
                     "module": m["module_name"],
                     "execution_time (sec)": m["time"],
                     "success": m["success"],
-                    "timestamp": m["success"],
+                    "timestamp": m["timestamp"],
                     "error": m["error"],
                     "error_short": m["error_short"],
                 }
