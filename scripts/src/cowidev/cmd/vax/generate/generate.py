@@ -2,7 +2,6 @@ import click
 
 from cowidev.cmd.vax.generate.utils import DatasetGenerator
 from cowidev.cmd.commons.utils import StepReport
-from cowidev.utils.log import get_logger
 from cowidev.utils.utils import get_traceback
 
 

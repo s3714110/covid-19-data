@@ -41,16 +41,17 @@ def cli(ctx, parallel, n_jobs, server_mode):
     ctx.obj["parallel"] = parallel
     ctx.obj["n_jobs"] = n_jobs
     ctx.obj["server_mode"] = server_mode
-    if ctx.obj['server_mode']:
+    if ctx.obj["server_mode"]:
         ctx.obj["logger"] = get_logger("critical")
     else:
         ctx.obj["logger"] = get_logger()
 
 
 @click.command(name="megafile")
-def cli_export():
+@click.pass_context
+def cli_export(ctx):
     """COVID-19 data integration pipeline (former megafile)"""
-    generate_megafile()
+    generate_megafile(ctx.obj["logger"])
 
 
 cli.add_command(click_test)

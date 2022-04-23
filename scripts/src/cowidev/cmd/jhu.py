@@ -15,12 +15,13 @@ def click_jhu(ctx):
 @click.pass_context
 def click_jhu_download(ctx):
     """Downloads all JHU source files into project directory."""
-    download_csv()
+    download_csv(ctx.obj["logger"])
 
 
 @click.command(name="generate", short_help="Step 2: Generate dataset.")
-def click_jhu_generate():
-    main(skip_download=True)
+@click.pass_context
+def click_jhu_generate(ctx):
+    main(ctx.obj["logger"], skip_download=True)
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")

@@ -63,7 +63,7 @@ class S3:
                                         `local_path`'s length.
             public (bool): Set to True to expose the file to the public (read only). Defaults to False.
         """
-        print("Uploading to S3…")
+        # print("Uploading to S3…")
         # Checks
         _check_s3_local_files(local_path, s3_path)
         # Obtain bucket & file
@@ -85,7 +85,7 @@ class S3:
             s3_path (Union[str, list]): File location to load object from.
             local_path (Union[str, list]): Path where to save file locally.
         """
-        logger.info("Downloading from S3…")
+        # logger.info("Downloading from S3…")
         # Checks
         _check_s3_local_files(local_path, s3_path)
         # Obtain bucket & file

@@ -9,7 +9,10 @@ Merges all COVID-19 data into a 'megafile';
 """
 
 from cowidev.megafile.generate import generate_megafile
+from cowidev.utils.log import get_logger
+
+logger = get_logger()
 
 
 if __name__ == "__main__":
-    generate_megafile()
+    generate_megafile(logger)

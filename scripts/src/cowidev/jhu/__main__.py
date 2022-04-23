@@ -358,40 +358,40 @@ def create_subnational():
     obj_to_s3(df, s3_path="s3://covid-19/public/jhu/{filename}.zip", compression=compression, public=True)
 
 
-def main(skip_download=False):
+def main(logger, skip_download=False):
 
     if not skip_download:
-        print("\nAttempting to download latest CSV files...")
+        logger.info("\nAttempting to download latest CSV files...")
         download_csv()
 
     df_merged = _load_merged()
 
     if check_data_correctness(df_merged):
-        print("Data correctness check %s.\n" % colored("passed", "green"))
+        logger.info("Data correctness check %s.\n" % colored("passed", "green"))
     else:
-        print_err("Data correctness check %s.\n" % colored("failed", "red"))
+        logger.error("Data correctness check %s.\n" % colored("failed", "red"))
         sys.exit(1)
 
     if export(df_merged):
-        print("Successfully exported CSVs to %s\n" % colored(os.path.abspath(OUTPUT_PATH), "magenta"))
+        logger.info("Successfully exported CSVs to %s\n" % colored(os.path.abspath(OUTPUT_PATH), "magenta"))
     else:
-        print_err("JHU export failed.\n")
+        logger.error("JHU export failed.\n")
         sys.exit(1)
 
-    print("Generating megafile…")
-    generate_megafile()
-    print("Megafile is ready.")
+    logger.info("Generating megafile…")
+    generate_megafile(logger)
+    logger.info("Megafile is ready.")
 
     send_success(channel="corona-data-updates", title="Updated JHU GitHub exports")
 
-    print("Generating subnational file…")
+    logger.info("Generating subnational file…")
     create_subnational()
 
 
-def download_csv():
+def download_csv(logger):
     files = ["time_series_covid19_confirmed_global.csv", "time_series_covid19_deaths_global.csv"]
     for file in files:
-        print(file)
+        logger.info(file)
         os.system(
             f"curl --silent -f -o {INPUT_PATH}/{file} -L"
             f" https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/{file}"

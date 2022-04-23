@@ -3,17 +3,20 @@ from datetime import datetime
 
 import pandas as pd
 
-import cowidev.megafile.generate
+from cowidev import PATHS
+from cowidev.megafile.generate import generate_megafile
 from cowidev.grapher.db.base import GrapherBaseUpdater
 from cowidev.utils.utils import time_str_grapher, get_filename, export_timestamp
 from cowidev.utils.clean.dates import DATE_FORMAT
-from cowidev import PATHS
+from cowidev.utils.log import get_logger
 
 ZERO_DAY = "2020-01-21"
 zero_day = datetime.strptime(ZERO_DAY, DATE_FORMAT)
 
 URL_VACCINE = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_vaccines_full.csv"
 DATA_HOSP_GRAPHER_FILE = os.path.join(PATHS.INTERNAL_GRAPHER_DIR, "COVID-2019 - Hospital & ICU.csv")
+
+logger = get_logger()
 
 
 def _owid_format(df):
@@ -46,7 +49,7 @@ def run_grapheriser():
     export_timestamp(PATHS.DATA_TIMESTAMP_HOSP_FILE)
 
     print("Generating megafile…")
-    cowidev.megafile.generate.generate_megafile()
+    generate_megafile(logger)
 
 
 def run_db_updater():
