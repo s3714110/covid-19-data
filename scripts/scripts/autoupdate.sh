@@ -157,6 +157,7 @@ if [ $hour == 07 ] ; then
   cowid --server-mode vax get
   cowid --server-mode vax process
   cowid --server-mode vax generate
+  cowid --server-mode vax export
   git add .
   git commit -m "data(vax): automated update (get,process,generate)"
   git push
