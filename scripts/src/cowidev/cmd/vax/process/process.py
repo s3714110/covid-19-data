@@ -149,7 +149,7 @@ def main_process_data(
     df_status.to_csv(path_output_status)
     export_timestamp(path_output_status_ts)
     # print_eoe()
-    report_msg = _build_server_message(df_status, domain="VAX")
+    report_msg = _build_server_message(df_status, domain="Vaccinations")
     return report_msg
 
 
@@ -161,11 +161,11 @@ def _build_server_message(df_status, domain):
             module_error_log += f"* {module}\n {error}\n"
             module_error_log += "--------------------------------------------------------\n\n"
         module_list = ", ".join(dix_failed.keys())
-        title = f"{domain}: [process] step failed"
+        title = f"{domain} - [process] step failed"
         text = f"Modules failed: {len(dix_failed)}\n{module_list}\n\n```{module_error_log}```"
         type = "error"
     else:
-        title = f"{domain}: `get` step run successfully"
+        title = f"{domain} - [process] step run successfully"
         text = "All modules executed successfully"
         type = "success"
     return StepReport(

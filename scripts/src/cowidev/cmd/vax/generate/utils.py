@@ -21,7 +21,8 @@ logger = get_logger()
 
 
 class DatasetGenerator:
-    def __init__(self):
+    def __init__(self, logger):
+        self.logger = logger
         self.aggregates = self.build_aggregates()
         self._countries_covered = None
 
@@ -116,8 +117,8 @@ class DatasetGenerator:
             loc_miss = pd_series_diff_values(df_metadata.location, df_vax.location)
             a = df_metadata[df_metadata.location.isin(loc_miss)]
             b = df_vax[df_vax.location.isin(loc_miss)]
-            print("metadata\n", a)
-            print("data\n", b)
+            # print("metadata\n", a)
+            # print("data\n", b)
             raise ValueError(f"Missmatch between vaccination data and metadata! Unknown location {loc_miss}.")
 
         return (
@@ -568,7 +569,7 @@ class DatasetGenerator:
 
         duplicates = df[df.duplicated(subset=["date", "location", "age_group"])]
         if len(duplicates) > 0:
-            print(duplicates)
+            # print(duplicates)
             raise Exception("There are duplicate combinations of location-date-age_group in the age dataset!")
 
         df = df.pivot(
@@ -707,7 +708,7 @@ class DatasetGenerator:
         copyfile(PATHS.INTERNAL_OUTPUT_VAX_META_AGE_FILE, PATHS.DATA_VAX_META_AGE_FILE)
 
     def run(self):
-        print("-- Generating dataset... --")
+        logger.info("-- Generating dataset... --")
         logger.info("1/10 Loading input data...")
         try:
             df_metadata = pd.read_csv(PATHS.INTERNAL_OUTPUT_VAX_META_FILE)
@@ -718,6 +719,7 @@ class DatasetGenerator:
             raise FileNotFoundError(
                 "Internal files not found! Make sure to run `proccess-data` step prior to running `generate-dataset`."
             )
+
         df_iso = pd.read_csv(PATHS.INTERNAL_INPUT_ISO_FILE)
         files_manufacturer = glob.glob(os.path.join(PATHS.INTERNAL_OUTPUT_VAX_MANUFACT_DIR, "*.csv"))
         df_manufacturer = pd.concat(

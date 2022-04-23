@@ -124,11 +124,8 @@ class OrderedGroup(click.Group):
 
 
 class StepReport:
-    title: str
-    text: str
-    type: str
 
-    def __init__(self, title: str, text: str, type: str, trace: str = ""):
+    def __init__(self, title: str, type: str,  text: str = "", trace: str = ""):
         self.title = title
         self.text = text
         self.type = type
