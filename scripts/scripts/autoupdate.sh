@@ -110,7 +110,7 @@ cowid jhu get
 # If there are any unstaged changes in the repo, then one of
 # the CSVs has changed, and we need to run the update script.
 hour=$(date +%H)
-if [ $hour == 04 ] || [ $hour == 10 ] || [ $hour == 16 ] || [ $hour == 22 ] ; then
+if [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] ||[ $hour == 22 ] [ $hour == 00 ]; then
   if has_changed './scripts/input/jhu/*'; then
     echo "Generating JHU files..."
     cowid jhu generate
