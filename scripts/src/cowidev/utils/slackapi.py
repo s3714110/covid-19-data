@@ -20,7 +20,7 @@ class SlackAPI:
             return None
         if title_header is not None:
             title = f"{title_header}: {title}"
-        if trace is not None or trace != "":
+        if trace is not None and trace != "":
             message += f"\n```{trace}```"
         return self.client.chat_postMessage(
             channel=channel,
