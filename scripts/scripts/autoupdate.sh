@@ -156,8 +156,9 @@ hour=$(date +%H)
 echo "Generating Vaccination (get & process step)..."
 cowid vax get --server-mode
 cowid vax process --server-mode
+cowid vax generate --server-mode
 git add .
-git commit -m "data(vax): automated update (get,process)"
+git commit -m "data(vax): automated update (get,process,generate)"
 git push
 # fi
 
