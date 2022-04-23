@@ -41,7 +41,7 @@ class China(CountryVaxBase):
 
     def _parse_data(self, driver, url):
         driver.get(url)
-        time.sleep(random.randint(5, 10))
+        time.sleep(random.randint(2, 5))
         elem = driver.find_element_by_id("xw_box")
         return {
             "date": extract_clean_date(elem.text, self.regex["date"], "%Y %m %d"),
@@ -57,7 +57,7 @@ class China(CountryVaxBase):
         records = []
         with get_driver(firefox=True, timeout=self.timeout) as driver:
             driver.get(self.source_url_complete)
-            time.sleep(5)
+            time.sleep(random.randint(5, 10))
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
                 record = self._parse_data_complete(driver, link)
@@ -78,6 +78,7 @@ class China(CountryVaxBase):
             return int(num)
 
         driver.get(url)
+        time.sleep(random.randint(2, 5))
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
         year = re.search(self.regex_complete["title"], driver.title).group(1)
