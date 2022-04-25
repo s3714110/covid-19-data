@@ -2200,7 +2200,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`5/128` scripts failed, `8/128` were skipped. Latest update was `2022-04-22T16:38:19`.
+`5/128` scripts failed, `8/128` were skipped. Latest update was `2022-04-25T12:18:27`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -2214,899 +2214,899 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.testing.incremental.emro</td>
+      <td>cowidev.testing.incremental.pakistan</td>
       <td>❌</td>
-      <td>False</td>
-      <td>11.48</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 155, in main<br>    EMRO().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 150, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 54, in read<br>    df = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 64, in _parse_data<br>    self.date = self._parse_date(df_list)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 87, in _parse_date<br>    date = extract_clean_date(date_str.lower(), regex=self.regex["date"], date_format="%d %B %Y")<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/clean/dates.py", line 121, in extract_clean_date<br>    date_raw = re.search(regex, text).groups()<br>AttributeError: 'NoneType' object has no attribute 'groups'<br></pre></details></td>
+      <td>2022-04-25T12:18:27</td>
+      <td>3.49</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/pakistan.py", line 77, in main<br>    Pakistan().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/pakistan.py", line 65, in export<br>    increment(<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 50, in increment<br>    _check_fields(df_current, country, source_url, source_label, units, date, count, daily_change)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 111, in _check_fields<br>    raise ValueError(f"`cumulative_total` can't be lower than currently highers 'Cumulative total' value.")<br>ValueError: `cumulative_total` can't be lower than currently highers 'Cumulative total' value.<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.georgia</td>
       <td>❌</td>
-      <td>False</td>
-      <td>3.85</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc<br>    return self._engine.get_loc(casted_key)<br>  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>KeyError: 'date'<br><br>The above exception was the direct cause of the following exception:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 115, in main<br>    Georgia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 107, in export<br>    date=data["date"],<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 942, in __getitem__<br>    return self._get_value(key)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 1051, in _get_value<br>    loc = self.index.get_loc(label)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc<br>    raise KeyError(key) from err<br>KeyError: 'date'<br></pre></details></td>
+      <td>2022-04-25T12:07:54</td>
+      <td>4.29</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc<br>    return self._engine.get_loc(casted_key)<br>  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>KeyError: 'date'<br><br>The above exception was the direct cause of the following exception:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 115, in main<br>    Georgia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 107, in export<br>    date=data["date"],<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 942, in __getitem__<br>    return self._get_value(key)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 1051, in _get_value<br>    loc = self.index.get_loc(label)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc<br>    raise KeyError(key) from err<br>KeyError: 'date'<br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.moldova</td>
+      <td>cowidev.testing.incremental.cambodia</td>
       <td>❌</td>
-      <td>False</td>
-      <td>2.15</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 98, in main<br>    Moldova().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 84, in export<br>    data = self.read()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 28, in read<br>    data = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 42, in _parse_data<br>    daily_change = self._parse_metrics(text)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 79, in _parse_metrics<br>    count = int(re.search(self.regex["count"], text).group(1))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
+      <td>2022-04-25T11:59:20</td>
+      <td>8.13</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py", line 41, in main<br>    Cambodia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py", line 19, in export<br>    count = clean_count(soup.select("p+ div strong:nth-child(1)")[0].text)<br>IndexError: list index out of range<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.costa_rica</td>
       <td>❌</td>
-      <td>False</td>
-      <td>1.05</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 60, in main<br>    CostaRica().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 55, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 17, in read<br>    df = pd.read_csv(self.source_url, delimiter=",", usecols=["nue_posi", "conf_nexo", "nue_descar", "FECHA"])<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__<br>    self._open_handles(src, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles<br>    self.handles = get_handle(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 609, in get_handle<br>    ioargs = _get_filepath_or_buffer(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 312, in _get_filepath_or_buffer<br>    with urlopen(req_info) as req:<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 404: <br></pre></details></td>
+      <td>2022-04-25T11:28:39</td>
+      <td>1.07</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 60, in main<br>    CostaRica().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 55, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py", line 17, in read<br>    df = pd.read_csv(self.source_url, delimiter=",", usecols=["nue_posi", "conf_nexo", "nue_descar", "FECHA"])<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__<br>    self._open_handles(src, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles<br>    self.handles = get_handle(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 609, in get_handle<br>    ioargs = _get_filepath_or_buffer(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 312, in _get_filepath_or_buffer<br>    with urlopen(req_info) as req:<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 404: <br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.africacdc</td>
+      <td>cowidev.testing.incremental.emro</td>
       <td>❌</td>
-      <td>False</td>
-      <td>0.60</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py", line 130, in main<br>    AfricaCDC().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py", line 126, in export<br>    self.increment_countries(df)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py", line 113, in increment_countries<br>    increment(<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 50, in increment<br>    _check_fields(df_current, country, source_url, source_label, units, date, count, daily_change)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 101, in _check_fields<br>    raise TypeError(<br>TypeError: Check `cumulative_total` type! It can't be NaN if no value for `daily_change` is provided.<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.andorra</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.guatemala</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.indonesia</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.kazakhstan</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.benin</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.gibraltar</td>
-      <td>⚠️</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td></td>
+      <td>2022-04-25T11:27:18</td>
+      <td>12.63</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 155, in main<br>    EMRO().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 150, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 54, in read<br>    df = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 64, in _parse_data<br>    self.date = self._parse_date(df_list)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 87, in _parse_date<br>    date = extract_clean_date(date_str.lower(), regex=self.regex["date"], date_format="%d %B %Y")<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/clean/dates.py", line 121, in extract_clean_date<br>    date_raw = re.search(regex, text).groups()<br>AttributeError: 'NoneType' object has no attribute 'groups'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.ukraine</td>
       <td>⚠️</td>
-      <td>NaN</td>
+      <td>2022-04-25T11:25:47</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.vanuatu</td>
       <td>⚠️</td>
+      <td>2022-04-25T11:25:47</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.gibraltar</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:25:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.argentina</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>193.47</td>
+      <td>cowidev.testing.incremental.benin</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:25:17</td>
+      <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.guam</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>168.94</td>
+      <td>cowidev.testing.batch.kazakhstan</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.philippines</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>104.88</td>
+      <td>cowidev.testing.batch.indonesia</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:23:55</td>
+      <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.liechtenstein</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>67.48</td>
+      <td>cowidev.testing.batch.guatemala</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:23:53</td>
+      <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.northern_mariana_islands</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>63.04</td>
+      <td>cowidev.testing.batch.andorra</td>
+      <td>⚠️</td>
+      <td>2022-04-25T11:23:46</td>
+      <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.canada</td>
+      <td>cowidev.testing.incremental.moldova</td>
       <td>✅</td>
-      <td>True</td>
-      <td>53.60</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.luxembourg</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>52.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bahamas</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>51.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.puerto_rico</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>51.55</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_states</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>49.50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_states_virgin_islands</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>47.78</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.nepal</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>38.61</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.marshall_islands</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>36.98</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.turkey</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>33.22</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.estonia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>31.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.netherlands</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>28.60</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.haiti</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>28.00</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.nicaragua</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>25.27</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.myanmar</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>24.85</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.spain</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>22.67</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.switzerland</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>21.10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.kosovo</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>19.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.cuba</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>13.95</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.belize</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>12.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.brazil</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>12.61</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.fiji</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>10.94</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.taiwan</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>10.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.north_macedonia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>9.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.papua_new_guinea</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>9.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.cape_verde</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>8.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.peru</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>7.52</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.pakistan</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>7.32</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.bosnia_herzegovina</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>7.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.croatia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>6.93</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.thailand</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>6.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.new_zealand</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>6.69</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.mexico</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>6.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.belgium</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>6.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.rwanda</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>5.78</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.south_korea</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>5.42</td>
+      <td>2022-04-25T12:18:08</td>
+      <td>1.27</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.libya</td>
       <td>✅</td>
-      <td>True</td>
-      <td>5.41</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.laos</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>5.32</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>5.03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.antigua_barbuda</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.86</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.cyprus</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.equatorial_guinea</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.finland</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.68</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.cambodia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.syria</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.32</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.france</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>4.18</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.timor</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.79</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.denmark</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.vietnam</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.58</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.qatar</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.36</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.paraguay</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.15</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.sri_lanka</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.tunisia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.05</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.iran</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>3.04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_arab_emirates</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>2.85</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.albania</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>2.79</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.hungary</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>2.56</td>
+      <td>2022-04-25T12:15:17</td>
+      <td>2.89</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.barbados</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.44</td>
+      <td>2022-04-25T11:58:52</td>
+      <td>3.00</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.colombia</td>
+      <td>cowidev.testing.batch.spain</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.36</td>
+      <td>2022-04-25T11:47:11</td>
+      <td>1.28</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.hong_kong</td>
+      <td>cowidev.testing.batch.south_korea</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.21</td>
+      <td>2022-04-25T11:44:26</td>
+      <td>4.99</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.armenia</td>
+      <td>cowidev.testing.incremental.vietnam</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.20</td>
+      <td>2022-04-25T11:25:52</td>
+      <td>4.83</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.maldives</td>
+      <td>cowidev.testing.incremental.syria</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.09</td>
+      <td>2022-04-25T11:25:51</td>
+      <td>6.50</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.el_salvador</td>
+      <td>cowidev.testing.batch.argentina</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.08</td>
+      <td>2022-04-25T11:25:49</td>
+      <td>122.81</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.israel</td>
+      <td>cowidev.testing.incremental.nepal</td>
       <td>✅</td>
-      <td>True</td>
-      <td>2.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bahrain</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>2.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.greece</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.99</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.lebanon</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.99</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.ecdc</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.93</td>
+      <td>2022-04-25T11:25:48</td>
+      <td>15.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.suriname</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.72</td>
+      <td>2022-04-25T11:25:48</td>
+      <td>4.38</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.lithuania</td>
+      <td>cowidev.testing.incremental.timor</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.69</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_lucia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.61</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.russia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.slovenia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.55</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.bulgaria</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.uruguay</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.azerbaijan</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.47</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.ecuador</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.41</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.mongolia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.37</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.belarus</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.31</td>
+      <td>2022-04-25T11:25:48</td>
+      <td>3.46</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.togo</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.28</td>
+      <td>2022-04-25T11:25:48</td>
+      <td>3.28</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.austria</td>
+      <td>cowidev.testing.incremental.tunisia</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.27</td>
+      <td>2022-04-25T11:25:48</td>
+      <td>3.23</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.bangladesh</td>
+      <td>cowidev.testing.incremental.kosovo</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.27</td>
+      <td>2022-04-25T11:25:47</td>
+      <td>19.50</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.slovakia</td>
+      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.17</td>
+      <td>2022-04-25T11:25:47</td>
+      <td>3.63</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.senegal</td>
+      <td>cowidev.testing.incremental.myanmar</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.16</td>
+      <td>2022-04-25T11:25:44</td>
+      <td>12.62</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.papua_new_guinea</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:44</td>
+      <td>6.36</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.singapore</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.15</td>
+      <td>2022-04-25T11:25:44</td>
+      <td>1.32</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.serbia</td>
+      <td>cowidev.testing.incremental.saint_lucia</td>
       <td>✅</td>
-      <td>True</td>
-      <td>1.12</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.faeroe_islands</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.12</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_kingdom</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.09</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.india</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>1.05</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.jordan</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.99</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.czechia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.97</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.south_africa</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.latvia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.88</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.chile</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.86</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.zambia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.80</td>
+      <td>2022-04-25T11:25:44</td>
+      <td>1.02</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.sweden</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.79</td>
+      <td>2022-04-25T11:25:44</td>
+      <td>0.62</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.portugal</td>
+      <td>cowidev.testing.incremental.paraguay</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.77</td>
+      <td>2022-04-25T11:25:43</td>
+      <td>2.95</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.bolivia</td>
+      <td>cowidev.testing.incremental.russia</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.iceland</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.70</td>
+      <td>2022-04-25T11:25:43</td>
+      <td>0.78</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.saint_kitts_nevis</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.67</td>
+      <td>2022-04-25T11:25:43</td>
+      <td>0.45</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.germany</td>
+      <td>cowidev.testing.incremental.nicaragua</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.62</td>
+      <td>2022-04-25T11:25:42</td>
+      <td>6.26</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.australia</td>
+      <td>cowidev.testing.incremental.north_macedonia</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.58</td>
+      <td>2022-04-25T11:25:40</td>
+      <td>2.56</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.trinidad_and_tobago</td>
+      <td>cowidev.testing.incremental.haiti</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.53</td>
+      <td>2022-04-25T11:25:38</td>
+      <td>11.17</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.japan</td>
+      <td>cowidev.testing.incremental.new_zealand</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.52</td>
+      <td>2022-04-25T11:25:38</td>
+      <td>4.16</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.ireland</td>
+      <td>cowidev.testing.incremental.mongolia</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.malta</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.norway</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.italy</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.29</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.malaysia</td>
-      <td>✅</td>
-      <td>True</td>
-      <td>0.26</td>
+      <td>2022-04-25T11:25:33</td>
+      <td>2.41</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.morocco</td>
       <td>✅</td>
-      <td>True</td>
-      <td>0.16</td>
+      <td>2022-04-25T11:25:33</td>
+      <td>1.07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.maldives</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:32</td>
+      <td>1.69</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.laos</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:31</td>
+      <td>3.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.guam</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:30</td>
+      <td>97.67</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.fiji</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:30</td>
+      <td>4.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.lebanon</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:30</td>
+      <td>0.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.iran</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:29</td>
+      <td>2.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.jordan</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:28</td>
+      <td>0.90</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.cape_verde</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:27</td>
+      <td>8.43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.greece</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:27</td>
+      <td>1.04</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.croatia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:26</td>
+      <td>6.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.equatorial_guinea</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:26</td>
+      <td>3.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.faeroe_islands</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:26</td>
+      <td>0.90</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.philippines</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:25</td>
+      <td>75.82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bahamas</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:25</td>
+      <td>17.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:23</td>
+      <td>2.56</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_states_virgin_islands</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:22</td>
+      <td>29.07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_states</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:20</td>
+      <td>32.67</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bulgaria</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:20</td>
+      <td>2.71</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.belize</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:18</td>
+      <td>4.70</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.antigua_barbuda</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:17</td>
+      <td>12.82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.belarus</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:13</td>
+      <td>1.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bangladesh</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:11</td>
+      <td>2.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.puerto_rico</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:10</td>
+      <td>48.04</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bahrain</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:09</td>
+      <td>0.99</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.albania</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:08</td>
+      <td>4.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.azerbaijan</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:08</td>
+      <td>3.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.switzerland</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:04</td>
+      <td>23.75</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.africacdc</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:04</td>
+      <td>1.48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.liechtenstein</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:03</td>
+      <td>66.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.zambia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:03</td>
+      <td>1.39</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.uruguay</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:02</td>
+      <td>2.04</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.turkey</td>
+      <td>✅</td>
+      <td>2022-04-25T11:25:00</td>
+      <td>14.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_arab_emirates</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:53</td>
+      <td>7.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_kingdom</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:47</td>
+      <td>1.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.thailand</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:45</td>
+      <td>3.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.taiwan</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:45</td>
+      <td>3.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.trinidad_and_tobago</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:45</td>
+      <td>0.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.luxembourg</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:41</td>
+      <td>44.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.northern_mariana_islands</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:41</td>
+      <td>38.92</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.sri_lanka</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:41</td>
+      <td>2.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.slovenia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:38</td>
+      <td>2.21</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.south_africa</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:37</td>
+      <td>1.29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.marshall_islands</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:36</td>
+      <td>39.35</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.slovakia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:36</td>
+      <td>0.95</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.serbia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:35</td>
+      <td>1.43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.senegal</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:33</td>
+      <td>0.82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:32</td>
+      <td>1.45</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.rwanda</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:31</td>
+      <td>3.90</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.qatar</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:27</td>
+      <td>3.50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.netherlands</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:23</td>
+      <td>25.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.canada</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:22</td>
+      <td>35.79</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.portugal</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:22</td>
+      <td>0.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.peru</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:09</td>
+      <td>6.07</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.estonia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:03</td>
+      <td>10.65</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.norway</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:03</td>
+      <td>0.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.mexico</td>
+      <td>✅</td>
+      <td>2022-04-25T11:24:02</td>
+      <td>5.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.lithuania</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:58</td>
+      <td>1.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.france</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:57</td>
+      <td>4.24</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.malaysia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:57</td>
+      <td>0.25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.malta</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:57</td>
+      <td>0.25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.cuba</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>8.89</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.india</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>1.58</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.israel</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>1.37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.japan</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>0.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.latvia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>0.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.italy</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:56</td>
+      <td>0.33</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hong_kong</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:55</td>
+      <td>2.15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hungary</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:55</td>
+      <td>2.03</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.ireland</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:55</td>
+      <td>0.32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.iceland</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:54</td>
+      <td>1.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.bosnia_herzegovina</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:53</td>
+      <td>7.17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.ecdc</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:53</td>
+      <td>3.01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.finland</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:53</td>
+      <td>1.02</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.germany</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:53</td>
+      <td>0.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.brazil</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:52</td>
+      <td>6.45</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.cyprus</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:52</td>
+      <td>3.85</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.denmark</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:52</td>
+      <td>2.88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.ecuador</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:52</td>
+      <td>1.64</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.colombia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:50</td>
+      <td>3.72</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.czechia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:50</td>
+      <td>0.61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.armenia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:49</td>
+      <td>3.17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.belgium</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:49</td>
+      <td>3.04</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.chile</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:48</td>
+      <td>0.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.austria</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:47</td>
+      <td>1.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.australia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:47</td>
+      <td>0.85</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.bolivia</td>
+      <td>✅</td>
+      <td>2022-04-25T11:23:47</td>
+      <td>0.83</td>
       <td></td>
     </tr>
   </tbody>
