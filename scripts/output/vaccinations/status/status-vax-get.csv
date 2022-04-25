@@ -81,7 +81,7 @@ cowidev.vax.incremental.isle_of_man,1.14,True,True,,
 cowidev.vax.incremental.jamaica,1.39,True,True,,
 cowidev.vax.incremental.japan,1.06,True,True,,
 cowidev.vax.incremental.kazakhstan,7.05,True,True,,
-cowidev.vax.incremental.kosovo,3.35,False,2022-04-25T09:53:59,"Traceback (most recent call last):
+cowidev.vax.incremental.kosovo,7.25,False,2022-04-25T16:32:29,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
@@ -101,27 +101,7 @@ ValueError: Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html 
 cowidev.vax.incremental.kyrgyzstan,0.87,True,True,,
 cowidev.vax.incremental.laos,2.17,True,True,,
 cowidev.vax.incremental.lebanon,0.73,True,True,,
-cowidev.vax.incremental.libya,5.94,False,2022-04-25T09:54:05,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 99, in main
-    Libya().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 85, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 24, in read
-    data = self._parse_data(soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 30, in _parse_data
-    date = self._parse_date_from_soup(soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 46, in _parse_date_from_soup
-    return clean_date(date, ""%d / %m / %Yم"")
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
-    dt = datetime.strptime(date_or_text, fmt) - timedelta(days=minus_days)
-  File ""/usr/lib/python3.10/_strptime.py"", line 568, in _strptime_datetime
-    tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File ""/usr/lib/python3.10/_strptime.py"", line 349, in _strptime
-    raise ValueError(""time data %r does not match format %r"" %
-ValueError: time data 'حتى تاريخ 21 / 04 / 2022م' does not match format '%d / %m / %Yم'
-",time data 'حتى تاريخ 21 / 04 / 2022م' does not match format '%d / %m / %Yم'
+cowidev.vax.incremental.libya,2.47,True,2022-04-25T16:35:13,,
 cowidev.vax.incremental.macao,14.56,True,2022-04-25T07:16:00,,
 cowidev.vax.incremental.mexico,4.03,True,2022-04-25T07:15:50,,
 cowidev.vax.incremental.moldova,1.5,True,2022-04-25T07:15:50,,
