@@ -50,6 +50,9 @@ class SouthKorea(CountryTestBase):
         df.loc[df["Date"] > "2022-02-06", "선별진료소(통합)"] = df["Total"]
 
         df["Daily change in cumulative total"] = df["선별진료소(통합)"]
+        df["Daily change in cumulative total"] = pd.to_numeric(
+            df["Daily change in cumulative total"].str.replace(",", "")
+        )
         return df[["Date", "Daily change in cumulative total"]]
 
     def read(self):
