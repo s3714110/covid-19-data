@@ -629,30 +629,6 @@ class DatasetGenerator:
             )
         )
 
-    def pipe_locations_to_html(self, df: pd.DataFrame) -> pd.DataFrame:
-        locale.setlocale(locale.LC_TIME, "en_US")
-        # build table
-        country_faqs = {
-            "Israel",
-            "Palestine",
-        }
-        faq = ' (see <a href="https://ourworldindata.org/covid-vaccinations#frequently-asked-questions">FAQ</a>)'
-        df = df.assign(
-            location=(df.location.apply(lambda x: f"<td><strong>{x}</strong>{faq if x in country_faqs else ''}</td>")),
-            source=('<td><a href="' + df.source_website + '">' + df.source_name + "</a></td>"),
-            last_observation_date=(df.last_observation_date.apply(lambda x: f"<td>{x.strftime('%b. %e, %Y')}</td>")),
-            vaccines=(df.vaccines.apply(lambda x: f"<td>{x}</td>")),
-        )[["location", "source", "last_observation_date", "vaccines"]]
-        df.columns = [col.capitalize().replace("_", " ") for col in df.columns]
-        body = ("<tr>" + df.sum(axis=1) + "</tr>").sum(axis=0)
-        header = "<tr>" + "".join(f"<th>{col}</th>" for col in df.columns) + "</tr>"
-        html_table = f"<table><tbody>{header}{body}</tbody></table>"
-        coverage_info = f"Vaccination against COVID-19 has now started in {len(self._countries_covered)} locations."
-        html_table = (
-            f'<p><strong>{coverage_info}</strong></p><div class="tableContainer">{html_table}</div>\n'
-        ).replace("  ", " ")
-        return html_table
-
     def export(
         self,
         df_automated: pd.DataFrame,
@@ -664,7 +640,7 @@ class DatasetGenerator:
         df_grapher: pd.DataFrame,
         df_manufacturer_grapher: pd.DataFrame,
         df_age_grapher: pd.DataFrame,
-        html_table: str,
+        # html_table: str,
     ):
         # Export
         files = [
@@ -689,7 +665,7 @@ class DatasetGenerator:
                     "COVID-19 - Vaccinations by age group.csv",
                 ),
             ),
-            (html_table, PATHS.DATA_INTERNAL_VAX_TABLE),
+            # (html_table, PATHS.DATA_INTERNAL_VAX_TABLE),
         ]
         for obj, path in files:
             if path.endswith(".csv"):
@@ -762,7 +738,7 @@ class DatasetGenerator:
 
         # HTML
         logger.info("9/10 Generating HTML...")
-        html_table = df_locations.pipe(self.pipe_locations_to_html)
+        # html_table = df_locations.pipe(self.pipe_locations_to_html)
 
         # Export
         logger.info("10/10 Exporting files...")
@@ -776,7 +752,7 @@ class DatasetGenerator:
             df_grapher=df_grapher,
             df_manufacturer_grapher=df_manufacturer_grapher,
             df_age_grapher=df_age_grapher,
-            html_table=html_table,
+            # html_table=html_table,
         )
         self._cp_locations_files()
 
