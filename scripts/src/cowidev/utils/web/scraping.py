@@ -50,7 +50,8 @@ def get_response(
     if not response.ok:
         scrapapi_used = "Scraper API was used!\n" if use_proxy else ""
         raise ValueError(
-            f"Source {source_orig} not reached! {scrapapi_used}Error code {response.status_code} {response.reason}: {response.content}",
+            f"Source {source_orig} not reached! {scrapapi_used}Error code {response.status_code} {response.reason}"
+            # +": {response.content}",
         )
     return response
 
