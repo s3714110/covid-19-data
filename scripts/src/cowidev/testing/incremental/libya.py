@@ -51,7 +51,7 @@ class Libya:
         """Get date from soup."""
         date_list = soup.find_all("strong")
         date = [date for date in date_list if re.search(self.regex["date"], date.text)]
-        date = date[0].text.replace(" ", "").replace("م", "")
+        date = date[0].text.replace(" ", "").replace("حتىتاريخ", "").replace("م", "")
         return clean_date(date, "%d/%m/%Y")
 
     def _parse_metrics(self, elem: element.Tag) -> int:
