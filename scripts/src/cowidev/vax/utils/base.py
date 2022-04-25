@@ -105,6 +105,7 @@ class CountryVaxBase:
             column_metrics=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated"],
             max_removed_rows=max_removed_rows,
             strict=strict,
+            new=True,
         )
 
     def _postprocessing(self, df, valid_cols_only):
