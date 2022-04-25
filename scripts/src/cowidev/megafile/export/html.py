@@ -4,7 +4,7 @@ import locale
 from cowidev import PATHS
 
 
-def pipe_vax_locations_to_html(self, df: pd.DataFrame) -> pd.DataFrame:
+def pipe_vax_locations_to_html(df: pd.DataFrame) -> pd.DataFrame:
     locale.setlocale(locale.LC_TIME, "en_US")
     # build table
     country_faqs = {
