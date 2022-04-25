@@ -3,9 +3,12 @@ import re
 import random
 
 import pandas as pd
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait as Wait
 
 from cowidev.utils.clean import clean_count, extract_clean_date, clean_date
-from cowidev.utils.web.scraping import get_driver
+from cowidev.utils.web.scraping import get_driver, sel_options
 from cowidev.vax.utils.base import CountryVaxBase
 
 
@@ -24,13 +27,16 @@ class China(CountryVaxBase):
         "boosters": r"加强免疫(?:已经)?接种的?是?([\d\.亿零]+万)人",
     }
     num_links_complete = 6
-    timeout = 45
+    timeout = 30
 
     def read(self, last_update: str):
         data = []
-        with get_driver(firefox=True, timeout=self.timeout) as driver:
+        options = sel_options(headless=True, firefox=True)
+        options.set_capability("pageLoadStrategy", "none")
+        with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             driver.get(self.source_url)
-            time.sleep(random.randint(5, 10))
+            time.sleep(random.randint(1, 2))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
             links = self._get_links(driver)
             for link in links:
                 data_ = self._parse_data(driver, link)
@@ -41,7 +47,8 @@ class China(CountryVaxBase):
 
     def _parse_data(self, driver, url):
         driver.get(url)
-        time.sleep(random.randint(2, 5))
+        time.sleep(random.randint(1, 2))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
         elem = driver.find_element_by_id("xw_box")
         return {
             "date": extract_clean_date(elem.text, self.regex["date"], "%Y %m %d"),
@@ -55,9 +62,12 @@ class China(CountryVaxBase):
 
     def read_complete(self):
         records = []
-        with get_driver(firefox=True, timeout=self.timeout) as driver:
+        options = sel_options(headless=True, firefox=True)
+        options.set_capability("pageLoadStrategy", "none")
+        with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             driver.get(self.source_url_complete)
-            time.sleep(random.randint(5, 10))
+            time.sleep(random.randint(1, 2))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
                 record = self._parse_data_complete(driver, link)
@@ -78,7 +88,8 @@ class China(CountryVaxBase):
             return int(num)
 
         driver.get(url)
-        time.sleep(random.randint(2, 5))
+        time.sleep(random.randint(1, 2))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
         year = re.search(self.regex_complete["title"], driver.title).group(1)
