@@ -1,60 +1,10 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,1.94,True,True,,
-cowidev.vax.batch.australia,1.42,True,True,,
+cowidev.vax.batch.australia,1.61,True,2022-04-25T16:24:52,,
 cowidev.vax.batch.austria,,,,,
 cowidev.vax.batch.belgium,4.66,True,True,,
 cowidev.vax.batch.bolivia,1.4,True,True,,
-cowidev.vax.batch.canada,1.62,False,False,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 120, in main
-    Canada().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 115, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 93, in pipeline
-    df.pipe(self.pipe_filter_rows)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 102, in make_monotonic
-    return mkm(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 45, in make_monotonic
-    raise Exception(
-Exception: 13 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-           date  total_vaccinations  people_vaccinated  people_fully_vaccinated
-749  2022-02-12            79754763         32473559.0                 30573632
-766  2022-03-01            81263266         32583949.0                 30912146
-768  2022-03-03            81338363         32594569.0                 30931972
-779  2022-03-14            81706844         32638611.0                 31043079
-780  2022-03-15            81734416         32642100.0                 31050853
-781  2022-03-16            81763629         32646640.0                 31059248
-782  2022-03-17            81792572         32650847.0                 31067971
-783  2022-03-18            81822344         32655306.0                 31076583
-784  2022-03-19            81844572         32658916.0                 31082802
-794  2022-03-29            82094112         32669247.0                 31153862
-813  2022-04-17            83047995         33312389.0                 31246710
-814  2022-04-18            83054912         33317357.0                 31247200
-815  2022-04-19            83093983         33349087.0                 31248682
-","13 rowse have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
-           date  total_vaccinations  people_vaccinated  people_fully_vaccinated
-749  2022-02-12            79754763         32473559.0                 30573632
-766  2022-03-01            81263266         32583949.0                 30912146
-768  2022-03-03            81338363         32594569.0                 30931972
-779  2022-03-14            81706844         32638611.0                 31043079
-780  2022-03-15            81734416         32642100.0                 31050853
-781  2022-03-16            81763629         32646640.0                 31059248
-782  2022-03-17            81792572         32650847.0                 31067971
-783  2022-03-18            81822344         32655306.0                 31076583
-784  2022-03-19            81844572         32658916.0                 31082802
-794  2022-03-29            82094112         32669247.0                 31153862
-813  2022-04-17            83047995         33312389.0                 31246710
-814  2022-04-18            83054912         33317357.0                 31247200
-815  2022-04-19            83093983         33349087.0                 31248682"
+cowidev.vax.batch.canada,1.23,True,2022-04-25T16:23:31,,
 cowidev.vax.batch.chile,0.63,True,True,,
 cowidev.vax.batch.czechia,1.99,True,True,,
 cowidev.vax.batch.denmark,2.49,True,True,,
@@ -76,7 +26,7 @@ cowidev.vax.batch.luxembourg,1.35,True,True,,
 cowidev.vax.batch.malaysia,0.48,True,True,,
 cowidev.vax.batch.malta,0.59,True,True,,
 cowidev.vax.batch.netherlands,0.47,True,True,,
-cowidev.vax.batch.new_zealand,15.87,True,True,,
+cowidev.vax.batch.new_zealand,4.69,True,2022-04-25T16:24:55,,
 cowidev.vax.batch.norway,1.52,True,True,,
 cowidev.vax.batch.peru,5.42,True,True,,
 cowidev.vax.batch.portugal,0.83,True,True,,
@@ -131,28 +81,44 @@ cowidev.vax.incremental.isle_of_man,1.14,True,True,,
 cowidev.vax.incremental.jamaica,1.39,True,True,,
 cowidev.vax.incremental.japan,1.06,True,True,,
 cowidev.vax.incremental.kazakhstan,7.05,True,True,,
-cowidev.vax.incremental.kosovo,1.27,True,True,,
+cowidev.vax.incremental.kosovo,3.35,False,2022-04-25T09:53:59,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
+    Kosovo().export()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
+    df = self._parse_data(soup)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
+    soup = get_soup(link)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+    raise ValueError(
+ValueError: Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
+",Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
 cowidev.vax.incremental.kyrgyzstan,0.87,True,True,,
 cowidev.vax.incremental.laos,2.17,True,True,,
 cowidev.vax.incremental.lebanon,0.73,True,True,,
-cowidev.vax.incremental.libya,5.47,False,False,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.libya,5.94,False,2022-04-25T09:54:05,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 99, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 99, in main
     Libya().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 85, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 85, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 24, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 24, in read
     data = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 30, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 30, in _parse_data
     date = self._parse_date_from_soup(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 46, in _parse_date_from_soup
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/libya.py"", line 46, in _parse_date_from_soup
     return clean_date(date, ""%d / %m / %Yم"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
     dt = datetime.strptime(date_or_text, fmt) - timedelta(days=minus_days)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/_strptime.py"", line 568, in _strptime_datetime
+  File ""/usr/lib/python3.10/_strptime.py"", line 568, in _strptime_datetime
     tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/_strptime.py"", line 349, in _strptime
+  File ""/usr/lib/python3.10/_strptime.py"", line 349, in _strptime
     raise ValueError(""time data %r does not match format %r"" %
 ValueError: time data 'حتى تاريخ 21 / 04 / 2022م' does not match format '%d / %m / %Yم'
 ",time data 'حتى تاريخ 21 / 04 / 2022م' does not match format '%d / %m / %Yم'
