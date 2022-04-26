@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`3/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-26T07:17:01`.
+`1/117` scripts failed, `10/117` were skipped. Latest update was `2022-04-26T11:50:24`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,25 +19,11 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.batch.south_korea</td>
-      <td>❌</td>
-      <td>2022-04-26T07:16:47</td>
-      <td>9.96</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 181, in main<br>    SouthKorea().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 164, in export<br>    df_base = self.read().pipe(self.pipeline_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 86, in pipeline_base<br>    df.pipe(self.pipe_rename_columns_raw)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 43, in pipe_rename_columns_raw<br>    self._check_format_multicols(df, columns_lv)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 58, in _check_format_multicols<br>    raise ValueError(f"Unknown columns in level {lv}: {diff}")<br>ValueError: Unknown columns in level 1: Index(['4차'], dtype='object')<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.lebanon</td>
       <td>❌</td>
-      <td>2022-04-26T07:16:47</td>
-      <td>0.39</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 100, in main<br>    Lebanon().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 86, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 45, in read<br>    people_vaccinated = self._get_api_value(self.people_vaccinated_query)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 61, in _get_api_value<br>    data = request_json(self.source_url, json=query, headers=self.headers, request_method="post")<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 106, in request_json<br>    text = request_text(url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 127, in request_text<br>    soup = get_soup(url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://impactpublicdashboard.cib.gov.lb/s/public/elasticsearch/vaccine_registration_event_data/_search?rest_total_hits_as_int=true&ignore_unavailable=true&ignore_throttled=true&preference=1635837427794&timeout=30000ms not reached! Error code 403 Forbidden<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
-      <td>❌</td>
-      <td>2022-04-26T07:16:37</td>
-      <td>0.81</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py", line 187, in main<br>    HongKong().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py", line 175, in export<br>    df_age = df_base.pipe(self.pipeline_age)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py", line 160, in pipeline_age<br>    df.pipe(self.pipe_age_checks)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py", line 133, in pipe_age_checks<br>    raise ValueError(f"Wrong age group(s): {age_wrong}")<br>ValueError: Wrong age group(s): {'0-11', '12-19'}<br></pre></details></td>
+      <td>2022-04-26T11:49:44</td>
+      <td>0.67</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 100, in main<br>    Lebanon().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 86, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 45, in read<br>    people_vaccinated = self._get_api_value(self.people_vaccinated_query)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 61, in _get_api_value<br>    data = request_json(self.source_url, json=query, headers=self.headers, request_method="post")<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 106, in request_json<br>    text = request_text(url, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 127, in request_text<br>    soup = get_soup(url, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://impactpublicdashboard.cib.gov.lb/s/public/elasticsearch/vaccine_registration_event_data/_search?rest_total_hits_as_int=true&ignore_unavailable=true&ignore_throttled=true&preference=1635837427794&timeout=30000ms not reached! Error code 403 Forbidden<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.vietnam</td>
@@ -107,6 +93,27 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-04-26T07:13:46</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.poland</td>
+      <td>✅</td>
+      <td>2022-04-26T11:50:24</td>
+      <td>0.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.south_korea</td>
+      <td>✅</td>
+      <td>2022-04-26T11:49:30</td>
+      <td>5.92</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.hong_kong</td>
+      <td>✅</td>
+      <td>2022-04-26T11:38:22</td>
+      <td>0.33</td>
       <td></td>
     </tr>
     <tr>
@@ -226,13 +233,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-04-26T07:15:56</td>
       <td>0.61</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.poland</td>
-      <td>✅</td>
-      <td>2022-04-26T07:15:56</td>
-      <td>0.16</td>
       <td></td>
     </tr>
     <tr>
