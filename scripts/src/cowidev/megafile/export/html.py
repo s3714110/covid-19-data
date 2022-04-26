@@ -34,7 +34,6 @@ def pipe_vax_locations_to_html(df: pd.DataFrame) -> pd.DataFrame:
 
 def generate_htmls():
     # Vaccinations html source table
-    print(1)
     df = pd.read_csv(PATHS.DATA_VAX_META_FILE)
     html_table = pipe_vax_locations_to_html(df)
     with open(PATHS.DATA_INTERNAL_VAX_TABLE, "w") as f:
