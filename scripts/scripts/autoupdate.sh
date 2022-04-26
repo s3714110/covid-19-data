@@ -74,6 +74,35 @@ fi
 python -m cowidev.oxcgrt grapher-db
 
 # =====================================================================
+# JHU
+
+# Attempt to download JHU CSVs
+# run_python 'import jhu; jhu.download_csv()'
+cowid jhu get
+
+# If there are any unstaged changes in the repo, then one of
+# the CSVs has changed, and we need to run the update script.
+hour=$(date +%H)
+if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] || [ $hour == 22 ]; then
+  if has_changed './scripts/input/jhu/*'; then
+    echo "Generating JHU files..."
+    cowid jhu generate
+    # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
+    git add .
+    git commit -m "data(jhu): automated update"
+    git push
+  else
+    echo "JHU export is up to date"
+  fi
+fi
+
+# Always run the database update.
+# The script itself contains a check against the database
+# to make sure it doesn't run unnecessarily.
+cowid jhu grapher-db
+# run_python 'import jhu; jhu.update_db()'
+
+# =====================================================================
 # Decoupling charts
 
 hour=$(date +%H)
@@ -95,45 +124,16 @@ run_python 'import decoupling; decoupling.update_db()'
 # This basically download the vaccination data needed for some countries
 # The idea is that here we put extremely slow scripts, so their updates are managed separately
 hour=$(date +%H)
-if [ $hour == 02 ] ; then
+if [ $hour == 03 ] ; then
   echo "Generating ICE vaccination data..."
   python -m cowidev.vax.icer
 fi
 
 # =====================================================================
-# JHU
-
-# Attempt to download JHU CSVs
-# run_python 'import jhu; jhu.download_csv()'
-cowid jhu get
-
-# If there are any unstaged changes in the repo, then one of
-# the CSVs has changed, and we need to run the update script.
-hour=$(date +%H)
-if [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] ||[ $hour == 22 ] [ $hour == 00 ]; then
-  if has_changed './scripts/input/jhu/*'; then
-    echo "Generating JHU files..."
-    cowid jhu generate
-    # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
-    git add .
-    git commit -m "data(jhu): automated update"
-    git push
-  else
-    echo "JHU export is up to date"
-  fi
-fi
-
-# Always run the database update.
-# The script itself contains a check against the database
-# to make sure it doesn't run unnecessarily.
-cowid jhu grapher-db
-# run_python 'import jhu; jhu.update_db()'
-
-# =====================================================================
 # Hospital & ICU data
 
 hour=$(date +%H)
-if [ $hour == 06 ] || [ $hour == 18 ] ; then
+if [ $hour == 05 ] || [ $hour == 17 ] ; then
   # Download CSV
   echo "Generating hospital & ICU export..."
   cowid hosp generate
@@ -167,7 +167,7 @@ fi
 # Google Mobility
 
 hour=$(date +%H)
-if [ $hour == 12 ] ; then
+if [ $hour == 09 ] ; then
 
   # Download CSV
   cowid gmobility generate
@@ -197,7 +197,7 @@ run_python 'import sweden; sweden.download_data()'
 # If there are any unstaged changes in the repo, then one of
 # the CSVs has changed, and we need to run the update script.
 hour=$(date +%H)
-if [ $hour == 14 ] ; then
+if [ $hour == 11 ] ; then
   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
     echo "Generating Swedish Public Health Agency dataset..."
     run_python 'import sweden; sweden.generate_dataset()'
@@ -218,7 +218,7 @@ run_python 'import sweden; sweden.update_db()'
 # UK subnational data
 
 hour=$(date +%H)
-if [ $hour == 17 ] ; then
+if [ $hour == 13 ] ; then
   # Download CSV
   echo "Generating UK subnational export..."
   run_python 'import uk_nations; uk_nations.generate_dataset()'
@@ -252,7 +252,7 @@ run_python 'import uk_nations; uk_nations.update_db()'
 # fi
 
 hour=$(date +%H)
-if [ $hour == 19 ] ; then
+if [ $hour == 15 ] ; then
   echo "Generating US vaccination files..."
   python -m cowidev.vax.us_states etl
   python -m cowidev.vax.us_states grapher-file
@@ -270,7 +270,7 @@ fi
 # If there are any unstaged changes in the repo, then one of
 # the CSVs has changed, and we need to run the update script.
 hour=$(date +%H)
-if [ $hour == 20 ] ; then
+if [ $hour == 19 ] ; then
   echo "Generating CoVariants dataset..."
   cowid variants generate
   cowid variants grapher-io
