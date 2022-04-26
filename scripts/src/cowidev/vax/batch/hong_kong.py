@@ -17,7 +17,8 @@ class HongKong(CountryVaxBase):
         "BioNTech": "Pfizer/BioNTech",
     }
     age_valid = {
-        "0-19": "0-19",
+        "0-11": "0-19",
+        "12-19": "0-19",
         "20-29": "20-29",
         "30-39": "30-39",
         "40-49": "40-49",
@@ -134,11 +135,11 @@ class HongKong(CountryVaxBase):
         return df
 
     def pipe_age_agg(self, df: pd.DataFrame):
+        df = df.assign(age_group=df.age_group.replace(self.age_valid))
         df = df.groupby(["date", "age_group", "dose"], as_index=False).sum()
         return df
 
     def pipe_age_groups(self, df: pd.DataFrame):
-        df = df.assign(age_group=df.age_group.replace(self.age_valid))
         df[["age_group_min", "age_group_max"]] = df.age_group.str.split("-", expand=True)
         return df
 
