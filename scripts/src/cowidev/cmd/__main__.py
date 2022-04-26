@@ -70,7 +70,12 @@ def cli_export(ctx):
                     type="success",
                 ).to_slack()
     else:
-        pass
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="Megafile step ran successfully",
+                text="Public data files generated.",
+                type="success",
+            ).to_slack()
 
 
 cli.add_command(click_test)
