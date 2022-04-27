@@ -37,6 +37,8 @@ class China(CountryVaxBase):
             driver.get(self.source_url)
             time.sleep(random.randint(1, 2))
             Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
+            time.sleep(random.randint(2, 3))
+            driver.execute_script("window.stop();")
             links = self._get_links(driver)
             for link in links:
                 data_ = self._parse_data(driver, link)
@@ -49,6 +51,8 @@ class China(CountryVaxBase):
         driver.get(url)
         time.sleep(random.randint(1, 2))
         Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
+        time.sleep(random.randint(2, 3))
+        driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         return {
             "date": extract_clean_date(elem.text, self.regex["date"], "%Y %m %d"),
@@ -68,6 +72,8 @@ class China(CountryVaxBase):
             driver.get(self.source_url_complete)
             time.sleep(random.randint(1, 2))
             Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
+            time.sleep(random.randint(2, 3))
+            driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
                 record = self._parse_data_complete(driver, link)
@@ -90,6 +96,8 @@ class China(CountryVaxBase):
         driver.get(url)
         time.sleep(random.randint(1, 2))
         Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
+        time.sleep(random.randint(2, 3))
+        driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
         year = re.search(self.regex_complete["title"], driver.title).group(1)
