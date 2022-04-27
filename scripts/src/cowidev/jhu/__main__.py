@@ -370,19 +370,21 @@ def main(logger, skip_download=False):
         logger.info("Data correctness check %s.\n" % colored("passed", "green"))
     else:
         logger.error("Data correctness check %s.\n" % colored("failed", "red"))
-        sys.exit(1)
+        raise ValueError("Data correctness check failed.")
+        # sys.exit(1)
 
     if export(df_merged):
         logger.info("Successfully exported CSVs to %s\n" % colored(os.path.abspath(OUTPUT_PATH), "magenta"))
     else:
         logger.error("JHU export failed.\n")
-        sys.exit(1)
+        raise ValueError("JHU export failed.")
+        # sys.exit(1)
 
-    logger.info("Generating megafile…")
-    generate_megafile(logger)
-    logger.info("Megafile is ready.")
+    # logger.info("Generating megafile…")
+    # generate_megafile(logger)
+    # logger.info("Megafile is ready.")
 
-    send_success(channel="corona-data-updates", title="Updated JHU GitHub exports")
+    # send_success(channel="corona-data-updates", title="Updated JHU GitHub exports")
 
     logger.info("Generating subnational file…")
     create_subnational()

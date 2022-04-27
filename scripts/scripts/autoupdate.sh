@@ -86,7 +86,8 @@ hour=$(date +%H)
 if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] || [ $hour == 22 ]; then
   if has_changed './scripts/input/jhu/*'; then
     echo "Generating JHU files..."
-    cowid jhu generate
+    cowid --server-mode jhu generate
+    cowid --server-mode megafile
     # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
     git add .
     git commit -m "data(jhu): automated update"
