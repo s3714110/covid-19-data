@@ -3,7 +3,8 @@ import re
 from bs4 import BeautifulSoup
 import pandas as pd
 
-from cowidev.utils import get_soup, clean_count, clean_date
+from cowidev.utils import get_soup, clean_count
+from cowidev.utils.clean import extract_clean_date
 from cowidev.vax.utils.incremental import increment, enrich_data
 
 
@@ -43,7 +44,7 @@ class Libya:
     def _parse_date_from_soup(self, soup: BeautifulSoup) -> str:
         """Get date from soup."""
         date = soup.find(text=re.compile(self.regex["date"]))
-        return clean_date(date, "%d / %m / %Yم")
+        return extract_clean_date(date, r".* (\d{1,2} \/ \d{1,2} \/ 20\d{2})م",  "%d / %m / %Y")
 
     def _parse_metrics_from_soup(self, soup: BeautifulSoup) -> tuple:
         """Get metrics from soup."""

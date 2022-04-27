@@ -1,7 +1,7 @@
 import pandas as pd
 
 from datetime import datetime
-from dateutil.relativedelta import relativedelta, FR
+from dateutil.relativedelta import relativedelta, TU
 
 from cowidev.utils.clean.dates import clean_date_series
 from cowidev.testing import CountryTestBase
@@ -19,8 +19,8 @@ class CostaRica(CountryTestBase):
 
     @property
     def source_url(self):
-        dt1 = (datetime.now() + relativedelta(weekday=FR(-1))).strftime("%Y_%m_%d")
-        dt2 = (datetime.now() + relativedelta(weekday=FR(-1))).strftime("%m_%d_%y")
+        dt1 = (datetime.now() + relativedelta(weekday=TU(-1))).strftime("%Y_%m_%d")
+        dt2 = (datetime.now() + relativedelta(weekday=TU(-1))).strftime("%m_%d_%y")
         return f"https://geovision.uned.ac.cr/oges/archivos_covid/{dt1}/{dt2}_CSV_GENERAL.csv"
 
     def pipe_date(self, df: pd.DataFrame):

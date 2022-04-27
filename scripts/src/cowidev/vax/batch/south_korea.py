@@ -24,6 +24,7 @@ class SouthKorea(CountryVaxBase):
             "1차": "dose_1",
             "2차": "dose_2",
             "3차": "dose_3",
+            "4차": "dose_4",
             "일자": "date",
         }
 
@@ -59,7 +60,7 @@ class SouthKorea(CountryVaxBase):
 
     def pipe_check_metrics(self, df: pd.DataFrame):
         cols = list(self.vaccines_mapping.values()) + ["others"]
-        for dose in ["dose_1", "dose_2", "dose_3"]:
+        for dose in ["dose_1", "dose_2", "dose_3", "dose_4"]:
             d = 0
             for col in cols:
                 # print(col)
@@ -96,15 +97,16 @@ class SouthKorea(CountryVaxBase):
                 "date": df.loc[:, ("date", "date")],
                 "people_vaccinated": df.loc[:, ("all", "dose_1")],
                 "people_fully_vaccinated": df.loc[:, ("all", "dose_2")],
-                "total_boosters": df.loc[:, ("all", "dose_3")],
+                "total_boosters": df.loc[:, ("all", "dose_3")] + df.loc[:, ("all", "dose_4")],
                 "single_doses": df.loc[:, (one_dose_cols, "dose_1")].sum(axis=1),
             }
         )
-        return df.assign(
+        df = df.assign(
             total_vaccinations=(
                 df["people_vaccinated"] + df["people_fully_vaccinated"] + df["total_boosters"] - df["single_doses"]
             )
         )
+        return df
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(

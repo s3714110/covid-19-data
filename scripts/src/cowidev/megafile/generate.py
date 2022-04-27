@@ -17,6 +17,7 @@ from cowidev.megafile.export import (
     create_latest,
     generate_readme,
     generate_status,
+    generate_htmls,
 )
 
 
@@ -154,6 +155,10 @@ def generate_megafile(logger):
     # Update readme
     logger.info("Generating scripts/STATUS.md")
     generate_status(template=PATHS.INTERNAL_INPUT_TEMPLATE_STATUS, output=PATHS.INTERNAL_STATUS_FILE)
+
+    # Generate HTML aux tables
+    logger.info("Generating aux tables…")
+    generate_htmls()
 
     # Export timestamp
     export_timestamp(PATHS.DATA_TIMESTAMP_ROOT_FILE)

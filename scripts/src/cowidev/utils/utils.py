@@ -5,7 +5,6 @@ import ntpath
 import os
 import pytz
 import tempfile
-import warnings
 
 from xlsx2csv import Xlsx2csv
 import pandas as pd
@@ -15,18 +14,22 @@ from cowidev.utils.web.download import download_file_from_url
 
 
 def make_monotonic(
-    df: pd.DataFrame, column_date: str, column_metrics: list, max_removed_rows=10, strict=False
+    df: pd.DataFrame, column_date: str, column_metrics: list, max_removed_rows=10, strict=False, new=False
 ) -> pd.DataFrame:
     # Forces vaccination time series to become monotonic.
     # The algorithm assumes that the most recent values are the correct ones,
     # and therefore removes previous higher values.
+    if new:
+        return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
     n_rows_before = len(df)
     dates_before = set(df.date)
     df_before = df.copy()
 
     df = df.sort_values(column_date)
     for metric in column_metrics:
-        while not df[metric].ffill().fillna(0).is_monotonic:
+        print(metric)
+        while not (err := df[metric].ffill().fillna(0).is_monotonic):
+            print(err)
             diff = df[metric].ffill().shift(-1) - df[metric].ffill()
             if strict:
                 df = df[(diff > 0) | (diff.isna())]
@@ -43,10 +46,54 @@ def make_monotonic(
             df_wrong = df_wrong[["date"] + column_metrics]
             # df_wrong = df_before[["date"] + column_metrics]
             raise Exception(
-                f"{num_removed_rows} rowse have been removed. That is more than maximum allowed ({max_removed_rows})"
+                f"{num_removed_rows} rows have been removed. That is more than maximum allowed ({max_removed_rows})"
                 f" by make_monotonic() - check the data. Check \n{df_wrong}"  # {', '.join(sorted(dates_wrong))}"
             )
 
+    return df
+
+
+def make_monotonic_new(
+    df: pd.DataFrame,
+    column_date: str,
+    column_metrics: list,
+    max_removed_rows_per_chunk=10,
+) -> pd.DataFrame:
+    # Forces vaccination time series to become monotonic.
+    # The algorithm assumes that the most recent values are the correct ones,
+    # and therefore removes previous higher values.
+    df = df.sort_values(column_date)
+    df_before = df.copy()
+
+    # Build and apply mask
+    # diff = df[column_metrics].ffill().fillna(0).diff()
+    for metric in column_metrics:
+        # print(metric)
+        while not (err := df[metric].dropna().is_monotonic):
+            # print(err)
+            diff = df[metric].bfill().shift(-1) - df[metric].bfill()
+            msk = diff < 0
+            df.loc[msk, metric] = None
+    # if strict:
+    #     msk = diff.isna() | (diff > 0)
+    # else:
+    #     msk = diff.isna() | (diff >= 0)
+    # Assign Nones to invalid cells
+    # df.loc[:, column_metrics] = df[column_metrics].where(msk, other=None)
+
+    # Check consecutive NaN within allowed range
+    y = df[column_metrics].isna().any(axis=1)
+    y = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
+    if (exceed := y > max_removed_rows_per_chunk).any():
+        num_chunks = sum(exceed)
+        lenght_chunks = [str(yy) for yy in y[exceed].tolist()]
+        dates_chunks = sorted(df_before.loc[exceed, "date"].tolist())
+        raise Exception(
+            f"{num_chunks} chunks of lengths {', '.join(lenght_chunks)} have been removed. That is more than maximum"
+            f" allowed ({max_removed_rows_per_chunk}) by make_monotonic() - check the data. Check dates {dates_chunks}"
+        )
+    # Drop rows with all-None values
+    df = df.dropna(subset=column_metrics, how="all")
     return df
 
 

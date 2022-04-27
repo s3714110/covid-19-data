@@ -2,6 +2,7 @@ import click
 
 from cowidev.utils.params import CONFIG
 from cowidev.utils.log import get_logger
+from cowidev.utils.utils import get_traceback
 from cowidev.cmd.commons.utils import OrderedGroup
 from cowidev.cmd.testing import click_test
 from cowidev.cmd.vax import click_vax
@@ -11,6 +12,7 @@ from cowidev.cmd.xm import click_xm
 from cowidev.cmd.gmobility import click_gm
 from cowidev.cmd.variants import click_variants
 from cowidev.megafile.generate import generate_megafile
+from cowidev.cmd.commons.utils import StepReport
 
 
 @click.group(name="cowid", cls=OrderedGroup)
@@ -51,7 +53,29 @@ def cli(ctx, parallel, n_jobs, server_mode):
 @click.pass_context
 def cli_export(ctx):
     """COVID-19 data integration pipeline (former megafile)"""
-    generate_megafile(ctx.obj["logger"])
+    try:
+        generate_megafile(ctx.obj["logger"])
+    except Exception as err:
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="Megafile step failed",
+                trace=get_traceback(err),
+                type="error",
+            ).to_slack()
+        else:
+            if ctx.obj["server_mode"]:
+                StepReport(
+                    title="Megafile step ran successfully",
+                    text="Public data files generated.",
+                    type="success",
+                ).to_slack()
+    else:
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="Megafile step ran successfully",
+                text="Public data files generated.",
+                type="success",
+            ).to_slack()
 
 
 cli.add_command(click_test)

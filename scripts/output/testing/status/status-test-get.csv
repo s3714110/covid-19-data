@@ -1,18 +1,18 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.testing.batch.andorra,,,,,
-cowidev.testing.batch.argentina,193.47,True,True,,
-cowidev.testing.batch.armenia,2.2,True,True,,
-cowidev.testing.batch.australia,0.58,True,True,,
-cowidev.testing.batch.austria,1.27,True,True,,
-cowidev.testing.batch.belgium,6.15,True,True,,
-cowidev.testing.batch.bolivia,0.72,True,True,,
-cowidev.testing.batch.bosnia_herzegovina,7.31,True,True,,
-cowidev.testing.batch.brazil,12.61,True,True,,
-cowidev.testing.batch.canada,53.6,True,True,,
-cowidev.testing.batch.chile,0.86,True,True,,
-cowidev.testing.batch.colombia,2.36,True,True,,
-cowidev.testing.batch.costa_rica,1.05,False,False,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.testing.batch.andorra,,,2022-04-25T11:23:46,,
+cowidev.testing.batch.argentina,122.81,True,2022-04-25T11:25:49,,
+cowidev.testing.batch.armenia,3.17,True,2022-04-25T11:23:49,,
+cowidev.testing.batch.australia,0.85,True,2022-04-25T11:23:47,,
+cowidev.testing.batch.austria,1.42,True,2022-04-25T11:23:47,,
+cowidev.testing.batch.belgium,3.04,True,2022-04-25T11:23:49,,
+cowidev.testing.batch.bolivia,0.83,True,2022-04-25T11:23:47,,
+cowidev.testing.batch.bosnia_herzegovina,7.17,True,2022-04-25T11:23:53,,
+cowidev.testing.batch.brazil,6.45,True,2022-04-25T11:23:52,,
+cowidev.testing.batch.canada,35.79,True,2022-04-25T11:24:22,,
+cowidev.testing.batch.chile,0.84,True,2022-04-25T11:23:48,,
+cowidev.testing.batch.colombia,3.72,True,2022-04-25T11:23:50,,
+cowidev.testing.batch.costa_rica,1.07,False,2022-04-25T11:28:39,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py"", line 60, in main
     CostaRica().export()
@@ -53,98 +53,92 @@ cowidev.testing.batch.costa_rica,1.05,False,False,"Traceback (most recent call l
   File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 643, in http_error_default
     raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 404: 
-",
-cowidev.testing.batch.cuba,13.95,True,True,,
-cowidev.testing.batch.cyprus,4.72,True,True,,
-cowidev.testing.batch.czechia,0.97,True,True,,
-cowidev.testing.batch.denmark,3.66,True,True,,
-cowidev.testing.batch.ecdc,1.93,True,True,,
-cowidev.testing.batch.ecuador,1.41,True,True,,
-cowidev.testing.batch.estonia,31.57,True,True,,
-cowidev.testing.batch.finland,4.68,True,True,,
-cowidev.testing.batch.france,4.18,True,True,,
-cowidev.testing.batch.germany,0.62,True,True,,
-cowidev.testing.batch.guam,168.94,True,True,,
-cowidev.testing.batch.guatemala,,,,,
-cowidev.testing.batch.hong_kong,2.21,True,True,,
-cowidev.testing.batch.hungary,2.56,True,True,,
-cowidev.testing.batch.iceland,0.7,True,True,,
-cowidev.testing.batch.india,1.05,True,True,,
-cowidev.testing.batch.indonesia,,,,,
-cowidev.testing.batch.ireland,0.51,True,True,,
-cowidev.testing.batch.israel,2.01,True,True,,
-cowidev.testing.batch.italy,0.29,True,True,,
-cowidev.testing.batch.japan,0.52,True,True,,
-cowidev.testing.batch.kazakhstan,,,,,
-cowidev.testing.batch.latvia,0.88,True,True,,
-cowidev.testing.batch.liechtenstein,67.48,True,True,,
-cowidev.testing.batch.lithuania,1.69,True,True,,
-cowidev.testing.batch.luxembourg,52.36,True,True,,
-cowidev.testing.batch.malaysia,0.26,True,True,,
-cowidev.testing.batch.malta,0.51,True,True,,
-cowidev.testing.batch.marshall_islands,36.98,True,True,,
-cowidev.testing.batch.mexico,6.25,True,True,,
-cowidev.testing.batch.netherlands,28.6,True,True,,
-cowidev.testing.batch.northern_mariana_islands,63.04,True,True,,
-cowidev.testing.batch.norway,0.51,True,True,,
-cowidev.testing.batch.peru,7.52,True,True,,
-cowidev.testing.batch.philippines,104.88,True,True,,
-cowidev.testing.batch.portugal,0.77,True,True,,
-cowidev.testing.batch.puerto_rico,51.55,True,True,,
-cowidev.testing.batch.qatar,3.36,True,True,,
-cowidev.testing.batch.rwanda,5.78,True,True,,
-cowidev.testing.batch.saudi_arabia,0.42,True,True,,
-cowidev.testing.batch.senegal,1.16,True,True,,
-cowidev.testing.batch.serbia,1.12,True,True,,
-cowidev.testing.batch.slovakia,1.17,True,True,,
-cowidev.testing.batch.slovenia,1.55,True,True,,
-cowidev.testing.batch.south_africa,0.89,True,True,,
-cowidev.testing.batch.south_korea,5.42,True,True,,
-cowidev.testing.batch.spain,22.67,True,True,,
-cowidev.testing.batch.sri_lanka,3.13,True,True,,
-cowidev.testing.batch.switzerland,21.1,True,True,,
-cowidev.testing.batch.taiwan,10.77,True,True,,
-cowidev.testing.batch.thailand,6.87,True,True,,
-cowidev.testing.batch.trinidad_and_tobago,0.53,True,True,,
-cowidev.testing.batch.turkey,33.22,True,True,,
-cowidev.testing.batch.united_arab_emirates,2.85,True,True,,
-cowidev.testing.batch.united_kingdom,1.09,True,True,,
-cowidev.testing.batch.united_states,49.5,True,True,,
-cowidev.testing.batch.united_states_virgin_islands,47.78,True,True,,
-cowidev.testing.batch.uruguay,1.47,True,True,,
-cowidev.testing.batch.zambia,0.8,True,True,,
-cowidev.testing.incremental.africacdc,0.6,False,False,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+",HTTP Error 404: 
+cowidev.testing.batch.cuba,8.89,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.cyprus,3.85,True,2022-04-25T11:23:52,,
+cowidev.testing.batch.czechia,0.61,True,2022-04-25T11:23:50,,
+cowidev.testing.batch.denmark,2.88,True,2022-04-25T11:23:52,,
+cowidev.testing.batch.ecdc,3.01,True,2022-04-25T11:23:53,,
+cowidev.testing.batch.ecuador,1.64,True,2022-04-25T11:23:52,,
+cowidev.testing.batch.estonia,10.65,True,2022-04-25T11:24:03,,
+cowidev.testing.batch.finland,1.02,True,2022-04-25T11:23:53,,
+cowidev.testing.batch.france,4.24,True,2022-04-25T11:23:57,,
+cowidev.testing.batch.germany,0.59,True,2022-04-25T11:23:53,,
+cowidev.testing.batch.guam,97.67,True,2022-04-25T11:25:30,,
+cowidev.testing.batch.guatemala,,,2022-04-25T11:23:53,,
+cowidev.testing.batch.hong_kong,2.15,True,2022-04-25T11:23:55,,
+cowidev.testing.batch.hungary,2.03,True,2022-04-25T11:23:55,,
+cowidev.testing.batch.iceland,1.0,True,2022-04-25T11:23:54,,
+cowidev.testing.batch.india,1.58,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.indonesia,,,2022-04-25T11:23:55,,
+cowidev.testing.batch.ireland,0.32,True,2022-04-25T11:23:55,,
+cowidev.testing.batch.israel,1.37,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.italy,0.33,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.japan,0.73,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.kazakhstan,,,2022-04-25T11:23:56,,
+cowidev.testing.batch.latvia,0.73,True,2022-04-25T11:23:56,,
+cowidev.testing.batch.liechtenstein,66.13,True,2022-04-25T11:25:03,,
+cowidev.testing.batch.lithuania,1.53,True,2022-04-25T11:23:58,,
+cowidev.testing.batch.luxembourg,44.13,True,2022-04-25T11:24:41,,
+cowidev.testing.batch.malaysia,0.25,True,2022-04-25T11:23:57,,
+cowidev.testing.batch.malta,0.25,True,2022-04-25T11:23:57,,
+cowidev.testing.batch.marshall_islands,39.35,True,2022-04-25T11:24:36,,
+cowidev.testing.batch.mexico,5.52,True,2022-04-25T11:24:02,,
+cowidev.testing.batch.netherlands,25.49,True,2022-04-25T11:24:23,,
+cowidev.testing.batch.northern_mariana_islands,38.92,True,2022-04-25T11:24:41,,
+cowidev.testing.batch.norway,0.63,True,2022-04-25T11:24:03,,
+cowidev.testing.batch.peru,6.07,True,2022-04-25T11:24:09,,
+cowidev.testing.batch.philippines,75.82,True,2022-04-25T11:25:25,,
+cowidev.testing.batch.portugal,0.63,True,2022-04-25T11:24:22,,
+cowidev.testing.batch.puerto_rico,48.04,True,2022-04-25T11:25:10,,
+cowidev.testing.batch.qatar,3.5,True,2022-04-25T11:24:27,,
+cowidev.testing.batch.rwanda,3.9,True,2022-04-25T11:24:31,,
+cowidev.testing.batch.saudi_arabia,1.45,True,2022-04-25T11:24:32,,
+cowidev.testing.batch.senegal,0.82,True,2022-04-25T11:24:33,,
+cowidev.testing.batch.serbia,1.43,True,2022-04-25T11:24:35,,
+cowidev.testing.batch.slovakia,0.95,True,2022-04-25T11:24:36,,
+cowidev.testing.batch.slovenia,2.21,True,2022-04-25T11:24:38,,
+cowidev.testing.batch.south_africa,1.29,True,2022-04-25T11:24:37,,
+cowidev.testing.batch.south_korea,4.99,True,2022-04-25T11:44:26,,
+cowidev.testing.batch.spain,1.28,True,2022-04-25T11:47:11,,
+cowidev.testing.batch.sri_lanka,2.76,True,2022-04-25T11:24:41,,
+cowidev.testing.batch.switzerland,23.75,True,2022-04-25T11:25:04,,
+cowidev.testing.batch.taiwan,3.49,True,2022-04-25T11:24:45,,
+cowidev.testing.batch.thailand,3.6,True,2022-04-25T11:24:45,,
+cowidev.testing.batch.trinidad_and_tobago,0.78,True,2022-04-25T11:24:45,,
+cowidev.testing.batch.turkey,14.87,True,2022-04-25T11:25:00,,
+cowidev.testing.batch.united_arab_emirates,7.86,True,2022-04-25T11:24:53,,
+cowidev.testing.batch.united_kingdom,1.96,True,2022-04-25T11:24:47,,
+cowidev.testing.batch.united_states,32.67,True,2022-04-25T11:25:20,,
+cowidev.testing.batch.united_states_virgin_islands,29.07,True,2022-04-25T11:25:22,,
+cowidev.testing.batch.uruguay,2.04,True,2022-04-25T11:25:02,,
+cowidev.testing.batch.zambia,1.39,True,2022-04-25T11:25:03,,
+cowidev.testing.incremental.africacdc,1.48,True,2022-04-25T11:25:04,,
+cowidev.testing.incremental.albania,4.96,True,2022-04-25T11:25:08,,
+cowidev.testing.incremental.antigua_barbuda,12.82,True,2022-04-25T11:25:17,,
+cowidev.testing.incremental.azerbaijan,3.76,True,2022-04-25T11:25:08,,
+cowidev.testing.incremental.bahamas,17.3,True,2022-04-25T11:25:25,,
+cowidev.testing.incremental.bahrain,0.99,True,2022-04-25T11:25:09,,
+cowidev.testing.incremental.bangladesh,2.36,True,2022-04-25T11:25:11,,
+cowidev.testing.incremental.barbados,3.0,True,2022-04-25T11:58:52,,
+cowidev.testing.incremental.belarus,1.34,True,2022-04-25T11:25:13,,
+cowidev.testing.incremental.belize,4.7,True,2022-04-25T11:25:18,,
+cowidev.testing.incremental.benin,,,2022-04-25T11:25:17,,
+cowidev.testing.incremental.bulgaria,2.71,True,2022-04-25T11:25:20,,
+cowidev.testing.incremental.cambodia,8.13,False,2022-04-25T11:59:20,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py"", line 130, in main
-    AfricaCDC().export()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py"", line 126, in export
-    self.increment_countries(df)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/africacdc.py"", line 113, in increment_countries
-    increment(
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py"", line 50, in increment
-    _check_fields(df_current, country, source_url, source_label, units, date, count, daily_change)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py"", line 101, in _check_fields
-    raise TypeError(
-TypeError: Check `cumulative_total` type! It can't be NaN if no value for `daily_change` is provided.
-",
-cowidev.testing.incremental.albania,2.79,True,True,,
-cowidev.testing.incremental.antigua_barbuda,4.86,True,True,,
-cowidev.testing.incremental.azerbaijan,1.47,True,True,,
-cowidev.testing.incremental.bahamas,51.89,True,True,,
-cowidev.testing.incremental.bahrain,2.01,True,True,,
-cowidev.testing.incremental.bangladesh,1.27,True,True,,
-cowidev.testing.incremental.barbados,2.44,True,True,,
-cowidev.testing.incremental.belarus,1.31,True,True,,
-cowidev.testing.incremental.belize,12.77,True,True,,
-cowidev.testing.incremental.benin,,,,,
-cowidev.testing.incremental.bulgaria,1.54,True,True,,
-cowidev.testing.incremental.cambodia,4.59,True,True,,
-cowidev.testing.incremental.cape_verde,8.59,True,True,,
-cowidev.testing.incremental.croatia,6.93,True,True,,
-cowidev.testing.incremental.el_salvador,2.08,True,True,,
-cowidev.testing.incremental.emro,11.48,False,False,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py"", line 41, in main
+    Cambodia().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py"", line 19, in export
+    count = clean_count(soup.select(""p+ div strong:nth-child(1)"")[0].text)
+IndexError: list index out of range
+",list index out of range
+cowidev.testing.incremental.cape_verde,8.43,True,2022-04-25T11:25:27,,
+cowidev.testing.incremental.croatia,6.42,True,2022-04-25T11:25:26,,
+cowidev.testing.incremental.el_salvador,2.56,True,2022-04-25T11:25:23,,
+cowidev.testing.incremental.emro,12.63,False,2022-04-25T11:27:18,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 155, in main
     EMRO().export()
@@ -159,11 +153,11 @@ cowidev.testing.incremental.emro,11.48,False,False,"Traceback (most recent call 
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 121, in extract_clean_date
     date_raw = re.search(regex, text).groups()
 AttributeError: 'NoneType' object has no attribute 'groups'
-",
-cowidev.testing.incremental.equatorial_guinea,4.72,True,True,,
-cowidev.testing.incremental.faeroe_islands,1.12,True,True,,
-cowidev.testing.incremental.fiji,10.94,True,True,,
-cowidev.testing.incremental.georgia,3.85,False,False,"Traceback (most recent call last):
+",'NoneType' object has no attribute 'groups'
+cowidev.testing.incremental.equatorial_guinea,3.73,True,2022-04-25T11:25:26,,
+cowidev.testing.incremental.faeroe_islands,0.9,True,2022-04-25T11:25:26,,
+cowidev.testing.incremental.fiji,4.24,True,2022-04-25T11:25:30,,
+cowidev.testing.incremental.georgia,4.29,False,2022-04-25T12:07:54,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3361, in get_loc
     return self._engine.get_loc(casted_key)
   File ""pandas/_libs/index.pyx"", line 76, in pandas._libs.index.IndexEngine.get_loc
@@ -175,7 +169,7 @@ KeyError: 'date'
 The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py"", line 115, in main
     Georgia().export()
@@ -188,54 +182,51 @@ Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3363, in get_loc
     raise KeyError(key) from err
 KeyError: 'date'
-",
-cowidev.testing.incremental.gibraltar,,,,,
-cowidev.testing.incremental.greece,1.99,True,True,,
-cowidev.testing.incremental.haiti,28.0,True,True,,
-cowidev.testing.incremental.iran,3.04,True,True,,
-cowidev.testing.incremental.jordan,0.99,True,True,,
-cowidev.testing.incremental.kosovo,19.31,True,True,,
-cowidev.testing.incremental.laos,5.32,True,True,,
-cowidev.testing.incremental.lebanon,1.99,True,True,,
-cowidev.testing.incremental.libya,5.41,True,True,,
-cowidev.testing.incremental.maldives,2.09,True,True,,
-cowidev.testing.incremental.moldova,2.15,False,False,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+",'date'
+cowidev.testing.incremental.gibraltar,,,2022-04-25T11:25:26,,
+cowidev.testing.incremental.greece,1.04,True,2022-04-25T11:25:27,,
+cowidev.testing.incremental.haiti,11.17,True,2022-04-25T11:25:38,,
+cowidev.testing.incremental.iran,2.59,True,2022-04-25T11:25:29,,
+cowidev.testing.incremental.jordan,0.9,True,2022-04-25T11:25:28,,
+cowidev.testing.incremental.kosovo,19.5,True,2022-04-25T11:25:47,,
+cowidev.testing.incremental.laos,3.52,True,2022-04-25T11:25:31,,
+cowidev.testing.incremental.lebanon,0.66,True,2022-04-25T11:25:30,,
+cowidev.testing.incremental.libya,2.89,True,2022-04-25T12:15:17,,
+cowidev.testing.incremental.maldives,1.69,True,2022-04-25T11:25:32,,
+cowidev.testing.incremental.moldova,1.27,True,2022-04-25T12:18:08,,
+cowidev.testing.incremental.mongolia,2.41,True,2022-04-25T11:25:33,,
+cowidev.testing.incremental.morocco,1.07,True,2022-04-25T11:25:33,,
+cowidev.testing.incremental.myanmar,12.62,True,2022-04-25T11:25:44,,
+cowidev.testing.incremental.nepal,15.13,True,2022-04-25T11:25:48,,
+cowidev.testing.incremental.new_zealand,4.16,True,2022-04-25T11:25:38,,
+cowidev.testing.incremental.nicaragua,6.26,True,2022-04-25T11:25:42,,
+cowidev.testing.incremental.north_macedonia,2.56,True,2022-04-25T11:25:40,,
+cowidev.testing.incremental.pakistan,3.49,False,2022-04-25T12:18:27,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 98, in main
-    Moldova().export()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 84, in export
-    data = self.read()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 28, in read
-    data = self._parse_data(soup)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 42, in _parse_data
-    daily_change = self._parse_metrics(text)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 79, in _parse_metrics
-    count = int(re.search(self.regex[""count""], text).group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-",
-cowidev.testing.incremental.mongolia,1.37,True,True,,
-cowidev.testing.incremental.morocco,0.16,True,True,,
-cowidev.testing.incremental.myanmar,24.85,True,True,,
-cowidev.testing.incremental.nepal,38.61,True,True,,
-cowidev.testing.incremental.new_zealand,6.69,True,True,,
-cowidev.testing.incremental.nicaragua,25.27,True,True,,
-cowidev.testing.incremental.north_macedonia,9.72,True,True,,
-cowidev.testing.incremental.pakistan,7.32,True,True,,
-cowidev.testing.incremental.palau,2.84,True,2022-04-27T12:06:10,,
-cowidev.testing.incremental.papua_new_guinea,9.66,True,True,,
-cowidev.testing.incremental.paraguay,3.15,True,True,,
-cowidev.testing.incremental.russia,1.59,True,True,,
-cowidev.testing.incremental.saint_kitts_nevis,0.67,True,True,,
-cowidev.testing.incremental.saint_lucia,1.61,True,True,,
-cowidev.testing.incremental.saint_vincent_and_the_grenadines,5.03,True,True,,
-cowidev.testing.incremental.singapore,1.15,True,True,,
-cowidev.testing.incremental.suriname,1.72,True,True,,
-cowidev.testing.incremental.sweden,0.79,True,True,,
-cowidev.testing.incremental.syria,4.32,True,True,,
-cowidev.testing.incremental.timor,3.79,True,True,,
-cowidev.testing.incremental.togo,1.28,True,True,,
-cowidev.testing.incremental.tunisia,3.05,True,True,,
-cowidev.testing.incremental.ukraine,,,,,
-cowidev.testing.incremental.vanuatu,,,,,
-cowidev.testing.incremental.vietnam,3.58,True,True,,
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/pakistan.py"", line 77, in main
+    Pakistan().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/pakistan.py"", line 65, in export
+    increment(
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py"", line 50, in increment
+    _check_fields(df_current, country, source_url, source_label, units, date, count, daily_change)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py"", line 111, in _check_fields
+    raise ValueError(f""`cumulative_total` can't be lower than currently highers 'Cumulative total' value."")
+ValueError: `cumulative_total` can't be lower than currently highers 'Cumulative total' value.
+",`cumulative_total` can't be lower than currently highers 'Cumulative total' value.
+cowidev.testing.incremental.papua_new_guinea,6.36,True,2022-04-25T11:25:44,,
+cowidev.testing.incremental.paraguay,2.95,True,2022-04-25T11:25:43,,
+cowidev.testing.incremental.russia,0.78,True,2022-04-25T11:25:43,,
+cowidev.testing.incremental.saint_kitts_nevis,0.45,True,2022-04-25T11:25:43,,
+cowidev.testing.incremental.saint_lucia,1.02,True,2022-04-25T11:25:44,,
+cowidev.testing.incremental.saint_vincent_and_the_grenadines,3.63,True,2022-04-25T11:25:47,,
+cowidev.testing.incremental.singapore,1.32,True,2022-04-25T11:25:44,,
+cowidev.testing.incremental.suriname,4.38,True,2022-04-25T11:25:48,,
+cowidev.testing.incremental.sweden,0.62,True,2022-04-25T11:25:44,,
+cowidev.testing.incremental.syria,6.5,True,2022-04-25T11:25:51,,
+cowidev.testing.incremental.timor,3.46,True,2022-04-25T11:25:48,,
+cowidev.testing.incremental.togo,3.28,True,2022-04-25T11:25:48,,
+cowidev.testing.incremental.tunisia,3.23,True,2022-04-25T11:25:48,,
+cowidev.testing.incremental.ukraine,,,2022-04-25T11:25:47,,
+cowidev.testing.incremental.vanuatu,,,2022-04-25T11:25:47,,
+cowidev.testing.incremental.vietnam,4.83,True,2022-04-25T11:25:52,,
