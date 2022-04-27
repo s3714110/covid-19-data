@@ -278,3 +278,18 @@ if [ $hour == 19 ] ; then
   git commit -m "data(variants): automated update"
   git push
 fi
+
+
+# =====================================================================
+# Excess Mortality
+# If there are any unstaged changes in the repo, then one of
+# the CSVs has changed, and we need to run the update script.
+hour=$(date +%H)
+if [ $hour == 21 ] ; then
+  echo "Generating CoVariants dataset..."
+  cowid xm generate
+  cowid --server-mode megafile
+  git add .
+  git commit -m "data(xm): automated update"
+  git push
+fi
