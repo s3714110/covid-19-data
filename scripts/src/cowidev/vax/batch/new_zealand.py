@@ -71,7 +71,7 @@ class NewZealand(CountryVaxBase):
 
     def pipe_latest_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         """pipes the latest metrics."""
-        return df.append(self.latest, ignore_index=True)
+        return df.sort_values("date").append(self.latest, ignore_index=True).drop_duplicates("date", keep="last")
 
     def pipe_total_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculates the total vaccinations."""
