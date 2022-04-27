@@ -11,6 +11,7 @@ VACCINES_ACCEPTED = [
     "CanSino",
     "Covaxin",
     "COVIran Barekat",
+    "CoviVac",
     "EpiVacCorona",
     "FAKHRAVAC",
     "IMBCAMS",

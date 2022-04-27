@@ -2,6 +2,8 @@ import click
 
 from cowidev.cmd.commons.utils import OrderedGroup
 from cowidev.jhu.__main__ import download_csv, main, update_db
+from cowidev.cmd.commons.utils import StepReport
+from cowidev.utils.utils import get_traceback
 
 
 @click.group(name="jhu", chain=True, cls=OrderedGroup)
@@ -15,13 +17,40 @@ def click_jhu(ctx):
 @click.pass_context
 def click_jhu_download(ctx):
     """Downloads all JHU source files into project directory."""
-    download_csv(ctx.obj["logger"])
+    try:
+        download_csv(ctx.obj["logger"])
+    except Exception as err:
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="JHU - [get] step failed",
+                trace=get_traceback(err),
+                type="error",
+            ).to_slack()
+        else:
+            raise err
 
 
 @click.command(name="generate", short_help="Step 2: Generate dataset.")
 @click.pass_context
 def click_jhu_generate(ctx):
-    main(ctx.obj["logger"], skip_download=True)
+    try:
+        main(ctx.obj["logger"], skip_download=True)
+    except Exception as err:
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="JHU - [generate] step failed",
+                trace=get_traceback(err),
+                type="error",
+            ).to_slack()
+        else:
+            raise err
+    else:
+        if ctx.obj["server_mode"]:
+            StepReport(
+                title="JHU - [generate] step ran successfully",
+                text="Intermediate JHU files were correctly generated.",
+                type="success",
+            ).to_slack()
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
