@@ -91,7 +91,7 @@ class WHO(CountryVaxBase):
 
     def pipe_vaccine_checks(self, df: pd.DataFrame) -> pd.DataFrame:
         vaccines_used = set(df.VACCINES_USED.dropna().apply(lambda x: [xx.strip() for xx in x.split(",")]).sum())
-        vaccines_unknown = vaccines_used.difference(WHO_VACCINES)
+        vaccines_unknown = vaccines_used.difference(set(WHO_VACCINES.keys()) | {"Unknown Vaccine"})
         if vaccines_unknown:
             raise ValueError(f"Unknown vaccines {vaccines_unknown}. Update `vax.utils.who.config` accordingly.")
         return df
@@ -108,7 +108,8 @@ class WHO(CountryVaxBase):
         if row.COUNTRY in ADDITIONAL_VACCINES_USED.keys():
             vaccines = pd.concat([vaccines, pd.Series(ADDITIONAL_VACCINES_USED[row.COUNTRY])])
 
-        return pd.Series([", ".join(sorted(vaccines.unique())), only_2doses])
+        vaccines = [v for v in vaccines.unique() if v != "Unknown Vaccine"]
+        return pd.Series([", ".join(sorted(vaccines)), only_2doses])
 
     def pipe_map_vaccines(self, df: pd.DataFrame) -> pd.DataFrame:
         """
