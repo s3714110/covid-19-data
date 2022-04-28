@@ -11,6 +11,7 @@ from cowidev.cmd.jhu import click_jhu
 from cowidev.cmd.xm import click_xm
 from cowidev.cmd.gmobility import click_gm
 from cowidev.cmd.variants import click_variants
+from cowidev.cmd.oxcgrt import click_oxcgrt
 from cowidev.megafile.generate import generate_megafile
 from cowidev.cmd.commons.utils import StepReport
 
@@ -30,20 +31,20 @@ from cowidev.cmd.commons.utils import StepReport
     show_default=True,
 )
 @click.option(
-    "--server-mode/--no-server-mode",
+    "--server/--no-server",
     "-S",
     default=False,
     help="Only critical log and final message to slack.",
     show_default=True,
 )
 @click.pass_context
-def cli(ctx, parallel, n_jobs, server_mode):
+def cli(ctx, parallel, n_jobs, server):
     """COVID-19 Data pipeline tool by Our World in Data."""
     ctx.ensure_object(dict)
     ctx.obj["parallel"] = parallel
     ctx.obj["n_jobs"] = n_jobs
-    ctx.obj["server_mode"] = server_mode
-    if ctx.obj["server_mode"]:
+    ctx.obj["server"] = server
+    if ctx.obj["server"]:
         ctx.obj["logger"] = get_logger("critical")
     else:
         ctx.obj["logger"] = get_logger()
@@ -56,21 +57,21 @@ def cli_export(ctx):
     try:
         generate_megafile(ctx.obj["logger"])
     except Exception as err:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Megafile step failed",
                 trace=get_traceback(err),
                 type="error",
             ).to_slack()
         else:
-            if ctx.obj["server_mode"]:
+            if ctx.obj["server"]:
                 StepReport(
                     title="Megafile step ran successfully",
                     text="Public data files generated.",
                     type="success",
                 ).to_slack()
     else:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Megafile step ran successfully",
                 text="Public data files generated.",
@@ -86,6 +87,7 @@ cli.add_command(click_variants)
 cli.add_command(click_xm)
 cli.add_command(click_gm)
 cli.add_command(cli_export)
+cli.add_command(click_oxcgrt)
 
 
 if __name__ == "__main__":
