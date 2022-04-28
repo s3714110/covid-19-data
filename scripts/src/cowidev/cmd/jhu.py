@@ -42,7 +42,15 @@ def click_jhu_generate(ctx):
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
-def click_jhu_db():
+@click.pass_context
+def click_jhu_db(ctx):
+    feedback_log(
+        func=main,
+        server=ctx.obj["server"],
+        domain="JHU",
+        step="grapher-db",
+        text_success="Files uploaded to the database.",
+    )
     update_db()
 
 

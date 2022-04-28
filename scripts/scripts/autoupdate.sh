@@ -68,7 +68,7 @@ fi
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-cowid jhu grapher-db
+cowid --server jhu grapher-db
 # run_python 'import jhu; jhu.update_db()'
 
 # =====================================================================
@@ -212,8 +212,7 @@ run_python 'import uk_nations; uk_nations.update_db()'
 hour=$(date +%H)
 if [ $hour == 15 ] ; then
   echo "Generating US vaccination files..."
-  python -m cowidev.vax.us_states etl
-  python -m cowidev.vax.us_states grapher-file
+  cowid --server vax us-states
   if has_changed './public/data/vaccinations/us_state_vaccinations.csv'; then
     git_push "data(vax,us): automated update"
   else
