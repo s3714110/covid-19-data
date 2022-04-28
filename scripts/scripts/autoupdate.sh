@@ -103,8 +103,9 @@ hour=$(date +%H)
 if [ $hour == 05 ] || [ $hour == 17 ] ; then
   # Download CSV
   echo "Generating hospital & ICU export..."
-  cowid hosp generate
-  cowid hosp grapher-io
+  cowid --server hosp generate
+  cowid --server hosp grapher-io
+  cowid --server megafile
   git_push "data(hosp): automated update"
 fi
 
