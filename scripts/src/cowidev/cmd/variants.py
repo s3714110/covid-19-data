@@ -1,6 +1,6 @@
 import click
 
-from cowidev.cmd.commons.utils import OrderedGroup
+from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 from cowidev.variants.etl import run_etl
 from cowidev.variants.grapher import run_grapheriser, run_explorerizer
 
@@ -16,13 +16,29 @@ def click_variants(ctx):
 @click.pass_context
 def click_variants_generate(ctx):
     """Download and generate our COVID-19 Hospitalization dataset."""
-    run_etl()
+    feedback_log(
+        func=run_etl,
+        server=ctx.obj["server"],
+        domain="Variants",
+        step="generate",
+        hide_success=True,
+    )
 
 
 @click.command(name="grapher-io", short_help="Step 2: Generate grapher-ready files.")
-def click_variants_grapherio():
-    run_grapheriser()
-    run_explorerizer()
+@click.pass_context
+def click_variants_grapherio(ctx):
+    def _function():
+        run_grapheriser()
+        run_explorerizer()
+
+    feedback_log(
+        func=_function,
+        server=ctx.obj["server"],
+        domain="Variants",
+        step="generate",
+        hide_success=True,
+    )
 
 
 click_variants.add_command(click_variants_generate)
