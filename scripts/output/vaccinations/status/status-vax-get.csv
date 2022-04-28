@@ -5,27 +5,7 @@ cowidev.vax.batch.austria,,,2022-04-28T07:00:14,,
 cowidev.vax.batch.belgium,4.43,True,2022-04-28T07:00:18,,
 cowidev.vax.batch.bolivia,1.87,True,2022-04-28T07:00:16,,
 cowidev.vax.batch.canada,1.08,True,2022-04-28T07:00:15,,
-cowidev.vax.batch.chile,0.1,False,2022-04-28T07:03:21,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/chile.py"", line 123, in main
-    Chile().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/chile.py"", line 108, in export
-    df_man = self.read(self.source_url_manufacturer).pipe(self.pipeline_manufacturer)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/chile.py"", line 96, in pipeline_manufacturer
-    df.pipe(self.pipe_melt, [""Fabricante"", ""Dosis""])
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/chile.py"", line 85, in pipe_rename_vaccines
-    raise ValueError(f""Missing vaccines: {vaccines_wrong}"")
-ValueError: Missing vaccines: {'Moderna'}
-",Missing vaccines: {'Moderna'}
+cowidev.vax.batch.chile,0.6,True,2022-04-28T08:28:39,,
 cowidev.vax.batch.czechia,2.16,True,2022-04-28T07:00:18,,
 cowidev.vax.batch.denmark,2.3,True,2022-04-28T07:00:18,,
 cowidev.vax.batch.ecdc,76.45,True,2022-04-28T07:01:32,,
@@ -137,38 +117,7 @@ cowidev.vax.incremental.myanmar,6.66,True,2022-04-28T07:02:00,,
 cowidev.vax.incremental.nepal,24.38,True,2022-04-28T07:02:19,,
 cowidev.vax.incremental.north_macedonia,,,2022-04-28T07:02:00,,
 cowidev.vax.incremental.northern_cyprus,0.76,True,2022-04-28T07:02:01,,
-cowidev.vax.incremental.paho,78.86,False,2022-04-28T07:06:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 177, in main
-    PAHO().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 172, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 147, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 138, in pipe_vaccine
-    vaccine=df_who.vaccine.apply(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/series.py"", line 4357, in apply
-    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/apply.py"", line 1043, in apply
-    return self.apply_standard()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/apply.py"", line 1098, in apply_standard
-    mapped = lib.map_infer(
-  File ""pandas/_libs/lib.pyx"", line 2859, in pandas._libs.lib.map_infer
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 139, in <lambda>
-    lambda x: "", "".join(sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("",""))))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 139, in <genexpr>
-    lambda x: "", "".join(sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("",""))))
-KeyError: 'Unknown Vaccine'
-",'Unknown Vaccine'
+cowidev.vax.incremental.paho,40.91,True,2022-04-28T09:03:36,,
 cowidev.vax.incremental.pakistan,1.42,True,2022-04-28T07:02:04,,
 cowidev.vax.incremental.philippines,0.53,True,2022-04-28T07:02:05,,
 cowidev.vax.incremental.poland,0.14,True,2022-04-28T07:02:05,,
@@ -185,5 +134,5 @@ cowidev.vax.incremental.thailand,0.89,True,2022-04-28T07:02:28,,
 cowidev.vax.incremental.turkey,0.77,True,2022-04-28T07:02:29,,
 cowidev.vax.incremental.united_arab_emirates,22.68,True,2022-04-28T07:02:52,,
 cowidev.vax.incremental.vietnam,,,2022-04-28T07:02:32,,
-cowidev.vax.incremental.who,2.16,True,2022-04-28T07:02:34,,
+cowidev.vax.incremental.who,1.31,True,2022-04-28T08:33:33,,
 cowidev.vax.incremental.zambia,0.75,True,2022-04-28T07:02:35,,
