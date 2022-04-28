@@ -102,7 +102,7 @@ class CountryVaxBase:
         return mkm(
             df=df,
             column_date="date",
-            column_metrics=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated"],
+            column_metrics=[m for m in METRICS if m in df.columns],
             max_removed_rows=max_removed_rows,
             strict=strict,
             new=True,
