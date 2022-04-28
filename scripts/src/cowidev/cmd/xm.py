@@ -1,6 +1,6 @@
 import click
 
-from cowidev.cmd.commons.utils import OrderedGroup
+from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 from cowidev.xm.etl import run_etl
 
 
@@ -15,7 +15,13 @@ def click_xm(ctx):
 @click.pass_context
 def click_xm_generate(ctx):
     """Download and generate our COVID-19 Hospitalization dataset."""
-    run_etl()
+    feedback_log(
+        func=run_etl,
+        server=ctx.obj["server"],
+        domain="Excess Mortality",
+        step="generate",
+        text_success="Excess Mortality files generated.",
+    )
 
 
 click_xm.add_command(click_xm_generate)

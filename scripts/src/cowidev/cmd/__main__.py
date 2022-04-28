@@ -12,8 +12,7 @@ from cowidev.cmd.xm import click_xm
 from cowidev.cmd.gmobility import click_gm
 from cowidev.cmd.variants import click_variants
 from cowidev.cmd.oxcgrt import click_oxcgrt
-from cowidev.megafile.generate import generate_megafile
-from cowidev.cmd.commons.utils import StepReport
+from cowidev.cmd.megafile import click_megafile
 
 
 @click.group(name="cowid", cls=OrderedGroup)
@@ -50,35 +49,8 @@ def cli(ctx, parallel, n_jobs, server):
         ctx.obj["logger"] = get_logger()
 
 
-@click.command(name="megafile")
-@click.pass_context
-def cli_export(ctx):
-    """COVID-19 data integration pipeline (former megafile)"""
-    try:
-        generate_megafile(ctx.obj["logger"])
-    except Exception as err:
-        if ctx.obj["server"]:
-            StepReport(
-                title="Megafile step failed",
-                trace=get_traceback(err),
-                type="error",
-            ).to_slack()
-        else:
-            if ctx.obj["server"]:
-                StepReport(
-                    title="Megafile step ran successfully",
-                    text="Public data files generated.",
-                    type="success",
-                ).to_slack()
-    else:
-        if ctx.obj["server"]:
-            StepReport(
-                title="Megafile step ran successfully",
-                text="Public data files generated.",
-                type="success",
-            ).to_slack()
 
-
+cli.add_command(click_megafile)
 cli.add_command(click_test)
 cli.add_command(click_vax)
 cli.add_command(click_hosp)
@@ -86,7 +58,6 @@ cli.add_command(click_jhu)
 cli.add_command(click_variants)
 cli.add_command(click_xm)
 cli.add_command(click_gm)
-cli.add_command(cli_export)
 cli.add_command(click_oxcgrt)
 
 

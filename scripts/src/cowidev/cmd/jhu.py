@@ -1,6 +1,6 @@
 import click
 
-from cowidev.cmd.commons.utils import OrderedGroup
+from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 from cowidev.jhu.__main__ import download_csv, main, update_db
 from cowidev.cmd.commons.utils import StepReport
 from cowidev.utils.utils import get_traceback
@@ -17,40 +17,28 @@ def click_jhu(ctx):
 @click.pass_context
 def click_jhu_download(ctx):
     """Downloads all JHU source files into project directory."""
-    try:
-        download_csv(ctx.obj["logger"])
-    except Exception as err:
-        if ctx.obj["server"]:
-            StepReport(
-                title="JHU - [get] step failed",
-                trace=get_traceback(err),
-                type="error",
-            ).to_slack()
-        else:
-            raise err
+    feedback_log(
+        func=download_csv,
+        server=ctx.obj["server"],
+        domain="JHU",
+        step="get",
+        hide_success=True,
+        logger=ctx.obj["logger"],
+    )
 
 
 @click.command(name="generate", short_help="Step 2: Generate dataset.")
 @click.pass_context
 def click_jhu_generate(ctx):
-    try:
-        main(ctx.obj["logger"], skip_download=True)
-    except Exception as err:
-        if ctx.obj["server"]:
-            StepReport(
-                title="JHU - [generate] step failed",
-                trace=get_traceback(err),
-                type="error",
-            ).to_slack()
-        else:
-            raise err
-    else:
-        if ctx.obj["server"]:
-            StepReport(
-                title="JHU - [generate] step ran successfully",
-                text="Intermediate JHU files were correctly generated.",
-                type="success",
-            ).to_slack()
+    feedback_log(
+        func=main,
+        server=ctx.obj["server"],
+        domain="JHU",
+        step="generate",
+        text_success="Public data files generated.",
+        logger=ctx.obj["logger"],
+        skip_download=True,
+    )
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
