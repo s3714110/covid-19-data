@@ -136,7 +136,9 @@ class PAHO:
         df_who = df_who.dropna(subset=["vaccine"])
         df_who = df_who.assign(
             vaccine=df_who.vaccine.apply(
-                lambda x: ", ".join(sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split(","))))
+                lambda x: ", ".join(
+                    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split(",") if xx != "Unknown Vaccine"))
+                )
             )
         )
         df = df.merge(df_who, left_on="country_code", right_on="ISO3")
