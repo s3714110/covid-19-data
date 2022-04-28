@@ -24,6 +24,8 @@ vaccines:
       - "Beijing CNBG - Inactivated"
       - "Sinopharm/HayatVax"
       - "Julphar - Hayat-Vax"
+  - owid_name: "CorbeVax"
+    org_name: "Biological E - Corbevax"
   - owid_name: "Covaxin"
     org_name: "Bharat - Covaxin"
   - owid_name: "CanSino"
@@ -52,6 +54,7 @@ vaccines:
     org_name:
       - "Novavax - Covavax"
       - "Novavax-NUVAXOVID"
+      - "SII - Covovax"
   - owid_name: "Pfizer/BioNTech"
     org_name: "Pfizer BioNTech - Comirnaty"
   - owid_name: "QazVac"
