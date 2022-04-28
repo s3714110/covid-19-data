@@ -1,6 +1,6 @@
 import click
 
-from cowidev.cmd.commons.utils import OrderedGroup
+from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 from cowidev.gmobility.etl import run_etl
 from cowidev.gmobility.grapher import run_grapheriser, run_db_updater
 
@@ -16,17 +16,37 @@ def click_gm(ctx):
 @click.pass_context
 def click_gm_generate(ctx):
     """Download and generate our COVID-19 Hospitalization dataset."""
-    run_etl()
+    feedback_log(
+        func=run_etl,
+        server=ctx.obj["server"],
+        domain="Google Mobility",
+        step="generate",
+        hide_success=True,
+    )
 
 
 @click.command(name="grapher-io", short_help="Step 2: Generate grapher-ready files.")
-def click_gm_grapherio():
-    run_grapheriser()
+@click.pass_context
+def click_gm_grapherio(ctx):
+    feedback_log(
+        func=run_grapheriser,
+        server=ctx.obj["server"],
+        domain="Google Mobility",
+        step="generate",
+        hide_success=True,
+    )
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
-def click_gm_grapherdb():
-    run_db_updater()
+@click.pass_context
+def click_gm_grapherdb(ctx):
+    feedback_log(
+        func=run_db_updater,
+        server=ctx.obj["server"],
+        domain="Google Mobility",
+        step="generate",
+        hide_success=True,
+    )
 
 
 click_gm.add_command(click_gm_generate)
