@@ -48,9 +48,6 @@ def run_grapheriser():
     df.to_csv(DATA_HOSP_GRAPHER_FILE, index=False)
     export_timestamp(PATHS.DATA_TIMESTAMP_HOSP_FILE)
 
-    print("Generating megafile…")
-    generate_megafile(logger)
-
 
 def run_db_updater():
     dataset_name = get_filename(DATA_HOSP_GRAPHER_FILE)
