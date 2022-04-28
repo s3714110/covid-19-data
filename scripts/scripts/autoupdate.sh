@@ -44,40 +44,6 @@ git reset --hard origin/master
 git pull
 
 # =====================================================================
-# Policy responses
-
-# The policy update files change far too often (every hour or so).
-# We don't want to run an update if one has already been run in the
-# last 6 hours.
-
-OXCGRT_CSV_PATH=./scripts/input/bsg/latest.csv
-UPDATE_INTERVAL_SECONDS=$(expr 60 \* 60 \* 24) # 24 hours
-CURRENT_TIME=$(date +%s)
-UPDATED_TIME=$(stat $OXCGRT_CSV_PATH -c %Y)
-
-if [ $(expr $CURRENT_TIME - $UPDATED_TIME) -gt $UPDATE_INTERVAL_SECONDS ]; then
-  # Download CSV
-  python -m cowidev.oxcgrt etl
-  # If there are any unstaged changes in the repo, then the
-  # CSV has changed, and we need to run the update script.
-  if has_changed $OXCGRT_CSV_PATH; then
-    echo "Generating OxCGRT export..."
-    python -m cowidev.oxcgrt grapher-file
-    git_push "data(oxcgrt): automated update"
-  else
-    echo "OxCGRT export is up to date"
-  fi
-else
-  echo "OxCGRT CSV was recently updated; skipping download"
-fi
-
-# Always run the database update.
-# The script itself contains a check against the database
-# to make sure it doesn't run unnecessarily.
-# run_python 'import oxcgrt; oxcgrt.update_db()'
-python -m cowidev.oxcgrt grapher-db
-
-# =====================================================================
 # JHU
 
 # Attempt to download JHU CSVs
@@ -248,7 +214,7 @@ if [ $hour == 15 ] ; then
   python -m cowidev.vax.us_states etl
   python -m cowidev.vax.us_states grapher-file
   if has_changed './public/data/vaccinations/us_state_vaccinations.csv'; then
-    git_push "data(us-vax): update"
+    git_push "data(vax,us): automated update"
   else
     echo "US vaccination export is up to date"
   fi
@@ -278,3 +244,34 @@ if [ $hour == 21 ] ; then
   cowid --server megafile
   git_push "data(xm): automated update"
 fi
+
+# =====================================================================
+# Policy responses
+
+# The policy update files change far too often (every hour or so).
+# We don't want to run an update if one has already been run in the
+# last 6 hours.
+
+OXCGRT_CSV_PATH=./scripts/input/bsg/latest.csv
+hour=$(date +%H)
+if [ $hour == 23 ] ; then
+  # Download CSV
+  cowid --server oxcgrt get
+  # If there are any unstaged changes in the repo, then the
+  # CSV has changed, and we need to run the update script.
+  if has_changed $OXCGRT_CSV_PATH; then
+    echo "Generating OxCGRT export..."
+    cowid --server oxcgrt grapher-io
+    git_push "data(oxcgrt): automated update"
+  else
+    echo "OxCGRT export is up to date"
+  fi
+else
+  echo "OxCGRT CSV was recently updated; skipping download"
+fi
+
+# Always run the database update.
+# The script itself contains a check against the database
+# to make sure it doesn't run unnecessarily.
+# run_python 'import oxcgrt; oxcgrt.update_db()'
+cowid --server oxcgrt grapher-db
