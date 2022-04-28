@@ -45,7 +45,7 @@ def click_vax_process(ctx):
         skip_anomaly=CONFIG.pipeline.vaccinations.process.skip_anomaly_check,
         logger=ctx.obj["logger"],
     )
-    if ctx.obj["server_mode"]:
+    if ctx.obj["server"]:
         report_msg.to_slack()
         print(report_msg)
 

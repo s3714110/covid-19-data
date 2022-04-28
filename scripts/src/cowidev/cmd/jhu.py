@@ -20,7 +20,7 @@ def click_jhu_download(ctx):
     try:
         download_csv(ctx.obj["logger"])
     except Exception as err:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="JHU - [get] step failed",
                 trace=get_traceback(err),
@@ -36,7 +36,7 @@ def click_jhu_generate(ctx):
     try:
         main(ctx.obj["logger"], skip_download=True)
     except Exception as err:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="JHU - [generate] step failed",
                 trace=get_traceback(err),
@@ -45,7 +45,7 @@ def click_jhu_generate(ctx):
         else:
             raise err
     else:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="JHU - [generate] step ran successfully",
                 text="Intermediate JHU files were correctly generated.",

@@ -12,7 +12,7 @@ def click_vax_export(ctx):
         ctx.obj["logger"].info("-- Generating megafiles... --")
         generate_megafile(ctx.obj["logger"])
     except Exception as err:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Vaccinations - [export] step failed",
                 trace=get_traceback(err),
@@ -21,7 +21,7 @@ def click_vax_export(ctx):
         else:
             raise err
     else:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Vaccinations - [export] step ran successfully",
                 text="Megafile generated, source table updated.",

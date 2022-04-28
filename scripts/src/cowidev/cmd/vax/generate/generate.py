@@ -13,7 +13,7 @@ def click_vax_generate(ctx):
     try:
         generator.run()
     except Exception as err:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Vaccinations - [generate] step failed",
                 trace=get_traceback(err),
@@ -22,7 +22,7 @@ def click_vax_generate(ctx):
         else:
             raise err
     else:
-        if ctx.obj["server_mode"]:
+        if ctx.obj["server"]:
             StepReport(
                 title="Vaccinations - [generate] step ran successfully",
                 text="Intermediate vaccinations files were correctly generated.",

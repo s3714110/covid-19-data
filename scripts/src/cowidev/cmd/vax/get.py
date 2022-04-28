@@ -79,6 +79,6 @@ def click_vax_get(ctx, countries, skip_countries, optimize):
         output_status_ts=paths.INTERNAL_OUTPUT_VAX_STATUS_GET_TS,
         logger=ctx.obj["logger"],
     )
-    if ctx.obj["server_mode"]:
+    if ctx.obj["server"]:
         report_msg.to_slack()
         print(report_msg)
