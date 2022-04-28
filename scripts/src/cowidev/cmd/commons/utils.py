@@ -26,7 +26,7 @@ def feedback_log(func, server, domain, step=None, text_success="", hide_success=
     else:
         if server and not hide_success:
             StepReport(
-                title=f"{header}] step ran successfully",
+                title=f"[{header}] step ran successfully",
                 text=text_success,
                 type="success",
             ).to_slack()
