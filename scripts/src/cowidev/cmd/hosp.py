@@ -1,7 +1,6 @@
 import click
 
-from cowidev.cmd.commons.utils import OrderedGroup
-from cowidev.cmd.commons.utils import Country2Module, PythonLiteralOption
+from cowidev.cmd.commons.utils import OrderedGroup, Country2Module, PythonLiteralOption, feedback_log
 from cowidev.utils.params import CONFIG
 from cowidev.hosp.etl import run_etl
 from cowidev.hosp.grapher import run_db_updater, run_grapheriser
@@ -48,22 +47,41 @@ def click_hosp_generate(ctx, countries, skip_countries):
     )
     modules = c2m.parse(countries)
     modules_skip = c2m.parse(skip_countries)
-    run_etl(
+    feedback_log(
+        func=run_etl,
         parallel=ctx.obj["parallel"],
         n_jobs=ctx.obj["n_jobs"],
         modules=modules,
         modules_skip=modules_skip,
+        server=ctx.obj["server"],
+        domain="Hospitalizations",
+        step="generate",
+        text_success="Hospitalization files were correctly generated.",
     )
 
 
 @click.command(name="grapher-io", short_help="Step 2: Generate grapher-ready files.")
-def click_hosp_grapherio():
-    run_grapheriser()
+@click.pass_context
+def click_hosp_grapherio(ctx):
+    feedback_log(
+        func=run_grapheriser,
+        server=ctx.obj["server"],
+        domain="Hospitalizations",
+        step="grapher-io",
+        text_success="Hospitalization Grapher files were correctly generated.",
+    )
 
 
 @click.command(name="grapher-db", short_help="Step 3: Update Grapher database with generated files.")
-def click_hosp_grapherdb():
-    run_db_updater()
+@click.pass_context
+def click_hosp_grapherdb(ctx):
+    feedback_log(
+        func=run_db_updater,
+        server=ctx.obj["server"],
+        domain="Hospitalizations",
+        step="grapher-db",
+        text_success="Hospitalization files were correctly uploaded to the database.",
+    )
 
 
 click_hosp.add_command(click_hosp_generate)
