@@ -146,6 +146,7 @@ INTERNAL_INPUT_TEMPLATE_STATUS = os.path.join(INTERNAL_INPUT_TEMPLATE, "status.m
 ## Grapher
 INTERNAL_GRAPHER_DIR = os.path.join(INTERNAL_DIR, "grapher")
 INTERNAL_GRAPHER_BSG_FILE = os.path.join(INTERNAL_GRAPHER_DIR, "COVID Government Response (OxBSG).csv")
+INTERNAL_GRAPHER_VAX_US_FILE = os.path.join(INTERNAL_GRAPHER_DIR, "COVID-19 - United States vaccinations.csv")
 
 ## Temporary
 INTERNAL_TMP_VAX_MAIN_FILE = os.path.join(INTERNAL_DIR, "vaccinations.preliminary.csv")
