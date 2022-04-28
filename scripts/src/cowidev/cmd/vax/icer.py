@@ -1,8 +1,7 @@
-import os
-
 import click
 
 from cowidev.vax.icer import main
+from cowidev.cmd.commons.utils import feedback_log
 
 
 @click.command(
@@ -10,4 +9,4 @@ from cowidev.vax.icer import main
 )
 @click.pass_context
 def click_vax_icer(ctx):
-    main(ctx.obj["logger"])
+    feedback_log(func=main, logger=ctx.obj["logger"], domain="Vaccinations", step="icer", hide_success=True)
