@@ -93,7 +93,7 @@ run_python 'import decoupling; decoupling.update_db()'
 hour=$(date +%H)
 if [ $hour == 03 ] ; then
   echo "Generating ICE vaccination data..."
-  python -m cowidev.vax.icer
+  cowid vax icer
 fi
 
 # =====================================================================
