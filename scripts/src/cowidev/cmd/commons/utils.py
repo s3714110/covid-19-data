@@ -11,13 +11,13 @@ def feedback_log(func, server, domain, step=None, text_success="", hide_success=
     if step is None:
         header = domain
     else:
-        header = f"{domain} - {step}"
+        header = f"{domain} - [{step}]"
     try:
         func(**function_kwargs)
     except Exception as err:
         if server:
             StepReport(
-                title=f"[{header}] step failed",
+                title=f"{header} step failed",
                 trace=get_traceback(err),
                 type="error",
             ).to_slack()
@@ -26,7 +26,7 @@ def feedback_log(func, server, domain, step=None, text_success="", hide_success=
     else:
         if server and not hide_success:
             StepReport(
-                title=f"[{header}] step ran successfully",
+                title=f"{header} step ran successfully",
                 text=text_success,
                 type="success",
             ).to_slack()
