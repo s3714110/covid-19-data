@@ -90,8 +90,8 @@ hour=$(date +%H)
 if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] || [ $hour == 22 ]; then
   if has_changed './scripts/input/jhu/*'; then
     echo "Generating JHU files..."
-    cowid --server-mode jhu generate
-    cowid --server-mode megafile
+    cowid --server jhu generate
+    cowid --server megafile
     # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
     git_push "data(jhu): automated update"
   else
@@ -153,9 +153,9 @@ cowid hosp grapher-db
 hour=$(date +%H)
 if [ $hour == 07 ] ; then
   echo "Generating Vaccination (get, process, generate) & megafile..."
-  cowid --server-mode vax get
-  cowid --server-mode vax process generate
-  cowid --server-mode megafile
+  cowid --server vax get
+  cowid --server vax process generate
+  cowid --server megafile
   git_push "data(vax): automated update"
 fi
 
@@ -275,6 +275,6 @@ hour=$(date +%H)
 if [ $hour == 21 ] ; then
   echo "Generating CoVariants dataset..."
   cowid xm generate
-  cowid --server-mode megafile
+  cowid --server megafile
   git_push "data(xm): automated update"
 fi
