@@ -115,6 +115,8 @@ INTERNAL_INPUT_DIR = os.path.join(INTERNAL_DIR, "input")
 ### Input UN
 INTERNAL_INPUT_BSG_DIR = os.path.join(INTERNAL_INPUT_DIR, "bsg")
 INTERNAL_INPUT_BSG_FILE = os.path.join(INTERNAL_INPUT_BSG_DIR, "latest.csv")
+INTERNAL_INPUT_BSG_DIFF_FILE = os.path.join(INTERNAL_INPUT_BSG_DIR, "latest-differentiated.csv")
+INTERNAL_INPUT_BSG_STD_FILE = os.path.join(INTERNAL_INPUT_BSG_DIR, "bsg_country_standardised.csv")
 INTERNAL_INPUT_CDC_VAX_DIR = os.path.join(INTERNAL_INPUT_DIR, "cdc", "vaccinations")
 INTERNAL_INPUT_GMOB_DIR = os.path.join(INTERNAL_INPUT_DIR, "gmobility")
 INTERNAL_INPUT_GMOB_STD_FILE = os.path.join(INTERNAL_INPUT_GMOB_DIR, "gmobility_country_standardized.csv")
@@ -143,6 +145,7 @@ INTERNAL_INPUT_TEMPLATE_STATUS = os.path.join(INTERNAL_INPUT_TEMPLATE, "status.m
 
 ## Grapher
 INTERNAL_GRAPHER_DIR = os.path.join(INTERNAL_DIR, "grapher")
+INTERNAL_GRAPHER_BSG_FILE = os.path.join(INTERNAL_GRAPHER_DIR, "COVID Government Response (OxBSG).csv")
 
 ## Temporary
 INTERNAL_TMP_VAX_MAIN_FILE = os.path.join(INTERNAL_DIR, "vaccinations.preliminary.csv")
