@@ -9,6 +9,7 @@ vaccine_mapping = {
     "Sinovac": "Sinovac",
     "Astra-Zeneca": "Oxford/AstraZeneca",
     "CanSino": "CanSino",
+    "Moderna": "Moderna",
 }
 
 
