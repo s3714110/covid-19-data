@@ -4,6 +4,28 @@ from dataclasses import dataclass
 import click
 
 from cowidev.utils.slackapi import SlackAPI
+from cowidev.utils.utils import get_traceback
+
+
+def feedback_log(func, server, domain, step, text_success="", hide_success=False, **function_kwargs):
+    try:
+        func(**function_kwargs)
+    except Exception as err:
+        if server:
+            StepReport(
+                title=f"{domain} - [{step}] step failed",
+                trace=get_traceback(err),
+                type="error",
+            ).to_slack()
+        else:
+            raise err
+    else:
+        if server and not hide_success:
+            StepReport(
+                title=f"{domain} - [{step}] step ran successfully",
+                text=text_success,
+                type="success",
+            ).to_slack()
 
 
 class OptionEatAll(click.Option):
@@ -124,8 +146,7 @@ class OrderedGroup(click.Group):
 
 
 class StepReport:
-
-    def __init__(self, title: str, type: str,  text: str = "", trace: str = ""):
+    def __init__(self, title: str, type: str, text: str = "", trace: str = ""):
         self.title = title
         self.text = text
         self.type = type
