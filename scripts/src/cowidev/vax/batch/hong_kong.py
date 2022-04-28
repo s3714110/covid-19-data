@@ -103,7 +103,7 @@ class HongKong(CountryVaxBase):
         )
 
     def pipe_filter_dp(self, df: pd.DataFrame) -> pd.DataFrame:
-        msk = df.date.isin(["2021-10-13"])
+        msk = df.date.isin(["2021-10-13", "2022-02-01"])
         return df[~msk]
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -112,6 +112,7 @@ class HongKong(CountryVaxBase):
             .pipe(self.pipe_add_vaccines)
             .pipe(self.pipe_add_metadata)
             .pipe(self.pipe_filter_dp)
+            .pipe(self.make_monotonic)
         )
 
     def pipe_sum_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
