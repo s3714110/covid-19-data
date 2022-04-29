@@ -273,7 +273,7 @@ def update_db():
         csv_path=os.path.join(PATHS.INTERNAL_GRAPHER_DIR, DATASET_NAME + ".csv"),
         default_variable_display={"yearIsDay": True, "zeroDay": ZERO_DAY},
         source_name="Official data collated by Our World in Data",
-        slack_notifications=True,
+        slack_notifications=False,
     )
 
 

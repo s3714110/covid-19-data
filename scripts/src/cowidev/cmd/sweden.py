@@ -45,7 +45,7 @@ def click_sweden_grapherdb(ctx):
     feedback_log(
         func=update_db,
         server=ctx.obj["server"],
-        domain="Decoupling",
+        domain="Sweden",
         step="grapher-db",
         text_success="Sweden data updated in database.",
     )

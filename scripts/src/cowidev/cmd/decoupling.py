@@ -34,6 +34,7 @@ def click_decoup_grapherdb(ctx):
         domain="Decoupling",
         step="grapher-db",
         text_success="Decoupling data updated in database.",
+        slack_notifications=False,
     )
 
 
