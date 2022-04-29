@@ -19,7 +19,7 @@ def click_uk_get(ctx):
         func=generate_dataset,
         server=ctx.obj["server"],
         domain="UK Nations",
-        step="get",
+        step="generate",
         hide_success=True,
     )
 
