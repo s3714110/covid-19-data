@@ -154,15 +154,14 @@ cowid --server gmobility grapher-db
 # Swedish Public Health Agency
 
 # Attempt to download data
-run_python 'import sweden; sweden.download_data()'
-
+cowid --server sweden get
 # If there are any unstaged changes in the repo, then one of
 # the CSVs has changed, and we need to run the update script.
 hour=$(date +%H)
 if [ $hour == 11 ] ; then
   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
     echo "Generating Swedish Public Health Agency dataset..."
-    run_python 'import sweden; sweden.generate_dataset()'
+    cowid --server sweden generate
     git_push "data(sweden): automated update"
   else
     echo "Swedish Public Health Agency export is up to date"
@@ -172,8 +171,7 @@ fi
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-run_python 'import sweden; sweden.update_db()'
-
+cowid --server sweden grapher-db
 # =====================================================================
 # UK subnational data
 
