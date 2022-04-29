@@ -134,10 +134,10 @@ hour=$(date +%H)
 if [ $hour == 09 ] ; then
 
   # Download CSV
-  cowid gmobility generate
+  cowid --server gmobility generate
 
   echo "Generating Google Mobility export..."
-  cowid gmobility grapher-io
+  cowid --server gmobility grapher-io
 
   if has_changed './scripts/grapher/Google Mobility Trends (2020).csv'; then
     git_push "data(mobility): automated update"
@@ -148,7 +148,7 @@ fi
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-cowid gmobility grapher-db
+cowid --server gmobility grapher-db
 
 # =====================================================================
 # Swedish Public Health Agency
