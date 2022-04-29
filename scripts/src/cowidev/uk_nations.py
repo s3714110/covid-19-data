@@ -222,7 +222,7 @@ def update_db():
         csv_path=OUTPUT_CSV,
         default_variable_display={"yearIsDay": True, "zeroDay": ZERO_DAY},
         source_name=source_name,
-        slack_notifications=True,
+        slack_notifications=False,
     )
 
 
