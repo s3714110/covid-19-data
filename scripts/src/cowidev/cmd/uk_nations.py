@@ -18,7 +18,7 @@ def click_uk_get(ctx):
     feedback_log(
         func=generate_dataset,
         server=ctx.obj["server"],
-        domain="Sweden",
+        domain="UK Nations",
         step="get",
         hide_success=True,
     )
@@ -31,9 +31,9 @@ def click_uk_grapherdb(ctx):
     feedback_log(
         func=update_db,
         server=ctx.obj["server"],
-        domain="Decoupling",
+        domain="UK Nations",
         step="grapher-db",
-        text_success="Sweden data updated in database.",
+        text_success="UK nation data updated in database.",
     )
 
 
