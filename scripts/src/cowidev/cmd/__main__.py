@@ -14,6 +14,7 @@ from cowidev.cmd.oxcgrt import click_oxcgrt
 from cowidev.cmd.megafile import click_megafile
 from cowidev.cmd.decoupling import click_decoup
 from cowidev.cmd.sweden import click_sweden
+from cowidev.cmd.uk_nations import click_uk_nations
 
 
 @click.group(name="cowid", cls=OrderedGroup)
@@ -61,6 +62,7 @@ cli.add_command(click_gm)
 cli.add_command(click_oxcgrt)
 cli.add_command(click_decoup)
 cli.add_command(click_sweden)
+cli.add_command(click_uk_nations)
 
 
 if __name__ == "__main__":

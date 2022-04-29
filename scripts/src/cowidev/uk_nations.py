@@ -7,12 +7,10 @@ import pandas as pd
 from uk_covid19 import Cov19API
 
 from cowidev import PATHS
-from utils.db_imports import import_dataset
+from cowidev.grapher.db.utils.db_imports import import_dataset
 
 DATASET_NAME = "uk_covid_data"
-PROJECT_DIR = PATHS.PROJECT_DIR
-OUTPUT_DIR = PATHS.INTERNAL_GRAPHER_DIR
-OUTPUT_CSV = os.path.join(OUTPUT_DIR, f"{DATASET_NAME}.csv")
+OUTPUT_CSV = os.path.join(PATHS.INTERNAL_GRAPHER_DIR, f"{DATASET_NAME}.csv")
 ZERO_DAY = "2020-01-01"
 
 

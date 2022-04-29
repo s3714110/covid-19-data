@@ -179,15 +179,14 @@ hour=$(date +%H)
 if [ $hour == 13 ] ; then
   # Download CSV
   echo "Generating UK subnational export..."
-  run_python 'import uk_nations; uk_nations.generate_dataset()'
+  cowid --server uk-nations generate
   git_push "data(uk): automated update"
 fi
 
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-run_python 'import uk_nations; uk_nations.update_db()'
-
+cowid --server uk-nations grapher-db
 # =====================================================================
 # US vaccinations
 
