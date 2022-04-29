@@ -77,14 +77,14 @@ cowid --server jhu grapher-db
 hour=$(date +%H)
 if [ $hour == 01 ] ; then
   echo "Generating decoupling dataset..."
-  run_python 'import decoupling; decoupling.main()'
+  cowid --server decoupling generate
   git_push "data(decoupling): automated update"
 fi
 
 # Always run the database update.
 # The script itself contains a check against the database
 # to make sure it doesn't run unnecessarily.
-run_python 'import decoupling; decoupling.update_db()'
+cowid --server decoupling grapher-db
 
 # =====================================================================
 # VAX ICER

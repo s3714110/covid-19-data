@@ -2,7 +2,6 @@ import click
 
 from cowidev.utils.params import CONFIG
 from cowidev.utils.log import get_logger
-from cowidev.utils.utils import get_traceback
 from cowidev.cmd.commons.utils import OrderedGroup
 from cowidev.cmd.testing import click_test
 from cowidev.cmd.vax import click_vax
@@ -13,6 +12,7 @@ from cowidev.cmd.gmobility import click_gm
 from cowidev.cmd.variants import click_variants
 from cowidev.cmd.oxcgrt import click_oxcgrt
 from cowidev.cmd.megafile import click_megafile
+from cowidev.cmd.decoupling import click_decoup
 
 
 @click.group(name="cowid", cls=OrderedGroup)
@@ -49,7 +49,6 @@ def cli(ctx, parallel, n_jobs, server):
         ctx.obj["logger"] = get_logger()
 
 
-
 cli.add_command(click_megafile)
 cli.add_command(click_test)
 cli.add_command(click_vax)
@@ -59,6 +58,7 @@ cli.add_command(click_variants)
 cli.add_command(click_xm)
 cli.add_command(click_gm)
 cli.add_command(click_oxcgrt)
+cli.add_command(click_decoup)
 
 
 if __name__ == "__main__":
