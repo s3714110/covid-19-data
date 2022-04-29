@@ -38,3 +38,4 @@ def click_decoup_grapherdb(ctx):
 
 
 click_decoup.add_command(click_decoup_generate)
+click_decoup.add_command(click_decoup_grapherdb)
