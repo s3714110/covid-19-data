@@ -7,7 +7,7 @@ from cowidev.decoupling import main, update_db
 @click.group(name="decoupling", chain=True, cls=OrderedGroup)
 @click.pass_context
 def click_decoup(ctx):
-    """COVID-19 Excess Mortality data pipeline."""
+    """COVID-19 Decoupling data pipeline."""
     pass
 
 
