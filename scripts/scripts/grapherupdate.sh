@@ -29,8 +29,8 @@ export OWID_COVID_SECRETS=${OWID_COVID_PROJECT_DIR}/scripts/secrets.yaml
 cowidev-grapher-db
 
 ## Additional individual grapher updates
-minute=$(date +%m)
-if [ $minute == 10 ] ; then
+minute=$(date +%M)
+if [ $minute == 20 ] ; then
   cowid --server jhu grapher-db
   cowid --server decoupling grapher-db
   cowid --server hosp grapher-db
