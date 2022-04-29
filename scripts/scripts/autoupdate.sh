@@ -48,7 +48,6 @@ git pull
 
 # Attempt to download JHU CSVs
 cowid jhu get
-git_push "data(jhu): downloaded data from JHU"
 
 hour=$(date +%H)
 if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] || [ $hour == 22 ]; then
