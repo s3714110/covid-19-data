@@ -123,7 +123,7 @@ fi
 
 # Attempt to download data
 cowid --server sweden get
-git_push "data(sweden): downloaded data for Sweden"
+
 hour=$(date +%H)
 if [ $hour == 11 ] ; then
   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
