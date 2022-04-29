@@ -25,8 +25,9 @@ has_changed_gzip() {
 
 git_push() {
   if [ -n "$(git status --porcelain)" ]; then
+    msg="data("$1"): automated update"
     git add .
-    git commit -m $1
+    git commit -m $msg
     git push
   fi
   
@@ -58,7 +59,7 @@ if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [
     echo "Generating JHU files..."
     cowid --server jhu generate
     # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
-    git_push "data(jhu): automated update"
+    git_push "jhu"
   else
     echo "JHU export is up to date"
   fi
@@ -70,7 +71,7 @@ hour=$(date +%H)
 if [ $hour == 01 ] ; then
   echo "Generating decoupling dataset..."
   cowid --server decoupling generate
-  git_push "data(decoupling): automated update"
+  git_push "decoupling"
 fi
 
 # =====================================================================
@@ -90,7 +91,7 @@ if [ $hour == 05 ] || [ $hour == 17 ] ; then
   echo "Generating hospital & ICU export..."
   cowid --server hosp generate
   cowid --server hosp grapher-io
-  git_push "data(hosp): automated update"
+  git_push "hosp"
 fi
 
 # =====================================================================
@@ -101,7 +102,7 @@ if [ $hour == 07 ] ; then
   echo "Generating Vaccination (get, process, generate)..."
   cowid --server vax get
   cowid --server vax process generate
-  git_push "data(vax): automated update"
+  git_push "vax"
 fi
 
 
@@ -117,7 +118,7 @@ if [ $hour == 09 ] ; then
   cowid --server gmobility grapher-io
 
   if has_changed './scripts/grapher/Google Mobility Trends (2020).csv'; then
-    git_push "data(mobility): automated update"
+    git_push "mobility"
   fi
 fi
 
@@ -132,7 +133,7 @@ if [ $hour == 11 ] ; then
   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
     echo "Generating Swedish Public Health Agency dataset..."
     cowid --server sweden generate
-    git_push "data(sweden): automated update"
+    git_push "sweden"
   else
     echo "Swedish Public Health Agency export is up to date"
   fi
@@ -145,7 +146,7 @@ if [ $hour == 13 ] ; then
   # Download CSV
   echo "Generating UK subnational export..."
   cowid --server uk-nations generate
-  git_push "data(uk): automated update"
+  git_push "uk"
 fi
 
 # =====================================================================
@@ -155,7 +156,7 @@ if [ $hour == 15 ] ; then
   echo "Generating US vaccination files..."
   cowid --server vax us-states
   if has_changed './public/data/vaccinations/us_state_vaccinations.csv'; then
-    git_push "data(vax,us): automated update"
+    git_push "vax,us"
   else
     echo "US vaccination export is up to date"
   fi
@@ -168,7 +169,7 @@ if [ $hour == 19 ] ; then
   echo "Generating CoVariants dataset..."
   cowid --server variants generate
   cowid --server variants grapher-io
-  git_push "data(variants): automated update"
+  git_push "variants"
 fi
 
 # =====================================================================
@@ -177,7 +178,7 @@ hour=$(date +%H)
 if [ $hour == 21 ] ; then
   echo "Generating CoVariants dataset..."
   cowid --server xm generate
-  git_push "data(xm): automated update"
+  git_push "xm"
 fi
 
 # =====================================================================
@@ -192,7 +193,7 @@ if [ $hour == 23 ] ; then
   if has_changed $OXCGRT_CSV_PATH; then
     echo "Generating OxCGRT export..."
     cowid --server oxcgrt grapher-io
-    git_push "data(oxcgrt): automated update"
+    git_push "oxcgrt"
   else
     echo "OxCGRT export is up to date"
   fi
@@ -204,4 +205,4 @@ fi
 # =====================================================================
 # Megafile
 cowid --server megafile
-git_push "data(megafile): automated update"
+git_push "megafile"
