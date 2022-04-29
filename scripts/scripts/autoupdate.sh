@@ -24,9 +24,12 @@ has_changed_gzip() {
 }
 
 git_push() {
-  git add .
-  git commit -m $1
-  git push
+  if [ -n "$(git status --porcelain)" ]; then
+    git add .
+    git commit -m $1
+    git push
+  fi
+  
 }
 
 cd $ROOT_DIR
