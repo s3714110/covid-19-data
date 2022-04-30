@@ -27,11 +27,11 @@ git_push() {
   if [ -n "$(git status --porcelain)" ]; then
     msg="data("$1"): automated update"
     git add .
-    git commit -m $msg
+    git commit -m "$msg"
     git push
   fi
-  
 }
+
 
 cd $ROOT_DIR
 
