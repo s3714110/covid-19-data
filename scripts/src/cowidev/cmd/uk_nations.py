@@ -19,7 +19,7 @@ def click_uk_get(ctx):
         func=generate_dataset,
         server=ctx.obj["server"],
         domain="UK Nations",
-        step="get",
+        step="generate",
         hide_success=True,
     )
 
@@ -34,6 +34,7 @@ def click_uk_grapherdb(ctx):
         domain="UK Nations",
         step="grapher-db",
         text_success="UK nation data updated in database.",
+        hide_success=True,
     )
 
 
