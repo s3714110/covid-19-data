@@ -102,13 +102,16 @@ def series_monotonic(ds):
     return ds[(diff >= 0) | (diff.isna())]
 
 
-def export_timestamp(timestamp_filename: str, force_directory: str = None):
+def export_timestamp(timestamp_filename: str, force_directory: str = None, timestamp=None):
     if force_directory:
         timestamp_filename = os.path.join(force_directory, timestamp_filename)
     else:
         timestamp_filename = os.path.join(PATHS.DATA_TIMESTAMP_DIR, timestamp_filename)
+    if timestamp is None:
+        timestamp = datetime.utcnow().replace(microsecond=0).isoformat()
+    print(timestamp)
     with open(timestamp_filename, "w") as timestamp_file:
-        timestamp_file.write(datetime.utcnow().replace(microsecond=0).isoformat())
+        timestamp_file.write(timestamp)
 
 
 def time_str_grapher():
