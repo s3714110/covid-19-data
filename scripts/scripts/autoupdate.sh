@@ -123,11 +123,10 @@ fi
 # =====================================================================
 # Swedish Public Health Agency
 
-# Attempt to download data
-cowid --server sweden get
-
 hour=$(date +%H)
 if [ $hour == 11 ] ; then
+  # Attempt to download data
+  cowid --server sweden get
   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
     echo "Generating Swedish Public Health Agency dataset..."
     cowid --server sweden generate
