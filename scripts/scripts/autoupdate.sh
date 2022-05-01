@@ -54,15 +54,13 @@ git pull
 cowid jhu get
 
 hour=$(date +%H)
-if [ $hour == 00 ] || [ $hour == 02 ] || [ $hour == 04 ] || [ $hour == 06 ] || [ $hour == 08 ] || [ $hour == 10 ] || [ $hour == 12 ] || [ $hour == 14 ] ||[ $hour == 16 ] || [ $hour == 18 ] || [ $hour == 20 ] || [ $hour == 22 ]; then
-  if has_changed './scripts/input/jhu/*'; then
-    echo "Generating JHU files..."
-    cowid --server jhu generate
-    # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
-    git_push "jhu"
-  else
-    echo "JHU export is up to date"
-  fi
+if has_changed './scripts/input/jhu/*'; then
+  echo "Generating JHU files..."
+  cowid --server jhu generate
+  # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
+  git_push "jhu"
+else
+  echo "JHU export is up to date"
 fi
 
 # =====================================================================
