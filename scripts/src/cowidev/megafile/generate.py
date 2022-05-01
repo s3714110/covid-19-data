@@ -146,7 +146,7 @@ def generate_megafile(logger):
     create_dataset(all_covid, macro_variables, logger)
 
     # Store the last updated time
-    export_timestamp(PATHS.DATA_TIMESTAMP_OLD_FILE, force_directory=PATHS.DATA_DIR)  # @deprecate
+    # export_timestamp(PATHS.DATA_TIMESTAMP_OLD_FILE, force_directory=PATHS.DATA_DIR)  # @deprecate
 
     # Update readme
     logger.info("Generating public/data/README.md")
