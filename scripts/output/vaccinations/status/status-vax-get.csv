@@ -98,21 +98,7 @@ pdfminer.pdfparser.PDFSyntaxError: No /Root object! - Is this really a PDF?
 ",No /Root object! - Is this really a PDF?
 cowidev.vax.incremental.bahrain,1.26,True,2022-05-02T07:01:31,,
 cowidev.vax.incremental.bangladesh,10.74,True,2022-05-02T07:01:40,,
-cowidev.vax.incremental.barbados,2.04,False,2022-05-02T07:02:55,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 89, in main
-    Barbados().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 84, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 30, in read
-    df = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 42, in _parse_data
-    metrics = self._parse_metrics(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 58, in _parse_metrics
-    people_fully_vaccinated = clean_count(re.search(self.regex[""people_fully_vaccinated""], text).group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.barbados,1.51,True,2022-05-02T09:33:07,,
 cowidev.vax.incremental.brazil,0.05,True,2022-05-02T07:01:31,,
 cowidev.vax.incremental.bulgaria,1.08,True,2022-05-02T07:01:32,,
 cowidev.vax.incremental.china,34.84,True,2022-05-02T07:02:07,,
@@ -137,27 +123,7 @@ cowidev.vax.incremental.hungary,1.17,True,2022-05-02T07:01:41,,
 cowidev.vax.incremental.iceland,0.29,True,2022-05-02T07:01:41,,
 cowidev.vax.incremental.india,0.86,True,2022-05-02T07:01:41,,
 cowidev.vax.incremental.iran,2.48,True,2022-05-02T07:01:43,,
-cowidev.vax.incremental.isle_of_man,0.35,False,2022-05-02T07:02:56,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/isle_of_man.py"", line 117, in main
-    IsleOfMan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/isle_of_man.py"", line 113, in export
-    self.force_monotonic()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 269, in force_monotonic
-    df = pd.read_csv(self.output_path).pipe(self.make_monotonic)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 102, in make_monotonic
-    return mkm(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 201 have been NaNed for metric total_boosters. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2021-12-20']
-",1 chunks of lengths 201 have been NaNed for metric total_boosters. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2021-12-20']
+cowidev.vax.incremental.isle_of_man,0.42,True,2022-05-02T09:26:41,,
 cowidev.vax.incremental.jamaica,1.97,True,2022-05-02T07:01:43,,
 cowidev.vax.incremental.japan,1.05,True,2022-05-02T07:01:43,,
 cowidev.vax.incremental.kazakhstan,10.16,True,2022-05-02T07:01:53,,
