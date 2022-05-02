@@ -19,33 +19,7 @@ cowidev.vax.batch.indonesia,5.72,True,2022-05-02T07:00:18,,
 cowidev.vax.batch.ireland,0.41,True,2022-05-02T07:00:14,,
 cowidev.vax.batch.israel,7.33,True,2022-05-02T07:00:21,,
 cowidev.vax.batch.italy,6.65,True,2022-05-02T07:00:20,,
-cowidev.vax.batch.jersey,0.24,False,2022-05-02T07:02:44,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 231, in main
-    Jersey().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 223, in export
-    df_age = df_base.pipe(self.pipeline_age)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 196, in pipeline_age
-    df.pipe(self.pipe_age_select_columns)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 73, in pipe_age_select_columns
-    return df[
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/frame.py"", line 3464, in __getitem__
-    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/indexing.py"", line 1314, in _get_listlike_indexer
-    self._validate_read_indexer(keyarr, indexer, axis)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/indexing.py"", line 1377, in _validate_read_indexer
-    raise KeyError(f""{not_found} not in index"")
-KeyError: ""['VaccinationsPercentagePopulationVaccinatedFirstDose0to15years', 'VaccinationsPercentagePopulationVaccinatedSecondDose0to15years', 'VaccinationsPercentagePopulationVaccinatedThirdDose0to15years'] not in index""
-","""['VaccinationsPercentagePopulationVaccinatedFirstDose0to15years', 'VaccinationsPercentagePopulationVaccinatedSecondDose0to15years', 'VaccinationsPercentagePopulationVaccinatedThirdDose0to15years'] not in index"""
+cowidev.vax.batch.jersey,0.36,True,2022-05-02T14:22:26,,
 cowidev.vax.batch.latvia,24.24,True,2022-05-02T07:00:40,,
 cowidev.vax.batch.lithuania,2.83,True,2022-05-02T07:00:21,,
 cowidev.vax.batch.luxembourg,1.58,True,2022-05-02T07:00:22,,
