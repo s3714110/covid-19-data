@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/117` scripts failed, `10/117` were skipped. Latest update was `2022-05-02T07:02:56`.
+`3/117` scripts failed, `10/117` were skipped. Latest update was `2022-05-02T09:33:07`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -24,20 +24,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-05-02T07:02:56</td>
       <td>0.38</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 100, in main<br>    Lebanon().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 86, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 45, in read<br>    people_vaccinated = self._get_api_value(self.people_vaccinated_query)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/lebanon.py", line 61, in _get_api_value<br>    data = request_json(self.source_url, json=query, headers=self.headers, request_method="post")<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 106, in request_json<br>    text = request_text(url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 127, in request_text<br>    soup = get_soup(url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://impactpublicdashboard.cib.gov.lb/s/public/elasticsearch/vaccine_registration_event_data/_search?rest_total_hits_as_int=true&ignore_unavailable=true&ignore_throttled=true&preference=1635837427794&timeout=30000ms not reached! Error code 403 Forbidden<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.isle_of_man</td>
-      <td>❌</td>
-      <td>2022-05-02T07:02:56</td>
-      <td>0.35</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/isle_of_man.py", line 117, in main<br>    IsleOfMan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/isle_of_man.py", line 113, in export<br>    self.force_monotonic()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 269, in force_monotonic<br>    df = pd.read_csv(self.output_path).pipe(self.make_monotonic)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 102, in make_monotonic<br>    return mkm(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 201 have been NaNed for metric total_boosters. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2021-12-20']<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.barbados</td>
-      <td>❌</td>
-      <td>2022-05-02T07:02:55</td>
-      <td>2.04</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 89, in main<br>    Barbados().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 84, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 30, in read<br>    df = self._parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 42, in _parse_data<br>    metrics = self._parse_metrics(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 58, in _parse_metrics<br>    people_fully_vaccinated = clean_count(re.search(self.regex["people_fully_vaccinated"], text).group(1))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.azerbaijan</td>
@@ -121,6 +107,20 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-05-02T07:00:07</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.barbados</td>
+      <td>✅</td>
+      <td>2022-05-02T09:33:07</td>
+      <td>1.51</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.isle_of_man</td>
+      <td>✅</td>
+      <td>2022-05-02T09:26:41</td>
+      <td>0.42</td>
       <td></td>
     </tr>
     <tr>
