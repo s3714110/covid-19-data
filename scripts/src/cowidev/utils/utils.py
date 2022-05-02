@@ -82,7 +82,7 @@ def make_monotonic_new(
     # df.loc[:, column_metrics] = df[column_metrics].where(msk, other=None)
 
     # Check consecutive NaN within allowed range
-    x = df[column_metrics].isna() & df_before[column_metrics].isna()
+    x = df[column_metrics].isna() & ~df_before[column_metrics].isna()
     for metric in column_metrics:
         y = x[metric]
         y = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
