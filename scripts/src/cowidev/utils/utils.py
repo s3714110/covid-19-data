@@ -82,16 +82,20 @@ def make_monotonic_new(
     # df.loc[:, column_metrics] = df[column_metrics].where(msk, other=None)
 
     # Check consecutive NaN within allowed range
-    y = df[column_metrics].isna().any(axis=1)
-    y = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
-    if (exceed := y > max_removed_rows_per_chunk).any():
-        num_chunks = sum(exceed)
-        lenght_chunks = [str(yy) for yy in y[exceed].tolist()]
-        dates_chunks = sorted(df_before.loc[exceed, "date"].tolist())
-        raise Exception(
-            f"{num_chunks} chunks of lengths {', '.join(lenght_chunks)} have been removed. That is more than maximum"
-            f" allowed ({max_removed_rows_per_chunk}) by make_monotonic() - check the data. Check dates {dates_chunks}"
-        )
+    x = df[column_metrics].isna() & df_before[column_metrics].isna()
+    for metric in column_metrics:
+        y = x[metric]
+        y = y * (y.groupby((y != y.shift()).cumsum()).cumcount() + 1)
+        y[y.diff(-1) == -1] = 0
+        if (exceed := y > max_removed_rows_per_chunk).any():
+            num_chunks = sum(exceed)
+            length_chunks = [str(yy) for yy in y[exceed].tolist()]
+            dates_chunks = sorted(df_before.loc[exceed, "date"].tolist())
+            raise Exception(
+                f"{num_chunks} chunks of lengths {', '.join(length_chunks)} have been NaNed for metric {metric}. That"
+                f" is more than maximum allowed ({max_removed_rows_per_chunk}) by make_monotonic() - check the data."
+                f" Check dates {dates_chunks}"
+            )
     # Drop rows with all-None values
     df = df.dropna(subset=column_metrics, how="all")
     return df
