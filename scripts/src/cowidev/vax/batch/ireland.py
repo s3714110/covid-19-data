@@ -1,10 +1,10 @@
-from cowidev.vax.utils.base import CountryVaxBase
 import pandas as pd
 
+from cowidev.utils import clean_date_series
 from cowidev.utils.web import request_json
+from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.files import load_query
 from cowidev.vax.utils.utils import build_vaccine_timeline
-from cowidev.utils import clean_date_series
 
 
 class Ireland(CountryVaxBase):
@@ -72,6 +72,8 @@ class Ireland(CountryVaxBase):
                 "Moderna": "2021-02-05",
                 "Oxford/AstraZeneca": "2021-02-05",
                 "Johnson&Johnson": "2021-05-06",
+                # Source: https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea
+                "Novavax": "2022-02-04",
             },
         )
 
