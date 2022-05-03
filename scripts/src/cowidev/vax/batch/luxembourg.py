@@ -1,8 +1,8 @@
 import pandas as pd
 
 from cowidev.utils.utils import check_known_columns
-from cowidev.vax.utils.utils import add_latest_who_values
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import add_latest_who_values, build_vaccine_timeline
 
 
 class Luxembourg(CountryVaxBase):
@@ -58,11 +58,17 @@ class Luxembourg(CountryVaxBase):
         return df.assign(source_url=self.source_url_ref, location="Luxembourg")
 
     def pipe_vaccines(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = df.assign(vaccine="Pfizer/BioNTech")
-        df.loc[df.date >= "2021-01-20", "vaccine"] = "Moderna, Pfizer/BioNTech"
-        df.loc[df.date >= "2021-02-10", "vaccine"] = "Moderna, Oxford/AstraZeneca, Pfizer/BioNTech"
-        df.loc[df.date >= "2021-04-14", "vaccine"] = "Johnson&Johnson, Moderna, Oxford/AstraZeneca, Pfizer/BioNTech"
-        return df
+        return build_vaccine_timeline(
+            df,
+            {
+                "Pfizer/BioNTech": "2020-12-01",
+                "Moderna": "2021-01-20",
+                "Oxford/AstraZeneca": "2021-02-10",
+                "Johnson&Johnson": "2021-04-14",
+                # Source: https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea
+                "Novavax": "2022-03-04",
+            },
+        )
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
