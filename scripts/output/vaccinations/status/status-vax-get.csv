@@ -9,23 +9,7 @@ cowidev.vax.batch.chile,0.63,True,2022-05-04T07:00:09,,
 cowidev.vax.batch.czechia,2.21,True,2022-05-04T07:00:11,,
 cowidev.vax.batch.denmark,2.31,True,2022-05-04T07:00:11,,
 cowidev.vax.batch.ecdc,76.12,True,2022-05-04T07:01:25,,
-cowidev.vax.batch.ecuador,0.72,False,2022-05-04T07:02:55,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecuador.py"", line 155, in main
-    Ecuador().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecuador.py"", line 142, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecuador.py"", line 111, in pipeline
-    check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'refuerzo_2', 'refuerzo_1'}
-","Unknown column(s) found: {'refuerzo_2', 'refuerzo_1'}"
+cowidev.vax.batch.ecuador,1.48,True,2022-05-04T08:42:54,,
 cowidev.vax.batch.estonia,0.73,True,2022-05-04T07:00:12,,
 cowidev.vax.batch.france,0.42,True,2022-05-04T07:00:12,,
 cowidev.vax.batch.germany,1.03,True,2022-05-04T07:00:13,,
