@@ -2179,7 +2179,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`5/129` scripts failed, `8/129` were skipped. Latest update was `2022-05-02T10:49:30`.
+`5/129` scripts failed, `8/129` were skipped. Latest update was `2022-05-05T11:26:30`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -2281,6 +2281,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-05-02T10:20:27</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.australia</td>
+      <td>✅</td>
+      <td>2022-05-05T11:26:30</td>
+      <td>1.49</td>
       <td></td>
     </tr>
     <tr>
@@ -3079,13 +3086,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-05-02T10:20:28</td>
       <td>1.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.australia</td>
-      <td>✅</td>
-      <td>2022-05-02T10:20:27</td>
-      <td>0.48</td>
       <td></td>
     </tr>
     <tr>
