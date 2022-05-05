@@ -24,7 +24,8 @@ class Ecuador(CountryVaxBase):
         "primera_dosis": "people_vaccinated",
         "segunda_dosis": "people_fully_vaccinated",
         "dosis_unica": "single_shots",
-        "refuerzo": "total_boosters",
+        "refuerzo_1": "boosters_1",
+        "refuerzo_2": "boosters_2",
     }
     vaccine_mapping = {
         "Pfizer/BioNTech": "Pfizer/BioNTech",
@@ -93,6 +94,7 @@ class Ecuador(CountryVaxBase):
         return df.assign(
             people_vaccinated=df.people_vaccinated + df.single_shots,
             people_fully_vaccinated=df.people_fully_vaccinated + df.single_shots,
+            total_boosters=df.boosters_1 + df.boosters_2,
         )
 
     def pipe_checks(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -110,7 +112,7 @@ class Ecuador(CountryVaxBase):
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         check_known_columns(
             df,
-            ["fecha", "dosis_total", "primera_dosis", "segunda_dosis", "dosis_unica", "refuerzo"],
+            ["fecha", "dosis_total", "primera_dosis", "segunda_dosis", "dosis_unica", "refuerzo_1", "refuerzo_2"],
         )
         return (
             df.pipe(self.pipe_column_rename)
