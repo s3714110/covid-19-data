@@ -17,6 +17,7 @@ class Colombia(CountryTestBase):
         data = request_json(url)["data"][4]
         df = pd.DataFrame.from_records(data[1:], columns=data[0])
         # Clean
+        df = df[df[""] != ""]
         df = df.assign(Date=clean_date_series(df[""], "%d/%m/%Y"))
         df["Positivas"] = df["Positivas"].apply(clean_count)
         df["Total Px Ag"] = df["Total Px Ag"].apply(clean_count)

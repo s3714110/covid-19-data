@@ -44,6 +44,7 @@ class Rwanda(CountryTestBase):
 
     def pipe_filter(self, df: pd.DataFrame) -> pd.DataFrame:
         """Filter data"""
+        df = df[df["Cumulative total"] != 5147843.0]
         df = df[(df["Date"] >= self.date_start)]
         return df.drop_duplicates(subset="Date")
 
