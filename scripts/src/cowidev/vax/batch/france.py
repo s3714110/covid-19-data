@@ -18,6 +18,8 @@ class France(CountryVaxBase):
             2: "Moderna",
             3: "Oxford/AstraZeneca",
             4: "Johnson&Johnson",
+            5: "Pfizer/BioNTech",
+            6: "Novavax",
         }
         one_dose_vaccines = ["Johnson&Johnson"]
 
@@ -53,6 +55,7 @@ class France(CountryVaxBase):
         df = df[(df.vaccine.isin(vaccine_mapping.keys())) & (df.n_cum_dose1 > 0)]
         assert set(df["vaccine"].unique()) == set(vaccine_mapping.keys())
         df["vaccine"] = df.vaccine.replace(vaccine_mapping)
+        df = df.groupby(["vaccine", "date"], as_index=False).sum()
 
         df["total_vaccinations"] = df.n_cum_dose1 + df.n_cum_dose2 + df.n_cum_dose3 + df.n_cum_dose4
         df["people_vaccinated"] = df.n_cum_dose1

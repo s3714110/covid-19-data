@@ -15,7 +15,7 @@ class Barbados(CountryTestBase):
     source_url_ref: str = None
     regex: dict = {
         "title": r"COVID-19 Update",
-        "count": r"carried out ((\d+), (\d+)) tests",
+        "count": r"has conducted ((\d+),(\d+)) tests",
     }
 
     def read(self) -> pd.DataFrame:
