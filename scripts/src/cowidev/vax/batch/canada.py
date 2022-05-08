@@ -14,9 +14,12 @@ class Canada(CountryVaxBase):
     location: str = "Canada"
     source_name: str = "Public Health Agency of Canada"
     source_url: str = "https://api.covid19tracker.ca/reports"
+    source_url_a: str = "https://health-infobase.canada.ca/src/data/covidLive/vaccination-coverage-byAgeAndSex-overTimeDownload.csv"
     source_url_m: str = "https://health-infobase.canada.ca/src/data/covidLive/vaccination-administration-bydosenumber2.csv"
     source_url_ref: str = "https://covid19tracker.ca/vaccinationtracker.html"
+    source_url_age: str = "https://health-infobase.canada.ca/covid-19/vaccination-coverage/"
     source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
+    age_pattern: str = r"0?(\d{1,2})(?:–(\d{1,2})|\+)"
     vaccine_mapping: dict = {
         "AstraZeneca Vaxzevria/COVISHIELD": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
@@ -58,6 +61,36 @@ class Canada(CountryVaxBase):
             ],
         )
         return df[["date", "total_vaccinations", "total_vaccinated", "total_boosters_1", "total_boosters_2"]]
+
+    def read_age(self) -> pd.DataFrame:
+        df = read_csv_from_url(
+            self.source_url_a,
+            verify=False,
+            usecols=[
+                "pruid",
+                "week_end",
+                "sex",
+                "age",
+                "numtotal_atleast1dose",
+                "numtotal_fully",
+                "numtotal_additional",
+            ],
+        )
+        df = df[(df.pruid == 1) & (df.sex == "All sexes") & df.age.str.match(self.age_pattern)]
+        metrics = ["people_vaccinated", "people_fully_vaccinated", "people_with_booster"]
+        df = df.rename(
+            columns={
+                "week_end": "date",
+                "numtotal_atleast1dose": metrics[0],
+                "numtotal_fully": metrics[1],
+                "numtotal_additional": metrics[2],
+            }
+        )
+        df[metrics] = df[metrics].astype("float").fillna(0)
+        # Parse age groups
+        df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
+        df = df.drop(columns=["pruid", "sex", "age"])
+        return df.pipe(self.pipe_age_per_capita).assign(location=self.location)
 
     def read_man(self) -> pd.DataFrame:
         df = read_csv_from_url(
@@ -142,10 +175,13 @@ class Canada(CountryVaxBase):
 
     def export(self):
         df = self.read()
+        df_age = self.read_age()
         df_man = self.read_man()
         self.export_datafile(
             df.pipe(self.pipeline),
+            df_age=df_age,
             df_manufacturer=df_man,
+            meta_age={"source_name": self.source_name, "source_url": self.source_url_age},
             meta_manufacturer={"source_name": self.source_name, "source_url": self.source_url_man},
         )
 
