@@ -1,17 +1,30 @@
 from datetime import datetime, timedelta
+
 import pandas as pd
 
-from cowidev.utils.web import request_json
-from cowidev.utils.utils import check_known_columns
 from cowidev.utils.clean.dates import DATE_FORMAT
+from cowidev.utils.utils import check_known_columns
+from cowidev.utils.web import request_json
+from cowidev.utils.web.download import read_csv_from_url
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Canada(CountryVaxBase):
     location: str = "Canada"
+    source_name: str = "Public Health Agency of Canada"
     source_url: str = "https://api.covid19tracker.ca/reports"
+    source_url_m: str = "https://health-infobase.canada.ca/src/data/covidLive/vaccination-administration-bydosenumber2.csv"
     source_url_ref: str = "https://covid19tracker.ca/vaccinationtracker.html"
+    source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
+    vaccine_mapping: dict = {
+        "AstraZeneca Vaxzevria/COVISHIELD": "Oxford/AstraZeneca",
+        "Janssen": "Johnson&Johnson",
+        "Moderna Spikevax": "Moderna",
+        "Novavax": "Novavax",
+        "Pfizer-BioNTech Comirnaty": "Pfizer/BioNTech",
+        "Pfizer-BioNTech Comirnaty pediatric 5-11 years": "Pfizer/BioNTech",
+    }
 
     def read(self) -> pd.DataFrame:
         data = request_json(self.source_url)
@@ -45,6 +58,31 @@ class Canada(CountryVaxBase):
             ],
         )
         return df[["date", "total_vaccinations", "total_vaccinated", "total_boosters_1", "total_boosters_2"]]
+
+    def read_man(self) -> pd.DataFrame:
+        df = read_csv_from_url(
+            self.source_url_m,
+            verify=False,
+            usecols=[
+                "week_end",
+                "pruid",
+                "product_name",
+                "numtotal_dose1_admin",
+                "numtotal_dose2_admin",
+                "numtotal_dose3_admin",
+                "numtotal_dose4+_admin",
+                "numtotal_doseNotReported_admin",
+            ],
+        )
+        df = df[df.pruid == 1].fillna(0)
+        df = df.rename(columns={"week_end": "date", "product_name": "vaccine"})
+        df["total_vaccinations"] = df[df.filter(like="numtotal_dose").columns].sum(axis=1)
+        df = df[["date", "vaccine", "total_vaccinations"]]
+        # Map vaccine names
+        df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
+        assert set(df["vaccine"].unique()) == set(self.vaccine_mapping.keys())
+        df = df.replace(self.vaccine_mapping).groupby(["date", "vaccine"], as_index=False).sum()
+        return df.assign(location=self.location)
 
     def pipe_filter_rows(self, df: pd.DataFrame):
         # Only records since vaccination campaign started
@@ -117,7 +155,12 @@ class Canada(CountryVaxBase):
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df)
+        df_man = self.read_man()
+        self.export_datafile(
+            df,
+            df_manufacturer=df_man,
+            meta_manufacturer={"source_name": self.source_name, "source_url": self.source_url_man},
+        )
 
 
 def main():
