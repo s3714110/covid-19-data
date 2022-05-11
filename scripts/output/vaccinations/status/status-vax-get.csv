@@ -28,27 +28,7 @@ cowidev.vax.batch.malta,0.65,True,2022-05-11T07:00:21,,
 cowidev.vax.batch.netherlands,0.52,True,2022-05-11T07:00:22,,
 cowidev.vax.batch.new_zealand,15.35,True,2022-05-11T07:00:37,,
 cowidev.vax.batch.norway,0.29,True,2022-05-11T07:00:22,,
-cowidev.vax.batch.peru,0.32,False,2022-05-11T07:03:12,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 160, in main
-    Peru().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 138, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 86, in pipeline
-    df.pipe(self.pipe_rename_columns)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 49, in pipe_checks
-    raise ValueError(""Found unknown vaccines: {}"".format(unknown_vaccines))
-ValueError: Found unknown vaccines: {'MODERNA'}
-",Found unknown vaccines: {'MODERNA'}
+cowidev.vax.batch.peru,1.11,True,2022-05-11T09:11:06,,
 cowidev.vax.batch.romania,5.0,True,2022-05-11T07:00:27,,
 cowidev.vax.batch.saudi_arabia,4.56,True,2022-05-11T07:00:27,,
 cowidev.vax.batch.singapore,1.49,True,2022-05-11T07:00:28,,
