@@ -20,17 +20,17 @@ class Canada(CountryVaxBase):
     source_url_age: str = "https://health-infobase.canada.ca/covid-19/vaccination-coverage/"
     source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
     cols_age: dict = {
-        "pruid": "pruid",
+        "pruid": "_drop",
         "week_end": "date",
-        "sex": "sex",
-        "age": "age",
+        "sex": "_drop",
+        "age": "_drop",
         "numtotal_atleast1dose": "people_vaccinated",
         "numtotal_fully": "people_fully_vaccinated",
         "numtotal_additional": "people_with_booster",
     }
     cols_man: dict = {
         "week_end": "date",
-        "pruid": "pruid",
+        "pruid": "_drop",
         "product_name": "vaccine",
         "numtotal_dose1_admin": "total_vaccinations",
         "numtotal_dose2_admin": "total_vaccinations",
@@ -84,18 +84,21 @@ class Canada(CountryVaxBase):
     def read_age(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url_a, verify=False, usecols=self.cols_age.keys())
         df = df[(df.pruid == 1) & (df.sex == "All sexes") & df.age.str.match(self.age_pattern)]
-        df = df.rename(columns=self.cols_age)
+        # Parse age groups
+        df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
+        df = df.rename(columns=self.cols_age).drop(columns="_drop")
+        # Convert data types and calculate per capita metrics
         metrics = df.filter(like="people_").columns
         df[metrics] = df[metrics].astype("float").fillna(0)
-        # Parse age groups and calculate per capita metrics
-        df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
-        df = df.drop(columns=["pruid", "sex", "age"]).pipe(self.pipe_age_per_capita)
+        df = df.pipe(self.pipe_age_per_capita)
         return df.assign(location=self.location)
 
     def read_man(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url_m, verify=False, usecols=self.cols_man.keys())
-        df = df[df.pruid == 1].fillna(0).rename(columns=self.cols_man)
-        df = df.groupby(df.columns, axis=1).sum().drop(columns="pruid")
+        df = df[df.pruid == 1].fillna(0)
+        df = df.rename(columns=self.cols_man).drop(columns="_drop")
+        # Calculate total vaccinations
+        df = df.groupby(df.columns, axis=1).sum()
         # Check and map vaccine names
         df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
         assert set(df.vaccine.unique()) == set(self.vaccine_mapping.keys())
