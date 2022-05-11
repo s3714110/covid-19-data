@@ -1,7 +1,7 @@
 import pandas as pd
 
 from cowidev.vax.utils.base import CountryVaxBase
-
+from cowidev.vax.utils.utils import build_vaccine_timeline
 
 vaccine_mapping = {
     # "Ambirix": "",
@@ -95,19 +95,28 @@ class Latvia(CountryVaxBase):
         df.loc[df["vaccine"].isin(one_dose_vaccines), "people_fully_vaccinated"] = df.people_vaccinated
         return df
 
+    def _remove_vaccines(self, df, approval_timeline):
+        vax_amount = df[["vaccine", "total_vaccinations"]].groupby("vaccine").sum()
+        vax_amount = vax_amount.where(lambda x: x < 100).dropna()
+        for v in vax_amount.index:
+            approval_timeline.pop(v, None)  # It has never been approved in Latvia
+        return approval_timeline
+
     def pipe_aggregate(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df[df.date >= "2020-12-01"]
+        approval_timeline = df[["vaccine", "date"]].groupby("vaccine").min().to_dict()["date"]
+        approval_timeline = self._remove_vaccines(df, approval_timeline)
         return (
-            df[df.date >= "2020-12-01"]
-            .groupby("date", as_index=False)
+            df.groupby("date", as_index=False)
             .agg(
                 {
                     "total_vaccinations": "sum",
                     "people_vaccinated": "sum",
                     "people_fully_vaccinated": "sum",
                     "total_boosters": "sum",
-                    "vaccine": lambda x: ", ".join(sorted(x)),
                 }
             )
+            .pipe(build_vaccine_timeline, approval_timeline)
         )
 
     def pipe_cumsum(self, df: pd.DataFrame) -> pd.DataFrame:
