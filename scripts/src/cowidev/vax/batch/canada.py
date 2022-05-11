@@ -100,9 +100,6 @@ class Canada(CountryVaxBase):
         df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
         assert set(df.vaccine.unique()) == set(self.vaccine_mapping.keys())
         df = df.replace(self.vaccine_mapping).groupby(["date", "vaccine"], as_index=False).sum()
-        # Create vaccine timeline
-        self.vaccine_timeline = df[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
-        self.vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14" # Vaccination start date
         return df.assign(location=self.location)
 
     def pipe_filter_rows(self, df: pd.DataFrame):
@@ -134,12 +131,15 @@ class Canada(CountryVaxBase):
         df = df[~(df.date.isin(remove_dates))]
         return df
 
-    def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
+    def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
+        # Create vaccine timeline
+        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
+        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14" # Vaccination start date
         df = (
             df.pipe(self.pipe_filter_rows)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
-            .pipe(build_vaccine_timeline, self.vaccine_timeline)
+            .pipe(build_vaccine_timeline, vaccine_timeline)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_filter_lastdates)
             .pipe(self.make_monotonic)
@@ -159,11 +159,9 @@ class Canada(CountryVaxBase):
         return df
 
     def export(self):
-        df = self.read()
-        df_age = self.read_age()
-        df_man = self.read_man()
+        df, df_age, df_man = self.read(), self.read_age(), self.read_man()
         self.export_datafile(
-            df.pipe(self.pipeline),
+            df.pipe(self.pipeline, df_man),
             df_age=df_age,
             df_manufacturer=df_man,
             meta_age={"source_name": self.source_name, "source_url": self.source_url_age},
