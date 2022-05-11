@@ -1,8 +1,8 @@
 import pandas as pd
 
 from cowidev.utils.utils import check_known_columns
-from cowidev.vax.utils.utils import build_vaccine_timeline
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Estonia(CountryVaxBase):
@@ -74,6 +74,8 @@ class Estonia(CountryVaxBase):
                 "Moderna": "2021-01-14",
                 "Oxford/AstraZeneca": "2021-02-09",
                 "Johnson&Johnson": "2021-04-14",
+                # Source: https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea
+                "Novavax": "2022-03-04",
             },
         )
         return df

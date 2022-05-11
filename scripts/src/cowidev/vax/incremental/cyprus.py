@@ -42,7 +42,7 @@ def enrich_location(ds: pd.Series) -> pd.Series:
 
 
 def enrich_vaccine(ds: pd.Series) -> pd.Series:
-    return enrich_data(ds, "vaccine", "Pfizer/BioNTech, Oxford/AstraZeneca, Moderna, Johnson&Johnson")
+    return enrich_data(ds, "vaccine", "Johnson&Johnson, Moderna, Novavax, Oxford/AstraZeneca, Pfizer/BioNTech")
 
 
 def pipeline(ds: pd.Series) -> pd.Series:

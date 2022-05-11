@@ -4,8 +4,8 @@ import pandas as pd
 
 from cowidev.utils.clean import clean_date
 from cowidev.utils.web import request_json
-from cowidev.vax.utils.incremental import enrich_data, increment
 from cowidev.vax.utils.files import load_query
+from cowidev.vax.utils.incremental import enrich_data, increment
 
 
 class Poland:
@@ -43,7 +43,7 @@ class Poland:
         return enrich_data(
             ds,
             "vaccine",
-            "Johnson&Johnson, Moderna, Oxford/AstraZeneca, Pfizer/BioNTech",
+            "Johnson&Johnson, Moderna, Novavax, Oxford/AstraZeneca, Pfizer/BioNTech",
         )
 
     def pipe_source(self, ds: pd.Series) -> pd.Series:
