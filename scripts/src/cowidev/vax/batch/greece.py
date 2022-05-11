@@ -67,7 +67,7 @@ class Greece(CountryVaxBase):
                 "Moderna": "2021-01-13",
                 "Oxford/AstraZeneca": "2021-02-10",
                 "Johnson&Johnson": "2021-04-28",
-                "Novavax": "2022-03-02", # Source: https://covid19.who.int/region/euro/country/gr
+                "Novavax": "2022-03-02", # Source: https://covid19.who.int/
             },
         )
 
