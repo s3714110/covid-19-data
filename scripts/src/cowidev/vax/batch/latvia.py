@@ -95,11 +95,17 @@ class Latvia(CountryVaxBase):
         df.loc[df["vaccine"].isin(one_dose_vaccines), "people_fully_vaccinated"] = df.people_vaccinated
         return df
 
+    def _remove_vaccines(self, df, approval_timeline):
+        vax_amount = df[["vaccine", "total_vaccinations"]].groupby("vaccine").sum()
+        vax_amount = vax_amount.where(lambda x: x < 100).dropna()
+        for v in vax_amount.index:
+            approval_timeline.pop(v, None)  # It has never been approved in Latvia
+        return approval_timeline
+
     def pipe_aggregate(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df[df.date >= "2020-12-01"]
         approval_timeline = df[["vaccine", "date"]].groupby("vaccine").min().to_dict()["date"]
-        approval_timeline.pop("Sinopharm/Beijing", None) # It has never been approved in Latvia
-        approval_timeline.pop("Sinovac", None) # It has never been approved in Latvia
+        approval_timeline = self._remove_vaccines(df, approval_timeline)
         return (
             df.groupby("date", as_index=False)
             .agg(
