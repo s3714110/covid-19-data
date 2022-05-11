@@ -123,6 +123,11 @@ class Canada(CountryVaxBase):
         # df.loc[(df.date >= "2021-10-04") & (df.date <= "2021-10-09"), "people_vaccinated"] = pd.NA
         return df
 
+    def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame):
+        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
+        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14" # Vaccination start date
+        return df.pipe(build_vaccine_timeline, vaccine_timeline)
+
     def pipe_filter_lastdates(self, df: pd.DataFrame):
         # date = "2022-03-18"
         last_date = datetime.strptime(df.date.max(), DATE_FORMAT)
@@ -132,14 +137,11 @@ class Canada(CountryVaxBase):
         return df
 
     def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
-        # Create vaccine timeline
-        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
-        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14" # Vaccination start date
         df = (
             df.pipe(self.pipe_filter_rows)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
-            .pipe(build_vaccine_timeline, vaccine_timeline)
+            .pipe(self.pipe_vaccine_timeline, df_man)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_filter_lastdates)
             .pipe(self.make_monotonic)
