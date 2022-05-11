@@ -40,6 +40,9 @@ class VariantsETL:
             "21J (Delta)": {"rename": "Delta", "who": True},
             "21K (Omicron)": {"rename": "Omicron", "who": True},
             "21L (Omicron)": {"rename": "Omicron", "who": True},
+            "22A (Omicron)": {"rename": "Omicron", "who": True},
+            "22B (Omicron)": {"rename": "Omicron", "who": True},
+            "22C (Omicron)": {"rename": "Omicron", "who": True},
             "S:677H.Robin1": {"rename": "S:677H.Robin1", "who": False},
             "S:677P.Pelican": {"rename": "S:677P.Pelican", "who": False},
         }

@@ -15,10 +15,12 @@ class Australia(CountryTestBase):
     source_label: str = "Australian Government Department of Health"
     rename_columns: str = {
         "Total": "Cumulative total",
+        "Daily": "Positive rate",
     }
 
     def read(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url, header=1, usecols=["Date", "Total"])
+        df = read_csv_from_url(self.source_url, header=1, usecols=["Date", "Total", "Daily"])
+        df.drop(df.tail(1).index, inplace=True)
         return df
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -28,6 +30,10 @@ class Australia(CountryTestBase):
                 "Cumulative total": df["Cumulative total"].apply(clean_count),
             }
         )
+
+    def pipe_pr(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.drop(df[df["Positive rate"] == "-"].index)
+        df["Positive rate"] = (pd.to_numeric(df["Positive rate"].str.replace("%", "")) / 100).round(3)
         return df
 
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -37,6 +43,7 @@ class Australia(CountryTestBase):
         return (
             df.pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
+            .pipe(self.pipe_pr)
             .pipe(self.pipe_date)
             .pipe(self.pipe_metadata)
             .pipe(make_monotonic)

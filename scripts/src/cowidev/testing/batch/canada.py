@@ -1,4 +1,6 @@
 import pandas as pd
+import requests
+from io import StringIO
 
 from cowidev.testing import CountryTestBase
 
@@ -15,7 +17,18 @@ class Canada(CountryTestBase):
     source_label = "Government of Canada"
 
     def read(self):
-        df = pd.read_csv(self.source_url, usecols=["prname", "date", "numtested", "numtests"])
+        requests.packages.urllib3.disable_warnings()
+        requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS += ":HIGH:!DH:!aNULL"
+        try:
+            requests.packages.urllib3.contrib.pyopenssl.util.ssl_.DEFAULT_CIPHERS += ":HIGH:!DH:!aNULL"
+        except AttributeError:
+            # no pyopenssl support used / needed / available
+            pass
+
+        req = requests.get(self.source_url, verify=False)
+        data = StringIO(req.text)
+
+        df = pd.read_csv(data, usecols=["prname", "date", "numtested", "numtests"])
         df = df[df.prname == "Canada"]
         return df
 

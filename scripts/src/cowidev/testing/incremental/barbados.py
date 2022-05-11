@@ -15,7 +15,7 @@ class Barbados(CountryTestBase):
     source_url_ref: str = None
     regex: dict = {
         "title": r"COVID-19 Update",
-        "count": r"carried out ((\d+), (\d+)) tests",
+        "count": r"has conducted (\d+) tests",
     }
 
     def read(self) -> pd.DataFrame:
@@ -48,7 +48,7 @@ class Barbados(CountryTestBase):
         """Parse metrics from soup"""
         text = soup.get_text()
         text = re.sub(r"(\d),(\d)", r"\1\2", text)
-        count = re.search(self.regex["count"], text).group(2)
+        count = re.search(self.regex["count"], text).group(1)
         return clean_count(count)
 
     def _parse_date(self, soup: BeautifulSoup) -> str:
