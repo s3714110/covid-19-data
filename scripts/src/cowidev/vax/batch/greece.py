@@ -5,6 +5,7 @@ import pandas as pd
 from cowidev.utils.clean import clean_date_series
 from cowidev.utils.utils import check_known_columns
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Greece(CountryVaxBase):
@@ -59,17 +60,16 @@ class Greece(CountryVaxBase):
         )
 
     def pipe_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
-        def _enrich_vaccine_name(date: str) -> str:
-            if date < "2021-01-13":
-                return "Pfizer/BioNTech"
-            elif "2021-01-13" <= date < "2021-02-10":
-                return "Moderna, Pfizer/BioNTech"
-            elif "2021-02-10" <= date < "2021-04-28":
-                return "Moderna, Oxford/AstraZeneca, Pfizer/BioNTech"
-            elif "2021-04-28" <= date:
-                return "Johnson&Johnson, Moderna, Oxford/AstraZeneca, Pfizer/BioNTech"
-
-        return df.assign(vaccine=df.date.apply(_enrich_vaccine_name))
+        return build_vaccine_timeline(
+            df,
+            {
+                "Pfizer/BioNTech": "2020-12-01",
+                "Moderna": "2021-01-13",
+                "Oxford/AstraZeneca": "2021-02-10",
+                "Johnson&Johnson": "2021-04-28",
+                "Novavax": "2022-03-02", # Source: https://covid19.who.int/
+            },
+        )
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.pipe(self.pipe_metadata).pipe(self.pipe_vaccine).pipe(self.pipe_date)

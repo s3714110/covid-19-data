@@ -20,6 +20,7 @@ class Peru(CountryVaxBase):
         "SINOPHARM": "Sinopharm/Beijing",
         "PFIZER": "Pfizer/BioNTech",
         "ASTRAZENECA": "Oxford/AstraZeneca",
+        "MODERNA": "Moderna",
     }
     # Based on https://github.com/jmcastagnetto/covid-19-peru-vacunas/issues/5
     date_start = "2021-02-08"
@@ -129,7 +130,9 @@ class Peru(CountryVaxBase):
 
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.pipe(self.pipe_filter_only_campaign)
-        df = df.sort_values(["location", "date", "vaccine"])[["location", "date", "vaccine", "total_vaccinations"]]
+        df = df.replace(self.vaccine_mapping).sort_values(["location", "date", "vaccine"])[
+            ["location", "date", "vaccine", "total_vaccinations"]
+        ]
         if not df.groupby("vaccine")["total_vaccinations"].is_monotonic_increasing.all():
             raise ValueError("Manufacturer data for Peru is not monotonically increasing!")
         return df

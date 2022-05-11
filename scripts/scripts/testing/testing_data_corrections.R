@@ -31,10 +31,10 @@ collated[Country == "Qatar", `Short-term tests per case` := NA]
 collated[Country == "Fiji", `Short-term positive rate` := NA]
 collated[Country == "Fiji", `Short-term tests per case` := NA]
 
-# Fiji: estimated positive rate does not match that of the official source
+# New Zealand: estimated positive rate does not match that of the official source
 collated[Country == "New Zealand", `Short-term positive rate` := NA]
 collated[Country == "New Zealand", `Short-term tests per case` := NA]
 
 #Sudden increase in the number of tests due to a backlog
-collated[Country == "India" & "2022-04-14" <= Date <= "2022-04-21", `Short-term positive rate` := NA]
-collated[Country == "India" & "2022-04-14" <= Date <= "2022-04-21", `Short-term tests per case` := NA]
+collated[Country == "India" & "2022-04-14" <= Date & Date <= "2022-04-21", `Short-term positive rate` := NA]
+collated[Country == "India" & "2022-04-14" <= Date & Date <= "2022-04-21", `Short-term tests per case` := NA]

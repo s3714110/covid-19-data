@@ -29,7 +29,9 @@ class Colombia(CountryTestBase):
             usecols=["fecha", "positivas_acumuladas", "negativas_acumuladas"],
         )
         df = df[(df["fecha"] != "Acumulado Feb") & (df.fecha.notnull())]
-        df = df.assign(Date=clean_date_series(df["fecha"], "%Y-%m-%dT%H:%M:%S.%f"))
+        df1 = df.loc[1:787].assign(Date=clean_date_series(df.loc[1:787]["fecha"], "%Y-%m-%dT%H:%M:%S.%f"))
+        df2 = df.loc[788:].assign(Date=clean_date_series(df.loc[788:]["fecha"].str.extract(r"-(.*)")[0], "%d/%m/%Y"))
+        df = df1.append(df2)
         # df = df.assign(Date=clean_date_series(df["fecha"], "%d/%m/%Y"))
         return df
 

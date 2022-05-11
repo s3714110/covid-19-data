@@ -4,8 +4,8 @@ import requests
 import pandas as pd
 
 from cowidev.utils.clean import clean_count, clean_date
-from cowidev.vax.utils.utils import make_monotonic
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline, make_monotonic
 
 
 class Sweden(CountryVaxBase):
@@ -139,7 +139,16 @@ class Sweden(CountryVaxBase):
         )
 
     def pipe_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(vaccine="Moderna, Oxford/AstraZeneca, Pfizer/BioNTech")
+        # Source: https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea
+        return build_vaccine_timeline(
+            df,
+            {
+                "Pfizer/BioNTech": "2021-01-01",
+                "Moderna": "2021-01-15",
+                "Oxford/AstraZeneca": "2021-02-12",
+                "Novavax": "2022-03-11",
+            },
+        )
 
     def pipe_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(location=self.location, source_url=self.source_url_daily)
