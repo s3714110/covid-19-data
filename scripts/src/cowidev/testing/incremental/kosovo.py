@@ -26,7 +26,7 @@ class Kosovo(CountryTestBase):
         """Read data from source"""
         with get_driver() as driver:
             driver.get(self.source_url)
-            time.sleep(7)
+            time.sleep(10)
             df = self._parse_data(driver)
         return df
 

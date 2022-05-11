@@ -20,6 +20,7 @@ class Australia(CountryTestBase):
 
     def read(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url, header=1, usecols=["Date", "Total", "Daily"])
+        df.drop(df.tail(1).index, inplace=True)
         return df
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
