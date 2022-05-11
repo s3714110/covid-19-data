@@ -87,16 +87,16 @@ class Canada(CountryVaxBase):
         df = df.rename(columns=self.cols_age)
         metrics = df.filter(like="people_").columns
         df[metrics] = df[metrics].astype("float").fillna(0)
-        # Parse age groups
+        # Parse age groups and calculate per capita metrics
         df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
-        df = df.drop(columns=["pruid", "sex", "age"])
-        return df.pipe(self.pipe_age_per_capita).assign(location=self.location)
+        df = df.drop(columns=["pruid", "sex", "age"]).pipe(self.pipe_age_per_capita)
+        return df.assign(location=self.location)
 
     def read_man(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url_m, verify=False, usecols=self.cols_man.keys())
         df = df[df.pruid == 1].fillna(0).rename(columns=self.cols_man)
         df = df.groupby(df.columns, axis=1).sum().drop(columns="pruid")
-        # Map vaccine names
+        # Check and map vaccine names
         df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
         assert set(df.vaccine.unique()) == set(self.vaccine_mapping.keys())
         df = df.replace(self.vaccine_mapping).groupby(["date", "vaccine"], as_index=False).sum()
