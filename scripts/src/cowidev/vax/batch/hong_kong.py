@@ -157,6 +157,10 @@ class HongKong(CountryVaxBase):
             )
         )
 
+    def pipe_age_filter(self, df: pd.DataFrame):
+        msk = (df.date=="2022-02-01") & (df.age_group_min=='0')
+        return df[~msk]
+
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
             df.pipe(self.pipe_age_checks)
@@ -164,6 +168,7 @@ class HongKong(CountryVaxBase):
             .pipe(self.pipe_age_groups)
             .pipe(self.pipe_age_pivot)
             .pipe(self.pipe_age_per_capita)
+            .pipe(self.pipe_age_filter)
             .assign(location=self.location)
         )
 
