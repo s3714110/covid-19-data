@@ -7,6 +7,7 @@ from cowidev.utils.utils import check_known_columns
 from cowidev.utils.web import request_json
 from cowidev.utils.web.download import read_csv_from_url
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.checks import validate_vaccines
 from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
@@ -25,10 +26,10 @@ class Canada(CountryVaxBase):
     source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
     cols_age: dict = {
         "week_end": "date",
+        "age": "age",
         "numtotal_atleast1dose": "people_vaccinated",
         "numtotal_fully": "people_fully_vaccinated",
         "numtotal_additional": "people_with_booster",
-        "age": "age",
     }
     cols_man: dict = {
         "week_end": "date",
@@ -44,9 +45,12 @@ class Canada(CountryVaxBase):
         "AstraZeneca Vaxzevria/COVISHIELD": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
         "Moderna Spikevax": "Moderna",
+        "Not reported": None,
         "Novavax": "Novavax",
         "Pfizer-BioNTech Comirnaty": "Pfizer/BioNTech",
         "Pfizer-BioNTech Comirnaty pediatric 5-11 years": "Pfizer/BioNTech",
+        "Total": None,
+        "Unknown": None,
     }
 
     def read(self) -> pd.DataFrame:
@@ -84,7 +88,6 @@ class Canada(CountryVaxBase):
 
     def read_age(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url_a, verify=False)
-        # Check columns
         check_known_columns(
             df,
             [
@@ -106,7 +109,7 @@ class Canada(CountryVaxBase):
         )
         return df
 
-    def read_man(self) -> pd.DataFrame:
+    def read_manufacturer(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url_m, verify=False)
         check_known_columns(
             df,
@@ -155,9 +158,9 @@ class Canada(CountryVaxBase):
         # Calculate total vaccinations
         df = df.groupby(df.columns, axis=1).sum()
         # Check and map vaccine names
-        df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
-        assert set(df.vaccine.unique()) == set(self.vaccine_mapping.keys())
-        df = df.replace(self.vaccine_mapping).groupby(["date", "vaccine"], as_index=False).sum()
+        validate_vaccines(df, self.vaccine_mapping)
+        df = df[df.total_vaccinations > 0].replace(self.vaccine_mapping).dropna()
+        df = df.groupby(["date", "vaccine"], as_index=False).sum()
         return df.assign(location=self.location)
 
     def pipe_filter_rows(self, df: pd.DataFrame):
@@ -182,7 +185,7 @@ class Canada(CountryVaxBase):
         return df
 
     def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame):
-        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
+        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().date.to_dict()
         vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
@@ -220,7 +223,7 @@ class Canada(CountryVaxBase):
 
     def export(self):
         # Read
-        df, df_age, df_man = self.read(), self.read_age(), self.read_man()
+        df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
         # Transformations
         df_age = df_age.pipe(self.pipeline_age)
         df_man = df_man.pipe(self.pipeline_manufacturer)
