@@ -20,18 +20,18 @@ cowidev.vax.batch.ireland,0.61,True,2022-05-12T07:00:14,,
 cowidev.vax.batch.israel,4.43,True,2022-05-12T07:00:18,,
 cowidev.vax.batch.italy,7.23,True,2022-05-12T07:00:22,,
 cowidev.vax.batch.jersey,2.35,True,2022-05-12T07:00:18,,
-cowidev.vax.batch.latvia,8.13,False,2022-05-12T07:03:16,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.batch.latvia,13.88,False,2022-05-12T09:42:34,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 189, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 189, in main
     Latvia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 174, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 174, in export
     df_base = df.pipe(self.pipe_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 55, in pipe_base
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/latvia.py"", line 55, in pipe_base
     raise ValueError(f""Missing vaccines: {vaccines_wrong}"")
 ValueError: Missing vaccines: {'Jcovden'}
 ",Missing vaccines: {'Jcovden'}
