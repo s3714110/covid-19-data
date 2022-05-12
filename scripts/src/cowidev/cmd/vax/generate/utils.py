@@ -161,8 +161,8 @@ class DatasetGenerator:
             "people_fully_vaccinated",
             "total_boosters",
             "new_vaccinations",
-            # "new_vaccinations_smoothed",
-            # "new_people_vaccinated_smoothed",
+            "new_vaccinations_smoothed",
+            "new_people_vaccinated_smoothed",
         ]
         grouper = agg.groupby("location")
         for col in cols:
@@ -185,22 +185,21 @@ class DatasetGenerator:
                     excluded_locs=self.aggregates[agg_name]["excluded_locs"],
                 )
             )
-        df = pd.concat([df] + aggs, ignore_index=True)
-        return df
+        return pd.concat([df] + aggs, ignore_index=True)
 
     def pipe_daily(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Estimate daily number of administered vaccines per country"""
         logger.info("Adding daily metrics")
-        df = df.sort_values(by=["location", "date"]).assign(
-            new_vaccinations=df.groupby("location").total_vaccinations.diff()
-        )
+        df = df.sort_values(by=["location", "date"])
+        df = df.assign(new_vaccinations=df.groupby("location").total_vaccinations.diff())
         df.loc[df.date.diff().dt.days > 1, "new_vaccinations"] = None
         df = df.sort_values(["location", "date"])
         return df
 
-    def _add_smoothed_base(self, df: pd.DataFrame, colname_cum: str, colname_diff: str) -> pd.DataFrame:
-        dt_min = df.dropna(subset=[colname_cum]).date.min()
-        dt_max = df.dropna(subset=[colname_cum]).date.max()
+    def _add_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
+        # NEW VACCINATIONS
+        # Range where total_vaccinations is registered
+        dt_min = df.dropna(subset=["total_vaccinations"]).date.min()
+        dt_max = df.dropna(subset=["total_vaccinations"]).date.max()
         df_nan = df[(df.date < dt_min) | (df.date > dt_max)]
 
         # Add missing dates
@@ -210,9 +209,8 @@ class DatasetGenerator:
         ).sort_values(by="date")
 
         # Calculate and add smoothed vars
-        df[colname_diff] = (
-            df[colname_cum]
-            .interpolate(method="linear")
+        df["new_vaccinations_smoothed"] = (
+            df.total_vaccinations.interpolate(method="linear")
             .diff()
             .rolling(7, min_periods=1)
             .mean()
@@ -221,14 +219,32 @@ class DatasetGenerator:
 
         # Add missing dates
         df = pd.concat([df, df_nan], ignore_index=True).sort_values("date")
-        df = df.assign(location=df.location.dropna().iloc[0])
-        return df
+        df.loc[:, "location"] = df.location.dropna().iloc[0]
 
-    def _add_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
-        # NEW VACCINATIONS
-        df = self._add_smoothed_base(df, "total_vaccinations", "new_vaccinations_smoothed")
         # PEOPLE_VACCINATED
-        df = self._add_smoothed_base(df, "people_vaccinated", "new_people_vaccinated_smoothed")
+        # Range where people_vaccinated is registered
+        dt_min = df.dropna(subset=["people_vaccinated"]).date.min()
+        dt_max = df.dropna(subset=["people_vaccinated"]).date.max()
+        df_nan = df[(df.date < dt_min) | (df.date > dt_max)]
+
+        # Add missing dates
+        df = df.merge(
+            pd.Series(pd.date_range(dt_min, dt_max), name="date"),
+            how="right",
+        ).sort_values(by="date")
+
+        # Calculate and add smoothed vars
+        df["new_people_vaccinated_smoothed"] = (
+            df.people_vaccinated.interpolate(method="linear")
+            .diff()
+            .rolling(7, min_periods=1)
+            .mean()
+            .apply(lambda x: round(x) if not isnan(x) else x)
+        )
+
+        # Add missing dates
+        df = pd.concat([df, df_nan], ignore_index=True).sort_values("date")
+        df.loc[:, "location"] = df.location.dropna().iloc[0]
         return df
 
     def pipe_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
