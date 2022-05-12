@@ -13,11 +13,11 @@ class Moldova:
     units = "tests performed"
     source_label = "Ministry of Health of the Republic of Moldova"
     notes = ""
-    source_url = "https://msmps.gov.md"
+    source_url = "https://msmps.gov.md/media/comunicate/"
     regex = {
         "title": r"(cazuri noi de COVID-19)|(cazuri de COVID-19)|(cazuri de COVID-19,)",
         "date": r"(\d+\/\d+\/\d+)",
-        "count": r"(\d+) teste.|(\d+) de teste",
+        "count": r"((\d+)) teste.|(\d+) de teste",
     }
     # Initial value for cumulative total: 364317
 
@@ -30,9 +30,9 @@ class Moldova:
     def _parse_data(self, soup: BeautifulSoup) -> tuple:
         """Get data from the source page."""
         # Get relevant element
-        elem = self._get_relevant_element(soup)
+        url = self._get_relevant_element(soup)
         # Extract URL from element
-        url = self._parse_link_from_element(elem)
+        # url = self._parse_link_from_element(elem)
         # Extract text from url
         text = self._get_text_from_url(url)
         # Extract date from text
@@ -48,10 +48,13 @@ class Moldova:
 
     def _get_relevant_element(self, soup: BeautifulSoup) -> element.Tag:
         """Get the relevant element in news feed."""
-        news_list = soup.find_all("a", text=re.compile(self.regex["title"]))
-        if not news_list:
+
+        for a in soup.find_all("a", class_="list__news_item-link font__bigger"):
+            if "cazuri" in a.get("href"):
+                link = a.get("href")
+        if not link:
             raise ValueError("No data found, Please check the source.")
-        return news_list[0]
+        return link
 
     def _get_text_from_url(self, url: str) -> str:
         """Extract text from the url."""
@@ -68,15 +71,15 @@ class Moldova:
         date = clean_date(match.group(1), "%d/%m/%Y", as_datetime=True) - pd.Timedelta(days=1)
         return str(date.date())
 
-    def _parse_link_from_element(self, elem: element.Tag) -> str:
-        """Get link from relevant element."""
-        link = elem.get("href")
-        return link
+    # def _parse_link_from_element(self, elem: element.Tag) -> str:
+    #     """Get link from relevant element."""
+    #     link = elem.get("href")
+    #     return link
 
     def _parse_metrics(self, text: str) -> int:
         """Get metrics from news text."""
-        count = int(re.search(self.regex["count"], text).group(1))
-        return clean_count(count)
+        count = clean_count(re.search(self.regex["count"], text).group(0))
+        return count
 
     def export(self):
         """Export data to CSV."""
