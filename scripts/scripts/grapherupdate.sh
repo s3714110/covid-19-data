@@ -1,4 +1,3 @@
-# Initialization
 #!/bin/bash
 
 set -e
