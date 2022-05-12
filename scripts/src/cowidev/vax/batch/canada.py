@@ -1,17 +1,53 @@
 from datetime import datetime, timedelta
+
 import pandas as pd
 
-from cowidev.utils.web import request_json
-from cowidev.utils.utils import check_known_columns
 from cowidev.utils.clean.dates import DATE_FORMAT
+from cowidev.utils.utils import check_known_columns
+from cowidev.utils.web import request_json
+from cowidev.utils.web.download import read_csv_from_url
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Canada(CountryVaxBase):
     location: str = "Canada"
+    source_name: str = "Public Health Agency of Canada"
     source_url: str = "https://api.covid19tracker.ca/reports"
+    source_url_a: str = (
+        "https://health-infobase.canada.ca/src/data/covidLive/vaccination-coverage-byAgeAndSex-overTimeDownload.csv"
+    )
+    source_url_m: str = (
+        "https://health-infobase.canada.ca/src/data/covidLive/vaccination-administration-bydosenumber2.csv"
+    )
     source_url_ref: str = "https://covid19tracker.ca/vaccinationtracker.html"
+    source_url_age: str = "https://health-infobase.canada.ca/covid-19/vaccination-coverage/"
+    source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
+    cols_age: dict = {
+        "week_end": "date",
+        "numtotal_atleast1dose": "people_vaccinated",
+        "numtotal_fully": "people_fully_vaccinated",
+        "numtotal_additional": "people_with_booster",
+        "age": "age",
+    }
+    cols_man: dict = {
+        "week_end": "date",
+        "product_name": "vaccine",
+        "numtotal_dose1_admin": "total_vaccinations",
+        "numtotal_dose2_admin": "total_vaccinations",
+        "numtotal_dose3_admin": "total_vaccinations",
+        "numtotal_dose4+_admin": "total_vaccinations",
+        "numtotal_doseNotReported_admin": "total_vaccinations",
+    }
+    age_pattern: str = r"0?(\d{1,2})(?:–0?(\d{1,2})|\+)"
+    vaccine_mapping: dict = {
+        "AstraZeneca Vaxzevria/COVISHIELD": "Oxford/AstraZeneca",
+        "Janssen": "Johnson&Johnson",
+        "Moderna Spikevax": "Moderna",
+        "Novavax": "Novavax",
+        "Pfizer-BioNTech Comirnaty": "Pfizer/BioNTech",
+        "Pfizer-BioNTech Comirnaty pediatric 5-11 years": "Pfizer/BioNTech",
+    }
 
     def read(self) -> pd.DataFrame:
         data = request_json(self.source_url)
@@ -46,6 +82,84 @@ class Canada(CountryVaxBase):
         )
         return df[["date", "total_vaccinations", "total_vaccinated", "total_boosters_1", "total_boosters_2"]]
 
+    def read_age(self) -> pd.DataFrame:
+        df = read_csv_from_url(self.source_url_a, verify=False)
+        # Check columns
+        check_known_columns(
+            df,
+            [
+                "pruid",
+                "prename",
+                "prfname",
+                "week_end",
+                "sex",
+                "age",
+                "numtotal_atleast1dose",
+                "numtotal_partially",
+                "numtotal_fully",
+                "numtotal_additional",
+                "proptotal_atleast1dose",
+                "proptotal_partially",
+                "proptotal_fully",
+                "proptotal_additional",
+            ],
+        )
+        return df
+
+    def read_man(self) -> pd.DataFrame:
+        df = read_csv_from_url(self.source_url_m, verify=False)
+        check_known_columns(
+            df,
+            [
+                "week_end",
+                "pruid",
+                "prename",
+                "prfname",
+                "product_name",
+                "numtotal_totaldoses_admin",
+                "numtotal_dose1_admin",
+                "numtotal_dose2_admin",
+                "numtotal_dose3_admin",
+                "numtotal_dose4+_admin",
+                "numtotal_doseNotReported_admin",
+                "numdelta_dose1",
+                "numdelta_dose2",
+                "numdelta_dose3",
+                "numdelta_dose4+",
+                "numdelta_NotReported",
+                "num2weekdelta_dose1",
+                "num2weekdelta_dose2",
+                "num2weekdelta_dose3",
+                "num2weekdelta_dose4+",
+                "num2weekdelta_NotReported",
+            ],
+        )
+        return df
+
+    def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Filter rows & columns
+        df = df[(df.pruid == 1) & (df.sex == "All sexes") & df.age.str.match(self.age_pattern)]
+        df = df[self.cols_age.keys()].rename(columns=self.cols_age)
+        # Parse age groups
+        df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
+        # Convert data types and calculate per capita metrics
+        metrics = df.filter(like="people_").columns
+        df[metrics] = df[metrics].astype("float").fillna(0)
+        df = df.pipe(self.pipe_age_per_capita)
+        return df.assign(location=self.location)
+
+    def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Filter rows & columns
+        df = df[df.pruid == 1].fillna(0)
+        df = df[self.cols_man.keys()].rename(columns=self.cols_man)
+        # Calculate total vaccinations
+        df = df.groupby(df.columns, axis=1).sum()
+        # Check and map vaccine names
+        df = df[df.vaccine.isin(self.vaccine_mapping.keys()) & (df.total_vaccinations > 0)]
+        assert set(df.vaccine.unique()) == set(self.vaccine_mapping.keys())
+        df = df.replace(self.vaccine_mapping).groupby(["date", "vaccine"], as_index=False).sum()
+        return df.assign(location=self.location)
+
     def pipe_filter_rows(self, df: pd.DataFrame):
         # Only records since vaccination campaign started
         return df[df.total_vaccinations > 0]
@@ -67,22 +181,10 @@ class Canada(CountryVaxBase):
         # df.loc[(df.date >= "2021-10-04") & (df.date <= "2021-10-09"), "people_vaccinated"] = pd.NA
         return df
 
-    def pipe_metadata(self, df: pd.DataFrame):
-        df = df.assign(
-            location=self.location,
-            source_url=self.source_url_ref,
-            vaccine="Moderna, Oxford/AstraZeneca, Pfizer/BioNTech",
-        )
-        df = build_vaccine_timeline(
-            df,
-            {
-                "Moderna": "2021-01-02",
-                "Oxford/AstraZeneca": "2021-03-13",
-                "Pfizer/BioNTech": "2020-12-01",
-                "Johnson&Johnson": "2021-07-17",
-            },
-        )
-        return df
+    def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame):
+        vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
+        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
+        return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
     def pipe_filter_lastdates(self, df: pd.DataFrame):
         # date = "2022-03-18"
@@ -92,11 +194,12 @@ class Canada(CountryVaxBase):
         df = df[~(df.date.isin(remove_dates))]
         return df
 
-    def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
+    def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
         df = (
             df.pipe(self.pipe_filter_rows)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
+            .pipe(self.pipe_vaccine_timeline, df_man)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_filter_lastdates)
             .pipe(self.make_monotonic)
@@ -116,8 +219,20 @@ class Canada(CountryVaxBase):
         return df
 
     def export(self):
-        df = self.read().pipe(self.pipeline)
-        self.export_datafile(df)
+        # Read
+        df, df_age, df_man = self.read(), self.read_age(), self.read_man()
+        # Transformations
+        df_age = df_age.pipe(self.pipeline_age)
+        df_man = df_man.pipe(self.pipeline_manufacturer)
+        df = df.pipe(self.pipeline, df_man)
+        # Export
+        self.export_datafile(
+            df=df,
+            df_age=df_age,
+            df_manufacturer=df_man,
+            meta_age={"source_name": self.source_name, "source_url": self.source_url_age},
+            meta_manufacturer={"source_name": self.source_name, "source_url": self.source_url_man},
+        )
 
 
 def main():
