@@ -3,7 +3,7 @@ import os
 import tempfile
 
 import requests
-from pdfminer.high_level import extract_text 
+from pdfminer.high_level import extract_text
 import pandas as pd
 
 
@@ -61,7 +61,7 @@ class Philippines(CountryTestBase):
         return link.split("/")[-1].split("?")[-2]
 
     def pipe_date(self, df: pd.DataFrame):
-        return df.assign(Date=clean_date_series(df.Date, "%Y-%m-%d"))
+        return df.assign(Date=clean_date_series(df.Date, "%d/%m/%Y"))
 
     def pipe_aggregate(self, df: pd.DataFrame):
         return df.groupby("Date", as_index=False).sum()
