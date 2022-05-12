@@ -14,23 +14,24 @@ class Canada(CountryVaxBase):
     location: str = "Canada"
     source_name: str = "Public Health Agency of Canada"
     source_url: str = "https://api.covid19tracker.ca/reports"
-    source_url_a: str = "https://health-infobase.canada.ca/src/data/covidLive/vaccination-coverage-byAgeAndSex-overTimeDownload.csv"
-    source_url_m: str = "https://health-infobase.canada.ca/src/data/covidLive/vaccination-administration-bydosenumber2.csv"
+    source_url_a: str = (
+        "https://health-infobase.canada.ca/src/data/covidLive/vaccination-coverage-byAgeAndSex-overTimeDownload.csv"
+    )
+    source_url_m: str = (
+        "https://health-infobase.canada.ca/src/data/covidLive/vaccination-administration-bydosenumber2.csv"
+    )
     source_url_ref: str = "https://covid19tracker.ca/vaccinationtracker.html"
     source_url_age: str = "https://health-infobase.canada.ca/covid-19/vaccination-coverage/"
     source_url_man: str = "https://health-infobase.canada.ca/covid-19/vaccine-administration/"
     cols_age: dict = {
-        "pruid": "_drop",
         "week_end": "date",
-        "sex": "_drop",
-        "age": "_drop",
         "numtotal_atleast1dose": "people_vaccinated",
         "numtotal_fully": "people_fully_vaccinated",
         "numtotal_additional": "people_with_booster",
+        "age": "age",
     }
     cols_man: dict = {
         "week_end": "date",
-        "pruid": "_drop",
         "product_name": "vaccine",
         "numtotal_dose1_admin": "total_vaccinations",
         "numtotal_dose2_admin": "total_vaccinations",
@@ -82,21 +83,75 @@ class Canada(CountryVaxBase):
         return df[["date", "total_vaccinations", "total_vaccinated", "total_boosters_1", "total_boosters_2"]]
 
     def read_age(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url_a, verify=False, usecols=self.cols_age.keys())
+        df = read_csv_from_url(self.source_url_a, verify=False)
+        # Check columns
+        check_known_columns(
+            df,
+            [
+                "pruid",
+                "prename",
+                "prfname",
+                "week_end",
+                "sex",
+                "age",
+                "numtotal_atleast1dose",
+                "numtotal_partially",
+                "numtotal_fully",
+                "numtotal_additional",
+                "proptotal_atleast1dose",
+                "proptotal_partially",
+                "proptotal_fully",
+                "proptotal_additional",
+            ],
+        )
+        return df
+
+    def read_man(self) -> pd.DataFrame:
+        df = read_csv_from_url(self.source_url_m, verify=False)
+        check_known_columns(
+            df,
+            [
+                "week_end",
+                "pruid",
+                "prename",
+                "prfname",
+                "product_name",
+                "numtotal_totaldoses_admin",
+                "numtotal_dose1_admin",
+                "numtotal_dose2_admin",
+                "numtotal_dose3_admin",
+                "numtotal_dose4+_admin",
+                "numtotal_doseNotReported_admin",
+                "numdelta_dose1",
+                "numdelta_dose2",
+                "numdelta_dose3",
+                "numdelta_dose4+",
+                "numdelta_NotReported",
+                "num2weekdelta_dose1",
+                "num2weekdelta_dose2",
+                "num2weekdelta_dose3",
+                "num2weekdelta_dose4+",
+                "num2weekdelta_NotReported",
+            ],
+        )
+        return df
+
+    def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Filter rows & columns
         df = df[(df.pruid == 1) & (df.sex == "All sexes") & df.age.str.match(self.age_pattern)]
+        df = df[self.cols_age.keys()].rename(columns=self.cols_age)
         # Parse age groups
         df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
-        df = df.rename(columns=self.cols_age).drop(columns="_drop")
         # Convert data types and calculate per capita metrics
         metrics = df.filter(like="people_").columns
         df[metrics] = df[metrics].astype("float").fillna(0)
         df = df.pipe(self.pipe_age_per_capita)
         return df.assign(location=self.location)
 
-    def read_man(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url_m, verify=False, usecols=self.cols_man.keys())
+    def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Filter rows & columns
         df = df[df.pruid == 1].fillna(0)
-        df = df.rename(columns=self.cols_man).drop(columns="_drop")
+        df = df[self.cols_man.keys()].rename(columns=self.cols_man)
         # Calculate total vaccinations
         df = df.groupby(df.columns, axis=1).sum()
         # Check and map vaccine names
@@ -128,7 +183,7 @@ class Canada(CountryVaxBase):
 
     def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame):
         vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().to_dict()["date"]
-        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14" # Vaccination start date
+        vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
     def pipe_filter_lastdates(self, df: pd.DataFrame):
@@ -164,9 +219,15 @@ class Canada(CountryVaxBase):
         return df
 
     def export(self):
+        # Read
         df, df_age, df_man = self.read(), self.read_age(), self.read_man()
+        # Transformations
+        df_age = df_age.pipe(self.pipeline_age)
+        df_man = df_man.pipe(self.pipeline_manufacturer)
+        df = df.pipe(self.pipeline, df_man)
+        # Export
         self.export_datafile(
-            df.pipe(self.pipeline, df_man),
+            df=df,
             df_age=df_age,
             df_manufacturer=df_man,
             meta_age={"source_name": self.source_name, "source_url": self.source_url_age},
