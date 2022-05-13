@@ -195,6 +195,53 @@ class DatasetGenerator:
         agg = agg[agg.date.dt.date < datetime.now().date()]
         return agg
 
+    def _get_aggregate_new(self, df, agg_name, included_locs, excluded_locs):
+        # Take rows that matter
+        agg = df[~df.location.isin(self.aggregates.keys())]  # remove aggregated rows
+        if excluded_locs is not None:
+            agg = agg[~agg.location.isin(excluded_locs)]
+        elif included_locs is not None:
+            agg = agg[agg.location.isin(included_locs)]
+
+        # Get full location-date grid
+        agg = (
+            pd.DataFrame(
+                itertools.product(agg.location.unique(), agg.date.unique()),
+                columns=[agg.location.name, agg.date.name],
+            )
+            .merge(agg, on=["date", "location"], how="outer")
+            .sort_values(by=["location", "date"])
+        )
+
+        # cumulative metrics: Forward filling + Zero-filling if all metric is NaN
+        cols_ffill = [
+            "total_vaccinations",
+            "people_vaccinated",
+            "people_fully_vaccinated",
+            "total_boosters",
+        ]
+        # daily metrics: zero fill
+        cols_0fill = [
+            "new_vaccinations",
+            "new_vaccinations_interpolated",
+            "new_vaccinations_smoothed",
+            "new_people_vaccinated_interpolated",
+            "new_people_vaccinated_smoothed",
+        ]
+        grouper = agg.groupby("location")
+        for col in cols_ffill:
+            agg[col] = grouper[col].apply(lambda x: x.fillna(0) if x.isnull().all() else x.fillna(method="ffill"))
+        for col in cols_0fill:
+            agg[col] = grouper[col].apply(lambda x: x.fillna(0))
+
+        # Use interpolated, otherwise it will be too much of an underestimate
+        agg["new_vaccinations"] = agg["new_vaccinations_interpolated"].apply(lambda x: x if isnan(x) else round(x))
+
+        # Aggregate
+        agg = agg.groupby("date").sum().reset_index().assign(location=agg_name)
+        agg = agg[agg.date.dt.date < datetime.now().date()]
+        return agg
+
     def pipe_aggregates(self, df: pd.DataFrame) -> pd.DataFrame:
         logger.info(f"Building aggregate regions {list(self.aggregates.keys())}")
         aggs = []
