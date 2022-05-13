@@ -6,6 +6,7 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 
 class France(CountryVaxBase):
     location = "France"
+    source_name = "Public Health France"
     source_url = "https://www.data.gouv.fr/fr/datasets/r/b273cf3b-e9de-437c-af55-eda5979e92fc"
     source_url_ref = (
         "https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/"
@@ -87,16 +88,13 @@ class France(CountryVaxBase):
                 }
             )
             .pipe(build_vaccine_timeline, approval_timeline)
+            .pipe(self.pipe_metadata)
         )
 
-        df = df.assign(
-            location=self.location,
-            source_url=self.source_url_ref,
-        )
         self.export_datafile(
-            df,
+            df=df,
             df_manufacturer=df_man,
-            meta_manufacturer={"source_name": "Public Health France", "source_url": self.source_url},
+            meta_manufacturer={"source_name": self.source_name, "source_url": self.source_url_ref},
         )
 
 
