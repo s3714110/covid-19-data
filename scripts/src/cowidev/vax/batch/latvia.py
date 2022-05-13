@@ -4,23 +4,14 @@ from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.utils import build_vaccine_timeline
 
 vaccine_mapping = {
-    # "Ambirix": "",
-    "BBIBP-CorV": "Sinopharm/Beijing",
     "BBIBP-CorV(Sinopharm)": "Sinopharm/Beijing",
     "Comirnaty": "Pfizer/BioNTech",
-    "COMIRNATY": "Pfizer/BioNTech",
-    "CoronaVac": "Sinovac",
     "CoronaVac(Sinovac)": "Sinovac",
-    "COVID-19 Vaccine Janssen": "Johnson&Johnson",
-    "COVID-19 Vaccine Moderna": "Moderna",
-    "Covishield": "Oxford/AstraZeneca",
     "Covishield(ChAdOx1_nCoV-19)": "Oxford/AstraZeneca",
-    "Moderna COVID-19 vaccine": "Moderna",
-    "Spikevax": "Moderna",
-    "Spikevax (previously COVID-19 Vaccine Moderna)": "Moderna",
-    "Vaxzevria": "Oxford/AstraZeneca",
-    "Vaxzevria (previously COVID-19 Vaccine AstraZeneca)": "Oxford/AstraZeneca",
+    "Jcovden": "Johnson&Johnson",
     "Nuvaxovid": "Novavax",
+    "Spikevax": "Moderna",
+    "Vaxzevria": "Oxford/AstraZeneca",
 }
 one_dose_vaccines = ["Johnson&Johnson"]
 
