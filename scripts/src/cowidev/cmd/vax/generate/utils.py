@@ -4,7 +4,6 @@ from datetime import datetime
 from math import isnan
 import glob
 import json
-import locale
 from shutil import copyfile
 
 import pandas as pd
@@ -23,7 +22,7 @@ logger = get_logger()
 class DatasetGenerator:
     def __init__(self, logger):
         self.logger = logger
-        self.aggregates = self.build_aggregates()
+        self.aggregates = build_aggregates()
         self._countries_covered = None
 
     @property
@@ -41,52 +40,6 @@ class DatasetGenerator:
             "new_vaccinations",
             "new_people_vaccinated_smoothed",
         ]
-
-    def build_aggregates(self):
-        continent_countries = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_CONT_FILE, usecols=["Entity", "Unnamed: 3"])
-        eu_countries = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_EU_FILE, usecols=["Country"], squeeze=True).tolist()
-        income_groups = pd.concat(
-            [
-                pd.read_csv(PATHS.INTERNAL_INPUT_WB_INCOME_FILE, usecols=["Country", "Income group"]),
-                pd.read_csv(PATHS.INTERNAL_INPUT_OWID_INCOME_FILE, usecols=["Country", "Income group"]),
-            ],
-            ignore_index=True,
-        )
-
-        aggregates = {
-            "World": {
-                "excluded_locs": ["England", "Northern Ireland", "Scotland", "Wales"],
-                "included_locs": None,
-            },
-            "European Union": {
-                "excluded_locs": None,
-                "included_locs": eu_countries,
-            },
-            "World excl. China": {
-                "excluded_locs": ["China"],
-                "included_locs": None,
-            },
-        }
-        for continent in [
-            "Asia",
-            "Africa",
-            "Europe",
-            "North America",
-            "Oceania",
-            "South America",
-        ]:
-            aggregates[continent] = {
-                "excluded_locs": None,
-                "included_locs": (
-                    continent_countries.loc[continent_countries["Unnamed: 3"] == continent, "Entity"].tolist()
-                ),
-            }
-        for group in income_groups["Income group"].unique():
-            aggregates[group] = {
-                "excluded_locs": None,
-                "included_locs": (income_groups.loc[income_groups["Income group"] == group, "Country"].tolist()),
-            }
-        return aggregates
 
     def pipeline_automated(self, df: pd.DataFrame) -> pd.DataFrame:
         """Generate DataFrame for automated states."""
@@ -135,6 +88,75 @@ class DatasetGenerator:
                 "source_website",
             ]
         ]
+
+    def pipe_daily_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Get daily vaccinations."""
+        logger.info("Adding daily metrics")
+        df = df.sort_values(by=["location", "date"])
+        df = df.assign(new_vaccinations=df.groupby("location").total_vaccinations.diff())
+        df.loc[df.date.diff().dt.days > 1, "new_vaccinations"] = None
+        # df = df.sort_values(["location", "date"])
+        return df
+
+    def _add_interpolate_base(self, df: pd.DataFrame, colname_cum: str, colname_diff: str) -> pd.DataFrame:
+        dt_min = df.dropna(subset=[colname_cum]).date.min()
+        dt_max = df.dropna(subset=[colname_cum]).date.max()
+        df_nan = df[(df.date < dt_min) | (df.date > dt_max)]
+
+        # Add missing dates
+        df = df.merge(
+            pd.Series(pd.date_range(dt_min, dt_max), name="date"),
+            how="right",
+        ).sort_values(by="date")
+
+        # Calculate and add smoothed vars
+        df[colname_diff] = (
+            df[colname_cum]
+            .interpolate(method="linear")
+            .diff()
+            # .apply(lambda x: round(x) if not isnan(x) else x)
+        )
+
+        # Add missing dates
+        df = pd.concat([df, df_nan], ignore_index=True).sort_values("date")
+        df = df.assign(location=df.location.dropna().iloc[0])
+        return df
+
+    def _add_interpolate(self, df: pd.DataFrame):
+        return df.pipe(self._add_interpolate_base, "total_vaccinations", "new_vaccinations_interpolated").pipe(
+            self._add_interpolate_base, "people_vaccinated", "new_people_vaccinated_interpolated"
+        )
+
+    def pipe_interpolate(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Interpolate missing dates."""
+        logger.info("Interpolating daily metrics")
+        df = df.groupby("location").apply(self._add_interpolate).reset_index(drop=True)
+        df.to_csv("/tmp/test-interp.csv", index=False)
+        return df
+
+    def _add_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
+        # NEW VACCINATIONS
+        df["new_vaccinations_smoothed"] = (
+            df["new_vaccinations_interpolated"]
+            .rolling(7, min_periods=1)
+            .mean()
+            .apply(lambda x: round(x) if not isnan(x) else x)
+        )
+        df.loc[df.new_vaccinations_interpolated.isna(), "new_vaccinations_smoothed"] = None
+        df["new_people_vaccinated_smoothed"] = (
+            df["new_people_vaccinated_interpolated"]
+            .rolling(7, min_periods=1)
+            .mean()
+            .apply(lambda x: round(x) if not isnan(x) else x)
+        )
+        df.loc[df.new_people_vaccinated_interpolated.isna(), "new_people_vaccinated_smoothed"] = None
+        return df
+
+    def pipe_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
+        logger.info("Adding smoothed variables")
+        df = df.groupby("location").apply(self._add_smoothed).reset_index(drop=True)
+        df.to_csv("/tmp/test-smooth.csv", index=False)
+        return df
 
     def _get_aggregate(self, df, agg_name, included_locs, excluded_locs):
         # Take rows that matter
@@ -185,52 +207,9 @@ class DatasetGenerator:
                     excluded_locs=self.aggregates[agg_name]["excluded_locs"],
                 )
             )
-        return pd.concat([df] + aggs, ignore_index=True)
-
-    def pipe_daily(self, df: pd.DataFrame) -> pd.DataFrame:
-        logger.info("Adding daily metrics")
-        df = df.sort_values(by=["location", "date"])
-        df = df.assign(new_vaccinations=df.groupby("location").total_vaccinations.diff())
-        df.loc[df.date.diff().dt.days > 1, "new_vaccinations"] = None
-        df = df.sort_values(["location", "date"])
+        df = pd.concat([df] + aggs, ignore_index=True)
+        df.to_csv("/tmp/test-agg.csv", index=False)
         return df
-
-    def _add_smoothed_base(self, df: pd.DataFrame, colname_cum: str, colname_diff: str) -> pd.DataFrame:
-        dt_min = df.dropna(subset=[colname_cum]).date.min()
-        dt_max = df.dropna(subset=[colname_cum]).date.max()
-        df_nan = df[(df.date < dt_min) | (df.date > dt_max)]
-
-        # Add missing dates
-        df = df.merge(
-            pd.Series(pd.date_range(dt_min, dt_max), name="date"),
-            how="right",
-        ).sort_values(by="date")
-
-        # Calculate and add smoothed vars
-        df[colname_diff] = (
-            df[colname_cum]
-            .interpolate(method="linear")
-            .diff()
-            .rolling(7, min_periods=1)
-            .mean()
-            .apply(lambda x: round(x) if not isnan(x) else x)
-        )
-
-        # Add missing dates
-        df = pd.concat([df, df_nan], ignore_index=True).sort_values("date")
-        df = df.assign(location=df.location.dropna().iloc[0])
-        return df
-
-    def _add_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
-        # NEW VACCINATIONS
-        df = self._add_smoothed_base(df, "total_vaccinations", "new_vaccinations_smoothed")
-        # PEOPLE_VACCINATED
-        df = self._add_smoothed_base(df, "people_vaccinated", "new_people_vaccinated_smoothed")
-        return df
-
-    def pipe_smoothed(self, df: pd.DataFrame) -> pd.DataFrame:
-        logger.info("Adding smoothed variables")
-        return df.groupby("location").apply(self._add_smoothed).reset_index(drop=True)
 
     def get_population(self, df_subnational: pd.DataFrame) -> pd.DataFrame:
         # Build population dataframe
@@ -306,8 +285,12 @@ class DatasetGenerator:
         df[count_cols] = df[count_cols].astype("Int64").fillna(pd.NA)
         return df
 
+    def pipe_drop_columns(self, df: pd.DataFrame) -> pd.DataFrame:
+        logger.info("Removing columns")
+        return df.drop(columns=["new_vaccinations_interpolated", "new_people_vaccinated_interpolated"])
+
     def pipeline_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
-        return (
+        df = (
             df[
                 [
                     "date",
@@ -318,14 +301,17 @@ class DatasetGenerator:
                     "total_boosters",
                 ]
             ]
-            .pipe(self.pipe_daily)
+            .pipe(self.pipe_daily_vaccinations)
+            .pipe(self.pipe_interpolate)
             .pipe(self.pipe_smoothed)
             .pipe(self.pipe_aggregates)
             .pipe(self.pipe_capita)
             .pipe(self.pipe_vax_checks)
             .pipe(self.pipe_to_int)
+            .pipe(self.pipe_drop_columns)
             .sort_values(by=["location", "date"])
         )
+        return df
 
     def pipe_vaccinations_csv(self, df: pd.DataFrame, df_iso: pd.DataFrame) -> pd.DataFrame:
         return df.merge(df_iso, on="location").rename(
@@ -741,3 +727,50 @@ class DatasetGenerator:
         timestamp_filename = PATHS.DATA_TIMESTAMP_VAX_FILE
         with open(timestamp_filename, "w") as timestamp_file:
             timestamp_file.write(datetime.utcnow().replace(microsecond=0).isoformat())
+
+
+def build_aggregates():
+    continent_countries = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_CONT_FILE, usecols=["Entity", "Unnamed: 3"])
+    eu_countries = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_EU_FILE, usecols=["Country"], squeeze=True).tolist()
+    income_groups = pd.concat(
+        [
+            pd.read_csv(PATHS.INTERNAL_INPUT_WB_INCOME_FILE, usecols=["Country", "Income group"]),
+            pd.read_csv(PATHS.INTERNAL_INPUT_OWID_INCOME_FILE, usecols=["Country", "Income group"]),
+        ],
+        ignore_index=True,
+    )
+
+    aggregates = {
+        "World": {
+            "excluded_locs": ["England", "Northern Ireland", "Scotland", "Wales"],
+            "included_locs": None,
+        },
+        "European Union": {
+            "excluded_locs": None,
+            "included_locs": eu_countries,
+        },
+        "World excl. China": {
+            "excluded_locs": ["China"],
+            "included_locs": None,
+        },
+    }
+    for continent in [
+        "Asia",
+        "Africa",
+        "Europe",
+        "North America",
+        "Oceania",
+        "South America",
+    ]:
+        aggregates[continent] = {
+            "excluded_locs": None,
+            "included_locs": (
+                continent_countries.loc[continent_countries["Unnamed: 3"] == continent, "Entity"].tolist()
+            ),
+        }
+    for group in income_groups["Income group"].unique():
+        aggregates[group] = {
+            "excluded_locs": None,
+            "included_locs": (income_groups.loc[income_groups["Income group"] == group, "Country"].tolist()),
+        }
+    return aggregates
