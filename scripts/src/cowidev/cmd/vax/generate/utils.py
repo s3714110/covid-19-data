@@ -10,6 +10,7 @@ import pandas as pd
 from pandas.api.types import is_numeric_dtype
 
 from cowidev import PATHS
+from cowidev.utils.clean.dates import localdate
 from cowidev.utils.utils import pd_series_diff_values
 from cowidev.utils.clean import clean_date
 from cowidev.utils.log import get_logger
@@ -239,7 +240,7 @@ class DatasetGenerator:
 
         # Aggregate
         agg = agg.groupby("date").sum().reset_index().assign(location=agg_name)
-        agg = agg[agg.date.dt.date < datetime.now().date()]
+        agg = agg[agg.date.dt.date < localdate(minus_days=7, as_datetime=True).date()]
         return agg
 
     def pipe_aggregates(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -247,7 +248,7 @@ class DatasetGenerator:
         aggs = []
         for agg_name, _ in self.aggregates.items():
             aggs.append(
-                self._get_aggregate(
+                self._get_aggregate_new(
                     df=df,
                     agg_name=agg_name,
                     included_locs=self.aggregates[agg_name]["included_locs"],
