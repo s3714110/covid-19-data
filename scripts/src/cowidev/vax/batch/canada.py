@@ -37,7 +37,8 @@ class Canada(CountryVaxBase):
         "numtotal_dose1_admin": "total_vaccinations",
         "numtotal_dose2_admin": "total_vaccinations",
         "numtotal_dose3_admin": "total_vaccinations",
-        "numtotal_dose4+_admin": "total_vaccinations",
+        "numtotal_dose4_admin": "total_vaccinations",
+        "numtotal_dose5+_admin": "total_vaccinations",
         "numtotal_doseNotReported_admin": "total_vaccinations",
     }
     age_pattern: str = r"0?(\d{1,2})(?:–0?(\d{1,2})|\+)"
@@ -101,10 +102,12 @@ class Canada(CountryVaxBase):
                 "numtotal_partially",
                 "numtotal_fully",
                 "numtotal_additional",
+                "numtotal_2nd_additional",
                 "proptotal_atleast1dose",
                 "proptotal_partially",
                 "proptotal_fully",
                 "proptotal_additional",
+                "proptotal_2nd_additional",
             ],
         )
         return df
@@ -123,17 +126,20 @@ class Canada(CountryVaxBase):
                 "numtotal_dose1_admin",
                 "numtotal_dose2_admin",
                 "numtotal_dose3_admin",
-                "numtotal_dose4+_admin",
+                "numtotal_dose4_admin",
+                "numtotal_dose5+_admin",
                 "numtotal_doseNotReported_admin",
                 "numdelta_dose1",
                 "numdelta_dose2",
                 "numdelta_dose3",
-                "numdelta_dose4+",
+                "numdelta_dose4",
+                "numdelta_dose5+",
                 "numdelta_NotReported",
                 "num2weekdelta_dose1",
                 "num2weekdelta_dose2",
                 "num2weekdelta_dose3",
-                "num2weekdelta_dose4+",
+                "num2weekdelta_dose4",
+                "num2weekdelta_dose5+",
                 "num2weekdelta_NotReported",
             ],
         )
@@ -163,18 +169,18 @@ class Canada(CountryVaxBase):
         df = df.groupby(["date", "vaccine"], as_index=False).sum()
         return df.assign(location=self.location)
 
-    def pipe_filter_rows(self, df: pd.DataFrame):
+    def pipe_filter_rows(self, df: pd.DataFrame) -> pd.DataFrame:
         # Only records since vaccination campaign started
         return df[df.total_vaccinations > 0]
 
-    def pipe_rename_columns(self, df: pd.DataFrame):
+    def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(
             columns={
                 "total_vaccinated": "people_fully_vaccinated",
             }
         )
 
-    def pipe_metrics(self, df: pd.DataFrame):
+    def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         total_boosters = df.total_boosters_1 + df.total_boosters_2.fillna(0)
         df = df.assign(
             people_vaccinated=(df.total_vaccinations - df.people_fully_vaccinated - total_boosters.fillna(0)),
@@ -184,12 +190,12 @@ class Canada(CountryVaxBase):
         # df.loc[(df.date >= "2021-10-04") & (df.date <= "2021-10-09"), "people_vaccinated"] = pd.NA
         return df
 
-    def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame):
+    def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
         vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().date.to_dict()
         vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
-    def pipe_filter_lastdates(self, df: pd.DataFrame):
+    def pipe_filter_lastdates(self, df: pd.DataFrame) -> pd.DataFrame:
         # date = "2022-03-18"
         last_date = datetime.strptime(df.date.max(), DATE_FORMAT)
         margin_days = 1
