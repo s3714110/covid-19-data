@@ -43,6 +43,13 @@ cowidev.testing.batch.malta,1.52,True,2022-05-12T09:50:10,,
 cowidev.testing.batch.marshall_islands,75.33,True,2022-05-12T09:51:25,,
 cowidev.testing.batch.mexico,7.18,True,2022-05-12T10:04:09,,
 cowidev.testing.batch.netherlands,71.93,True,2022-05-12T09:51:24,,
+cowidev.testing.batch.north_korea,0.0,False,2022-05-15T17:44:12,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py"", line 48, in main
+    NorthKorea().export()
+NameError: name 'NorthKorea' is not defined
+",name 'NorthKorea' is not defined
 cowidev.testing.batch.northern_mariana_islands,71.72,True,2022-05-12T09:51:25,,
 cowidev.testing.batch.norway,1.6,True,2022-05-12T09:50:21,,
 cowidev.testing.batch.peru,14.32,True,2022-05-12T09:50:36,,

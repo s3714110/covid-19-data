@@ -35,6 +35,10 @@ collated[Country == "Fiji", `Short-term tests per case` := NA]
 collated[Country == "New Zealand", `Short-term positive rate` := NA]
 collated[Country == "New Zealand", `Short-term tests per case` := NA]
 
-#Sudden increase in the number of tests due to a backlog
+# Sudden increase in the number of tests due to a backlog
 collated[Country == "India" & "2022-04-14" <= Date & Date <= "2022-04-21", `Short-term positive rate` := NA]
 collated[Country == "India" & "2022-04-14" <= Date & Date <= "2022-04-21", `Short-term tests per case` := NA]
+
+# North Korea: unclear testing critirea
+collated[Country == "North Korea", `Short-term positive rate` := NA]
+collated[Country == "North Korea", `Short-term tests per case` := NA]
