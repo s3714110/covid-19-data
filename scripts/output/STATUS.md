@@ -2172,7 +2172,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`4/129` scripts failed, `8/129` were skipped. Latest update was `2022-05-12T15:37:32`.
+`5/130` scripts failed, `8/130` were skipped. Latest update was `2022-05-15T17:44:12`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -2185,6 +2185,13 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>cowidev.testing.batch.north_korea</td>
+      <td>❌</td>
+      <td>2022-05-15T17:44:12</td>
+      <td>0.00</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py", line 48, in main<br>    NorthKorea().export()<br>NameError: name 'NorthKorea' is not defined<br></pre></details></td>
+    </tr>
     <tr>
       <td>cowidev.testing.incremental.syria</td>
       <td>❌</td>
