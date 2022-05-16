@@ -8,23 +8,7 @@ cowidev.vax.batch.canada,3.43,True,2022-05-16T09:17:35,,
 cowidev.vax.batch.chile,0.85,True,2022-05-16T07:00:10,,
 cowidev.vax.batch.czechia,2.37,True,2022-05-16T07:00:12,,
 cowidev.vax.batch.denmark,2.51,True,2022-05-16T07:00:12,,
-cowidev.vax.batch.ecdc,69.05,False,2022-05-16T07:04:33,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 454, in main
-    ECDC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 448, in export
-    self.export_age(df)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 409, in export_age
-    df_c = df_age[df_age.location == location].pipe(self._filter_age_targetgroup).copy()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 398, in _filter_age_targetgroup
-    raise ValueError(
-ValueError: Can't choose between under age groups. Restriction might be too strict, consider relaxing it!
-","Can't choose between under age groups. Restriction might be too strict, consider relaxing it!"
+cowidev.vax.batch.ecdc,28.86,True,2022-05-16T10:37:47,,
 cowidev.vax.batch.ecuador,1.42,True,2022-05-16T07:00:12,,
 cowidev.vax.batch.estonia,0.61,True,2022-05-16T07:00:13,,
 cowidev.vax.batch.france,0.44,True,2022-05-16T07:00:13,,
