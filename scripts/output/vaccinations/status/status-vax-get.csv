@@ -51,33 +51,7 @@ cowidev.vax.batch.singapore,5.0,True,2022-05-16T07:00:34,,
 cowidev.vax.batch.slovakia,49.74,True,2022-05-16T07:01:24,,
 cowidev.vax.batch.slovenia,1.03,True,2022-05-16T07:00:39,,
 cowidev.vax.batch.south_korea,45.65,True,2022-05-16T07:01:24,,
-cowidev.vax.batch.spc,11.21,False,2022-05-16T07:04:44,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 214, in main
-    SPC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 208, in export
-    data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 57, in read
-    return self.parse_data(data)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 71, in parse_data
-    return self._build_df_list(vaccination_data)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 101, in _build_df_list
-    data[k] = self._build_df(v, k)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 138, in _build_df
-    fiji_booster()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/fiji.py"", line 118, in check_booster
-    Fiji().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/fiji.py"", line 109, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/fiji.py"", line 31, in read
-    data, proceed = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/fiji.py"", line 53, in _parse_data
-    booster = self._parse_metrics(text)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/fiji.py"", line 95, in _parse_metrics
-    raise TypeError((""Website Structure Changed, please update the script""))
-TypeError: Website Structure Changed, please update the script
-","Website Structure Changed, please update the script"
+cowidev.vax.batch.spc,8.73,True,2022-05-16T10:01:55,,
 cowidev.vax.batch.sweden,11.97,True,2022-05-16T07:00:55,,
 cowidev.vax.batch.switzerland,29.97,True,2022-05-16T07:01:25,,
 cowidev.vax.batch.trinidad_and_tobago,1.19,True,2022-05-16T07:01:12,,
