@@ -4,19 +4,7 @@ cowidev.vax.batch.australia,0.96,True,2022-05-16T07:00:09,,
 cowidev.vax.batch.austria,,,2022-05-16T07:00:08,,
 cowidev.vax.batch.belgium,1.76,True,2022-05-16T07:00:10,,
 cowidev.vax.batch.bolivia,1.9,True,2022-05-16T07:00:10,,
-cowidev.vax.batch.canada,4.69,False,2022-05-16T07:03:24,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 242, in main
-    Canada().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 226, in export
-    df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 91, in read_age
-    check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'proptotal_2nd_additional', 'numtotal_2nd_additional'}
-","Unknown column(s) found: {'proptotal_2nd_additional', 'numtotal_2nd_additional'}"
+cowidev.vax.batch.canada,3.43,True,2022-05-16T09:17:35,,
 cowidev.vax.batch.chile,0.85,True,2022-05-16T07:00:10,,
 cowidev.vax.batch.czechia,2.37,True,2022-05-16T07:00:12,,
 cowidev.vax.batch.denmark,2.51,True,2022-05-16T07:00:12,,
