@@ -182,7 +182,7 @@ def localdate(
     else:
         tz = pytz.timezone(tz)
         local_time = datetime.now(tz=tz)
-    if not force_today and ((hour_limit is None) or (local_time.hour < hour_limit)):
+    if (minus_days == 0) and (not force_today) and ((hour_limit is None) or (local_time.hour < hour_limit)):
         local_time = local_time - timedelta(days=1)
     local_time = local_time - timedelta(days=minus_days)
     if plus_days:
