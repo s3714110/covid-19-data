@@ -395,9 +395,12 @@ class ECDC(CountryVaxBase):
         elif len(date_1) == 0:
             age_group_selection = AGE_GROUPS_MUST_HAVE | {AGE_GROUP_UNDERAGE_LEVELS["lvl0"]}
         else:
-            raise ValueError(
-                f"Can't choose between under age groups. Restriction might be too strict, consider relaxing it!"
-            )
+            if (df_c.location == "Ireland").any():
+                age_group_selection = AGE_GROUPS_MUST_HAVE | AGE_GROUP_UNDERAGE_LEVELS["lvl1"]
+            else:
+                raise ValueError(
+                    f"Can't choose between under age groups. Restriction might be too strict, consider relaxing it!"
+                )
         df_c = df_c[df_c.TargetGroup.isin(age_group_selection)]
         return df_c
 
