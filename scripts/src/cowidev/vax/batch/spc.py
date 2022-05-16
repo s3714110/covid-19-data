@@ -15,6 +15,7 @@ from cowidev.vax.incremental.fiji import check_booster as fiji_booster
 metrics_mapping = {
     "COVIDVACAD1": "people_vaccinated",
     "COVIDVACAD2": "people_fully_vaccinated",
+    "COVIDVACBST": "total_boosters",
     "COVIDVACADT": "total_vaccinations",
 }
 
@@ -53,6 +54,7 @@ class SPC(CountryVaxBase):
 
     def read(self):
         # Get data
+        print(self.source_url)
         data = request_json(self.source_url)
         return self.parse_data(data)
 
