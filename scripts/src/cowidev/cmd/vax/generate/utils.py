@@ -241,7 +241,7 @@ class DatasetGenerator:
         # Aggregate
         agg = agg.groupby("date").sum().reset_index().assign(location=agg_name)
         # Filter dates for daily metrics
-        mask = agg.date.dt.date < localdate(minus_days=7, as_datetime=True).date()
+        mask = agg.date.dt.date > localdate(minus_days=7, as_datetime=True).date()
         columns = [
             "new_vaccinations",
             "new_vaccinations_interpolated",
