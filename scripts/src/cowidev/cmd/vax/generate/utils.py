@@ -240,7 +240,16 @@ class DatasetGenerator:
 
         # Aggregate
         agg = agg.groupby("date").sum().reset_index().assign(location=agg_name)
-        agg = agg[agg.date.dt.date < localdate(minus_days=7, as_datetime=True).date()]
+        # Filter dates for daily metrics
+        mask = agg.date.dt.date < localdate(minus_days=7, as_datetime=True).date()
+        columns = [
+            "new_vaccinations",
+            "new_vaccinations_interpolated",
+            "new_vaccinations_smoothed",
+            "new_people_vaccinated_interpolated",
+            "new_people_vaccinated_smoothed",
+        ]
+        agg.loc[mask, columns] = None
         return agg
 
     def pipe_aggregates(self, df: pd.DataFrame) -> pd.DataFrame:
