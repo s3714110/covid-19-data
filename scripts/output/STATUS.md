@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`1/113` scripts failed, `10/113` were skipped. Latest update was `2022-05-16T10:01:55`.
+`0/113` scripts failed, `10/113` were skipped. Latest update was `2022-05-16T10:37:47`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,13 +18,6 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>❌</td>
-      <td>2022-05-16T07:04:33</td>
-      <td>69.05</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 454, in main<br>    ECDC().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 448, in export<br>    self.export_age(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 409, in export_age<br>    df_c = df_age[df_age.location == location].pipe(self._filter_age_targetgroup).copy()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 398, in _filter_age_targetgroup<br>    raise ValueError(<br>ValueError: Can't choose between under age groups. Restriction might be too strict, consider relaxing it!<br></pre></details></td>
-    </tr>
     <tr>
       <td>cowidev.vax.incremental.vietnam</td>
       <td>⚠️</td>
@@ -93,6 +86,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-05-16T07:00:08</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ecdc</td>
+      <td>✅</td>
+      <td>2022-05-16T10:37:47</td>
+      <td>28.86</td>
       <td></td>
     </tr>
     <tr>
