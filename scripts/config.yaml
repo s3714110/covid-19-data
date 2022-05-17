@@ -83,6 +83,6 @@ pipeline:
       skip_countries:
         # - South Africa
         # - Israel
-        - Spain
-        - Argentina
+        # - Spain
+        # - Argentina
   
