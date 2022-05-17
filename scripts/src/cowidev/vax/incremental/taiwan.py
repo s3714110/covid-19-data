@@ -27,6 +27,7 @@ class Taiwan:
     def read(self) -> pd.Series:
         soup = get_soup(self.source_data_url)
         url_pdf = self._parse_pdf_link(soup)
+        print(url_pdf)
         df = self._parse_table(url_pdf)
         data = self.parse_data(df, soup)
         return data
@@ -52,7 +53,7 @@ class Taiwan:
         df = dfs[0]
         cols = df.columns
 
-        if df.shape != (20, 4):
+        if df.shape != (24, 4):
             raise ValueError(f"Table 1: format has changed!")
 
         # Sanity check
@@ -66,12 +67,12 @@ class Taiwan:
         ):
             raise ValueError(f"There are some unknown columns: {cols}")
 
-        if df.iloc[16][0] != "總計":
+        if df.iloc[19][0] != "總計":
             raise ValueError(f"Unexpected value in the key cell: {df.iloc[16][0]}")
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        for i in range(17, 20):
+        for i in range(20, 24):
             if math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
                 df.iloc[i][0] = float("nan")
@@ -102,16 +103,17 @@ class Taiwan:
         return data
 
     def _parse_stats(self, df: pd.DataFrame) -> int:
-        num_dose1 = clean_count(df.loc["總計", "第1劑"]["total"])
-        num_dose2 = clean_count(df.loc["總計", "第2劑"]["total"])
+        num_dose1 = clean_count(df.loc["總計", "第一劑"]["total"])
+        num_dose2 = clean_count(df.loc["總計", "第二劑"]["total"])
         num_booster1 = clean_count(df.loc["總計", "基礎加強劑"]["total"])
-        num_booster2 = clean_count(df.loc["總計", "追加劑"]["total"])
+        num_booster2 = clean_count(df.loc["總計", "第二次追加劑"]["total"])
+        num_add = clean_count(df.loc["總計", "追加劑"]["total"])
 
         return {
-            "total_vaccinations": num_dose1 + num_dose2 + num_booster1 + num_booster2,
+            "total_vaccinations": num_dose1 + num_dose2 + num_booster1 + num_booster2 + num_add,
             "people_vaccinated": num_dose1,
             "people_fully_vaccinated": num_dose2,
-            "total_boosters": num_booster1 + num_booster2,
+            "total_boosters": num_booster1 + num_booster2 + num_add,
         }
 
     def _parse_vaccines(self, df: pd.DataFrame) -> str:
