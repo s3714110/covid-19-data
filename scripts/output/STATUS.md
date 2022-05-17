@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`12/113` scripts failed, `10/113` were skipped. Latest update was `2022-05-17T07:04:21`.
+`5/113` scripts failed, `10/113` were skipped. Latest update was `2022-05-17T08:22:47`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,25 +19,11 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.united_arab_emirates</td>
-      <td>❌</td>
-      <td>2022-05-17T07:04:21</td>
-      <td>2.32</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py", line 112, in main<br>    UnitedArabEmirates().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py", line 97, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py", line 16, in read<br>    return self._parse_data()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py", line 19, in _parse_data<br>    with get_driver() as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 161, in get_driver<br>    driver = webdriver.Chrome(options=options)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.taiwan</td>
       <td>❌</td>
       <td>2022-05-17T07:04:19</td>
       <td>11.70</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 155, in main<br>    Taiwan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 141, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 30, in read<br>    df = self._parse_table(url_pdf)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 56, in _parse_table<br>    raise ValueError(f"Table 1: format has changed!")<br>ValueError: Table 1: format has changed!<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.suriname</td>
-      <td>❌</td>
-      <td>2022-05-17T07:04:07</td>
-      <td>2.32</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py", line 57, in main<br>    data = read(source).pipe(pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py", line 13, in read<br>    with get_driver() as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 161, in get_driver<br>    driver = webdriver.Chrome(options=options)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.russia</td>
@@ -47,20 +33,6 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 64, in main<br>    data = read(source).pipe(pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 13, in read<br>    text = soup.find("div", id="data").find("p").text<br>AttributeError: 'NoneType' object has no attribute 'find'<br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.qatar</td>
-      <td>❌</td>
-      <td>2022-05-17T07:03:33</td>
-      <td>4.32</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py", line 84, in main<br>    Qatar().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py", line 69, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py", line 19, in read<br>    return self.connect_parse_data()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py", line 25, in connect_parse_data<br>    with webdriver.Chrome(options=op) as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2022-05-17T07:03:29</td>
-      <td>3.03</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 179, in main<br>    PAHO().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 174, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 46, in _parse_data<br>    with get_driver(download_folder=self._download_path) as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 161, in get_driver<br>    driver = webdriver.Chrome(options=options)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.nepal</td>
       <td>❌</td>
       <td>2022-05-17T07:03:26</td>
@@ -68,32 +40,11 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py", line 173, in main<br>    Nepal().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py", line 155, in export<br>    df_main, df_manufacturer = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py", line 29, in read<br>    df_main, df_manufacturer = self._parse_data(links)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py", line 38, in _parse_data<br>    df = self._parse_pdf_table()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py", line 49, in _parse_pdf_table<br>    check_known_columns(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 164, in check_known_columns<br>    raise Exception(f"Unknown column(s) found: {unknown_cols}")<br>Exception: Unknown column(s) found: {'Unnamed: 6'}<br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.macao</td>
-      <td>❌</td>
-      <td>2022-05-17T07:02:59</td>
-      <td>3.34</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 84, in main<br>    Macao().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 70, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 16, in read<br>    with get_driver() as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 161, in get_driver<br>    driver = webdriver.Chrome(options=options)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.kyrgyzstan</td>
       <td>❌</td>
       <td>2022-05-17T07:02:55</td>
       <td>3.90</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 73, in create_connection<br>    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):<br>  File "/home/owid/.pyenv/versions/3.9.6/lib/python3.9/socket.py", line 953, in getaddrinfo<br>    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):<br>socket.gaierror: [Errno -3] Temporary failure in name resolution<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect<br>    conn = self._new_conn()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 186, in _new_conn<br>    raise NewConnectionError(<br>urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen<br>    retries = retries.increment(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vc.emed.gov.kg', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py", line 61, in main<br>    Kyrgyzstan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py", line 48, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py", line 14, in read<br>    soup = get_soup(self.source_url, verify=False)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 519, in send<br>    raise ConnectionError(e, request=request)<br>requests.exceptions.ConnectionError: HTTPSConnectionPool(host='vc.emed.gov.kg', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kazakhstan</td>
-      <td>❌</td>
-      <td>2022-05-17T07:02:51</td>
-      <td>2.33</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py", line 78, in main<br>    Kazakhstan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py", line 73, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py", line 17, in read<br>    with webdriver.Chrome(options=op) as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2022-05-17T07:02:49</td>
-      <td>2.34</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 108, in main<br>    DominicanRepublic().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 64, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 23, in read<br>    with webdriver.Chrome(options=op) as driver:<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py", line 76, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99<br>Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser<br><br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.czechia</td>
@@ -170,6 +121,55 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-05-17T07:00:08</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:47</td>
+      <td>41.06</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.united_arab_emirates</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:29</td>
+      <td>17.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.suriname</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:25</td>
+      <td>14.08</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.macao</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:20</td>
+      <td>14.41</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.qatar</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:15</td>
+      <td>9.64</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kazakhstan</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:12</td>
+      <td>5.82</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2022-05-17T08:22:11</td>
+      <td>4.74</td>
       <td></td>
     </tr>
     <tr>
