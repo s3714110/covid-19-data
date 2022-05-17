@@ -23,6 +23,7 @@ pipeline:
         - Vietnam  # Moved to WHO
         - Sri Lanka  # Moved to WHO
         - Ukraine  # Moved to WHO
+        - Portugal  # Temporary moved to ECDC
     process:
       skip_complete:
         - Pitcairn
