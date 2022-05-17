@@ -107,7 +107,27 @@ class ECDC(CountryVaxBase):
         return self._load_country_mapping(PATHS.INTERNAL_INPUT_ISO_FULL_FILE)
 
     def read(self):
-        return read_csv_from_url(self.source_url, timeout=20)
+        df = read_csv_from_url(self.source_url, timeout=20)
+        check_known_columns(
+            df,
+            [
+                "YearWeekISO",
+                "ReportingCountry",
+                "Denominator",
+                "NumberDosesReceived",
+                "NumberDosesExported",
+                "FirstDose",
+                "FirstDoseRefused",
+                "SecondDose",
+                "DoseAdditional1",
+                "UnknownDose",
+                "Region",
+                "TargetGroup",
+                "Vaccine",
+                "Population",
+            ],
+        )
+        return df
 
     def _load_country_mapping(self, iso_path: str):
         country_mapping = pd.read_csv(iso_path)
@@ -227,10 +247,23 @@ class ECDC(CountryVaxBase):
             dfs.append(df_c)
         return pd.concat(dfs, ignore_index=True)
 
+    def pipe_filter_targetgroup(self, df: pd.DataFrame):
+        dfs = []
+        dfg = df.groupby("location")
+        for _, _df in dfg:
+            if "Age<18" in _df.TargetGroup.unique():
+                tagetgroups = ["ALL", "Age<18"]
+            else:
+                tagetgroups = ["ALL"] + list(AGE_GROUP_UNDERAGE_LEVELS["lvl1"])
+            _df = _df.loc[df.TargetGroup.isin(tagetgroups)]
+            dfs.append(_df)
+        df = pd.concat(dfs)
+        return df
+
     def pipeline(self, df: pd.DataFrame):
         vax_timeline = self._vaccine_timeseries(df)
         df = (
-            df.loc[df.TargetGroup.isin(["ALL", "Age<18"])]
+            df.pipe(self.pipe_filter_targetgroup)
             .pipe(self.pipeline_common)
             .pipe(self.pipe_filter_locations)
             .pipe(self.pipe_vaccine, vax_timeline)
