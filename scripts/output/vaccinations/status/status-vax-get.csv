@@ -1,114 +1,413 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,2.95,True,2022-05-16T07:00:11,,
-cowidev.vax.batch.australia,0.96,True,2022-05-16T07:00:09,,
-cowidev.vax.batch.austria,,,2022-05-16T07:00:08,,
-cowidev.vax.batch.belgium,1.76,True,2022-05-16T07:00:10,,
-cowidev.vax.batch.bolivia,1.9,True,2022-05-16T07:00:10,,
-cowidev.vax.batch.canada,3.43,True,2022-05-16T09:17:35,,
-cowidev.vax.batch.chile,0.85,True,2022-05-16T07:00:10,,
-cowidev.vax.batch.czechia,2.37,True,2022-05-16T07:00:12,,
-cowidev.vax.batch.denmark,2.51,True,2022-05-16T07:00:12,,
-cowidev.vax.batch.ecdc,28.86,True,2022-05-16T10:37:47,,
-cowidev.vax.batch.ecuador,1.42,True,2022-05-16T07:00:12,,
-cowidev.vax.batch.estonia,0.61,True,2022-05-16T07:00:13,,
-cowidev.vax.batch.france,0.44,True,2022-05-16T07:00:13,,
-cowidev.vax.batch.germany,1.08,True,2022-05-16T07:00:13,,
-cowidev.vax.batch.greece,2.72,True,2022-05-16T07:00:15,,
-cowidev.vax.batch.hong_kong,2.89,True,2022-05-16T07:00:15,,
-cowidev.vax.batch.indonesia,6.68,True,2022-05-16T07:00:19,,
-cowidev.vax.batch.ireland,0.15,True,2022-05-16T07:00:13,,
-cowidev.vax.batch.israel,6.05,True,2022-05-16T07:00:19,,
-cowidev.vax.batch.italy,7.07,True,2022-05-16T07:00:22,,
-cowidev.vax.batch.jersey,0.49,True,2022-05-16T07:00:16,,
-cowidev.vax.batch.latvia,22.79,True,2022-05-16T07:00:39,,
-cowidev.vax.batch.lithuania,1.07,True,2022-05-16T07:00:20,,
-cowidev.vax.batch.luxembourg,3.83,True,2022-05-16T07:00:23,,
-cowidev.vax.batch.malaysia,1.72,True,2022-05-16T07:00:22,,
-cowidev.vax.batch.malta,0.71,True,2022-05-16T07:00:23,,
-cowidev.vax.batch.netherlands,0.48,True,2022-05-16T07:00:23,,
-cowidev.vax.batch.new_zealand,19.87,True,2022-05-16T07:00:43,,
-cowidev.vax.batch.norway,0.33,True,2022-05-16T07:00:23,,
-cowidev.vax.batch.peru,3.13,True,2022-05-16T07:00:26,,
-cowidev.vax.batch.romania,5.91,True,2022-05-16T07:00:29,,
-cowidev.vax.batch.saudi_arabia,11.49,True,2022-05-16T07:00:38,,
-cowidev.vax.batch.singapore,5.0,True,2022-05-16T07:00:34,,
-cowidev.vax.batch.slovakia,49.74,True,2022-05-16T07:01:24,,
-cowidev.vax.batch.slovenia,1.03,True,2022-05-16T07:00:39,,
-cowidev.vax.batch.south_korea,45.65,True,2022-05-16T07:01:24,,
-cowidev.vax.batch.spc,8.73,True,2022-05-16T10:01:55,,
-cowidev.vax.batch.sweden,11.97,True,2022-05-16T07:00:55,,
-cowidev.vax.batch.switzerland,29.97,True,2022-05-16T07:01:25,,
-cowidev.vax.batch.trinidad_and_tobago,1.19,True,2022-05-16T07:01:12,,
-cowidev.vax.batch.ukraine,,,2022-05-16T07:01:12,,
-cowidev.vax.batch.united_kingdom,5.58,True,2022-05-16T07:01:18,,
-cowidev.vax.batch.united_states,11.0,True,2022-05-16T07:01:29,,
-cowidev.vax.batch.uruguay,0.82,True,2022-05-16T07:01:25,,
-cowidev.vax.batch.zimbabwe,0.58,True,2022-05-16T07:01:25,,
-cowidev.vax.incremental.africacdc,,,2022-05-16T07:01:25,,
-cowidev.vax.incremental.antigua_barbuda,3.66,True,2022-05-16T07:01:28,,
-cowidev.vax.incremental.aruba,0.85,True,2022-05-16T07:01:26,,
-cowidev.vax.incremental.azerbaijan,6.7,True,2022-05-16T07:01:32,,
-cowidev.vax.incremental.bahrain,1.19,True,2022-05-16T07:01:27,,
-cowidev.vax.incremental.bangladesh,14.87,True,2022-05-16T07:01:42,,
-cowidev.vax.incremental.barbados,1.4,True,2022-05-16T07:01:30,,
-cowidev.vax.incremental.brazil,0.04,True,2022-05-16T07:01:29,,
-cowidev.vax.incremental.bulgaria,0.68,True,2022-05-16T07:01:29,,
-cowidev.vax.incremental.china,25.71,True,2022-05-16T07:05:10,,
-cowidev.vax.incremental.costa_rica,13.9,True,2022-05-16T07:01:44,,
-cowidev.vax.incremental.croatia,0.17,True,2022-05-16T07:01:32,,
-cowidev.vax.incremental.cuba,1.88,True,2022-05-16T07:01:34,,
-cowidev.vax.incremental.curacao,0.33,True,2022-05-16T07:01:34,,
-cowidev.vax.incremental.cyprus,7.59,True,2022-05-16T07:01:42,,
-cowidev.vax.incremental.dominican_republic,7.65,True,2022-05-16T07:01:49,,
-cowidev.vax.incremental.el_salvador,3.83,True,2022-05-16T07:01:46,,
-cowidev.vax.incremental.equatorial_guinea,9.43,True,2022-05-16T07:01:53,,
-cowidev.vax.incremental.faeroe_islands,0.79,True,2022-05-16T07:01:46,,
-cowidev.vax.incremental.fiji,0.0,True,2022-05-16T07:01:46,,
-cowidev.vax.incremental.finland,0.43,True,2022-05-16T07:01:47,,
-cowidev.vax.incremental.gabon,,,2022-05-16T07:01:47,,
-cowidev.vax.incremental.georgia,4.0,True,2022-05-16T07:01:51,,
-cowidev.vax.incremental.greenland,2.75,True,2022-05-16T07:01:52,,
-cowidev.vax.incremental.guatemala,,,2022-05-16T07:01:51,,
-cowidev.vax.incremental.guernsey,1.95,True,2022-05-16T07:01:53,,
-cowidev.vax.incremental.hungary,2.63,True,2022-05-16T07:01:55,,
-cowidev.vax.incremental.iceland,1.6,True,2022-05-16T07:01:54,,
-cowidev.vax.incremental.india,1.41,True,2022-05-16T07:01:54,,
-cowidev.vax.incremental.iran,4.25,True,2022-05-16T07:01:59,,
-cowidev.vax.incremental.isle_of_man,1.24,True,2022-05-16T07:01:56,,
-cowidev.vax.incremental.jamaica,2.33,True,2022-05-16T07:01:57,,
-cowidev.vax.incremental.japan,1.61,True,2022-05-16T07:01:57,,
-cowidev.vax.incremental.kazakhstan,9.11,True,2022-05-16T07:02:06,,
-cowidev.vax.incremental.kosovo,1.51,True,2022-05-16T07:01:59,,
-cowidev.vax.incremental.kyrgyzstan,1.07,True,2022-05-16T07:02:00,,
-cowidev.vax.incremental.laos,7.99,True,2022-05-16T07:02:07,,
-cowidev.vax.incremental.libya,2.73,True,2022-05-16T07:02:02,,
-cowidev.vax.incremental.macao,15.52,True,2022-05-16T07:02:15,,
-cowidev.vax.incremental.mexico,3.78,True,2022-05-16T07:02:06,,
-cowidev.vax.incremental.moldova,0.83,True,2022-05-16T07:02:07,,
-cowidev.vax.incremental.monaco,30.94,True,2022-05-16T07:02:37,,
-cowidev.vax.incremental.mongolia,0.83,True,2022-05-16T07:02:08,,
-cowidev.vax.incremental.montenegro,0.11,True,2022-05-16T07:02:07,,
-cowidev.vax.incremental.morocco,,,2022-05-16T07:02:07,,
-cowidev.vax.incremental.myanmar,10.62,True,2022-05-16T07:02:18,,
-cowidev.vax.incremental.nepal,13.11,True,2022-05-16T07:02:21,,
-cowidev.vax.incremental.north_macedonia,,,2022-05-16T07:02:15,,
-cowidev.vax.incremental.northern_cyprus,0.84,True,2022-05-16T07:02:16,,
-cowidev.vax.incremental.paho,40.29,True,2022-05-16T07:02:56,,
-cowidev.vax.incremental.pakistan,1.44,True,2022-05-16T07:02:19,,
-cowidev.vax.incremental.philippines,0.5,True,2022-05-16T07:02:20,,
-cowidev.vax.incremental.poland,0.17,True,2022-05-16T07:02:20,,
-cowidev.vax.incremental.qatar,9.53,True,2022-05-16T07:02:29,,
-cowidev.vax.incremental.russia,36.22,True,2022-05-16T07:02:57,,
-cowidev.vax.incremental.saint_lucia,,,2022-05-16T07:02:29,,
-cowidev.vax.incremental.serbia,6.06,True,2022-05-16T07:02:35,,
-cowidev.vax.incremental.south_africa,6.66,True,2022-05-16T07:02:42,,
-cowidev.vax.incremental.spain,2.68,True,2022-05-16T07:02:40,,
-cowidev.vax.incremental.sri_lanka,,,2022-05-16T07:02:40,,
-cowidev.vax.incremental.suriname,13.95,True,2022-05-16T07:02:54,,
-cowidev.vax.incremental.taiwan,6.58,True,2022-05-16T07:02:49,,
-cowidev.vax.incremental.thailand,1.66,True,2022-05-16T07:02:50,,
-cowidev.vax.incremental.turkey,1.08,True,2022-05-16T07:02:51,,
-cowidev.vax.incremental.united_arab_emirates,23.46,True,2022-05-16T07:03:15,,
-cowidev.vax.incremental.vietnam,,,2022-05-16T07:02:54,,
-cowidev.vax.incremental.who,2.78,True,2022-05-16T07:02:56,,
-cowidev.vax.incremental.zambia,0.69,True,2022-05-16T07:02:57,,
+cowidev.vax.batch.argentina,3.47,True,2022-05-17T07:00:11,,
+cowidev.vax.batch.australia,1.43,True,2022-05-17T07:00:09,,
+cowidev.vax.batch.austria,,,2022-05-17T07:00:08,,
+cowidev.vax.batch.belgium,1.69,True,2022-05-17T07:00:09,,
+cowidev.vax.batch.bolivia,2.01,True,2022-05-17T07:00:10,,
+cowidev.vax.batch.canada,4.93,True,2022-05-17T07:00:12,,
+cowidev.vax.batch.chile,0.79,True,2022-05-17T07:00:10,,
+cowidev.vax.batch.czechia,1.93,False,2022-05-17T07:02:47,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 173, in main
+    Czechia().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 158, in export
+    base = read(self.source_url).pipe(base_pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 65, in base_pipeline
+    return df.pipe(check_vaccine_names).pipe(translate_vaccine_names)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 44, in check_vaccine_names
+    raise ValueError(""Found unknown vaccines: {}"".format(unknown_vaccines))
+ValueError: Found unknown vaccines: {'Covishield', 'Sinopharm'}
+","Found unknown vaccines: {'Covishield', 'Sinopharm'}"
+cowidev.vax.batch.denmark,2.15,True,2022-05-17T07:00:12,,
+cowidev.vax.batch.ecdc,78.48,True,2022-05-17T07:01:28,,
+cowidev.vax.batch.ecuador,1.56,True,2022-05-17T07:00:13,,
+cowidev.vax.batch.estonia,0.76,True,2022-05-17T07:00:12,,
+cowidev.vax.batch.france,0.39,True,2022-05-17T07:00:13,,
+cowidev.vax.batch.germany,1.37,True,2022-05-17T07:00:14,,
+cowidev.vax.batch.greece,2.02,True,2022-05-17T07:00:15,,
+cowidev.vax.batch.hong_kong,2.76,True,2022-05-17T07:00:15,,
+cowidev.vax.batch.indonesia,6.78,True,2022-05-17T07:00:20,,
+cowidev.vax.batch.ireland,1.1,True,2022-05-17T07:00:15,,
+cowidev.vax.batch.israel,6.39,True,2022-05-17T07:00:21,,
+cowidev.vax.batch.italy,7.84,True,2022-05-17T07:00:23,,
+cowidev.vax.batch.jersey,0.58,True,2022-05-17T07:00:16,,
+cowidev.vax.batch.latvia,20.25,True,2022-05-17T07:00:36,,
+cowidev.vax.batch.lithuania,2.17,True,2022-05-17T07:00:22,,
+cowidev.vax.batch.luxembourg,2.55,True,2022-05-17T07:00:23,,
+cowidev.vax.batch.malaysia,0.94,True,2022-05-17T07:00:23,,
+cowidev.vax.batch.malta,0.64,True,2022-05-17T07:00:23,,
+cowidev.vax.batch.netherlands,0.5,True,2022-05-17T07:00:23,,
+cowidev.vax.batch.new_zealand,14.99,True,2022-05-17T07:00:38,,
+cowidev.vax.batch.norway,0.31,True,2022-05-17T07:00:24,,
+cowidev.vax.batch.peru,2.94,True,2022-05-17T07:00:26,,
+cowidev.vax.batch.romania,15.34,True,2022-05-17T07:00:39,,
+cowidev.vax.batch.saudi_arabia,6.94,True,2022-05-17T07:00:33,,
+cowidev.vax.batch.singapore,1.91,True,2022-05-17T07:00:35,,
+cowidev.vax.batch.slovakia,51.38,True,2022-05-17T07:01:27,,
+cowidev.vax.batch.slovenia,2.29,True,2022-05-17T07:00:38,,
+cowidev.vax.batch.south_korea,49.34,True,2022-05-17T07:01:28,,
+cowidev.vax.batch.spc,20.5,True,2022-05-17T07:00:59,,
+cowidev.vax.batch.sweden,11.33,True,2022-05-17T07:00:50,,
+cowidev.vax.batch.switzerland,33.49,True,2022-05-17T07:01:24,,
+cowidev.vax.batch.trinidad_and_tobago,2.34,True,2022-05-17T07:01:01,,
+cowidev.vax.batch.ukraine,,,2022-05-17T07:01:01,,
+cowidev.vax.batch.united_kingdom,6.99,True,2022-05-17T07:01:08,,
+cowidev.vax.batch.united_states,25.17,True,2022-05-17T07:01:33,,
+cowidev.vax.batch.uruguay,3.41,True,2022-05-17T07:01:27,,
+cowidev.vax.batch.zimbabwe,0.37,True,2022-05-17T07:01:27,,
+cowidev.vax.incremental.africacdc,,,2022-05-17T07:01:27,,
+cowidev.vax.incremental.antigua_barbuda,4.26,True,2022-05-17T07:01:31,,
+cowidev.vax.incremental.aruba,1.12,True,2022-05-17T07:01:28,,
+cowidev.vax.incremental.azerbaijan,3.69,True,2022-05-17T07:01:31,,
+cowidev.vax.incremental.bahrain,1.14,True,2022-05-17T07:01:29,,
+cowidev.vax.incremental.bangladesh,12.5,True,2022-05-17T07:01:41,,
+cowidev.vax.incremental.barbados,2.19,True,2022-05-17T07:01:32,,
+cowidev.vax.incremental.brazil,0.06,True,2022-05-17T07:01:31,,
+cowidev.vax.incremental.bulgaria,0.85,True,2022-05-17T07:01:32,,
+cowidev.vax.incremental.china,73.45,True,2022-05-17T07:02:45,,
+cowidev.vax.incremental.costa_rica,3.68,True,2022-05-17T07:01:35,,
+cowidev.vax.incremental.croatia,0.18,True,2022-05-17T07:01:32,,
+cowidev.vax.incremental.cuba,1.83,True,2022-05-17T07:01:34,,
+cowidev.vax.incremental.curacao,0.33,True,2022-05-17T07:01:34,,
+cowidev.vax.incremental.cyprus,0.66,True,2022-05-17T07:01:34,,
+cowidev.vax.incremental.dominican_republic,2.34,False,2022-05-17T07:02:49,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 108, in main
+    DominicanRepublic().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 64, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 23, in read
+    with webdriver.Chrome(options=op) as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.el_salvador,0.6,True,2022-05-17T07:01:35,,
+cowidev.vax.incremental.equatorial_guinea,3.34,True,2022-05-17T07:01:38,,
+cowidev.vax.incremental.faeroe_islands,0.35,True,2022-05-17T07:01:36,,
+cowidev.vax.incremental.fiji,0.0,True,2022-05-17T07:01:36,,
+cowidev.vax.incremental.finland,0.2,True,2022-05-17T07:01:36,,
+cowidev.vax.incremental.gabon,,,2022-05-17T07:01:36,,
+cowidev.vax.incremental.georgia,0.46,True,2022-05-17T07:01:36,,
+cowidev.vax.incremental.greenland,1.11,True,2022-05-17T07:01:37,,
+cowidev.vax.incremental.guatemala,,,2022-05-17T07:01:37,,
+cowidev.vax.incremental.guernsey,0.21,True,2022-05-17T07:01:37,,
+cowidev.vax.incremental.hungary,0.79,True,2022-05-17T07:01:38,,
+cowidev.vax.incremental.iceland,0.27,True,2022-05-17T07:01:38,,
+cowidev.vax.incremental.india,1.09,True,2022-05-17T07:01:39,,
+cowidev.vax.incremental.iran,1.79,True,2022-05-17T07:01:40,,
+cowidev.vax.incremental.isle_of_man,0.94,True,2022-05-17T07:01:39,,
+cowidev.vax.incremental.jamaica,2.21,True,2022-05-17T07:01:41,,
+cowidev.vax.incremental.japan,1.01,True,2022-05-17T07:01:40,,
+cowidev.vax.incremental.kazakhstan,2.33,False,2022-05-17T07:02:51,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 78, in main
+    Kazakhstan().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 73, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 17, in read
+    with webdriver.Chrome(options=op) as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.kosovo,1.73,True,2022-05-17T07:01:42,,
+cowidev.vax.incremental.kyrgyzstan,3.9,False,2022-05-17T07:02:55,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
+    conn = connection.create_connection(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 73, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/socket.py"", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
+    self._validate_conn(conn)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
+    conn.connect()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+    retries = retries.increment(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vc.emed.gov.kg', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py"", line 61, in main
+    Kyrgyzstan().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py"", line 48, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py"", line 14, in read
+    soup = get_soup(self.source_url, verify=False)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
+    raise err
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
+    response = requests.get(source, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='vc.emed.gov.kg', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+","HTTPSConnectionPool(host='vc.emed.gov.kg', port=443): Max retries exceeded with url: / (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f8a74613970>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
+cowidev.vax.incremental.laos,2.04,True,2022-05-17T07:01:43,,
+cowidev.vax.incremental.libya,3.11,True,2022-05-17T07:01:45,,
+cowidev.vax.incremental.macao,3.34,False,2022-05-17T07:02:59,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 84, in main
+    Macao().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 70, in export
+    data = self.read()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 16, in read
+    with get_driver() as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
+    driver = webdriver.Chrome(options=options)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.mexico,4.11,True,2022-05-17T07:01:47,,
+cowidev.vax.incremental.moldova,1.06,True,2022-05-17T07:01:46,,
+cowidev.vax.incremental.monaco,27.53,True,2022-05-17T07:02:13,,
+cowidev.vax.incremental.mongolia,1.03,True,2022-05-17T07:01:46,,
+cowidev.vax.incremental.montenegro,0.14,True,2022-05-17T07:01:46,,
+cowidev.vax.incremental.morocco,,,2022-05-17T07:01:46,,
+cowidev.vax.incremental.myanmar,10.35,True,2022-05-17T07:01:56,,
+cowidev.vax.incremental.nepal,27.13,False,2022-05-17T07:03:26,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py"", line 173, in main
+    Nepal().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py"", line 155, in export
+    df_main, df_manufacturer = self.read()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py"", line 29, in read
+    df_main, df_manufacturer = self._parse_data(links)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py"", line 38, in _parse_data
+    df = self._parse_pdf_table()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/nepal.py"", line 49, in _parse_pdf_table
+    check_known_columns(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
+    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
+Exception: Unknown column(s) found: {'Unnamed: 6'}
+",Unknown column(s) found: {'Unnamed: 6'}
+cowidev.vax.incremental.north_macedonia,,,2022-05-17T07:01:47,,
+cowidev.vax.incremental.northern_cyprus,0.95,True,2022-05-17T07:01:48,,
+cowidev.vax.incremental.paho,3.03,False,2022-05-17T07:03:29,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 179, in main
+    PAHO().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 174, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
+    df = self._parse_data(url)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 46, in _parse_data
+    with get_driver(download_folder=self._download_path) as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
+    driver = webdriver.Chrome(options=options)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.pakistan,1.44,True,2022-05-17T07:01:55,,
+cowidev.vax.incremental.philippines,0.51,True,2022-05-17T07:01:55,,
+cowidev.vax.incremental.poland,0.12,True,2022-05-17T07:01:55,,
+cowidev.vax.incremental.qatar,4.32,False,2022-05-17T07:03:33,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py"", line 84, in main
+    Qatar().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py"", line 69, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py"", line 19, in read
+    return self.connect_parse_data()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/qatar.py"", line 25, in connect_parse_data
+    with webdriver.Chrome(options=op) as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.russia,31.77,False,2022-05-17T07:04:05,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
+    data = read(source).pipe(pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 13, in read
+    text = soup.find(""div"", id=""data"").find(""p"").text
+AttributeError: 'NoneType' object has no attribute 'find'
+",'NoneType' object has no attribute 'find'
+cowidev.vax.incremental.saint_lucia,,,2022-05-17T07:01:57,,
+cowidev.vax.incremental.serbia,6.27,True,2022-05-17T07:02:04,,
+cowidev.vax.incremental.south_africa,9.19,True,2022-05-17T07:02:13,,
+cowidev.vax.incremental.spain,3.4,True,2022-05-17T07:02:16,,
+cowidev.vax.incremental.sri_lanka,,,2022-05-17T07:02:13,,
+cowidev.vax.incremental.suriname,2.32,False,2022-05-17T07:04:07,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 57, in main
+    data = read(source).pipe(pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 13, in read
+    with get_driver() as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
+    driver = webdriver.Chrome(options=options)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.taiwan,11.7,False,2022-05-17T07:04:19,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 155, in main
+    Taiwan().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 141, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 30, in read
+    df = self._parse_table(url_pdf)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 56, in _parse_table
+    raise ValueError(f""Table 1: format has changed!"")
+ValueError: Table 1: format has changed!
+",Table 1: format has changed!
+cowidev.vax.incremental.thailand,1.73,True,2022-05-17T07:02:16,,
+cowidev.vax.incremental.turkey,0.46,True,2022-05-17T07:02:16,,
+cowidev.vax.incremental.united_arab_emirates,2.32,False,2022-05-17T07:04:21,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py"", line 112, in main
+    UnitedArabEmirates().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py"", line 97, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py"", line 16, in read
+    return self._parse_data()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/united_arab_emirates.py"", line 19, in _parse_data
+    with get_driver() as driver:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
+    driver = webdriver.Chrome(options=options)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
+    RemoteWebDriver.__init__(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
+    self.start_session(capabilities, browser_profile)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
+    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
+    self.error_handler.check_response(response)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+
+","Message: session not created: This version of ChromeDriver only supports Chrome version 99
+Current browser version is 101.0.4951.64 with binary path /usr/bin/chromium-browser
+"
+cowidev.vax.incremental.vietnam,,,2022-05-17T07:02:16,,
+cowidev.vax.incremental.who,2.63,True,2022-05-17T07:02:19,,
+cowidev.vax.incremental.zambia,0.62,True,2022-05-17T07:02:17,,
