@@ -335,7 +335,19 @@ cowidev.testing.incremental.russia,6.08,True,2022-05-16T17:01:35,,
 cowidev.testing.incremental.saint_kitts_nevis,0.71,True,2022-05-16T17:01:34,,
 cowidev.testing.incremental.saint_lucia,2.25,True,2022-05-16T17:01:36,,
 cowidev.testing.incremental.saint_vincent_and_the_grenadines,3.66,True,2022-05-16T17:06:42,,
-cowidev.testing.incremental.singapore,2.54,True,2022-05-16T17:01:39,,
+cowidev.testing.incremental.singapore,0.85,False,2022-05-17T12:54:54,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py"", line 89, in main
+    Singapore().export()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py"", line 84, in export
+    df = self.read().pipe(self.pipe_metadata)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py"", line 20, in read
+    data = self._parse_data()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py"", line 72, in _parse_data
+    raise Exception(""ART and PCR dates do not match"")
+Exception: ART and PCR dates do not match
+",ART and PCR dates do not match
 cowidev.testing.incremental.suriname,2.14,True,2022-05-16T17:01:39,,
 cowidev.testing.incremental.sweden,1.57,True,2022-05-16T17:01:40,,
 cowidev.testing.incremental.syria,2.2,False,2022-05-16T17:06:44,"Traceback (most recent call last):
