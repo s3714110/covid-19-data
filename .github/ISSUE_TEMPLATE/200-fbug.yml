@@ -6,7 +6,7 @@ labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for contributing! Before doing so, please check our [contribution guideline](https://covid-docs.ourworldindata.org/en/latest/contribute.html)."
+      value: "Thanks for contributing! Before doing so, please check our [contribution guideline](https://docs.owid.io/projects/covid/en/latest/contribute.html)."
   - type: textarea
     id: description
     attributes:

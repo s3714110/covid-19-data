@@ -1,1 +1,1 @@
-Read our [contribution guideline](https://covid-docs.ourworldindata.org/en/latest/contribute.html).
+Read our [contribution guideline](https://docs.owid.io/projects/covid/en/latest/contribute.html).
