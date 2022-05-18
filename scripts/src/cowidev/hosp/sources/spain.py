@@ -24,8 +24,13 @@ def main() -> pd.DataFrame:
         encoding="Latin-1",
         sep=";",
     )
-    df["Fecha"] = clean_date_series(df.Fecha, "%d/%m/%Y")
-    df = df.drop_duplicates(subset=["Fecha", "Unidad", "Provincia", "CCAA"], keep="first").dropna(subset=["Unidad"])
+
+    df["Fecha"] = clean_date_series(df.Fecha, "%d/%m/%Y", errors="coerce")
+    df = (
+        df.dropna(subset=["Fecha"])
+        .drop_duplicates(subset=["Fecha", "Unidad", "Provincia", "CCAA"], keep="first")
+        .dropna(subset=["Unidad"])
+    )
     df.loc[df.Unidad.str.contains("U. Críticas"), "Unidad"] = "ICU"
 
     df = (
