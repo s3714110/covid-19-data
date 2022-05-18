@@ -1,22 +1,20 @@
-from cowidev.vax.utils.base import CountryVaxBase
 import pandas as pd
 
 from cowidev.utils.utils import check_known_columns
+from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.utils import build_vaccine_timeline
-
 
 vaccine_mapping = {
     "Comirnaty": "Pfizer/BioNTech",
     "Comirnaty 5-11": "Pfizer/BioNTech",
-    "Spikevax": "Moderna",
-    "SPIKEVAX": "Moderna",
-    "VAXZEVRIA": "Oxford/AstraZeneca",
     "COVID-19 Vaccine Janssen": "Johnson&Johnson",
+    "Covishield": "Oxford/AstraZeneca",
     "Nuvaxovid": "Novavax",
     "Sinopharm": "Sinopharm/Beijing",
-    "Covishield": "Oxford/AstraZeneca",
+    "Sinovac": "Sinovac",
+    "SPIKEVAX": "Moderna",
+    "VAXZEVRIA": "Oxford/AstraZeneca",
 }
-
 one_dose_vaccines = ["Johnson&Johnson"]
 
 
@@ -108,8 +106,17 @@ def infer_one_dose_vaccines(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 
+def remove_vaccines(df: pd.DataFrame, vaccine_schedule: dict) -> dict:
+    vax_amount = df[["vakcina", "total_vaccinations"]].groupby("vakcina").sum()
+    vax_amount = vax_amount.where(lambda x: x < 100).dropna()
+    for v in vax_amount.index:
+        vaccine_schedule.pop(v, None)  # It has never been approved in Czechia
+    return vaccine_schedule
+
+
 def aggregate_by_date(df: pd.DataFrame) -> pd.DataFrame:
     vaccine_schedule = df[["datum", "vakcina"]].groupby("vakcina").min().to_dict()["datum"]
+    vaccine_schedule = remove_vaccines(df, vaccine_schedule)
     return (
         df.groupby(by="datum")
         .agg(
