@@ -186,31 +186,31 @@ class Canada(CountryVaxBase):
         vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
-    def pipe_make_monotonic_with_filter(self, df: pd.DataFrame) -> pd.DataFrame:
+    def pipe_make_monotonic(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.sort_values("date")
-        n = 1
+        num_filtered_dates = 0
         while True:
             try:
                 df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)
             except Exception:
-                # Filter last `n` dates if make_monotonic fails
-                if n <= self.max_filtered_dates:
+                if num_filtered_dates < self.max_filtered_dates:
+                    # Filter the last dates if `make_monotonic()` fails
                     df = df.iloc[:-1]
-                    n += 1
+                    num_filtered_dates += 1
                 else:
-                    raise Exception("Please increase `max_filtered_dates` or `max_removed_rows`!")
+                    raise
             else:
                 break
         return df
 
     def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
-        df = (
+        return (
             df.pipe(self.pipe_filter_rows)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_vaccine_timeline, df_man)
             .pipe(self.pipe_metadata)
-            .pipe(self.pipe_make_monotonic_with_filter)[
+            .pipe(self.pipe_make_monotonic)[
                 [
                     "location",
                     "date",
@@ -223,7 +223,6 @@ class Canada(CountryVaxBase):
                 ]
             ]
         )
-        return df
 
     def export(self):
         # Read
