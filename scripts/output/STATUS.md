@@ -2165,7 +2165,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`10/130` scripts failed, `8/130` were skipped. Latest update was `2022-05-17T12:54:54`.
+`10/130` scripts failed, `8/130` were skipped. Latest update was `2022-05-19T10:11:02`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -2181,9 +2181,9 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.testing.incremental.singapore</td>
       <td>❌</td>
-      <td>2022-05-17T12:54:54</td>
-      <td>0.85</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 89, in main<br>    Singapore().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 84, in export<br>    df = self.read().pipe(self.pipe_metadata)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 20, in read<br>    data = self._parse_data()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 72, in _parse_data<br>    raise Exception("ART and PCR dates do not match")<br>Exception: ART and PCR dates do not match<br></pre></details></td>
+      <td>2022-05-19T10:11:02</td>
+      <td>0.40</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 88, in main<br>    Singapore().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 83, in export<br>    df = self.read().pipe(self.pipe_metadata)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 19, in read<br>    data = self._parse_data()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/singapore.py", line 71, in _parse_data<br>    raise Exception("ART and PCR dates do not match")<br>Exception: ART and PCR dates do not match<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.emro</td>
