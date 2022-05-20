@@ -23,6 +23,7 @@ class Ireland(CountryTestBase):
         "Date_HPSC": "Date",
         "Test24": "Daily change in cumulative total",
         "TotalLabs": "Cumulative total",
+        "PosR7": "Positive rate",
     }
 
     def read(self):
@@ -32,7 +33,7 @@ class Ireland(CountryTestBase):
             "where": f"{DATE_COL}>'2020-01-01 00:00:00'",  # "Dates>'2020-01-01 00:00:00'",
             "returnGeometry": False,
             "spatialRel": "esriSpatialRelIntersects",
-            "outFields": f"{DATE_COL},TotalLabs,Test24",
+            "outFields": f"{DATE_COL},TotalLabs,Test24,PosR7",
             "orderByFields": f"{DATE_COL} asc",
             "resultOffset": 0,
             "resultRecordCount": 32000,
@@ -56,9 +57,10 @@ class Ireland(CountryTestBase):
         # df.sort_values(DATE_COL, inplace=True)
         # df.drop_duplicates(subset=['Date'], keep='last', inplace=True)
 
-        df = df[["Date", "Cumulative total"]]
-        df = df.sort_values("Date").dropna(subset=["Date", "Cumulative total"], how="any")
+        df = df[["Date", "Cumulative total", "Positive rate"]]
+        df = df.sort_values("Date").dropna(subset=["Date", "Cumulative total", "Positive rate"], how="any")
         df["Cumulative total"] = df["Cumulative total"].astype(int)
+        df["Positive rate"] = (df["Positive rate"].astype(int)).div(100)
         df = df.pipe(self.pipe_metadata)
         return df
 

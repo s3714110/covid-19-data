@@ -6,7 +6,6 @@ from datetime import timedelta
 from cowidev.testing import CountryTestBase
 from cowidev.utils import clean_count, clean_date
 from cowidev.utils.web.scraping import request_text
-from cowidev.testing.utils.incremental import increment
 
 
 class Singapore(CountryTestBase):
@@ -42,7 +41,7 @@ class Singapore(CountryTestBase):
 
     def _read_art(self):
         text = request_text(self.source_url, mode="raw")
-        table = pd.read_html(text, index_col=0)[4]
+        table = pd.read_html(text, index_col=0)[5]
         art_count = clean_count(table.index[1].replace("~", ""))
         art_date = clean_date(
             re.search("Number of Reportable ART Swabs Tested \(as of (.*)\)", text).group(1), "%d %b %Y"
@@ -52,7 +51,7 @@ class Singapore(CountryTestBase):
 
     def _read_pcr(self):
         text = request_text(self.source_url, mode="raw")
-        table = pd.read_html(text, index_col=0)[8]
+        table = pd.read_html(text, index_col=0)[9]
         pcr_count = clean_count(table.index[1].replace("~", ""))
         pcr_date = clean_date(re.search("Number of PCR Swabs Tested \(as of (.*)\)", text).group(1), "%d %b %Y")
         pcr = (pcr_date, pcr_count)
