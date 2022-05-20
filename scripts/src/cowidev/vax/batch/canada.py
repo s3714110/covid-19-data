@@ -1,8 +1,5 @@
-from datetime import datetime, timedelta
-
 import pandas as pd
 
-from cowidev.utils.clean.dates import DATE_FORMAT
 from cowidev.utils.utils import check_known_columns
 from cowidev.utils.web import request_json
 from cowidev.utils.web.download import read_csv_from_url
@@ -53,6 +50,8 @@ class Canada(CountryVaxBase):
         "Total": None,
         "Unknown": None,
     }
+    max_filtered_dates: int = 3
+    max_removed_rows: int = 10
 
     def read(self) -> pd.DataFrame:
         data = request_json(self.source_url)
@@ -170,49 +169,48 @@ class Canada(CountryVaxBase):
         return df.assign(location=self.location)
 
     def pipe_filter_rows(self, df: pd.DataFrame) -> pd.DataFrame:
-        # Only records since vaccination campaign started
-        return df[df.total_vaccinations > 0]
+        return df[df.total_vaccinations > 0].fillna(0)
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.rename(
-            columns={
-                "total_vaccinated": "people_fully_vaccinated",
-            }
-        )
+        return df.rename(columns={"total_vaccinated": "people_fully_vaccinated"})
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
-        total_boosters = df.total_boosters_1 + df.total_boosters_2.fillna(0)
-        df = df.assign(
-            people_vaccinated=(df.total_vaccinations - df.people_fully_vaccinated - total_boosters.fillna(0)),
+        total_boosters = df.total_boosters_1 + df.total_boosters_2
+        return df.assign(
+            people_vaccinated=df.total_vaccinations - df.people_fully_vaccinated - total_boosters,
             total_boosters=total_boosters,
         )
-        # Booster data was not recorded for these dates, hence estimations on people vaccinated will not be accurate
-        # df.loc[(df.date >= "2021-10-04") & (df.date <= "2021-10-09"), "people_vaccinated"] = pd.NA
-        return df
 
     def pipe_vaccine_timeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
         vaccine_timeline = df_man[["date", "vaccine"]].groupby("vaccine").min().date.to_dict()
         vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
-    def pipe_filter_lastdates(self, df: pd.DataFrame) -> pd.DataFrame:
-        # date = "2022-03-18"
-        last_date = datetime.strptime(df.date.max(), DATE_FORMAT)
-        margin_days = 1
-        remove_dates = [(last_date - timedelta(days=d)).strftime(DATE_FORMAT) for d in range(margin_days + 1)]
-        df = df[~(df.date.isin(remove_dates))]
+    def pipe_make_monotonic(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.sort_values("date")
+        num_filtered_dates = 0
+        while True:
+            try:
+                df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)
+            except Exception:
+                if num_filtered_dates < self.max_filtered_dates:
+                    # Filter the last dates if `make_monotonic()` fails
+                    df = df.iloc[:-1]
+                    num_filtered_dates += 1
+                else:
+                    raise
+            else:
+                break
         return df
 
     def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
-        df = (
+        return (
             df.pipe(self.pipe_filter_rows)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_vaccine_timeline, df_man)
             .pipe(self.pipe_metadata)
-            .pipe(self.pipe_filter_lastdates)
-            .pipe(self.make_monotonic)
-            .sort_values("date")[
+            .pipe(self.pipe_make_monotonic)[
                 [
                     "location",
                     "date",
@@ -225,7 +223,6 @@ class Canada(CountryVaxBase):
                 ]
             ]
         )
-        return df
 
     def export(self):
         # Read
