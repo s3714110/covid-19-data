@@ -6,27 +6,7 @@ cowidev.vax.batch.belgium,1.57,True,2022-05-20T07:00:09,,
 cowidev.vax.batch.bolivia,1.95,True,2022-05-20T07:00:10,,
 cowidev.vax.batch.canada,4.29,True,2022-05-20T07:00:12,,
 cowidev.vax.batch.chile,0.75,True,2022-05-20T07:00:10,,
-cowidev.vax.batch.czechia,2.05,False,2022-05-20T07:03:01,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 175, in main
-    Czechia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 160, in export
-    base = read(self.source_url).pipe(base_pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 67, in base_pipeline
-    return df.pipe(check_vaccine_names).pipe(translate_vaccine_names)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/czechia.py"", line 46, in check_vaccine_names
-    raise ValueError(""Found unknown vaccines: {}"".format(unknown_vaccines))
-ValueError: Found unknown vaccines: {'Sinovac'}
-",Found unknown vaccines: {'Sinovac'}
+cowidev.vax.batch.czechia,1.43,True,2022-05-20T08:36:09,,
 cowidev.vax.batch.denmark,2.45,True,2022-05-20T07:00:12,,
 cowidev.vax.batch.ecdc,40.05,False,2022-05-20T07:03:41,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
