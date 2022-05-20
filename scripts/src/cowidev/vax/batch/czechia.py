@@ -15,6 +15,7 @@ vaccine_mapping = {
     "Nuvaxovid": "Novavax",
     "Sinopharm": "Sinopharm/Beijing",
     "Covishield": "Oxford/AstraZeneca",
+    "Sinovac": "Sinovac",
 }
 
 one_dose_vaccines = ["Johnson&Johnson"]
