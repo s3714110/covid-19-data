@@ -121,6 +121,10 @@ class UnitedStates(CountryVaxBase):
             except Exception:
                 continue
         df = pd.concat(dfs)
+        return df
+
+    def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Renaming
         df = (
             df[df.LongName == "United States"]
             .sort_values("Date")
@@ -134,15 +138,25 @@ class UnitedStates(CountryVaxBase):
                 }
             )
         )
+        # Melting
         df = df.melt(["date", "location"], var_name="vaccine", value_name="total_vaccinations")
+        # Filter datapoint
+        msk = (df.date == "2022-03-16") & (df.vaccine == "Johnson&Johnson")
+        if (df.loc[msk, "total_vaccinations"] == 516219).all():
+            df = df[-msk]
+        else:
+            raise Exception("Please check value for J&J and date 2022-03-16 in manufacturer data")
+        # Dropna
         df = df.dropna(subset=["total_vaccinations"])
+        # Make monotonic
+        df = df.pipe(self.make_monotonic, "vaccine")
         return df
 
     def export(self):
         # Main
         df = self.read().pipe(self.pipeline)
         # Manufacturer
-        df_manufacturer = self.read_manufacturer()
+        df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)
         # Export
         self.export_datafile(
             df,
