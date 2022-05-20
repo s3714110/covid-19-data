@@ -42,6 +42,7 @@ METRICS = [
     "people_vaccinated",
     "people_fully_vaccinated",
     "total_boosters",
+    "total_vaccinations_per_hundred",
     "people_vaccinated_per_hundred",
     "people_fully_vaccinated_per_hundred",
     "people_with_booster_per_hundred",
@@ -98,15 +99,31 @@ class CountryVaxBase:
         df = self.load_datafile(**kwargs)
         return df.date.max()
 
-    def make_monotonic(self, df, max_removed_rows=10, strict=False):
-        return mkm(
-            df=df,
-            column_date="date",
-            column_metrics=[m for m in METRICS if m in df.columns],
-            max_removed_rows=max_removed_rows,
-            strict=strict,
-            new=True,
-        )
+    def make_monotonic(self, df, group_cols=None, max_removed_rows=10, strict=False):
+        if group_cols:
+            dfg = df.groupby(group_cols)
+            dfg = list(dfg)
+            dfs = []
+            for df_vax in dfg:
+                _df = mkm(
+                    df=df_vax[1],
+                    column_date="date",
+                    column_metrics=[m for m in METRICS if m in df.columns],
+                    max_removed_rows=max_removed_rows,
+                    strict=strict,
+                    new=True,
+                )
+                dfs.append(_df)
+            return pd.concat(dfs, ignore_index=True)
+        else:
+            return mkm(
+                df=df,
+                column_date="date",
+                column_metrics=[m for m in METRICS if m in df.columns],
+                max_removed_rows=max_removed_rows,
+                strict=strict,
+                new=True,
+            )
 
     def _postprocessing(self, df, valid_cols_only):
         """Minor post processing after all transformations.
