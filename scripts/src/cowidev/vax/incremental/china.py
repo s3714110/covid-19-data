@@ -138,10 +138,14 @@ class China(CountryVaxBase):
         # Use total_vaccinations from df_last & df
         dates = df_complete.index[msk]
         df_complete.loc[dates, "total_vaccinations"] = df_last.total_vaccinations[dates]
-        for metric in ["people_vaccinated", "total_boosters"]:
-            # Avoid clearing previous people_vaccinated & total_boosters
+        for metric in ["people_vaccinated", "people_fully_vaccinated", "total_boosters"]:
+            # Avoid clearing previously saved metrics
             dates = df_complete.index[msk & df_complete[metric].isna()]
             df_complete.loc[dates, metric] = df_last.loc[dates, metric]
+            for date, m in df_complete[metric].items():
+                # Check abnormally decreased metrics
+                if date >= df_last.index.max() and m < 0.99 * df_last[metric].max():
+                    raise ValueError(f"Abnormally decreased {metric}: {m:.0f} ({date})")
         if not df.empty:
             df = df.set_index("date")
             msk = df.index.isin(df_complete.index)
