@@ -12,19 +12,23 @@ from cowidev.vax.utils.base import CountryVaxBase
 
 class China(CountryVaxBase):
     location: str = "China"
-    source_url: str = "http://www.nhc.gov.cn/jkj/pzhgli/new_list.shtml"
+    source_url: str = "http://www.nhc.gov.cn/xcs/yqjzqk/list_gzbd.shtml"
     source_url_complete: str = "http://www.nhc.gov.cn/xcs/s2906/new_list.shtml"
     regex: dict = {
         "title": "新冠病毒疫苗接种情况",
         "date": r"截至(20\d{2})年(\d{1,2})月(\d{1,2})日",
         "total_vaccinations": r"([\d\.]+\s*万)剂次",
     }
+    chinese: str = r"[\u4e00-\u9fff]*"
+    month_day: str = r"，?(?:\d{2,4}年)?(\d{1,2})月(\d{1,2})[\u4e00-\u9fff]+，?"
+    metric_ignore: str = r"(?:\d+亿[\u4e00-\u96f5\u96f7-\u9fff，]{1,5})?"
+    metric: str = r"((?:\d+亿零?)?[\d\.]+万)"
     regex_complete: dict = {
-        "title": r"国务院联防联控机制(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会文字实录",
-        "summary": r"截至(\d{1,2})月(\d{1,2})日.{1,40}(?:疫苗|接种)([\d\.亿零]+万)剂",
-        "fully": r"全程接种的?人?数?(?:为|是|.{0,9}达到?)?([\d\.亿零]+万)",
-        "vaccinated": r"(?:接种|疫苗)的?总人数(?:达到?|为|是)([\d\.亿零]+万)",
-        "boosters": r"加强免疫已?经?接种的?是?([\d\.亿零]+万)",
+        "title": r"国务院(?:联防联控机制|新闻办公室)(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会",
+        "summary": f"截{chinese}{month_day}{chinese}接种{chinese}{metric_ignore}{metric}剂",
+        "fully": f"全程接种{chinese}{metric_ignore}{metric}",
+        "vaccinated": f"接种{chinese}总人数{chinese}{metric_ignore}{metric}",
+        "boosters": f"加强免疫{chinese}接种{chinese}{metric_ignore}{metric}",
     }
     num_links_complete: int = 3
     timeout: int = 30
@@ -55,7 +59,7 @@ class China(CountryVaxBase):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.text_to_be_present_in_element((By.ID, "xw_box"), "万剂次"))
+        Wait(driver, self.timeout).until(EC.text_to_be_present_in_element((By.ID, "xw_box"), "剂"))
         driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         # Apply regex and get metrics
@@ -66,7 +70,7 @@ class China(CountryVaxBase):
         }
 
     def read_complete(self) -> pd.DataFrame:
-        records = []
+        data = []
         options = sel_options(headless=True, firefox=True)
         options.set_capability("pageLoadStrategy", "none")
         with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
@@ -76,10 +80,10 @@ class China(CountryVaxBase):
             driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
-                record = self._parse_data_complete(driver, link)
-                if record:
-                    records.append(record)
-        return pd.DataFrame(records)
+                data_ = self._parse_data_complete(driver, link)
+                if data_:
+                    data.append(data_)
+        return pd.DataFrame(data)
 
     def _get_links_complete(self, driver):
         elems = driver.find_elements_by_css_selector(".zxxx_list>li>a")
@@ -88,7 +92,7 @@ class China(CountryVaxBase):
     def _parse_data_complete(self, driver, url):
         def _clean_count(num_as_str):
             num = float(re.search(r"([\d\.]+)万", num_as_str).group(1)) * 1e4
-            num_100m = re.search(r"([\d\.]+)亿零?", num_as_str)
+            num_100m = re.search(r"(\d+)亿零?", num_as_str)
             if num_100m:
                 num += float(num_100m.group(1)) * 1e8
             return int(num)
@@ -96,7 +100,7 @@ class China(CountryVaxBase):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.text_to_be_present_in_element((By.ID, "xw_box"), "到此结束"))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
         driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
@@ -128,21 +132,35 @@ class China(CountryVaxBase):
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.pipe(self.pipe_metadata).pipe(self.pipe_vaccine)
 
+    def pipeline_merge(self, df_complete: pd.DataFrame, df_last: pd.DataFrame, df: pd.DataFrame) -> pd.DataFrame:
+        df_complete, df_last = df_complete.set_index("date"), df_last.set_index("date")
+        msk = df_complete.index.isin(df_last.index)
+        # Use total_vaccinations from df_last & df
+        dates = df_complete.index[msk]
+        df_complete.loc[dates, "total_vaccinations"] = df_last.total_vaccinations[dates]
+        for metric in ["people_vaccinated", "total_boosters"]:
+            # Avoid clearing previous people_vaccinated & total_boosters
+            dates = df_complete.index[msk & df_complete[metric].isna()]
+            df_complete.loc[dates, metric] = df_last.loc[dates, metric]
+        if not df.empty:
+            df = df.set_index("date")
+            msk = df.index.isin(df_complete.index)
+            # Use total_vaccinations from df_last & df
+            dates = df.index[msk]
+            df_complete.loc[dates, "total_vaccinations"] = df.total_vaccinations[dates]
+            df_complete = pd.concat([df_complete, df.loc[~msk]])
+        return df_complete.reset_index()
+
     def export(self):
-        last_update = self.load_datafile().date.max()
-        df = self.read(last_update)
+        # Read
+        df_last = self.load_datafile()
+        df = self.read(df_last.date.max())
         df_complete = self.read_complete()
         # Transform
         if not df.empty:
             df = df.pipe(self.pipeline)
         if not df_complete.empty:
-            df_complete = df_complete.pipe(self.pipeline)
-        # Merge
-        if df.empty:
-            df = df_complete
-        elif not df_complete.empty:
-            msk = ~df.date.isin(df_complete.date)
-            df = pd.concat([df_complete, df.loc[msk]])
+            df = df_complete.pipe(self.pipeline).pipe(self.pipeline_merge, df_last, df)
         # Export
         if not df.empty:
             self.export_datafile(df, attach=True)
