@@ -2,9 +2,10 @@ import pandas as pd
 
 from cowidev.utils.clean.dates import localdate
 from cowidev.vax.utils.incremental import enrich_data, increment
+from cowidev.vax.utils.base import CountryVaxBase
 
 
-class Finland:
+class Finland(CountryVaxBase):
     location: str = "Finland"
     source_url: str = "https://sampo.thl.fi/pivot/prod/en/vaccreg/cov19cov/fact_cov19cov.csv?row=vacprod-533726&row=measure-533175.&column=cov_vac_dose-533174&"
     source_url_ref: str = "https://sampo.thl.fi/pivot/prod/en/vaccreg/cov19cov/fact_cov19cov"
@@ -29,12 +30,14 @@ class Finland:
         if "Johnson&Johnson" in df.Product.values:
             raise Exception("1-dose calculations are not implemented but J&J is now administered!")
 
-        assert set(df["Vaccination dose"]) == {"First dose", "Second dose", "Third dose", "All doses"}
+        self.check_column_values(
+            df, "Vaccination dose", ["First dose", "Second dose", "Third dose", "Fourth dose", "All doses"]
+        )
 
         total_vaccinations = df[df["Vaccination dose"] == "All doses"].val.sum()
         people_vaccinated = df[df["Vaccination dose"] == "First dose"].val.sum()
         people_fully_vaccinated = df[df["Vaccination dose"] == "Second dose"].val.sum()
-        total_boosters = df[df["Vaccination dose"] == "Third dose"].val.sum()
+        total_boosters = df[df["Vaccination dose"].isin(["Third dose", "Fourth dose"])].val.sum()
 
         return pd.Series(
             {
