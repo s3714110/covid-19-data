@@ -296,6 +296,18 @@ class CountryVaxBase:
             df = df.assign(**{f"{metric}_per_hundred": (df[metric] / df.population * 100).round(2)})
         return df
 
+    def pipe_check_vaccine(self, df: pd.DataFrame, vaccines_accepted) -> pd.DataFrame:
+        if vaccines_accepted is None:
+            vaccines_accepted = self.vaccine_mapping.keys()
+        df = self.check_column_values(df, "vaccine", vaccines_accepted)
+        return df
+
+    def check_column_values(self, df: pd.DataFrame, col_name: str, values_accepted: list) -> pd.DataFrame:
+        values = set(df[col_name])
+        unknown_vaccines = set(values).difference(values_accepted)
+        if unknown_vaccines:
+            raise ValueError(f"Found unknown values for `{col_name}`: {unknown_vaccines}")
+
 
 def _build_population_age_group_df(location, df):
     # Read raw population by age
