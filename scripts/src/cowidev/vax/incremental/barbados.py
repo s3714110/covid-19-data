@@ -13,8 +13,13 @@ class Barbados(CountryVaxBase):
     source_url_ref: str = None
     regex: dict = {
         "title": r"COVID-19 Update",
-        "people_vaccinated": r"at least one dose is ([\d,\s]+)",
+        # "people_vaccinated": r"at least one dose is ([\d,\s]+)",
+        "people_vaccinated": r"COVID\-19, ([\d,\s]+) persons \(.*\) have received at least one dose",
         "people_fully_vaccinated": r"fully? (?:vaccinated|vaccinated persons) is ([\d,\s]+)",
+        "people_fully_vaccinated": (
+            r"To date, ([\d,\s]+) individuals \– (?:[\d,\s]+) males and (?:[\d,\s]+) females \(.*\) \– have been fully"
+            r" vaccinated"
+        ),
         # "people_vaccinated": (
         #     r"(\d+) persons \((?:[\d.]+) per cent of the eligible population\) have received at least one dose"
         # ),
@@ -37,7 +42,6 @@ class Barbados(CountryVaxBase):
         if not link:
             raise ValueError("Article not found, please update the script")
         self.source_url_ref = link
-        print(link)
         soup = get_soup(link)
         # Get the metrics
         metrics = self._parse_metrics(soup)
