@@ -9,20 +9,20 @@ class Italy(CountryVaxBase):
     source_url: str = "https://raw.githubusercontent.com/italia/covid19-opendata-vaccini/master/dati/somministrazioni-vaccini-latest.csv"
     location: str = "Italy"
     columns: list = [
-        "data_somministrazione",
-        "fornitore",
-        "fascia_anagrafica",
-        "prima_dose",
-        "seconda_dose",
-        "pregressa_infezione",
-        "dose_addizionale_booster",
-        "booster_immuno",
-        "d2_booster",
+        "data",
+        "forn",
+        "eta",
+        "d1",
+        "d2",
+        "dpi",
+        "db1",
+        "dbi",
+        "db2",
     ]
     columns_rename: dict = {
-        "data_somministrazione": "date",
-        "fornitore": "vaccine",
-        "fascia_anagrafica": "age_group",
+        "data": "date",
+        "forn": "vaccine",
+        "eta": "age_group",
     }
     vaccine_mapping: dict = {
         "Pfizer/BioNTech": "Pfizer/BioNTech",
@@ -40,29 +40,12 @@ class Italy(CountryVaxBase):
         df = pd.read_csv(self.source_url)
         check_known_columns(
             df,
-            [
-                "data_somministrazione",
-                "fornitore",
-                "area",
-                "fascia_anagrafica",
-                "sesso_maschile",
-                "sesso_femminile",
-                "prima_dose",
-                "seconda_dose",
-                "pregressa_infezione",
-                "dose_addizionale_booster",
-                "codice_NUTS1",
-                "codice_NUTS2",
-                "codice_regione_ISTAT",
-                "nome_area",
-                "booster_immuno",
-                "d2_booster",
-            ],
+            self.columns + ["m", "f", "N1", "N2", "ISTAT", "reg", "area", "reg"],
         )
         return df[self.columns]
 
     def _check_vaccines(self, df: pd.DataFrame) -> pd.DataFrame:
-        vax_wrong = set(df["fornitore"]).difference(self.vaccine_mapping.keys())
+        vax_wrong = set(df["forn"]).difference(self.vaccine_mapping.keys())
         if vax_wrong:
             raise ValueError(f"Unknown vaccine(s) {vax_wrong}")
         return df
@@ -76,13 +59,13 @@ class Italy(CountryVaxBase):
 
     def get_total_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
-            total_vaccinations=df.prima_dose
-            + df.seconda_dose
-            + df.pregressa_infezione
-            + df.dose_addizionale_booster
-            + df.booster_immuno
-            + df.d2_booster,
-            total_boosters=df.dose_addizionale_booster + df.booster_immuno + df.d2_booster,
+            total_vaccinations=df.d1
+            + df.d2
+            + df.dpi
+            + df.db1
+            + df.dbi
+            + df.db2,
+            total_boosters=df.db1 + df.dbi + df.db2,
         )
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -94,14 +77,14 @@ class Italy(CountryVaxBase):
         )
 
     def get_people_vaccinated(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(people_vaccinated=df["prima_dose"] + df["pregressa_infezione"])
+        return df.assign(people_vaccinated=df["d1"] + df["dpi"])
 
     def get_people_fully_vaccinated(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
             people_fully_vaccinated=lambda x: x.apply(
-                lambda row: row["prima_dose"] + row["pregressa_infezione"]
+                lambda row: row["d1"] + row["dpi"]
                 if row["vaccine"] in self.one_dose_vaccines
-                else row["seconda_dose"],
+                else row["d2"],
                 axis=1,
             )
         )
