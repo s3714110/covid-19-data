@@ -21,11 +21,23 @@ class Vietnam:
         #     "adolescent": r"tuổi là \d+ liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+) liều.",
         # },
         "metrics": {
-            "adult": (
-                r"tuổi trở lên là\s?(\d+) liều, trong đó Mũi 1: ([\d\.]+) liều; Mũi 2: ([\d\.]+) liều; Mũi bổ sung:"
-                r" ([\d\.]+) liều và Mũi 3: ([\d\.]+) liều;"
+            "all": (
+                r"Trong ngày (\d\d?\/\d) có (?:[\d\.]+) liều vacc?cine phòng COVID-19 được tiêm. Như vậy, tổng số liều"
+                r" (?:vắc xin|vaccine) đã được tiêm là ([\d\.]+) liều, trong đó:"
             ),
-            "adolescent": r"12\-17 tuổi là (\d+) liều, gồm Mũi 1: (\d+) liều; Mũi 2: (\d+) liều;",
+            "adult": (
+                r"Số liều tiêm cho người từ 18 tuổi trở lên là ([\d\.]+) liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là"
+                r" ([\d\.]+) liều; Mũi 3 là ([\d\.]+) liều; Mũi bổ sung"
+                r" là ([\d\.]+) liều; Mũi nhắc lại lần 1 là ([\d\.]+) liều; Mũi nhắc lại lần 2 là ([\d\.]+) liều."
+            ),
+            "adolescent": (
+                r"\+ Số liều tiêm cho trẻ từ 12\-17 tuổi là ([\d\.]+) liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là"
+                r" ([\d\.]+) liều."
+            ),
+            "children": (
+                r"\+ Số liều tiêm cho trẻ từ 5\-11 tuổi là ([\d\.]+) liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là ([\d\.]+)"
+                r" liều."
+            ),
         },
     }
 
@@ -74,14 +86,19 @@ class Vietnam:
 
     def _parse_metrics(self, text: str) -> tuple:
         """Get metrics from text."""
-        adults = [clean_count(num) for num in re.search(self.regex["metrics"]["adult"], text).group(1, 2, 3, 4, 5)]
-        adolescents = [clean_count(num) for num in re.search(self.regex["metrics"]["adolescent"], text).group(1, 2)]
+        all = clean_count(re.search(self.regex["metrics"]["all"], text).group(2))
+        adults = [
+            clean_count(num) for num in re.search(self.regex["metrics"]["adult"], text).group(1, 2, 3, 4, 5, 6, 7)
+        ]
+        adolescents = [clean_count(num) for num in re.search(self.regex["metrics"]["adolescent"], text).group(1, 2, 3)]
+        children = [clean_count(num) for num in re.search(self.regex["metrics"]["children"], text).group(1, 2, 3)]
         metrics = {
             # "total_vaccinations": clean_count(re.search(self.regex["metrics"]["total"], text).group(2)),
-            "total_vaccinations": adults[0] + adolescents[0],
-            "people_vaccinated": adults[1] + adolescents[1],
+            "total_vaccinations": all,
+            "people_vaccinated": adults[1] + adolescents[1] + children[1],
+            "people_fully_vaccinated": adults[2] + adults[3] + adolescents[2] + children[2],
             # "people_fully_vaccinated": adults[2] + adults[2] + adolescents[1],
-            # "total_boosters": adults[3] + adults[4],
+            "total_boosters": adults[4] + adults[5] + adults[6],
         }
         return metrics
 
@@ -111,8 +128,8 @@ class Vietnam:
             vaccine=data["vaccine"],
             source_url=data["source_url"],
             people_vaccinated=data["people_vaccinated"],
-            # people_fully_vaccinated=data["people_fully_vaccinated"],
-            # total_boosters=data["total_boosters"],
+            people_fully_vaccinated=data["people_fully_vaccinated"],
+            total_boosters=data["total_boosters"],
         )
 
 
