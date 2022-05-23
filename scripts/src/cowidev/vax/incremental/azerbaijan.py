@@ -22,7 +22,7 @@ class Azerbaijan(CountryVaxBase):
 
     def read(self) -> pd.Series:
         """Read data from source."""
-        soup = get_soup(self.source_url)
+        soup = get_soup(self.source_url, verify=False)
         data = self._parse_data(soup)
         return pd.Series(data)
 
@@ -64,7 +64,7 @@ class Azerbaijan(CountryVaxBase):
     def _parse_pdf_text(self, url: str) -> str:
         """Parse pdf text from url."""
         with tempfile.NamedTemporaryFile() as tmp:
-            download_file_from_url(url, tmp.name)
+            download_file_from_url(url, tmp.name, verify=False)
             with open(tmp.name, "rb") as f:
                 text = extract_text(f)
         text = re.sub(r"(\d) (\d)", r"\1\2", text)
