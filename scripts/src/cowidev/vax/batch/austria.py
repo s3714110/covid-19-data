@@ -27,13 +27,6 @@ class Austria(CountryVaxBase):
     def pipe_filter_rows(self, df: pd.DataFrame) -> pd.DataFrame:
         return df[(df["state_name"] == "Österreich") & (df.vaccine != "Other")].drop(columns="state_name")
 
-    def pipe_check_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
-        vaccine_names = set(df.vaccine)
-        unknown_vaccines = set(vaccine_names).difference(self.vaccine_mapping.keys())
-        if unknown_vaccines:
-            raise ValueError("Found unknown vaccines: {}".format(unknown_vaccines))
-        return df
-
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(date=df.date.str.slice(0, 10))
 
