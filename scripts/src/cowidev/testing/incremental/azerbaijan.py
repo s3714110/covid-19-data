@@ -15,7 +15,7 @@ class Azerbaijan(CountryTestBase):
 
     def read(self) -> pd.DataFrame:
         """Read data from source"""
-        soup = get_soup(self.source_url)
+        soup = get_soup(self.source_url, verify=False)
         df = self._parse_data(soup)
         return df
 

@@ -12,8 +12,9 @@ class NorthKorea(CountryTestBase):
     source_label = "NK News"
     source_url_ref = "https://www.nknews.org/pro/coronavirus-in-north-korea-tracker/"
     rename_columns = {
-        "Persons Tested": "Daily change in cumulative total",
-        "Report URL": "Source URL",
+        "Unnamed: 1": "Daily change in cumulative total",
+        "Unnamed: 4": "Source URL",
+        "Unnamed: 5": "Date",
     }
 
     def read(self):
@@ -25,7 +26,7 @@ class NorthKorea(CountryTestBase):
         with get_driver() as driver:
             # with webdriver.Chrome() as driver:
             driver.get(self.source_url_ref)
-            table = driver.find_elements_by_tag_name("table")[0]
+            table = driver.find_elements_by_tag_name("table")[2]
             time.sleep(6)
             return table.get_attribute("outerHTML")
 
