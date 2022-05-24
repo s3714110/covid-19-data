@@ -19,11 +19,8 @@ class Japan(CountryVaxBase):
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
     )
     source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
-    # source_url: str = "https://web.archive.org/web/20220303000612if_/https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
     source_url_boost: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
-    # source_url_boost: str = "https://web.archive.org/web/20220303000834if_/https://www.kantei.go.jp/jp/content/booster_data.xlsx"
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
-    # source_url_ref: str = "https://web.archive.org/web/20220302213952/https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
     cols_early: dict = {
         "日付": "date",
         "接種回数": "total_vaccinations",
