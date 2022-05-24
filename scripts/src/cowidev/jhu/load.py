@@ -141,7 +141,8 @@ def _subregion_to_region(df: pd.DataFrame):
         "Wallis and Futuna",
     ]
     msk = df["Province/State"].isin(subregion_to_region)
-    df.loc[msk, "Country/Region"] = df.loc[msk, "Province/State"].values
+    df_ = df.copy()
+    df_.loc[msk, "Country/Region"] = df_.loc[msk, "Province/State"]
     return df.drop(columns="Province/State").groupby("Country/Region", as_index=False).sum()
 
 
