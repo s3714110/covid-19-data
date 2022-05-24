@@ -19,7 +19,7 @@ class Japan(CountryVaxBase):
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
     )
     source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
-    source_url_boost: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
+    source_url_bst: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
     cols_early: dict = {
         "日付": "date",
@@ -27,23 +27,24 @@ class Japan(CountryVaxBase):
         "内１回目": "dose1",
         "内２回目": "dose2",
     }
-    age_group: dict = {"すべて": "all", "うち高齢者": "65-", "うち小児接種": "5-11"}
-    age_group_boost: dict = {"すべて": "all", "高齢者": "65-"}
+    age_groups: dict = {"すべて": "all", "うち高齢者": "65-", "うち小児接種": "5-11"}
+    age_groups_bst: dict = {"すべて": "all", "高齢者": "65-"}
+    age_group_remain: str = "12-64"
     sheets: dict = {
         "総接種回数": None,
-        "一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_group},
+        "一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_groups},
         "医療従事者等": {"name": "healthcare", "header": [2, 3], "date": "集計日", "ind": []},
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": []},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": []},
     }
-    sheets_boost: dict = {
+    sheets_bst: dict = {
         "総接種回数": None,
-        "一般接種": {"name": "general", "header": [1, 2], "date": "接種日", "ind": age_group_boost},
+        "一般接種": {"name": "general", "header": [1, 2], "date": "接種日", "ind": age_groups_bst},
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": ["接種回数"]},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": ["接種回数"]},
     }
     metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
-    metrics_boost: dict = {"dose3": []}
+    metrics_bst: dict = {"dose3": []}
     vaccine_mapping: dict = {
         "ファイザー社": "Pfizer/BioNTech",
         "武田/モデルナ社": "Moderna",
@@ -73,7 +74,7 @@ class Japan(CountryVaxBase):
     def read_latest(self) -> pd.DataFrame:
         dfs = []
         dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-        dfs.append(self._read_xlsx(self.source_url_boost, self.sheets_boost, self.metrics_boost))
+        dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
         return pd.concat(
             [df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]
         ).reset_index(drop=True)
@@ -154,13 +155,13 @@ class Japan(CountryVaxBase):
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
         metrics = ["dose1", "dose2", "dose3"]
         df = df.groupby(["date", "age_group", "location"], as_index=False)[metrics].sum()
-        # Get age group 12-64
+        # Get the remaining age group
         df_all = df[df.age_group == "all"].set_index("date")
         df_groups = df[df.age_group != "all"]
         df_groups_sum = df_groups.groupby("date").sum()
-        df_all[metrics] = df_all[metrics].subtract(df_groups_sum[metrics], fill_value=0)
-        df_group_new = df_all.reset_index().assign(age_group="12-64")
-        df = pd.concat([df_groups, df_group_new]).reset_index(drop=True)
+        df_all[metrics] = df_all[metrics].sub(df_groups_sum[metrics], fill_value=0)
+        df_remain = df_all.reset_index().assign(age_group=self.age_group_remain)
+        df = pd.concat([df_groups, df_remain]).reset_index(drop=True)
         # Parse age groups and rename columns to calculate per capita metrics
         df[["age_group_min", "age_group_max"]] = df.age_group.str.split("-", expand=True)
         df = df.rename(
