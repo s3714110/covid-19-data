@@ -18,32 +18,34 @@ class Japan(CountryVaxBase):
     source_url_early: str = (
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
     )
-    source_url_main: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
-    # source_url_main: str = "https://web.archive.org/web/20220222230347if_/https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
+    source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
+    # source_url: str = "https://web.archive.org/web/20220303000612if_/https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
     source_url_boost: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
-    # source_url_boost: str = "https://web.archive.org/web/20220222230610if_/https://www.kantei.go.jp/jp/content/booster_data.xlsx"
+    # source_url_boost: str = "https://web.archive.org/web/20220303000834if_/https://www.kantei.go.jp/jp/content/booster_data.xlsx"
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
-    # source_url_ref: str = "https://web.archive.org/web/20220222144413/https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
+    # source_url_ref: str = "https://web.archive.org/web/20220302213952/https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
     cols_early: dict = {
         "日付": "date",
         "接種回数": "total_vaccinations",
         "内１回目": "dose1",
         "内２回目": "dose2",
     }
-    sheets_main: dict = {
+    age_group: dict = {"すべて": "all", "うち高齢者": "65-", "うち小児接種": "5-11"}
+    age_group_boost: dict = {"すべて": "all", "高齢者": "65-"}
+    sheets: dict = {
         "総接種回数": None,
-        "一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": ["すべて"]},
+        "一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_group},
         "医療従事者等": {"name": "healthcare", "header": [2, 3], "date": "集計日", "ind": []},
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": []},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": []},
     }
     sheets_boost: dict = {
         "総接種回数": None,
-        "一般接種": {"name": "general", "header": [1, 2], "date": "接種日", "ind": ["すべて"]},
+        "一般接種": {"name": "general", "header": [1, 2], "date": "接種日", "ind": age_group_boost},
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": ["接種回数"]},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": ["接種回数"]},
     }
-    metrics_main: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
+    metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
     metrics_boost: dict = {"dose3": []}
     vaccine_mapping: dict = {
         "ファイザー社": "Pfizer/BioNTech",
@@ -66,13 +68,14 @@ class Japan(CountryVaxBase):
         df = df[df.date != "合計"]
         return df.assign(
             date=clean_date_series(df.date),
+            age_group="all",
             vaccine="Pfizer/BioNTech",
             source_url=self.source_url_early,
         ).sort_values("date")
 
     def read_latest(self) -> pd.DataFrame:
         dfs = []
-        dfs.append(self._read_xlsx(self.source_url_main, self.sheets_main, self.metrics_main))
+        dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
         dfs.append(self._read_xlsx(self.source_url_boost, self.sheets_boost, self.metrics_boost))
         return pd.concat(
             [df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]
@@ -91,7 +94,16 @@ class Japan(CountryVaxBase):
             if sets:
                 # Parse Excel sheets with predefined settings
                 df = xlsx.parse(sheet_name=sheet, header=sets["header"])
-                dfs[sets["name"]] = self._parse_df(df, sets["date"], sets["ind"], metrics)
+                if isinstance(sets["ind"], dict):
+                    # Parse Excel sheets with age groups
+                    dfs_ = []
+                    for ind, age_group in sets["ind"].items():
+                        df_ = self._parse_df(df, sets["date"], [ind], metrics)
+                        dfs_.append(df_.assign(age_group=age_group))
+                    dfs[sets["name"]] = pd.concat(dfs_).reset_index(drop=True)
+                else:
+                    dfs[sets["name"]] = self._parse_df(df, sets["date"], sets["ind"], metrics)
+                    dfs[sets["name"]]["age_group"] = "all"
         for metric in metrics.keys():
             # Estimate daily metrics for workplace data based on the latest overlap data
             workplace_latest = dfs["workplace"][metric].iat[-1]
@@ -111,7 +123,7 @@ class Japan(CountryVaxBase):
         dfs = []
         for metric, index in metrics.items():
             # Get, check and rename metric columns
-            df_ = df.loc[:, tuple(ind + index)].stack().reset_index()
+            df_ = df[tuple(ind + index)].stack().reset_index()
             cols_unknown = set(df_.columns) - {date_col, "level_1", 0}
             if cols_unknown:
                 raise ValueError(f"Unknown columns: {cols_unknown}")
@@ -124,8 +136,8 @@ class Japan(CountryVaxBase):
         # Check and map vaccine names
         validate_vaccines(df, self.vaccine_mapping)
         df = df.fillna(0).replace(self.vaccine_mapping).dropna()
-        # Aggregate metrics by the same date & vaccine
-        df = df.groupby(["date", "vaccine"], as_index=False).sum()
+        # Aggregate metrics by the same date & age group & vaccine
+        df = df.groupby(["date", "age_group", "vaccine"], as_index=False).sum()
         return df.assign(
             source_url=self.source_url_ref,
             total_vaccinations=df.dose1 + df.dose2 + df.dose3,
@@ -139,11 +151,32 @@ class Japan(CountryVaxBase):
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         # Get cumulative metrics
         metrics = ["total_vaccinations", "dose1", "dose2", "dose3"]
-        df.loc[:, metrics] = df.fillna(0).groupby("vaccine")[metrics].cumsum().round()
+        df[metrics] = df.fillna(0).groupby(["age_group", "vaccine"])[metrics].cumsum().round()
         return df[df.total_vaccinations > 0].assign(location=self.location)
 
+    def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
+        metrics = ["dose1", "dose2", "dose3"]
+        df = df.groupby(["date", "age_group", "location"], as_index=False)[metrics].sum()
+        # Get age group 12-64
+        df_all = df[df.age_group == "all"].set_index("date")
+        df_groups = df[df.age_group != "all"]
+        df_groups_sum = df_groups.groupby("date").sum()
+        df_all[metrics] = df_all[metrics].subtract(df_groups_sum[metrics], fill_value=0)
+        df_group_new = df_all.reset_index().assign(age_group="12-64")
+        df = pd.concat([df_groups, df_group_new]).reset_index(drop=True)
+        # Parse age groups and rename columns to calculate per capita metrics
+        df[["age_group_min", "age_group_max"]] = df.age_group.str.split("-", expand=True)
+        df = df.rename(
+            columns={
+                "dose1": "people_vaccinated",
+                "dose2": "people_fully_vaccinated",
+                "dose3": "people_with_booster",
+            }
+        )
+        return df.pipe(self.pipe_age_per_capita)
+
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df[["location", "date", "vaccine", "total_vaccinations"]]
+        return df[df.age_group == "all"][["location", "date", "vaccine", "total_vaccinations"]]
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(
@@ -155,6 +188,7 @@ class Japan(CountryVaxBase):
         )
 
     def pipe_aggregate(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df[df.age_group == "all"]
         vaccine_timeline = df[["date", "vaccine"]].groupby("vaccine").min().date.to_dict()
         df = df.groupby(["date", "location", "source_url"], as_index=False).agg(
             {
@@ -188,12 +222,15 @@ class Japan(CountryVaxBase):
         # Read and preprocess
         df = self.read().pipe(self.pipeline_base)
         # Transform
+        df_age = df.pipe(self.pipeline_age)
         df_man = df.pipe(self.pipeline_manufacturer)
         df = df.pipe(self.pipeline)
         # Export
         self.export_datafile(
             df=df,
+            df_age=df_age,
             df_manufacturer=df_man,
+            meta_age={"source_name": self.source_name, "source_url": self.source_url_ref},
             meta_manufacturer={"source_name": self.source_name, "source_url": self.source_url_ref},
         )
 
