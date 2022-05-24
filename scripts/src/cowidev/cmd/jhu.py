@@ -1,9 +1,7 @@
 import click
 
 from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
-from cowidev.jhu.__main__ import download_csv, main, update_db
-from cowidev.cmd.commons.utils import StepReport
-from cowidev.utils.utils import get_traceback
+from cowidev.jhu.__main__ import download_csv, generate_dataset, update_db
 
 
 @click.group(name="jhu", chain=True, cls=OrderedGroup)
@@ -31,7 +29,7 @@ def click_jhu_download(ctx):
 @click.pass_context
 def click_jhu_generate(ctx):
     feedback_log(
-        func=main,
+        func=generate_dataset,
         server=ctx.obj["server"],
         domain="JHU",
         step="generate",

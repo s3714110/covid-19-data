@@ -4,87 +4,76 @@ import os
 from datetime import datetime
 
 from cowidev.megafile.steps.test import get_testing
-from cowidev import PATHS
+from cowidev.jhu.load import (
+    load_population,
+    load_eu_country_names,
+    LOCATIONS_BY_CONTINENT,
+    LOCATIONS_BY_WB_INCOME_GROUP,
+)
 
-
-POPULATION_CSV_PATH = PATHS.INTERNAL_INPUT_UN_POPULATION_FILE
-CONTINENTS_CSV_PATH = PATHS.INTERNAL_INPUT_OWID_CONT_FILE
-WB_INCOME_GROUPS_CSV_PATH = PATHS.INTERNAL_INPUT_WB_INCOME_FILE
-EU_COUNTRIES_CSV_PATH = PATHS.INTERNAL_INPUT_OWID_EU_FILE
 
 ZERO_DAY = "2020-01-21"
 zero_day = datetime.strptime(ZERO_DAY, "%Y-%m-%d")
 
-# =========
-# Utilities
-# =========
-
-
-def _find_closest_year_row(df, year=2021):
-    """Returns the row which is closest to the year specified (in either direction)"""
-    df = df.copy()
-    df["year"] = df["year"].sort_values(ascending=True)
-    return df.loc[df["year"].map(lambda x: abs(x - year)).idxmin()]
-
-
-# ============
-# Loading data
-# ============
-
-
-def load_population(year=2021):
-    df = pd.read_csv(
-        POPULATION_CSV_PATH,
-        keep_default_na=False,
-        usecols=["entity", "year", "population"],
-    )
-    return (
-        pd.DataFrame([_find_closest_year_row(df_group, year) for loc, df_group in df.groupby("entity")])
-        .dropna()
-        .rename(columns={"entity": "location", "year": "population_year"})
-    )
-
-
-def load_owid_continents():
-    return pd.read_csv(
-        CONTINENTS_CSV_PATH,
-        keep_default_na=False,
-        header=0,
-        names=["location", "code", "year", "continent"],
-        usecols=["location", "continent"],
-    )
-
-
-locations_by_continent = load_owid_continents().groupby("continent")["location"].apply(list).to_dict()
-
-
-def load_wb_income_groups():
-    return pd.read_csv(
-        WB_INCOME_GROUPS_CSV_PATH,
-        keep_default_na=False,
-        header=0,
-        names=["location", "code", "income_group", "year"],
-        usecols=["location", "income_group"],
-    )
-
-
-def load_eu_country_names():
-    df = pd.read_csv(
-        EU_COUNTRIES_CSV_PATH,
-        keep_default_na=False,
-        header=0,
-        names=["location", "eu"],
-        usecols=["location"],
-    )
-    return df["location"].tolist()
-
-
-locations_by_wb_income_group = load_wb_income_groups().groupby("income_group")["location"].apply(list).to_dict()
-
+LARGE_DATA_CORRECTIONS = [
+    ("Austria", "2022-04-21", "deaths"),
+    ("Austria", "2022-04-22", "deaths"),
+    ("Brazil", "2021-09-18", "cases"),
+    ("Chile", "2020-07-17", "deaths"),
+    ("Chile", "2022-03-21", "deaths"),
+    ("China", "2020-04-17", "deaths"),
+    ("Denmark", "2021-12-21", "deaths"),
+    ("Ecuador", "2020-09-07", "deaths"),
+    ("Ecuador", "2021-07-20", "deaths"),
+    ("Finland", "2022-03-07", "deaths"),
+    ("Iceland", "2022-05-17", "deaths"),
+    ("India", "2021-06-10", "deaths"),
+    ("Mexico", "2020-10-05", "deaths"),
+    ("Mexico", "2021-06-01", "deaths"),
+    ("Moldova", "2021-12-31", "deaths"),
+    ("Norway", "2022-03-17", "deaths"),
+    ("Portugal", "2022-05-20", "cases"),
+    ("South Africa", "2021-11-23", "cases"),
+    ("South Africa", "2022-01-06", "deaths"),
+    ("Spain", "2020-06-19", "deaths"),
+    ("Turkey", "2020-12-10", "cases"),
+    ("United Kingdom", "2022-01-31", "cases"),
+    ("United Kingdom", "2022-02-01", "deaths"),
+    ("United Kingdom", "2022-04-06", "deaths"),
+]
 
 # ==============
 # Data injection
 # ==============
+def standardize_data(df):
+    df = (
+        df[["date", "location", "new_cases", "new_deaths", "total_cases", "total_deaths"]]
+        .pipe(discard_rows)
+        .pipe(inject_owid_aggregates)
+        .pipe(inject_weekly_growth)
+        .pipe(inject_biweekly_growth)
+        .pipe(inject_doubling_days)
+        .pipe(
+            inject_per_million,
+            [
+                "new_cases",
+                "new_deaths",
+                "total_cases",
+                "total_deaths",
+                "weekly_cases",
+                "weekly_deaths",
+                "biweekly_cases",
+                "biweekly_deaths",
+            ],
+        )
+        .pipe(inject_rolling_avg)
+        .pipe(inject_cfr)
+        .pipe(inject_days_since)
+        .pipe(inject_exemplars)
+        .sort_values(by=["location", "date"])
+    )
+    return df
+
 
 # Useful for adding it to regions.csv and
 def inject_population(df):
@@ -116,13 +105,13 @@ aggregates_spec = {
     # European Union
     "European Union": {"include": load_eu_country_names()},
     # OWID continents
-    **{continent: {"include": locations, "exclude": None} for continent, locations in locations_by_continent.items()},
+    **{continent: {"include": locations, "exclude": None} for continent, locations in LOCATIONS_BY_CONTINENT.items()},
     # Asia without China
-    "Asia excl. China": {"include": list(set(locations_by_continent["Asia"]) - set(["China"]))},
+    "Asia excl. China": {"include": list(set(LOCATIONS_BY_CONTINENT["Asia"]) - set(["China"]))},
     # World Bank income groups
     **{
         income_group: {"include": locations, "exclude": None}
-        for income_group, locations in locations_by_wb_income_group.items()
+        for income_group, locations in LOCATIONS_BY_WB_INCOME_GROUP.items()
     },
 }
 
@@ -553,3 +542,43 @@ def standard_export(df, output_path, grapher_name):
         cols.insert(0, cols.pop(cols.index("World")))
         df_pivot[cols].to_csv(os.path.join(output_path, "%s.csv" % col_name))
     return True
+
+
+# Other
+def hide_recent_zeros(df: pd.DataFrame) -> pd.DataFrame:
+    last_reported_date = df.date.max()
+
+    last_positive_cases_date = df.loc[df.new_cases > 0, "date"].max()
+    if pd.isnull(last_positive_cases_date):
+        return df
+    if last_positive_cases_date != last_reported_date:
+        last_known_cases = df.loc[df.date == last_positive_cases_date, "new_cases"].item()
+        if last_known_cases >= 100 and (last_reported_date - last_positive_cases_date).days < 7:
+            df.loc[df.date > last_positive_cases_date, "new_cases"] = np.nan
+
+    last_positive_deaths_date = df.loc[df.new_deaths > 0, "date"].max()
+    if pd.isnull(last_positive_deaths_date):
+        return df
+    if last_positive_deaths_date != last_reported_date:
+        last_known_deaths = df.loc[df.date == last_positive_deaths_date, "new_deaths"].item()
+        if last_known_deaths >= 10 and (last_reported_date - last_positive_deaths_date).days < 7:
+            df.loc[df.date > last_positive_deaths_date, "new_deaths"] = np.nan
+
+    return df
+
+
+def discard_rows(df):
+    # For all rows where new_cases or new_deaths is negative, we keep the cumulative value but set
+    # the daily change to NA. This also sets the 7-day rolling average to NA for the next 7 days.
+    df.loc[df.new_cases < 0, "new_cases"] = np.nan
+    df.loc[df.new_deaths < 0, "new_deaths"] = np.nan
+
+    # Custom data corrections
+    for ldc in LARGE_DATA_CORRECTIONS:
+        df.loc[(df.location == ldc[0]) & (df.date.astype(str) == ldc[1]), f"new_{ldc[2]}"] = np.nan
+
+    # If the last known value is above 1000 cases or 100 deaths but the latest reported value is 0
+    # then set that value to NA in case it's a temporary reporting error. (Up to 7 days in the past)
+    df = df.sort_values(["location", "date"]).groupby("location").apply(hide_recent_zeros)
+
+    return df
