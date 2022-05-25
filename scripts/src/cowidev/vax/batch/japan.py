@@ -23,7 +23,6 @@ class Japan(CountryVaxBase):
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
     cols_early: dict = {
         "日付": "date",
-        "接種回数": "total_vaccinations",
         "内１回目": "dose1",
         "内２回目": "dose2",
     }
@@ -136,10 +135,7 @@ class Japan(CountryVaxBase):
         df = df.fillna(0).replace(self.vaccine_mapping).dropna()
         # Aggregate metrics by the same date & age group & vaccine
         df = df.groupby(["date", "age_group", "vaccine"], as_index=False).sum()
-        return df.assign(
-            source_url=self.source_url_ref,
-            total_vaccinations=df.dose1 + df.dose2 + df.dose3,
-        )
+        return df.assign(source_url=self.source_url_ref)
 
     def read(self) -> pd.DataFrame:
         df_early = self.read_early().pipe(self.pipe_early)
@@ -148,8 +144,9 @@ class Japan(CountryVaxBase):
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         # Get cumulative metrics
-        metrics = ["total_vaccinations", "dose1", "dose2", "dose3"]
+        metrics = ["dose1", "dose2", "dose3"]
         df[metrics] = df.fillna(0).groupby(["age_group", "vaccine"])[metrics].cumsum().round()
+        df["total_vaccinations"] = df[metrics].sum(axis=1)
         return df[df.total_vaccinations > 0].assign(location=self.location)
 
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
