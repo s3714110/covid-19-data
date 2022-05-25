@@ -22,8 +22,8 @@ class Vietnam:
         # },
         "metrics": {
             "all": (
-                r"Trong ngày (\d\d?\/\d) có (?:[\d\.]+) liều vacc?cine phòng COVID-19 được tiêm. Như vậy, tổng số liều"
-                r" (?:vắc xin|vaccine) đã được tiêm là ([\d\.]+) liều, trong đó:"
+                r"Trong ngày (\d\d?\/\d) có (?:[\d\.]+) liều vacc?cine phòng COVID-19 đ?ược tiêm(?: chủng)?. Như"
+                r" vậy, tổng số liều (?:vắc xin|vaccine) đã được tiêm là ([\d\.]+) liều, trong đó:"
             ),
             "adult": (
                 r"Số liều tiêm cho người từ 18 tuổi trở lên là ([\d\.]+) liều: Mũi 1 là ([\d\.]+) liều; Mũi 2 là"
