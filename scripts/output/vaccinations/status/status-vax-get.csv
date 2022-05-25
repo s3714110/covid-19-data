@@ -51,21 +51,7 @@ cowidev.vax.incremental.aruba,1.03,True,2022-05-25T07:01:30,,
 cowidev.vax.incremental.azerbaijan,6.46,True,2022-05-25T07:01:35,,
 cowidev.vax.incremental.bahrain,1.08,True,2022-05-25T07:01:31,,
 cowidev.vax.incremental.bangladesh,11.9,True,2022-05-25T07:01:43,,
-cowidev.vax.incremental.barbados,2.25,False,2022-05-25T07:03:22,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 96, in main
-    Barbados().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 91, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 35, in read
-    df = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 47, in _parse_data
-    metrics = self._parse_metrics(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py"", line 62, in _parse_metrics
-    people_vaccinated = clean_count(re.search(self.regex[""people_vaccinated""], text).group(1).replace("" "", """"))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.barbados,3.35,True,2022-05-25T15:53:15,,
 cowidev.vax.incremental.brazil,0.04,True,2022-05-25T07:01:33,,
 cowidev.vax.incremental.bulgaria,0.69,True,2022-05-25T07:01:34,,
 cowidev.vax.incremental.china,35.09,True,2022-05-25T07:03:57,,
@@ -106,18 +92,18 @@ cowidev.vax.incremental.myanmar,,,2022-05-25T07:01:53,,
 cowidev.vax.incremental.nepal,13.61,True,2022-05-25T07:02:06,,
 cowidev.vax.incremental.north_macedonia,,,2022-05-25T07:02:02,,
 cowidev.vax.incremental.northern_cyprus,0.91,True,2022-05-25T07:02:03,,
-cowidev.vax.incremental.paho,74.14,False,2022-05-25T07:05:11,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.paho,78.86,False,2022-05-25T17:14:12,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 179, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 179, in main
     PAHO().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 174, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 174, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
     df = self._parse_data(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 59, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 59, in _parse_data
     df = df.assign(date=self._parse_date(driver))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 89, in _parse_date
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 89, in _parse_date
     window_after = driver.window_handles[1]
 IndexError: list index out of range
 ",list index out of range
@@ -136,20 +122,6 @@ cowidev.vax.incremental.taiwan,5.72,True,2022-05-25T07:02:31,,
 cowidev.vax.incremental.thailand,1.27,True,2022-05-25T07:02:27,,
 cowidev.vax.incremental.turkey,0.62,True,2022-05-25T07:02:28,,
 cowidev.vax.incremental.united_arab_emirates,15.62,True,2022-05-25T07:02:43,,
-cowidev.vax.incremental.vietnam,4.13,False,2022-05-25T07:05:15,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 137, in main
-    Vietnam().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 123, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 47, in read
-    data = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 60, in _parse_data
-    metrics = self._parse_metrics(text)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 89, in _parse_metrics
-    all = clean_count(re.search(self.regex[""metrics""][""all""], text).group(2))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.vietnam,1.83,True,2022-05-25T16:10:37,,
 cowidev.vax.incremental.who,2.84,True,2022-05-25T07:02:38,,
 cowidev.vax.incremental.zambia,0.65,True,2022-05-25T07:02:38,,
