@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`3/112` scripts failed, `11/112` were skipped. Latest update was `2022-05-25T07:05:15`.
+`1/112` scripts failed, `11/112` were skipped. Latest update was `2022-05-25T17:14:12`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,25 +19,11 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.vietnam</td>
-      <td>❌</td>
-      <td>2022-05-25T07:05:15</td>
-      <td>4.13</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py", line 137, in main<br>    Vietnam().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py", line 123, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py", line 47, in read<br>    data = self._parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py", line 60, in _parse_data<br>    metrics = self._parse_metrics(text)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py", line 89, in _parse_metrics<br>    all = clean_count(re.search(self.regex["metrics"]["all"], text).group(2))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.paho</td>
       <td>❌</td>
-      <td>2022-05-25T07:05:11</td>
-      <td>74.14</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 179, in main<br>    PAHO().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 174, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 59, in _parse_data<br>    df = df.assign(date=self._parse_date(driver))<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 89, in _parse_date<br>    window_after = driver.window_handles[1]<br>IndexError: list index out of range<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.barbados</td>
-      <td>❌</td>
-      <td>2022-05-25T07:03:22</td>
-      <td>2.25</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 96, in main<br>    Barbados().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 91, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 35, in read<br>    df = self._parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 47, in _parse_data<br>    metrics = self._parse_metrics(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/barbados.py", line 62, in _parse_metrics<br>    people_vaccinated = clean_count(re.search(self.regex["people_vaccinated"], text).group(1).replace(" ", ""))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
+      <td>2022-05-25T17:14:12</td>
+      <td>78.86</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 179, in main<br>    PAHO().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 174, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 59, in _parse_data<br>    df = df.assign(date=self._parse_date(driver))<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 89, in _parse_date<br>    window_after = driver.window_handles[1]<br>IndexError: list index out of range<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.sri_lanka</td>
@@ -114,6 +100,20 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-05-25T07:00:08</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.vietnam</td>
+      <td>✅</td>
+      <td>2022-05-25T16:10:37</td>
+      <td>1.83</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.barbados</td>
+      <td>✅</td>
+      <td>2022-05-25T15:53:15</td>
+      <td>3.35</td>
       <td></td>
     </tr>
     <tr>
