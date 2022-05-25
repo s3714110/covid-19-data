@@ -143,7 +143,7 @@ def _subregion_to_region(df: pd.DataFrame):
     msk = df["Province/State"].isin(subregion_to_region)
     df_ = df.copy()
     df_.loc[msk, "Country/Region"] = df_.loc[msk, "Province/State"]
-    return df.drop(columns="Province/State").groupby("Country/Region", as_index=False).sum()
+    return df_.drop(columns="Province/State").groupby("Country/Region", as_index=False).sum()
 
 
 def _format_date(df: pd.DataFrame):
