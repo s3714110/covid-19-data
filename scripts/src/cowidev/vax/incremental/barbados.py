@@ -42,7 +42,6 @@ class Barbados(CountryVaxBase):
         if not link:
             raise ValueError("Article not found, please update the script")
         self.source_url_ref = link
-        print(link)
         soup = get_soup(link)
         # Get the metrics
         metrics = self._parse_metrics(soup)
