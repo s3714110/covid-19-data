@@ -50,13 +50,16 @@ class PAHO:
             # Go to tab
             driver.find_element_by_id("tableauTabbedNavigation_tab_2").click()
             time.sleep(5)
+            # time.sleep(1)
             # Download data
             self._download_csv(driver, "Crosstab", "RDT: Overview Table")
             # Load downloadded file
             filename = self._get_downloaded_filename()
             df = pd.read_csv(filename, sep="\t", encoding=get_file_encoding(filename), thousands=",")
             os.remove(filename)
-            df = df.assign(date=self._parse_date(driver))
+            # Get date
+            date = self._parse_date(driver)
+            df = df.assign(date=date)
         return df
 
     def _download_csv(self, driver, option: str, filename: str):
@@ -80,8 +83,12 @@ class PAHO:
         time.sleep(5)
 
     def _parse_date(self, driver):
-        driver.find_element_by_id("tabZoneId87").click()
+        # fix
+        driver.find_element_by_id("tableauTabbedNavigation_tab_0").click()
+        time.sleep(5)
+        driver.find_element_by_id("tabZoneId77").click()  #87
         time.sleep(1)
+        #
         driver.find_element_by_id("download-ToolbarButton").click()
         time.sleep(2)
         driver.find_element_by_xpath(f"//button[contains(text(),'Data')]").click()
@@ -90,7 +97,12 @@ class PAHO:
         driver.switch_to.window(window_after)
         time.sleep(2)
         date_str = driver.find_element_by_tag_name("tbody").text
-        return clean_date(date_str, "%m/%d/%Y")
+        date_str = clean_date(date_str, "%m/%d/%Y")
+        time.sleep(2)
+        window_before = driver.window_handles[0]
+        driver.switch_to.window(window_before)
+        time.sleep(2)
+        return date_str
 
     def _get_downloaded_filename(self):
         files = glob(os.path.join(self._download_path, "*.csv"))
@@ -177,3 +189,7 @@ class PAHO:
 
 def main():
     PAHO().export()
+
+
+if __name__=="__main__":
+    main()
