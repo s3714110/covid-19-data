@@ -102,6 +102,8 @@ class AfricaCDC(CountryTestBase):
     def increment_countries(self, df: pd.DataFrame):
         """Exports data to the relevant csv and logs the confirmation."""
         locations = set(df.location)
+        df["Cumulative total"].replace(",", "", regex=True, inplace=True)
+        df["Cumulative total"] = df["Cumulative total"].apply(pd.to_numeric, errors="coerce")
         for location in locations:
             df_c = df[df.location == location]
             df_c = df_c.dropna(
