@@ -20,14 +20,19 @@ class Japan(CountryVaxBase):
     )
     source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
     source_url_bst: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
+    source_url_bst2: str = "https://www.kantei.go.jp/jp/content/booster2nd_data.xlsx"
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
     cols_early: dict = {
         "日付": "date",
         "内１回目": "dose1",
         "内２回目": "dose2",
     }
-    age_groups: dict = {"すべて": "all", "うち高齢者": "65-", "うち小児接種": "5-11"}
-    age_groups_bst: dict = {"すべて": "all", "高齢者": "65-"}
+    age_groups: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
+    age_groups_bst: dict = {"all": ["すべて"], "65-": ["高齢者"]}
+    age_groups_bst2: dict = {
+        "all": ["曜日", "すべて", ""],
+        "65-": ["曜日", "60歳以上", "うち高齢者(65歳以上)"],
+    }
     age_group_remain: str = "12-64"
     sheets: dict = {
         "総接種回数": None,
@@ -42,14 +47,24 @@ class Japan(CountryVaxBase):
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": ["接種回数"]},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": ["接種回数"]},
     }
+    sheets_bst2: dict = {
+        "総接種回数": None,
+        "一般接種": {
+            "name": "general",
+            "header": [1, 2, 3, 4],
+            "date": "接種日",
+            "ind": age_groups_bst2,
+        },
+    }
     metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
     metrics_bst: dict = {"dose3": []}
+    metrics_bst2: dict = {"dose4": []}
     vaccine_mapping: dict = {
         "ファイザー社": "Pfizer/BioNTech",
         "武田/モデルナ社": "Moderna",
         "アストラゼネカ社": "Oxford/AstraZeneca",
+        "武田社(ノババックス)": "Novavax",
         "接種回数(合計)": None,
-        "モデルナ社": "Moderna",
     }
 
     def read_early(self) -> pd.DataFrame:
@@ -74,6 +89,7 @@ class Japan(CountryVaxBase):
         dfs = []
         dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
         dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
+        dfs.append(self._read_xlsx(self.source_url_bst2, self.sheets_bst2, self.metrics_bst2))
         return pd.concat(
             [df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]
         ).reset_index(drop=True)
@@ -94,29 +110,30 @@ class Japan(CountryVaxBase):
                 if isinstance(sets["ind"], dict):
                     # Parse Excel sheets with age groups
                     dfs_ = []
-                    for ind, age_group in sets["ind"].items():
-                        df_ = self._parse_df(df, sets["date"], [ind], metrics)
+                    for age_group, ind in sets["ind"].items():
+                        df_ = self._parse_df(df, sets["date"], ind, metrics)
                         dfs_.append(df_.assign(age_group=age_group))
                     dfs[sets["name"]] = pd.concat(dfs_).reset_index(drop=True)
                 else:
                     dfs[sets["name"]] = self._parse_df(df, sets["date"], sets["ind"], metrics)
                     dfs[sets["name"]]["age_group"] = "all"
-        for metric in metrics.keys():
+        if isinstance(dfs.get("workplace"), pd.DataFrame):
             # Estimate daily metrics for workplace data based on the latest overlap data
-            workplace_latest = dfs["workplace"][metric].iat[-1]
-            overlap_latest = dfs["overlap"][metric].iat[-1]
-            dfs["workplace"][metric] -= dfs["workplace"][metric].shift(1, fill_value=0)
-            dfs["workplace"][metric] *= 1 - overlap_latest / workplace_latest
+            for metric in metrics.keys():
+                workplace_latest = dfs["workplace"][metric].iat[-1]
+                overlap_latest = dfs["overlap"][metric].iat[-1]
+                dfs["workplace"][metric] -= dfs["workplace"][metric].shift(1, fill_value=0)
+                dfs["workplace"][metric] *= 1 - overlap_latest / workplace_latest
         return dfs
 
     def _parse_df(self, df: pd.DataFrame, date_col: str, ind: list, metrics: dict) -> pd.DataFrame:
         # Clean columns
         df = clean_df_columns_multiindex(df.dropna(axis=1, how="all"))
         df = df.loc[:, ~df.columns.duplicated()]
-        # Filter and clean date rows
+        # Filter and clean metric rows
         df = df[df[date_col].apply(isinstance, args=(datetime,)) & df[date_col].notna()]
         df[date_col] = clean_date_series(df[date_col])
-        df = df.set_index(date_col).sort_index()
+        df = df.replace("―", float("nan")).fillna(0).set_index(date_col).sort_index()
         dfs = []
         for metric, index in metrics.items():
             # Get, check and rename metric columns
@@ -144,7 +161,7 @@ class Japan(CountryVaxBase):
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         # Get cumulative metrics
-        metrics = ["dose1", "dose2", "dose3"]
+        metrics = ["dose1", "dose2", "dose3", "dose4"]
         df[metrics] = df.fillna(0).groupby(["age_group", "vaccine"])[metrics].cumsum().round()
         df["total_vaccinations"] = df[metrics].sum(axis=1)
         return df[df.total_vaccinations > 0].assign(location=self.location)
@@ -173,14 +190,9 @@ class Japan(CountryVaxBase):
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
         return df[df.age_group == "all"][["location", "date", "vaccine", "total_vaccinations"]]
 
-    def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.rename(
-            columns={
-                "dose1": "people_vaccinated",
-                "dose2": "people_fully_vaccinated",
-                "dose3": "total_boosters",
-            }
-        )
+    def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
+        df["total_boosters"] = df.dose3 + df.dose4
+        return df.rename(columns={"dose1": "people_vaccinated", "dose2": "people_fully_vaccinated"})
 
     def pipe_aggregate(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df[df.age_group == "all"]
@@ -197,7 +209,7 @@ class Japan(CountryVaxBase):
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
-            df.pipe(self.pipe_rename_columns)
+            df.pipe(self.pipe_metrics)
             .pipe(self.pipe_aggregate)
             .pipe(self.make_monotonic)[
                 [
