@@ -81,7 +81,7 @@ class UnitedKingdom(CountryVaxBase):
     def export(self):
         df_base = self.read().pipe(self.pipeline)
         for location in set(df_base.location):
-            df = df_base.pipe(self._filter_location, location).pipe(make_monotonic, max_removed_rows=20)
+            df = df_base.pipe(self._filter_location, location).pipe(self.make_monotonic, max_removed_rows=45)
             self.export_datafile(df, filename=location)
 
 
