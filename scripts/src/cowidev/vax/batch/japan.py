@@ -29,10 +29,6 @@ class Japan(CountryVaxBase):
     }
     age_groups: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
     age_groups_bst: dict = {"all": ["すべて"], "65-": ["高齢者"]}
-    age_groups_bst2: dict = {
-        "all": ["曜日", "すべて", ""],
-        "65-": ["曜日", "60歳以上", "うち高齢者(65歳以上)"],
-    }
     age_group_remain: str = "12-64"
     sheets: dict = {
         "総接種回数": None,
@@ -53,7 +49,7 @@ class Japan(CountryVaxBase):
             "name": "general",
             "header": [1, 2, 3, 4],
             "date": "接種日",
-            "ind": age_groups_bst2,
+            "ind": ["曜日", "すべて", ""],
         },
     }
     metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
