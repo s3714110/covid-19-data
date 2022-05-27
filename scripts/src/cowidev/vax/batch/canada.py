@@ -84,10 +84,10 @@ class Canada(CountryVaxBase):
                 "total_vaccines_distributed",
             ],
         )
-        return df[["date", "total_vaccinations", "total_vaccinated", "total_boosters_1", "total_boosters_2"]]
+        return df[["date", "change_vaccinations", "change_vaccinated", "change_boosters_1", "change_boosters_2"]]
 
     def read_age(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url_a, verify=False)
+        df = read_csv_from_url(self.source_url_a)
         check_known_columns(
             df,
             [
@@ -112,7 +112,7 @@ class Canada(CountryVaxBase):
         return df
 
     def read_manufacturer(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url_m, verify=False)
+        df = read_csv_from_url(self.source_url_m)
         check_known_columns(
             df,
             [
@@ -168,8 +168,11 @@ class Canada(CountryVaxBase):
         df = df.groupby(["date", "vaccine"], as_index=False).sum()
         return df.assign(location=self.location)
 
-    def pipe_filter_rows(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df[df.total_vaccinations > 0].fillna(0)
+    def pipe_get_totals(self, df: pd.DataFrame) -> pd.DataFrame:
+        metrics = df.filter(like="change_").columns
+        df[metrics] = df.fillna(0)[metrics].cumsum()
+        df.columns = df.columns.str.replace("change_", "total_")
+        return df[df.total_vaccinations > 0]
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns={"total_vaccinated": "people_fully_vaccinated"})
@@ -205,7 +208,7 @@ class Canada(CountryVaxBase):
 
     def pipeline(self, df: pd.DataFrame, df_man: pd.DataFrame) -> pd.DataFrame:
         return (
-            df.pipe(self.pipe_filter_rows)
+            df.pipe(self.pipe_get_totals)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_vaccine_timeline, df_man)
@@ -227,7 +230,7 @@ class Canada(CountryVaxBase):
     def export(self):
         # Read
         df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
-        # Transformations
+        # Transform
         df_age = df_age.pipe(self.pipeline_age)
         df_man = df_man.pipe(self.pipeline_manufacturer)
         df = df.pipe(self.pipeline, df_man)
