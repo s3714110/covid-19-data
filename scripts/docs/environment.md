@@ -113,6 +113,15 @@ pipeline:
     generate:
     # Export step
     export:
+  
+  # Hospitalization data pipeline
+  hospitalizations:
+  # Generate step
+    generate:
+      # Countries to include
+      countries:
+      # Countries to skip
+      skip_countries:
 ```
 
 ## Secrets file
@@ -186,17 +195,24 @@ Usage: cowid [OPTIONS] COMMAND [ARGS]...
 Options:
   --parallel / --no-parallel  Parallelize process.  [default: parallel]
   --n-jobs INTEGER            Number of threads to use.  [default: -2]
+  -S, --server / --no-server  Only critical log and final message to slack.
+                              [default: no-server]
   --help                      Show this message and exit.
 
 Commands:
-  test       COVID-19 Testing data pipeline.
-  vax        COVID-19 Vaccination data pipeline.
-  hosp       COVID-19 Hospitalization data pipeline.
-  jhu        COVID-19 Cases/Deaths data pipeline.
-  variants   COVID-19 Variants data pipeline.
-  xm         COVID-19 Excess Mortality data pipeline.
-  gmobility  Google Mobility data pipeline.
-  megafile   COVID-19 data integration pipeline (former megafile)
+  megafile    COVID-19 data integration pipeline (former megafile)
+  test        COVID-19 Testing data pipeline.
+  vax         COVID-19 Vaccination data pipeline.
+  hosp        COVID-19 Hospitalization data pipeline.
+  jhu         COVID-19 Cases/Deaths data pipeline.
+  variants    COVID-19 Variants data pipeline.
+  xm          COVID-19 Excess Mortality data pipeline.
+  gmobility   Google Mobility data pipeline.
+  oxcgrt      COVID-19 stringency index (by OxCGRT) data pipeline.
+  decoupling  COVID-19 Decoupling data pipeline.
+  sweden      COVID-19 Sweden data pipeline.
+  uk-nations  COVID-19 UK Nations data pipeline.
+  check       COVID-19 data pipeline checks.
 ```
 
 ## Questions?

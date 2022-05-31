@@ -161,9 +161,16 @@ We source the data from [crondonm/TrackingR/](https://github.com/crondonm/Tracki
 ```
 ## Policy responses (OxCGRT) pipeline
 
-:::{warning}
-The OxCGRT pipeline is under construction.
-:::
+```
+# Get the data
+cowid oxcgrt get
+
+# Update Grapher files
+cowid oxcgrt grapher-io
+
+# Upload data to database
+cowid oxcgrt grapher-db
+```
 
 
 
