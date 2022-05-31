@@ -55,7 +55,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 | `new_cases_smoothed_per_million` | New confirmed cases of COVID-19 (7-day smoothed) per 1,000,000 people. Counts can include probable cases, where reported.                                                                              |
 
 ### Confirmed deaths
-nan
+
 | Variable                          | Description                                                                                                                                                                                               |
 |:----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_deaths`                    | Total deaths attributed to COVID-19. Counts can include probable deaths, where reported.                                                                                                                  |

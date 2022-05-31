@@ -108,7 +108,8 @@ def _generate_category_notes(df_notes, category):
 def _generate_category_notes_top(df_notes, category):
     if category in df_notes.index:
         note_top = df_notes.loc[category, "notes_top"]
-        return note_top
+        if not pd.isnull(note_top):
+            return note_top
     return ""
 
 
