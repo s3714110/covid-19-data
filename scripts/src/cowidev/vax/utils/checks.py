@@ -9,6 +9,7 @@ METRICS = ["total_vaccinations", "people_vaccinated", "people_fully_vaccinated",
 VACCINES_ACCEPTED = [
     "Abdala",
     "CanSino",
+    "Corbevax",
     "Covaxin",
     "COVIran Barekat",
     "KoviVac/Chumakov",
