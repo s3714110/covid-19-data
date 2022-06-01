@@ -138,21 +138,7 @@ cowidev.vax.incremental.guernsey,0.1,True,2022-06-01T07:01:58,,
 cowidev.vax.incremental.hungary,1.31,True,2022-06-01T07:01:59,,
 cowidev.vax.incremental.iceland,0.2,True,2022-06-01T07:01:59,,
 cowidev.vax.incremental.india,1.17,True,2022-06-01T07:02:00,,
-cowidev.vax.incremental.iran,2.6,False,2022-06-01T07:05:51,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py"", line 146, in main
-    Iran().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py"", line 132, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py"", line 35, in read
-    data, proceed = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py"", line 55, in _parse_data
-    **self._parse_metrics(text),
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py"", line 108, in _parse_metrics
-    total_boosters = int(re.search(self.regex[""total_boosters""], text).group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.iran,2.82,True,2022-06-01T17:24:27,,
 cowidev.vax.incremental.isle_of_man,0.88,True,2022-06-01T07:02:01,,
 cowidev.vax.incremental.jamaica,1.2,True,2022-06-01T07:02:03,,
 cowidev.vax.incremental.kazakhstan,7.0,True,2022-06-01T07:02:09,,
