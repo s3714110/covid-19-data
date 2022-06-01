@@ -25,6 +25,7 @@ pipeline:
         - Ukraine  # Moved to WHO
         - Portugal  # Temporary moved to ECDC
         - Myanmar # Moved to WHO
+        - Costa Rica # moved to WHO
     process:
       skip_complete:
         - Pitcairn
