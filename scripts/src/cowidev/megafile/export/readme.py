@@ -74,7 +74,7 @@ def load_macro_df():
 
 
 def get_variable_section():
-    template = """### {title}\n{table}\n{notes}"""
+    template = """### {title}\n{notes_top}\n{table}\n{notes}"""
     df = pd.read_csv(CODEBOOK_CSV).rename(columns={"description": "Description"})
     df_notes = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_COVID_NOTES_FILE, index_col="category")
     df = df.assign(Variable=df.column.apply(lambda x: f"`{x}`"))
@@ -84,17 +84,32 @@ def get_variable_section():
         df_ = df[df.category == cat]
         table = df_[["Variable", "Description"]].to_markdown(index=False)
         notes = _generate_category_notes(df_notes, cat)
-        variable_description.append(template.format(title=cat, table=table, notes=notes))
+        notes_top = _generate_category_notes_top(df_notes, cat)
+        variable_description.append(template.format(title=cat, table=table, notes=notes, notes_top=notes_top))
     return variable_description
 
 
 def _generate_category_notes(df_notes, category):
     notes_pretty = "\n#### Notes:\n"
     if category in df_notes.index:
-        notes = df_notes.loc[category]
-        for note in notes:
-            notes_pretty += f"* {note}\n"
+        notes = df_notes.loc[category, "notes"]
+        if not pd.isnull(notes):
+            if isinstance(notes, list):
+                for note in notes:
+                    notes_pretty += f"* {note}\n"
+            else:
+                notes_pretty += f"* {notes}\n"
+        else:
+            notes_pretty = ""
         return notes_pretty
+    return ""
+
+
+def _generate_category_notes_top(df_notes, category):
+    if category in df_notes.index:
+        note_top = df_notes.loc[category, "notes_top"]
+        if not pd.isnull(note_top):
+            return note_top
     return ""
 
 
