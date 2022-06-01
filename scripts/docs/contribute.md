@@ -23,8 +23,5 @@ We have created domain-specific guidelines for these, so it is easier for you to
 ### Contribute to vaccinations
 We welcome contributions to the vaccinations pipeline. More details [here](contribute-vax).
 
-### Contribute to testing
-We welcome contributions to the vaccinations pipeline. More details [here](contribute-test).
-
 ## Questions?
 Raise an [issue](https://github.com/owid/covid-19-data/issues), we are happy to help!
