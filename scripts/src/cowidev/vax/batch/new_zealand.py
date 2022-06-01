@@ -3,10 +3,10 @@ import re
 import pandas as pd
 from bs4 import BeautifulSoup
 
-from cowidev.utils import get_soup, clean_date_series, clean_date
+from cowidev.utils import clean_date, clean_date_series, get_soup
 from cowidev.utils.web.download import read_xlsx_from_url
-from cowidev.vax.utils.utils import build_vaccine_timeline
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class NewZealand(CountryVaxBase):
@@ -21,7 +21,11 @@ class NewZealand(CountryVaxBase):
         "Boosters": "total_boosters",
         "Date": "date",
     }
-    vaccines_start_date = {"Pfizer/BioNTech": "2021-01-01", "Oxford/AstraZeneca": "2021-11-26"}
+    vaccines_start_date = {
+        "Pfizer/BioNTech": "2021-01-01",
+        "Oxford/AstraZeneca": "2021-11-26",
+        "Novavax": "2022-03-14",
+    }
     columns_cumsum = ["people_vaccinated", "people_fully_vaccinated", "third_dose", "total_boosters"]
 
     def read(self) -> pd.DataFrame:

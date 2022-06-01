@@ -4,6 +4,7 @@ from cowidev.utils import clean_date, clean_date_series
 from cowidev.utils.utils import check_known_columns
 from cowidev.utils.web.download import read_csv_from_url
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Australia(CountryVaxBase):
@@ -19,6 +20,12 @@ class Australia(CountryVaxBase):
         "dose_1": "people_vaccinated",
         "dose_2": "people_fully_vaccinated",
         "dose_3": "total_boosters",
+    }
+    vaccine_timeline = {
+        "Pfizer/BioNTech": "2021-01-01",
+        "Moderna": "2021-03-06",
+        "Oxford/AstraZeneca": "2021-03-06",
+        "Novavax": "2022-02-17",
     }
 
     def read(self) -> pd.DataFrame:
@@ -40,17 +47,12 @@ class Australia(CountryVaxBase):
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.columns_rename)
 
-    def pipe_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
-        def _enrich_vaccine(date: str) -> str:
-            if date >= "2021-03-07":
-                return "Moderna, Oxford/AstraZeneca, Pfizer/BioNTech"
-            return "Pfizer/BioNTech"
-
-        return df.assign(vaccine=df.date.astype(str).apply(_enrich_vaccine))
-
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.assign(date=df.date.apply(clean_date, fmt="%Y-%m-%d", minus_days=1))
         return df
+
+    def pipe_vaccine(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df.pipe(build_vaccine_timeline, self.vaccine_timeline)
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(location=self.location, source_url=self.source_url_ref)
@@ -59,8 +61,8 @@ class Australia(CountryVaxBase):
         return (
             df.pipe(self.pipe_total_vaccinations)
             .pipe(self.pipe_rename_columns)
-            .pipe(self.pipe_vaccine)
             .pipe(self.pipe_date)
+            .pipe(self.pipe_vaccine)
             .pipe(self.pipe_metadata)
             .pipe(self.make_monotonic)
             .sort_values("date")

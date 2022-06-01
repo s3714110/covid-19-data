@@ -1,15 +1,15 @@
 import io
 import os
-import requests
 import tempfile
 import zipfile
 
 import pandas as pd
+import requests
 
 from cowidev.utils import clean_date_series
 from cowidev.utils.utils import check_known_columns
-from cowidev.vax.utils.utils import build_vaccine_timeline, make_monotonic
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import build_vaccine_timeline, make_monotonic
 
 
 class Singapore(CountryVaxBase):
@@ -22,6 +22,7 @@ class Singapore(CountryVaxBase):
             "Moderna": "2021-03-15",
             "Sinovac": "2021-06-28",
             "Sinopharm/Beijing": "2021-12-03",
+            "Novavax": "2022-05-18",
         }
 
     def read(self) -> str:
