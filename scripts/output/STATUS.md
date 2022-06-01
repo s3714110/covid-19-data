@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`2/112` scripts failed, `11/112` were skipped. Latest update was `2022-06-01T07:05:51`.
+`1/112` scripts failed, `11/112` were skipped. Latest update was `2022-06-01T17:24:27`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,13 +18,6 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cowidev.vax.incremental.iran</td>
-      <td>❌</td>
-      <td>2022-06-01T07:05:51</td>
-      <td>2.60</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py", line 146, in main<br>    Iran().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py", line 132, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py", line 35, in read<br>    data, proceed = self._parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py", line 55, in _parse_data<br>    **self._parse_metrics(text),<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/iran.py", line 108, in _parse_metrics<br>    total_boosters = int(re.search(self.regex["total_boosters"], text).group(1))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
-    </tr>
     <tr>
       <td>cowidev.vax.incremental.costa_rica</td>
       <td>❌</td>
@@ -107,6 +100,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-06-01T07:00:08</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iran</td>
+      <td>✅</td>
+      <td>2022-06-01T17:24:27</td>
+      <td>2.82</td>
       <td></td>
     </tr>
     <tr>
