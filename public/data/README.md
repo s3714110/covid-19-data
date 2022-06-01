@@ -30,7 +30,7 @@ data](https://ourworldindata.org/coronavirus-testing#our-checklist-for-covid-19-
 [geographical and temporal
 coverage](https://ourworldindata.org/coronavirus-testing#which-countries-do-we-have-testing-data-for), and [detailed
 country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). The testing dataset
-is updated around twice a week. **As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset** ([read more](https://ourworldindata.org/covid-testing-data-archived)).
+is updated around twice a week. **As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset** ([read more](https://github.com/owid/covid-19-data/discussions/2667)).
 - **Vaccinations against COVID-19:** this data is collected by the _Our World in Data_ team from official reports.
 - **Other variables:** this data is collected from a variety of sources (United Nations, World Bank, Global Burden of Disease, Blavatnik School of Government, etc.). More information is available in [our codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv).
 
@@ -103,7 +103,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 | `reproduction_rate` | Real-time estimate of the effective reproduction rate (R) of COVID-19. See https://github.com/crondonm/TrackingR/tree/main/Estimates-Database |
 
 ### Tests & positivity
-As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset. You can read more at https://ourworldindata.org/covid-testing-data-archived.
+As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset. You can read more at https://github.com/owid/covid-19-data/discussions/2667.
 | Variable                          | Description                                                                                                                                                                                                                                                                                                          |
 |:----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_tests`                     | Total tests for COVID-19                                                                                                                                                                                                                                                                                             |

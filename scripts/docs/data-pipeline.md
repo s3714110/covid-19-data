@@ -13,7 +13,7 @@ The dataset pipeline is built from several pipelines, which are executed indepen
 a final step. The complexity of the pipelines varies. For instance, for vaccinations, testing and hospitalization
 we are responsible for collecting, processing and publishing the data but for cases/deaths we leave the collection step to [Johns
 Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html) and then transform and publish the data. Note
-that as of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset ([read more)](https://ourworldindata.org/covid-testing-data-archived)).
+that as of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset ([read more)](https://github.com/owid/covid-19-data/discussions/2667)).
 
 The table below lists all the constituent pipelines, along with their execution frequencies, and what are the pipelines'
 tasks.
@@ -21,7 +21,7 @@ tasks.
 | **Pipeline**              | **Frequency**                | **Tasks**                             |
 |---------------------------|------------------------------|------------------------------------------|
 | [Vaccinations](#vaccinations-pipeline)               | every weekday at 12:00 UTC           | {abbr}`Collection (Scraping primary sources (e.g. country governmental sites) and extracting relevant datapoints.)`, {abbr}`transformation (Transforming and cleaning the downloaded data into a human-readable format.)`, {abbr}`presentation (Presenting the cleaned data to the public (e.g. charts, dataset files, etc.).)` |
-| [Testing](#testing-pipeline)                   | {abbr}`3 times per week (We are ending updates on the 23rd June 2022. Read more: https://ourworldindata.org/covid-testing-data-archived.)`             | Collection, transformation, presentation |
+| [Testing](#testing-pipeline)                   | {abbr}`3 times per week (We are ending updates on the 23rd June 2022. Read more: https://github.com/owid/covid-19-data/discussions/2667)`             | Collection, transformation, presentation |
 | [Hospitalization & ICU](#hospitalization-icu-pipeline)     | daily at 06:00 and 18:00 UTC | Collection, transformation, presentation |
 | [Cases & Deaths (JHU)](#cases-deaths-jhu-pipeline)      | daily at 04:00, 10:00, 16:00 and 22:00 UTC     | Transformation, presentation             |
 | [Excess mortality](#excess-mortality-pipeline)          | weekly | Transformation, presentation             |
@@ -64,7 +64,7 @@ We scrape and process data for multiple countries, similarly to the vaccinations
 
 :::{warning}
 As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset. We will continue updates of
-all other metrics in our COVID-19 dataset. You can read more [here](https://ourworldindata.org/covid-testing-data-archived).
+all other metrics in our COVID-19 dataset. You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).
 :::
 
 ### Execution steps
@@ -174,4 +174,3 @@ The OxCGRT pipeline is under construction.
 :::{warning}
 The YouGov pipeline is under construction.
 :::
-
