@@ -169,8 +169,9 @@ class Canada(CountryVaxBase):
         return df.assign(location=self.location)
 
     def pipe_get_totals(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.fillna(0).sort_values("date")
         metrics = df.filter(like="change_").columns
-        df[metrics] = df.fillna(0)[metrics].cumsum()
+        df[metrics] = df[metrics].cumsum()
         df.columns = df.columns.str.replace("change_", "total_")
         return df[df.total_vaccinations > 0]
 
@@ -190,7 +191,6 @@ class Canada(CountryVaxBase):
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
     def pipe_make_monotonic(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = df.sort_values("date")
         num_filtered_dates = 0
         while True:
             try:
