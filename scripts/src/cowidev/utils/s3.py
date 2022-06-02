@@ -54,8 +54,8 @@ class S3:
         s3_path: Union[str, list],
         public: bool = False,
     ) -> Optional[str]:
-        """
-        Upload file to Walden.
+        """Upload file to Walden.
+
         Args:
             local_path (Union[str, list]): Local path to file. It can be a list of paths, should match `s3_file`'s
                                             length.

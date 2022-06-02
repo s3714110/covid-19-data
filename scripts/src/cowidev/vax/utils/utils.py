@@ -50,9 +50,13 @@ def make_monotonic(df: pd.DataFrame, max_removed_rows=10, new_version=False) -> 
 
 
 def build_vaccine_timeline(df: pd.DataFrame, vaccine_timeline: dict) -> pd.DataFrame:
-    """
+    """Add vaccines to the data based on admin. starting date.
+
     vaccine_timeline: dictionary of "vaccine" -> "start_date"
-    Example: {
+
+    Example: 
+    
+    {
         "Pfizer/BioNTech": "2021-02-24",
         "Sinovac": "2021-03-03",
         "Oxford/AstraZeneca": "2021-05-03",
