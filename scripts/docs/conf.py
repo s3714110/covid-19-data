@@ -49,9 +49,9 @@ release = "0.0.1.dev0"
 extensions = [
     "sphinx_click",
     "myst_parser",
+    "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
-    "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
     # "m2r2",
 ]

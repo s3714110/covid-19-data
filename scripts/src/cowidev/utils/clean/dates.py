@@ -91,18 +91,16 @@ def extract_clean_date(
 ):
     """Export clean date from raw text using RegEx.
 
-    Example:
+    ..  code-block:: python
 
-    ```python
-    >>> from cowidev.utils import extract_clean_date
-    >>> text = "Something irrelevant. This page was last updated on 25 May 2021 at 09:05hrs."
-    >>> date_str = extract_clean_date(
-        text=text,
-        regex=r"This page was last updated on (\d{1,2} May 202\d) at \d{1,2}:\d{1,2}hrs",
-        date_format="%d %B %Y",
-        minus_days=1,
-    )
-    ```
+        >>> from cowidev.utils import extract_clean_date
+        >>> text = "Something irrelevant. This page was last updated on 25 May 2021 at 09:05hrs."
+        >>> date_str = extract_clean_date(
+            text=text,
+            regex=r"This page was last updated on (\d{1,2} May 202\d) at \d{1,2}:\d{1,2}hrs",
+            date_format="%d %B %Y",
+            minus_days=1,
+        )
 
     Args:
         text (str): Raw original text.

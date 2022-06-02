@@ -304,12 +304,13 @@ def fillna_boosters_till_valid(df):
 
 
 def df_to_columnar_json(complete_dataset, output_path):
-    """
-    Writes a columnar JSON version of the complete dataset.
+    """Writes a columnar JSON version of the complete dataset.
+
     NA values are dropped from the output.
 
     In columnar JSON, the table headers are keys, and the values are lists
     of all cells for a column.
+
     Example:
         {
             "iso_code": ["AFG", "AFG", ... ],
