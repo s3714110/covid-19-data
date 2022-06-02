@@ -81,6 +81,7 @@ html_theme_options = {
 }
 
 # html_static_path = ["_static"]
+html_favicon = "_static/favicon.ico"
 html_logo = "_static/owid.png"
 # autodoc_default_options = {
 #     "members": True,
