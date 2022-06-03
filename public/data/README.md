@@ -79,16 +79,16 @@ The variables represent all of our main data related to confirmed cases, deaths,
 
 ### Hospital & ICU
 
-| Variable                             | Description                                                                                                    |
-|:-------------------------------------|:---------------------------------------------------------------------------------------------------------------|
-| `icu_patients`                       | Number of COVID-19 patients in intensive care units (ICUs) on a given day                                      |
-| `icu_patients_per_million`           | Number of COVID-19 patients in intensive care units (ICUs) on a given day per 1,000,000 people                 |
-| `hosp_patients`                      | Number of COVID-19 patients in hospital on a given day                                                         |
-| `hosp_patients_per_million`          | Number of COVID-19 patients in hospital on a given day per 1,000,000 people                                    |
-| `weekly_icu_admissions`              | Number of COVID-19 patients newly admitted to intensive care units (ICUs) in a given week                      |
-| `weekly_icu_admissions_per_million`  | Number of COVID-19 patients newly admitted to intensive care units (ICUs) in a given week per 1,000,000 people |
-| `weekly_hosp_admissions`             | Number of COVID-19 patients newly admitted to hospitals in a given week                                        |
-| `weekly_hosp_admissions_per_million` | Number of COVID-19 patients newly admitted to hospitals in a given week per 1,000,000 people                   |
+| Variable                             | Description                                                                                                                                               |
+|:-------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `icu_patients`                       | Number of COVID-19 patients in intensive care units (ICUs) on a given day                                                                                 |
+| `icu_patients_per_million`           | Number of COVID-19 patients in intensive care units (ICUs) on a given day per 1,000,000 people                                                            |
+| `hosp_patients`                      | Number of COVID-19 patients in hospital on a given day                                                                                                    |
+| `hosp_patients_per_million`          | Number of COVID-19 patients in hospital on a given day per 1,000,000 people                                                                               |
+| `weekly_icu_admissions`              | Number of COVID-19 patients newly admitted to intensive care units (ICUs) in a given week (reporting date and the preceeding 6 days)                      |
+| `weekly_icu_admissions_per_million`  | Number of COVID-19 patients newly admitted to intensive care units (ICUs) in a given week per 1,000,000 people (reporting date and the preceeding 6 days) |
+| `weekly_hosp_admissions`             | Number of COVID-19 patients newly admitted to hospitals in a given week (reporting date and the preceeding 6 days)                                        |
+| `weekly_hosp_admissions_per_million` | Number of COVID-19 patients newly admitted to hospitals in a given week per 1,000,000 people (reporting date and the preceeding 6 days)                   |
 
 ### Policy responses
 
