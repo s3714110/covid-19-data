@@ -13,7 +13,9 @@ class Serbia:
         self.location = "Serbia"
         self.source_url = "https://vakcinacija.gov.rs/"
         self.regex = {
-            "metrics": r"Број доза: ([\d\.]+)\s?– прва доза ([\d\.]+), друга доза ([\d\.]+), трећа доза ([\d\.]+)",
+            "metrics": (
+                r"Број доза: ([\d\.]+)\s?(?:–|-) прва доза ([\d\.]+), друга доза ([\d\.]+), трећа доза ([\d\.]+)"
+            ),
             "date": r"ажурирано .*",
         }
 

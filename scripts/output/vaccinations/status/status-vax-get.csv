@@ -98,19 +98,7 @@ cowidev.vax.incremental.poland,0.23,True,2022-06-03T07:02:14,,
 cowidev.vax.incremental.qatar,11.38,True,2022-06-03T07:02:25,,
 cowidev.vax.incremental.russia,2.92,True,2022-06-03T07:02:17,,
 cowidev.vax.incremental.saint_lucia,,,2022-06-03T07:02:15,,
-cowidev.vax.incremental.serbia,12.23,False,2022-06-03T07:03:04,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 86, in main
-    Serbia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 72, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 27, in read
-    ) = self._parse_metrics(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 41, in _parse_metrics
-    total_vaccinations = clean_count(match.group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.serbia,5.98,True,2022-06-03T18:47:33,,
 cowidev.vax.incremental.south_africa,7.51,True,2022-06-03T07:02:24,,
 cowidev.vax.incremental.spain,3.88,True,2022-06-03T07:02:28,,
 cowidev.vax.incremental.sri_lanka,,,2022-06-03T07:02:25,,
