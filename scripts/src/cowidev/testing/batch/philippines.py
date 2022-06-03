@@ -6,7 +6,6 @@ import requests
 from pdfminer.high_level import extract_text
 import pandas as pd
 
-
 from cowidev.utils import clean_date_series
 from cowidev.utils.clean.dates import localdatenow
 from cowidev.utils.gdrive import download_folder, download_file, list_files
