@@ -22,7 +22,7 @@ class TrinidadAndTobago(CountryTestBase):
         """Reads data from source."""
         data = request_json(self.source_url)
         df = pd.json_normalize(data, record_path=["features"]).dropna(subset=["attributes.unique_public_private_test"])
-        return df
+        return df.drop_duplicates(subset="attributes.unique_public_private_test")
 
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
         """Cleans date column"""

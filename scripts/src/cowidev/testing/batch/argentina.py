@@ -8,7 +8,7 @@ class Argentina(CountryTestBase):
     units: str = "tests performed"
     source_label: str = "Government of Argentina"
     source_url: str = "https://sisa.msal.gov.ar/datos/descargas/covid-19/files/Covid19Determinaciones.zip"
-    source_url_ref: str = "https://datos.gob.ar/dataset/salud-covid-19-determinaciones-registradas-republica-argentina/archivo/salud_0de942d4-d106-4c74-b6b2-3654b0c53a3a"
+    source_url_ref: str = "https://datos.gob.ar/dataset/salud-covid-19-determinaciones-registradas-republica-argentina"
     rename_columns: dict = {"fecha": "Date", "total": "Daily change in cumulative total", "positivos": "positive"}
 
     def read(self) -> pd.DataFrame:
