@@ -4,82 +4,40 @@ cowidev.vax.batch.australia,1.36,True,2022-06-06T07:00:11,,
 cowidev.vax.batch.austria,,,2022-06-06T07:00:09,,
 cowidev.vax.batch.belgium,1.71,True,2022-06-06T07:00:11,,
 cowidev.vax.batch.bolivia,1.91,True,2022-06-06T07:00:11,,
-cowidev.vax.batch.canada,6.98,False,2022-06-06T07:04:44,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 248, in main
-    Canada().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 236, in export
-    df = df.pipe(self.pipeline, df_man)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 211, in pipeline
-    df.pipe(self.pipe_get_totals)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 197, in pipe_make_monotonic
-    df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 119, in make_monotonic
-    return mkm(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 22 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-06-01']
-",1 chunks of lengths 22 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-06-01']
+cowidev.vax.batch.canada,4.58,True,2022-06-06T18:10:02,,
 cowidev.vax.batch.chile,0.6,True,2022-06-06T07:00:11,,
 cowidev.vax.batch.czechia,2.48,True,2022-06-06T07:00:14,,
 cowidev.vax.batch.denmark,3.35,True,2022-06-06T07:00:15,,
-cowidev.vax.batch.ecdc,17.11,False,2022-06-06T07:05:01,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 490, in main
-    ECDC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 480, in export
-    df = self.read().pipe(self.pipe_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 111, in read
-    check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'DoseAdditional2'}
-",Unknown column(s) found: {'DoseAdditional2'}
+cowidev.vax.batch.ecdc,23.65,True,2022-06-06T18:41:12,,
 cowidev.vax.batch.ecuador,1.32,True,2022-06-06T07:00:15,,
 cowidev.vax.batch.estonia,0.94,True,2022-06-06T07:00:15,,
 cowidev.vax.batch.france,0.41,True,2022-06-06T07:00:15,,
 cowidev.vax.batch.germany,1.01,True,2022-06-06T07:00:16,,
 cowidev.vax.batch.greece,2.29,True,2022-06-06T07:00:17,,
 cowidev.vax.batch.hong_kong,3.34,True,2022-06-06T07:00:18,,
-cowidev.vax.batch.indonesia,262.62,False,2022-06-06T07:09:24,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/models.py"", line 910, in json
+cowidev.vax.batch.indonesia,262.14,False,2022-06-06T18:52:30,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/models.py"", line 910, in json
     return complexjson.loads(self.text, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/json/__init__.py"", line 346, in loads
+  File ""/usr/lib/python3.10/json/__init__.py"", line 346, in loads
     return _default_decoder.decode(s)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/json/decoder.py"", line 337, in decode
+  File ""/usr/lib/python3.10/json/decoder.py"", line 337, in decode
     obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/json/decoder.py"", line 355, in raw_decode
+  File ""/usr/lib/python3.10/json/decoder.py"", line 355, in raw_decode
     raise JSONDecodeError(""Expecting value"", s, err.value) from None
 json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 133, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 133, in main
     Indonesia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 128, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 128, in export
     df = self.read().pipe(self.pipeline, df_current)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 18, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/indonesia.py"", line 18, in read
     data = requests.get(self.source_url).json()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/models.py"", line 917, in json
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/models.py"", line 917, in json
     raise RequestsJSONDecodeError(e.msg, e.doc, e.pos)
 requests.exceptions.JSONDecodeError: [Errno Expecting value] <html>
 <head><title>502 Bad Gateway</title></head>
@@ -124,19 +82,7 @@ cowidev.vax.batch.switzerland,22.46,True,2022-06-06T07:01:30,,
 cowidev.vax.batch.trinidad_and_tobago,0.98,True,2022-06-06T07:01:14,,
 cowidev.vax.batch.ukraine,,,2022-06-06T07:01:14,,
 cowidev.vax.batch.united_kingdom,9.23,True,2022-06-06T07:01:23,,
-cowidev.vax.batch.united_states,20.76,False,2022-06-06T07:09:44,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 172, in main
-    UnitedStates().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 157, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 26, in read
-    check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Second_Booster_50Plus_Daily', 'Second_Booster_50Plus_Vax_Pct', 'Second_Booster_50Plus_7_Day_Rolling_Average', 'Second_Booster_50Plus_Cumulative'}
-","Unknown column(s) found: {'Second_Booster_50Plus_Daily', 'Second_Booster_50Plus_Vax_Pct', 'Second_Booster_50Plus_7_Day_Rolling_Average', 'Second_Booster_50Plus_Cumulative'}"
+cowidev.vax.batch.united_states,7.02,True,2022-06-06T18:54:58,,
 cowidev.vax.batch.uruguay,0.59,True,2022-06-06T07:01:24,,
 cowidev.vax.batch.zimbabwe,0.24,True,2022-06-06T07:01:24,,
 cowidev.vax.incremental.africacdc,,,2022-06-06T07:01:24,,
@@ -148,21 +94,7 @@ cowidev.vax.incremental.bangladesh,13.88,True,2022-06-06T07:01:42,,
 cowidev.vax.incremental.barbados,1.11,True,2022-06-06T07:01:31,,
 cowidev.vax.incremental.brazil,0.18,True,2022-06-06T07:01:31,,
 cowidev.vax.incremental.bulgaria,1.37,True,2022-06-06T07:01:33,,
-cowidev.vax.incremental.china,65.42,False,2022-06-06T07:10:50,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 161, in export
-    df = self.read(df_last.date.max())
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 43, in read
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, ""zxxx_list"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,22.89,True,2022-06-06T18:44:10,,
 cowidev.vax.incremental.costa_rica,,,2022-06-06T07:01:32,,
 cowidev.vax.incremental.croatia,0.17,True,2022-06-06T07:01:33,,
 cowidev.vax.incremental.cuba,1.78,True,2022-06-06T07:01:34,,
@@ -210,19 +142,7 @@ cowidev.vax.incremental.south_africa,6.17,True,2022-06-06T07:02:27,,
 cowidev.vax.incremental.spain,2.8,True,2022-06-06T07:02:28,,
 cowidev.vax.incremental.sri_lanka,,,2022-06-06T07:02:27,,
 cowidev.vax.incremental.suriname,13.93,True,2022-06-06T07:02:41,,
-cowidev.vax.incremental.taiwan,11.16,False,2022-06-06T07:11:01,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 157, in main
-    Taiwan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 143, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 31, in read
-    df = self._parse_table(url_pdf)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 68, in _parse_table
-    raise ValueError(f""There are some unknown columns: {cols}"")
-ValueError: There are some unknown columns: Index(['廠牌', '劑次', '6/4~6/5接種人次', '累計至 6/5接種人次'], dtype='object')
-","There are some unknown columns: Index(['廠牌', '劑次', '6/4~6/5接種人次', '累計至 6/5接種人次'], dtype='object')"
+cowidev.vax.incremental.taiwan,5.67,True,2022-06-06T19:15:46,,
 cowidev.vax.incremental.thailand,1.37,True,2022-06-06T07:02:42,,
 cowidev.vax.incremental.turkey,0.61,True,2022-06-06T07:02:41,,
 cowidev.vax.incremental.united_arab_emirates,15.65,True,2022-06-06T07:02:57,,
