@@ -51,7 +51,7 @@ class Canada(CountryVaxBase):
         "Unknown": None,
     }
     max_filtered_dates: int = 3
-    max_removed_rows: int = 10
+    max_removed_rows: int = 22
 
     def read(self) -> pd.DataFrame:
         data = request_json(self.source_url)
