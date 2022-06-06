@@ -47,6 +47,10 @@ class UnitedStates(CountryVaxBase):
                 "Series_Complete_Pop_Pct",
                 "Administered_Dose1_Pop_Pct",
                 "Additional_Doses_Vax_Pct",
+                "Second_Booster_50Plus_Daily",
+                "Second_Booster_50Plus_Vax_Pct",
+                "Second_Booster_50Plus_7_Day_Rolling_Average",
+                "Second_Booster_50Plus_Cumulative",
             ],
         )
         return df[
@@ -58,6 +62,7 @@ class UnitedStates(CountryVaxBase):
                 "date_type",
                 "Series_Complete_Cumulative",
                 "Booster_Cumulative",
+                "Second_Booster_50Plus_Cumulative",
             ]
         ]
 
@@ -76,11 +81,14 @@ class UnitedStates(CountryVaxBase):
                     "Admin_Dose_1_Cumulative": "people_vaccinated",
                     "Series_Complete_Cumulative": "people_fully_vaccinated",
                     "Booster_Cumulative": "total_boosters",
+                    "Second_Booster_50Plus_Cumulative": "total_boosters_2",
                 }
             )
             .sort_values("date")
         )
-        return df[df.total_vaccinations > 0].drop_duplicates(subset=["date"], keep=False)
+        df = df[df.total_vaccinations > 0].drop_duplicates(subset=["date"], keep=False)
+        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2)
+        return df
 
     def pipe_add_source(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(source_url=self.source_url_ref)
