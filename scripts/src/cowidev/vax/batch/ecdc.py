@@ -92,6 +92,7 @@ COLUMNS = {
     "Vaccine",
     "YearWeekISO",
     "DoseAdditional1",
+    "DoseAdditional2",
     "NumberDosesExported",
 }
 
@@ -120,6 +121,7 @@ class ECDC(CountryVaxBase):
                 "FirstDoseRefused",
                 "SecondDose",
                 "DoseAdditional1",
+                "DoseAdditional2",
                 "UnknownDose",
                 "Region",
                 "TargetGroup",
@@ -150,10 +152,13 @@ class ECDC(CountryVaxBase):
     def pipe_base(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.pipe(self.pipe_initial_check)
         df = df.assign(
-            total_vaccinations=df[["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1"]].sum(axis=1),
+            total_vaccinations=df[
+                ["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1", "DoseAdditional2"]
+            ].sum(axis=1),
             people_vaccinated=df.FirstDose,
             people_fully_vaccinated=df.SecondDose,
             people_with_booster=df.DoseAdditional1,
+            total_boosters=df.DoseAdditional1 + df.DoseAdditional2,
             date=df.YearWeekISO.apply(self._weekday_to_date),
             location=df.ReportingCountry.replace(self.country_mapping),
         )
@@ -193,6 +198,7 @@ class ECDC(CountryVaxBase):
                     "people_vaccinated",
                     "people_fully_vaccinated",
                     "people_with_booster",
+                    "total_boosters",
                     "UnknownDose",
                 ]
             ]
@@ -210,6 +216,7 @@ class ECDC(CountryVaxBase):
             people_vaccinated=df.groupby(cols_group)["people_vaccinated"].cumsum(),
             people_fully_vaccinated=df.groupby(cols_group)["people_fully_vaccinated"].cumsum(),
             people_with_booster=df.groupby(cols_group)["people_with_booster"].cumsum(),
+            total_boosters=df.groupby(cols_group)["total_boosters"].cumsum(),
             UnknownDose=df.groupby(cols_group)["UnknownDose"].cumsum(),
         )
 
@@ -223,6 +230,7 @@ class ECDC(CountryVaxBase):
             "people_vaccinated",
             "people_fully_vaccinated",
             "people_with_booster",
+            "total_boosters",
             "UnknownDose",
         ]
         if group_field_renamed is not None:
