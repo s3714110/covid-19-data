@@ -16,10 +16,11 @@ class Philippines(CountryVaxBase):
         "https://news.abs-cbn.com/spotlight/multimedia/infographic/03/23/21/philippines-covid-19-vaccine-tracker"
     )
     metric_entities: dict = {
-        "total_vaccinations": "4b9e949e-2990-4349-aa85-5aff8501068a",
+        # "total_vaccinations": "4b9e949e-2990-4349-aa85-5aff8501068a",
         # "people_vaccinated": "25d75a0a-cb56-4824-aed4-4410f395577a",
-        "people_fully_vaccinated": "1d6e2083-6212-429f-8599-109454eaef84a586833a-32b3-43c9-ac61-4d3703c816e8",
-        "total_boosters": "2f9ba834-59ea-4898-b916-0da3c7394d38fe0b539e-b42c-4f0f-a390-e36c62750b86",
+        "people_fully_vaccinated": "4b9e949e-2990-4349-aa85-5aff8501068a",
+        "total_boosters_1": "2c3bf26f-5d71-4793-b6de-4f6b0f1735626ba8b43e-d7c0-4f38-91ff-61d7d8770432",
+        "total_boosters_2": "1d6e2083-6212-429f-8599-109454eaef84a586833a-32b3-43c9-ac61-4d3703c816e8",
     }
     date_entity: str = "01ff1d02-e027-4eee-9de1-5e19f7fdd5e8"
 
@@ -30,7 +31,10 @@ class Philippines(CountryVaxBase):
         data = self._parse_data(json_data)
         return pd.Series(data)
 
-    def _print_entitiy_ids(self, json_data):
+    def _print_entitiy_ids(self):
+        # For debugging whenever IDs change
+        soup = get_soup(self.source_url)
+        json_data = self._get_json_data(soup)
         entities = json_data["elements"]["content"]["content"]["entities"]
         for k, v in entities.items():
             vv = v["props"]
@@ -91,10 +95,18 @@ class Philippines(CountryVaxBase):
             self.source_url_ref,
         )
 
+    def pipe_boosters(self, ds: pd.Series) -> pd.Series:
+        """Pipes source url"""
+        return enrich_data(
+            ds,
+            "total_boosters",
+            ds.loc["total_boosters_1"] + ds.loc["total_boosters_2"],
+        )
+
     def pipeline(self, ds: pd.Series) -> pd.Series:
         """Pipeline for data"""
-        df = ds.pipe(self.pipe_location).pipe(self.pipe_vaccine).pipe(self.pipe_source)
-        df = add_latest_who_values(df, "Philippines", ["people_vaccinated"])
+        df = ds.pipe(self.pipe_location).pipe(self.pipe_vaccine).pipe(self.pipe_source).pipe(self.pipe_boosters)
+        df = add_latest_who_values(df, "Philippines", ["total_vaccinations", "people_vaccinated"])
         return df
 
     def export(self):
