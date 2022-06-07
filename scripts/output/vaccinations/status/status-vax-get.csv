@@ -94,21 +94,7 @@ cowidev.vax.incremental.bangladesh,14.57,True,2022-06-07T07:01:58,,
 cowidev.vax.incremental.barbados,1.16,True,2022-06-07T07:01:47,,
 cowidev.vax.incremental.brazil,0.03,True,2022-06-07T07:01:47,,
 cowidev.vax.incremental.bulgaria,0.71,True,2022-06-07T07:01:47,,
-cowidev.vax.incremental.china,65.68,False,2022-06-07T07:10:04,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 161, in export
-    df = self.read(df_last.date.max())
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 43, in read
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, ""zxxx_list"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,35.07,True,2022-06-07T17:20:11,,
 cowidev.vax.incremental.costa_rica,,,2022-06-07T07:01:48,,
 cowidev.vax.incremental.croatia,0.16,True,2022-06-07T07:01:49,,
 cowidev.vax.incremental.cuba,2.01,True,2022-06-07T07:01:51,,
@@ -146,21 +132,7 @@ cowidev.vax.incremental.north_macedonia,,,2022-06-07T07:02:19,,
 cowidev.vax.incremental.northern_cyprus,0.8,True,2022-06-07T07:02:20,,
 cowidev.vax.incremental.paho,51.2,True,2022-06-07T07:03:11,,
 cowidev.vax.incremental.pakistan,1.34,True,2022-06-07T07:02:25,,
-cowidev.vax.incremental.philippines,0.19,False,2022-06-07T07:10:04,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 107, in main
-    Philippines().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 102, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 30, in read
-    data = self._parse_data(json_data)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 42, in _parse_data
-    data = {**self._parse_metrics(json_data), ""date"": self._parse_date(json_data)}
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/philippines.py"", line 58, in _parse_metrics
-    value = json_data[""elements""][""content""][""content""][""entities""][entity][""props""][""content""][""blocks""][0][
-KeyError: '2f9ba834-59ea-4898-b916-0da3c7394d38fe0b539e-b42c-4f0f-a390-e36c62750b86'
-",'2f9ba834-59ea-4898-b916-0da3c7394d38fe0b539e-b42c-4f0f-a390-e36c62750b86'
+cowidev.vax.incremental.philippines,1.08,True,2022-06-07T17:40:51,,
 cowidev.vax.incremental.poland,0.12,True,2022-06-07T07:02:25,,
 cowidev.vax.incremental.qatar,8.53,True,2022-06-07T07:02:34,,
 cowidev.vax.incremental.russia,10.34,True,2022-06-07T07:02:43,,
