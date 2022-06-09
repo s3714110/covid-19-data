@@ -27,6 +27,7 @@ pipeline:
         - Myanmar # Moved to WHO
         - Costa Rica # moved to WHO
         - Philippines  # moved to WHO
+        - Japan # data issue (2022-06-09)
     process:
       skip_complete:
         - Pitcairn
