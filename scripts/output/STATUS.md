@@ -2158,7 +2158,7 @@ This file shows the latest status of the data pipeline.
 ## Testing
 ### Get (scraping)
 
-`8/130` scripts failed, `9/130` were skipped. Latest update was `2022-06-06T09:19:40`.
+`13/130` scripts failed, `9/130` were skipped. Latest update was `2022-06-09T10:22:33`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -2174,911 +2174,911 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.testing.incremental.syria</td>
       <td>❌</td>
-      <td>2022-06-06T08:50:09</td>
-      <td>1.26</td>
+      <td>2022-06-09T09:10:05</td>
+      <td>1.33</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py", line 104, in main<br>    Syria().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py", line 91, in export<br>    data = self.read()[0]<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py", line 29, in read<br>    data = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py", line 36, in _parse_data<br>    elem = self._get_relevant_element(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py", line 54, in _get_relevant_element<br>    elem = soup.find_all("h4", "title")[0].find("a")<br>IndexError: list index out of range<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.nicaragua</td>
       <td>❌</td>
-      <td>2022-06-06T08:50:08</td>
-      <td>51.19</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>TimeoutError: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 398, in _make_request<br>    conn.request(method, url, **httplib_request_kw)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 239, in request<br>    super(HTTPConnection, self).request(method, url, body=body, headers=headers)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1282, in request<br>    self._send_request(method, url, body, headers, encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1328, in _send_request<br>    self.endheaders(body, encode_chunked=encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1277, in endheaders<br>    self._send_output(message_body, encode_chunked=encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1037, in _send_output<br>    self.send(msg)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 975, in send<br>    self.connect()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in connect<br>    conn = self._new_conn()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x125d2b9d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 785, in urlopen<br>    retries = retries.increment(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x125d2b9d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 94, in main<br>    Nicaragua().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 89, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 29, in read<br>    soup = get_soup(self.source_url_ref)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x125d2b9d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))<br></pre></details></td>
+      <td>2022-06-09T09:10:04</td>
+      <td>40.03</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>TimeoutError: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 398, in _make_request<br>    conn.request(method, url, **httplib_request_kw)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 239, in request<br>    super(HTTPConnection, self).request(method, url, body=body, headers=headers)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1282, in request<br>    self._send_request(method, url, body, headers, encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1328, in _send_request<br>    self.endheaders(body, encode_chunked=encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1277, in endheaders<br>    self._send_output(message_body, encode_chunked=encode_chunked)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 1037, in _send_output<br>    self.send(msg)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py", line 975, in send<br>    self.connect()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 205, in connect<br>    conn = self._new_conn()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x14618c6d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 785, in urlopen<br>    retries = retries.increment(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x14618c6d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 94, in main<br>    Nicaragua().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 89, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py", line 29, in read<br>    soup = get_soup(self.source_url_ref)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x14618c6d0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.russia</td>
+      <td>❌</td>
+      <td>2022-06-09T09:10:04</td>
+      <td>0.14</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>ConnectionRefusedError: [Errno 61] Connection refused<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1040, in _validate_conn<br>    conn.connect()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 358, in connect<br>    self.sock = conn = self._new_conn()<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py", line 186, in _new_conn<br>    raise NewConnectionError(<br>urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x14618c400>: Failed to establish a new connection: [Errno 61] Connection refused<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 785, in urlopen<br>    retries = retries.increment(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14618c400>: Failed to establish a new connection: [Errno 61] Connection refused'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/russia.py", line 104, in main<br>    Russia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/russia.py", line 91, in export<br>    data = self.read()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/russia.py", line 30, in read<br>    soup = get_soup(url)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py", line 519, in send<br>    raise ConnectionError(e, request=request)<br>requests.exceptions.ConnectionError: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x14618c400>: Failed to establish a new connection: [Errno 61] Connection refused'))<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.mongolia</td>
+      <td>❌</td>
+      <td>2022-06-09T09:09:24</td>
+      <td>2.60</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/mongolia.py", line 31, in main<br>    Mongolia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/mongolia.py", line 19, in export<br>    increment(<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 50, in increment<br>    _check_fields(df_current, country, source_url, source_label, units, date, count, daily_change)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/utils/incremental.py", line 111, in _check_fields<br>    raise ValueError(f"`cumulative_total` can't be lower than currently highers 'Cumulative total' value.")<br>ValueError: `cumulative_total` can't be lower than currently highers 'Cumulative total' value.<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.moldova</td>
       <td>❌</td>
-      <td>2022-06-06T08:49:17</td>
-      <td>1.02</td>
+      <td>2022-06-09T09:09:21</td>
+      <td>3.06</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 100, in main<br>    Moldova().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 86, in export<br>    data = self.read()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 27, in read<br>    data = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 33, in _parse_data<br>    url = self._get_relevant_element(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py", line 55, in _get_relevant_element<br>    if not link:<br>UnboundLocalError: local variable 'link' referenced before assignment<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.jordan</td>
-      <td>❌</td>
-      <td>2022-06-06T08:49:16</td>
-      <td>0.29</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 25, in read<br>    count = self._request()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 110, in _request<br>    response = json.loads(<br>KeyError: 'results'<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 147, in main<br>    Jordan().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 141, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 28, in read<br>    raise KeyError("No value found. Please modify the payload and headers.")<br>KeyError: 'No value found. Please modify the payload and headers.'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.haiti</td>
       <td>❌</td>
-      <td>2022-06-06T08:49:15</td>
-      <td>3.12</td>
+      <td>2022-06-09T09:08:30</td>
+      <td>1.65</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py", line 86, in main<br>    Haiti().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py", line 80, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py", line 29, in read<br>    df = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py", line 37, in _parse_data<br>    ).parent.findNext("a")["href"]<br>AttributeError: 'NoneType' object has no attribute 'parent'<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.jordan</td>
+      <td>❌</td>
+      <td>2022-06-09T09:08:30</td>
+      <td>0.39</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 25, in read<br>    count = self._request()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 110, in _request<br>    response = json.loads(<br>KeyError: 'results'<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 147, in main<br>    Jordan().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 141, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py", line 28, in read<br>    raise KeyError("No value found. Please modify the payload and headers.")<br>KeyError: 'No value found. Please modify the payload and headers.'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.georgia</td>
       <td>❌</td>
-      <td>2022-06-06T08:49:12</td>
-      <td>3.42</td>
+      <td>2022-06-09T09:08:28</td>
+      <td>3.95</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc<br>    return self._engine.get_loc(casted_key)<br>  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>KeyError: 'date'<br><br>The above exception was the direct cause of the following exception:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 115, in main<br>    Georgia().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/georgia.py", line 107, in export<br>    date=data["date"],<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 942, in __getitem__<br>    return self._get_value(key)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 1051, in _get_value<br>    loc = self.index.get_loc(label)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc<br>    raise KeyError(key) from err<br>KeyError: 'date'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.emro</td>
       <td>❌</td>
-      <td>2022-06-06T08:49:09</td>
+      <td>2022-06-09T09:08:24</td>
       <td>9.47</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 155, in main<br>    EMRO().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 150, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 54, in read<br>    df = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 66, in _parse_data<br>    df = self._parse_metrics(df_list)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py", line 92, in _parse_metrics<br>    df = [table for table in df_list if self.columns_to_check["tests"] in table.columns][0]<br>IndexError: list index out of range<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.belarus</td>
       <td>❌</td>
-      <td>2022-06-06T08:48:59</td>
-      <td>0.85</td>
+      <td>2022-06-09T09:08:14</td>
+      <td>0.66</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/belarus.py", line 70, in main<br>    Belarus().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/belarus.py", line 65, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/belarus.py", line 24, in read<br>    df = self._parse_data(soup)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/belarus.py", line 30, in _parse_data<br>    elem = soup.find(text=self.regex["element"]).parent<br>AttributeError: 'NoneType' object has no attribute 'parent'<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.spain</td>
+      <td>❌</td>
+      <td>2022-06-09T09:08:14</td>
+      <td>0.47</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py", line 51, in main<br>    Spain().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py", line 46, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py", line 19, in read<br>    df = pd.read_csv(self.test_url, encoding="cp1252", delimiter=";")<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__<br>    self._open_handles(src, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles<br>    self.handles = get_handle(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 609, in get_handle<br>    ioargs = _get_filepath_or_buffer(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 312, in _get_filepath_or_buffer<br>    with urlopen(req_info) as req:<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 404: Not found<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.north_korea</td>
+      <td>❌</td>
+      <td>2022-06-09T09:08:13</td>
+      <td>54.89</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3361, in get_loc<br>    return self._engine.get_loc(casted_key)<br>  File "pandas/_libs/index.pyx", line 76, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/index.pyx", line 108, in pandas._libs.index.IndexEngine.get_loc<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>  File "pandas/_libs/hashtable_class_helper.pxi", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item<br>KeyError: 'Daily change in cumulative total'<br><br>The above exception was the direct cause of the following exception:<br><br>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py", line 49, in main<br>    NorthKorea().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py", line 44, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py", line 40, in pipeline<br>    df = df.pipe(self.pipe_rename_columns).pipe(self.pipe_filter).pipe(self.pipe_metadata)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/north_korea.py", line 34, in pipe_filter<br>    df["Daily change in cumulative total"] = pd.to_numeric(df["Daily change in cumulative total"])<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 3458, in __getitem__<br>    indexer = self.columns.get_loc(key)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py", line 3363, in get_loc<br>    raise KeyError(key) from err<br>KeyError: 'Daily change in cumulative total'<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hong_kong</td>
+      <td>❌</td>
+      <td>2022-06-09T09:07:18</td>
+      <td>0.09</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/hong_kong.py", line 84, in main<br>    HongKong().export()<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/hong_kong.py", line 79, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/hong_kong.py", line 24, in read<br>    return pd.read_csv(self.source_url)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 51, in __init__<br>    self._open_handles(src, kwds)<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 222, in _open_handles<br>    self.handles = get_handle(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 609, in get_handle<br>    ioargs = _get_filepath_or_buffer(<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 312, in _get_filepath_or_buffer<br>    with urlopen(req_info) as req:<br>  File "/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 403: Forbidden<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.ukraine</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:48:22</td>
+      <td>2022-06-09T09:06:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.vanuatu</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:48:22</td>
+      <td>2022-06-09T09:06:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.gibraltar</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:48:10</td>
+      <td>2022-06-09T09:06:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.benin</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:48:03</td>
+      <td>2022-06-09T09:06:21</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.philippines</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:47:48</td>
+      <td>2022-06-09T09:06:08</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.indonesia</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:47:44</td>
+      <td>2022-06-09T09:06:05</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.kazakhstan</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:47:44</td>
+      <td>2022-06-09T09:06:05</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.guatemala</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:47:43</td>
+      <td>2022-06-09T09:06:04</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.andorra</td>
       <td>⚠️</td>
-      <td>2022-06-06T08:47:41</td>
+      <td>2022-06-09T09:06:01</td>
       <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.trinidad_and_tobago</td>
-      <td>✅</td>
-      <td>2022-06-06T09:19:40</td>
-      <td>0.23</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2022-06-06T09:05:30</td>
-      <td>0.02</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.costa_rica</td>
       <td>✅</td>
-      <td>2022-06-06T08:55:42</td>
-      <td>2.73</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.spain</td>
-      <td>✅</td>
-      <td>2022-06-06T08:52:30</td>
-      <td>1.18</td>
+      <td>2022-06-09T10:22:33</td>
+      <td>0.02</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.kosovo</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:36</td>
-      <td>23.09</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.vietnam</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:26</td>
-      <td>4.54</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.nepal</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:25</td>
-      <td>9.49</td>
+      <td>2022-06-09T09:09:18</td>
+      <td>48.03</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.timor</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:25</td>
-      <td>3.78</td>
+      <td>2022-06-09T09:06:55</td>
+      <td>14.28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.vietnam</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:44</td>
+      <td>3.43</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.tunisia</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:25</td>
-      <td>3.24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:22</td>
-      <td>2.32</td>
+      <td>2022-06-09T09:06:44</td>
+      <td>3.27</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.togo</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:22</td>
-      <td>1.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.suriname</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:22</td>
-      <td>1.04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.new_zealand</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:21</td>
-      <td>5.32</td>
+      <td>2022-06-09T09:06:43</td>
+      <td>2.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.papua_new_guinea</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:21</td>
-      <td>3.96</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.saint_lucia</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:21</td>
-      <td>1.62</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.singapore</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:21</td>
-      <td>0.92</td>
+      <td>2022-06-09T09:06:41</td>
+      <td>5.64</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.sweden</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:21</td>
-      <td>0.51</td>
+      <td>2022-06-09T09:06:41</td>
+      <td>0.35</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.palau</td>
+      <td>cowidev.testing.incremental.nepal</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:20</td>
-      <td>2.72</td>
+      <td>2022-06-09T09:06:40</td>
+      <td>8.69</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_vincent_and_the_grenadines</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:40</td>
+      <td>3.00</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.singapore</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:40</td>
+      <td>2.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.suriname</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:40</td>
+      <td>1.97</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_lucia</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:39</td>
+      <td>1.34</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.paraguay</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:20</td>
-      <td>2.32</td>
+      <td>2022-06-09T09:06:38</td>
+      <td>2.39</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.russia</td>
+      <td>cowidev.testing.incremental.new_zealand</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:19</td>
-      <td>0.99</td>
+      <td>2022-06-09T09:06:37</td>
+      <td>5.05</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.saint_kitts_nevis</td>
+      <td>cowidev.testing.incremental.palau</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:19</td>
-      <td>0.48</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.lebanon</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:18</td>
-      <td>5.29</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.myanmar</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:18</td>
-      <td>3.34</td>
+      <td>2022-06-09T09:06:37</td>
+      <td>2.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.pakistan</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:18</td>
-      <td>2.09</td>
+      <td>2022-06-09T09:06:37</td>
+      <td>2.40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.saint_kitts_nevis</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:37</td>
+      <td>0.49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.myanmar</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:35</td>
+      <td>3.58</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.north_macedonia</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:18</td>
-      <td>1.31</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.libya</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:16</td>
-      <td>2.73</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.mongolia</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:16</td>
-      <td>1.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.fiji</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:15</td>
-      <td>6.41</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.laos</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:15</td>
-      <td>2.76</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.maldives</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:15</td>
-      <td>1.45</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.morocco</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:15</td>
-      <td>0.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.north_korea</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:14</td>
-      <td>28.34</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_states</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:14</td>
-      <td>18.59</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.united_states_virgin_islands</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:14</td>
-      <td>18.18</td>
+      <td>2022-06-09T09:06:35</td>
+      <td>1.21</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.cape_verde</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:13</td>
-      <td>10.21</td>
+      <td>2022-06-09T09:06:34</td>
+      <td>11.94</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.iran</td>
+      <td>cowidev.testing.incremental.libya</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:13</td>
-      <td>1.95</td>
+      <td>2022-06-09T09:06:33</td>
+      <td>3.08</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.greece</td>
+      <td>cowidev.testing.incremental.laos</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:11</td>
-      <td>0.66</td>
+      <td>2022-06-09T09:06:32</td>
+      <td>2.74</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.croatia</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:10</td>
-      <td>6.62</td>
+      <td>2022-06-09T09:06:31</td>
+      <td>8.62</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.equatorial_guinea</td>
+      <td>cowidev.testing.incremental.fiji</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:10</td>
-      <td>2.90</td>
+      <td>2022-06-09T09:06:31</td>
+      <td>5.84</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.puerto_rico</td>
+      <td>cowidev.testing.incremental.maldives</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:09</td>
-      <td>20.88</td>
+      <td>2022-06-09T09:06:31</td>
+      <td>0.87</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.el_salvador</td>
+      <td>cowidev.testing.incremental.morocco</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:08</td>
-      <td>0.85</td>
+      <td>2022-06-09T09:06:31</td>
+      <td>0.33</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.faeroe_islands</td>
+      <td>cowidev.testing.incremental.lebanon</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:08</td>
-      <td>0.51</td>
+      <td>2022-06-09T09:06:30</td>
+      <td>0.58</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.incremental.bahamas</td>
+      <td>cowidev.testing.incremental.iran</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:07</td>
-      <td>8.44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.belize</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:07</td>
-      <td>4.46</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.cambodia</td>
-      <td>✅</td>
-      <td>2022-06-06T08:48:07</td>
-      <td>3.78</td>
+      <td>2022-06-09T09:06:29</td>
+      <td>1.91</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.marshall_islands</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:04</td>
-      <td>17.92</td>
+      <td>2022-06-09T09:06:28</td>
+      <td>22.43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.bahamas</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:27</td>
+      <td>9.55</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.greece</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:27</td>
+      <td>0.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.equatorial_guinea</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:26</td>
+      <td>2.30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.cambodia</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:25</td>
+      <td>3.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.faeroe_islands</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:25</td>
+      <td>0.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_states_virgin_islands</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:24</td>
+      <td>8.97</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.belize</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:24</td>
+      <td>4.18</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.antigua_barbuda</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:03</td>
-      <td>5.12</td>
+      <td>2022-06-09T09:06:23</td>
+      <td>6.09</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.incremental.el_salvador</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:23</td>
+      <td>0.77</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_states</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:22</td>
+      <td>7.99</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.barbados</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:03</td>
-      <td>1.31</td>
+      <td>2022-06-09T09:06:22</td>
+      <td>2.46</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.bulgaria</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:03</td>
-      <td>0.56</td>
+      <td>2022-06-09T09:06:22</td>
+      <td>0.81</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.turkey</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:01</td>
-      <td>8.41</td>
+      <td>2022-06-09T09:06:21</td>
+      <td>8.33</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.bangladesh</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:01</td>
-      <td>1.11</td>
+      <td>2022-06-09T09:06:19</td>
+      <td>1.19</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.bahrain</td>
       <td>✅</td>
-      <td>2022-06-06T08:48:00</td>
-      <td>0.69</td>
+      <td>2022-06-09T09:06:19</td>
+      <td>1.01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.puerto_rico</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:18</td>
+      <td>9.77</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.albania</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:59</td>
-      <td>2.00</td>
+      <td>2022-06-09T09:06:18</td>
+      <td>1.78</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.incremental.azerbaijan</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:59</td>
-      <td>0.92</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.northern_mariana_islands</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:58</td>
-      <td>10.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.incremental.africacdc</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:58</td>
-      <td>0.56</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.guam</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:57</td>
-      <td>13.39</td>
+      <td>2022-06-09T09:06:18</td>
+      <td>0.89</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.thailand</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:57</td>
-      <td>4.54</td>
+      <td>2022-06-09T09:06:17</td>
+      <td>3.96</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.zambia</td>
+      <td>cowidev.testing.incremental.africacdc</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:57</td>
-      <td>0.49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.uruguay</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:57</td>
-      <td>0.29</td>
+      <td>2022-06-09T09:06:17</td>
+      <td>0.66</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.united_arab_emirates</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:56</td>
-      <td>2.60</td>
+      <td>2022-06-09T09:06:16</td>
+      <td>2.26</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.united_kingdom</td>
+      <td>cowidev.testing.batch.zambia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:55</td>
-      <td>0.79</td>
+      <td>2022-06-09T09:06:16</td>
+      <td>0.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.taiwan</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:54</td>
-      <td>2.75</td>
+      <td>2022-06-09T09:06:15</td>
+      <td>2.68</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.united_kingdom</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:15</td>
+      <td>0.71</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.uruguay</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:15</td>
+      <td>0.29</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.liechtenstein</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:53</td>
-      <td>8.48</td>
+      <td>2022-06-09T09:06:14</td>
+      <td>9.14</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.south_korea</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:53</td>
-      <td>2.54</td>
+      <td>2022-06-09T09:06:14</td>
+      <td>2.45</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.sri_lanka</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:53</td>
-      <td>2.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.switzerland</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:52</td>
-      <td>0.55</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.qatar</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:51</td>
-      <td>2.70</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.rwanda</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:50</td>
-      <td>2.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.slovakia</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:50</td>
-      <td>0.42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.slovenia</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:50</td>
-      <td>0.40</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.south_africa</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:50</td>
-      <td>0.27</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.senegal</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:49</td>
-      <td>0.57</td>
+      <td>2022-06-09T09:06:14</td>
+      <td>2.29</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.serbia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:49</td>
-      <td>0.48</td>
+      <td>2022-06-09T09:06:13</td>
+      <td>1.67</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.mexico</td>
+      <td>cowidev.testing.batch.switzerland</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>2.14</td>
+      <td>2022-06-09T09:06:13</td>
+      <td>0.84</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.netherlands</td>
+      <td>cowidev.testing.batch.trinidad_and_tobago</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>2.04</td>
+      <td>2022-06-09T09:06:13</td>
+      <td>0.24</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.norway</td>
+      <td>cowidev.testing.batch.northern_mariana_islands</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>0.46</td>
+      <td>2022-06-09T09:06:12</td>
+      <td>3.96</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.peru</td>
+      <td>cowidev.testing.batch.senegal</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>0.45</td>
+      <td>2022-06-09T09:06:12</td>
+      <td>1.15</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.saudi_arabia</td>
+      <td>cowidev.testing.batch.slovakia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>0.33</td>
+      <td>2022-06-09T09:06:12</td>
+      <td>0.50</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.portugal</td>
+      <td>cowidev.testing.batch.slovenia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:48</td>
-      <td>0.29</td>
+      <td>2022-06-09T09:06:12</td>
+      <td>0.44</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.cyprus</td>
+      <td>cowidev.testing.batch.south_africa</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:47</td>
-      <td>5.78</td>
+      <td>2022-06-09T09:06:12</td>
+      <td>0.23</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.cuba</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:47</td>
-      <td>5.39</td>
+      <td>2022-06-09T09:06:11</td>
+      <td>8.89</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.luxembourg</td>
+      <td>cowidev.testing.batch.guam</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:47</td>
-      <td>2.08</td>
+      <td>2022-06-09T09:06:11</td>
+      <td>7.51</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.argentina</td>
+      <td>cowidev.testing.batch.rwanda</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:46</td>
-      <td>4.78</td>
+      <td>2022-06-09T09:06:11</td>
+      <td>2.03</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.hungary</td>
+      <td>cowidev.testing.batch.saudi_arabia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:46</td>
-      <td>2.25</td>
+      <td>2022-06-09T09:06:11</td>
+      <td>0.71</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.lithuania</td>
+      <td>cowidev.testing.batch.qatar</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:46</td>
-      <td>0.90</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.malta</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:46</td>
-      <td>0.22</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.iceland</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:45</td>
-      <td>1.29</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.japan</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:45</td>
-      <td>0.87</td>
+      <td>2022-06-09T09:06:10</td>
+      <td>1.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.latvia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:45</td>
-      <td>0.59</td>
+      <td>2022-06-09T09:06:09</td>
+      <td>4.05</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.israel</td>
+      <td>cowidev.testing.batch.portugal</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:45</td>
+      <td>2022-06-09T09:06:09</td>
+      <td>0.38</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.luxembourg</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:08</td>
+      <td>2.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.mexico</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:08</td>
+      <td>2.10</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.netherlands</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:08</td>
+      <td>1.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.peru</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:08</td>
       <td>0.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.norway</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:08</td>
+      <td>0.29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.hungary</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:06</td>
+      <td>2.22</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.japan</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:06</td>
+      <td>1.09</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.lithuania</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:06</td>
+      <td>0.88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.malta</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:06</td>
+      <td>0.70</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.malaysia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:45</td>
-      <td>0.18</td>
+      <td>2022-06-09T09:06:06</td>
+      <td>0.21</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.bosnia_herzegovina</td>
+      <td>cowidev.testing.batch.argentina</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>3.11</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.denmark</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>1.57</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>3.69</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.ecdc</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>1.38</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>2.72</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.germany</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>0.68</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>1.12</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.ireland</td>
+      <td>cowidev.testing.batch.israel</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>0.41</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>0.48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.iceland</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>0.45</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.india</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
-      <td>0.30</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>0.27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.ireland</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:05</td>
+      <td>0.26</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.italy</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:44</td>
+      <td>2022-06-09T09:06:05</td>
       <td>0.24</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.colombia</td>
+      <td>cowidev.testing.batch.bosnia_herzegovina</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:43</td>
-      <td>1.28</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>3.18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.cyprus</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>2.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.denmark</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>1.08</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.estonia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:43</td>
-      <td>0.78</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>0.81</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.ecuador</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:43</td>
-      <td>0.59</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>0.68</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.finland</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:43</td>
-      <td>0.50</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>0.60</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.france</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:43</td>
-      <td>0.37</td>
+      <td>2022-06-09T09:06:04</td>
+      <td>0.27</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.canada</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:42</td>
-      <td>1.24</td>
+      <td>2022-06-09T09:06:03</td>
+      <td>1.60</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.colombia</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:03</td>
+      <td>1.31</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.armenia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:42</td>
-      <td>1.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.testing.batch.austria</td>
-      <td>✅</td>
-      <td>2022-06-06T08:47:42</td>
-      <td>0.86</td>
+      <td>2022-06-09T09:06:03</td>
+      <td>1.23</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.czechia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:42</td>
-      <td>0.53</td>
+      <td>2022-06-09T09:06:03</td>
+      <td>0.32</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.chile</td>
+      <td>cowidev.testing.batch.austria</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:42</td>
-      <td>0.41</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>1.08</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.brazil</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:41</td>
-      <td>0.48</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>0.59</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.australia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:41</td>
-      <td>0.44</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>0.55</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.testing.batch.belgium</td>
+      <td>cowidev.testing.batch.chile</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:41</td>
-      <td>0.32</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>0.46</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.testing.batch.bolivia</td>
       <td>✅</td>
-      <td>2022-06-06T08:47:41</td>
-      <td>0.29</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>0.32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.testing.batch.belgium</td>
+      <td>✅</td>
+      <td>2022-06-09T09:06:02</td>
+      <td>0.31</td>
       <td></td>
     </tr>
   </tbody>
