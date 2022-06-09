@@ -55,6 +55,11 @@ class Japan(CountryVaxBase):
     metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
     metrics_bst: dict = {"dose3": []}
     metrics_bst2: dict = {"dose4": []}
+    metrics_age: dict = {
+        "dose1": "people_vaccinated",
+        "dose2": "people_fully_vaccinated",
+        "dose3": "people_with_booster",
+    }
     vaccine_mapping: dict = {
         "ファイザー社": "Pfizer/BioNTech",
         "武田/モデルナ社": "Moderna",
@@ -129,14 +134,15 @@ class Japan(CountryVaxBase):
         # Filter and clean metric rows
         df = df[df[date_col].apply(isinstance, args=(datetime,)) & df[date_col].notna()]
         df[date_col] = clean_date_series(df[date_col])
-        df = df.replace("―", float("nan")).fillna(0).set_index(date_col).sort_index()
+        df = df.set_index(date_col).sort_index()
         dfs = []
         for metric, index in metrics.items():
-            # Get, check and rename metric columns
+            # Get, check, convert and rename metric columns
             df_ = df[tuple(ind + index)].stack().reset_index()
             cols_unknown = set(df_.columns) - {date_col, "level_1", 0}
             if cols_unknown:
                 raise ValueError(f"Unknown columns: {cols_unknown}")
+            df_[0] = pd.to_numeric(df_[0], errors="coerce")
             dfs.append(df_.rename(columns={date_col: "date", "level_1": "vaccine", 0: metric}))
         while len(dfs) > 1:
             dfs[0] = dfs[0].merge(dfs.pop(1), on=["date", "vaccine"])
@@ -157,13 +163,13 @@ class Japan(CountryVaxBase):
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         # Get cumulative metrics
-        metrics = ["dose1", "dose2", "dose3", "dose4"]
+        metrics = df.filter(like="dose").columns
         df[metrics] = df.fillna(0).groupby(["age_group", "vaccine"])[metrics].cumsum().round()
         df["total_vaccinations"] = df[metrics].sum(axis=1)
         return df[df.total_vaccinations > 0].assign(location=self.location)
 
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
-        metrics = ["dose1", "dose2", "dose3"]
+        metrics = list(self.metrics_age.keys())
         df = df.groupby(["date", "age_group", "location"], as_index=False)[metrics].sum()
         # Get the remaining age group
         df_all = df[df.age_group == "all"].set_index("date")
@@ -172,16 +178,9 @@ class Japan(CountryVaxBase):
         df_all[metrics] = df_all[metrics].sub(df_groups_sum[metrics], fill_value=0)
         df_remain = df_all.reset_index().assign(age_group=self.age_group_remain)
         df = pd.concat([df_groups, df_remain]).reset_index(drop=True)
-        # Parse age groups and rename columns to calculate per capita metrics
+        # Parse age groups, rename metric columns and calculate per capita metrics
         df[["age_group_min", "age_group_max"]] = df.age_group.str.split("-", expand=True)
-        df = df.rename(
-            columns={
-                "dose1": "people_vaccinated",
-                "dose2": "people_fully_vaccinated",
-                "dose3": "people_with_booster",
-            }
-        )
-        return df.pipe(self.pipe_age_per_capita)
+        return df.rename(columns=self.metrics_age).pipe(self.pipe_age_per_capita)
 
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
         return df[df.age_group == "all"][["location", "date", "vaccine", "total_vaccinations"]]
