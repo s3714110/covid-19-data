@@ -27,6 +27,8 @@ pipeline:
         - Myanmar # Moved to WHO
         - Costa Rica # moved to WHO
         - Philippines  # moved to WHO
+        - Indonesia  # Moved to WHO
+        - Qatar  # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
