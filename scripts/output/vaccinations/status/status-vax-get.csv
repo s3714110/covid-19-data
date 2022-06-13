@@ -55,21 +55,7 @@ cowidev.vax.incremental.bangladesh,12.65,True,2022-06-13T07:01:49,,
 cowidev.vax.incremental.barbados,1.41,True,2022-06-13T07:01:38,,
 cowidev.vax.incremental.brazil,0.05,True,2022-06-13T07:01:37,,
 cowidev.vax.incremental.bulgaria,0.87,True,2022-06-13T07:01:38,,
-cowidev.vax.incremental.china,86.36,False,2022-06-13T07:04:13,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 162, in export
-    df_complete = self.read_complete()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 79, in read_complete
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, ""zxxx_list"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,24.04,True,2022-06-13T14:15:52,,
 cowidev.vax.incremental.costa_rica,,,2022-06-13T07:01:38,,
 cowidev.vax.incremental.croatia,0.19,True,2022-06-13T07:01:39,,
 cowidev.vax.incremental.cuba,1.78,True,2022-06-13T07:01:40,,
@@ -92,20 +78,20 @@ cowidev.vax.incremental.iran,1.89,True,2022-06-13T07:01:46,,
 cowidev.vax.incremental.isle_of_man,0.71,True,2022-06-13T07:01:45,,
 cowidev.vax.incremental.jamaica,1.36,True,2022-06-13T07:01:46,,
 cowidev.vax.incremental.kazakhstan,6.27,True,2022-06-13T07:01:52,,
-cowidev.vax.incremental.kosovo,4.43,False,2022-06-13T07:04:17,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.kosovo,5.73,False,2022-06-13T14:17:29,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
     Kosovo().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
     df = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
     soup = get_soup(link)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
     raise ValueError(
 ValueError: Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
 ",Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
