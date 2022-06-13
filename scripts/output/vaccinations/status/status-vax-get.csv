@@ -8,7 +8,7 @@ cowidev.vax.batch.canada,4.2,True,2022-06-13T07:00:11,,
 cowidev.vax.batch.chile,0.64,True,2022-06-13T07:00:09,,
 cowidev.vax.batch.czechia,3.79,True,2022-06-13T07:00:13,,
 cowidev.vax.batch.denmark,2.68,True,2022-06-13T07:00:12,,
-cowidev.vax.batch.ecdc,86.66,True,2022-06-13T07:01:36,,
+cowidev.vax.batch.ecdc,40.11,True,2022-06-13T16:16:09,,
 cowidev.vax.batch.ecuador,1.37,True,2022-06-13T07:00:12,,
 cowidev.vax.batch.estonia,0.96,True,2022-06-13T07:00:12,,
 cowidev.vax.batch.france,0.87,True,2022-06-13T07:00:13,,
@@ -22,7 +22,7 @@ cowidev.vax.batch.italy,7.48,True,2022-06-13T07:00:20,,
 cowidev.vax.batch.japan,41.13,True,2022-06-13T07:01:01,,
 cowidev.vax.batch.jersey,0.47,True,2022-06-13T07:00:21,,
 cowidev.vax.batch.latvia,19.38,True,2022-06-13T07:00:40,,
-cowidev.vax.batch.lithuania,1.43,True,2022-06-13T07:00:22,,
+cowidev.vax.batch.lithuania,0.54,True,2022-06-13T14:39:19,,
 cowidev.vax.batch.luxembourg,1.11,True,2022-06-13T07:00:22,,
 cowidev.vax.batch.malaysia,0.49,True,2022-06-13T07:00:22,,
 cowidev.vax.batch.malta,0.61,True,2022-06-13T07:00:22,,
@@ -78,7 +78,7 @@ cowidev.vax.incremental.iran,1.89,True,2022-06-13T07:01:46,,
 cowidev.vax.incremental.isle_of_man,0.71,True,2022-06-13T07:01:45,,
 cowidev.vax.incremental.jamaica,1.36,True,2022-06-13T07:01:46,,
 cowidev.vax.incremental.kazakhstan,6.27,True,2022-06-13T07:01:52,,
-cowidev.vax.incremental.kosovo,5.73,False,2022-06-13T14:17:29,"Traceback (most recent call last):
+cowidev.vax.incremental.kosovo,6.84,False,2022-06-13T14:24:54,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
