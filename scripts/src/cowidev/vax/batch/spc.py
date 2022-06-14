@@ -54,7 +54,7 @@ class SPC(CountryVaxBase):
 
     def read(self):
         # Get data
-        print(self.source_url)
+        # print(self.source_url)
         data = request_json(self.source_url)
         return self.parse_data(data)
 
@@ -137,8 +137,12 @@ class SPC(CountryVaxBase):
         df = df.pipe(self.pipe_vacine, country)
         # Add Boosters
         if country in ["Fiji"]:
-            fiji_booster()
-            df = df.pipe(self.pipe_merge_boosters, country)
+            try:
+                fiji_booster()
+            except:
+                pass
+            else:
+                df = df.pipe(self.pipe_merge_boosters, country)
         return df
 
     def pipe_merge_legacy(self, df: pd.DataFrame, country: str) -> pd.DataFrame:
