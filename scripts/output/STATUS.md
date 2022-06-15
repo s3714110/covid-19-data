@@ -801,7 +801,8 @@ This file shows the latest status of the data pipeline.
 
 ### Process (Checks)
 
-`17/223` processes failed, `0/223` were skipped. Latest update was `2022-06-15T07:03:46`.
+`17/223` processes failed, `0/223` were skipped. Latest update was `2022-06-15T07:03:46
+`.
 
 <table border="1" class="dataframe">
   <thead>
