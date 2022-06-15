@@ -74,14 +74,14 @@ class SPC(CountryVaxBase):
 
     def _parse_country_info(self, data: dict):
         # Get country info
-        country_info = data["data"]["structure"]["dimensions"]["series"][1]
+        country_info = data["data"]["structures"][0]["dimensions"]["series"][1]
         if country_info["id"] != "GEO_PICT":
             raise AttributeError("JSON data has changed")
         return {str(i): SPC_COUNTRIES[c["id"]] for i, c in enumerate(country_info["values"])}
 
     def _parse_metrics_info(self, data: dict):
         # Get metrics info
-        metrics_info = data["data"]["structure"]["dimensions"]["series"][2]
+        metrics_info = data["data"]["structures"][0]["dimensions"]["series"][2]
         if metrics_info["id"] != "INDICATOR":
             raise AttributeError("JSON data has changed")
         return {
@@ -92,7 +92,7 @@ class SPC(CountryVaxBase):
 
     def _parse_date_info(self, data: dict):
         # Get date info
-        date_info = data["data"]["structure"]["dimensions"]["observation"][0]["values"]
+        date_info = data["data"]["structures"][0]["dimensions"]["observation"][0]["values"]
         return {str(i): d["name"] for i, d in enumerate(date_info)}
 
     def _build_data_array(self, observations: dict, date_info: dict):
