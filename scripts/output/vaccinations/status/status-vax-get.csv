@@ -37,21 +37,7 @@ cowidev.vax.batch.singapore,2.48,True,2022-06-15T07:00:48,,
 cowidev.vax.batch.slovakia,58.1,True,2022-06-15T07:01:47,,
 cowidev.vax.batch.slovenia,1.69,True,2022-06-15T07:01:01,,
 cowidev.vax.batch.south_korea,45.63,True,2022-06-15T07:01:47,,
-cowidev.vax.batch.spc,3.35,False,2022-06-15T07:03:25,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 220, in main
-    SPC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 214, in export
-    data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 59, in read
-    return self.parse_data(data)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 63, in parse_data
-    country_info = self._parse_country_info(data)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 77, in _parse_country_info
-    country_info = data[""data""][""structure""][""dimensions""][""series""][1]
-KeyError: 'structure'
-",'structure'
+cowidev.vax.batch.spc,10.44,True,2022-06-15T10:47:03,,
 cowidev.vax.batch.sweden,16.03,True,2022-06-15T07:01:22,,
 cowidev.vax.batch.switzerland,29.18,True,2022-06-15T07:01:48,,
 cowidev.vax.batch.trinidad_and_tobago,2.48,True,2022-06-15T07:01:25,,
