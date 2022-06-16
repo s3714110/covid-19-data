@@ -55,21 +55,7 @@ cowidev.vax.incremental.bangladesh,13.76,True,2022-06-16T07:01:59,,
 cowidev.vax.incremental.barbados,1.56,True,2022-06-16T07:01:47,,
 cowidev.vax.incremental.brazil,0.04,True,2022-06-16T07:01:46,,
 cowidev.vax.incremental.bulgaria,0.89,True,2022-06-16T07:01:47,,
-cowidev.vax.incremental.china,65.64,False,2022-06-16T07:04:31,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 161, in export
-    df = self.read(df_last.date.max())
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 43, in read
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, ""zxxx_list"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,18.3,True,2022-06-16T11:02:57,,
 cowidev.vax.incremental.costa_rica,,,2022-06-16T07:01:47,,
 cowidev.vax.incremental.croatia,0.12,True,2022-06-16T07:01:47,,
 cowidev.vax.incremental.cuba,1.95,True,2022-06-16T07:01:49,,
