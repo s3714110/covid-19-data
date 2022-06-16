@@ -1,14 +1,14 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.testing.batch.andorra,,,2022-06-13T10:56:08,,
-cowidev.testing.batch.argentina,21.32,True,2022-06-13T10:56:30,,
-cowidev.testing.batch.armenia,5.86,True,2022-06-13T10:56:14,,
-cowidev.testing.batch.australia,0.84,True,2022-06-13T10:56:09,,
-cowidev.testing.batch.austria,2.12,True,2022-06-13T10:56:10,,
-cowidev.testing.batch.belgium,0.94,True,2022-06-13T10:56:09,,
-cowidev.testing.batch.bolivia,0.69,True,2022-06-13T10:56:09,,
-cowidev.testing.batch.bosnia_herzegovina,4.7,True,2022-06-13T10:56:13,,
-cowidev.testing.batch.brazil,2.67,True,2022-06-13T10:56:11,,
-cowidev.testing.batch.canada,1.32,False,2022-06-13T12:59:57,"Traceback (most recent call last):
+cowidev.testing.batch.andorra,,,2022-06-16T11:48:45,,
+cowidev.testing.batch.argentina,157.09,True,2022-06-16T11:51:22,,
+cowidev.testing.batch.armenia,1.57,True,2022-06-16T11:48:46,,
+cowidev.testing.batch.australia,1.14,True,2022-06-16T11:48:46,,
+cowidev.testing.batch.austria,3.02,True,2022-06-16T11:48:48,,
+cowidev.testing.batch.belgium,0.56,True,2022-06-16T11:48:45,,
+cowidev.testing.batch.bolivia,0.56,True,2022-06-16T11:48:45,,
+cowidev.testing.batch.bosnia_herzegovina,9.23,True,2022-06-16T11:48:54,,
+cowidev.testing.batch.brazil,4.69,True,2022-06-16T11:48:49,,
+cowidev.testing.batch.canada,2.45,False,2022-06-16T11:51:24,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/canada.py"", line 67, in main
@@ -33,9 +33,9 @@ cowidev.testing.batch.canada,1.32,False,2022-06-13T12:59:57,"Traceback (most rec
     raise ValueError(
 ValueError: Usecols do not match columns, columns expected but not found: ['numtests', 'numtested']
 ","Usecols do not match columns, columns expected but not found: ['numtests', 'numtested']"
-cowidev.testing.batch.chile,0.85,True,2022-06-13T10:56:10,,
-cowidev.testing.batch.colombia,2.5,True,2022-06-13T10:56:12,,
-cowidev.testing.batch.costa_rica,1.61,False,2022-06-13T12:48:40,"Traceback (most recent call last):
+cowidev.testing.batch.chile,1.03,True,2022-06-16T11:48:46,,
+cowidev.testing.batch.colombia,2.59,True,2022-06-16T11:48:48,,
+cowidev.testing.batch.costa_rica,1.13,False,2022-06-16T11:51:25,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/costa_rica.py"", line 60, in main
@@ -78,19 +78,19 @@ cowidev.testing.batch.costa_rica,1.61,False,2022-06-13T12:48:40,"Traceback (most
     raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 404: 
 ",HTTP Error 404: 
-cowidev.testing.batch.cuba,5.62,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.cyprus,9.12,True,2022-06-13T10:56:19,,
-cowidev.testing.batch.czechia,0.99,True,2022-06-13T10:56:12,,
-cowidev.testing.batch.denmark,2.24,True,2022-06-13T10:56:13,,
-cowidev.testing.batch.ecdc,3.06,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.ecuador,0.98,True,2022-06-13T10:56:13,,
-cowidev.testing.batch.estonia,0.94,True,2022-06-13T10:56:14,,
-cowidev.testing.batch.finland,0.43,True,2022-06-13T10:56:13,,
-cowidev.testing.batch.france,0.35,True,2022-06-13T10:56:14,,
-cowidev.testing.batch.germany,1.31,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.guam,5.4,True,2022-06-13T10:56:19,,
-cowidev.testing.batch.guatemala,,,2022-06-13T10:56:14,,
-cowidev.testing.batch.hong_kong,0.14,False,2022-06-13T11:20:36,"Traceback (most recent call last):
+cowidev.testing.batch.cuba,10.77,True,2022-06-16T11:48:57,,
+cowidev.testing.batch.cyprus,4.04,True,2022-06-16T11:48:50,,
+cowidev.testing.batch.czechia,0.65,True,2022-06-16T11:48:48,,
+cowidev.testing.batch.denmark,1.59,True,2022-06-16T11:48:49,,
+cowidev.testing.batch.ecdc,9.27,True,2022-06-16T11:48:57,,
+cowidev.testing.batch.ecuador,1.25,True,2022-06-16T11:48:49,,
+cowidev.testing.batch.estonia,9.21,True,2022-06-16T11:48:57,,
+cowidev.testing.batch.finland,0.61,True,2022-06-16T11:48:50,,
+cowidev.testing.batch.france,0.84,True,2022-06-16T11:48:50,,
+cowidev.testing.batch.germany,0.49,True,2022-06-16T11:48:50,,
+cowidev.testing.batch.guam,49.21,True,2022-06-16T11:49:39,,
+cowidev.testing.batch.guatemala,,,2022-06-16T11:48:50,,
+cowidev.testing.batch.hong_kong,0.13,False,2022-06-16T11:51:26,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/hong_kong.py"", line 84, in main
@@ -133,25 +133,25 @@ cowidev.testing.batch.hong_kong,0.14,False,2022-06-13T11:20:36,"Traceback (most 
     raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 403: Forbidden
 ",HTTP Error 403: Forbidden
-cowidev.testing.batch.hungary,2.75,True,2022-06-13T10:56:17,,
-cowidev.testing.batch.iceland,0.55,True,2022-06-13T10:56:14,,
-cowidev.testing.batch.india,0.29,True,2022-06-13T10:56:14,,
-cowidev.testing.batch.indonesia,,,2022-06-13T10:56:14,,
-cowidev.testing.batch.ireland,0.31,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.israel,0.58,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.italy,0.15,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.japan,0.14,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.kazakhstan,,,2022-06-13T10:56:15,,
-cowidev.testing.batch.latvia,0.72,True,2022-06-13T10:56:15,,
-cowidev.testing.batch.liechtenstein,9.0,True,2022-06-13T10:56:24,,
-cowidev.testing.batch.lithuania,1.01,True,2022-06-13T10:56:16,,
-cowidev.testing.batch.luxembourg,1.99,True,2022-06-13T10:56:17,,
-cowidev.testing.batch.malaysia,0.19,True,2022-06-13T10:56:16,,
-cowidev.testing.batch.malta,0.2,True,2022-06-13T10:56:16,,
-cowidev.testing.batch.marshall_islands,12.14,True,2022-06-13T10:56:28,,
-cowidev.testing.batch.mexico,2.08,True,2022-06-13T10:56:18,,
-cowidev.testing.batch.netherlands,1.85,True,2022-06-13T10:56:18,,
-cowidev.testing.batch.north_korea,51.53,False,2022-06-13T11:21:28,"Traceback (most recent call last):
+cowidev.testing.batch.hungary,2.99,True,2022-06-16T11:48:53,,
+cowidev.testing.batch.iceland,1.1,True,2022-06-16T11:48:51,,
+cowidev.testing.batch.india,0.62,True,2022-06-16T11:48:51,,
+cowidev.testing.batch.indonesia,,,2022-06-16T11:48:51,,
+cowidev.testing.batch.ireland,1.18,True,2022-06-16T11:48:52,,
+cowidev.testing.batch.israel,1.78,True,2022-06-16T11:48:53,,
+cowidev.testing.batch.italy,0.41,True,2022-06-16T11:48:53,,
+cowidev.testing.batch.japan,0.28,True,2022-06-16T11:48:53,,
+cowidev.testing.batch.kazakhstan,,,2022-06-16T11:48:53,,
+cowidev.testing.batch.latvia,0.7,True,2022-06-16T11:48:54,,
+cowidev.testing.batch.liechtenstein,44.9,True,2022-06-16T11:49:38,,
+cowidev.testing.batch.lithuania,2.53,True,2022-06-16T11:48:56,,
+cowidev.testing.batch.luxembourg,53.81,True,2022-06-16T11:49:47,,
+cowidev.testing.batch.malaysia,0.51,True,2022-06-16T11:48:54,,
+cowidev.testing.batch.malta,0.71,True,2022-06-16T11:48:55,,
+cowidev.testing.batch.marshall_islands,48.35,True,2022-06-16T11:49:44,,
+cowidev.testing.batch.mexico,10.58,True,2022-06-16T11:49:06,,
+cowidev.testing.batch.netherlands,41.58,True,2022-06-16T11:49:39,,
+cowidev.testing.batch.north_korea,47.75,False,2022-06-16T11:52:13,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3361, in get_loc
     return self._engine.get_loc(casted_key)
   File ""pandas/_libs/index.pyx"", line 76, in pandas._libs.index.IndexEngine.get_loc
@@ -187,43 +187,111 @@ Traceback (most recent call last):
     raise KeyError(key) from err
 KeyError: 'Daily change in cumulative total'
 ",'Daily change in cumulative total'
-cowidev.testing.batch.northern_mariana_islands,10.38,True,2022-06-13T10:56:27,,
-cowidev.testing.batch.norway,0.26,True,2022-06-13T10:56:18,,
-cowidev.testing.batch.peru,0.39,True,2022-06-13T10:56:18,,
-cowidev.testing.batch.philippines,,,2022-06-13T10:56:18,,
-cowidev.testing.batch.portugal,0.28,True,2022-06-13T10:56:18,,
-cowidev.testing.batch.puerto_rico,4.75,True,2022-06-13T10:56:23,,
-cowidev.testing.batch.qatar,2.43,True,2022-06-13T10:56:21,,
-cowidev.testing.batch.rwanda,2.49,True,2022-06-13T10:56:21,,
-cowidev.testing.batch.saudi_arabia,0.39,True,2022-06-13T10:56:20,,
-cowidev.testing.batch.senegal,1.46,True,2022-06-13T10:56:21,,
-cowidev.testing.batch.serbia,0.45,True,2022-06-13T10:56:21,,
-cowidev.testing.batch.slovakia,0.58,True,2022-06-13T10:56:22,,
-cowidev.testing.batch.slovenia,0.4,True,2022-06-13T10:56:22,,
-cowidev.testing.batch.south_africa,0.34,True,2022-06-13T10:56:22,,
-cowidev.testing.batch.south_korea,2.88,True,2022-06-13T10:56:25,,
-cowidev.testing.batch.spain,1.13,True,2022-06-13T12:52:05,,
-cowidev.testing.batch.sri_lanka,2.12,True,2022-06-13T10:56:24,,
-cowidev.testing.batch.switzerland,1.67,True,2022-06-13T10:56:24,,
-cowidev.testing.batch.taiwan,3.56,True,2022-06-13T10:56:26,,
-cowidev.testing.batch.thailand,3.3,True,2022-06-13T10:56:27,,
-cowidev.testing.batch.trinidad_and_tobago,0.74,True,2022-06-13T10:56:25,,
-cowidev.testing.batch.turkey,15.73,True,2022-06-13T10:56:40,,
-cowidev.testing.batch.united_arab_emirates,1.92,True,2022-06-13T10:56:26,,
-cowidev.testing.batch.united_kingdom,0.65,True,2022-06-13T10:56:25,,
-cowidev.testing.batch.united_states,8.96,True,2022-06-13T10:56:34,,
-cowidev.testing.batch.united_states_virgin_islands,6.14,True,2022-06-13T10:56:32,,
-cowidev.testing.batch.uruguay,0.32,True,2022-06-13T10:56:27,,
-cowidev.testing.batch.zambia,0.66,True,2022-06-13T10:56:27,,
-cowidev.testing.incremental.africacdc,0.72,True,2022-06-13T10:56:28,,
-cowidev.testing.incremental.albania,2.23,True,2022-06-13T10:56:30,,
-cowidev.testing.incremental.antigua_barbuda,4.72,True,2022-06-13T10:56:32,,
-cowidev.testing.incremental.azerbaijan,0.91,True,2022-06-13T10:56:29,,
-cowidev.testing.incremental.bahamas,10.08,True,2022-06-13T10:56:38,,
-cowidev.testing.incremental.bahrain,1.17,True,2022-06-13T10:56:30,,
-cowidev.testing.incremental.bangladesh,1.12,True,2022-06-13T10:56:31,,
-cowidev.testing.incremental.barbados,1.15,True,2022-06-13T10:56:31,,
-cowidev.testing.incremental.belarus,1.02,False,2022-06-13T11:21:30,"Traceback (most recent call last):
+cowidev.testing.batch.northern_mariana_islands,45.97,True,2022-06-16T11:49:43,,
+cowidev.testing.batch.norway,0.86,True,2022-06-16T11:49:07,,
+cowidev.testing.batch.peru,16.9,True,2022-06-16T11:49:24,,
+cowidev.testing.batch.philippines,,,2022-06-16T11:49:24,,
+cowidev.testing.batch.portugal,0.72,True,2022-06-16T11:49:25,,
+cowidev.testing.batch.puerto_rico,28.35,True,2022-06-16T11:49:53,,
+cowidev.testing.batch.qatar,2.55,True,2022-06-16T11:49:41,,
+cowidev.testing.batch.rwanda,5.39,True,2022-06-16T11:49:44,,
+cowidev.testing.batch.saudi_arabia,0.66,True,2022-06-16T11:49:40,,
+cowidev.testing.batch.senegal,1.26,True,2022-06-16T11:49:41,,
+cowidev.testing.batch.serbia,0.83,True,2022-06-16T11:49:41,,
+cowidev.testing.batch.slovakia,0.82,True,2022-06-16T11:49:42,,
+cowidev.testing.batch.slovenia,1.24,True,2022-06-16T11:49:43,,
+cowidev.testing.batch.south_africa,0.95,True,2022-06-16T11:49:43,,
+cowidev.testing.batch.south_korea,2.02,True,2022-06-16T11:49:45,,
+cowidev.testing.batch.spain,0.39,False,2022-06-16T11:52:14,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 51, in main
+    Spain().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 46, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/spain.py"", line 19, in read
+    df = pd.read_csv(self.test_url, encoding=""cp1252"", delimiter="";"")
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+    return func(*args, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
+    self._engine = self._make_engine(self.engine)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
+    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 51, in __init__
+    self._open_handles(src, kwds)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 222, in _open_handles
+    self.handles = get_handle(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 609, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
+    with urlopen(req_info) as req:
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 525, in open
+    response = meth(req, response)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 634, in http_response
+    response = self.parent.error(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 563, in error
+    return self._call_chain(*args)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 496, in _call_chain
+    result = func(*args)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/urllib/request.py"", line 643, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not found
+",HTTP Error 404: Not found
+cowidev.testing.batch.sri_lanka,2.46,True,2022-06-16T11:49:46,,
+cowidev.testing.batch.switzerland,20.26,True,2022-06-16T11:50:04,,
+cowidev.testing.batch.taiwan,1.86,True,2022-06-16T11:49:45,,
+cowidev.testing.batch.thailand,4.23,True,2022-06-16T11:49:48,,
+cowidev.testing.batch.trinidad_and_tobago,0.81,True,2022-06-16T11:49:45,,
+cowidev.testing.batch.turkey,11.35,False,2022-06-16T11:56:07,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/turkey.py"", line 64, in main
+    Turkey().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/turkey.py"", line 59, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/turkey.py"", line 55, in pipeline
+    df = df.pipe(self.pipe_filter).pipe(self.pipe_rename_columns).pipe(self.pipe_date).pipe(self.pipe_metadata)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/batch/turkey.py"", line 33, in pipe_filter
+    return df[[""Tarih"", ""Bugünkü Test Sayısı""]].dropna()
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/frame.py"", line 3464, in __getitem__
+    indexer = self.loc._get_listlike_indexer(key, axis=1)[1]
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexing.py"", line 1314, in _get_listlike_indexer
+    self._validate_read_indexer(keyarr, indexer, axis)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexing.py"", line 1377, in _validate_read_indexer
+    raise KeyError(f""{not_found} not in index"")
+KeyError: ""['Bugünkü Test Sayısı'] not in index""
+","""['Bugünkü Test Sayısı'] not in index"""
+cowidev.testing.batch.united_arab_emirates,3.28,True,2022-06-16T11:52:28,,
+cowidev.testing.batch.united_kingdom,1.24,True,2022-06-16T11:49:47,,
+cowidev.testing.batch.united_states,21.36,True,2022-06-16T11:50:08,,
+cowidev.testing.batch.united_states_virgin_islands,20.61,True,2022-06-16T11:50:08,,
+cowidev.testing.batch.uruguay,1.18,True,2022-06-16T11:49:49,,
+cowidev.testing.batch.zambia,1.05,True,2022-06-16T11:49:49,,
+cowidev.testing.incremental.africacdc,1.04,True,2022-06-16T11:49:50,,
+cowidev.testing.incremental.albania,6.54,True,2022-06-16T11:49:56,,
+cowidev.testing.incremental.antigua_barbuda,4.31,True,2022-06-16T11:49:55,,
+cowidev.testing.incremental.azerbaijan,1.27,True,2022-06-16T11:49:54,,
+cowidev.testing.incremental.bahamas,14.97,True,2022-06-16T11:50:09,,
+cowidev.testing.incremental.bahrain,1.29,True,2022-06-16T11:49:56,,
+cowidev.testing.incremental.bangladesh,1.18,True,2022-06-16T11:52:29,,
+cowidev.testing.incremental.barbados,8.89,True,2022-06-16T11:50:05,,
+cowidev.testing.incremental.belarus,0.78,False,2022-06-16T11:52:30,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/belarus.py"", line 70, in main
@@ -236,14 +304,22 @@ cowidev.testing.incremental.belarus,1.02,False,2022-06-13T11:21:30,"Traceback (m
     elem = soup.find(text=self.regex[""element""]).parent
 AttributeError: 'NoneType' object has no attribute 'parent'
 ",'NoneType' object has no attribute 'parent'
-cowidev.testing.incremental.belize,3.08,True,2022-06-13T10:56:34,,
-cowidev.testing.incremental.benin,,,2022-06-13T10:56:31,,
-cowidev.testing.incremental.bulgaria,1.72,True,2022-06-13T10:56:32,,
-cowidev.testing.incremental.cambodia,3.89,True,2022-06-13T10:56:35,,
-cowidev.testing.incremental.cape_verde,11.35,True,2022-06-13T10:56:43,,
-cowidev.testing.incremental.croatia,7.87,True,2022-06-13T10:56:40,,
-cowidev.testing.incremental.el_salvador,1.23,True,2022-06-13T10:56:34,,
-cowidev.testing.incremental.emro,9.76,False,2022-06-13T11:21:39,"Traceback (most recent call last):
+cowidev.testing.incremental.belize,3.15,True,2022-06-16T11:50:07,,
+cowidev.testing.incremental.benin,,,2022-06-16T11:50:04,,
+cowidev.testing.incremental.bulgaria,0.97,True,2022-06-16T11:50:05,,
+cowidev.testing.incremental.cambodia,7.07,False,2022-06-16T11:52:37,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py"", line 41, in main
+    Cambodia().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/cambodia.py"", line 19, in export
+    count = clean_count(soup.select(""p+ div strong:nth-child(1)"")[0].text)
+IndexError: list index out of range
+",list index out of range
+cowidev.testing.incremental.cape_verde,11.44,True,2022-06-16T11:50:16,,
+cowidev.testing.incremental.croatia,6.28,True,2022-06-16T11:50:13,,
+cowidev.testing.incremental.el_salvador,1.39,True,2022-06-16T11:50:09,,
+cowidev.testing.incremental.emro,11.31,False,2022-06-16T11:52:48,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/emro.py"", line 155, in main
@@ -258,10 +334,10 @@ cowidev.testing.incremental.emro,9.76,False,2022-06-13T11:21:39,"Traceback (most
     df = [table for table in df_list if self.columns_to_check[""tests""] in table.columns][0]
 IndexError: list index out of range
 ",list index out of range
-cowidev.testing.incremental.equatorial_guinea,0.99,True,2022-06-13T10:56:35,,
-cowidev.testing.incremental.faeroe_islands,0.54,True,2022-06-13T10:56:35,,
-cowidev.testing.incremental.fiji,6.46,True,2022-06-13T10:56:41,,
-cowidev.testing.incremental.georgia,3.63,False,2022-06-13T11:21:43,"Traceback (most recent call last):
+cowidev.testing.incremental.equatorial_guinea,1.46,True,2022-06-16T11:50:11,,
+cowidev.testing.incremental.faeroe_islands,0.65,True,2022-06-16T11:50:10,,
+cowidev.testing.incremental.fiji,3.93,True,2022-06-16T11:50:14,,
+cowidev.testing.incremental.georgia,3.88,False,2022-06-16T11:52:52,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3361, in get_loc
     return self._engine.get_loc(casted_key)
   File ""pandas/_libs/index.pyx"", line 76, in pandas._libs.index.IndexEngine.get_loc
@@ -287,23 +363,11 @@ Traceback (most recent call last):
     raise KeyError(key) from err
 KeyError: 'date'
 ",'date'
-cowidev.testing.incremental.gibraltar,,,2022-06-13T10:56:35,,
-cowidev.testing.incremental.greece,0.65,True,2022-06-13T10:56:36,,
-cowidev.testing.incremental.haiti,3.37,False,2022-06-13T11:21:46,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py"", line 86, in main
-    Haiti().export()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py"", line 80, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py"", line 29, in read
-    df = self._parse_data(soup)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/haiti.py"", line 37, in _parse_data
-    ).parent.findNext(""a"")[""href""]
-AttributeError: 'NoneType' object has no attribute 'parent'
-",'NoneType' object has no attribute 'parent'
-cowidev.testing.incremental.iran,2.02,True,2022-06-13T10:56:40,,
-cowidev.testing.incremental.jordan,1.59,False,2022-06-13T11:21:48,"Traceback (most recent call last):
+cowidev.testing.incremental.gibraltar,,,2022-06-16T11:50:12,,
+cowidev.testing.incremental.greece,0.85,True,2022-06-16T11:50:12,,
+cowidev.testing.incremental.haiti,8.14,True,2022-06-16T11:50:21,,
+cowidev.testing.incremental.iran,2.31,True,2022-06-16T11:50:15,,
+cowidev.testing.incremental.jordan,0.38,False,2022-06-16T11:52:53,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py"", line 25, in read
     count = self._request()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/jordan.py"", line 110, in _request
@@ -323,12 +387,12 @@ Traceback (most recent call last):
     raise KeyError(""No value found. Please modify the payload and headers."")
 KeyError: 'No value found. Please modify the payload and headers.'
 ",'No value found. Please modify the payload and headers.'
-cowidev.testing.incremental.kosovo,24.01,True,2022-06-13T11:22:12,,
-cowidev.testing.incremental.laos,4.26,True,2022-06-13T10:56:44,,
-cowidev.testing.incremental.lebanon,0.74,True,2022-06-13T10:56:40,,
-cowidev.testing.incremental.libya,5.86,True,2022-06-13T10:56:46,,
-cowidev.testing.incremental.maldives,1.05,True,2022-06-13T10:56:41,,
-cowidev.testing.incremental.moldova,3.1,False,2022-06-13T11:22:15,"Traceback (most recent call last):
+cowidev.testing.incremental.kosovo,46.17,True,2022-06-16T11:55:06,,
+cowidev.testing.incremental.laos,4.35,True,2022-06-16T11:50:20,,
+cowidev.testing.incremental.lebanon,3.12,True,2022-06-16T11:50:19,,
+cowidev.testing.incremental.libya,4.28,True,2022-06-16T11:50:21,,
+cowidev.testing.incremental.maldives,1.36,True,2022-06-16T11:50:20,,
+cowidev.testing.incremental.moldova,1.12,False,2022-06-16T11:53:41,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/moldova.py"", line 100, in main
@@ -343,7 +407,7 @@ cowidev.testing.incremental.moldova,3.1,False,2022-06-13T11:22:15,"Traceback (mo
     if not link:
 UnboundLocalError: local variable 'link' referenced before assignment
 ",local variable 'link' referenced before assignment
-cowidev.testing.incremental.mongolia,4.34,False,2022-06-13T11:22:19,"Traceback (most recent call last):
+cowidev.testing.incremental.mongolia,2.48,False,2022-06-16T11:57:44,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/mongolia.py"", line 31, in main
@@ -356,43 +420,28 @@ cowidev.testing.incremental.mongolia,4.34,False,2022-06-13T11:22:19,"Traceback (
     raise ValueError(f""`cumulative_total` can't be lower than currently highers 'Cumulative total' value."")
 ValueError: `cumulative_total` can't be lower than currently highers 'Cumulative total' value.
 ",`cumulative_total` can't be lower than currently highers 'Cumulative total' value.
-cowidev.testing.incremental.morocco,0.43,True,2022-06-13T10:56:42,,
-cowidev.testing.incremental.myanmar,5.17,True,2022-06-13T10:56:47,,
-cowidev.testing.incremental.nepal,8.37,True,2022-06-13T10:56:50,,
-cowidev.testing.incremental.new_zealand,6.65,True,2022-06-13T10:56:50,,
-cowidev.testing.incremental.nicaragua,40.72,False,2022-06-13T11:23:00,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 95, in create_connection
-    raise err
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 85, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
+cowidev.testing.incremental.morocco,0.66,True,2022-06-16T11:50:21,,
+cowidev.testing.incremental.myanmar,6.35,True,2022-06-16T11:50:27,,
+cowidev.testing.incremental.nepal,11.95,True,2022-06-16T11:50:33,,
+cowidev.testing.incremental.new_zealand,2.53,True,2022-06-16T11:50:23,,
+cowidev.testing.incremental.nicaragua,10.96,True,2022-06-16T11:50:33,,
+cowidev.testing.incremental.north_macedonia,1.65,True,2022-06-16T11:50:25,,
+cowidev.testing.incremental.pakistan,1.9,True,2022-06-16T11:50:26,,
+cowidev.testing.incremental.palau,3.0,True,2022-06-16T11:50:28,,
+cowidev.testing.incremental.papua_new_guinea,1.96,False,2022-06-16T11:53:45,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 398, in _make_request
-    conn.request(method, url, **httplib_request_kw)
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 239, in request
-    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
-  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1282, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1328, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1277, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 1037, in _send_output
-    self.send(msg)
-  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/http/client.py"", line 975, in send
-    self.connect()
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 205, in connect
-    conn = self._new_conn()
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPConnection object at 0x155c026e0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)')
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
+    self._validate_conn(conn)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
+    conn.connect()
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 467, in connect
+    _match_hostname(cert, self.assert_hostname or server_hostname)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 540, in _match_hostname
+    match_hostname(cert, asserted_hostname)
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_match_hostname.py"", line 150, in match_hostname
+    raise CertificateError(
+urllib3.util.ssl_match_hostname.CertificateError: hostname 'covid19.info.gov.pg' doesn't match either of '*.telinet.com.pg', 'telinet.com.pg'
 
 During handling of the above exception, another exception occurred:
 
@@ -403,19 +452,19 @@ Traceback (most recent call last):
     retries = retries.increment(
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
     raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155c026e0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid19.info.gov.pg', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError(""hostname 'covid19.info.gov.pg' doesn't match either of '*.telinet.com.pg', 'telinet.com.pg'"")))
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py"", line 94, in main
-    Nicaragua().export()
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py"", line 89, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/nicaragua.py"", line 29, in read
-    soup = get_soup(self.source_url_ref)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/papua_new_guinea.py"", line 54, in main
+    PapuaNewGuinea().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/papua_new_guinea.py"", line 41, in export
+    data = self.read()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/papua_new_guinea.py"", line 21, in read
+    soup = get_soup(self.source_url)
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
@@ -430,38 +479,31 @@ Traceback (most recent call last):
     resp = self.send(prep, **send_kwargs)
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
     r = adapter.send(request, **kwargs)
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 507, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155c026e0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))
-","HTTPConnectionPool(host='www.minsa.gob.ni', port=80): Max retries exceeded with url: /index.php/repository/Descargas-MINSA/COVID-19/Boletines-Epidemiol%C3%B3gico/Boletines-2022/ (Caused by ConnectTimeoutError(<urllib3.connection.HTTPConnection object at 0x155c026e0>, 'Connection to www.minsa.gob.ni timed out. (connect timeout=20)'))"
-cowidev.testing.incremental.north_macedonia,1.11,True,2022-06-13T10:56:46,,
-cowidev.testing.incremental.pakistan,2.17,True,2022-06-13T10:56:47,,
-cowidev.testing.incremental.palau,3.23,True,2022-06-13T10:56:49,,
-cowidev.testing.incremental.papua_new_guinea,4.08,True,2022-06-13T12:58:49,,
-cowidev.testing.incremental.paraguay,3.19,True,2022-06-13T10:56:49,,
-cowidev.testing.incremental.russia,40.77,False,2022-06-13T11:23:41,"Traceback (most recent call last):
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 95, in create_connection
-    raise err
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 85, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='covid19.info.gov.pg', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError(""hostname 'covid19.info.gov.pg' doesn't match either of '*.telinet.com.pg', 'telinet.com.pg'"")))
+","HTTPSConnectionPool(host='covid19.info.gov.pg', port=443): Max retries exceeded with url: / (Caused by SSLError(CertificateError(""hostname 'covid19.info.gov.pg' doesn't match either of '*.telinet.com.pg', 'telinet.com.pg'"")))"
+cowidev.testing.incremental.paraguay,2.56,True,2022-06-16T11:50:29,,
+cowidev.testing.incremental.russia,0.27,False,2022-06-16T11:53:46,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
     self._validate_conn(conn)
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
     conn.connect()
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
-    self.sock = conn = self._new_conn()
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x155c01cf0>, 'Connection to rospotrebnadzor.ru timed out. (connect timeout=20)')
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 414, in connect
+    self.sock = ssl_wrap_socket(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 449, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 493, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 512, in wrap_socket
+    return self.sslsocket_class._create(
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1070, in _create
+    self.do_handshake()
+  File ""/Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/ssl.py"", line 1341, in do_handshake
+    self._sslobj.do_handshake()
+ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)
 
 During handling of the above exception, another exception occurred:
 
@@ -472,7 +514,7 @@ Traceback (most recent call last):
     retries = retries.increment(
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
     raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x155c01cf0>, 'Connection to rospotrebnadzor.ru timed out. (connect timeout=20)'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))
 
 During handling of the above exception, another exception occurred:
 
@@ -499,17 +541,17 @@ Traceback (most recent call last):
     resp = self.send(prep, **send_kwargs)
   File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
     r = adapter.send(request, **kwargs)
-  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 507, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x155c01cf0>, 'Connection to rospotrebnadzor.ru timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x155c01cf0>, 'Connection to rospotrebnadzor.ru timed out. (connect timeout=20)'))"
-cowidev.testing.incremental.saint_kitts_nevis,1.32,True,2022-06-13T10:56:48,,
-cowidev.testing.incremental.saint_lucia,1.93,True,2022-06-13T10:56:50,,
-cowidev.testing.incremental.saint_vincent_and_the_grenadines,2.99,True,2022-06-13T10:56:52,,
-cowidev.testing.incremental.singapore,1.44,True,2022-06-13T10:56:51,,
-cowidev.testing.incremental.suriname,1.06,True,2022-06-13T10:56:51,,
-cowidev.testing.incremental.sweden,0.56,True,2022-06-13T10:56:51,,
-cowidev.testing.incremental.syria,2.07,False,2022-06-13T11:23:43,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 517, in send
+    raise SSLError(e, request=request)
+requests.exceptions.SSLError: HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))
+","HTTPSConnectionPool(host='rospotrebnadzor.ru', port=443): Max retries exceeded with url: /about/info/news/?PAGEN_1=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))"
+cowidev.testing.incremental.saint_kitts_nevis,0.48,True,2022-06-16T11:50:28,,
+cowidev.testing.incremental.saint_lucia,0.93,True,2022-06-16T11:50:29,,
+cowidev.testing.incremental.saint_vincent_and_the_grenadines,2.6,True,2022-06-16T11:50:30,,
+cowidev.testing.incremental.singapore,1.35,True,2022-06-16T11:50:30,,
+cowidev.testing.incremental.suriname,1.08,True,2022-06-16T11:50:30,,
+cowidev.testing.incremental.sweden,0.69,True,2022-06-16T11:50:30,,
+cowidev.testing.incremental.syria,1.74,False,2022-06-16T11:53:47,"Traceback (most recent call last):
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/syria.py"", line 104, in main
@@ -524,9 +566,23 @@ cowidev.testing.incremental.syria,2.07,False,2022-06-13T11:23:43,"Traceback (mos
     elem = soup.find_all(""h4"", ""title"")[0].find(""a"")
 IndexError: list index out of range
 ",list index out of range
-cowidev.testing.incremental.timor,3.25,True,2022-06-13T10:56:54,,
-cowidev.testing.incremental.togo,1.33,True,2022-06-13T10:56:52,,
-cowidev.testing.incremental.tunisia,3.27,True,2022-06-13T10:56:54,,
-cowidev.testing.incremental.ukraine,,,2022-06-13T10:56:52,,
-cowidev.testing.incremental.vanuatu,,,2022-06-13T10:56:52,,
-cowidev.testing.incremental.vietnam,3.49,True,2022-06-13T10:56:55,,
+cowidev.testing.incremental.timor,2.8,True,2022-06-16T11:50:33,,
+cowidev.testing.incremental.togo,2.68,True,2022-06-16T11:50:33,,
+cowidev.testing.incremental.tunisia,2.38,True,2022-06-16T11:50:33,,
+cowidev.testing.incremental.ukraine,,,2022-06-16T11:50:33,,
+cowidev.testing.incremental.vanuatu,,,2022-06-16T11:50:33,,
+cowidev.testing.incremental.vietnam,6.69,False,2022-06-16T11:53:54,"Traceback (most recent call last):
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/vietnam.py"", line 90, in main
+    Vietnam().export()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/vietnam.py"", line 77, in export
+    data = self.read()
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/vietnam.py"", line 27, in read
+    data = self._parse_data(soup)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/vietnam.py"", line 40, in _parse_data
+    count = self._parse_metrics(text)
+  File ""/Users/cam/covid-19-data/scripts/src/cowidev/testing/incremental/vietnam.py"", line 72, in _parse_metrics
+    count = re.search(self.regex[""count""], text).group(1)
+AttributeError: 'NoneType' object has no attribute 'group'
+",'NoneType' object has no attribute 'group'
