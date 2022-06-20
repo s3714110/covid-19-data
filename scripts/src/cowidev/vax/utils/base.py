@@ -136,7 +136,8 @@ class CountryVaxBase:
         if not valid_cols_only:
             cols += [col for col in df.columns if col not in COLUMNS_ORDER]
         df = df[cols]
-        df = df.drop_duplicates(subset=[m for m in METRICS if m in df.columns])
+        df = df.drop_duplicates(subset=[m for m in METRICS if m in df.columns], keep="first")
+        df = df.drop_duplicates(subset=["date"], keep="last")
         return df
 
     def _postprocessing_age(self, df):
@@ -159,6 +160,9 @@ class CountryVaxBase:
         df = df.sort_values(["vaccine", "date"])
         cols = [col for col in COLUMNS_ORDER_MANUF if col in df.columns]
         df = df[cols]
+
+        df = df.drop_duplicates(subset=[m for m in METRICS + ["vaccine"] if m in df.columns], keep="first")
+        df = df.drop_duplicates(subset=["date", "vaccine"], keep="last")
         return df
 
     def export_datafile(

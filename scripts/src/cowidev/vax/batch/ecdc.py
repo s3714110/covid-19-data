@@ -473,6 +473,7 @@ class ECDC(CountryVaxBase):
                     "source_name": "European Centre for Disease Prevention and Control (ECDC)",
                     "source_url": self.source_url_ref,
                 },
+                attach_manufacturer=True,
             )
 
     def export_main(self, df: pd.DataFrame):
