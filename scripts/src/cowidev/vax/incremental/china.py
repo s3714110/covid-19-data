@@ -40,7 +40,7 @@ class China(CountryVaxBase):
         with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             # Load the page until the list of links is loaded
             driver.get(self.source_url)
-            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".zxxx_list>li>a")))
             driver.execute_script("window.stop();")
             links = self._get_links(driver)
             for link in links:
@@ -59,7 +59,7 @@ class China(CountryVaxBase):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.text_to_be_present_in_element((By.ID, "xw_box"), "剂"))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#xw_box>.clear")))
         driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         # Apply regex and get metrics
@@ -76,7 +76,7 @@ class China(CountryVaxBase):
         with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             # Load the page until the list of links is loaded
             driver.get(self.source_url_complete)
-            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CLASS_NAME, "zxxx_list")))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".zxxx_list>li>a")))
             driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
@@ -100,7 +100,7 @@ class China(CountryVaxBase):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.ID, "xw_box")))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#xw_box>.clear")))
         driver.execute_script("window.stop();")
         elem = driver.find_element_by_id("xw_box")
         # Apply regex
@@ -152,7 +152,7 @@ class China(CountryVaxBase):
             # Use total_vaccinations from df_last & df
             dates = df.index[msk]
             df_complete.loc[dates, "total_vaccinations"] = df.total_vaccinations[dates]
-            df_complete = pd.concat([df_complete, df.loc[~msk]])
+            df_complete = pd.concat([df_complete, df[~msk]])
         return df_complete.reset_index()
 
     def export(self):
