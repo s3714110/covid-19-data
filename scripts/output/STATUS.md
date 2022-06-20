@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`2/111` scripts failed, `15/111` were skipped. Latest update was `2022-06-20T07:05:01`.
+`2/111` scripts failed, `15/111` were skipped. Latest update was `2022-06-20T14:02:23`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -135,6 +135,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-06-20T07:00:08</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ecdc</td>
+      <td>✅</td>
+      <td>2022-06-20T14:02:23</td>
+      <td>32.28</td>
       <td></td>
     </tr>
     <tr>
@@ -499,13 +506,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-06-20T07:01:44</td>
       <td>1.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>✅</td>
-      <td>2022-06-20T07:01:43</td>
-      <td>93.03</td>
       <td></td>
     </tr>
     <tr>
