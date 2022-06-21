@@ -29,6 +29,7 @@ pipeline:
         - Philippines  # moved to WHO
         - Indonesia  # Moved to WHO
         - Qatar  # Moved to WHO
+        - United Arab Emirates  # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
