@@ -29,13 +29,16 @@ class Norway(CountryVaxBase):
                 "date",
                 "n_dose_1",
                 "n_dose_2",
-                "n_dose_3_all",
+                "n_dose_3",
+                "n_dose_4",
                 "cum_n_dose_1",
                 "cum_n_dose_2",
-                "cum_n_dose_3_all",
+                "cum_n_dose_3",
+                "cum_n_dose_4",
                 "cum_pr100_dose_1",
                 "cum_pr100_dose_2",
-                "cum_pr100_dose_3_all",
+                "cum_pr100_dose_3",
+                "cum_pr100_dose_4",
                 "pop",
                 "location_name",
                 "date_of_publishing",
@@ -47,11 +50,12 @@ class Norway(CountryVaxBase):
         return df[df.granularity_geo == "nation"]
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df[["date", "cum_n_dose_1", "cum_n_dose_2", "cum_n_dose_3_all"]].rename(
+        return df[["date", "cum_n_dose_1", "cum_n_dose_2", "cum_n_dose_3", "cum_n_dose_4"]].rename(
             columns={
                 "cum_n_dose_1": "people_vaccinated",
                 "cum_n_dose_2": "people_fully_vaccinated",
-                "cum_n_dose_3_all": "total_boosters",
+                "cum_n_dose_3": "total_boosters",
+                "cum_n_dose_4": "total_boosters_2",
             }
         )
 
@@ -73,7 +77,9 @@ class Norway(CountryVaxBase):
             total_vaccinations=df.people_vaccinated.fillna(0)
             + df.people_fully_vaccinated.fillna(0)
             + df.total_boosters.fillna(0)
-        )
+            + df.total_boosters_2.fillna(0),
+            total_boosters=df.total_boosters.fillna(0) + df.total_boosters_2.fillna(0),
+        ).drop(columns=["total_boosters_2"])
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
