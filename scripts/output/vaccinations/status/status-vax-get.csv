@@ -23,43 +23,7 @@ cowidev.vax.batch.japan,55.06,True,2022-06-22T07:01:12,,
 cowidev.vax.batch.jersey,0.67,True,2022-06-22T07:00:20,,
 cowidev.vax.batch.latvia,38.73,True,2022-06-22T07:00:59,,
 cowidev.vax.batch.lithuania,1.52,True,2022-06-22T07:00:22,,
-cowidev.vax.batch.luxembourg,0.25,False,2022-06-22T07:02:53,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 88, in main
-    Luxembourg().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 83, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 14, in read
-    df = pd.read_excel(self.source_url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 364, in read_excel
-    io = ExcelFile(io, storage_options=storage_options, engine=engine)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 503: Service Unavailable: Back-end server is at capacity
-",HTTP Error 503: Service Unavailable: Back-end server is at capacity
+cowidev.vax.batch.luxembourg,1.43,True,2022-06-22T09:25:56,,
 cowidev.vax.batch.malaysia,1.94,True,2022-06-22T07:00:24,,
 cowidev.vax.batch.malta,1.35,True,2022-06-22T07:00:25,,
 cowidev.vax.batch.netherlands,1.01,True,2022-06-22T07:00:26,,
@@ -91,21 +55,7 @@ cowidev.vax.incremental.bangladesh,14.7,True,2022-06-22T07:01:55,,
 cowidev.vax.incremental.barbados,2.61,True,2022-06-22T07:01:44,,
 cowidev.vax.incremental.brazil,0.05,True,2022-06-22T07:01:43,,
 cowidev.vax.incremental.bulgaria,0.97,True,2022-06-22T07:01:44,,
-cowidev.vax.incremental.china,65.66,False,2022-06-22T07:03:58,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 161, in export
-    df = self.read(df_last.date.max())
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 43, in read
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, "".zxxx_list>li>a"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,13.77,True,2022-06-22T09:26:08,,
 cowidev.vax.incremental.costa_rica,,,2022-06-22T07:01:44,,
 cowidev.vax.incremental.croatia,0.12,True,2022-06-22T07:01:44,,
 cowidev.vax.incremental.cuba,1.87,True,2022-06-22T07:01:46,,
