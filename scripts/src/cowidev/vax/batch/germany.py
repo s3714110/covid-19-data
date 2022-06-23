@@ -7,37 +7,38 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 
 
 class Germany(CountryVaxBase):
-    source_url: str = "https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v2.tsv"
+    source_url: str = "https://impfdashboard.de/static/data/germany_vaccinations_timeseries_v3.tsv"
     source_url_ref: str = "https://impfdashboard.de/"
     location: str = "Germany"
     columns_rename: str = {
-        "dosen_kumulativ": "total_vaccinations",
-        "personen_erst_kumulativ": "people_vaccinated",
-        "dosen_dritt_kumulativ": "total_boosters",
-        "dosen_viert_kumulativ": "total_boosters_2",
+        "impfungen_kumulativ": "total_vaccinations",
+        "personen_min1_kumulativ": "people_vaccinated",
+        "personen_gi_kumulativ": "people_fully_vaccinated",
+        "impfungen_boost1_kumulativ": "total_boosters",
+        "impfungen_boost2_kumulativ": "total_boosters_2",
     }
     vaccine_mapping: str = {
-        "dosen_biontech_kumulativ": "Pfizer/BioNTech",
-        "dosen_moderna_kumulativ": "Moderna",
-        "dosen_astra_kumulativ": "Oxford/AstraZeneca",
-        "dosen_johnson_kumulativ": "Johnson&Johnson",
-        "dosen_novavax_kumulativ": "Novavax",
+        "impfungen_biontech_kumulativ": "Pfizer/BioNTech",
+        "impfungen_moderna_kumulativ": "Moderna",
+        "impfungen_astra_kumulativ": "Oxford/AstraZeneca",
+        "impfungen_johnson_kumulativ": "Johnson&Johnson",
+        "impfungen_novavax_kumulativ": "Novavax",
     }
     fully_vaccinated_mapping: str = {
-        "dosen_biontech_zweit_kumulativ": "full_biontech",
-        "dosen_moderna_zweit_kumulativ": "full_moderna",
-        "dosen_johnson_erst_kumulativ": "full_jj",
-        "dosen_astra_zweit_kumulativ": "full_astra",
-        "dosen_novavax_zweit_kumulativ": "full_nova",
+        "impfungen_biontech_gi_kumulativ": "full_biontech",
+        "impfungen_moderna_gi_kumulativ": "full_moderna",
+        "impfungen_johnson_gi_kumulativ": "full_jj",
+        "impfungen_astra_gi_kumulativ": "full_astra",
+        "impfungen_novavax_gi_kumulativ": "full_nova",
     }
-    regex_doses_colnames: str = r"dosen_([a-zA-Z]*)_kumulativ"
+    regex_doses_colnames: str = r"impfungen_([a-zA-Z]*)_kumulativ"
 
     def read(self):
         return pd.read_csv(self.source_url, sep="\t")
 
     def _check_vaccines(self, df: pd.DataFrame):
         """Get vaccine columns mapped to Vaccine names."""
-        EXCLUDE = ["kbv", "dim", "erst", "zweit", "dritt", "viert"]
+        EXCLUDE = ["min1", "gi", "boost1", "boost2"]
 
         def _is_vaccine_column(column_name: str):
             if re.search(self.regex_doses_colnames, column_name):
@@ -58,7 +59,7 @@ class Germany(CountryVaxBase):
 
     def calculate_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
-            people_fully_vaccinated=df.full_biontech + df.full_moderna + df.full_jj + df.full_astra + df.full_nova,
+            # people_fully_vaccinated=df.full_biontech + df.full_moderna + df.full_jj + df.full_astra + df.full_nova,
             total_boosters=df.total_boosters + df.total_boosters_2,
         )
 
