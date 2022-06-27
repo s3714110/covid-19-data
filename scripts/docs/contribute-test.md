@@ -1,6 +1,5 @@
 # How to contribute to our testing data
-**As of 23 June 2022, we will no longer add new data points to our COVID-19 testing dataset. We will continue updates of all other metrics in our COVID-19 dataset. Read more [here](https://github.com/owid/covid-19-data/discussions/2667)**
-
+**On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. We continue to update all other metrics in our COVID-19 dataset. You can read more [here](https://github.com/owid/covid-19-data/discussions/2667)**
 
 We welcome contributions to our testing dataset! 
 
