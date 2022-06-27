@@ -30,7 +30,7 @@ further details in our post on COVID-19 testing, including our [checklist of que
 data](https://ourworldindata.org/coronavirus-testing#our-checklist-for-covid-19-testing-data), information on
 [geographical and temporal
 coverage](https://ourworldindata.org/coronavirus-testing#which-countries-do-we-have-testing-data-for), and [detailed
-country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).**
+country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset.** You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).
 - **Vaccinations against COVID-19:** this data is collected by the _Our World in Data_ team from official reports.
 - **Other variables:** this data is collected from a variety of sources (United Nations, World Bank, Global Burden of Disease, Blavatnik School of Government, etc.). More information is available in [our codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv).
 
@@ -103,7 +103,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 | `reproduction_rate` | Real-time estimate of the effective reproduction rate (R) of COVID-19. See https://github.com/crondonm/TrackingR/tree/main/Estimates-Database |
 
 ### Tests & positivity
-On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. We continue to update all other metrics in our COVID-19 dataset. You can read more at https://github.com/owid/covid-19-data/discussions/2667.
+On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. You can read more at https://github.com/owid/covid-19-data/discussions/2667.
 | Variable                          | Description                                                                                                                                                                                                                                                                                                          |
 |:----------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_tests`                     | Total tests for COVID-19                                                                                                                                                                                                                                                                                             |
@@ -173,7 +173,7 @@ If you are interested in the individual files that make up the complete dataset,
   - [`covid-testing-latest-data-source-details.csv`](https://github.com/owid/covid-19-data/blob/master/public/data/testing/covid-testing-latest-data-source-details.csv) includes, for each country in our testing dataset, the latest figures and a detailed description of how the country’s data is collected;
 - [`excess_mortality`](https://github.com/owid/covid-19-data/tree/master/public/data/excess_mortality): data on excess mortality during the pandemic, sourced from [the Human Mortality Database](https://www.mortality.org/) and [the UK Office for National Statistics](https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/deaths/articles/comparisonsofallcausemortalitybetweeneuropeancountriesandregions/januarytojune2020);
 - [`vaccinations`](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations): data from various official sources, related to COVID-19 vaccinations in each country;
-- [`archived`](https://github.com/owid/covid-19-data/tree/master/public/data/archived): data from other providers that we stopped using and updating;
+- [`archived`](https://github.com/owid/covid-19-data/tree/master/public/data/archived): data from other providers that we've stopped using and updating;
 - [`internal`](https://github.com/owid/covid-19-data/tree/master/public/data/internal): data extracts intended for internal use at _Our World in Data_. They may change or be deleted without notice so we discourage using them.
 
 
