@@ -99,10 +99,15 @@ class Sweden(CountryVaxBase):
         df_doses = df.loc[df.Region == "| Sverige |", ["Vecka", "År", "Antal vaccinationer"]]
         df_doses = df_doses.rename(columns={"Antal vaccinationer": "total_vaccinations"})
 
-        boosters = dfs["Dos 3 per åldersgrupp"]
-        self.latest_boosters = boosters.loc[
-            (boosters.Region == "| Sverige |") & (boosters["Åldersgrupp"] == "Totalt"), "Antal vaccinerade"
-        ].item()
+        self.latest_boosdters = (
+            dfs["Vaccinerade kommun dos 4"]["Antal_dos4"].sum()
+            + dfs["Vaccinerade kommun dos 3"]["Antal_dos3"].sum()
+        )
+        # boosters = dfs["Dos 1 till 3 per åldersgrupp"]  # Dos 4 per åldersgrupp
+        # boosters = dfs["Dos 4 per åldersgrupp"]
+        # self.latest_boosters = boosters.loc[
+        #     (boosters.Region == "| Sverige |") & (boosters["Åldersgrupp"] == "Totalt"), "Antal vaccinerade"
+        # ].item()
 
         return df_doses
 
