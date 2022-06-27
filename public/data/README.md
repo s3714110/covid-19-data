@@ -30,7 +30,7 @@ further details in our post on COVID-19 testing, including our [checklist of que
 data](https://ourworldindata.org/coronavirus-testing#our-checklist-for-covid-19-testing-data), information on
 [geographical and temporal
 coverage](https://ourworldindata.org/coronavirus-testing#which-countries-do-we-have-testing-data-for), and [detailed
-country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). The testing dataset is updated around twice a week. **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. We continue to update all other metrics in our COVID-19 dataset. You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).
+country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).**
 - **Vaccinations against COVID-19:** this data is collected by the _Our World in Data_ team from official reports.
 - **Other variables:** this data is collected from a variety of sources (United Nations, World Bank, Global Burden of Disease, Blavatnik School of Government, etc.). More information is available in [our codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv).
 
