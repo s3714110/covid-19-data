@@ -38,21 +38,7 @@ cowidev.vax.batch.slovakia,42.29,True,2022-06-27T07:01:46,,
 cowidev.vax.batch.slovenia,1.87,True,2022-06-27T07:01:14,,
 cowidev.vax.batch.south_korea,32.89,True,2022-06-27T07:01:46,,
 cowidev.vax.batch.spc,14.75,True,2022-06-27T07:01:29,,
-cowidev.vax.batch.sweden,7.81,False,2022-06-27T07:03:05,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 237, in main
-    Sweden().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 231, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 26, in read
-    weekly = self._read_weekly_data()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 82, in _read_weekly_data
-    df_doses = self._read_weekly_data_doses(dfs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 102, in _read_weekly_data_doses
-    boosters = dfs[""Dos 3 per åldersgrupp""]
-KeyError: 'Dos 3 per åldersgrupp'
-",'Dos 3 per åldersgrupp'
+cowidev.vax.batch.sweden,4.19,True,2022-06-27T10:34:51,,
 cowidev.vax.batch.switzerland,18.63,True,2022-06-27T07:01:47,,
 cowidev.vax.batch.trinidad_and_tobago,1.71,True,2022-06-27T07:01:38,,
 cowidev.vax.batch.ukraine,,,2022-06-27T07:01:38,,
