@@ -36,7 +36,7 @@ class Canada(CountryVaxBase):
         "numtotal_dose3_admin": "total_vaccinations",
         "numtotal_dose4_admin": "total_vaccinations",
         "numtotal_dose5+_admin": "total_vaccinations",
-        "numtotal_doseNotReported_admin": "total_vaccinations",
+        "numtotal_dosenotreported_admin": "total_vaccinations",
     }
     age_pattern: str = r"0?(\d{1,2})(?:–0?(\d{1,2})|\+)"
     vaccine_mapping: dict = {
@@ -51,7 +51,7 @@ class Canada(CountryVaxBase):
         "Unknown": None,
     }
     max_filtered_dates: int = 3
-    max_removed_rows: int = 51
+    max_removed_rows: int = 22
 
     def read(self) -> pd.DataFrame:
         data = request_json(self.source_url)
@@ -127,19 +127,25 @@ class Canada(CountryVaxBase):
                 "numtotal_dose3_admin",
                 "numtotal_dose4_admin",
                 "numtotal_dose5+_admin",
-                "numtotal_doseNotReported_admin",
+                "numtotal_dosenotreported_admin",
                 "numdelta_dose1",
                 "numdelta_dose2",
                 "numdelta_dose3",
                 "numdelta_dose4",
                 "numdelta_dose5+",
-                "numdelta_NotReported",
+                "numdelta_notreported",
                 "num2weekdelta_dose1",
                 "num2weekdelta_dose2",
                 "num2weekdelta_dose3",
                 "num2weekdelta_dose4",
                 "num2weekdelta_dose5+",
-                "num2weekdelta_NotReported",
+                "num2weekdelta_notreported",
+                "num4weekdelta_dose1",
+                "num4weekdelta_dose2",
+                "num4weekdelta_dose3",
+                "num4weekdelta_dose4",
+                "num4weekdelta_dose5+",
+                "num4weekdelta_notreported",
             ],
         )
         return df
