@@ -38,27 +38,7 @@ cowidev.vax.batch.slovakia,42.6,True,2022-06-29T07:01:39,,
 cowidev.vax.batch.slovenia,0.49,True,2022-06-29T07:01:13,,
 cowidev.vax.batch.south_korea,26.59,True,2022-06-29T07:01:39,,
 cowidev.vax.batch.spc,5.04,True,2022-06-29T07:01:18,,
-cowidev.vax.batch.sweden,123.33,False,2022-06-29T07:05:57,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 242, in main
-    Sweden().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 236, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 25, in read
-    daily = self._read_daily_data()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 33, in _read_daily_data
-    dfs = pd.read_html(text, encoding=""utf-8"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/html.py"", line 1098, in read_html
-    return _parse(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/html.py"", line 902, in _parse
-    parser = _parser_dispatch(flav)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/html.py"", line 851, in _parser_dispatch
-    raise ImportError(""html5lib not found, please install it"")
-ImportError: html5lib not found, please install it
-","html5lib not found, please install it"
+cowidev.vax.batch.sweden,8.68,True,2022-06-29T09:17:18,,
 cowidev.vax.batch.switzerland,31.43,True,2022-06-29T07:01:49,,
 cowidev.vax.batch.trinidad_and_tobago,1.63,True,2022-06-29T07:01:35,,
 cowidev.vax.batch.ukraine,,,2022-06-29T07:01:35,,
