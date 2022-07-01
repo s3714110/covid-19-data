@@ -114,68 +114,7 @@ cowidev.vax.incremental.pakistan,1.4,True,2022-07-01T07:02:11,,
 cowidev.vax.incremental.philippines,,,2022-07-01T07:02:11,,
 cowidev.vax.incremental.poland,0.13,True,2022-07-01T07:02:11,,
 cowidev.vax.incremental.qatar,,,2022-07-01T07:02:11,,
-cowidev.vax.incremental.russia,40.28,False,2022-07-01T08:52:37,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 449, in _make_request
-    six.raise_from(e, None)
-  File ""<string>"", line 3, in raise_from
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 444, in _make_request
-    httplib_response = conn.getresponse()
-  File ""/usr/lib/python3.10/http/client.py"", line 1374, in getresponse
-    response.begin()
-  File ""/usr/lib/python3.10/http/client.py"", line 318, in begin
-    version, status, reason = self._read_status()
-  File ""/usr/lib/python3.10/http/client.py"", line 279, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), ""iso-8859-1"")
-  File ""/usr/lib/python3.10/socket.py"", line 705, in readinto
-    return self._sock.recv_into(b)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
-    retries = retries.increment(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 550, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/packages/six.py"", line 770, in reraise
-    raise value
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 451, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 340, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='api.scraperapi.com', port=80): Read timed out. (read timeout=20)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
-    data = read(source).pipe(pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source, use_proxy=True)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 532, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPConnectionPool(host='api.scraperapi.com', port=80): Read timed out. (read timeout=20)
-","HTTPConnectionPool(host='api.scraperapi.com', port=80): Read timed out. (read timeout=20)"
+cowidev.vax.incremental.russia,3.01,True,2022-07-01T08:59:39,,
 cowidev.vax.incremental.saint_lucia,,,2022-07-01T07:02:13,,
 cowidev.vax.incremental.serbia,6.17,True,2022-07-01T07:02:19,,
 cowidev.vax.incremental.south_africa,5.35,True,2022-07-01T07:02:24,,
