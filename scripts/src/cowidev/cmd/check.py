@@ -19,8 +19,8 @@ def check_updated(url, date_col, allowed_days, weekends) -> None:
     max_date = df[date_col].max()
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
         raise Exception(
-            f"Data is not updated! "
-            f"Check if something is broken in our pipeline and/or if someone is in charge of today's update."
+            "Data is not updated! "
+            f"Check if something is broken in our pipeline and/or if someone is in charge of today's update. URL {url}"
         )
     else:
         print("Check passed. All good!")
