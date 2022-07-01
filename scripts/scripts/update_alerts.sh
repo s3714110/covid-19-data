@@ -55,6 +55,6 @@ if [ $hour == 12 ] ; then
   cowid check vax
 fi
 
-# if [ $hour == 14 ] ; then
-#   cowid check test
-# fi
+if [ $hour == 14 ] ; then
+  cowid check hosp
+fi

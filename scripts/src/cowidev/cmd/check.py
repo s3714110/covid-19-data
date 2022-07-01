@@ -9,6 +9,7 @@ from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 JHU_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/full_data.csv"
 VAX_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
 TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv"
+HOSP_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv"
 
 
 def check_updated(url, date_col, allowed_days, weekends) -> None:
@@ -84,6 +85,24 @@ def click_check_test(ctx):
     )
 
 
+@click.command(name="hosp", short_help="Hospital & ICU data.")
+@click.pass_context
+def clich_check_hosp(ctx):
+    """Upload dataset to DB."""
+    feedback_log(
+        func=check_updated,
+        url=HOSP_URL,
+        date_col="date",
+        allowed_days=1,
+        weekends=True,
+        server=ctx.obj["server"],
+        domain="Check",
+        step="hospital",
+        hide_success=True,
+    )
+
+
 click_check.add_command(click_check_vax)
 click_check.add_command(click_check_jhu)
 click_check.add_command(click_check_test)
+click_check.add_command(clich_check_hosp)
