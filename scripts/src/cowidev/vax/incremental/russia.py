@@ -8,7 +8,7 @@ from cowidev.vax.utils.incremental import enrich_data, increment
 
 
 def read(source: str) -> pd.Series:
-    soup = get_soup(source, use_proxy=True)
+    soup = get_soup(source)
 
     text = soup.find("div", id="data").find("p").text
 
