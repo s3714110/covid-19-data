@@ -30,6 +30,7 @@ pipeline:
         - Indonesia  # Moved to WHO
         - Qatar  # Moved to WHO
         - United Arab Emirates  # Moved to WHO
+        - Netherlands  # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694)
     process:
       skip_complete:
         - Pitcairn
