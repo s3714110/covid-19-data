@@ -8,68 +8,7 @@ cowidev.vax.batch.canada,4.94,True,2022-07-04T07:00:14,,
 cowidev.vax.batch.chile,0.75,True,2022-07-04T07:00:11,,
 cowidev.vax.batch.czechia,3.16,True,2022-07-04T07:00:14,,
 cowidev.vax.batch.denmark,3.05,True,2022-07-04T07:00:14,,
-cowidev.vax.batch.ecdc,40.05,False,2022-07-04T07:03:10,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
-    sock.connect(sa)
-socket.timeout: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
-    httplib_response = self._make_request(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
-    self._validate_conn(conn)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
-    conn.connect()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fe0bd3e0520>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)')
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
-    retries = retries.increment(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fe0bd3e0520>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 499, in main
-    ECDC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 489, in export
-    df = self.read().pipe(self.pipe_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 111, in read
-    df = read_csv_from_url(self.source_url, timeout=20)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 39, in read_csv_from_url
-    download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 52, in download_file_from_url
-    r = requests.get(url, stream=True, timeout=timeout, verify=verify)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fe0bd3e0520>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fe0bd3e0520>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)'))"
+cowidev.vax.batch.ecdc,28.05,True,2022-07-04T08:30:00,,
 cowidev.vax.batch.ecuador,1.91,True,2022-07-04T07:00:14,,
 cowidev.vax.batch.estonia,0.5,True,2022-07-04T07:00:14,,
 cowidev.vax.batch.france,0.4,True,2022-07-04T07:00:14,,
@@ -157,19 +96,7 @@ cowidev.vax.incremental.pakistan,1.47,True,2022-07-04T07:01:52,,
 cowidev.vax.incremental.philippines,,,2022-07-04T07:01:52,,
 cowidev.vax.incremental.poland,0.26,True,2022-07-04T07:01:53,,
 cowidev.vax.incremental.qatar,,,2022-07-04T07:01:53,,
-cowidev.vax.incremental.russia,2.76,False,2022-07-04T07:04:03,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.4,True,2022-07-04T08:29:36,,
 cowidev.vax.incremental.saint_lucia,,,2022-07-04T07:01:56,,
 cowidev.vax.incremental.serbia,8.32,True,2022-07-04T07:02:04,,
 cowidev.vax.incremental.south_africa,6.27,True,2022-07-04T07:02:06,,
