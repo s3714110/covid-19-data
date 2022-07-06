@@ -19,7 +19,7 @@ class Kosovo(CountryVaxBase):
 
     def read(self) -> pd.DataFrame:
         """Read data from source"""
-        soup = get_soup(self.source_url)
+        soup = get_soup(self.source_url, verify=False)
         df = self._parse_data(soup)
         return df
 
@@ -29,7 +29,7 @@ class Kosovo(CountryVaxBase):
         link = soup.find("iframe", {"title": "Covid Dashboard"})["src"]
         if not link:
             raise ValueError("Dashboard not found, please update the script")
-        soup = get_soup(link)
+        soup = get_soup(link, verify=False)
         # the metrics
         metrics = self._parse_metrics(soup)
         # DataFrame
