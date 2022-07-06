@@ -60,6 +60,7 @@ class Nepal(CountryVaxBase):
                 "Unnamed: 4",
                 "Unnamed: 5",
                 "Moderna",
+                "Unnamed: 6",
             ],
         )
         return df[df["Unnamed: 0"] == "Total"].drop(columns=["Unnamed: 0"])
