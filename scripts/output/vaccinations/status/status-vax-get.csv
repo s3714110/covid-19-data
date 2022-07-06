@@ -78,67 +78,7 @@ cowidev.vax.incremental.iran,1.95,True,2022-07-06T07:01:32,,
 cowidev.vax.incremental.isle_of_man,0.79,True,2022-07-06T07:01:31,,
 cowidev.vax.incremental.jamaica,1.84,True,2022-07-06T07:01:33,,
 cowidev.vax.incremental.kazakhstan,7.24,True,2022-07-06T07:01:39,,
-cowidev.vax.incremental.kosovo,0.27,False,2022-07-06T11:23:48,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
-    self._validate_conn(conn)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
-    conn.connect()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 416, in connect
-    self.sock = ssl_wrap_socket(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 449, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 493, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-  File ""/usr/lib/python3.10/ssl.py"", line 512, in wrap_socket
-    return self.sslsocket_class._create(
-  File ""/usr/lib/python3.10/ssl.py"", line 1070, in _create
-    self.do_handshake()
-  File ""/usr/lib/python3.10/ssl.py"", line 1341, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
-    retries = retries.increment(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /sq/statistikat-covid-19/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
-    Kosovo().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 22, in read
-    soup = get_soup(self.source_url)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 517, in send
-    raise SSLError(e, request=request)
-requests.exceptions.SSLError: HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /sq/statistikat-covid-19/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))
-","HTTPSConnectionPool(host='msh.rks-gov.net', port=443): Max retries exceeded with url: /sq/statistikat-covid-19/ (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:997)')))"
+cowidev.vax.incremental.kosovo,1.09,True,2022-07-06T11:27:38,,
 cowidev.vax.incremental.kyrgyzstan,0.94,True,2022-07-06T07:01:34,,
 cowidev.vax.incremental.laos,2.15,True,2022-07-06T07:01:35,,
 cowidev.vax.incremental.macao,25.99,True,2022-07-06T07:02:00,,
@@ -183,7 +123,7 @@ cowidev.vax.incremental.taiwan,6.54,True,2022-07-06T07:02:31,,
 cowidev.vax.incremental.thailand,1.6,True,2022-07-06T07:02:30,,
 cowidev.vax.incremental.turkey,0.65,True,2022-07-06T07:02:30,,
 cowidev.vax.incremental.united_arab_emirates,,,2022-07-06T07:02:30,,
-cowidev.vax.incremental.vietnam,4.54,False,2022-07-06T11:24:17,"Traceback (most recent call last):
+cowidev.vax.incremental.vietnam,4.64,False,2022-07-06T11:28:46,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/vietnam.py"", line 137, in main
@@ -198,5 +138,5 @@ cowidev.vax.incremental.vietnam,4.54,False,2022-07-06T11:24:17,"Traceback (most 
     all = clean_count(re.search(self.regex[""metrics""][""all""], text).group(2))
 AttributeError: 'NoneType' object has no attribute 'group'
 ",'NoneType' object has no attribute 'group'
-cowidev.vax.incremental.who,2.96,True,2022-07-06T07:02:33,,
+cowidev.vax.incremental.who,1.61,True,2022-07-06T11:34:52,,
 cowidev.vax.incremental.zambia,0.44,True,2022-07-06T07:02:31,,
