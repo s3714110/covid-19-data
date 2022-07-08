@@ -107,6 +107,9 @@ class HospETL:
         # Process output
         df = df.dropna(subset=["value"])
 
+        # Remove duplicates
+        df = df.drop_duplicates()  # subset=["date", "indicator", "entity"])
+        # Check
         duplicates = df[df.duplicated(subset=["date", "entity", "indicator"])]
         if len(duplicates) > 0:
             print(duplicates)
