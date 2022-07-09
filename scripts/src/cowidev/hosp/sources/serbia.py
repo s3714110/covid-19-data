@@ -23,6 +23,7 @@ def main():
         )
     )
     df["date"] = clean_date_series(df.date, "%Y-%m-%d %H:%M:%S")
+    df = df.drop_duplicates(subset=["date", "indicator"])
     return df, METADATA
 
 
