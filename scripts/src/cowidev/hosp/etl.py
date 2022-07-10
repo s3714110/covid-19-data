@@ -109,6 +109,16 @@ class HospETL:
 
         # Remove duplicates
         df = df.drop_duplicates()  # subset=["date", "indicator", "entity"])
+
+        # Weird things
+        df = df[
+            ~(
+                (df.entity == "Serbia")
+                & (df.date == "2020-03-09")
+                & (df.indicator == "Daily hospital occupancy")
+                & (df.value == 2)
+            )
+        ]
         # Check
         duplicates = df[df.duplicated(subset=["date", "entity", "indicator"])]
         if len(duplicates) > 0:
