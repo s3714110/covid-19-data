@@ -24,19 +24,19 @@ cowidev.vax.batch.jersey,2.27,True,2022-07-10T08:03:27,,
 cowidev.vax.batch.latvia,29.77,True,2022-07-10T08:03:57,,
 cowidev.vax.batch.lithuania,2.74,True,2022-07-10T08:03:33,,
 cowidev.vax.batch.luxembourg,2.21,True,2022-07-10T08:03:32,,
-cowidev.vax.batch.malaysia,0.37,False,2022-07-10T08:06:57,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.batch.malaysia,0.4,False,2022-07-10T21:23:21,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 167, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 167, in main
     Malaysia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 162, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 162, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 29, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py"", line 29, in read
     check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
     raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'daily_booster2_child', 'cumul_booster2', 'cumul_booster2_child', 'daily_booster_adol', 'sinovac4', 'daily_booster2', 'cumul_booster2_adol', 'daily_booster2_adol', 'daily_booster_child', 'cansino4', 'astra4', 'sinopharm4', 'cumul_booster_adol', 'pfizer4', 'pending4', 'cumul_booster_child'}
-","Unknown column(s) found: {'daily_booster2_child', 'cumul_booster2', 'cumul_booster2_child', 'daily_booster_adol', 'sinovac4', 'daily_booster2', 'cumul_booster2_adol', 'daily_booster2_adol', 'daily_booster_child', 'cansino4', 'astra4', 'sinopharm4', 'cumul_booster_adol', 'pfizer4', 'pending4', 'cumul_booster_child'}"
+Exception: Unknown column(s) found: {'cumul_booster_adol', 'sinovac4', 'daily_booster2', 'pfizer4', 'daily_booster2_child', 'astra4', 'daily_booster2_adol', 'cumul_booster2_adol', 'sinopharm4', 'cumul_booster2_child', 'cansino4', 'cumul_booster_child', 'cumul_booster2', 'daily_booster_adol', 'pending4', 'daily_booster_child'}
+","Unknown column(s) found: {'cumul_booster_adol', 'sinovac4', 'daily_booster2', 'pfizer4', 'daily_booster2_child', 'astra4', 'daily_booster2_adol', 'cumul_booster2_adol', 'sinopharm4', 'cumul_booster2_child', 'cansino4', 'cumul_booster_child', 'cumul_booster2', 'daily_booster_adol', 'pending4', 'daily_booster_child'}"
 cowidev.vax.batch.malta,1.11,True,2022-07-10T08:03:34,,
 cowidev.vax.batch.netherlands,,,2022-07-10T08:03:34,,
 cowidev.vax.batch.new_zealand,26.31,True,2022-07-10T08:04:00,,
@@ -108,35 +108,23 @@ cowidev.vax.incremental.pakistan,3.35,True,2022-07-10T08:05:28,,
 cowidev.vax.incremental.philippines,,,2022-07-10T08:05:28,,
 cowidev.vax.incremental.poland,0.13,True,2022-07-10T08:05:28,,
 cowidev.vax.incremental.qatar,,,2022-07-10T08:05:28,,
-cowidev.vax.incremental.russia,0.54,False,2022-07-10T08:06:58,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.0,True,2022-07-10T21:23:11,,
 cowidev.vax.incremental.saint_lucia,,,2022-07-10T08:05:29,,
 cowidev.vax.incremental.serbia,4.96,True,2022-07-10T08:05:34,,
 cowidev.vax.incremental.south_africa,8.42,True,2022-07-10T08:05:42,,
 cowidev.vax.incremental.spain,3.13,True,2022-07-10T08:05:42,,
 cowidev.vax.incremental.sri_lanka,,,2022-07-10T08:05:42,,
 cowidev.vax.incremental.suriname,15.46,True,2022-07-10T08:05:57,,
-cowidev.vax.incremental.taiwan,13.37,False,2022-07-10T08:07:11,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.taiwan,10.62,False,2022-07-10T21:23:32,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 157, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 157, in main
     Taiwan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 143, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 143, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 31, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 31, in read
     df = self._parse_table(url_pdf)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 57, in _parse_table
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 57, in _parse_table
     raise ValueError(f""Table 1: format has changed!"")
 ValueError: Table 1: format has changed!
 ",Table 1: format has changed!
