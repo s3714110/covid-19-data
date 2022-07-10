@@ -71,17 +71,17 @@ Stored in [`us_state_vaccinations.csv`](us_state_vaccinations.csv). State-by-sta
 
 5 people take part in a vaccination program, to be given a vaccine that requires 2 doses to be effective against the disease.
 
-* Dina has received 2 doses, then a 3rd (booster) dose;
-* Tommy has received 2 doses;
-* Joel has received 1 dose;
-* Ellie has not received any dose.
+* Rebecca has received 2 doses, then a 3rd (booster) dose;
+* Thomas has received 2 doses;
+* James has received 1 dose;
+* Lauren has not received any dose.
 
 In our data:
 
 * The total number of doses administered (`total_vaccinations`) will be equal to `6` (3 + 2 + 1);
-* The total number of people vaccinated (`people_vaccinated`) will be equal to `3` (Dina, Joel, Tommy);
-* The total number of people with a complete initial protocol (`people_fully_vaccinated`) will be equal to `2` (Dina, Tommy);
-* The total number of boosters administered (`total_boosters`) will be equal to `1` (Dina).
+* The total number of people vaccinated (`people_vaccinated`) will be equal to `3` (Rebecca, James, Thomas);
+* The total number of people with a complete initial protocol (`people_fully_vaccinated`) will be equal to `2` (Rebecca, Thomas);
+* The total number of boosters administered (`total_boosters`) will be equal to `1` (Rebecca).
 
 
 ## License
