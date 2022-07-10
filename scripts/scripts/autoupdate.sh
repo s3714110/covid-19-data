@@ -98,7 +98,7 @@ fi
 # Vaccinations
 
 hour=$(date +%H)
-if [ $hour == 07 ] ; then
+if [ $hour == 08 ] ; then
   echo "Generating Vaccination (get, process, generate)..."
   cowid --server vax get
   cowid --server vax process generate
