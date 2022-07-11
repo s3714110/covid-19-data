@@ -482,6 +482,13 @@ class ECDC(CountryVaxBase):
         locations = df.location.unique()
         for location in locations:
             df_c = df[df.location == location].copy()
+            msk = (
+                df_c[["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_vaccinations"]].sum(
+                    axis=1
+                )
+                != 0
+            )
+            df_c = df_c.loc[msk]
             self.export_datafile(df_c, filename=location)
 
     def export(self):
