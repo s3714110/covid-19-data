@@ -108,7 +108,7 @@ class ECDC(CountryVaxBase):
         return self._load_country_mapping(PATHS.INTERNAL_INPUT_ISO_FULL_FILE)
 
     def read(self):
-        df = read_csv_from_url(self.source_url, timeout=20)
+        df = read_csv_from_url(self.source_url, timeout=30)
         check_known_columns(
             df,
             [
