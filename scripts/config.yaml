@@ -30,7 +30,7 @@ pipeline:
         - Indonesia  # Moved to WHO
         - Qatar  # Moved to WHO
         - United Arab Emirates  # Moved to WHO
-        - Netherlands  # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694)
+        - Netherlands  # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694), Moved to ECDC
         - Nepal # Moved to WHO
         - Vietnam # Moved to WHO
     process:
