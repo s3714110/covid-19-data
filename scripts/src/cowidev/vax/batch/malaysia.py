@@ -36,29 +36,45 @@ class Malaysia(CountryVaxBase):
                 "daily_partial_child",
                 "daily_full_child",
                 "daily_booster",
+                "daily_booster_adol",
+                "daily_booster_child",
+                "daily_booster2",
+                "daily_booster2_adol",
+                "daily_booster2_child",
                 "cumul_partial",
                 "cumul_full",
                 "cumul",
                 "cumul_partial_child",
                 "cumul_full_child",
                 "cumul_booster",
+                "cumul_booster_adol",
+                "cumul_booster_child",
+                "cumul_booster2",
+                "cumul_booster2_adol",
+                "cumul_booster2_child",
                 "pfizer1",
                 "pfizer2",
                 "pfizer3",
+                "pfizer4",
                 "sinovac1",
                 "sinovac2",
                 "sinovac3",
+                "sinovac4",
                 "astra1",
                 "astra2",
                 "astra3",
+                "astra4",
                 "sinopharm1",
                 "sinopharm2",
                 "sinopharm3",
+                "sinopharm4",
                 "cansino",
                 "cansino3",
+                "cansino4",
                 "pending1",
                 "pending2",
                 "pending3",
+                "pending4",
                 "daily_partial_adol",
                 "daily_full_adol",
                 "cumul_full_adol",
@@ -91,7 +107,7 @@ class Malaysia(CountryVaxBase):
         df = df.pivot(index=["date", "vaccine"], columns="dose_number", values="doses").reset_index().fillna(0)
 
         # total_vaccinations
-        df["total_vaccinations"] = df[1] + df[2] + df[3]
+        df["total_vaccinations"] = df[1] + df[2] + df[3] + df[4]
 
         # people_vaccinated
         df["people_vaccinated"] = df[1]
@@ -101,8 +117,8 @@ class Malaysia(CountryVaxBase):
         df.loc[df.vaccine.isin(self._vax_1d), "people_fully_vaccinated"] = df[1]
 
         # total_boosters
-        df.loc[df.vaccine.isin(self._vax_2d), "total_boosters"] = df[3]
-        df.loc[df.vaccine.isin(self._vax_1d), "total_boosters"] = df[2] + df[3]
+        df.loc[df.vaccine.isin(self._vax_2d), "total_boosters"] = df[3] + df[4]
+        df.loc[df.vaccine.isin(self._vax_1d), "total_boosters"] = df[2] + df[3] + df[4]
 
         df = (
             df[["date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
