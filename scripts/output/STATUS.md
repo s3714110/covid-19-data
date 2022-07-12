@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/111` scripts failed, `19/111` were skipped. Latest update was `2022-07-11T07:05:16`.
+`4/111` scripts failed, `19/111` were skipped. Latest update was `2022-07-12T07:06:17`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,780 +19,780 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.taiwan</td>
-      <td>❌</td>
-      <td>2022-07-11T07:05:16</td>
-      <td>13.21</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 157, in main<br>    Taiwan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 143, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 31, in read<br>    df = self._parse_table(url_pdf)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 57, in _parse_table<br>    raise ValueError(f"Table 1: format has changed!")<br>ValueError: Table 1: format has changed!<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.russia</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:02</td>
-      <td>1.30</td>
+      <td>2022-07-12T07:06:17</td>
+      <td>0.96</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 64, in main<br>    data = read(source).pipe(pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 11, in read<br>    soup = get_soup(source)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.macao</td>
+      <td>❌</td>
+      <td>2022-07-12T07:06:16</td>
+      <td>21.70</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 84, in main<br>    Macao().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 70, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 20, in read<br>    elem = driver.find_element_by_partial_link_text("Daily Bulletin on COVID-19")<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 462, in find_element_by_partial_link_text<br>    return self.find_element(by=By.PARTIAL_LINK_TEXT, value=link_text)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element<br>    return self.execute(Command.FIND_ELEMENT, {<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"partial link text","selector":"Daily Bulletin on COVID-19"}<br>  (Session info: headless chrome=101.0.4951.64)<br><br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.spc</td>
+      <td>❌</td>
+      <td>2022-07-12T07:04:28</td>
+      <td>3.15</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 220, in main<br>    SPC().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 214, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 59, in read<br>    return self.parse_data(data)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 73, in parse_data<br>    return self._build_df_list(vaccination_data)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 103, in _build_df_list<br>    data[k] = self._build_df(v, k)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py", line 135, in _build_df<br>    df = df.pipe(make_monotonic)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 44, in make_monotonic<br>    raise Exception(<br>Exception: 50 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check <br>          date  ...  vaccine<br>9   2021-07-13  ...      NaN<br>10  2021-07-20  ...      NaN<br>11  2021-07-27  ...      NaN<br>12  2021-08-02  ...      NaN<br>13  2021-08-09  ...      NaN<br>14  2021-08-16  ...      NaN<br>15  2021-08-23  ...      NaN<br>16  2021-08-31  ...      NaN<br>17  2021-09-07  ...      NaN<br>18  2021-09-14  ...      NaN<br>19  2021-09-21  ...      NaN<br>20  2021-09-28  ...      NaN<br>21  2021-10-05  ...      NaN<br>22  2021-10-12  ...      NaN<br>23  2021-10-18  ...      NaN<br>24  2021-10-25  ...      NaN<br>25  2021-11-01  ...      NaN<br>26  2021-11-08  ...      NaN<br>27  2021-11-15  ...      NaN<br>28  2021-11-22  ...      NaN<br>29  2021-11-30  ...      NaN<br>30  2021-12-06  ...      NaN<br>31  2021-12-13  ...      NaN<br>32  2021-12-20  ...      NaN<br>33  2022-01-04  ...      NaN<br>34  2022-01-11  ...      NaN<br>35  2022-01-18  ...      NaN<br>36  2022-01-24  ...      NaN<br>37  2022-01-31  ...      NaN<br>38  2022-02-07  ...      NaN<br>39  2022-02-14  ...      NaN<br>40  2022-02-21  ...      NaN<br>41  2022-02-28  ...      NaN<br>42  2022-03-07  ...      NaN<br>43  2022-03-14  ...      NaN<br>44  2022-03-21  ...      NaN<br>45  2022-03-28  ...      NaN<br>46  2022-04-04  ...      NaN<br>47  2022-04-11  ...      NaN<br>48  2022-04-18  ...      NaN<br>49  2022-04-25  ...      NaN<br>50  2022-05-02  ...      NaN<br>51  2022-05-09  ...      NaN<br>52  2022-05-16  ...      NaN<br>53  2022-05-23  ...      NaN<br>54  2022-05-30  ...      NaN<br>55  2022-06-06  ...      NaN<br>56  2022-06-13  ...      NaN<br>57  2022-06-20  ...      NaN<br>58  2022-06-27  ...      NaN<br><br>[50 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ecdc</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:01</td>
-      <td>40.07</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection<br>    raise err<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection<br>    sock.connect(sa)<br>socket.timeout: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect<br>    conn = self._new_conn()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f9eeec75970>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen<br>    retries = retries.increment(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9eeec75970>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 499, in main<br>    ECDC().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 489, in export<br>    df = self.read().pipe(self.pipe_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 111, in read<br>    df = read_csv_from_url(self.source_url, timeout=20)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 39, in read_csv_from_url<br>    download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 52, in download_file_from_url<br>    r = requests.get(url, stream=True, timeout=timeout, verify=verify)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9eeec75970>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=20)'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.malaysia</td>
-      <td>❌</td>
-      <td>2022-07-11T07:05:01</td>
-      <td>0.33</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py", line 167, in main<br>    Malaysia().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py", line 162, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malaysia.py", line 29, in read<br>    check_known_columns(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 164, in check_known_columns<br>    raise Exception(f"Unknown column(s) found: {unknown_cols}")<br>Exception: Unknown column(s) found: {'sinovac4', 'daily_booster2', 'daily_booster_child', 'cumul_booster_adol', 'cumul_booster2_adol', 'pfizer4', 'daily_booster2_adol', 'cumul_booster2', 'cumul_booster_child', 'astra4', 'daily_booster_adol', 'sinopharm4', 'pending4', 'cumul_booster2_child', 'daily_booster2_child', 'cansino4'}<br></pre></details></td>
+      <td>2022-07-12T07:04:25</td>
+      <td>60.09</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection<br>    raise err<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection<br>    sock.connect(sa)<br>socket.timeout: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect<br>    conn = self._new_conn()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f14be298340>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen<br>    retries = retries.increment(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f14be298340>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 506, in main<br>    ECDC().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 496, in export<br>    df = self.read().pipe(self.pipe_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 111, in read<br>    df = read_csv_from_url(self.source_url, timeout=30)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 39, in read_csv_from_url<br>    download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 52, in download_file_from_url<br>    r = requests.get(url, stream=True, timeout=timeout, verify=verify)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f14be298340>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:57</td>
+      <td>2022-07-12T07:02:54</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.vietnam</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:57</td>
+      <td>2022-07-12T07:02:54</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.sri_lanka</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:47</td>
+      <td>2022-07-12T07:02:46</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.saint_lucia</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:35</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.qatar</td>
-      <td>⚠️</td>
-      <td>2022-07-11T07:02:34</td>
+      <td>2022-07-12T07:02:34</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.philippines</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:33</td>
+      <td>2022-07-12T07:02:32</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.qatar</td>
+      <td>⚠️</td>
+      <td>2022-07-12T07:02:32</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.morocco</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:29</td>
+      <td>2022-07-12T07:02:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.myanmar</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:29</td>
+      <td>2022-07-12T07:02:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.nepal</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:29</td>
+      <td>2022-07-12T07:02:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.north_macedonia</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:29</td>
+      <td>2022-07-12T07:02:26</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.guatemala</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:19</td>
+      <td>2022-07-12T07:02:18</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.gabon</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:18</td>
+      <td>2022-07-12T07:02:17</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.costa_rica</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:02:13</td>
+      <td>2022-07-12T07:02:13</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.africacdc</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:01:48</td>
+      <td>2022-07-12T07:01:47</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ukraine</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:01:35</td>
+      <td>2022-07-12T07:01:33</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.portugal</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:00:42</td>
+      <td>2022-07-12T07:00:40</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.netherlands</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:00:35</td>
+      <td>2022-07-12T07:00:34</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.indonesia</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:00:18</td>
+      <td>2022-07-12T07:00:18</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
       <td>⚠️</td>
-      <td>2022-07-11T07:00:11</td>
+      <td>2022-07-12T07:00:10</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.china</td>
       <td>✅</td>
-      <td>2022-07-11T07:04:21</td>
-      <td>128.16</td>
+      <td>2022-07-12T07:05:54</td>
+      <td>85.96</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.paho</td>
       <td>✅</td>
-      <td>2022-07-11T07:03:21</td>
-      <td>51.43</td>
+      <td>2022-07-12T07:03:18</td>
+      <td>51.45</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.suriname</td>
       <td>✅</td>
-      <td>2022-07-11T07:03:02</td>
-      <td>15.49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.zambia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:03:02</td>
-      <td>0.68</td>
+      <td>2022-07-12T07:03:02</td>
+      <td>16.12</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.who</td>
       <td>✅</td>
-      <td>2022-07-11T07:03:01</td>
-      <td>4.20</td>
+      <td>2022-07-12T07:02:59</td>
+      <td>5.30</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.turkey</td>
+      <td>cowidev.vax.incremental.zambia</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:57</td>
-      <td>0.77</td>
+      <td>2022-07-12T07:02:58</td>
+      <td>0.97</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.taiwan</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:57</td>
+      <td>8.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.thailand</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:56</td>
-      <td>1.52</td>
+      <td>2022-07-12T07:02:54</td>
+      <td>1.89</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.turkey</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:54</td>
+      <td>0.53</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.monaco</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:55</td>
-      <td>28.06</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.south_africa</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:49</td>
-      <td>8.10</td>
+      <td>2022-07-12T07:02:52</td>
+      <td>27.44</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.spain</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:47</td>
-      <td>2.99</td>
+      <td>2022-07-12T07:02:49</td>
+      <td>3.91</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.macao</td>
+      <td>cowidev.vax.incremental.south_africa</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:44</td>
-      <td>17.83</td>
+      <td>2022-07-12T07:02:46</td>
+      <td>6.00</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.serbia</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:41</td>
-      <td>6.19</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.poland</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:34</td>
-      <td>0.20</td>
+      <td>2022-07-12T07:02:40</td>
+      <td>5.93</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.pakistan</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:33</td>
-      <td>1.38</td>
+      <td>2022-07-12T07:02:32</td>
+      <td>1.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.poland</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:32</td>
+      <td>0.26</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.kazakhstan</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:32</td>
-      <td>9.38</td>
+      <td>2022-07-12T07:02:30</td>
+      <td>10.04</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.northern_cyprus</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:30</td>
-      <td>0.85</td>
+      <td>2022-07-12T07:02:27</td>
+      <td>0.83</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.mongolia</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:29</td>
-      <td>1.42</td>
+      <td>2022-07-12T07:02:26</td>
+      <td>1.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.montenegro</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:29</td>
-      <td>0.14</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.moldova</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:27</td>
-      <td>0.96</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.jamaica</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:26</td>
-      <td>3.49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kyrgyzstan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:26</td>
-      <td>2.55</td>
+      <td>2022-07-12T07:02:26</td>
+      <td>0.10</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.laos</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:26</td>
-      <td>2.20</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bangladesh</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:24</td>
-      <td>16.34</td>
+      <td>2022-07-12T07:02:24</td>
+      <td>2.10</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.kosovo</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:24</td>
-      <td>1.19</td>
+      <td>2022-07-12T07:02:24</td>
+      <td>1.91</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.moldova</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:24</td>
+      <td>0.92</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kyrgyzstan</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:23</td>
+      <td>1.03</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.dominican_republic</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:23</td>
-      <td>7.90</td>
+      <td>2022-07-12T07:02:22</td>
+      <td>7.22</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.iran</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:23</td>
-      <td>1.92</td>
+      <td>2022-07-12T07:02:22</td>
+      <td>2.12</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.isle_of_man</td>
+      <td>cowidev.vax.incremental.jamaica</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:23</td>
-      <td>0.89</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.india</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:22</td>
-      <td>1.01</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.hungary</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:21</td>
-      <td>1.02</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.iceland</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:21</td>
-      <td>0.37</td>
+      <td>2022-07-12T07:02:22</td>
+      <td>1.77</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.united_states</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:20</td>
-      <td>45.29</td>
+      <td>2022-07-12T07:02:20</td>
+      <td>45.78</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.guernsey</td>
+      <td>cowidev.vax.incremental.hungary</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:20</td>
-      <td>0.35</td>
+      <td>2022-07-12T07:02:20</td>
+      <td>1.33</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.india</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:20</td>
+      <td>1.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.isle_of_man</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:20</td>
+      <td>0.37</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.greenland</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:19</td>
-      <td>0.69</td>
+      <td>2022-07-12T07:02:19</td>
+      <td>0.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iceland</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:19</td>
+      <td>0.40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.guernsey</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:19</td>
+      <td>0.39</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bangladesh</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:18</td>
+      <td>19.81</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.georgia</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:19</td>
-      <td>0.66</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.finland</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:18</td>
-      <td>0.48</td>
+      <td>2022-07-12T07:02:18</td>
+      <td>0.67</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.faeroe_islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:18</td>
-      <td>0.41</td>
+      <td>2022-07-12T07:02:17</td>
+      <td>0.46</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.finland</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:17</td>
+      <td>0.24</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.fiji</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:18</td>
+      <td>2022-07-12T07:02:17</td>
       <td>0.00</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.el_salvador</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:17</td>
-      <td>1.22</td>
+      <td>2022-07-12T07:02:16</td>
+      <td>1.11</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.cuba</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:16</td>
-      <td>2.27</td>
+      <td>2022-07-12T07:02:15</td>
+      <td>2.37</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.cyprus</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:15</td>
-      <td>1.10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.barbados</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:14</td>
-      <td>2.66</td>
+      <td>2022-07-12T07:02:14</td>
+      <td>0.77</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.curacao</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:14</td>
-      <td>0.38</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.croatia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:14</td>
-      <td>0.20</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bahrain</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:13</td>
-      <td>5.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bulgaria</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:13</td>
-      <td>1.44</td>
+      <td>2022-07-12T07:02:14</td>
+      <td>0.37</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.slovakia</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:12</td>
-      <td>70.54</td>
+      <td>2022-07-12T07:02:13</td>
+      <td>67.08</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bulgaria</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:13</td>
+      <td>4.62</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.croatia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:13</td>
+      <td>0.16</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.barbados</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:12</td>
+      <td>11.18</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.brazil</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:12</td>
-      <td>0.11</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.south_korea</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:11</td>
-      <td>65.23</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.switzerland</td>
-      <td>✅</td>
-      <td>2022-07-11T07:02:07</td>
-      <td>38.83</td>
+      <td>2022-07-12T07:02:09</td>
+      <td>0.46</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.azerbaijan</td>
       <td>✅</td>
-      <td>2022-07-11T07:02:07</td>
-      <td>14.15</td>
+      <td>2022-07-12T07:02:08</td>
+      <td>14.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bahrain</td>
+      <td>✅</td>
+      <td>2022-07-12T07:02:01</td>
+      <td>4.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.switzerland</td>
+      <td>✅</td>
+      <td>2022-07-12T07:01:59</td>
+      <td>39.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.south_korea</td>
+      <td>✅</td>
+      <td>2022-07-12T07:01:56</td>
+      <td>43.99</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.aruba</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:53</td>
-      <td>1.34</td>
+      <td>2022-07-12T07:01:53</td>
+      <td>1.52</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.antigua_barbuda</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:52</td>
-      <td>4.13</td>
+      <td>2022-07-12T07:01:52</td>
+      <td>4.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.zimbabwe</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:48</td>
-      <td>0.83</td>
+      <td>2022-07-12T07:01:47</td>
+      <td>0.65</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.uruguay</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:47</td>
-      <td>3.99</td>
+      <td>2022-07-12T07:01:46</td>
+      <td>4.35</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.united_kingdom</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:43</td>
-      <td>8.11</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.japan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:01:35</td>
-      <td>75.29</td>
+      <td>2022-07-12T07:01:42</td>
+      <td>8.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:35</td>
-      <td>1.77</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.spc</td>
-      <td>✅</td>
-      <td>2022-07-11T07:01:33</td>
-      <td>24.80</td>
+      <td>2022-07-12T07:01:34</td>
+      <td>2.18</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.sweden</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:28</td>
-      <td>19.23</td>
+      <td>2022-07-12T07:01:33</td>
+      <td>18.26</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.latvia</td>
+      <td>cowidev.vax.batch.japan</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:09</td>
-      <td>38.58</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:01:08</td>
-      <td>13.35</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.slovenia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:01:06</td>
-      <td>2.24</td>
+      <td>2022-07-12T07:01:32</td>
+      <td>72.28</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.romania</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:04</td>
-      <td>21.65</td>
+      <td>2022-07-12T07:01:13</td>
+      <td>32.23</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.singapore</td>
+      <td>cowidev.vax.batch.slovenia</td>
       <td>✅</td>
-      <td>2022-07-11T07:01:01</td>
-      <td>6.37</td>
+      <td>2022-07-12T07:01:12</td>
+      <td>1.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.new_zealand</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:55</td>
-      <td>20.06</td>
+      <td>2022-07-12T07:01:11</td>
+      <td>36.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.singapore</td>
+      <td>✅</td>
+      <td>2022-07-12T07:01:06</td>
+      <td>2.23</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:01:03</td>
+      <td>5.79</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.latvia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:00:58</td>
+      <td>28.07</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.peru</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:42</td>
-      <td>4.69</td>
+      <td>2022-07-12T07:00:40</td>
+      <td>3.82</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.norway</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:37</td>
-      <td>2.10</td>
+      <td>2022-07-12T07:00:36</td>
+      <td>1.80</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.malaysia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:00:35</td>
+      <td>2.19</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.malta</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:35</td>
-      <td>1.21</td>
+      <td>2022-07-12T07:00:34</td>
+      <td>1.32</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.luxembourg</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:34</td>
-      <td>2.03</td>
+      <td>2022-07-12T07:00:33</td>
+      <td>2.00</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.lithuania</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:33</td>
-      <td>2.15</td>
+      <td>2022-07-12T07:00:32</td>
+      <td>1.87</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.italy</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:32</td>
-      <td>12.72</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2022-07-11T07:00:31</td>
-      <td>13.71</td>
+      <td>2022-07-12T07:00:31</td>
+      <td>12.31</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.jersey</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:30</td>
-      <td>1.87</td>
+      <td>2022-07-12T07:00:31</td>
+      <td>1.61</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.hong_kong</td>
+      <td>✅</td>
+      <td>2022-07-12T07:00:30</td>
+      <td>12.44</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.israel</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:28</td>
-      <td>10.03</td>
+      <td>2022-07-12T07:00:29</td>
+      <td>10.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.greece</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:20</td>
-      <td>2.46</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.germany</td>
-      <td>✅</td>
-      <td>2022-07-11T07:00:19</td>
-      <td>2.01</td>
+      <td>2022-07-12T07:00:20</td>
+      <td>2.68</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.denmark</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:18</td>
-      <td>4.55</td>
+      <td>2022-07-12T07:00:18</td>
+      <td>4.00</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.france</td>
+      <td>cowidev.vax.batch.germany</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:18</td>
-      <td>0.53</td>
+      <td>2022-07-12T07:00:18</td>
+      <td>1.73</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ireland</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:18</td>
-      <td>0.19</td>
+      <td>2022-07-12T07:00:18</td>
+      <td>0.51</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.czechia</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:17</td>
-      <td>4.14</td>
+      <td>2022-07-12T07:00:17</td>
+      <td>4.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ecuador</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:17</td>
-      <td>2.14</td>
+      <td>2022-07-12T07:00:17</td>
+      <td>1.95</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.estonia</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:17</td>
-      <td>1.16</td>
+      <td>2022-07-12T07:00:17</td>
+      <td>1.05</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.france</td>
+      <td>✅</td>
+      <td>2022-07-12T07:00:17</td>
+      <td>0.50</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:16</td>
-      <td>5.12</td>
+      <td>2022-07-12T07:00:16</td>
+      <td>5.30</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.argentina</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:15</td>
-      <td>3.98</td>
+      <td>2022-07-12T07:00:15</td>
+      <td>4.33</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.belgium</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:14</td>
-      <td>2.85</td>
+      <td>2022-07-12T07:00:14</td>
+      <td>3.21</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.chile</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:14</td>
-      <td>1.30</td>
+      <td>2022-07-12T07:00:14</td>
+      <td>1.14</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:13</td>
-      <td>2.36</td>
+      <td>2022-07-12T07:00:13</td>
+      <td>2.45</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.bolivia</td>
       <td>✅</td>
-      <td>2022-07-11T07:00:13</td>
-      <td>2.27</td>
+      <td>2022-07-12T07:00:13</td>
+      <td>2.35</td>
       <td></td>
     </tr>
   </tbody>
@@ -801,7 +801,7 @@ This file shows the latest status of the data pipeline.
 
 ### Process (Checks)
 
-`6/223` processes failed, `0/223` were skipped. Latest update was `2022-07-11T07:05:45`.
+`4/223` processes failed, `0/223` were skipped. Latest update was `2022-07-12T07:06:48`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -816,1339 +816,1339 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>Vietnam</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Vietnam -- Column people_fully_vaccinated must be monotonically increasing! Check:<br>    location       date  ... people_fully_vaccinated total_boosters<br>386  Vietnam 2022-06-23  ...                78872470       59271683<br><br>[1 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>Senegal</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:43</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Senegal -- Column total_vaccinations must be monotonically increasing! Check:<br>    location       date  ... people_fully_vaccinated total_boosters<br>111  Senegal 2022-06-26  ...                 1070503           7027<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Paraguay</td>
-      <td>❌</td>
-      <td>2022-07-11T07:05:39</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Paraguay -- Column people_vaccinated must be monotonically increasing! Check:<br>     location       date  ... people_fully_vaccinated total_boosters<br>235  Paraguay 2022-07-08  ...                 3472205        1673446<br><br>[1 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>Nepal</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:40</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Nepal -- Column total_vaccinations must be monotonically increasing! Check:<br>    location       date  ... people_fully_vaccinated total_boosters<br>257    Nepal 2022-06-21  ...                20151061        6085076<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Fiji</td>
-      <td>❌</td>
-      <td>2022-07-11T07:05:30</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Fiji -- Column total_vaccinations must be monotonically increasing! Check:<br>   location       date  ... people_fully_vaccinated total_boosters<br>62     Fiji 2022-07-04  ...                  635319           <NA><br><br>[1 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>Benin</td>
       <td>❌</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:27</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 68, in country_df_sanity_checks<br>    checker.run()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 248, in run<br>    self.check_metrics()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 165, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 181, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Benin -- Column total_boosters must be monotonically increasing! Check:<br>   location       date  ... people_fully_vaccinated total_boosters<br>35    Benin 2022-06-26  ...                 2690085              0<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>United States</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Uruguay</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Uzbekistan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Vanuatu</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
-      <td></td>
     </tr>
     <tr>
       <td>Venezuela</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Wales</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Wallis and Futuna</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Yemen</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Zambia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Zimbabwe</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:45</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tunisia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkey</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkmenistan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turks and Caicos Islands</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Tuvalu</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Uganda</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Ukraine</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
       <td>United Arab Emirates</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
       <td>United Kingdom</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:44</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
-      <td>Switzerland</td>
+      <td>United States</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
-      <td>Syria</td>
+      <td>Uruguay</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
-      <td>Taiwan</td>
+      <td>Uzbekistan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
-      <td>Tajikistan</td>
+      <td>Vanuatu</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tanzania</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Thailand</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Timor</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Togo</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Tokelau</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Tonga</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Trinidad and Tobago</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:43</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
-      <td>Solomon Islands</td>
+      <td>Tunisia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
-      <td>Somalia</td>
+      <td>Turkey</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
-      <td>South Africa</td>
+      <td>Turkmenistan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
-      <td>South Korea</td>
+      <td>Turks and Caicos Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>South Sudan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Spain</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Sri Lanka</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Sudan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Suriname</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Sweden</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:42</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Sao Tome and Principe</td>
+      <td>Switzerland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Saudi Arabia</td>
+      <td>Syria</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Scotland</td>
+      <td>Taiwan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Serbia</td>
+      <td>Tajikistan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Seychelles</td>
+      <td>Tanzania</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:45</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Thailand</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Sierra Leone</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
       <td>Singapore</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
       <td>Sint Maarten (Dutch part)</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
       <td>Slovakia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
       <td>Slovenia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:41</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Qatar</td>
+      <td>Solomon Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Romania</td>
+      <td>Somalia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Russia</td>
+      <td>South Africa</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Rwanda</td>
+      <td>South Korea</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
-      <td>Saint Helena</td>
+      <td>South Sudan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saint Kitts and Nevis</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:44</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Lucia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Vincent and the Grenadines</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
       <td>Samoa</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
       <td>San Marino</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:40</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
-      <td>Pakistan</td>
+      <td>Sao Tome and Principe</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
-      <td>Palestine</td>
+      <td>Saudi Arabia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
-      <td>Panama</td>
+      <td>Scotland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
-      <td>Papua New Guinea</td>
+      <td>Serbia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
-      <td>Peru</td>
+      <td>Seychelles</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:43</td>
       <td></td>
     </tr>
     <tr>
       <td>Philippines</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
       <td>Pitcairn</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
       <td>Poland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
       <td>Portugal</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:39</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nicaragua</td>
+      <td>Qatar</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>Niger</td>
+      <td>Romania</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nigeria</td>
+      <td>Russia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>Niue</td>
+      <td>Rwanda</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>North Macedonia</td>
+      <td>Saint Helena</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
-      <td>Northern Cyprus</td>
+      <td>Saint Kitts and Nevis</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:42</td>
       <td></td>
     </tr>
     <tr>
       <td>Northern Ireland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
       <td>Norway</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
       <td>Oman</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:38</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
-      <td>Montserrat</td>
+      <td>Pakistan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
-      <td>Morocco</td>
+      <td>Palestine</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
-      <td>Mozambique</td>
+      <td>Panama</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
-      <td>Myanmar</td>
+      <td>Papua New Guinea</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
-      <td>Namibia</td>
+      <td>Paraguay</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:41</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Peru</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:41</td>
       <td></td>
     </tr>
     <tr>
       <td>Nauru</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
       <td>Netherlands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
       <td>New Caledonia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
       <td>New Zealand</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:37</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
-      <td>Maldives</td>
+      <td>Nicaragua</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
-      <td>Mali</td>
+      <td>Niger</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
-      <td>Malta</td>
+      <td>Nigeria</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
-      <td>Mauritania</td>
+      <td>Niue</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
-      <td>Mauritius</td>
+      <td>North Macedonia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:40</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Northern Cyprus</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:40</td>
       <td></td>
     </tr>
     <tr>
       <td>Mexico</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
       <td>Moldova</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
       <td>Monaco</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
       <td>Mongolia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
       <td>Montenegro</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:36</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
-      <td>Lesotho</td>
+      <td>Montserrat</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
-      <td>Liberia</td>
+      <td>Morocco</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
-      <td>Libya</td>
+      <td>Mozambique</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
-      <td>Liechtenstein</td>
+      <td>Myanmar</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
-      <td>Lithuania</td>
+      <td>Namibia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Luxembourg</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:39</td>
       <td></td>
     </tr>
     <tr>
       <td>Macao</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
       <td>Madagascar</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
       <td>Malawi</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
       <td>Malaysia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:35</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kazakhstan</td>
+      <td>Maldives</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kenya</td>
+      <td>Mali</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kiribati</td>
+      <td>Malta</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kosovo</td>
+      <td>Mauritania</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kuwait</td>
+      <td>Mauritius</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:38</td>
       <td></td>
     </tr>
     <tr>
       <td>Kyrgyzstan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
       <td>Laos</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
       <td>Latvia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
       <td>Lebanon</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:34</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
-      <td>Iraq</td>
+      <td>Lesotho</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
-      <td>Ireland</td>
+      <td>Liberia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
-      <td>Isle of Man</td>
+      <td>Libya</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
-      <td>Israel</td>
+      <td>Liechtenstein</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
-      <td>Italy</td>
+      <td>Lithuania</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:37</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Luxembourg</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:37</td>
       <td></td>
     </tr>
     <tr>
       <td>Jamaica</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
       <td>Japan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
       <td>Jersey</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
       <td>Jordan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:33</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guinea-Bissau</td>
+      <td>Kazakhstan</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guyana</td>
+      <td>Kenya</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
-      <td>Haiti</td>
+      <td>Kiribati</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
-      <td>Honduras</td>
+      <td>Kosovo</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
-      <td>Hong Kong</td>
+      <td>Kuwait</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Hungary</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:36</td>
       <td></td>
     </tr>
     <tr>
       <td>Iceland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
       <td>India</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
       <td>Indonesia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
       <td>Iran</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:32</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
-      <td>Georgia</td>
+      <td>Iraq</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
-      <td>Germany</td>
+      <td>Ireland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
-      <td>Ghana</td>
+      <td>Isle of Man</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
-      <td>Gibraltar</td>
+      <td>Israel</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
-      <td>Greece</td>
+      <td>Italy</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:35</td>
       <td></td>
     </tr>
     <tr>
       <td>Greenland</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
       <td>Grenada</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
       <td>Guatemala</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
       <td>Guernsey</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
       <td>Guinea</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:31</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
-      <td>Ethiopia</td>
+      <td>Guinea-Bissau</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
-      <td>Faeroe Islands</td>
+      <td>Guyana</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
-      <td>Falkland Islands</td>
+      <td>Haiti</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
-      <td>Finland</td>
+      <td>Honduras</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hong Kong</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hungary</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:34</td>
       <td></td>
     </tr>
     <tr>
       <td>France</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
       <td>French Polynesia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
       <td>Gabon</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
       <td>Gambia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:30</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
-      <td>Djibouti</td>
+      <td>Georgia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
-      <td>Dominica</td>
+      <td>Germany</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
-      <td>Dominican Republic</td>
+      <td>Ghana</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
-      <td>Ecuador</td>
+      <td>Gibraltar</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
-      <td>Egypt</td>
+      <td>Greece</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:33</td>
       <td></td>
     </tr>
     <tr>
       <td>El Salvador</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
       <td>England</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Equatorial Guinea</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Estonia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Eswatini</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:29</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cote d'Ivoire</td>
+      <td>Ethiopia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
-      <td>Croatia</td>
+      <td>Faeroe Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cuba</td>
+      <td>Falkland Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Fiji</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:32</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Finland</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Curacao</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Cyprus</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Czechia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Democratic Republic of Congo</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Denmark</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:28</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cayman Islands</td>
+      <td>Djibouti</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Central African Republic</td>
+      <td>Dominica</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Chad</td>
+      <td>Dominican Republic</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Chile</td>
+      <td>Ecuador</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Egypt</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:31</td>
       <td></td>
     </tr>
     <tr>
       <td>China</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Colombia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Comoros</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Congo</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Cook Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Costa Rica</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:27</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Brazil</td>
+      <td>Cote d'Ivoire</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>British Virgin Islands</td>
+      <td>Croatia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Brunei</td>
+      <td>Cuba</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bulgaria</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Burkina Faso</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Burundi</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Cambodia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Cameroon</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Canada</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Cape Verde</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:26</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Bangladesh</td>
+      <td>Cayman Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Barbados</td>
+      <td>Central African Republic</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Belarus</td>
+      <td>Chad</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Belgium</td>
+      <td>Chile</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Belize</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bermuda</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bhutan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Bolivia</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Bonaire Sint Eustatius and Saba</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Bosnia and Herzegovina</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Botswana</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:25</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Anguilla</td>
+      <td>Brazil</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Antigua and Barbuda</td>
+      <td>British Virgin Islands</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Argentina</td>
+      <td>Brunei</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Armenia</td>
+      <td>Bulgaria</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Aruba</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Australia</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Austria</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Azerbaijan</td>
-      <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Bahamas</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Bahrain</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:24</td>
+      <td>2022-07-12T07:06:27</td>
       <td></td>
     </tr>
     <tr>
-      <td>Afghanistan</td>
+      <td>Bangladesh</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:23</td>
+      <td>2022-07-12T07:06:27</td>
       <td></td>
     </tr>
     <tr>
-      <td>Albania</td>
+      <td>Barbados</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:23</td>
+      <td>2022-07-12T07:06:27</td>
       <td></td>
     </tr>
     <tr>
-      <td>Algeria</td>
+      <td>Belarus</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:23</td>
+      <td>2022-07-12T07:06:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belize</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bermuda</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bhutan</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Andorra</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:23</td>
+      <td>2022-07-12T07:06:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Angola</td>
       <td>✅</td>
-      <td>2022-07-11T07:05:23</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Anguilla</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Antigua and Barbuda</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Argentina</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Armenia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Aruba</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Australia</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Austria</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Azerbaijan</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Afghanistan</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Albania</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Algeria</td>
+      <td>✅</td>
+      <td>2022-07-12T07:06:25</td>
       <td></td>
     </tr>
   </tbody>

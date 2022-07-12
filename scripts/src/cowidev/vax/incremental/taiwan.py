@@ -18,6 +18,7 @@ class Taiwan:
         "高端": "Medigen",
         "Moderna": "Moderna",
         "BioNTech": "Pfizer/BioNTech",
+        "Novavax": "Novavax",
     }
 
     @property
@@ -53,7 +54,7 @@ class Taiwan:
         df = dfs[0]
         cols = df.columns
 
-        if df.shape != (24, 4):
+        if df.shape != (29, 4):
             raise ValueError(f"Table 1: format has changed!")
 
         # Sanity check
@@ -67,12 +68,12 @@ class Taiwan:
         ):
             raise ValueError(f"There are some unknown columns: {cols}")
 
-        if df.iloc[19][0] != "總計":
-            raise ValueError(f"Unexpected value in the key cell: {df.iloc[16][0]}")
+        if df.iloc[24][0] != "總計":
+            raise ValueError(f"Unexpected value in the key cell: {df.iloc[23][0]}")
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        for i in range(20, 24):
+        for i in range(25, 29):
             if math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
                 df.iloc[i][0] = float("nan")

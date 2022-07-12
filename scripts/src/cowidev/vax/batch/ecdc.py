@@ -57,7 +57,7 @@ AGE_GROUPS_UNDERAGE = {AGE_GROUP_UNDERAGE_LEVELS["lvl0"]} | AGE_GROUP_UNDERAGE_L
 AGE_GROUPS_RELEVANT = AGE_GROUPS_UNDERAGE | AGE_GROUPS_MUST_HAVE
 
 
-LOCATIONS_MAIN_INCLUDED = ["Austria", "Portugal"]
+LOCATIONS_MAIN_INCLUDED = ["Austria", "Portugal", "Netherlands"]
 
 LOCATIONS_AGE_EXCLUDED = [
     "Switzerland",
@@ -108,7 +108,7 @@ class ECDC(CountryVaxBase):
         return self._load_country_mapping(PATHS.INTERNAL_INPUT_ISO_FULL_FILE)
 
     def read(self):
-        df = read_csv_from_url(self.source_url, timeout=20)
+        df = read_csv_from_url(self.source_url, timeout=30)
         check_known_columns(
             df,
             [
@@ -482,6 +482,13 @@ class ECDC(CountryVaxBase):
         locations = df.location.unique()
         for location in locations:
             df_c = df[df.location == location].copy()
+            msk = (
+                df_c[["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_vaccinations"]].sum(
+                    axis=1
+                )
+                != 0
+            )
+            df_c = df_c.loc[msk]
             self.export_datafile(df_c, filename=location)
 
     def export(self):

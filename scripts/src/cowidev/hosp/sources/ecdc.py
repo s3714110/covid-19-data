@@ -2,6 +2,7 @@ import pandas as pd
 
 from cowidev import PATHS
 from cowidev.utils.clean import clean_date_series
+from cowidev.utils.web.download import read_csv_from_url
 
 METADATA_BASE = {
     "source_url": "https://opendata.ecdc.europa.eu/covid19/hospitalicuadmissionrates/csv/data.csv",
@@ -31,7 +32,7 @@ EXCLUDED_COUNTRIES = [
 
 
 def download_data():
-    df = pd.read_csv(METADATA_BASE["source_url"], usecols=["country", "indicator", "date", "value", "year_week"])
+    df = read_csv_from_url(METADATA_BASE["source_url"], usecols=["country", "indicator", "date", "value", "year_week"])
     df = df[-df.country.isin(EXCLUDED_COUNTRIES)]
     df = df.drop_duplicates()
     df = df.rename(columns={"country": "entity"})
