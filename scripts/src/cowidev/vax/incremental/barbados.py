@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 import re
 
 from bs4 import BeautifulSoup
@@ -38,7 +39,11 @@ class Barbados(CountryVaxBase):
     def _parse_data(self, soup: BeautifulSoup) -> pd.DataFrame:
         """Parse data from soup"""
         # Get the article URL
-        link = soup.find("a", text=re.compile(self.regex["title"]))["href"]
+        elem = soup.find("a", text=re.compile(self.regex["title"]))
+        if elem:
+            link = elem["href"]
+        else:
+            raise ValueError("No COVID-19 update new was found!")
         if not link:
             raise ValueError("Article not found, please update the script")
         self.source_url_ref = link
