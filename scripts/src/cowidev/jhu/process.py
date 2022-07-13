@@ -16,6 +16,7 @@ ZERO_DAY = "2020-01-21"
 zero_day = datetime.strptime(ZERO_DAY, "%Y-%m-%d")
 
 LARGE_DATA_CORRECTIONS = [
+    ("Australia", "2022-04-01", "deaths"),
     ("Austria", "2022-04-21", "deaths"),
     ("Austria", "2022-04-22", "deaths"),
     ("Brazil", "2021-09-18", "cases"),
