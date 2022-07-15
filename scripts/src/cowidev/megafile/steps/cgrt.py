@@ -23,9 +23,9 @@ def get_cgrt(bsg_latest: str, bsg_diff_latest: str, country_mapping: str):
         url=bsg_diff_latest,
         columns_rename={
             "Date": "date",
-            "NonVaccinated_StringencyIndex": "stringency_index_nonvac",
-            "Vaccinated_StringencyIndex": "stringency_index_vac",
-            "WeightedAverage_StringencyIndex": "stringency_index_weighted_avg",
+            "StringencyIndex_NonVaccinated": "stringency_index_nonvac",
+            "StringencyIndex_Vaccinated": "stringency_index_vac",
+            "StringencyIndex_WeightedAverage": "stringency_index_weighted_avg",
         },
         country_mapping=country_mapping,
     )
