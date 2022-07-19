@@ -26,7 +26,7 @@ def main() -> pd.DataFrame:
     )
 
     df = (
-        pd.merge(flow, stock, on="date", validate="1:1")
+        stock.merge(flow, on="date", how="left")  # validate="1:1")
         .melt("date", var_name="indicator")
         .dropna(subset=["value"])
         .replace(
