@@ -85,10 +85,11 @@ class Singapore(CountryVaxBase):
         )[["date", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
+        df.loc[df.date < "2022-01-01", "total_boosters"] = df.loc[df.date < "2022-01-01", "total_boosters"].fillna(0)
         return df.assign(
             total_vaccinations=df.people_vaccinated.fillna(0)
             + df.people_fully_vaccinated.fillna(0)
-            + df.total_boosters.fillna(0)
+            + df.total_boosters
         )
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
