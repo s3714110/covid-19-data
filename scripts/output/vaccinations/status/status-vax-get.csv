@@ -1,43 +1,120 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,3.74,True,2022-07-20T07:00:14,,
-cowidev.vax.batch.australia,1.86,True,2022-07-20T07:00:12,,
-cowidev.vax.batch.austria,,,2022-07-20T07:00:10,,
-cowidev.vax.batch.belgium,2.27,True,2022-07-20T07:00:13,,
-cowidev.vax.batch.bolivia,2.53,True,2022-07-20T07:00:13,,
-cowidev.vax.batch.canada,5.44,True,2022-07-20T07:00:16,,
-cowidev.vax.batch.chile,0.97,True,2022-07-20T07:00:13,,
-cowidev.vax.batch.czechia,1.68,True,2022-07-20T09:26:34,,
-cowidev.vax.batch.denmark,3.13,True,2022-07-20T07:00:16,,
-cowidev.vax.batch.ecdc,19.85,True,2022-07-20T09:25:42,,
-cowidev.vax.batch.ecuador,1.78,True,2022-07-20T07:00:16,,
-cowidev.vax.batch.estonia,0.57,True,2022-07-20T07:00:16,,
-cowidev.vax.batch.france,0.38,True,2022-07-20T07:00:16,,
-cowidev.vax.batch.germany,1.5,True,2022-07-20T07:00:18,,
-cowidev.vax.batch.greece,2.79,True,2022-07-20T07:00:19,,
-cowidev.vax.batch.hong_kong,11.98,True,2022-07-20T07:00:28,,
-cowidev.vax.batch.indonesia,,,2022-07-20T07:00:17,,
-cowidev.vax.batch.ireland,0.35,True,2022-07-20T07:00:17,,
-cowidev.vax.batch.israel,9.71,True,2022-07-20T07:00:27,,
-cowidev.vax.batch.italy,10.61,True,2022-07-20T07:00:28,,
-cowidev.vax.batch.japan,24.01,True,2022-07-20T09:25:46,,
-cowidev.vax.batch.jersey,0.97,True,2022-07-20T07:00:28,,
-cowidev.vax.batch.latvia,20.6,True,2022-07-20T07:00:49,,
-cowidev.vax.batch.lithuania,1.38,True,2022-07-20T07:00:30,,
-cowidev.vax.batch.luxembourg,1.25,True,2022-07-20T07:00:30,,
-cowidev.vax.batch.malaysia,0.54,True,2022-07-20T07:00:30,,
-cowidev.vax.batch.malta,0.65,True,2022-07-20T07:00:30,,
-cowidev.vax.batch.netherlands,,,2022-07-20T07:00:30,,
-cowidev.vax.batch.new_zealand,22.01,True,2022-07-20T07:00:52,,
-cowidev.vax.batch.norway,0.5,True,2022-07-20T07:00:31,,
-cowidev.vax.batch.peru,4.15,True,2022-07-20T07:00:34,,
-cowidev.vax.batch.portugal,,,2022-07-20T07:00:31,,
-cowidev.vax.batch.romania,8.49,True,2022-07-20T07:00:39,,
-cowidev.vax.batch.saudi_arabia,8.9,True,2022-07-20T07:00:43,,
-cowidev.vax.batch.singapore,0.7,True,2022-07-20T09:53:23,,
-cowidev.vax.batch.slovakia,45.03,True,2022-07-20T07:01:28,,
-cowidev.vax.batch.slovenia,0.74,True,2022-07-20T07:00:49,,
-cowidev.vax.batch.south_korea,40.39,True,2022-07-20T07:01:29,,
-cowidev.vax.batch.spc,4.32,False,2022-07-20T07:04:19,"Traceback (most recent call last):
+cowidev.vax.batch.argentina,3.66,True,2022-07-21T07:00:14,,
+cowidev.vax.batch.australia,2.35,True,2022-07-21T07:00:13,,
+cowidev.vax.batch.austria,,,2022-07-21T07:00:11,,
+cowidev.vax.batch.belgium,2.4,True,2022-07-21T07:00:13,,
+cowidev.vax.batch.bolivia,2.19,True,2022-07-21T07:00:13,,
+cowidev.vax.batch.canada,6.32,True,2022-07-21T07:00:17,,
+cowidev.vax.batch.chile,0.61,True,2022-07-21T07:00:13,,
+cowidev.vax.batch.czechia,4.12,True,2022-07-21T07:00:17,,
+cowidev.vax.batch.denmark,4.45,True,2022-07-21T07:00:17,,
+cowidev.vax.batch.ecdc,60.08,False,2022-07-21T07:03:43,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
+    conn = connection.create_connection(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
+    raise err
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
+    self._validate_conn(conn)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
+    conn.connect()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa750d328b0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+    retries = retries.increment(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa750d328b0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 506, in main
+    ECDC().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 496, in export
+    df = self.read().pipe(self.pipe_base)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 111, in read
+    df = read_csv_from_url(self.source_url, timeout=30)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 39, in read_csv_from_url
+    download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 52, in download_file_from_url
+    r = requests.get(url, stream=True, timeout=timeout, verify=verify)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa750d328b0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))
+","HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa750d328b0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))"
+cowidev.vax.batch.ecuador,1.44,True,2022-07-21T07:00:16,,
+cowidev.vax.batch.estonia,1.05,True,2022-07-21T07:00:17,,
+cowidev.vax.batch.france,0.47,True,2022-07-21T07:00:17,,
+cowidev.vax.batch.germany,2.56,True,2022-07-21T07:00:20,,
+cowidev.vax.batch.greece,2.43,True,2022-07-21T07:00:20,,
+cowidev.vax.batch.hong_kong,9.55,True,2022-07-21T07:00:27,,
+cowidev.vax.batch.indonesia,,,2022-07-21T07:00:17,,
+cowidev.vax.batch.ireland,0.35,True,2022-07-21T07:00:18,,
+cowidev.vax.batch.israel,5.3,True,2022-07-21T07:00:23,,
+cowidev.vax.batch.italy,10.55,True,2022-07-21T07:00:30,,
+cowidev.vax.batch.japan,1.42,False,2022-07-21T07:03:44,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 241, in main
+    Japan().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 225, in export
+    df = self.read().pipe(self.pipeline_base)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 161, in read
+    df_latest = self.read_latest().pipe(self.pipe_latest)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 91, in read_latest
+    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 102, in _read_xlsx
+    xlsx = pd.ExcelFile(tmp.name)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1195, in __init__
+    raise ValueError(
+ValueError: Excel file format cannot be determined, you must specify an engine manually.
+","Excel file format cannot be determined, you must specify an engine manually."
+cowidev.vax.batch.jersey,1.21,True,2022-07-21T07:00:24,,
+cowidev.vax.batch.latvia,27.69,True,2022-07-21T07:00:52,,
+cowidev.vax.batch.lithuania,2.08,True,2022-07-21T07:00:29,,
+cowidev.vax.batch.luxembourg,2.16,True,2022-07-21T07:00:31,,
+cowidev.vax.batch.malaysia,0.67,True,2022-07-21T07:00:31,,
+cowidev.vax.batch.malta,0.65,True,2022-07-21T07:00:31,,
+cowidev.vax.batch.netherlands,,,2022-07-21T07:00:31,,
+cowidev.vax.batch.new_zealand,7.42,True,2022-07-21T07:00:38,,
+cowidev.vax.batch.norway,0.53,True,2022-07-21T07:00:31,,
+cowidev.vax.batch.peru,1.97,True,2022-07-21T07:00:33,,
+cowidev.vax.batch.portugal,,,2022-07-21T07:00:31,,
+cowidev.vax.batch.romania,7.8,True,2022-07-21T07:00:39,,
+cowidev.vax.batch.saudi_arabia,6.03,True,2022-07-21T07:00:39,,
+cowidev.vax.batch.singapore,2.12,True,2022-07-21T07:00:40,,
+cowidev.vax.batch.slovakia,52.77,True,2022-07-21T07:01:32,,
+cowidev.vax.batch.slovenia,0.49,True,2022-07-21T07:00:40,,
+cowidev.vax.batch.south_korea,15.24,True,2022-07-21T07:00:55,,
+cowidev.vax.batch.spc,4.31,False,2022-07-21T07:03:49,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/spc.py"", line 220, in main
@@ -166,75 +243,87 @@ Exception: 50 rows have been removed. That is more than maximum allowed (10) by 
 58  2022-06-27  ...      NaN
 
 [50 rows x 8 columns]"
-cowidev.vax.batch.sweden,13.0,True,2022-07-20T07:01:05,,
-cowidev.vax.batch.switzerland,38.64,True,2022-07-20T07:01:32,,
-cowidev.vax.batch.trinidad_and_tobago,1.59,True,2022-07-20T07:01:06,,
-cowidev.vax.batch.ukraine,,,2022-07-20T07:01:06,,
-cowidev.vax.batch.united_kingdom,7.81,True,2022-07-20T07:01:14,,
-cowidev.vax.batch.united_states,22.38,True,2022-07-20T07:01:36,,
-cowidev.vax.batch.uruguay,4.73,True,2022-07-20T07:01:19,,
-cowidev.vax.batch.zimbabwe,0.98,True,2022-07-20T07:01:20,,
-cowidev.vax.incremental.africacdc,,,2022-07-20T07:01:20,,
-cowidev.vax.incremental.antigua_barbuda,4.41,True,2022-07-20T07:01:24,,
-cowidev.vax.incremental.aruba,2.89,True,2022-07-20T07:01:27,,
-cowidev.vax.incremental.azerbaijan,8.39,True,2022-07-20T07:01:36,,
-cowidev.vax.incremental.bahrain,1.28,True,2022-07-20T07:01:30,,
-cowidev.vax.incremental.bangladesh,15.33,True,2022-07-20T07:01:44,,
-cowidev.vax.incremental.barbados,3.59,True,2022-07-20T07:01:33,,
-cowidev.vax.incremental.brazil,0.07,True,2022-07-20T07:01:32,,
-cowidev.vax.incremental.bulgaria,1.13,True,2022-07-20T07:01:33,,
-cowidev.vax.incremental.china,96.31,True,2022-07-20T07:03:10,,
-cowidev.vax.incremental.costa_rica,,,2022-07-20T07:01:33,,
-cowidev.vax.incremental.croatia,0.24,True,2022-07-20T07:01:33,,
-cowidev.vax.incremental.cuba,2.98,True,2022-07-20T07:01:36,,
-cowidev.vax.incremental.curacao,0.53,True,2022-07-20T07:01:36,,
-cowidev.vax.incremental.cyprus,5.56,True,2022-07-20T07:01:42,,
-cowidev.vax.incremental.dominican_republic,10.05,True,2022-07-20T07:01:46,,
-cowidev.vax.incremental.el_salvador,0.74,True,2022-07-20T07:01:37,,
-cowidev.vax.incremental.faeroe_islands,0.31,True,2022-07-20T07:01:38,,
-cowidev.vax.incremental.fiji,0.0,True,2022-07-20T07:01:38,,
-cowidev.vax.incremental.finland,0.17,True,2022-07-20T07:01:38,,
-cowidev.vax.incremental.gabon,,,2022-07-20T07:01:38,,
-cowidev.vax.incremental.georgia,0.49,True,2022-07-20T07:01:38,,
-cowidev.vax.incremental.greenland,0.56,True,2022-07-20T07:01:39,,
-cowidev.vax.incremental.guatemala,,,2022-07-20T07:01:39,,
-cowidev.vax.incremental.guernsey,0.21,True,2022-07-20T07:01:39,,
-cowidev.vax.incremental.hungary,1.49,True,2022-07-20T07:01:40,,
-cowidev.vax.incremental.iceland,0.26,True,2022-07-20T07:01:41,,
-cowidev.vax.incremental.india,0.88,True,2022-07-20T07:01:42,,
-cowidev.vax.incremental.iran,1.74,True,2022-07-20T07:01:43,,
-cowidev.vax.incremental.isle_of_man,0.72,True,2022-07-20T07:01:42,,
-cowidev.vax.incremental.jamaica,1.5,True,2022-07-20T07:01:44,,
-cowidev.vax.incremental.kazakhstan,10.53,True,2022-07-20T07:01:54,,
-cowidev.vax.incremental.kosovo,2.02,True,2022-07-20T07:01:46,,
-cowidev.vax.incremental.kyrgyzstan,0.69,True,2022-07-20T07:01:45,,
-cowidev.vax.incremental.laos,2.06,True,2022-07-20T07:01:47,,
-cowidev.vax.incremental.macao,19.57,True,2022-07-20T07:02:06,,
-cowidev.vax.incremental.moldova,1.17,True,2022-07-20T07:01:48,,
-cowidev.vax.incremental.monaco,26.86,True,2022-07-20T07:02:14,,
-cowidev.vax.incremental.mongolia,1.23,True,2022-07-20T07:01:49,,
-cowidev.vax.incremental.montenegro,0.09,True,2022-07-20T07:01:49,,
-cowidev.vax.incremental.morocco,,,2022-07-20T07:01:49,,
-cowidev.vax.incremental.myanmar,,,2022-07-20T07:01:49,,
-cowidev.vax.incremental.nepal,,,2022-07-20T07:01:49,,
-cowidev.vax.incremental.north_macedonia,,,2022-07-20T07:01:49,,
-cowidev.vax.incremental.northern_cyprus,0.8,True,2022-07-20T07:01:50,,
-cowidev.vax.incremental.paho,51.27,True,2022-07-20T07:02:41,,
-cowidev.vax.incremental.pakistan,1.37,True,2022-07-20T07:01:55,,
-cowidev.vax.incremental.philippines,,,2022-07-20T07:01:55,,
-cowidev.vax.incremental.poland,0.14,True,2022-07-20T07:01:55,,
-cowidev.vax.incremental.qatar,,,2022-07-20T07:01:55,,
-cowidev.vax.incremental.russia,15.46,True,2022-07-20T09:25:38,,
-cowidev.vax.incremental.saint_lucia,,,2022-07-20T07:01:57,,
-cowidev.vax.incremental.serbia,5.92,True,2022-07-20T07:02:03,,
-cowidev.vax.incremental.south_africa,8.44,True,2022-07-20T07:02:11,,
-cowidev.vax.incremental.spain,4.17,True,2022-07-20T07:02:10,,
-cowidev.vax.incremental.sri_lanka,,,2022-07-20T07:02:10,,
-cowidev.vax.incremental.suriname,15.35,True,2022-07-20T07:02:25,,
-cowidev.vax.incremental.taiwan,7.3,True,2022-07-20T07:02:19,,
-cowidev.vax.incremental.thailand,1.74,True,2022-07-20T07:02:16,,
-cowidev.vax.incremental.turkey,0.68,True,2022-07-20T07:02:16,,
-cowidev.vax.incremental.united_arab_emirates,,,2022-07-20T07:02:16,,
-cowidev.vax.incremental.vietnam,,,2022-07-20T07:02:16,,
-cowidev.vax.incremental.who,4.01,True,2022-07-20T07:02:20,,
-cowidev.vax.incremental.zambia,0.76,True,2022-07-20T07:02:19,,
+cowidev.vax.batch.sweden,13.14,True,2022-07-21T07:01:01,,
+cowidev.vax.batch.switzerland,40.13,True,2022-07-21T07:01:32,,
+cowidev.vax.batch.trinidad_and_tobago,1.71,True,2022-07-21T07:00:57,,
+cowidev.vax.batch.ukraine,,,2022-07-21T07:00:57,,
+cowidev.vax.batch.united_kingdom,8.49,True,2022-07-21T07:01:05,,
+cowidev.vax.batch.united_states,37.43,True,2022-07-21T07:01:38,,
+cowidev.vax.batch.uruguay,3.43,True,2022-07-21T07:01:09,,
+cowidev.vax.batch.zimbabwe,0.98,True,2022-07-21T07:01:09,,
+cowidev.vax.incremental.africacdc,,,2022-07-21T07:01:09,,
+cowidev.vax.incremental.antigua_barbuda,4.41,True,2022-07-21T07:01:14,,
+cowidev.vax.incremental.aruba,1.35,True,2022-07-21T07:01:15,,
+cowidev.vax.incremental.azerbaijan,13.32,True,2022-07-21T07:01:27,,
+cowidev.vax.incremental.bahrain,4.24,True,2022-07-21T07:01:19,,
+cowidev.vax.incremental.bangladesh,22.19,True,2022-07-21T07:01:42,,
+cowidev.vax.incremental.barbados,6.08,True,2022-07-21T07:01:33,,
+cowidev.vax.incremental.brazil,0.08,True,2022-07-21T07:01:32,,
+cowidev.vax.incremental.bulgaria,1.06,True,2022-07-21T07:01:33,,
+cowidev.vax.incremental.china,37.98,True,2022-07-21T07:04:27,,
+cowidev.vax.incremental.costa_rica,,,2022-07-21T07:01:33,,
+cowidev.vax.incremental.croatia,0.15,True,2022-07-21T07:01:33,,
+cowidev.vax.incremental.cuba,2.53,True,2022-07-21T07:01:36,,
+cowidev.vax.incremental.curacao,0.35,True,2022-07-21T07:01:34,,
+cowidev.vax.incremental.cyprus,14.66,True,2022-07-21T07:01:48,,
+cowidev.vax.incremental.dominican_republic,6.34,True,2022-07-21T07:01:42,,
+cowidev.vax.incremental.el_salvador,0.68,True,2022-07-21T07:01:39,,
+cowidev.vax.incremental.faeroe_islands,0.35,True,2022-07-21T07:01:39,,
+cowidev.vax.incremental.fiji,0.0,True,2022-07-21T07:01:39,,
+cowidev.vax.incremental.finland,0.17,True,2022-07-21T07:01:39,,
+cowidev.vax.incremental.gabon,,,2022-07-21T07:01:39,,
+cowidev.vax.incremental.georgia,0.5,True,2022-07-21T07:01:40,,
+cowidev.vax.incremental.greenland,0.52,True,2022-07-21T07:01:40,,
+cowidev.vax.incremental.guatemala,,,2022-07-21T07:01:40,,
+cowidev.vax.incremental.guernsey,0.12,True,2022-07-21T07:01:41,,
+cowidev.vax.incremental.hungary,1.89,True,2022-07-21T07:01:42,,
+cowidev.vax.incremental.iceland,0.3,True,2022-07-21T07:01:42,,
+cowidev.vax.incremental.india,1.07,True,2022-07-21T07:01:43,,
+cowidev.vax.incremental.iran,1.82,True,2022-07-21T07:01:44,,
+cowidev.vax.incremental.isle_of_man,1.02,True,2022-07-21T07:01:43,,
+cowidev.vax.incremental.jamaica,1.34,True,2022-07-21T07:01:44,,
+cowidev.vax.incremental.kazakhstan,13.33,True,2022-07-21T07:01:57,,
+cowidev.vax.incremental.kosovo,1.88,True,2022-07-21T07:01:46,,
+cowidev.vax.incremental.kyrgyzstan,0.95,True,2022-07-21T07:01:45,,
+cowidev.vax.incremental.laos,2.06,True,2022-07-21T07:01:47,,
+cowidev.vax.incremental.macao,17.44,True,2022-07-21T07:02:03,,
+cowidev.vax.incremental.moldova,0.86,True,2022-07-21T07:01:48,,
+cowidev.vax.incremental.monaco,27.52,True,2022-07-21T07:02:16,,
+cowidev.vax.incremental.mongolia,1.2,True,2022-07-21T07:01:50,,
+cowidev.vax.incremental.montenegro,0.1,True,2022-07-21T07:01:50,,
+cowidev.vax.incremental.morocco,,,2022-07-21T07:01:50,,
+cowidev.vax.incremental.myanmar,,,2022-07-21T07:01:50,,
+cowidev.vax.incremental.nepal,,,2022-07-21T07:01:50,,
+cowidev.vax.incremental.north_macedonia,,,2022-07-21T07:01:50,,
+cowidev.vax.incremental.northern_cyprus,0.84,True,2022-07-21T07:01:51,,
+cowidev.vax.incremental.paho,51.08,True,2022-07-21T07:02:42,,
+cowidev.vax.incremental.pakistan,1.7,True,2022-07-21T07:01:59,,
+cowidev.vax.incremental.philippines,,,2022-07-21T07:01:59,,
+cowidev.vax.incremental.poland,0.32,True,2022-07-21T07:01:59,,
+cowidev.vax.incremental.qatar,,,2022-07-21T07:01:59,,
+cowidev.vax.incremental.russia,1.56,False,2022-07-21T07:04:28,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 64, in main
+    data = read(source).pipe(pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
+    soup = get_soup(source)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+    raise ValueError(
+ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.saint_lucia,,,2022-07-21T07:02:01,,
+cowidev.vax.incremental.serbia,6.11,True,2022-07-21T07:02:07,,
+cowidev.vax.incremental.south_africa,6.88,True,2022-07-21T07:02:10,,
+cowidev.vax.incremental.spain,4.39,True,2022-07-21T07:02:11,,
+cowidev.vax.incremental.sri_lanka,,,2022-07-21T07:02:10,,
+cowidev.vax.incremental.suriname,14.36,True,2022-07-21T07:02:24,,
+cowidev.vax.incremental.taiwan,8.1,True,2022-07-21T07:02:19,,
+cowidev.vax.incremental.thailand,1.63,True,2022-07-21T07:02:17,,
+cowidev.vax.incremental.turkey,0.53,True,2022-07-21T07:02:18,,
+cowidev.vax.incremental.united_arab_emirates,,,2022-07-21T07:02:18,,
+cowidev.vax.incremental.vietnam,,,2022-07-21T07:02:18,,
+cowidev.vax.incremental.who,4.17,True,2022-07-21T07:02:22,,
+cowidev.vax.incremental.zambia,0.79,True,2022-07-21T07:02:20,,
