@@ -19,8 +19,8 @@ class China(CountryVaxBase):
         "date": r"截至(20\d{2})年(\d{1,2})月(\d{1,2})日",
         "total_vaccinations": r"([\d\.]+\s*万)剂次",
     }
-    chinese: str = r"[\u4e00-\u9fff]*"
-    month_day: str = r"，?(?:\d{2,4}年)?(\d{1,2})月(\d{1,2})[\u4e00-\u9fff]+，?"
+    chinese: str = r"[\u4e00-\u9fff、（）]*"
+    month_day: str = r"，?(?:\d{2,4}年)?(\d{1,2})月(\d{1,2})[\u4e00-\u9fff，]{1,5}(?:\d+个)?"
     metric_ignore: str = r"(?:\d+亿[\u4e00-\u96f5\u96f7-\u9fff，]{1,5})?"
     metric: str = r"((?:\d+亿零?)?[\d\.]+万)"
     regex_complete: dict = {
