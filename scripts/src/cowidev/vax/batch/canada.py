@@ -42,6 +42,7 @@ class Canada(CountryVaxBase):
     vaccine_mapping: dict = {
         "AstraZeneca Vaxzevria/COVISHIELD": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
+        "Medicago Covifenz": "Medicago",
         "Moderna Spikevax": "Moderna",
         "Not reported": None,
         "Novavax": "Novavax",
