@@ -14,7 +14,9 @@ class Cuba:
         self.source_url = "https://salud.msp.gob.cu/actualizacion-de-la-vacunacion-en-el-marco-de-los-estudios-de-los-candidatos-vacunales-cubanos-y-la-intervencion-sanitaria/"
         self.location = "Cuba"
         self.regex = {
-            "title": r"Al cierre del (\d{1,2}(?:ro)? de [a-z]+) se acumulan en el país ([\d ]+) dosis administradas",
+            "title": (
+                r"Al cierre del (\d{1,2}(?:ro)? de [a-z]+) se acumulan en el país ([\d ]+) (?:de )?dosis administradas"
+            ),
             "people_vaccinated": r"al menos una dosis [^\.]+, ([\d ]+) personas",
             "people_fully_vaccinated": r"Tienen esquema de vacunación completo ([\d ]+) personas",
             "total_boosters": r"Cuentan con dosis de refuerzo un total de ([\d ]+) personas",
