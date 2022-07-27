@@ -3,13 +3,31 @@ import pandas as pd
 
 class OxCGRTETL:
     def __init__(self) -> None:
-        self.source_url = "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
-        self.source_url_diff = "https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/master/differentiated_vaccination_policies/OxCGRT_differentiated.csv"
+        self.source_url = (
+            "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_nat_latest.csv"
+        )
+        self.source_url_diff = [
+            "https://github.com/OxCGRT/covid-policy-tracker/raw/master/data/OxCGRT_nat_differentiated_withnotes_2020.csv",
+            "https://github.com/OxCGRT/covid-policy-tracker/raw/master/data/OxCGRT_nat_differentiated_withnotes_2021.csv",
+            "https://github.com/OxCGRT/covid-policy-tracker/raw/master/data/OxCGRT_nat_differentiated_withnotes_2022.csv",
+        ]
 
     def extract(self):
+        print(1)
         df = pd.read_csv(self.source_url, low_memory=False)
-        df_diff = pd.read_csv(self.source_url_diff, low_memory=False)
+        print(2)
+        df_diff = self._load_diff_data()
         return df, df_diff
+
+    def _load_diff_data(self):
+        dfs = []
+        for url in self.source_url_diff:
+            print(url)
+            dfs.append(pd.read_csv(url, low_memory=False))
+        return pd.concat(
+            dfs,
+            ignore_index=True,
+        )
 
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         return df

@@ -2,7 +2,6 @@ import click
 
 from cowidev import PATHS
 from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
-from cowidev.utils.utils import get_traceback
 from cowidev.oxcgrt.etl import run_etl
 from cowidev.oxcgrt.grapher import run_grapheriser, run_db_updater
 
