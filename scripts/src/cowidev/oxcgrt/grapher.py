@@ -81,7 +81,7 @@ def run_grapheriser(input_path: str, input_path_country_std: str, output_path: s
         "H6M_Facial Coverings": "facial_coverings",
         "StringencyIndex_Average": "stringency_index",
         "ContainmentHealthIndex_Average": "containment_index",
-        "C4_Restrictions on gatherings": "restriction_gatherings",
+        "C4M_Restrictions on gatherings": "restriction_gatherings",
         "C6_Stay at home requirements": "stay_home_requirements",
         "E1_Income support": "income_support",
         "E2_Debt/contract relief": "debt_relief",

@@ -23,7 +23,21 @@ class OxCGRTETL:
         dfs = []
         for url in self.source_url_diff:
             # print(url)
-            dfs.append(pd.read_csv(url, low_memory=False))
+            dfs.append(
+                pd.read_csv(
+                    url,
+                    usecols=[
+                        "Date",
+                        "RegionCode",
+                        # "Country",
+                        "CountryName",
+                        "StringencyIndex_NonVaccinated",
+                        "StringencyIndex_Vaccinated",
+                        "StringencyIndex_WeightedAverage",
+                    ],
+                    low_memory=False,
+                )
+            )
         return pd.concat(
             dfs,
             ignore_index=True,
