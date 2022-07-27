@@ -15,7 +15,7 @@ def get_cgrt(bsg_latest: str, bsg_diff_latest: str, country_mapping: str):
         url=bsg_latest,
         columns_rename={
             "Date": "date",
-            "StringencyIndex": "stringency_index",
+            "StringencyIndex_Average": "stringency_index",
         },
         country_mapping=country_mapping,
     )
