@@ -13,16 +13,16 @@ class OxCGRTETL:
         ]
 
     def extract(self):
-        print(1)
+        # print(1)
         df = pd.read_csv(self.source_url, low_memory=False)
-        print(2)
+        # print(2)
         df_diff = self._load_diff_data()
         return df, df_diff
 
     def _load_diff_data(self):
         dfs = []
         for url in self.source_url_diff:
-            print(url)
+            # print(url)
             dfs.append(pd.read_csv(url, low_memory=False))
         return pd.concat(
             dfs,
