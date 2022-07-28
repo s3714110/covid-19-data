@@ -103,6 +103,7 @@ class VariantsETL:
             .pipe(self.pipe_dtypes)
             .pipe(self.pipe_percent)
             .pipe(self.pipe_correct_excess_percentage)
+            .pipe(self.pipe_omicron)
             .pipe(self.pipe_out)
         )
         return df
@@ -296,17 +297,31 @@ class VariantsETL:
         df = df.drop(columns="excess")
         return df
 
+    def pipe_omicron(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Get only Omicron rows
+        msk = df.variant.str.startswith("Omicron")
+        # Group
+        dfg = df[msk].groupby(["location", "date"])
+        # Sum values
+        values = dfg[["num_sequences", "perc_sequences"]].sum()
+        # Get num total
+        num_seq_ttl = dfg["num_sequences_total"].unique()
+        assert (num_seq_ttl.apply(len) == 1).all()
+        num_seq_ttl = num_seq_ttl.apply(lambda x: x[0])
+        # Build df
+        values = values.merge(num_seq_ttl, left_index=True, right_index=True).reset_index().assign(variant="Omicron")
+        df = pd.concat([df, values], ignore_index=True)
+        return df
+
     def pipe_out(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df[self.columns_out].sort_values(["location", "date"])  #  + ["perc_sequences_raw"]
+        return df[self.columns_out].sort_values(["location", "date", "variant"])  #  + ["perc_sequences_raw"]
 
     def run(self):
         data = self.extract()
         df = self.transform(data)
-        # df.to_csv("/home/lucas/repos/covid-19-data/variants.csv", index=False)
         self.load(df, PATHS.INTERNAL_OUTPUT_VARIANTS_FILE)
         # Sequencing
         df_seq = self.transform_seq(df)
-        # df_seq.to_csv("/home/lucas/repos/covid-19-data/secs.csv", index=False)
         self.load(df_seq, PATHS.INTERNAL_OUTPUT_VARIANTS_SEQ_FILE)
 
 
