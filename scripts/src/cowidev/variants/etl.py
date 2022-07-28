@@ -15,7 +15,7 @@ class VariantsETL:
             "https://raw.githubusercontent.com/hodcroftlab/covariants/master/web/data/perCountryData.json"
         )
         self.source_url_date = "https://github.com/hodcroftlab/covariants/raw/master/web/data/update.json"
-        # CoVariants -> OWID name mapping. If who=False, variant is placed in bucket "others"
+        # CoVariants -> OWID name mapping. If who=False, variant is placed in bucket "non_who", along with "others"
         self.variants_details = {
             "20A.EU2": {"rename": "B.1.160", "who": False},
             "20A/S:439K": {"rename": "B.1.258", "who": False},
@@ -30,19 +30,20 @@ class VariantsETL:
             "20I (Alpha, V1)": {"rename": "Alpha", "who": True},
             "20J (Gamma, V3)": {"rename": "Gamma", "who": True},
             "21A (Delta)": {"rename": "Delta", "who": True},
-            "21B (Kappa)": {"rename": "Kappa", "who": True},
-            "21C (Epsilon)": {"rename": "Epsilon", "who": True},
-            "21D (Eta)": {"rename": "Eta", "who": True},
-            "21F (Iota)": {"rename": "Iota", "who": True},
+            "21B (Kappa)": {"rename": "Kappa", "who": False},
+            "21C (Epsilon)": {"rename": "Epsilon", "who": False},
+            "21D (Eta)": {"rename": "Eta", "who": False},
+            "21F (Iota)": {"rename": "Iota", "who": False},
             "21G (Lambda)": {"rename": "Lambda", "who": True},
             "21H (Mu)": {"rename": "Mu", "who": True},
             "21I (Delta)": {"rename": "Delta", "who": True},
             "21J (Delta)": {"rename": "Delta", "who": True},
-            "21K (Omicron)": {"rename": "Omicron", "who": True},
-            "21L (Omicron)": {"rename": "Omicron", "who": True},
-            "22A (Omicron)": {"rename": "Omicron", "who": True},
-            "22B (Omicron)": {"rename": "Omicron", "who": True},
-            "22C (Omicron)": {"rename": "Omicron", "who": True},
+            "21K (Omicron)": {"rename": "Omicron (BA.1)", "who": True},
+            "21L (Omicron)": {"rename": "Omicron (BA.2)", "who": True},
+            "22A (Omicron)": {"rename": "Omicron (BA.4)", "who": True},
+            "22B (Omicron)": {"rename": "Omicron (BA.5)", "who": True},
+            "22C (Omicron)": {"rename": "Omicron (BA.2.12.1)", "who": True},
+            "22D (Omicron)": {"rename": "Omicron (BA.2.75)", "who": True},
             "S:677H.Robin1": {"rename": "S:677H.Robin1", "who": False},
             "S:677P.Pelican": {"rename": "S:677P.Pelican", "who": False},
         }
@@ -301,9 +302,11 @@ class VariantsETL:
     def run(self):
         data = self.extract()
         df = self.transform(data)
+        # df.to_csv("/home/lucas/repos/covid-19-data/variants.csv", index=False)
         self.load(df, PATHS.INTERNAL_OUTPUT_VARIANTS_FILE)
         # Sequencing
         df_seq = self.transform_seq(df)
+        # df_seq.to_csv("/home/lucas/repos/covid-19-data/secs.csv", index=False)
         self.load(df_seq, PATHS.INTERNAL_OUTPUT_VARIANTS_SEQ_FILE)
 
 
