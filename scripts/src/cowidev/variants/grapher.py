@@ -24,6 +24,14 @@ def filter_by_num_sequences(df: pd.DataFrame) -> pd.DataFrame:
     return df[~msk]
 
 
+def variant_url_frienldy_name(df: pd.DataFrame) -> pd.DataFrame:
+    def _slug(x):
+        return x.replace(" ", "_").replace(".", "_").replace("(", "").replace(")", "")
+
+    df.columns = [_slug(col) for col in df.columns]
+    return df
+
+
 def run_grapheriser():
     # Variants
     Grapheriser(
@@ -44,6 +52,7 @@ def run_explorerizer():
         pivot_column="variant",
         pivot_values="perc_sequences",
         function_input=filter_by_num_sequences,
+        function_output=variant_url_frienldy_name,
     ).run(PATHS.INTERNAL_OUTPUT_VARIANTS_FILE, FILE_EXPLORER)
 
 
