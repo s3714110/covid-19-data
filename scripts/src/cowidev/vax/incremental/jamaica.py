@@ -17,14 +17,14 @@ class Jamaica(CountryVaxBase):
         return self._parse_data(soup)
 
     def _parse_data(self, soup) -> pd.Series:
-        counters = soup.find_all(class_="elementor-counter-number")
+        counters = soup.find_all(class_="service-title")
         assert len(counters) == 6, "New counter in dashboard?"
-        total_vaccinations = clean_count(counters[0]["data-to-value"].replace(".", ""))
-        first_doses = clean_count(counters[1]["data-to-value"])
-        second_doses = clean_count(counters[2]["data-to-value"])
-        unique_doses = clean_count(counters[3]["data-to-value"])
-        booster_shots = clean_count(counters[4]["data-to-value"])
-        immunocompromised_doses = clean_count(counters[5]["data-to-value"])
+        total_vaccinations = clean_count(counters[0].text.replace(".", ""))
+        first_doses = clean_count(counters[1].text)
+        second_doses = clean_count(counters[2].text)
+        unique_doses = clean_count(counters[3].text)
+        immunocompromised_doses = clean_count(counters[4].text)
+        booster_shots = clean_count(counters[5].text)
 
         people_vaccinated = first_doses + unique_doses
         people_fully_vaccinated = second_doses + unique_doses
