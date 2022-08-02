@@ -15,9 +15,7 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 class Japan(CountryVaxBase):
     location: str = "Japan"
     source_name: str = "Prime Minister's Office"
-    source_url_early: str = (
-        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
-    )
+    source_url_early: str = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
     source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
     source_url_bst: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
     source_url_bst2: str = "https://www.kantei.go.jp/jp/content/booster2nd_data.xlsx"
@@ -62,7 +60,7 @@ class Japan(CountryVaxBase):
     }
     vaccine_mapping: dict = {
         "ファイザー社": "Pfizer/BioNTech",
-        "武田/モデルナ社": "Moderna",
+        "モデルナ社": "Moderna",
         "アストラゼネカ社": "Oxford/AstraZeneca",
         "武田社(ノババックス)": "Novavax",
         "接種回数(合計)": None,
@@ -91,9 +89,7 @@ class Japan(CountryVaxBase):
         dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
         dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
         dfs.append(self._read_xlsx(self.source_url_bst2, self.sheets_bst2, self.metrics_bst2))
-        return pd.concat(
-            [df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]
-        ).reset_index(drop=True)
+        return pd.concat([df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]).reset_index(drop=True)
 
     def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
         # Download and check Excel sheets
