@@ -92,7 +92,9 @@ class Japan(CountryVaxBase):
 
     def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
         # Download and check Excel sheets   
-        xlsx = pd.ExcelFile(to_proxy_url(url))
+        url_proxy = to_proxy_url(url)
+        print(url_proxy)
+        xlsx = pd.ExcelFile(url_proxy)
         sheets_unknown = set(xlsx.sheet_names) - set(sheets)
         if sheets_unknown:
             raise ValueError(f"Unknown sheets: {sheets_unknown}")
