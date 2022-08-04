@@ -13,7 +13,14 @@ CIPHERS = "HIGH:!DH:!aNULL:DEFAULT@SECLEVEL=1"
 
 
 def read_xlsx_from_url(
-    url: str, timeout=30, as_series: bool = False, verify=True, drop=False, ciphers_low=False, use_proxy=False, **kwargs
+    url: str,
+    timeout=30,
+    as_series: bool = False,
+    verify=True,
+    drop=False,
+    ciphers_low=False,
+    use_proxy=False,
+    **kwargs,
 ) -> pd.DataFrame:
     """Download and load xls file from URL.
 
@@ -27,7 +34,14 @@ def read_xlsx_from_url(
         pandas.DataFrame: Data loaded.
     """
     with tempfile.NamedTemporaryFile() as tmp:
-        download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low, use_proxy=use_proxy,)
+        download_file_from_url(
+            url,
+            tmp.name,
+            timeout=timeout,
+            verify=verify,
+            ciphers_low=ciphers_low,
+            use_proxy=use_proxy,
+        )
         df = pd.read_excel(tmp.name, **kwargs)
     if as_series:
         return df.T.squeeze()
@@ -38,13 +52,23 @@ def read_xlsx_from_url(
 
 def read_csv_from_url(url, timeout=30, verify=True, ciphers_low=False, use_proxy=False, **kwargs):
     with tempfile.NamedTemporaryFile(mode="w+", delete=False) as tmp:
-        download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low, use_proxy=use_proxy)
+        download_file_from_url(
+            url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low, use_proxy=use_proxy
+        )
         df = pd.read_csv(tmp.name, **kwargs)
     # df = df.dropna(how="all")
     return df
 
 
-def download_file_from_url(url, save_path, chunk_size=1024 * 1024, timeout=30, verify=True, ciphers_low=False, use_proxy=False,):
+def download_file_from_url(
+    url,
+    save_path,
+    chunk_size=1024 * 1024,
+    timeout=30,
+    verify=True,
+    ciphers_low=False,
+    use_proxy=False,
+):
     if use_proxy:
         url = to_proxy_url(url)
     if ciphers_low:
@@ -77,7 +101,7 @@ class DESAdapter(HTTPAdapter):
         return super(DESAdapter, self).proxy_manager_for(*args, **kwargs)
 
 
-def get_base_url(url: str, scheme ="https")->str:
+def get_base_url(url: str, scheme="https") -> str:
     """
     Parse a URL and return the base URL.
 
@@ -85,9 +109,9 @@ def get_base_url(url: str, scheme ="https")->str:
 
             url: str
                 URL to parse.
-                <scheme>://<netloc>/<path>;<params>?<query>#<fragment> 
+                <scheme>://<netloc>/<path>;<params>?<query>#<fragment>
             scheme : {'http', 'https'}, default 'https'
-                Scheme to use. 
+                Scheme to use.
 
     ## Returns :
 
