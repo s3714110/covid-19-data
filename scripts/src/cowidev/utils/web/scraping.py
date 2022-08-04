@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChroOpt
 from selenium.webdriver.firefox.options import Options as FireOpt
 
-from cowidev.utils.params import SECRETS
+from cowidev.utils.web.utils import to_proxy_url
 
 
 def get_headers() -> dict:
@@ -37,7 +37,7 @@ def get_response(
     kwargs["verify"] = kwargs.get("verify", True)
     kwargs["timeout"] = kwargs.get("timeout", 20)
     if use_proxy:
-        source = f"http://api.scraperapi.com?api_key={SECRETS.scraperapi.token}&url={source}"
+        source = to_proxy_url(source)
     try:
         if request_method == "get":
             response = requests.get(source, **kwargs)

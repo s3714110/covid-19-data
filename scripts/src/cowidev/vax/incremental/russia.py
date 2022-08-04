@@ -59,16 +59,22 @@ def pipeline(ds: pd.Series) -> pd.Series:
     return ds.pipe(enrich_location).pipe(enrich_vaccine).pipe(enrich_source)
 
 
+
+class Russia:
+    def export(self):
+        source = "https://gogov.ru/articles/covid-v-stats"
+        data = read(source).pipe(pipeline)
+        increment(
+            location=data["location"],
+            total_vaccinations=data["total_vaccinations"],
+            people_vaccinated=data["people_vaccinated"],
+            people_fully_vaccinated=data["people_fully_vaccinated"],
+            total_boosters=data["total_boosters"],
+            date=data["date"],
+            source_url=data["source_url"],
+            vaccine=data["vaccine"],
+        )
+
+
 def main():
-    source = "https://gogov.ru/articles/covid-v-stats"
-    data = read(source).pipe(pipeline)
-    increment(
-        location=data["location"],
-        total_vaccinations=data["total_vaccinations"],
-        people_vaccinated=data["people_vaccinated"],
-        people_fully_vaccinated=data["people_fully_vaccinated"],
-        total_boosters=data["total_boosters"],
-        date=data["date"],
-        source_url=data["source_url"],
-        vaccine=data["vaccine"],
-    )
+    Russia().export()

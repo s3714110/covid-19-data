@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/111` scripts failed, `19/111` were skipped. Latest update was `2022-08-04T07:03:54`.
+`0/111` scripts failed, `19/111` were skipped. Latest update was `2022-08-03T20:03:50`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -182,8 +182,8 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>cowidev.vax.incremental.paho</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:51</td>
-      <td>53.92</td>
+      <td>2022-08-03T20:03:50</td>
+      <td>62.41</td>
       <td></td>
     </tr>
     <tr>

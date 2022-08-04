@@ -1,11 +1,10 @@
-import tempfile
 from datetime import datetime
 
 import pandas as pd
 from bs4 import BeautifulSoup
 
 from cowidev.utils.clean import clean_date_series, clean_df_columns_multiindex
-from cowidev.utils.web.download import download_file_from_url
+from cowidev.utils.web.utils import to_proxy_url
 from cowidev.utils.web.scraping import get_response
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.checks import validate_vaccines
@@ -92,10 +91,10 @@ class Japan(CountryVaxBase):
         return pd.concat([df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]).reset_index(drop=True)
 
     def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
-        # Download and check Excel sheets
-        with tempfile.NamedTemporaryFile() as tmp:
-            download_file_from_url(url, tmp.name)
-            xlsx = pd.ExcelFile(tmp.name)
+        # Download and check Excel sheets   
+        url_proxy = to_proxy_url(url)
+        print(url_proxy)
+        xlsx = pd.ExcelFile(url_proxy)
         sheets_unknown = set(xlsx.sheet_names) - set(sheets)
         if sheets_unknown:
             raise ValueError(f"Unknown sheets: {sheets_unknown}")
