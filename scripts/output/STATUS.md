@@ -5,7 +5,8 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`0/111` scripts failed, `19/111` were skipped. Latest update was `2022-08-03T20:03:50`.
+`0/111` scripts failed, `19/111` were skipped. Latest update was `2022-08-03T20:03:50
+`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,780 +20,780 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.russia</td>
-      <td>❌</td>
-      <td>2022-08-04T07:03:54</td>
-      <td>0.43</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 64, in main<br>    data = read(source).pipe(pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 11, in read<br>    soup = get_soup(source)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>❌</td>
-      <td>2022-08-04T07:03:53</td>
-      <td>60.10</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 96, in create_connection<br>    raise err<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py", line 86, in create_connection<br>    sock.connect(sa)<br>socket.timeout: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 699, in urlopen<br>    httplib_response = self._make_request(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 382, in _make_request<br>    self._validate_conn(conn)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1010, in _validate_conn<br>    conn.connect()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect<br>    conn = self._new_conn()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f989d372e80>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 755, in urlopen<br>    retries = retries.increment(<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 574, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f989d372e80>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 506, in main<br>    ECDC().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 496, in export<br>    df = self.read().pipe(self.pipe_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py", line 111, in read<br>    df = read_csv_from_url(self.source_url, timeout=30)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 39, in read_csv_from_url<br>    download_file_from_url(url, tmp.name, timeout=timeout, verify=verify, ciphers_low=ciphers_low)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py", line 52, in download_file_from_url<br>    r = requests.get(url, stream=True, timeout=timeout, verify=verify)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f989d372e80>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.japan</td>
-      <td>❌</td>
-      <td>2022-08-04T07:03:53</td>
-      <td>0.52</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 237, in main<br>    Japan().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 221, in export<br>    df = self.read().pipe(self.pipeline_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 157, in read<br>    df_latest = self.read_latest().pipe(self.pipe_latest)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 89, in read_latest<br>    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 98, in _read_xlsx<br>    xlsx = pd.ExcelFile(tmp.name)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py", line 1195, in __init__<br>    raise ValueError(<br>ValueError: Excel file format cannot be determined, you must specify an engine manually.<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.argentina</td>
-      <td>❌</td>
-      <td>2022-08-04T07:02:53</td>
-      <td>1.58</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py", line 227, in main<br>    Argentina().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py", line 203, in export<br>    df_base = self.read().pipe(self.pipeline_base)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py", line 189, in pipeline_base<br>    return df.pipe(self.pipe_base_vaccines).pipe(self.pipe_base_cumsum).pipe(self.pipe_base_metrics)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py", line 87, in pipe_base_vaccines<br>    raise ValueError(f"Unknown vaccines detected! {vaccines_wrong}")<br>ValueError: Unknown vaccines detected! {'Moderna Pediátrica'}<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:02:24</td>
+      <td>2022-08-03T07:02:07</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.vietnam</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:02:24</td>
+      <td>2022-08-03T07:02:07</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.sri_lanka</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:02:14</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.saint_lucia</td>
-      <td>⚠️</td>
-      <td>2022-08-04T07:02:03</td>
+      <td>2022-08-03T07:01:56</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.philippines</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:02:02</td>
+      <td>2022-08-03T07:01:43</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.qatar</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:02:02</td>
+      <td>2022-08-03T07:01:43</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.saint_lucia</td>
+      <td>⚠️</td>
+      <td>2022-08-03T07:01:43</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.morocco</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:56</td>
+      <td>2022-08-03T07:01:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.myanmar</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:56</td>
+      <td>2022-08-03T07:01:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.nepal</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:56</td>
+      <td>2022-08-03T07:01:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.north_macedonia</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:56</td>
+      <td>2022-08-03T07:01:41</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.guatemala</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:48</td>
+      <td>2022-08-03T07:01:31</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.gabon</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:47</td>
+      <td>2022-08-03T07:01:30</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.costa_rica</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:43</td>
+      <td>2022-08-03T07:01:27</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.africacdc</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:22</td>
+      <td>2022-08-03T07:01:20</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ukraine</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:01:10</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.portugal</td>
-      <td>⚠️</td>
-      <td>2022-08-04T07:00:35</td>
+      <td>2022-08-03T07:01:07</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.netherlands</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:00:34</td>
+      <td>2022-08-03T07:00:27</td>
+      <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.portugal</td>
+      <td>⚠️</td>
+      <td>2022-08-03T07:00:27</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.indonesia</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:00:18</td>
+      <td>2022-08-03T07:00:14</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.austria</td>
       <td>⚠️</td>
-      <td>2022-08-04T07:00:11</td>
+      <td>2022-08-03T07:00:09</td>
       <td>NaN</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.paho</td>
+      <td>cowidev.vax.batch.japan</td>
       <td>✅</td>
       <td>2022-08-03T20:03:50</td>
       <td>62.41</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.suriname</td>
+      <td>cowidev.vax.batch.ecdc</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:30</td>
-      <td>15.24</td>
+      <td>2022-08-03T11:46:15</td>
+      <td>19.78</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.who</td>
+      <td>cowidev.vax.incremental.russia</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:29</td>
-      <td>4.90</td>
+      <td>2022-08-03T11:46:10</td>
+      <td>15.16</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.china</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:28</td>
-      <td>44.96</td>
+      <td>2022-08-03T07:03:05</td>
+      <td>98.61</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.zambia</td>
+      <td>cowidev.vax.incremental.paho</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:28</td>
-      <td>0.88</td>
+      <td>2022-08-03T07:02:32</td>
+      <td>51.30</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.taiwan</td>
+      <td>cowidev.vax.incremental.suriname</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:27</td>
-      <td>9.06</td>
+      <td>2022-08-03T07:02:11</td>
+      <td>14.88</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.turkey</td>
+      <td>cowidev.vax.incremental.who</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:24</td>
-      <td>0.52</td>
+      <td>2022-08-03T07:02:11</td>
+      <td>4.43</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.thailand</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:23</td>
-      <td>1.43</td>
+      <td>2022-08-03T07:02:08</td>
+      <td>2.13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.zambia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:02:08</td>
+      <td>0.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.turkey</td>
+      <td>✅</td>
+      <td>2022-08-03T07:02:07</td>
+      <td>0.58</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.monaco</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:22</td>
-      <td>27.30</td>
+      <td>2022-08-03T07:02:06</td>
+      <td>27.17</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.south_africa</td>
+      <td>cowidev.vax.incremental.taiwan</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:18</td>
-      <td>8.25</td>
+      <td>2022-08-03T07:02:06</td>
+      <td>7.53</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.spain</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:14</td>
-      <td>4.54</td>
+      <td>2022-08-03T07:01:58</td>
+      <td>4.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.south_africa</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:56</td>
+      <td>6.22</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.macao</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:10</td>
-      <td>16.89</td>
+      <td>2022-08-03T07:01:54</td>
+      <td>16.73</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.serbia</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:10</td>
-      <td>6.60</td>
+      <td>2022-08-03T07:01:49</td>
+      <td>6.01</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.pakistan</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:02</td>
-      <td>1.36</td>
+      <td>2022-08-03T07:01:43</td>
+      <td>1.52</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.poland</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:02</td>
-      <td>0.14</td>
+      <td>2022-08-03T07:01:43</td>
+      <td>0.11</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.kazakhstan</td>
       <td>✅</td>
-      <td>2022-08-04T07:02:01</td>
-      <td>9.84</td>
+      <td>2022-08-03T07:01:41</td>
+      <td>6.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.northern_cyprus</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:57</td>
-      <td>0.87</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.mongolia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:56</td>
-      <td>0.88</td>
+      <td>2022-08-03T07:01:41</td>
+      <td>0.77</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.montenegro</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:56</td>
-      <td>0.10</td>
+      <td>2022-08-03T07:01:41</td>
+      <td>0.11</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.laos</td>
+      <td>cowidev.vax.incremental.mongolia</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:55</td>
-      <td>2.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.moldova</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:55</td>
-      <td>0.90</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kyrgyzstan</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:54</td>
-      <td>2.19</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.jamaica</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:53</td>
-      <td>2.40</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.kosovo</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:53</td>
-      <td>1.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.iran</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:52</td>
-      <td>2.04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:51</td>
-      <td>6.49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.isle_of_man</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:51</td>
-      <td>0.85</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.united_states</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:50</td>
-      <td>35.55</td>
+      <td>2022-08-03T07:01:40</td>
+      <td>1.04</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.bangladesh</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:50</td>
-      <td>20.16</td>
+      <td>2022-08-03T07:01:39</td>
+      <td>16.22</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.india</td>
+      <td>cowidev.vax.incremental.moldova</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:50</td>
-      <td>0.93</td>
+      <td>2022-08-03T07:01:39</td>
+      <td>0.94</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.iceland</td>
+      <td>cowidev.vax.incremental.laos</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:50</td>
-      <td>0.30</td>
+      <td>2022-08-03T07:01:38</td>
+      <td>2.27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kyrgyzstan</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:37</td>
+      <td>1.66</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:36</td>
+      <td>6.59</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.kosovo</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:36</td>
+      <td>1.71</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iran</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:34</td>
+      <td>1.78</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.jamaica</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:34</td>
+      <td>1.36</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.isle_of_man</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:33</td>
+      <td>0.92</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.hungary</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:49</td>
-      <td>0.91</td>
+      <td>2022-08-03T07:01:32</td>
+      <td>1.21</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.india</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:32</td>
+      <td>0.90</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.georgia</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:48</td>
-      <td>0.79</td>
+      <td>2022-08-03T07:01:31</td>
+      <td>0.54</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.greenland</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:48</td>
-      <td>0.53</td>
+      <td>2022-08-03T07:01:31</td>
+      <td>0.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.iceland</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:31</td>
+      <td>0.27</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.guernsey</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:48</td>
-      <td>0.23</td>
+      <td>2022-08-03T07:01:31</td>
+      <td>0.26</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.finland</td>
+      <td>cowidev.vax.batch.switzerland</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:47</td>
-      <td>0.25</td>
+      <td>2022-08-03T07:01:30</td>
+      <td>30.86</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.el_salvador</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:46</td>
-      <td>0.92</td>
+      <td>2022-08-03T07:01:30</td>
+      <td>0.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.faeroe_islands</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:46</td>
-      <td>0.38</td>
+      <td>2022-08-03T07:01:30</td>
+      <td>0.33</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.finland</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:30</td>
+      <td>0.20</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.fiji</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:46</td>
+      <td>2022-08-03T07:01:30</td>
       <td>0.00</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.cuba</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:45</td>
-      <td>2.29</td>
+      <td>2022-08-03T07:01:29</td>
+      <td>2.00</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.cyprus</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:45</td>
-      <td>1.06</td>
+      <td>2022-08-03T07:01:29</td>
+      <td>0.92</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.bulgaria</td>
+      <td>cowidev.vax.batch.united_states</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:44</td>
-      <td>2.03</td>
+      <td>2022-08-03T07:01:28</td>
+      <td>16.06</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.curacao</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:44</td>
+      <td>2022-08-03T07:01:28</td>
       <td>0.37</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.slovakia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:43</td>
-      <td>60.80</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.barbados</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:43</td>
-      <td>11.94</td>
+      <td>2022-08-03T07:01:27</td>
+      <td>3.27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bulgaria</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:27</td>
+      <td>1.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.croatia</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:43</td>
-      <td>0.16</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.brazil</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:41</td>
-      <td>2.25</td>
+      <td>2022-08-03T07:01:27</td>
+      <td>0.14</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.azerbaijan</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:39</td>
-      <td>13.48</td>
+      <td>2022-08-03T07:01:25</td>
+      <td>4.27</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.bahrain</td>
+      <td>cowidev.vax.incremental.brazil</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:31</td>
-      <td>4.57</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.switzerland</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:30</td>
-      <td>34.28</td>
+      <td>2022-08-03T07:01:25</td>
+      <td>0.07</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.antigua_barbuda</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:26</td>
-      <td>4.01</td>
+      <td>2022-08-03T07:01:24</td>
+      <td>3.54</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.aruba</td>
+      <td>cowidev.vax.incremental.bahrain</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:26</td>
-      <td>1.32</td>
+      <td>2022-08-03T07:01:23</td>
+      <td>1.41</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.south_korea</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:24</td>
-      <td>39.81</td>
+      <td>2022-08-03T07:01:21</td>
+      <td>41.70</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.zimbabwe</td>
+      <td>cowidev.vax.incremental.aruba</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:22</td>
-      <td>1.02</td>
+      <td>2022-08-03T07:01:21</td>
+      <td>0.88</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.slovakia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:20</td>
+      <td>42.84</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.uruguay</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:21</td>
-      <td>2.79</td>
+      <td>2022-08-03T07:01:20</td>
+      <td>5.22</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.zimbabwe</td>
+      <td>✅</td>
+      <td>2022-08-03T07:01:20</td>
+      <td>0.63</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.united_kingdom</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:18</td>
-      <td>8.50</td>
+      <td>2022-08-03T07:01:15</td>
+      <td>7.89</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.trinidad_and_tobago</td>
       <td>✅</td>
-      <td>2022-08-04T07:01:10</td>
-      <td>1.49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>✅</td>
-      <td>2022-08-04T07:01:08</td>
-      <td>15.18</td>
+      <td>2022-08-03T07:01:07</td>
+      <td>2.17</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.spc</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:56</td>
-      <td>10.18</td>
+      <td>2022-08-03T07:01:04</td>
+      <td>21.12</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.latvia</td>
+      <td>cowidev.vax.batch.sweden</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:53</td>
-      <td>23.26</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.slovenia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:46</td>
-      <td>1.46</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:45</td>
-      <td>8.10</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.singapore</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:44</td>
-      <td>2.70</td>
+      <td>2022-08-03T07:00:59</td>
+      <td>12.59</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.new_zealand</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:42</td>
-      <td>8.10</td>
+      <td>2022-08-03T07:00:46</td>
+      <td>19.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.latvia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:43</td>
+      <td>18.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.slovenia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:39</td>
+      <td>1.87</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:37</td>
+      <td>6.94</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.singapore</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:37</td>
+      <td>2.66</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.romania</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:41</td>
-      <td>6.83</td>
+      <td>2022-08-03T07:00:35</td>
+      <td>7.20</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.peru</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:37</td>
-      <td>2.14</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.luxembourg</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:35</td>
-      <td>2.25</td>
+      <td>2022-08-03T07:00:31</td>
+      <td>3.89</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.lithuania</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:34</td>
-      <td>1.41</td>
+      <td>2022-08-03T07:00:27</td>
+      <td>1.52</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.malta</td>
+      <td>cowidev.vax.batch.luxembourg</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:34</td>
-      <td>0.89</td>
+      <td>2022-08-03T07:00:27</td>
+      <td>1.47</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.norway</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:34</td>
-      <td>0.24</td>
+      <td>2022-08-03T07:00:27</td>
+      <td>0.76</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.malta</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:27</td>
+      <td>0.73</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.malaysia</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:33</td>
-      <td>0.77</td>
+      <td>2022-08-03T07:00:26</td>
+      <td>0.65</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.hong_kong</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:32</td>
-      <td>14.22</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.italy</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:32</td>
-      <td>12.62</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.jersey</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:30</td>
-      <td>2.41</td>
+      <td>2022-08-03T07:00:25</td>
+      <td>11.10</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.israel</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:28</td>
-      <td>8.76</td>
+      <td>2022-08-03T07:00:25</td>
+      <td>10.34</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.jersey</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:25</td>
+      <td>0.94</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.italy</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:24</td>
+      <td>8.95</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.greece</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:21</td>
-      <td>2.85</td>
+      <td>2022-08-03T07:00:17</td>
+      <td>3.13</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.germany</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:20</td>
-      <td>2.13</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ireland</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:19</td>
-      <td>0.35</td>
+      <td>2022-08-03T07:00:15</td>
+      <td>1.50</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:18</td>
-      <td>6.27</td>
+      <td>2022-08-03T07:00:14</td>
+      <td>4.94</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.denmark</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:18</td>
-      <td>4.25</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.czechia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:18</td>
-      <td>4.14</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.estonia</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:18</td>
-      <td>1.30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.france</td>
-      <td>✅</td>
-      <td>2022-08-04T07:00:18</td>
-      <td>0.59</td>
+      <td>2022-08-03T07:00:14</td>
+      <td>2.69</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ecuador</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:16</td>
-      <td>1.46</td>
+      <td>2022-08-03T07:00:14</td>
+      <td>1.20</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.chile</td>
+      <td>cowidev.vax.batch.france</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:15</td>
-      <td>1.15</td>
+      <td>2022-08-03T07:00:14</td>
+      <td>0.73</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.belgium</td>
+      <td>cowidev.vax.batch.ireland</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:14</td>
-      <td>3.02</td>
+      <td>2022-08-03T07:00:14</td>
+      <td>0.45</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.australia</td>
+      <td>cowidev.vax.batch.czechia</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:14</td>
-      <td>2.30</td>
+      <td>2022-08-03T07:00:13</td>
+      <td>1.42</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.estonia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:13</td>
+      <td>0.62</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.argentina</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:12</td>
+      <td>3.50</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.bolivia</td>
       <td>✅</td>
-      <td>2022-08-04T07:00:14</td>
-      <td>2.22</td>
+      <td>2022-08-03T07:00:11</td>
+      <td>2.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.belgium</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:11</td>
+      <td>2.26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.australia</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:11</td>
+      <td>1.65</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.chile</td>
+      <td>✅</td>
+      <td>2022-08-03T07:00:11</td>
+      <td>0.72</td>
       <td></td>
     </tr>
   </tbody>
