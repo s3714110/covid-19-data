@@ -31,6 +31,7 @@ class Argentina(CountryVaxBase):
         "Cansino Ad5 nCoV": "CanSino",
         "Sputnik V COVID19 Instituto Gamaleya": "Sputnik V",
         "Moderna ARNm": "Moderna",
+        "Moderna Pediátrica": "Moderna",
         "Pfizer Pediátrica": "Pfizer/BioNTech",
         "COVISHIELD ChAdOx1nCoV COVID 19": "Oxford/AstraZeneca",
         "Pfizer BioNTech Comirnaty": "Pfizer/BioNTech",
