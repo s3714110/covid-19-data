@@ -149,7 +149,7 @@ class HospETL:
             df, metadata = module.main()
         except Exception as err:
             logger.error(f"HOSP - {module_name}: ❌ {err}", exc_info=True)
-            raise Exception(f"Process for {module_name} did not work! Please check.")
+            # raise Exception(f"Process for {module_name} did not work! Please check.")
             # return None
         else:
             self._check_fields_df(df)
