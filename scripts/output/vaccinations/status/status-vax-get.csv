@@ -1,25 +1,5 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,2.9,False,2022-08-05T07:03:45,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 227, in main
-    Argentina().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 203, in export
-    df_base = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 189, in pipeline_base
-    return df.pipe(self.pipe_base_vaccines).pipe(self.pipe_base_cumsum).pipe(self.pipe_base_metrics)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 87, in pipe_base_vaccines
-    raise ValueError(f""Unknown vaccines detected! {vaccines_wrong}"")
-ValueError: Unknown vaccines detected! {'Moderna Pediátrica'}
-",Unknown vaccines detected! {'Moderna Pediátrica'}
+cowidev.vax.batch.argentina,2.37,True,2022-08-05T11:48:43,,
 cowidev.vax.batch.australia,2.66,True,2022-08-05T07:00:13,,
 cowidev.vax.batch.austria,,,2022-08-05T07:00:10,,
 cowidev.vax.batch.belgium,2.71,True,2022-08-05T07:00:13,,
@@ -116,21 +96,7 @@ cowidev.vax.incremental.pakistan,1.87,True,2022-08-05T07:02:54,,
 cowidev.vax.incremental.philippines,,,2022-08-05T07:02:54,,
 cowidev.vax.incremental.poland,0.14,True,2022-08-05T07:02:54,,
 cowidev.vax.incremental.qatar,,,2022-08-05T07:02:54,,
-cowidev.vax.incremental.russia,0.54,False,2022-08-05T07:03:45,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.04,True,2022-08-05T11:39:25,,
 cowidev.vax.incremental.saint_lucia,,,2022-08-05T07:02:55,,
 cowidev.vax.incremental.serbia,5.81,True,2022-08-05T07:03:01,,
 cowidev.vax.incremental.south_africa,8.85,True,2022-08-05T07:03:10,,
