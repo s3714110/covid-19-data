@@ -300,10 +300,10 @@ class CountryVaxBase:
             df = df.assign(**{f"{metric}_per_hundred": (df[metric] / df.population * 100).round(2)})
         return df
 
-    def pipe_check_vaccine(self, df: pd.DataFrame, vaccines_accepted) -> pd.DataFrame:
+    def pipe_check_vaccine(self, df: pd.DataFrame, vaccines_accepted=None) -> pd.DataFrame:
         if vaccines_accepted is None:
             vaccines_accepted = self.vaccine_mapping.keys()
-        df = self.check_column_values(df, "vaccine", vaccines_accepted)
+        self.check_column_values(df, "vaccine", vaccines_accepted)
         return df
 
     def check_column_values(self, df: pd.DataFrame, col_name: str, values_accepted: list) -> pd.DataFrame:
