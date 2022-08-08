@@ -7,13 +7,14 @@ from cowidev.vax.utils.base import CountryVaxBase
 
 class Austria(CountryVaxBase):
     location: str = "Austria"
-    source_url: str = "https://info.gesundheitsministerium.gv.at/data/COVID19_vaccination_doses_timeline.csv"
+    source_url: str = "https://info.gesundheitsministerium.gv.at/data/COVID19_vaccination_doses_timeline_v202206.csv"
     source_url_ref: str = "https://info.gesundheitsministerium.gv.at/opendata/"
     vaccine_mapping: dict = {
         "BioNTechPfizer": "Pfizer/BioNTech",
         "Moderna": "Moderna",
         "AstraZeneca": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
+        "Novavax": "Novavax",
     }
     one_dose_vaccines: str = ["Janssen"]
 
@@ -36,21 +37,29 @@ class Austria(CountryVaxBase):
         ).reset_index()
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
-        assert [*df.columns] == ["date", "vaccine", 1, 2, 3], "Wrong list of columns! Maybe a 4th dose was added?"
+        assert [*df.columns] == [
+            "date",
+            "vaccine",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5+",
+        ], "Wrong list of columns! Maybe a nth dose was added?"
 
         # Total vaccinations
-        df.loc[:, "total_vaccinations"] = df[1] + df[2] + df[3]
+        df.loc[:, "total_vaccinations"] = df["1"] + df["2"] + df["3"] + df["4"] + df["5+"]
 
         # People vaccinated
-        df.loc[:, "people_vaccinated"] = df[1]
+        df.loc[:, "people_vaccinated"] = df["1"]
 
         # People fully vaccinated
-        df.loc[df.vaccine.isin(self.one_dose_vaccines), "people_fully_vaccinated"] = df[1]
-        df.loc[-df.vaccine.isin(self.one_dose_vaccines), "people_fully_vaccinated"] = df[2]
+        df.loc[df.vaccine.isin(self.one_dose_vaccines), "people_fully_vaccinated"] = df["1"]
+        df.loc[-df.vaccine.isin(self.one_dose_vaccines), "people_fully_vaccinated"] = df["2"]
 
         # Total boosters
-        df.loc[df.vaccine.isin(self.one_dose_vaccines), "total_boosters"] = df[2] + df[3]
-        df.loc[-df.vaccine.isin(self.one_dose_vaccines), "total_boosters"] = df[3]
+        df.loc[:, "total_boosters"] = df["3"] + df["4"] + df["5+"]
+        df.loc[df.vaccine.isin(self.one_dose_vaccines), "total_boosters"] += df["2"]
 
         return (
             df[
@@ -81,9 +90,15 @@ class Austria(CountryVaxBase):
                 vax_list.append("Oxford/AstraZeneca")
             if date >= "2021-03-15":
                 vax_list.append("Johnson&Johnson")
+            if date >= "2022-02-27":
+                vax_list.append("Novavax")
             return ", ".join(sorted(vax_list))
 
         df["vaccine"] = df.date.apply(_make_list)
+        return df
+
+    def pipe_quick_fix(self, df: pd.DataFrame) -> pd.DataFrame:
+        df.loc[df.people_fully_vaccinated > df.people_vaccinated, "people_fully_vaccinated"] = None
         return df
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -95,6 +110,7 @@ class Austria(CountryVaxBase):
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_vaccine)
+            .pipe(self.pipe_quick_fix)
             .sort_values("date")
         )
 
