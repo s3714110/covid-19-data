@@ -1,7 +1,7 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,4.98,True,2022-08-09T07:00:14,,
 cowidev.vax.batch.australia,1.72,True,2022-08-09T07:00:11,,
-cowidev.vax.batch.austria,2.38,True,2022-08-09T07:00:11,,
+cowidev.vax.batch.austria,2.53,True,2022-08-09T10:30:21,,
 cowidev.vax.batch.belgium,2.93,True,2022-08-09T07:00:12,,
 cowidev.vax.batch.bolivia,2.77,True,2022-08-09T07:00:12,,
 cowidev.vax.batch.canada,5.6,True,2022-08-09T07:00:16,,
@@ -27,23 +27,7 @@ cowidev.vax.batch.luxembourg,1.53,True,2022-08-09T07:00:28,,
 cowidev.vax.batch.malaysia,2.34,True,2022-08-09T07:00:30,,
 cowidev.vax.batch.malta,1.18,True,2022-08-09T07:00:31,,
 cowidev.vax.batch.netherlands,,,2022-08-09T07:00:30,,
-cowidev.vax.batch.new_zealand,3.63,False,2022-08-09T07:03:34,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 109, in main
-    NewZealand().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 104, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 34, in read
-    self._read_latest(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 43, in _read_latest
-    latest_kids = tables[1].set_index(""Unnamed: 0"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/frame.py"", line 5451, in set_index
-    raise KeyError(f""None of {missing} are in the columns"")
-KeyError: ""None of ['Unnamed: 0'] are in the columns""
-","""None of ['Unnamed: 0'] are in the columns"""
+cowidev.vax.batch.new_zealand,4.06,True,2022-08-09T10:46:12,,
 cowidev.vax.batch.norway,1.83,True,2022-08-09T07:00:32,,
 cowidev.vax.batch.peru,6.09,True,2022-08-09T07:00:39,,
 cowidev.vax.batch.portugal,,,2022-08-09T07:00:39,,
@@ -97,21 +81,7 @@ cowidev.vax.incremental.kazakhstan,7.14,True,2022-08-09T07:02:40,,
 cowidev.vax.incremental.kosovo,1.62,True,2022-08-09T07:02:35,,
 cowidev.vax.incremental.kyrgyzstan,1.64,True,2022-08-09T07:02:36,,
 cowidev.vax.incremental.laos,3.08,True,2022-08-09T07:02:38,,
-cowidev.vax.incremental.macao,30.38,False,2022-08-09T07:04:04,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 84, in main
-    Macao().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 70, in export
-    data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 22, in read
-    data = self._parse_data(elem)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 49, in _parse_data
-    df = self._parse_pdf_table(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 34, in _parse_pdf_table
-    raise ValueError(""Source data columns changed!"")
-ValueError: Source data columns changed!
-",Source data columns changed!
+cowidev.vax.incremental.macao,13.46,True,2022-08-09T10:59:56,,
 cowidev.vax.incremental.moldova,0.86,True,2022-08-09T07:02:37,,
 cowidev.vax.incremental.monaco,28.49,True,2022-08-09T07:03:06,,
 cowidev.vax.incremental.mongolia,0.95,True,2022-08-09T07:02:39,,
