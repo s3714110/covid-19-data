@@ -58,7 +58,11 @@ AGE_GROUPS_UNDERAGE = {AGE_GROUP_UNDERAGE_LEVELS["lvl0"]} | AGE_GROUP_UNDERAGE_L
 AGE_GROUPS_RELEVANT = AGE_GROUPS_UNDERAGE | AGE_GROUPS_MUST_HAVE
 
 
-LOCATIONS_MAIN_INCLUDED = ["Austria", "Portugal", "Netherlands"]
+LOCATIONS_MAIN_INCLUDED = [
+    # "Austria",
+    "Portugal",
+    "Netherlands",
+]
 
 LOCATIONS_AGE_EXCLUDED = [
     "Switzerland",
