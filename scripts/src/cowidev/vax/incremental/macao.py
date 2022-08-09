@@ -27,7 +27,8 @@ class Macao:
         dfs = tabula.read_pdf(url)
         df = dfs[0]
         # Checks data
-        cols = ["Unnamed: 0", "Unnamed: 1", "滅活疫苗", "Unnamed: 2", "其他種類疫苗", "Unnamed: 3", "Unnamed: 4"]
+        cols = ["Unnamed: 0", "Unnamed: 1", "滅活疫苗", "Unnamed: 2", "其他種類疫苗", "混合種類", "Unnamed: 3"]
+        # , "Unnamed: 4"]
         if df.shape[1] != 7:
             raise ValueError("New columns added!")
         if not (df.columns == cols).all():
@@ -48,10 +49,10 @@ class Macao:
         # Extract table data
         df = self._parse_pdf_table(url)
         # try:
-        total_vaccinations = clean_count(df.loc["Total de doses administradas", "Unnamed: 4"])
-        people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos", "Unnamed: 4"])
-        people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 4"])
-        people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 4"])
+        total_vaccinations = clean_count(df.loc["Total de doses administradas", "Unnamed: 3"])
+        people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos uma", "Unnamed: 3"])
+        people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 3"])
+        people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 3"])
         # except Exception as e:
         #     print(e)
         #     print(df.index)
