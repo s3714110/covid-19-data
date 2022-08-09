@@ -31,7 +31,7 @@ class NewZealand(CountryVaxBase):
     def read(self) -> pd.DataFrame:
         """Reads the data from the source."""
         soup = get_soup(self.source_url_ref)
-        self._read_latest(soup)
+        # self._read_latest(soup)
         link = self._parse_file_link(soup)
         df = read_xlsx_from_url(link, sheet_name="Date")
         return df
@@ -92,7 +92,7 @@ class NewZealand(CountryVaxBase):
             .pipe(self.pipe_cumsum)
             .pipe(self.pipe_date)
             .pipe(self.pipe_boosters)
-            .pipe(self.pipe_latest_metrics)
+            # .pipe(self.pipe_latest_metrics)
             .pipe(self.pipe_total_vaccinations)
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_metadata)
