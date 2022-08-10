@@ -15,11 +15,19 @@ class Australia(CountryTestBase):
     source_label: str = "Australian Government Department of Health"
     rename_columns: str = {
         "Total": "Cumulative total",
-        "Daily": "Positive rate",
+        # "Daily": "Positive rate",
     }
 
     def read(self) -> pd.DataFrame:
-        df = read_csv_from_url(self.source_url, header=1, usecols=["Date", "Total", "Daily"])
+        df = read_csv_from_url(
+            self.source_url,
+            header=1,
+            usecols=[
+                "Date",
+                "Total",
+                # "Daily",
+            ],
+        )
         df.drop(df.tail(1).index, inplace=True)
         return df
 
@@ -43,7 +51,7 @@ class Australia(CountryTestBase):
         return (
             df.pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
-            .pipe(self.pipe_pr)
+            # .pipe(self.pipe_pr)
             .pipe(self.pipe_date)
             .pipe(self.pipe_metadata)
             .pipe(make_monotonic)
