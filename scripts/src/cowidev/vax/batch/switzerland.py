@@ -59,13 +59,15 @@ class Switzerland(CountryVaxBase):
             people_url,
             usecols=["geoRegion", "date", "sumTotal", "type", "age_group"],
         )
-        assert set(people.type) == {
+        accepted_types = {
             "COVID19AtLeastOneDosePersons",
             "COVID19FullyVaccPersons",
             "COVID19PartiallyVaccPersons",
             "COVID19FirstBoosterPersons",
             "COVID19NotVaccPersons",
-        }, "New type found! Check people.type"
+            "COVID19SecondBoosterPersons",
+        }
+        assert set(people.type) == accepted_types, "New type found! Check people.type"
         people = people[people.age_group == "total_population"].drop(columns=["age_group"])
         manufacturer = pd.read_csv(
             manufacturer_url,
@@ -102,11 +104,13 @@ class Switzerland(CountryVaxBase):
                 "COVID19VaccDosesAdministered": "total_vaccinations",
                 "COVID19AtLeastOneDosePersons": "people_vaccinated",
                 "COVID19FirstBoosterPersons": "total_boosters",
+                "COVID19SecondBoosterPersons": "total_boosters_2",
             }
         )
 
     def pipe_fix_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         df.loc[df.total_vaccinations < df.people_vaccinated, "total_vaccinations"] = df.people_vaccinated
+        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2)
         return df
 
     def pipe_location(self, df: pd.DataFrame, location: str) -> pd.DataFrame:
