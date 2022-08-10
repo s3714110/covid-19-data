@@ -18,7 +18,8 @@ class NewZealand(CountryVaxBase):
         "First doses": "people_vaccinated",
         "Second doses": "people_fully_vaccinated",
         "Third primary doses": "third_dose",
-        "Boosters": "total_boosters",
+        "First Boosters": "total_boosters",
+        "Second Boosters": "total_boosters_2",
         "Date": "date",
     }
     vaccines_start_date = {
@@ -26,7 +27,13 @@ class NewZealand(CountryVaxBase):
         "Oxford/AstraZeneca": "2021-11-26",
         "Novavax": "2022-03-14",
     }
-    columns_cumsum = ["people_vaccinated", "people_fully_vaccinated", "third_dose", "total_boosters"]
+    columns_cumsum = [
+        "people_vaccinated",
+        "people_fully_vaccinated",
+        "third_dose",
+        "total_boosters",
+        "total_boosters_2",
+    ]
 
     def read(self) -> pd.DataFrame:
         """Reads the data from the source."""
@@ -71,7 +78,7 @@ class NewZealand(CountryVaxBase):
 
     def pipe_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculates the total boosters."""
-        return df.assign(total_boosters=df.total_boosters + df.third_dose)
+        return df.assign(total_boosters=df.total_boosters + df.third_dose + df.total_boosters_2)
 
     def pipe_latest_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         """pipes the latest metrics."""
