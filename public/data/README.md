@@ -250,4 +250,4 @@ The data produced by third parties and made available by _Our World in Data_ is 
 
 This data has been collected, aggregated, and documented by Cameron Appel, Diana Beltekian, Daniel Gavrilov, Charlie Giattino, Joe Hasell, Bobbie Macdonald, Edouard Mathieu, Esteban Ortiz-Ospina, Hannah Ritchie, Lucas Rodés-Guirao, Max Roser.
 
-The mission of _Our World in Data_ is to make data and research on the world's largest problems understandable and accessible. [Read more about our mission](https://ourworldindata.org/about).
+_Our World in Data_ makes data and research on the world's largest problems understandable and accessible. [Read more about our mission](https://ourworldindata.org/about).
