@@ -96,21 +96,7 @@ cowidev.vax.incremental.pakistan,1.49,True,2022-08-11T07:02:58,,
 cowidev.vax.incremental.philippines,,,2022-08-11T07:02:58,,
 cowidev.vax.incremental.poland,0.16,True,2022-08-11T07:02:58,,
 cowidev.vax.incremental.qatar,,,2022-08-11T07:02:58,,
-cowidev.vax.incremental.russia,0.81,False,2022-08-11T07:04:49,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.19,True,2022-08-11T08:35:42,,
 cowidev.vax.incremental.saint_lucia,,,2022-08-11T07:02:59,,
 cowidev.vax.incremental.serbia,7.53,True,2022-08-11T07:03:07,,
 cowidev.vax.incremental.south_africa,5.67,True,2022-08-11T07:03:12,,
