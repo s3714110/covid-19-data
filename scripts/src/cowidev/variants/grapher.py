@@ -42,9 +42,9 @@ def run_grapheriser():
         suffixes=["", "_percentage"],
     ).run(PATHS.INTERNAL_OUTPUT_VARIANTS_FILE, FILE_GRAPHER)
     # Sequencing
-    Grapheriser(
-        fillna_0=True,
-    ).run(PATHS.INTERNAL_OUTPUT_VARIANTS_SEQ_FILE, FILE_SEQ_GRAPHER)
+    Grapheriser(fillna_0=True, columns_non_fillna_0=["variant_dominant"]).run(
+        PATHS.INTERNAL_OUTPUT_VARIANTS_SEQ_FILE, FILE_SEQ_GRAPHER
+    )
 
 
 def run_explorerizer():
