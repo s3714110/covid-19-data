@@ -1,6 +1,6 @@
 from datetime import datetime
-from dataclasses import dataclass
-from typing import Callable
+from dataclasses import dataclass, field
+from typing import Callable, List
 
 import pandas as pd
 
@@ -19,6 +19,7 @@ class Grapheriser:
     suffixes: list = None
     function_input: Callable = lambda x: x
     function_output: Callable = lambda x: x
+    columns_non_fillna_0: list = field(default_factory=lambda:[])
 
     @property
     def columns_metadata(self) -> list:
@@ -109,7 +110,8 @@ class Grapheriser:
         if self.fillna:
             df[columns_data] = df.groupby(["Country"])[columns_data].fillna(method="ffill")
         if self.fillna_0:
-            df[columns_data] = df[columns_data].fillna(0)
+            cols_fillna0 = [c for c in columns_data if c not in self.columns_non_fillna_0]
+            df[cols_fillna0] = df[cols_fillna0].fillna(0)
         return df
 
     def read(self, input_path: str):
