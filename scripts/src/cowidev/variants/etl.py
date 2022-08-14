@@ -118,6 +118,9 @@ class VariantsETL:
         return df
 
     def pipe_variant_dominant(self, df):
+        # Remove Omicron (check dominant within sub-variants)
+        df = df[df.variant != "Omicron"]
+        # Rest of the code
         df = df.assign(variant=df.variant.replace({"non_who": "!non_who"}))
         df = df.sort_values(["num_sequences", "variant"], ascending=[False, True]).drop_duplicates(
             ["location", "date"], keep="first"
