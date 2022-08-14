@@ -53,6 +53,7 @@ class Macao:
         people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos uma", "Unnamed: 3"])
         people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 3"])
         people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 3"])
+        people_only_4_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 4a dose", "Unnamed: 3"])
         # except Exception as e:
         #     print(e)
         #     print(df.index)
@@ -60,8 +61,8 @@ class Macao:
         data = {
             "total_vaccinations": total_vaccinations,
             "people_vaccinated": people_vaccinated,
-            "people_fully_vaccinated": people_only_2_doses + people_only_3_doses,
-            "total_boosters": people_only_3_doses,
+            "people_fully_vaccinated": people_only_2_doses + people_only_3_doses + people_only_4_doses,
+            "total_boosters": people_only_3_doses + people_only_4_doses,
             "source_url": url,
             "date": date,
         }
