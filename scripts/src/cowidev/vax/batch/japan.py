@@ -91,9 +91,9 @@ class Japan(CountryVaxBase):
         return pd.concat([df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]).reset_index(drop=True)
 
     def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
-        # Download and check Excel sheets   
+        # Download and check Excel sheets
         url_proxy = to_proxy_url(url)
-        print(url_proxy)
+        # print(url_proxy)
         xlsx = pd.ExcelFile(url_proxy)
         sheets_unknown = set(xlsx.sheet_names) - set(sheets)
         if sheets_unknown:
