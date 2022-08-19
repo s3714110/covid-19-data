@@ -3,7 +3,6 @@ execution:
   njobs: -2
 
 pipeline:
-
   vaccinations:
     get:
       countries:
@@ -21,16 +20,16 @@ pipeline:
         # - Denmark  # Moved to ECDC
         # - Colombia  # Moved to PAHO
         # - Vietnam  # Moved to WHO
-        - Sri Lanka  # Moved to WHO
-        - Ukraine  # Moved to WHO
-        - Portugal  # Temporary moved to ECDC
+        - Sri Lanka # Moved to WHO
+        - Ukraine # Moved to WHO
+        - Portugal # Temporary moved to ECDC
         - Myanmar # Moved to WHO
         - Costa Rica # moved to WHO
-        - Philippines  # moved to WHO
-        - Indonesia  # Moved to WHO
-        - Qatar  # Moved to WHO
-        - United Arab Emirates  # Moved to WHO
-        - Netherlands  # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694), Moved to ECDC
+        - Philippines # moved to WHO
+        - Indonesia # Moved to WHO
+        - Qatar # Moved to WHO
+        - United Arab Emirates # Moved to WHO
+        - Netherlands # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694), Moved to ECDC
         - Nepal # Moved to WHO
         - Vietnam # Moved to WHO
     process:
@@ -52,14 +51,14 @@ pipeline:
             metrics: people_vaccinated
         Brazil:
           - date: 2021-01-21
-            metrics: 
-            - total_vaccinations
-            - people_vaccinated
+            metrics:
+              - total_vaccinations
+              - people_vaccinated
         Bulgaria:
           - date: 2021-12-14
             metrics: total_boosters
         Luxembourg:
-          - date: 2022-07-10
+          - date: 2022-08-07
             metrics: people_fully_vaccinated
         Nigeria:
           - date: 2021-06-15
@@ -72,7 +71,7 @@ pipeline:
 
   testing:
     get:
-      countries: 
+      countries:
       skip_countries:
         - Kazakhstan
         - Ukraine
@@ -87,7 +86,7 @@ pipeline:
     process:
     generate:
     export:
-  
+
   hospitalizations:
     generate:
       countries:
@@ -98,4 +97,3 @@ pipeline:
         # - Israel
         # - Spain
         # - Argentina
-  
