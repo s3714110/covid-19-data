@@ -12,15 +12,20 @@ class Thailand(CountryVaxBase):
 
     def read(self) -> pd.DataFrame:
         """Read data from source"""
-        df = self._parse_data(self.source_url)
+        df = self._parse_data()
         return df
 
-    def _parse_data(self, url: str) -> pd.DataFrame:
+    def _parse_data(self) -> pd.DataFrame:
         """Parse metrics from source"""
         # Get raw dataframe
         ts = TS()
-        ts.loads(url)
-        return ts.getWorksheet("D_Vac_Stack").data
+        ts.loads(self.source_url)
+        return ts.getWorksheet("D_Vac_Stack (2)").data
+
+    def _get_abailable_worksheets(ts):
+        workbook = ts.getWorkbook()
+        for t in workbook.worksheets:
+            print(f"worksheet name : {t.name}")
 
     def pipe_date(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(date=clean_date_series(df["DAY(txn_date)-value"]))
