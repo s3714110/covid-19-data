@@ -11,7 +11,22 @@ def load_data():
     """Load JHU data"""
     df_data = _load_raw_data()
     df_locs = _load_raw_locations()
-    return df_data.merge(df_locs, how="left", on=["Country/Region"])
+    df = df_data.merge(df_locs, how="left", on=["Country/Region"])
+    # Remove UK nations. To add these, we need to revisit how population is ingested (currently only UN nations are included)
+    df = df[
+        -df["Country/Region"].isin(
+            [
+                "Channel Islands",
+                "Guernsey",
+                "Jersey",
+                "England",
+                "Northern Ireland",
+                "Scotland",
+                "Wales",
+            ]
+        )
+    ]
+    return df
 
 
 def load_population(year=2021):
@@ -123,22 +138,29 @@ def _subregion_to_region(df: pd.DataFrame):
         "Bonaire, Sint Eustatius and Saba",
         "British Virgin Islands",
         "Cayman Islands",
+        "Channel Islands",
         "Cook Islands",
         "Curacao",
+        "England",
         "Falkland Islands (Malvinas)",
         "Faroe Islands",
         "French Polynesia",
         "Gibraltar",
         "Greenland",
+        "Guernsey",
         "Hong Kong",
         "Isle of Man",
+        "Jersey",
         "Macau",
         "Montserrat",
+        "Northern Ireland",
         "New Caledonia",
         "Saint Helena, Ascension and Tristan da Cunha",
         "Saint Pierre and Miquelon",
+        "Scotland",
         "Turks and Caicos Islands",
         "Wallis and Futuna",
+        "Wales",
     ]
     msk = df["Province/State"].isin(subregion_to_region)
     df_ = df.copy()
