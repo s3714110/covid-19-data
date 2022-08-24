@@ -10,6 +10,7 @@ JHU_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/da
 VAX_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
 TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv"
 HOSP_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv"
+FULL_URL = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 
 
 def check_updated(url, date_col, allowed_days, weekends) -> None:
@@ -102,7 +103,25 @@ def clich_check_hosp(ctx):
     )
 
 
+@click.command(name="megafile", short_help="Complete dataset.")
+@click.pass_context
+def clich_check_megafile(ctx):
+    """Upload dataset to DB."""
+    feedback_log(
+        func=check_updated,
+        url=FULL_URL,
+        date_col="date",
+        allowed_days=1,
+        weekends=True,
+        server=ctx.obj["server"],
+        domain="Check",
+        step="megafile",
+        hide_success=True,
+    )
+
+
 click_check.add_command(click_check_vax)
 click_check.add_command(click_check_jhu)
 click_check.add_command(click_check_test)
 click_check.add_command(clich_check_hosp)
+click_check.add_command(clich_check_megafile)

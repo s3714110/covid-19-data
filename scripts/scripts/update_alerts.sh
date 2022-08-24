@@ -51,6 +51,10 @@ if [ $hour == 7 ] ; then
   cowid check jhu
 fi
 
+if [ $hour == 9 ] ; then
+  cowid check megafile
+fi
+
 if [ $hour == 12 ] ; then
   cowid check vax
 fi
@@ -58,3 +62,4 @@ fi
 if [ $hour == 14 ] ; then
   cowid check hosp
 fi
+
