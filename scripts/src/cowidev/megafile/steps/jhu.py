@@ -70,3 +70,10 @@ def get_jhu(jhu_dir: str):
     )
 
     return jhu
+
+
+def add_cumulative_deaths_by_year(df: pd.DataFrame) -> pd.DataFrame:
+    df["daily_diff"] = df[["location", "total_deaths"]].groupby("location").fillna(0).diff()
+    df["year"] = df.date.str.slice(0, 4)
+    df["total_deaths_by_year"] = df[["location", "year", "daily_diff"]].groupby(["location", "year"]).cumsum()
+    return df.drop(columns=["daily_diff", "year"])

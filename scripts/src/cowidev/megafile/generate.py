@@ -10,6 +10,7 @@ from cowidev.megafile.steps import (
     add_macro_variables,
     add_excess_mortality,
     add_rolling_vaccinations,
+    add_cumulative_deaths_by_year,
 )
 from cowidev.megafile.export import (
     create_internal,
@@ -94,6 +95,9 @@ def generate_megafile(logger):
     # Calculate rolling vaccinations
     all_covid = add_rolling_vaccinations(all_covid)
 
+    # Calculate cumulative deaths by year
+    all_covid = add_cumulative_deaths_by_year(all_covid)
+
     # Sort by location and date
     all_covid = all_covid.sort_values(["location", "date"])
 
@@ -135,6 +139,7 @@ def generate_megafile(logger):
         "stringency_index_nonvac",
         "stringency_index_vac",
         "stringency_index_weighted_avg",
+        "total_deaths_by_year",
     ]
     all_covid = all_covid.drop(columns=cols_drop)
 
