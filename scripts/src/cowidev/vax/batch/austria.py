@@ -15,6 +15,7 @@ class Austria(CountryVaxBase):
         "AstraZeneca": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
         "Novavax": "Novavax",
+        "Valneva": "Valneva",
     }
     one_dose_vaccines: str = ["Janssen"]
 
