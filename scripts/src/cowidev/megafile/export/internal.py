@@ -58,6 +58,7 @@ internal_files_columns = {
             "date",
             "total_deaths",
             "total_deaths_by_year",
+            "total_deaths_by_year_per_million",
             "new_deaths",
             "new_deaths_smoothed",
             "total_deaths_per_million",

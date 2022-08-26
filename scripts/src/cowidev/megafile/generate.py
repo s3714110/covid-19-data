@@ -140,6 +140,7 @@ def generate_megafile(logger):
         "stringency_index_vac",
         "stringency_index_weighted_avg",
         "total_deaths_by_year",
+        "total_deaths_by_year_per_million",
     ]
     all_covid = all_covid.drop(columns=cols_drop)
 

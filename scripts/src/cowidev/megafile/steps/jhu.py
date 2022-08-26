@@ -76,4 +76,5 @@ def add_cumulative_deaths_by_year(df: pd.DataFrame) -> pd.DataFrame:
     df["daily_diff"] = df[["location", "total_deaths"]].groupby("location").fillna(0).diff()
     df["year"] = df.date.str.slice(0, 4)
     df["total_deaths_by_year"] = df[["location", "year", "daily_diff"]].groupby(["location", "year"]).cumsum()
+    df["total_deaths_by_year_per_million"] = df.total_deaths_by_year.mul(1000000).div(df.population)
     return df.drop(columns=["daily_diff", "year"])
