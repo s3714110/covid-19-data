@@ -35,6 +35,7 @@ VACCINES_ACCEPTED = [
     "Sputnik Light",
     "Sputnik V",
     "Turkovac",
+    "Valneva",
     "ZF2001",
     "ZyCoV-D",
 ]
