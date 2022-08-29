@@ -1,4 +1,4 @@
-"merge"
+import datetime
 import os
 from functools import reduce
 import pandas as pd
@@ -72,9 +72,14 @@ def get_jhu(jhu_dir: str):
     return jhu
 
 
-def add_cumulative_deaths_by_year(df: pd.DataFrame) -> pd.DataFrame:
+def add_cumulative_deaths_last12m(df: pd.DataFrame) -> pd.DataFrame:
+
     df["daily_diff"] = df[["location", "total_deaths"]].groupby("location").fillna(0).diff()
-    df["year"] = df.date.str.slice(0, 4)
-    df["total_deaths_by_year"] = df[["location", "year", "daily_diff"]].groupby(["location", "year"]).cumsum()
-    df["total_deaths_by_year_per_million"] = df.total_deaths_by_year.mul(1000000).div(df.population)
-    return df.drop(columns=["daily_diff", "year"])
+    date_cutoff = datetime.datetime.now() - datetime.timedelta(days=365.2425)
+    df.loc[pd.to_datetime(df.date) < date_cutoff, "daily_diff"] = 0
+
+    df["total_deaths_last12m"] = df[["location", "daily_diff"]].groupby("location").cumsum()
+    df.loc[(pd.to_datetime(df.date) < date_cutoff) | (df.new_deaths.isnull()), "total_deaths_last12m"] = pd.NA
+    df["total_deaths_last12m_per_million"] = df.total_deaths_last12m.mul(1000000).div(df.population)
+
+    return df.drop(columns="daily_diff")
