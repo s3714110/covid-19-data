@@ -113,7 +113,7 @@ class Peru(CountryVaxBase):
         return df
 
     def pipe_age_columns_out(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.rename(columns={"people_recieving_booster_per_hundred": "people_with_booster_per_hundred"})[
+        return df.rename(columns={"people_receiving_booster_per_hundred": "people_with_booster_per_hundred",})[
             [
                 "location",
                 "date",
