@@ -15,7 +15,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 class Iran:
     location = "Iran"
-    _base_url = "https://irangov.ir"
+    _base_url = "https://irangov.ir/"
     _url_subdirectory = "ministry-of-health-and-medical-education"
     _num_max_pages = 3
     regex = {
@@ -144,4 +144,3 @@ class Iran:
 
 def main():
     Iran().export()
-
