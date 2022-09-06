@@ -15,7 +15,8 @@ class Cuba:
         self.location = "Cuba"
         self.regex = {
             "title": (
-                r"Al cierre del (\d{1,2}(?:ro)? de [a-z]+) se acumulan en el país ([\d ]+) (?:de )?dosis administradas"
+                r"Al cierre del (\d{1,2}(?:ro)? de [a-z]+)\s+se acumulan en el país ([\d\s]+) (?:de )?dosis"
+                r" administradas"
             ),
             "people_vaccinated": r"al menos una dosis [^\.]+, ([\d ]+) personas",
             "people_fully_vaccinated": r"Tienen esquema de vacunación completo ([\d ]+) personas",
