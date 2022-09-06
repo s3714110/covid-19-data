@@ -17,7 +17,7 @@ class Belgium(CountryVaxBase):
         return df[["DATE", "DOSE", "COUNT"]]
 
     def pipe_dose_check(self, df: pd.DataFrame) -> pd.DataFrame:
-        doses_wrong = set(df.DOSE).difference(["A", "B", "C", "E", "E2"])
+        doses_wrong = set(df.DOSE).difference(["A", "B", "C", "E", "E2", "E3"])
         if doses_wrong:
             raise ValueError(f"Invalid dose type {doses_wrong}")
         return df
@@ -41,10 +41,10 @@ class Belgium(CountryVaxBase):
 
     def pipe_add_totals(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.assign(
-            total_vaccinations=df.A + df.B + df.C + df.E + df.E2,
+            total_vaccinations=df.A + df.B + df.C + df.E + df.E2 + df.E3,
             people_vaccinated=df.A + df.C,
             people_fully_vaccinated=df.B + df.C,
-            total_boosters=df.E+df.E2,
+            total_boosters=df.E + df.E2 + df.E3,
         )
         return df.drop(columns=["A", "B", "C", "E"])
 
