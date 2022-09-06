@@ -32,6 +32,8 @@ pipeline:
         - Netherlands # Temporary disabled (https://github.com/owid/covid-19-data/issues/2694), Moved to ECDC
         - Nepal # Moved to WHO
         - Vietnam # Moved to WHO
+        - Iran # Moved to WHO
+        - Azerbaijan # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
