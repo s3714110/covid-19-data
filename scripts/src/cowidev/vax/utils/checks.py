@@ -29,6 +29,7 @@ VACCINES_ACCEPTED = [
     "Sinopharm/Beijing",
     "Sinopharm/Wuhan",
     "Sinovac",
+    "SKYCovione",
     "Soberana02",
     "Soberana Plus",
     "SpikoGen",

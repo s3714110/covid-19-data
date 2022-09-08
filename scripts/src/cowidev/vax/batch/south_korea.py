@@ -17,6 +17,7 @@ class SouthKorea(CountryVaxBase):
             "화이자": "Pfizer/BioNTech",
             "얀센": "Johnson&Johnson",
             "노바백스": "Novavax",
+            "스카이코비원": "SKYCovione",
             # "전체": "all",
             # "일자": "date",
             # "기타": "other",
@@ -62,14 +63,17 @@ class SouthKorea(CountryVaxBase):
                 raise ValueError(f"Unknown columns in level {lv}: {diff}")
 
     def pipe_check_metrics(self, df: pd.DataFrame):
-        cols = list(self.vaccines_mapping.values()) + ["others"]
+        vaccines = list(self.vaccines_mapping.values()) + ["others"]
         for dose in ["dose_1", "dose_2", "dose_3", "dose_4"]:
             d = 0
-            for col in cols:
-                if (col in VACCINES_ONE_DOSE) & (dose == "dose_2"):
-                    d += df.loc[:, (col, "dose_1")]
+            # print(dose)
+            for vaccine in vaccines:
+                # print(vaccine)
+                if (vaccine in VACCINES_ONE_DOSE) & (dose == "dose_2"):
+                    d += df.loc[:, (vaccine, "dose_1")]
                 else:
-                    d += df.loc[:, (col, dose)]
+                    if dose in df.loc[:, vaccine].columns:
+                        d += df.loc[:, (vaccine, dose)]
             # if not (d == df[("all", dose)]).all():
             if not ((df[("all", dose)] - d) / d).max() < 0.02:
                 raise ValueError(f"Metric {dose} for 'all' is not equal to the sum over all vaccines (2% tolerance).")
