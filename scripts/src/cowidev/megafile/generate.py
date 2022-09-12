@@ -141,6 +141,14 @@ def generate_megafile(logger):
         "stringency_index_weighted_avg",
         "total_deaths_last12m",
         "total_deaths_last12m_per_million",
+        "excess_mortality_cumulative_absolute_last12m",
+        "excess_mortality_cumulative_absolute_last12m_per_million",
+        "cumulative_estimated_daily_excess_deaths_last12m",
+        "cumulative_estimated_daily_excess_deaths_last12m_per_100k",
+        "cumulative_estimated_daily_excess_deaths_ci_95_top_last12m",
+        "cumulative_estimated_daily_excess_deaths_ci_95_top_last12m_per_100k",
+        "cumulative_estimated_daily_excess_deaths_ci_95_bot_last12m",
+        "cumulative_estimated_daily_excess_deaths_ci_95_bot_last12m_per_100k",
     ]
     all_covid = all_covid.drop(columns=cols_drop)
 
