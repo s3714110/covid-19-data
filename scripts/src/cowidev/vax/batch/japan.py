@@ -25,7 +25,7 @@ class Japan(CountryVaxBase):
         "内２回目": "dose2",
     }
     age_groups: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
-    age_groups_bst: dict = {"all": ["すべて"], "65-": ["高齢者"]}
+    age_groups_bst: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
     age_group_remain: str = "12-64"
     sheets: dict = {
         "総接種回数": None,
@@ -92,9 +92,9 @@ class Japan(CountryVaxBase):
 
     def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
         # Download and check Excel sheets
-        url_proxy = to_proxy_url(url)
+        # url = to_proxy_url(url)
         # print(url, url_proxy)
-        xlsx = pd.ExcelFile(url_proxy)
+        xlsx = pd.ExcelFile(url)
         sheets_unknown = set(xlsx.sheet_names) - set(sheets)
         if sheets_unknown:
             raise ValueError(f"Unknown sheets: {sheets_unknown}")
