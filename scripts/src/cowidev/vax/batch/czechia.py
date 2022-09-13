@@ -7,6 +7,7 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 vaccine_mapping = {
     "Comirnaty": "Pfizer/BioNTech",
     "Comirnaty 5-11": "Pfizer/BioNTech",
+    "Comirnaty Original/Omicron BA.1": "BioNTech/Pfizer",
     "COVID-19 Vaccine Janssen": "Johnson&Johnson",
     "Covishield": "Oxford/AstraZeneca",
     "Nuvaxovid": "Novavax",
