@@ -23,6 +23,7 @@ class Denmark(CountryVaxBase):
         "Moderna/Spikevax Covid-19 Vacc.": "Moderna",
         "Moderna/Spikevax Covid-19 0,5 ml": "Moderna",
         "Pfizer BioNTech Covid-19 vacc": "Pfizer/BioNTech",
+        "Pfizer/Comirnaty Original/Omikron BA1": "Pfizer/BioNTech",
     }
     regions_accepted = {
         "Nordjylland",
