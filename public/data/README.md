@@ -10,8 +10,8 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 | Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
 | Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more at #2667)  | 193       |
 | Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
-| Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 217        |
-| Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 217       |
+| Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 219        |
+| Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 219       |
 | Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily   | 194        |
 | Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily   | 187        |
 | Other variables of interest | International organizations (UN, World Bank, OECD, IHME…) | Fixed   | 241       |
