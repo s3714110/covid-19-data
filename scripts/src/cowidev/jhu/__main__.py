@@ -58,7 +58,7 @@ def check_data_correctness(df, logger):
         logger.info("Data correctness check %s.\n" % colored("passed", "green"))
     else:
         logger.error("Data correctness check %s.\n" % colored("failed", "red"))
-        raise ValueError("Data correctness check failed.")
+        raise ValueError("Data correctness check failed. Read the logs (run `cowid jhu generate`)")
 
 
 def export(df, logger):
