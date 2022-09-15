@@ -64,7 +64,7 @@ def click_check_jhu(ctx):
         weekends=True,
         server=ctx.obj["server"],
         domain="Check",
-        step="vaccinations",
+        step="jhu",
         hide_success=True,
     )
 
