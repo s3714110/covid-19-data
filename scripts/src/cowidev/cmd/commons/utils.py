@@ -7,7 +7,16 @@ from cowidev.utils.slackapi import SlackAPI
 from cowidev.utils.utils import get_traceback
 
 
-def feedback_log(func, server, domain, step=None, text_success="", hide_success=False, **function_kwargs):
+def feedback_log(
+    func,
+    server,
+    domain,
+    step=None,
+    text_success="",
+    hide_success=False,
+    channel="#corona-data-updates",
+    **function_kwargs,
+):
     if step is None:
         header = domain
     else:
@@ -20,7 +29,7 @@ def feedback_log(func, server, domain, step=None, text_success="", hide_success=
                 title=f"{header} step failed",
                 trace=get_traceback(err),
                 type="error",
-            ).to_slack()
+            ).to_slack(channel)
         else:
             raise err
     else:
@@ -29,7 +38,7 @@ def feedback_log(func, server, domain, step=None, text_success="", hide_success=
                 title=f"{header} step ran successfully",
                 text=text_success,
                 type="success",
-            ).to_slack()
+            ).to_slack(channel)
 
 
 class OptionEatAll(click.Option):
