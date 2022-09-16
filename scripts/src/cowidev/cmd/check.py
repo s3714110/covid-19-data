@@ -1,4 +1,6 @@
 import datetime
+import pytz
+import os
 import pandas as pd
 
 import click
@@ -13,7 +15,7 @@ HOSP_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/d
 FULL_URL = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 
 
-def check_updated(url, date_col, allowed_days, weekends) -> None:
+def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_local=None) -> None:
     if not weekends and datetime.datetime.today().weekday() in [5, 6]:
         print("Today is a weekend, skipping...")
         return
@@ -21,11 +23,25 @@ def check_updated(url, date_col, allowed_days, weekends) -> None:
     max_date = df[date_col].max()
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
         raise Exception(
-            "Data is not updated! "
-            f"Check if something is broken in our pipeline and/or if someone is in charge of today's update. URL {url}"
+            f"Data is not updated (exceeded maximum allowed days of {allowed_days})! Last date is {max_date}. "
+            f"Please check if something is broken in our pipeline and/or if someone is in charge of today's "
+            f"update. URL is '{url}'"
         )
-    else:
-        print("Check passed. All good!")
+    if local_check:
+        url = url_local if url_local else url
+        filepath = url.split("https://raw.githubusercontent.com/owid/covid-19-data/master/")[-1]
+        statbuf = os.stat(filepath)
+        ts_modified = datetime.datetime.fromtimestamp(statbuf.st_mtime, pytz.utc)
+        if (
+            (diff_sec := (datetime.datetime.now(pytz.utc) - ts_modified).total_seconds()) >
+            (max_sec := allowed_days * (60 * 60 * 24))
+        ):
+            raise Exception(
+                f"File was modified more than {allowed_days} days: `{diff_sec} sec > {max_sec} sec `! "
+                f"Last modification date is {ts_modified.strftime('%X %x')}. Check if something is broken in our "
+                f"pipeline and/or if someone is in charge of today's update. File is '{filepath}'"
+            )
+    print("Check passed. All good!")
 
 
 @click.group(name="check", chain=True, cls=OrderedGroup)
@@ -49,6 +65,7 @@ def click_check_vax(ctx):
         domain="Check",
         step="vaccinations",
         hide_success=True,
+        channel="covid-19"
     )
 
 
@@ -66,6 +83,8 @@ def click_check_jhu(ctx):
         domain="Check",
         step="jhu",
         hide_success=True,
+        local_check=True,
+        channel="covid-19"
     )
 
 
@@ -83,6 +102,7 @@ def click_check_test(ctx):
         domain="Check",
         step="vaccinations",
         hide_success=True,
+        channel="covid-19"
     )
 
 
@@ -100,6 +120,7 @@ def clich_check_hosp(ctx):
         domain="Check",
         step="hospital",
         hide_success=True,
+        channel="covid-19"
     )
 
 
@@ -117,6 +138,7 @@ def clich_check_megafile(ctx):
         domain="Check",
         step="megafile",
         hide_success=True,
+        channel="covid-19"
     )
 
 
