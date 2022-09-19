@@ -172,6 +172,8 @@ class Canada(CountryVaxBase):
         # Filter rows & columns
         df = df[df.pruid == 1].fillna(0)
         df = df[self.cols_man.keys()].rename(columns=self.cols_man)
+        # Dtype
+        df = df.astype({"total_vaccinations": float})
         # Calculate total vaccinations
         df = df.groupby(df.columns, axis=1).sum()
         # Check and map vaccine names
