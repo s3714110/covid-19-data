@@ -2,6 +2,7 @@ import pandas as pd
 
 
 METADATA = {
+    "source_url_hosp_stock": "https://raw.githubusercontent.com/WWolf/korea-covid19-hosp-data/main/beds.csv",
     "source_url_hosp_flow_icu_stock": "https://github.com/WWolf/korea-covid19-hosp-data/raw/main/hospitalization.csv",
     "source_url_icu_flow": "https://raw.githubusercontent.com/WWolf/korea-covid19-hosp-data/main/weekly_icu.csv",
     "source_url_ref": "http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=",
@@ -39,8 +40,20 @@ def main():
         .sort_values("date")
     )
 
+    hosp_stock = (
+        pd.read_csv(METADATA["source_url_hosp_stock"])
+        .drop_duplicates()
+        .rename(columns={"Date": "date"})
+        .sort_values("date")
+    )
+    hosp_stock["Daily hospital occupancy"] = (
+        hosp_stock["위중증"] + hosp_stock["준중증"] + hosp_stock["중등증"] + hosp_stock["경증"]
+    )
+    hosp_stock = hosp_stock[["date", "Daily hospital occupancy"]]
+
     df = (
-        pd.merge(hosp_flow_icu_stock, icu_flow, on="date", how="outer", validate="one_to_one")
+        hosp_flow_icu_stock.merge(icu_flow, on="date", how="outer", validate="one_to_one")
+        .merge(hosp_stock, on="date", how="outer", validate="one_to_one")
         .melt("date", var_name="indicator")
         .dropna(subset=["value"])
     )
