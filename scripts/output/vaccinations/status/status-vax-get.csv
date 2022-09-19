@@ -1,10 +1,10 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,3.76,True,2022-09-18T07:00:15,,
-cowidev.vax.batch.australia,2.11,True,2022-09-18T07:00:13,,
-cowidev.vax.batch.austria,2.82,True,2022-09-18T07:00:14,,
-cowidev.vax.batch.belgium,2.38,True,2022-09-18T07:00:13,,
-cowidev.vax.batch.bolivia,2.54,True,2022-09-18T07:00:13,,
-cowidev.vax.batch.canada,7.67,False,2022-09-18T07:03:10,"Traceback (most recent call last):
+cowidev.vax.batch.argentina,3.58,True,2022-09-19T07:00:15,,
+cowidev.vax.batch.australia,1.81,True,2022-09-19T07:00:13,,
+cowidev.vax.batch.austria,130.84,True,2022-09-19T07:02:22,,
+cowidev.vax.batch.belgium,2.08,True,2022-09-19T07:00:13,,
+cowidev.vax.batch.bolivia,2.16,True,2022-09-19T07:00:14,,
+cowidev.vax.batch.canada,7.21,False,2022-09-19T07:03:14,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 260, in main
@@ -30,20 +30,20 @@ cowidev.vax.batch.canada,7.67,False,2022-09-18T07:03:10,"Traceback (most recent 
   File ""pandas/_libs/ops.pyx"", line 107, in pandas._libs.ops.scalar_compare
 TypeError: '>' not supported between instances of 'str' and 'int'
 ",'>' not supported between instances of 'str' and 'int'
-cowidev.vax.batch.chile,0.75,True,2022-09-18T07:00:14,,
-cowidev.vax.batch.czechia,3.6,True,2022-09-18T07:00:17,,
-cowidev.vax.batch.denmark,3.65,True,2022-09-18T07:00:17,,
-cowidev.vax.batch.ecdc,123.34,True,2022-09-18T07:02:17,,
-cowidev.vax.batch.ecuador,1.5,True,2022-09-18T07:00:16,,
-cowidev.vax.batch.estonia,0.89,True,2022-09-18T07:00:17,,
-cowidev.vax.batch.france,0.42,True,2022-09-18T07:00:17,,
-cowidev.vax.batch.germany,1.77,True,2022-09-18T07:00:19,,
-cowidev.vax.batch.greece,2.54,True,2022-09-18T07:00:20,,
-cowidev.vax.batch.hong_kong,8.02,True,2022-09-18T07:00:25,,
-cowidev.vax.batch.indonesia,,,2022-09-18T07:00:19,,
-cowidev.vax.batch.ireland,0.2,True,2022-09-18T07:00:19,,
-cowidev.vax.batch.israel,5.41,True,2022-09-18T07:00:24,,
-cowidev.vax.batch.italy,0.94,False,2022-09-18T07:03:11,"Traceback (most recent call last):
+cowidev.vax.batch.chile,0.63,True,2022-09-19T07:00:14,,
+cowidev.vax.batch.czechia,4.1,True,2022-09-19T07:00:18,,
+cowidev.vax.batch.denmark,3.6,True,2022-09-19T07:00:18,,
+cowidev.vax.batch.ecdc,90.73,True,2022-09-19T07:01:46,,
+cowidev.vax.batch.ecuador,1.31,True,2022-09-19T07:00:19,,
+cowidev.vax.batch.estonia,0.53,True,2022-09-19T07:00:18,,
+cowidev.vax.batch.france,0.49,True,2022-09-19T07:00:19,,
+cowidev.vax.batch.germany,1.75,True,2022-09-19T07:00:20,,
+cowidev.vax.batch.greece,2.73,True,2022-09-19T07:00:22,,
+cowidev.vax.batch.hong_kong,14.32,True,2022-09-19T07:00:35,,
+cowidev.vax.batch.indonesia,,,2022-09-19T07:00:22,,
+cowidev.vax.batch.ireland,0.42,True,2022-09-19T07:00:22,,
+cowidev.vax.batch.israel,8.58,True,2022-09-19T07:00:31,,
+cowidev.vax.batch.italy,0.91,False,2022-09-19T07:03:15,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/italy.py"", line 167, in main
@@ -60,7 +60,7 @@ cowidev.vax.batch.italy,0.94,False,2022-09-18T07:03:11,"Traceback (most recent c
     raise KeyError(f""{not_found} not in index"")
 KeyError: ""['dbi'] not in index""
 ","""['dbi'] not in index"""
-cowidev.vax.batch.japan,1.19,False,2022-09-18T07:03:12,"Traceback (most recent call last):
+cowidev.vax.batch.japan,1.2,False,2022-09-19T07:03:16,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
@@ -97,48 +97,60 @@ cowidev.vax.batch.japan,1.19,False,2022-09-18T07:03:12,"Traceback (most recent c
     raise HTTPError(req.full_url, code, msg, hdrs, fp)
 urllib.error.HTTPError: HTTP Error 404: Not Found
 ",HTTP Error 404: Not Found
-cowidev.vax.batch.jersey,1.1,True,2022-09-18T07:00:25,,
-cowidev.vax.batch.latvia,19.62,True,2022-09-18T07:00:44,,
-cowidev.vax.batch.lithuania,1.74,True,2022-09-18T07:00:27,,
-cowidev.vax.batch.luxembourg,1.47,True,2022-09-18T07:00:27,,
-cowidev.vax.batch.malaysia,1.04,True,2022-09-18T07:00:27,,
-cowidev.vax.batch.malta,0.71,True,2022-09-18T07:00:27,,
-cowidev.vax.batch.netherlands,,,2022-09-18T07:00:27,,
-cowidev.vax.batch.new_zealand,20.91,True,2022-09-18T07:00:48,,
-cowidev.vax.batch.norway,0.5,True,2022-09-18T07:00:27,,
-cowidev.vax.batch.peru,4.96,True,2022-09-18T07:00:32,,
-cowidev.vax.batch.portugal,,,2022-09-18T07:00:27,,
-cowidev.vax.batch.romania,10.68,True,2022-09-18T07:00:38,,
-cowidev.vax.batch.saudi_arabia,10.1,True,2022-09-18T07:00:42,,
-cowidev.vax.batch.singapore,3.6,True,2022-09-18T07:00:42,,
-cowidev.vax.batch.slovakia,88.64,True,2022-09-18T07:02:10,,
-cowidev.vax.batch.slovenia,0.53,True,2022-09-18T07:00:43,,
-cowidev.vax.batch.south_korea,60.53,True,2022-09-18T07:01:43,,
-cowidev.vax.batch.spc,6.65,True,2022-09-18T07:00:51,,
-cowidev.vax.batch.sweden,13.3,True,2022-09-18T07:01:01,,
-cowidev.vax.batch.switzerland,50.39,True,2022-09-18T07:01:41,,
-cowidev.vax.batch.trinidad_and_tobago,2.07,True,2022-09-18T07:01:03,,
-cowidev.vax.batch.ukraine,,,2022-09-18T07:01:03,,
-cowidev.vax.batch.united_kingdom,11.16,True,2022-09-18T07:01:14,,
-cowidev.vax.batch.united_states,67.55,True,2022-09-18T07:02:22,,
-cowidev.vax.batch.uruguay,6.32,True,2022-09-18T07:01:47,,
-cowidev.vax.batch.zimbabwe,1.09,True,2022-09-18T07:01:45,,
-cowidev.vax.incremental.africacdc,,,2022-09-18T07:01:45,,
-cowidev.vax.incremental.antigua_barbuda,5.2,True,2022-09-18T07:01:50,,
-cowidev.vax.incremental.aruba,1.49,True,2022-09-18T07:01:49,,
-cowidev.vax.incremental.azerbaijan,,,2022-09-18T07:01:49,,
-cowidev.vax.incremental.bahrain,6.3,True,2022-09-18T07:01:55,,
-cowidev.vax.incremental.bangladesh,26.27,True,2022-09-18T07:02:16,,
-cowidev.vax.incremental.barbados,14.21,True,2022-09-18T07:02:09,,
-cowidev.vax.incremental.brazil,0.34,True,2022-09-18T07:02:10,,
-cowidev.vax.incremental.bulgaria,2.45,True,2022-09-18T07:02:12,,
-cowidev.vax.incremental.china,41.42,True,2022-09-18T07:02:52,,
-cowidev.vax.incremental.costa_rica,,,2022-09-18T07:02:12,,
-cowidev.vax.incremental.croatia,0.3,True,2022-09-18T07:02:12,,
-cowidev.vax.incremental.cuba,3.73,True,2022-09-18T07:02:16,,
-cowidev.vax.incremental.curacao,0.41,True,2022-09-18T07:02:16,,
-cowidev.vax.incremental.cyprus,1.18,True,2022-09-18T07:02:17,,
-cowidev.vax.incremental.dominican_republic,2.34,False,2022-09-18T07:03:14,"Traceback (most recent call last):
+cowidev.vax.batch.jersey,1.82,True,2022-09-19T07:00:32,,
+cowidev.vax.batch.latvia,38.46,True,2022-09-19T07:01:11,,
+cowidev.vax.batch.lithuania,2.18,True,2022-09-19T07:00:37,,
+cowidev.vax.batch.luxembourg,12.3,True,2022-09-19T07:00:49,,
+cowidev.vax.batch.malaysia,2.48,True,2022-09-19T07:00:49,,
+cowidev.vax.batch.malta,1.37,True,2022-09-19T07:00:50,,
+cowidev.vax.batch.netherlands,,,2022-09-19T07:00:49,,
+cowidev.vax.batch.new_zealand,27.7,True,2022-09-19T07:01:17,,
+cowidev.vax.batch.norway,1.43,True,2022-09-19T07:00:51,,
+cowidev.vax.batch.peru,3.49,True,2022-09-19T07:00:55,,
+cowidev.vax.batch.portugal,,,2022-09-19T07:00:55,,
+cowidev.vax.batch.romania,29.53,True,2022-09-19T07:01:24,,
+cowidev.vax.batch.saudi_arabia,5.02,True,2022-09-19T07:01:16,,
+cowidev.vax.batch.singapore,2.04,True,2022-09-19T07:01:18,,
+cowidev.vax.batch.slovakia,53.29,True,2022-09-19T07:02:10,,
+cowidev.vax.batch.slovenia,1.57,True,2022-09-19T07:01:20,,
+cowidev.vax.batch.south_korea,44.73,True,2022-09-19T07:02:04,,
+cowidev.vax.batch.spc,16.44,True,2022-09-19T07:01:41,,
+cowidev.vax.batch.sweden,13.8,True,2022-09-19T07:01:55,,
+cowidev.vax.batch.switzerland,25.35,True,2022-09-19T07:02:11,,
+cowidev.vax.batch.trinidad_and_tobago,2.01,True,2022-09-19T07:01:57,,
+cowidev.vax.batch.ukraine,,,2022-09-19T07:01:57,,
+cowidev.vax.batch.united_kingdom,8.94,True,2022-09-19T07:02:06,,
+cowidev.vax.batch.united_states,15.18,True,2022-09-19T07:02:19,,
+cowidev.vax.batch.uruguay,4.44,True,2022-09-19T07:02:10,,
+cowidev.vax.batch.zimbabwe,0.85,True,2022-09-19T07:02:11,,
+cowidev.vax.incremental.africacdc,,,2022-09-19T07:02:10,,
+cowidev.vax.incremental.antigua_barbuda,6.44,True,2022-09-19T07:02:17,,
+cowidev.vax.incremental.aruba,0.91,True,2022-09-19T07:02:12,,
+cowidev.vax.incremental.azerbaijan,,,2022-09-19T07:02:11,,
+cowidev.vax.incremental.bahrain,1.23,True,2022-09-19T07:02:12,,
+cowidev.vax.incremental.bangladesh,42.06,False,2022-09-19T07:03:58,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 111, in main
+    Bangladesh().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 97, in export
+    data = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 25, in read
+    vaccines = self._parse_vaccines(soup)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 81, in _parse_vaccines
+    raise ValueError(f""Unknown vaccines found {vaccines_unk}"")
+ValueError: Unknown vaccines found {'Pfizer-PF (Comirnaty)'}
+",Unknown vaccines found {'Pfizer-PF (Comirnaty)'}
+cowidev.vax.incremental.barbados,1.62,True,2022-09-19T07:02:14,,
+cowidev.vax.incremental.brazil,0.06,True,2022-09-19T07:02:14,,
+cowidev.vax.incremental.bulgaria,1.06,True,2022-09-19T07:02:15,,
+cowidev.vax.incremental.china,49.58,True,2022-09-19T07:03:05,,
+cowidev.vax.incremental.costa_rica,,,2022-09-19T07:02:17,,
+cowidev.vax.incremental.croatia,0.14,True,2022-09-19T07:02:17,,
+cowidev.vax.incremental.cuba,2.21,True,2022-09-19T07:02:19,,
+cowidev.vax.incremental.curacao,0.42,True,2022-09-19T07:02:19,,
+cowidev.vax.incremental.cyprus,0.97,True,2022-09-19T07:02:20,,
+cowidev.vax.incremental.dominican_republic,3.37,False,2022-09-19T07:04:02,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 108, in main
@@ -163,22 +175,22 @@ Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-bro
 ","Message: session not created: This version of ChromeDriver only supports Chrome version 103
 Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
 "
-cowidev.vax.incremental.el_salvador,1.0,True,2022-09-18T07:02:18,,
-cowidev.vax.incremental.faeroe_islands,0.4,True,2022-09-18T07:02:18,,
-cowidev.vax.incremental.fiji,0.0,True,2022-09-18T07:02:18,,
-cowidev.vax.incremental.finland,0.22,True,2022-09-18T07:02:18,,
-cowidev.vax.incremental.gabon,,,2022-09-18T07:02:18,,
-cowidev.vax.incremental.georgia,0.59,True,2022-09-18T07:02:18,,
-cowidev.vax.incremental.greenland,0.68,True,2022-09-18T07:02:19,,
-cowidev.vax.incremental.guatemala,,,2022-09-18T07:02:18,,
-cowidev.vax.incremental.guernsey,0.33,True,2022-09-18T07:02:19,,
-cowidev.vax.incremental.hungary,1.0,True,2022-09-18T07:02:20,,
-cowidev.vax.incremental.iceland,0.27,True,2022-09-18T07:02:19,,
-cowidev.vax.incremental.india,0.88,True,2022-09-18T07:02:20,,
-cowidev.vax.incremental.iran,,,2022-09-18T07:02:19,,
-cowidev.vax.incremental.isle_of_man,1.24,True,2022-09-18T07:02:20,,
-cowidev.vax.incremental.jamaica,2.12,True,2022-09-18T07:02:22,,
-cowidev.vax.incremental.kazakhstan,3.41,False,2022-09-18T07:03:18,"Traceback (most recent call last):
+cowidev.vax.incremental.el_salvador,0.53,True,2022-09-19T07:02:21,,
+cowidev.vax.incremental.faeroe_islands,0.4,True,2022-09-19T07:02:21,,
+cowidev.vax.incremental.fiji,0.0,True,2022-09-19T07:02:21,,
+cowidev.vax.incremental.finland,0.2,True,2022-09-19T07:02:22,,
+cowidev.vax.incremental.gabon,,,2022-09-19T07:02:22,,
+cowidev.vax.incremental.georgia,0.49,True,2022-09-19T07:02:22,,
+cowidev.vax.incremental.greenland,0.67,True,2022-09-19T07:02:23,,
+cowidev.vax.incremental.guatemala,,,2022-09-19T07:02:22,,
+cowidev.vax.incremental.guernsey,0.12,True,2022-09-19T07:02:22,,
+cowidev.vax.incremental.hungary,0.94,True,2022-09-19T07:02:23,,
+cowidev.vax.incremental.iceland,0.42,True,2022-09-19T07:02:23,,
+cowidev.vax.incremental.india,0.93,True,2022-09-19T07:02:24,,
+cowidev.vax.incremental.iran,,,2022-09-19T07:02:23,,
+cowidev.vax.incremental.isle_of_man,0.8,True,2022-09-19T07:02:24,,
+cowidev.vax.incremental.jamaica,2.41,True,2022-09-19T07:02:26,,
+cowidev.vax.incremental.kazakhstan,2.5,False,2022-09-19T07:04:04,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 78, in main
@@ -203,10 +215,10 @@ Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-bro
 ","Message: session not created: This version of ChromeDriver only supports Chrome version 103
 Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
 "
-cowidev.vax.incremental.kosovo,1.65,True,2022-09-18T07:02:22,,
-cowidev.vax.incremental.kyrgyzstan,2.8,True,2022-09-18T07:02:24,,
-cowidev.vax.incremental.laos,2.26,True,2022-09-18T07:02:24,,
-cowidev.vax.incremental.macao,2.35,False,2022-09-18T07:03:20,"Traceback (most recent call last):
+cowidev.vax.incremental.kosovo,1.91,True,2022-09-19T07:02:26,,
+cowidev.vax.incremental.kyrgyzstan,1.13,True,2022-09-19T07:02:27,,
+cowidev.vax.incremental.laos,2.35,True,2022-09-19T07:02:28,,
+cowidev.vax.incremental.macao,2.4,False,2022-09-19T07:04:07,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 86, in main
@@ -233,7 +245,7 @@ Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-bro
 ","Message: session not created: This version of ChromeDriver only supports Chrome version 103
 Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
 "
-cowidev.vax.incremental.moldova,40.06,False,2022-09-18T07:04:00,"Traceback (most recent call last):
+cowidev.vax.incremental.moldova,40.03,False,2022-09-19T07:04:47,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
     conn = connection.create_connection(
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
@@ -255,7 +267,7 @@ Traceback (most recent call last):
     conn = self._new_conn()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
     raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f9db4090f10>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)')
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa95ab0c370>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)')
 
 During handling of the above exception, another exception occurred:
 
@@ -266,7 +278,7 @@ Traceback (most recent call last):
     retries = retries.increment(
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
     raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9db4090f10>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa95ab0c370>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
 
 During handling of the above exception, another exception occurred:
 
@@ -295,17 +307,17 @@ Traceback (most recent call last):
     r = adapter.send(request, **kwargs)
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
     raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9db4090f10>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f9db4090f10>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))"
-cowidev.vax.incremental.monaco,30.82,True,2022-09-18T07:02:55,,
-cowidev.vax.incremental.mongolia,0.7,True,2022-09-18T07:02:25,,
-cowidev.vax.incremental.montenegro,0.1,True,2022-09-18T07:02:24,,
-cowidev.vax.incremental.morocco,,,2022-09-18T07:02:24,,
-cowidev.vax.incremental.myanmar,,,2022-09-18T07:02:24,,
-cowidev.vax.incremental.nepal,,,2022-09-18T07:02:24,,
-cowidev.vax.incremental.north_macedonia,,,2022-09-18T07:02:24,,
-cowidev.vax.incremental.northern_cyprus,0.79,True,2022-09-18T07:02:25,,
-cowidev.vax.incremental.paho,3.43,False,2022-09-18T07:04:04,"Traceback (most recent call last):
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa95ab0c370>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
+","HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa95ab0c370>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))"
+cowidev.vax.incremental.monaco,31.46,True,2022-09-19T07:02:59,,
+cowidev.vax.incremental.mongolia,0.68,True,2022-09-19T07:02:29,,
+cowidev.vax.incremental.montenegro,0.09,True,2022-09-19T07:02:29,,
+cowidev.vax.incremental.morocco,,,2022-09-19T07:02:29,,
+cowidev.vax.incremental.myanmar,,,2022-09-19T07:02:29,,
+cowidev.vax.incremental.nepal,,,2022-09-19T07:02:29,,
+cowidev.vax.incremental.north_macedonia,,,2022-09-19T07:02:29,,
+cowidev.vax.incremental.northern_cyprus,0.86,True,2022-09-19T07:02:30,,
+cowidev.vax.incremental.paho,3.05,False,2022-09-19T07:04:50,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
@@ -334,11 +346,11 @@ Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-bro
 ","Message: session not created: This version of ChromeDriver only supports Chrome version 103
 Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
 "
-cowidev.vax.incremental.pakistan,1.36,True,2022-09-18T07:02:27,,
-cowidev.vax.incremental.philippines,,,2022-09-18T07:02:27,,
-cowidev.vax.incremental.poland,0.31,True,2022-09-18T07:02:27,,
-cowidev.vax.incremental.qatar,,,2022-09-18T07:02:27,,
-cowidev.vax.incremental.russia,0.53,False,2022-09-18T07:04:04,"Traceback (most recent call last):
+cowidev.vax.incremental.pakistan,1.61,True,2022-09-19T07:02:37,,
+cowidev.vax.incremental.philippines,,,2022-09-19T07:02:37,,
+cowidev.vax.incremental.poland,0.31,True,2022-09-19T07:02:37,,
+cowidev.vax.incremental.qatar,,,2022-09-19T07:02:37,,
+cowidev.vax.incremental.russia,0.46,False,2022-09-19T07:04:50,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
@@ -353,12 +365,12 @@ cowidev.vax.incremental.russia,0.53,False,2022-09-18T07:04:04,"Traceback (most r
     raise ValueError(
 ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
 ",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-cowidev.vax.incremental.saint_lucia,,,2022-09-18T07:02:27,,
-cowidev.vax.incremental.serbia,8.2,True,2022-09-18T07:02:36,,
-cowidev.vax.incremental.south_africa,7.14,True,2022-09-18T07:02:36,,
-cowidev.vax.incremental.spain,2.97,True,2022-09-18T07:02:39,,
-cowidev.vax.incremental.sri_lanka,,,2022-09-18T07:02:36,,
-cowidev.vax.incremental.suriname,2.35,False,2022-09-18T07:04:07,"Traceback (most recent call last):
+cowidev.vax.incremental.saint_lucia,,,2022-09-19T07:02:38,,
+cowidev.vax.incremental.serbia,5.7,True,2022-09-19T07:02:44,,
+cowidev.vax.incremental.south_africa,6.48,True,2022-09-19T07:02:50,,
+cowidev.vax.incremental.spain,3.46,True,2022-09-19T07:02:54,,
+cowidev.vax.incremental.sri_lanka,,,2022-09-19T07:02:54,,
+cowidev.vax.incremental.suriname,2.34,False,2022-09-19T07:04:52,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 57, in main
@@ -383,22 +395,10 @@ Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-bro
 ","Message: session not created: This version of ChromeDriver only supports Chrome version 103
 Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
 "
-cowidev.vax.incremental.taiwan,8.12,False,2022-09-18T07:04:15,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 158, in main
-    Taiwan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 144, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 32, in read
-    df = self._parse_table(url_pdf)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 69, in _parse_table
-    raise ValueError(f""There are some unknown columns: {cols}"")
-ValueError: There are some unknown columns: Index(['廠牌', '劑次', '9/16接種劑數', '累計至 9/16接種劑數'], dtype='object')
-","There are some unknown columns: Index(['廠牌', '劑次', '9/16接種劑數', '累計至 9/16接種劑數'], dtype='object')"
-cowidev.vax.incremental.thailand,3.72,True,2022-09-18T07:02:42,,
-cowidev.vax.incremental.turkey,0.56,True,2022-09-18T07:02:43,,
-cowidev.vax.incremental.united_arab_emirates,,,2022-09-18T07:02:43,,
-cowidev.vax.incremental.vietnam,,,2022-09-18T07:02:43,,
-cowidev.vax.incremental.who,4.23,True,2022-09-18T07:02:47,,
-cowidev.vax.incremental.zambia,0.67,True,2022-09-18T07:02:48,,
+cowidev.vax.incremental.taiwan,6.51,True,2022-09-19T07:03:00,,
+cowidev.vax.incremental.thailand,4.48,True,2022-09-19T07:03:01,,
+cowidev.vax.incremental.turkey,1.06,True,2022-09-19T07:03:00,,
+cowidev.vax.incremental.united_arab_emirates,,,2022-09-19T07:03:00,,
+cowidev.vax.incremental.vietnam,,,2022-09-19T07:03:00,,
+cowidev.vax.incremental.who,4.89,True,2022-09-19T07:03:05,,
+cowidev.vax.incremental.zambia,0.88,True,2022-09-19T07:03:01,,
