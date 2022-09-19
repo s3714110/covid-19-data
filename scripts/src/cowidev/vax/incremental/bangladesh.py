@@ -13,6 +13,7 @@ class Bangladesh:
     vaccines_rename = {
         "AstraZeneca": "Oxford/AstraZeneca",
         "Pfizer": "Pfizer/BioNTech",
+        "Pfizer-PF (Comirnaty)": "Pfizer/BioNTech",
         "Sinopharm": "Sinopharm/Beijing",
         "Moderna": "Moderna",
         "Sinovac": "Sinovac",
