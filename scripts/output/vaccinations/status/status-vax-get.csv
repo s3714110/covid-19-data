@@ -150,31 +150,7 @@ cowidev.vax.incremental.croatia,0.14,True,2022-09-19T07:02:17,,
 cowidev.vax.incremental.cuba,2.21,True,2022-09-19T07:02:19,,
 cowidev.vax.incremental.curacao,0.42,True,2022-09-19T07:02:19,,
 cowidev.vax.incremental.cyprus,0.97,True,2022-09-19T07:02:20,,
-cowidev.vax.incremental.dominican_republic,3.37,False,2022-09-19T07:04:02,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 108, in main
-    DominicanRepublic().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 64, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 23, in read
-    with webdriver.Chrome(options=op) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-
-","Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-"
+cowidev.vax.incremental.dominican_republic,5.63,True,2022-09-19T09:43:19,,
 cowidev.vax.incremental.el_salvador,0.53,True,2022-09-19T07:02:21,,
 cowidev.vax.incremental.faeroe_islands,0.4,True,2022-09-19T07:02:21,,
 cowidev.vax.incremental.fiji,0.0,True,2022-09-19T07:02:21,,
@@ -190,60 +166,32 @@ cowidev.vax.incremental.india,0.93,True,2022-09-19T07:02:24,,
 cowidev.vax.incremental.iran,,,2022-09-19T07:02:23,,
 cowidev.vax.incremental.isle_of_man,0.8,True,2022-09-19T07:02:24,,
 cowidev.vax.incremental.jamaica,2.41,True,2022-09-19T07:02:26,,
-cowidev.vax.incremental.kazakhstan,2.5,False,2022-09-19T07:04:04,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 78, in main
-    Kazakhstan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 73, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 17, in read
-    with webdriver.Chrome(options=op) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-
-","Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-"
+cowidev.vax.incremental.kazakhstan,7.85,True,2022-09-19T09:43:21,,
 cowidev.vax.incremental.kosovo,1.91,True,2022-09-19T07:02:26,,
 cowidev.vax.incremental.kyrgyzstan,1.13,True,2022-09-19T07:02:27,,
 cowidev.vax.incremental.laos,2.35,True,2022-09-19T07:02:28,,
-cowidev.vax.incremental.macao,2.4,False,2022-09-19T07:04:07,"Traceback (most recent call last):
+cowidev.vax.incremental.macao,20.0,False,2022-09-19T09:44:26,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 86, in main
     Macao().export()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 72, in export
     data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 16, in read
-    with get_driver() as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
-    driver = webdriver.Chrome(options=options)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 20, in read
+    elem = driver.find_element_by_partial_link_text(""Daily Bulletin on COVID-19"")
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 462, in find_element_by_partial_link_text
+    return self.find_element(by=By.PARTIAL_LINK_TEXT, value=link_text)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 976, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
     self.error_handler.check_response(response)
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {""method"":""partial link text"",""selector"":""Daily Bulletin on COVID-19""}
+  (Session info: headless chrome=105.0.5195.102)
 
-","Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
+","Message: no such element: Unable to locate element: {""method"":""partial link text"",""selector"":""Daily Bulletin on COVID-19""}
+  (Session info: headless chrome=105.0.5195.102)
 "
 cowidev.vax.incremental.moldova,40.03,False,2022-09-19T07:04:47,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
@@ -317,35 +265,7 @@ cowidev.vax.incremental.myanmar,,,2022-09-19T07:02:29,,
 cowidev.vax.incremental.nepal,,,2022-09-19T07:02:29,,
 cowidev.vax.incremental.north_macedonia,,,2022-09-19T07:02:29,,
 cowidev.vax.incremental.northern_cyprus,0.86,True,2022-09-19T07:02:30,,
-cowidev.vax.incremental.paho,3.05,False,2022-09-19T07:04:50,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
-    PAHO().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 46, in _parse_data
-    with get_driver(download_folder=self._download_path) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
-    driver = webdriver.Chrome(options=options)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-
-","Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-"
+cowidev.vax.incremental.paho,52.05,True,2022-09-19T09:44:06,,
 cowidev.vax.incremental.pakistan,1.61,True,2022-09-19T07:02:37,,
 cowidev.vax.incremental.philippines,,,2022-09-19T07:02:37,,
 cowidev.vax.incremental.poland,0.31,True,2022-09-19T07:02:37,,
@@ -370,31 +290,7 @@ cowidev.vax.incremental.serbia,5.7,True,2022-09-19T07:02:44,,
 cowidev.vax.incremental.south_africa,6.48,True,2022-09-19T07:02:50,,
 cowidev.vax.incremental.spain,3.46,True,2022-09-19T07:02:54,,
 cowidev.vax.incremental.sri_lanka,,,2022-09-19T07:02:54,,
-cowidev.vax.incremental.suriname,2.34,False,2022-09-19T07:04:52,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 57, in main
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 13, in read
-    with get_driver() as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
-    driver = webdriver.Chrome(options=options)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-
-","Message: session not created: This version of ChromeDriver only supports Chrome version 103
-Current browser version is 105.0.5195.102 with binary path /usr/bin/chromium-browser
-"
+cowidev.vax.incremental.suriname,14.14,True,2022-09-19T09:43:28,,
 cowidev.vax.incremental.taiwan,6.51,True,2022-09-19T07:03:00,,
 cowidev.vax.incremental.thailand,4.48,True,2022-09-19T07:03:01,,
 cowidev.vax.incremental.turkey,1.06,True,2022-09-19T07:03:00,,
