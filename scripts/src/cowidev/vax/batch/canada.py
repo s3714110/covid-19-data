@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 
 from cowidev.utils.utils import check_known_columns
@@ -204,6 +205,10 @@ class Canada(CountryVaxBase):
         vaccine_timeline["Pfizer/BioNTech"] = "2020-12-14"  # Vaccination start date
         return df.pipe(build_vaccine_timeline, vaccine_timeline)
 
+    def pipe_filter_dp(self, df: pd.DataFrame) -> pd.DataFrame:
+        df.loc[df.date.isin(["2022-07-29", "2022-07-30", "2022-07-31"]), "people_vaccinated"] = np.nan
+        return df
+
     def pipe_make_monotonic(self, df: pd.DataFrame) -> pd.DataFrame:
         num_filtered_dates = 0
         while True:
@@ -226,6 +231,7 @@ class Canada(CountryVaxBase):
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_vaccine_timeline, df_man)
+            .pipe(self.pipe_filter_dp)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_make_monotonic)[
                 [
