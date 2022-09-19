@@ -16,7 +16,7 @@ class Italy(CountryVaxBase):
         "d2",
         "dpi",
         "db1",
-        "dbi",
+        # "dbi",
         "db2",
     ]
     columns_rename: dict = {
@@ -59,13 +59,10 @@ class Italy(CountryVaxBase):
 
     def get_total_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
-            total_vaccinations=df.d1
-            + df.d2
-            + df.dpi
-            + df.db1
-            + df.dbi
+            total_vaccinations=df.d1 + df.d2 + df.dpi + df.db1
+            # + df.dbi
             + df.db2,
-            total_boosters=df.db1 + df.dbi + df.db2,
+            total_boosters=df.db1 + df.db2,  # + df.dbi ,
         )
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -82,9 +79,7 @@ class Italy(CountryVaxBase):
     def get_people_fully_vaccinated(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
             people_fully_vaccinated=lambda x: x.apply(
-                lambda row: row["d1"] + row["dpi"]
-                if row["vaccine"] in self.one_dose_vaccines
-                else row["d2"],
+                lambda row: row["d1"] + row["dpi"] if row["vaccine"] in self.one_dose_vaccines else row["d2"],
                 axis=1,
             )
         )
