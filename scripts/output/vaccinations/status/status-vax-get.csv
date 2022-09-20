@@ -12,70 +12,14 @@ cowidev.vax.batch.ecdc,129.19,True,2022-09-20T07:02:24,,
 cowidev.vax.batch.ecuador,1.46,True,2022-09-20T07:00:18,,
 cowidev.vax.batch.estonia,0.81,True,2022-09-20T07:00:18,,
 cowidev.vax.batch.france,0.43,True,2022-09-20T07:00:18,,
-cowidev.vax.batch.germany,0.08,False,2022-09-20T07:03:50,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/germany.py"", line 147, in main
-    Germany().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/germany.py"", line 133, in export
-    df_base = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/germany.py"", line 71, in pipeline_base
-    df.pipe(self._check_vaccines)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/germany.py"", line 51, in _check_vaccines
-    raise ValueError(f""Found unknown vaccine: {column_name}"")
-ValueError: Found unknown vaccine: impfungen_valneva_kumulativ
-",Found unknown vaccine: impfungen_valneva_kumulativ
+cowidev.vax.batch.germany,0.14,True,2022-09-20T10:40:00,,
 cowidev.vax.batch.greece,2.84,True,2022-09-20T07:00:21,,
 cowidev.vax.batch.hong_kong,12.29,True,2022-09-20T07:00:31,,
 cowidev.vax.batch.indonesia,,,2022-09-20T07:00:20,,
 cowidev.vax.batch.ireland,0.2,True,2022-09-20T07:00:20,,
 cowidev.vax.batch.israel,10.72,True,2022-09-20T07:00:31,,
 cowidev.vax.batch.italy,9.92,True,2022-09-20T07:00:31,,
-cowidev.vax.batch.japan,1.43,False,2022-09-20T07:03:52,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,15.31,True,2022-09-20T10:30:08,,
 cowidev.vax.batch.jersey,0.74,True,2022-09-20T07:00:32,,
 cowidev.vax.batch.latvia,28.78,True,2022-09-20T07:01:00,,
 cowidev.vax.batch.lithuania,3.65,True,2022-09-20T07:00:35,,
@@ -107,67 +51,7 @@ cowidev.vax.incremental.antigua_barbuda,3.94,True,2022-09-20T07:02:24,,
 cowidev.vax.incremental.aruba,1.3,True,2022-09-20T07:02:22,,
 cowidev.vax.incremental.azerbaijan,,,2022-09-20T07:02:21,,
 cowidev.vax.incremental.bahrain,1.8,True,2022-09-20T07:02:23,,
-cowidev.vax.incremental.bangladesh,79.81,False,2022-09-20T07:05:12,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 438, in _error_catcher
-    yield
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 764, in read_chunked
-    self._update_chunk_length()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 694, in _update_chunk_length
-    line = self._fp.fp.readline()
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/socket.py"", line 704, in readinto
-    return self._sock.recv_into(b)
-socket.timeout: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/models.py"", line 760, in generate
-    for chunk in self.raw.stream(chunk_size, decode_content=True):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 572, in stream
-    for line in self.read_chunked(amt, decode_content=decode_content):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 793, in read_chunked
-    self._original_response.close()
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/contextlib.py"", line 135, in __exit__
-    self.gen.throw(type, value, traceback)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/response.py"", line 443, in _error_catcher
-    raise ReadTimeoutError(self._pool, None, ""Read timed out."")
-urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='103.247.238.92', port=80): Read timed out.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 112, in main
-    Bangladesh().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 98, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 25, in read
-    metrics = self._parse_metrics(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 74, in _parse_metrics
-    single_doses = self._parse_single_doses()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/bangladesh.py"", line 38, in _parse_single_doses
-    soup = get_soup(url, timeout=30)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 687, in send
-    r.content
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/models.py"", line 838, in content
-    self._content = b''.join(self.iter_content(CONTENT_CHUNK_SIZE)) or b''
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/models.py"", line 767, in generate
-    raise ConnectionError(e)
-requests.exceptions.ConnectionError: HTTPConnectionPool(host='103.247.238.92', port=80): Read timed out.
-","HTTPConnectionPool(host='103.247.238.92', port=80): Read timed out."
+cowidev.vax.incremental.bangladesh,56.27,True,2022-09-20T10:30:49,,
 cowidev.vax.incremental.barbados,2.58,True,2022-09-20T07:02:25,,
 cowidev.vax.incremental.brazil,0.22,True,2022-09-20T07:02:24,,
 cowidev.vax.incremental.bulgaria,1.0,True,2022-09-20T07:02:25,,
@@ -197,93 +81,8 @@ cowidev.vax.incremental.kazakhstan,9.84,True,2022-09-20T07:02:42,,
 cowidev.vax.incremental.kosovo,2.4,True,2022-09-20T07:02:35,,
 cowidev.vax.incremental.kyrgyzstan,0.9,True,2022-09-20T07:02:34,,
 cowidev.vax.incremental.laos,2.43,True,2022-09-20T07:02:37,,
-cowidev.vax.incremental.macao,20.17,False,2022-09-20T07:05:32,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 86, in main
-    Macao().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 72, in export
-    data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 20, in read
-    elem = driver.find_element_by_partial_link_text(""Daily Bulletin on COVID-19"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 462, in find_element_by_partial_link_text
-    return self.find_element(by=By.PARTIAL_LINK_TEXT, value=link_text)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 976, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {""method"":""partial link text"",""selector"":""Daily Bulletin on COVID-19""}
-  (Session info: headless chrome=105.0.5195.102)
-
-","Message: no such element: Unable to locate element: {""method"":""partial link text"",""selector"":""Daily Bulletin on COVID-19""}
-  (Session info: headless chrome=105.0.5195.102)
-"
-cowidev.vax.incremental.moldova,40.1,False,2022-09-20T07:06:12,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
-    sock.connect(sa)
-socket.timeout: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
-    httplib_response = self._make_request(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
-    self._validate_conn(conn)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
-    conn.connect()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f97c7ad3220>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)')
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
-    retries = retries.increment(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f97c7ad3220>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 59, in main
-    Moldova().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 54, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 17, in read
-    soup = get_soup(self.source_url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f97c7ad3220>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f97c7ad3220>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))"
+cowidev.vax.incremental.macao,13.15,True,2022-09-20T10:42:50,,
+cowidev.vax.incremental.moldova,1.13,True,2022-09-20T10:29:54,,
 cowidev.vax.incremental.monaco,28.01,True,2022-09-20T07:03:10,,
 cowidev.vax.incremental.mongolia,0.68,True,2022-09-20T07:02:56,,
 cowidev.vax.incremental.montenegro,0.08,True,2022-09-20T07:02:57,,
@@ -292,91 +91,77 @@ cowidev.vax.incremental.myanmar,,,2022-09-20T07:02:57,,
 cowidev.vax.incremental.nepal,,,2022-09-20T07:02:57,,
 cowidev.vax.incremental.north_macedonia,,,2022-09-20T07:02:57,,
 cowidev.vax.incremental.northern_cyprus,0.74,True,2022-09-20T07:02:57,,
-cowidev.vax.incremental.paho,0.01,False,2022-09-20T07:06:12,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
+cowidev.vax.incremental.paho,0.02,False,2022-09-20T10:30:49,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
     conn = connection.create_connection(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 73, in create_connection
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 72, in create_connection
     for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/socket.py"", line 953, in getaddrinfo
+  File ""/usr/lib/python3.10/socket.py"", line 955, in getaddrinfo
     for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
 socket.gaierror: [Errno -2] Name or service not known
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
     self._validate_conn(conn)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
     conn.connect()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
     conn = self._new_conn()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 186, in _new_conn
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 186, in _new_conn
     raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f97c79d78e0>: Failed to establish a new connection: [Errno -2] Name or service not known
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fa29c48c8b0>: Failed to establish a new connection: [Errno -2] Name or service not known
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
     resp = conn.urlopen(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
     retries = retries.increment(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
     raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97c79d78e0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa29c48c8b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
     PAHO().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 36, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 36, in read
     url = self._parse_iframe_link()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 41, in _parse_iframe_link
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 41, in _parse_iframe_link
     html = get_soup(self.source_url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
     raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
     response = requests.get(source, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
     return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
     return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
     resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
     r = adapter.send(request, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 519, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 519, in send
     raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97c79d78e0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
-","HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97c79d78e0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa29c48c8b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))
+","HTTPSConnectionPool(host='ais.paho.org', port=443): Max retries exceeded with url: /imm/IM_DosisAdmin-Vacunacion.asp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa29c48c8b0>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
 cowidev.vax.incremental.pakistan,1.79,True,2022-09-20T07:03:02,,
 cowidev.vax.incremental.philippines,,,2022-09-20T07:03:02,,
 cowidev.vax.incremental.poland,0.15,True,2022-09-20T07:03:02,,
 cowidev.vax.incremental.qatar,,,2022-09-20T07:03:02,,
-cowidev.vax.incremental.russia,0.48,False,2022-09-20T07:06:13,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.21,True,2022-09-20T10:29:56,,
 cowidev.vax.incremental.saint_lucia,,,2022-09-20T07:03:02,,
 cowidev.vax.incremental.serbia,7.04,True,2022-09-20T07:03:10,,
 cowidev.vax.incremental.south_africa,8.19,True,2022-09-20T07:03:17,,
