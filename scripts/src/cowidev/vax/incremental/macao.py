@@ -17,7 +17,7 @@ class Macao:
             driver.get(self.source_url)
             time.sleep(5)
             # Get element
-            elem = driver.find_element_by_partial_link_text("Daily Bulletin on COVID-19")
+            elem = driver.find_element_by_partial_link_text("Weekly Bulletin on COVID-19")
             # Build data
             data = self._parse_data(elem)
             return data
