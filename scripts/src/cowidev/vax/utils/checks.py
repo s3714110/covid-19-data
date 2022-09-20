@@ -26,6 +26,7 @@ VACCINES_ACCEPTED = [
     "Pfizer/BioNTech",
     "QazVac",
     "Razi Cov Pars",
+    "Sanofi/GSK",
     "Sinopharm/Beijing",
     "Sinopharm/Wuhan",
     "Sinovac",
