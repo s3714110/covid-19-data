@@ -23,6 +23,8 @@ class Germany(CountryVaxBase):
         "impfungen_astra_kumulativ": "Oxford/AstraZeneca",
         "impfungen_johnson_kumulativ": "Johnson&Johnson",
         "impfungen_novavax_kumulativ": "Novavax",
+        "impfungen_valneva_kumulativ": "Valneva",
+        "impfungen_sanofi_kumulativ": "Sanofi/GSK",
     }
     fully_vaccinated_mapping: str = {
         "impfungen_biontech_gi_kumulativ": "full_biontech",
@@ -60,7 +62,8 @@ class Germany(CountryVaxBase):
     def calculate_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
             # people_fully_vaccinated=df.full_biontech + df.full_moderna + df.full_jj + df.full_astra + df.full_nova,
-            total_boosters=df.total_boosters + df.total_boosters_2,
+            total_boosters=df.total_boosters
+            + df.total_boosters_2,
         )
 
     def enrich_location(self, df: pd.DataFrame) -> pd.DataFrame:
