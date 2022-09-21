@@ -113,7 +113,7 @@ class TrinidadTobago(CountryVaxBase):
 
     def pipe_data_correction(self, df: pd.DataFrame) -> pd.DataFrame:
         # Row with typo in number of boosters
-        return df[df.date != "2022-02-07"]
+        return df[-df.date.isin(["2022-02-07", "2022-04-18"])]
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
@@ -127,7 +127,7 @@ class TrinidadTobago(CountryVaxBase):
             .pipe(self.pipe_filter_dp)
             .pipe(self.pipe_out_columns)
             .pipe(self.pipe_data_correction)
-            .pipe(make_monotonic, 30)
+            .pipe(self.make_monotonic, max_removed_rows=30)
         )
 
     def export(self):
