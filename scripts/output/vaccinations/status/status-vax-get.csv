@@ -19,43 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-09-21T07:00:17,,
 cowidev.vax.batch.ireland,22.12,True,2022-09-21T07:00:40,,
 cowidev.vax.batch.israel,9.42,True,2022-09-21T07:00:28,,
 cowidev.vax.batch.italy,11.97,True,2022-09-21T07:00:32,,
-cowidev.vax.batch.japan,1.69,False,2022-09-21T07:03:38,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,13.56,True,2022-09-21T09:21:27,,
 cowidev.vax.batch.jersey,2.88,True,2022-09-21T07:00:31,,
 cowidev.vax.batch.latvia,37.54,True,2022-09-21T07:01:09,,
 cowidev.vax.batch.lithuania,2.33,True,2022-09-21T07:00:34,,
@@ -76,91 +40,7 @@ cowidev.vax.batch.south_korea,60.25,True,2022-09-21T07:02:09,,
 cowidev.vax.batch.spc,17.82,True,2022-09-21T07:01:30,,
 cowidev.vax.batch.sweden,15.17,True,2022-09-21T07:01:28,,
 cowidev.vax.batch.switzerland,45.73,True,2022-09-21T07:02:14,,
-cowidev.vax.batch.trinidad_and_tobago,1.79,False,2022-09-21T07:03:40,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 139, in main
-    TrinidadTobago().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 134, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/trinidad_and_tobago.py"", line 120, in pipeline
-    df.pipe(self.pipe_date)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 44, in make_monotonic
-    raise Exception(
-Exception: 31 rows have been removed. That is more than maximum allowed (30) by make_monotonic() - check the data. Check 
-                location        date  ... people_fully_vaccinated total_boosters
-291  Trinidad and Tobago  2022-01-31  ...                690218.0       110422.0
-344  Trinidad and Tobago  2022-03-25  ...                708327.0       144274.0
-345  Trinidad and Tobago  2022-03-26  ...                708516.0       144651.0
-346  Trinidad and Tobago  2022-03-27  ...                708598.0       144912.0
-347  Trinidad and Tobago  2022-03-28  ...                708598.0       147912.0
-348  Trinidad and Tobago  2022-03-29  ...                708762.0       145222.0
-349  Trinidad and Tobago  2022-03-30  ...                708940.0       145568.0
-350  Trinidad and Tobago  2022-03-31  ...                708940.0       145568.0
-351  Trinidad and Tobago  2022-04-01  ...                709101.0       145843.0
-352  Trinidad and Tobago  2022-04-02  ...                709263.0       146079.0
-353  Trinidad and Tobago  2022-04-03  ...                709334.0       146350.0
-354  Trinidad and Tobago  2022-04-04  ...                709334.0       146079.0
-355  Trinidad and Tobago  2022-04-05  ...                709471.0       146642.0
-356  Trinidad and Tobago  2022-04-06  ...                709616.0       146889.0
-357  Trinidad and Tobago  2022-04-07  ...                709733.0       147101.0
-358  Trinidad and Tobago  2022-04-08  ...                709871.0       147327.0
-359  Trinidad and Tobago  2022-04-09  ...                710000.0       147591.0
-360  Trinidad and Tobago  2022-04-10  ...                710060.0       147782.0
-361  Trinidad and Tobago  2022-04-11  ...                710060.0       147782.0
-363  Trinidad and Tobago  2022-04-13  ...                710340.0       148346.0
-364  Trinidad and Tobago  2022-04-14  ...                710444.0       148563.0
-365  Trinidad and Tobago  2022-04-15  ...                710556.0       148817.0
-366  Trinidad and Tobago  2022-04-16  ...                710556.0       148817.0
-367  Trinidad and Tobago  2022-04-17  ...                710556.0       148817.0
-368  Trinidad and Tobago  2022-04-18  ...                710556.0       140817.0
-427  Trinidad and Tobago  2022-06-19  ...                713394.0       162783.0
-457  Trinidad and Tobago  2022-07-21  ...                718073.0       166933.0
-514  Trinidad and Tobago  2022-09-17  ...                716837.0       168567.0
-515  Trinidad and Tobago  2022-09-18  ...                716837.0       168567.0
-
-[29 rows x 8 columns]
-","31 rows have been removed. That is more than maximum allowed (30) by make_monotonic() - check the data. Check 
-                location        date  ... people_fully_vaccinated total_boosters
-291  Trinidad and Tobago  2022-01-31  ...                690218.0       110422.0
-344  Trinidad and Tobago  2022-03-25  ...                708327.0       144274.0
-345  Trinidad and Tobago  2022-03-26  ...                708516.0       144651.0
-346  Trinidad and Tobago  2022-03-27  ...                708598.0       144912.0
-347  Trinidad and Tobago  2022-03-28  ...                708598.0       147912.0
-348  Trinidad and Tobago  2022-03-29  ...                708762.0       145222.0
-349  Trinidad and Tobago  2022-03-30  ...                708940.0       145568.0
-350  Trinidad and Tobago  2022-03-31  ...                708940.0       145568.0
-351  Trinidad and Tobago  2022-04-01  ...                709101.0       145843.0
-352  Trinidad and Tobago  2022-04-02  ...                709263.0       146079.0
-353  Trinidad and Tobago  2022-04-03  ...                709334.0       146350.0
-354  Trinidad and Tobago  2022-04-04  ...                709334.0       146079.0
-355  Trinidad and Tobago  2022-04-05  ...                709471.0       146642.0
-356  Trinidad and Tobago  2022-04-06  ...                709616.0       146889.0
-357  Trinidad and Tobago  2022-04-07  ...                709733.0       147101.0
-358  Trinidad and Tobago  2022-04-08  ...                709871.0       147327.0
-359  Trinidad and Tobago  2022-04-09  ...                710000.0       147591.0
-360  Trinidad and Tobago  2022-04-10  ...                710060.0       147782.0
-361  Trinidad and Tobago  2022-04-11  ...                710060.0       147782.0
-363  Trinidad and Tobago  2022-04-13  ...                710340.0       148346.0
-364  Trinidad and Tobago  2022-04-14  ...                710444.0       148563.0
-365  Trinidad and Tobago  2022-04-15  ...                710556.0       148817.0
-366  Trinidad and Tobago  2022-04-16  ...                710556.0       148817.0
-367  Trinidad and Tobago  2022-04-17  ...                710556.0       148817.0
-368  Trinidad and Tobago  2022-04-18  ...                710556.0       140817.0
-427  Trinidad and Tobago  2022-06-19  ...                713394.0       162783.0
-457  Trinidad and Tobago  2022-07-21  ...                718073.0       166933.0
-514  Trinidad and Tobago  2022-09-17  ...                716837.0       168567.0
-515  Trinidad and Tobago  2022-09-18  ...                716837.0       168567.0
-
-[29 rows x 8 columns]"
+cowidev.vax.batch.trinidad_and_tobago,1.11,True,2022-09-21T09:26:47,,
 cowidev.vax.batch.ukraine,,,2022-09-21T07:01:34,,
 cowidev.vax.batch.united_kingdom,9.97,True,2022-09-21T07:01:44,,
 cowidev.vax.batch.united_states,35.84,True,2022-09-21T07:02:20,,
@@ -202,70 +82,7 @@ cowidev.vax.incremental.kosovo,3.71,True,2022-09-21T07:02:27,,
 cowidev.vax.incremental.kyrgyzstan,1.34,True,2022-09-21T07:02:25,,
 cowidev.vax.incremental.laos,22.02,True,2022-09-21T07:02:47,,
 cowidev.vax.incremental.macao,15.89,True,2022-09-21T07:02:43,,
-cowidev.vax.incremental.moldova,40.05,False,2022-09-21T07:04:20,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
-    sock.connect(sa)
-socket.timeout: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
-    httplib_response = self._make_request(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
-    self._validate_conn(conn)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
-    conn.connect()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f7646242280>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)')
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
-    retries = retries.increment(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7646242280>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 59, in main
-    Moldova().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 54, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/moldova.py"", line 17, in read
-    soup = get_soup(self.source_url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
-    raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7646242280>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='vaccinare.gov.md', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f7646242280>, 'Connection to vaccinare.gov.md timed out. (connect timeout=20)'))"
+cowidev.vax.incremental.moldova,1.16,True,2022-09-21T09:21:15,,
 cowidev.vax.incremental.monaco,38.28,True,2022-09-21T07:03:20,,
 cowidev.vax.incremental.mongolia,0.69,True,2022-09-21T07:02:44,,
 cowidev.vax.incremental.montenegro,0.09,True,2022-09-21T07:02:44,,
@@ -279,21 +96,7 @@ cowidev.vax.incremental.pakistan,1.38,True,2022-09-21T07:02:49,,
 cowidev.vax.incremental.philippines,,,2022-09-21T07:02:49,,
 cowidev.vax.incremental.poland,0.32,True,2022-09-21T07:02:49,,
 cowidev.vax.incremental.qatar,,,2022-09-21T07:02:49,,
-cowidev.vax.incremental.russia,0.5,False,2022-09-21T07:04:20,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,5.3,True,2022-09-21T09:21:19,,
 cowidev.vax.incremental.saint_lucia,,,2022-09-21T07:02:50,,
 cowidev.vax.incremental.serbia,5.76,True,2022-09-21T07:02:55,,
 cowidev.vax.incremental.south_africa,13.8,True,2022-09-21T07:03:09,,
