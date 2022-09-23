@@ -1,8 +1,12 @@
 vaccines:
   - owid_name: "Moderna"
-    org_name: "MOD"
+    org_name:
+      - "MOD"
+      - "MODBA.1"
   - owid_name: "Pfizer/BioNTech"
-    org_name: "COM"
+    org_name:
+      - "COM"
+      - "COMBA.1"
   - owid_name: "Oxford/AstraZeneca"
     org_name: "AZ"
   - owid_name: "Johnson&Johnson"
