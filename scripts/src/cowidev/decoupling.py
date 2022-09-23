@@ -21,7 +21,7 @@ SOURCE_ESP = "https://cnecovid.isciii.es/covid19/resources/casos_hosp_uci_def_se
 
 SOURCE_ISR = "https://github.com/dancarmoz/israel_moh_covid_dashboard_data/raw/master/hospitalized_and_infected.csv"
 
-SOURCE_DEU_C_D = "https://media.githubusercontent.com/media/robert-koch-institut/SARS-CoV-2_Infektionen_in_Deutschland/master/Aktuell_Deutschland_SarsCov2_Infektionen.csv"
+SOURCE_DEU_C_D = "https://media.githubusercontent.com/media/robert-koch-institut/SARS-CoV-2-Infektionen_in_Deutschland/main/Aktuell_Deutschland_SarsCov2_Infektionen.csv"
 SOURCE_DEU_HOSP = "https://raw.githubusercontent.com/robert-koch-institut/COVID-19-Hospitalisierungen_in_Deutschland/master/Aktuell_Deutschland_COVID-19-Hospitalisierungen.csv"
 SOURCE_DEU_ICU = "https://diviexchange.blob.core.windows.net/%24web/zeitreihe-deutschland.csv"
 
