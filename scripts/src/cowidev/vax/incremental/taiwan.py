@@ -16,6 +16,7 @@ class Taiwan:
     vaccines_mapping = {
         "AstraZeneca": "Oxford/AstraZeneca",
         "高端": "Medigen",
+        "Moderna 雙價\rBA.1": "Moderna",
         "Moderna": "Moderna",
         "BioNTech": "Pfizer/BioNTech",
         "Novavax": "Novavax",
@@ -54,7 +55,7 @@ class Taiwan:
         df = dfs[0]
         cols = df.columns
 
-        if df.shape != (29, 4):
+        if df.shape != (33, 4):
             raise ValueError(f"Table 1: format has changed!")
 
         # Sanity check
@@ -68,12 +69,13 @@ class Taiwan:
         ):
             raise ValueError(f"There are some unknown columns: {cols}")
 
-        if df.iloc[24][0] != "總計":
+        row_delimit = 27
+        if df.iloc[row_delimit][0] != "總計":
             raise ValueError(f"Unexpected value in the key cell: {df.iloc[23][0]}")
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        for i in range(25, 29):
+        for i in range(row_delimit + 1, len(df)):
             if math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
                 df.iloc[i][0] = float("nan")
