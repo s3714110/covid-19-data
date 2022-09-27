@@ -48,18 +48,18 @@ source $SCRIPTS_DIR/venv/bin/activate
 hour=$(TZ=Europe/Paris date +%H)
 
 if [ $hour == 7 ] ; then
-  cowid check jhu
+  cowid --server check jhu
 fi
 
 if [ $hour == 9 ] ; then
-  cowid check megafile
+  cowid --server check megafile
 fi
 
 if [ $hour == 12 ] ; then
-  cowid check vax
+  cowid --server check vax
 fi
 
 if [ $hour == 14 ] ; then
-  cowid check hosp
+  cowid --server check hosp
 fi
 
