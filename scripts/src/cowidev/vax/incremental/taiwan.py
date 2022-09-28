@@ -56,7 +56,7 @@ class Taiwan:
         cols = df.columns
 
         if df.shape != (33, 4):
-            raise ValueError(f"Table 1: format has changed!")
+            raise ValueError("Table 1: format has changed!")
 
         # Sanity check
         if not (
@@ -69,17 +69,21 @@ class Taiwan:
         ):
             raise ValueError(f"There are some unknown columns: {cols}")
 
-        row_delimit = 27
-        if df.iloc[row_delimit][0] != "總計":
+        row_delimit = 23
+        if df.iloc[row_delimit + 4][0] != "總計":
             raise ValueError(f"Unexpected value in the key cell: {df.iloc[23][0]}")
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        for i in range(row_delimit + 1, len(df)):
-            if math.isnan(df.iloc[i][3]):
+        for i in range(row_delimit, len(df)):
+            if not isinstance(df.iloc[i][3], str) and math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
                 df.iloc[i][0] = float("nan")
+        # if df.iloc[27][0] == "總計":
+        #     df.iloc[27][0] = float("nan")
+        # Patch for Novavax
 
+        # Index fixes
         df["劑次"] = df["劑次"].str.replace("\s+", "", regex=True)
         df["廠牌"] = df["廠牌"].fillna(method="ffill")
         df = df.set_index(["廠牌", "劑次"])
