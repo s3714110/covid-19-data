@@ -35,6 +35,8 @@ pipeline:
         - Iran # Moved to WHO
         - Azerbaijan # Moved to WHO
         - Antigua Barbuda # Moved to WHO
+        - Moldova # Moved to WHO
+        - Barbados # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
