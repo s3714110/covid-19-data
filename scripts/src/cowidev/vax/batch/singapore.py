@@ -37,9 +37,9 @@ class Singapore(CountryVaxBase):
                 [
                     "vacc_date",
                     "received_at_least_one_dose",
-                    "received_at_least_two_doses",
+                    "full_regimen",
                     "received_one_dose_pcttakeup",
-                    "received_two_doses_pcttakeup",
+                    "full_regimen_pcttakeup",
                 ],
             )
 
@@ -49,7 +49,7 @@ class Singapore(CountryVaxBase):
                 [
                     "vacc_date",
                     "received_booster_or_three_doses",
-                    "booster_or_three_doses_pcttakeup",
+                    "received_booster_or_three_doses_pcttakeup",
                 ],
             )
         df = self._merge_primary_and_boosters(df_primary, df_boosters)
@@ -79,7 +79,7 @@ class Singapore(CountryVaxBase):
             columns={
                 "vacc_date": "date",
                 "received_at_least_one_dose": "people_vaccinated",
-                "received_at_least_two_doses": "people_fully_vaccinated",
+                "full_regimen": "people_fully_vaccinated",
                 "received_booster_or_three_doses": "total_boosters",
             }
         )[["date", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
