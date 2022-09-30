@@ -15,6 +15,8 @@ class Lithuania(CountryVaxBase):
         "Johnson & Johnson": "Johnson&Johnson",
         "Moderna": "Moderna",
         "Pfizer-BioNTech": "Pfizer/BioNTech",
+        "Pfizer-BioNTech BA.4-5": "Pfizer/BioNTech",
+        "Pfizer-BioNTech BA.1": "Pfizer/BioNTech",
         "Novavax": "Novavax",
     }
 
