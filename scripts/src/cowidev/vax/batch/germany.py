@@ -24,7 +24,7 @@ class Germany(CountryVaxBase):
         "impfungen_johnson_kumulativ": "Johnson&Johnson",
         "impfungen_novavax_kumulativ": "Novavax",
         "impfungen_valneva_kumulativ": "Valneva",
-        "impfungen_sanofi_kumulativ": "Sanofi/GSK",
+        # "impfungen_sanofi_kumulativ": "Sanofi/GSK",
     }
     fully_vaccinated_mapping: str = {
         "impfungen_biontech_gi_kumulativ": "full_biontech",
