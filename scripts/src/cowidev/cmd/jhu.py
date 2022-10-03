@@ -31,6 +31,7 @@ def click_jhu_generate(ctx):
     feedback_log(
         func=generate_dataset,
         server=ctx.obj["server"],
+        server_mode=ctx.obj["server"],
         domain="JHU",
         step="generate",
         text_success="Public data files generated.",

@@ -11,6 +11,7 @@ from cowidev.jhu.subnational import create_subnational
 from cowidev.utils.utils import export_timestamp
 from cowidev.grapher.db.utils.slack_client import send_warning
 from cowidev.grapher.db.utils.db_imports import import_dataset
+from cowidev.utils.slackapi import SlackAPI
 
 
 ERROR = colored("[Error]", "red")
@@ -19,16 +20,24 @@ WARNING = colored("[Warning]", "yellow")
 DATASET_NAME = "COVID-19 - Johns Hopkins University"
 
 
-def check_data_correctness(df, logger):
+API = SlackAPI()
+
+
+def check_data_correctness(df, logger, server):
     """Check that everything is alright in df"""
     errors = 0
 
     # Check that every country name is standardized
     df_uniq = df[["Country/Region", "location"]].drop_duplicates()
-    if df_uniq["location"].isnull().any():
+    if (msk := df_uniq["location"].isnull()).any():
         print_err("\n" + ERROR + " Could not find OWID names for:")
-        print_err(df_uniq[df_uniq["location"].isnull()])
-        errors += 1
+        print_err((countries := df_uniq.loc[msk, "Country/Region"].tolist()))
+        if server:
+            API.send_warning(
+                channel="#corona-data-updates",
+                title="JHU: Country missing!",
+                message=f"Could not find OWID names for some countries: {countries}",
+            )
 
     # Drop missing locations for the further checks – that error is addressed above
     df = df.dropna(subset=["location"])
@@ -81,7 +90,7 @@ def export(df, logger):
         raise ValueError("JHU export failed.")
 
 
-def generate_dataset(logger, skip_download=False):
+def generate_dataset(logger, server_mode, skip_download=False):
 
     if not skip_download:
         logger.info("\nAttempting to download latest CSV files...")
@@ -89,7 +98,7 @@ def generate_dataset(logger, skip_download=False):
     # Load data
     df = load_data()
 
-    check_data_correctness(df, logger)
+    check_data_correctness(df, logger, server_mode)
 
     export(df, logger)
 
