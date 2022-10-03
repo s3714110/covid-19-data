@@ -19,43 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-10-03T07:00:18,,
 cowidev.vax.batch.ireland,0.18,True,2022-10-03T07:00:18,,
 cowidev.vax.batch.israel,9.93,True,2022-10-03T07:00:28,,
 cowidev.vax.batch.italy,10.22,True,2022-10-03T07:00:28,,
-cowidev.vax.batch.japan,1.47,False,2022-10-03T07:03:23,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,16.34,True,2022-10-03T09:42:07,,
 cowidev.vax.batch.jersey,1.09,True,2022-10-03T07:00:29,,
 cowidev.vax.batch.latvia,18.28,True,2022-10-03T07:00:47,,
 cowidev.vax.batch.lithuania,1.61,True,2022-10-03T07:00:30,,
@@ -97,22 +61,22 @@ cowidev.vax.incremental.croatia,0.46,True,2022-10-03T07:01:50,,
 cowidev.vax.incremental.cuba,8.26,True,2022-10-03T07:01:58,,
 cowidev.vax.incremental.curacao,0.58,True,2022-10-03T07:01:59,,
 cowidev.vax.incremental.cyprus,2.43,True,2022-10-03T07:02:01,,
-cowidev.vax.incremental.dominican_republic,10.31,False,2022-10-03T07:03:33,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.dominican_republic,9.61,False,2022-10-03T09:42:17,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 108, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 108, in main
     DominicanRepublic().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 64, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 64, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 27, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 27, in read
     date = self._parse_date(driver)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 55, in _parse_date
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 55, in _parse_date
     return clean_date(dt_candidate, ""Estadísticas nacionales | Acumulados al %d de %B de %Y"", lang=""es"")
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/clean/dates.py"", line 76, in clean_date
     dt = datetime.strptime(date_or_text, fmt) - timedelta(days=minus_days)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/_strptime.py"", line 568, in _strptime_datetime
+  File ""/usr/lib/python3.10/_strptime.py"", line 568, in _strptime_datetime
     tt, fraction, gmtoff_fraction = _strptime(data_string, format)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/_strptime.py"", line 349, in _strptime
+  File ""/usr/lib/python3.10/_strptime.py"", line 349, in _strptime
     raise ValueError(""time data %r does not match format %r"" %
 ValueError: time data 'Estadísticas nacionales | Acumulados al 01 de 0ctubre de 2022' does not match format 'Estadísticas nacionales | Acumulados al %d de %B de %Y'
 ",time data 'Estadísticas nacionales | Acumulados al 01 de 0ctubre de 2022' does not match format 'Estadísticas nacionales | Acumulados al %d de %B de %Y'
@@ -172,21 +136,7 @@ cowidev.vax.incremental.pakistan,2.09,True,2022-10-03T07:02:34,,
 cowidev.vax.incremental.philippines,,,2022-10-03T07:02:34,,
 cowidev.vax.incremental.poland,1.29,True,2022-10-03T07:02:36,,
 cowidev.vax.incremental.qatar,,,2022-10-03T07:02:36,,
-cowidev.vax.incremental.russia,0.59,False,2022-10-03T07:03:54,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.6,True,2022-10-03T09:41:55,,
 cowidev.vax.incremental.saint_lucia,,,2022-10-03T07:02:37,,
 cowidev.vax.incremental.serbia,6.71,True,2022-10-03T07:02:43,,
 cowidev.vax.incremental.south_africa,6.07,True,2022-10-03T07:02:49,,
