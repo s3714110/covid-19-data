@@ -33,7 +33,7 @@ class Sweden(CountryVaxBase):
         dfs = pd.read_html(text, encoding="utf-8")
         df_doses = self._read_daily_data_doses(dfs[0])
         df_people = self._read_daily_data_people(dfs[1])
-        df_boosters = self._read_daily_data_boosters(dfs[2])
+        df_boosters = self._read_daily_data_boosters(dfs[2], dfs[3])
         df = self._merge_tables_daily(df_people, df_doses, df_boosters)
         return df
 
@@ -49,10 +49,13 @@ class Sweden(CountryVaxBase):
             total_vaccinations=df["Antal vaccinationer"].apply(clean_count),
         )
 
-    def _read_daily_data_boosters(self, df):
+    def _read_daily_data_boosters(self, df_1, df_2):
         # Total vaccinations
-        return df.assign(
-            total_boosters=df["Antal vaccinerade med 3 doser"].apply(clean_count),
+        return df_1.assign(
+            total_boosters=(
+                df_1["Antal vaccinerade med 3 doser"].apply(clean_count)
+                + df_2["Antal vaccinerade med 4 doser"].apply(clean_count)
+            ),
         )
 
     def _merge_tables_daily(self, df_people, df_doses, df_boosters):
@@ -100,8 +103,7 @@ class Sweden(CountryVaxBase):
         df_doses = df_doses.rename(columns={"Antal vaccinationer": "total_vaccinations"})
 
         self.latest_boosdters = (
-            dfs["Vaccinerade kommun dos 4"]["Antal_dos4"].sum()
-            + dfs["Vaccinerade kommun dos 3"]["Antal_dos3"].sum()
+            dfs["Vaccinerade kommun dos 4"]["Antal_dos4"].sum() + dfs["Vaccinerade kommun dos 3"]["Antal_dos3"].sum()
         )
         # boosters = dfs["Dos 1 till 3 per åldersgrupp"]  # Dos 4 per åldersgrupp
         # boosters = dfs["Dos 4 per åldersgrupp"]
