@@ -5,7 +5,6 @@ from datetime import datetime
 from joblib import Parallel, delayed
 import pandas as pd
 
-from cowidev.utils.log import get_logger
 from cowidev.utils.utils import export_timestamp, get_traceback
 from cowidev.utils.s3 import obj_from_s3
 from cowidev.cmd.commons.utils import StepReport
