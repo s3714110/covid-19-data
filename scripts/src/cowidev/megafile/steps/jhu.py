@@ -75,7 +75,7 @@ def get_jhu(jhu_dir: str):
 def add_cumulative_deaths_last12m(df: pd.DataFrame) -> pd.DataFrame:
 
     df["daily_diff"] = df[["location", "total_deaths"]].groupby("location").fillna(0).diff()
-    date_cutoff = datetime.datetime.now() - datetime.timedelta(days=365.2425)
+    date_cutoff = pd.to_datetime(df.date.max()) - datetime.timedelta(days=365.2425)
     df.loc[pd.to_datetime(df.date) < date_cutoff, "daily_diff"] = 0
 
     df["total_deaths_last12m"] = df[["location", "daily_diff"]].groupby("location").cumsum()
