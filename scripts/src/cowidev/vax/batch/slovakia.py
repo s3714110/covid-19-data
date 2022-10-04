@@ -25,7 +25,6 @@ class Slovakia(CountryVaxBase):
         "NUVAXOVID": "Novavax",
     }
     vax_timeline = None
-    date_start = datetime(2021, 1, 4)
 
     def read(self):
         df = pd.read_csv(self.source_url, sep=";")
@@ -71,6 +70,10 @@ class Slovakia(CountryVaxBase):
     def pipe_reshape(self, df: pd.DataFrame) -> pd.DataFrame:
         # Group
         df = df.groupby(["date", "dose"], as_index=False).doses_administered.sum()
+        # Check
+        wrong_dose_nr = set(df.dose).difference({"3", "1", "2", "4", "fully"})
+        if wrong_dose_nr:
+            raise ValueError(f"Unknown dose number(s): {wrong_dose_nr}")
         # Pivot
         df = df.pivot(index=["date"], columns="dose", values="doses_administered").reset_index()
         return df
@@ -78,7 +81,7 @@ class Slovakia(CountryVaxBase):
     def pipe_cumsum(self, df: pd.DataFrame) -> pd.DataFrame:
         # Cummulative
         df = df.sort_values("date")
-        cols = ["1", "2", "fully", "3"]
+        cols = ["1", "2", "fully", "3", "4"]
         df[cols] = df[cols].cumsum().fillna(method="ffill").fillna(0)
         return df
 
