@@ -14,6 +14,7 @@ class Lithuania(CountryVaxBase):
         "AstraZeneca": "Oxford/AstraZeneca",
         "Johnson & Johnson": "Johnson&Johnson",
         "Moderna": "Moderna",
+        "Moderna BA.1": "Moderna",
         "Pfizer-BioNTech": "Pfizer/BioNTech",
         "Pfizer-BioNTech BA.4-5": "Pfizer/BioNTech",
         "Pfizer-BioNTech BA.1": "Pfizer/BioNTech",
