@@ -52,7 +52,11 @@ class DominicanRepublic(CountryVaxBase):
         dt_candidates = [e.text for e in driver.find_elements_by_tag_name("h3")]
         for dt_candidate in dt_candidates:
             if "Estadísticas nacionales | Acumulados" in dt_candidate:
-                return clean_date(dt_candidate, "Estadísticas nacionales | Acumulados al %d de %B de %Y", lang="es")
+                return clean_date(
+                    dt_candidate,
+                    "Estadísticas nacionales | Acumulados al %d de %B de %Y",
+                    lang="es",
+                )
 
     def pipe_vaccine(self, ds: pd.Series) -> pd.Series:
         return enrich_data(ds, "vaccine", "Oxford/AstraZeneca, Pfizer/BioNTech, Sinopharm/Beijing, Sinovac")
