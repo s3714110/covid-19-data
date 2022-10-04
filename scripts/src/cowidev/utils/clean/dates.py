@@ -70,7 +70,7 @@ def clean_date(
     if unicode_norm:
         date_or_text = clean_string(date_or_text)
     # Fix possible issues
-    date_or_text = date_or_text.replace("O", "0")
+    date_or_text = date_or_text.replace("O", "0").replace("0CT", "OCT").replace("0ct", "Oct")
     # Thread-safe extract date
     with _setlocale(loc):
         dt = datetime.strptime(date_or_text, fmt) - timedelta(days=minus_days)
