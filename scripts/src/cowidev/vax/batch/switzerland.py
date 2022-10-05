@@ -67,6 +67,7 @@ class Switzerland(CountryVaxBase):
             "COVID19FirstBoosterPersons",
             "COVID19NotVaccPersons",
             "COVID19SecondBoosterPersons",
+            "COVID19VaccSixMonthsPersons",
         }
         assert set(people.type) == accepted_types, "New type found! Check people.type"
         people = people[people.age_group == "total_population"].drop(columns=["age_group"])
@@ -122,6 +123,10 @@ class Switzerland(CountryVaxBase):
             source_url=f"{self.source_url}?detGeo={country_code}",
         )
 
+    def pipe_filter_dp(self, df: pd.DataFrame) -> pd.DataFrame:
+        date_th = min(self.vaccine_timeline.values())
+        return df[df.date >= date_th]
+
     def pipeline(self, df: pd.DataFrame, location: str) -> pd.DataFrame:
         geo_region = _get_geo_region(location)
         return (
@@ -132,7 +137,8 @@ class Switzerland(CountryVaxBase):
             .pipe(self.pipe_fix_metrics)
             .pipe(self.pipe_location, location)
             .pipe(self.pipe_source, geo_region)
-            .pipe(build_vaccine_timeline, self.vaccine_timeline)[
+            .pipe(build_vaccine_timeline, self.vaccine_timeline)
+            .pipe(self.pipe_filter_dp)[
                 [
                     "location",
                     "date",
