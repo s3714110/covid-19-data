@@ -25,9 +25,9 @@ The complete list of country-by-country sources is available in [`locations.csv`
 | `Daily hospital occupancy per million`          | `Daily hospital occupancy` per million people |
 | `Daily ICU occupancy`                           | Number of COVID-19 patients in ICU on a given day |
 | `Daily ICU occupancy per million`               | `Daily ICU occupancy` per million people |
-| `Weekly new hospital admissions`                 | Number of COVID-19 patients newly admitted to hospitals in a given week (reporting date and the preceeding 6 days) |
+| `Weekly new hospital admissions`                 | Number of COVID-19 patients newly admitted to hospitals in a given week (reporting date and the preceding six days) |
 | `Weekly new hospital admissions per million`     | `Weekly new hospital admissions` per million people |
-| `Weekly new ICU admissions`                      | Number of COVID-19 patients newly admitted to ICU in a given week (reporting date and the preceeding 6 days) |
+| `Weekly new ICU admissions`                      | Number of COVID-19 patients newly admitted to ICU in a given week (reporting date and the preceding six days) |
 | `Weekly new ICU admissions per million`          | `Weekly new ICU admissions` per million people |
 
 
