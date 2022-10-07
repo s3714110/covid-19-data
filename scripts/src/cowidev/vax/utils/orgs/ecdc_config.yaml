@@ -3,10 +3,12 @@ vaccines:
     org_name:
       - "MOD"
       - "MODBA.1"
+      - "MODBA.4-5"
   - owid_name: "Pfizer/BioNTech"
     org_name:
       - "COM"
       - "COMBA.1"
+      - "COMBA.4-5"
   - owid_name: "Oxford/AstraZeneca"
     org_name: "AZ"
   - owid_name: "Johnson&Johnson"
@@ -23,3 +25,5 @@ vaccines:
     org_name: "BHACOV"
   - owid_name: "Sinovac"
     org_name: "SIN"
+  - owid_name: "Valneva"
+    org_name: "VLA"
