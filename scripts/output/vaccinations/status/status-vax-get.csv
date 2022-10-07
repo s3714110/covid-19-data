@@ -8,27 +8,7 @@ cowidev.vax.batch.canada,4.11,True,2022-10-07T07:00:16,,
 cowidev.vax.batch.chile,0.77,True,2022-10-07T07:00:13,,
 cowidev.vax.batch.czechia,1.7,True,2022-10-07T07:00:14,,
 cowidev.vax.batch.denmark,2.5,True,2022-10-07T07:00:15,,
-cowidev.vax.batch.ecdc,36.31,False,2022-10-07T07:03:16,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 512, in main
-    ECDC().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 502, in export
-    df = self.read().pipe(self.pipe_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 159, in pipe_base
-    df = df.pipe(self.pipe_initial_check)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 154, in pipe_initial_check
-    raise ValueError(f""Unknown vaccines found. Check {vaccines_wrong}"")
-ValueError: Unknown vaccines found. Check {'VLA', 'COMBA.4-5', 'MODBA.4-5'}
-","Unknown vaccines found. Check {'VLA', 'COMBA.4-5', 'MODBA.4-5'}"
+cowidev.vax.batch.ecdc,33.22,True,2022-10-07T08:59:39,,
 cowidev.vax.batch.ecuador,1.73,True,2022-10-07T07:00:16,,
 cowidev.vax.batch.estonia,0.63,True,2022-10-07T07:00:15,,
 cowidev.vax.batch.france,0.44,True,2022-10-07T07:00:15,,
@@ -39,43 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-10-07T07:00:16,,
 cowidev.vax.batch.ireland,0.33,True,2022-10-07T07:00:16,,
 cowidev.vax.batch.israel,4.92,True,2022-10-07T07:00:21,,
 cowidev.vax.batch.italy,11.93,True,2022-10-07T07:00:29,,
-cowidev.vax.batch.japan,1.34,False,2022-10-07T07:03:18,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,16.36,True,2022-10-07T08:53:16,,
 cowidev.vax.batch.jersey,0.84,True,2022-10-07T07:00:22,,
 cowidev.vax.batch.latvia,19.88,True,2022-10-07T07:00:42,,
 cowidev.vax.batch.lithuania,4.03,True,2022-10-07T07:00:26,,
@@ -174,21 +118,7 @@ cowidev.vax.incremental.pakistan,1.44,True,2022-10-07T07:01:53,,
 cowidev.vax.incremental.philippines,,,2022-10-07T07:01:53,,
 cowidev.vax.incremental.poland,0.31,True,2022-10-07T07:01:53,,
 cowidev.vax.incremental.qatar,,,2022-10-07T07:01:53,,
-cowidev.vax.incremental.russia,0.55,False,2022-10-07T07:03:38,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,6.26,True,2022-10-07T08:53:06,,
 cowidev.vax.incremental.saint_lucia,,,2022-10-07T07:01:54,,
 cowidev.vax.incremental.serbia,5.88,True,2022-10-07T07:02:00,,
 cowidev.vax.incremental.south_africa,5.82,True,2022-10-07T07:02:03,,
