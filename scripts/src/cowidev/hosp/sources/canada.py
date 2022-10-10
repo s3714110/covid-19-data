@@ -1,34 +1,33 @@
-import json
-
 import pandas as pd
-import requests
-
-from cowidev.utils.clean import clean_date_series
 
 METADATA = {
-    "source_url": "https://api.covid19tracker.ca/reports?after=2020-03-09",
-    "source_url_ref": "https://covid19tracker.ca/",
-    "source_name": "Official data from provinces via covid19tracker.ca",
+    "source_url": "https://health-infobase.canada.ca/src/data/covidLive/covid19-epiSummary-hospVentICU.csv",
+    "source_url_ref": "https://health-infobase.canada.ca/covid-19/",
+    "source_name": "Government of Canada",
     "entity": "Canada",
 }
 
 
 def main():
-    data = requests.get(METADATA["source_url"]).json()
-    data = json.dumps(data["data"])
-
-    df = pd.read_json(data, orient="records")
-    df = df[["date", "total_hospitalizations", "total_criticals"]]
-
-    df = df.melt("date", ["total_hospitalizations", "total_criticals"], "indicator")
-    df["indicator"] = df.indicator.replace(
-        {
-            "total_hospitalizations": "Daily hospital occupancy",
-            "total_criticals": "Daily ICU occupancy",
-        }
+    df = (
+        pd.read_csv(
+            METADATA["source_url"],
+            usecols=[
+                "Date",
+                "COVID_HOSP",
+                "COVID_ICU",
+            ],
+        )
+        .rename(columns={"Date": "date"})
+        .melt("date", ["COVID_HOSP", "COVID_ICU"], "indicator")
+        .replace(
+            {
+                "COVID_HOSP": "Daily hospital occupancy",
+                "COVID_ICU": "Daily ICU occupancy",
+            }
+        )
+        .assign(entity=METADATA["entity"])
     )
-    df["date"] = clean_date_series(df.date, "%Y.%m.%d")
-    df["entity"] = METADATA["entity"]
 
     return df, METADATA
 
