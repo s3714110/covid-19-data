@@ -1,5 +1,6 @@
 import os
 import pandas as pd
+from typing import List
 
 from cowidev import PATHS
 from cowidev.utils.s3 import S3, obj_from_s3
@@ -311,6 +312,10 @@ class CountryVaxBase:
         unknown_vaccines = set(values).difference(values_accepted)
         if unknown_vaccines:
             raise ValueError(f"Found unknown values for `{col_name}`: {unknown_vaccines}")
+
+    def pipe_filter_dp(self, df: pd.DataFrame, dates: List[str]) -> pd.DataFrame:
+        df = df[-df.date.isin(dates)]
+        return df
 
 
 def _build_population_age_group_df(location, df):
