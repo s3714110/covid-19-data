@@ -64,6 +64,7 @@ class Australia(CountryVaxBase):
             .pipe(self.pipe_date)
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_metadata)
+            .pipe(self.pipe_filter_dp, ["2022-10-06"])
             .pipe(self.make_monotonic)
             .sort_values("date")
         )
