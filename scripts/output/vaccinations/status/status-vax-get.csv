@@ -8,19 +8,7 @@ cowidev.vax.batch.canada,4.46,True,2022-10-12T11:34:04,,
 cowidev.vax.batch.chile,0.72,True,2022-10-12T11:34:00,,
 cowidev.vax.batch.czechia,1.79,True,2022-10-12T11:34:02,,
 cowidev.vax.batch.denmark,1.93,True,2022-10-12T11:34:02,,
-cowidev.vax.batch.ecdc,28.49,False,2022-10-12T11:38:29,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 512, in main
-    ECDC().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 502, in export
-    df = self.read().pipe(self.pipe_base)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 118, in read
-    check_known_columns(
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Unauthorized request', ' please make sure your API key is valid.'}
-","Unknown column(s) found: {'Unauthorized request', ' please make sure your API key is valid.'}"
+cowidev.vax.batch.ecdc,55.63,True,2022-10-13T10:27:03,,
 cowidev.vax.batch.ecuador,1.36,True,2022-10-12T11:34:03,,
 cowidev.vax.batch.estonia,0.71,True,2022-10-12T11:34:02,,
 cowidev.vax.batch.france,0.41,True,2022-10-12T11:34:02,,
@@ -31,7 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-10-12T11:34:02,,
 cowidev.vax.batch.ireland,0.77,True,2022-10-12T11:34:03,,
 cowidev.vax.batch.israel,2.95,True,2022-10-12T11:34:06,,
 cowidev.vax.batch.italy,7.18,True,2022-10-12T11:34:10,,
-cowidev.vax.batch.japan,20.0,True,2022-10-12T11:34:23,,
+cowidev.vax.batch.japan,16.42,True,2022-10-13T10:26:24,,
 cowidev.vax.batch.jersey,0.55,True,2022-10-12T11:34:04,,
 cowidev.vax.batch.latvia,236.46,True,2022-10-12T11:38:01,,
 cowidev.vax.batch.lithuania,4.4,True,2022-10-12T11:34:09,,
@@ -48,26 +36,26 @@ cowidev.vax.batch.saudi_arabia,2.9,True,2022-10-12T11:34:13,,
 cowidev.vax.batch.singapore,1.57,True,2022-10-12T11:34:12,,
 cowidev.vax.batch.slovakia,14.23,True,2022-10-12T11:34:26,,
 cowidev.vax.batch.slovenia,0.74,True,2022-10-12T11:34:13,,
-cowidev.vax.batch.south_korea,17.92,False,2022-10-12T11:38:47,"Traceback (most recent call last):
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.south_korea,15.7,False,2022-10-13T10:27:18,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 190, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 190, in main
     SouthKorea().export()
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 173, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 173, in export
     df_base = self.read().pipe(self.pipeline_base)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 94, in pipeline_base
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 94, in pipeline_base
     df.pipe(self.pipe_rename_columns_raw)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/Users/edouard/.pyenv/versions/3.10.0/envs/covid/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 48, in pipe_rename_columns_raw
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 48, in pipe_rename_columns_raw
     self._check_format_multicols(df, columns_lv)
-  File ""/Users/edouard/git/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 63, in _check_format_multicols
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 63, in _check_format_multicols
     raise ValueError(f""Unknown columns in level {lv}: {diff}"")
 ValueError: Unknown columns in level 0: Index(['동절기'], dtype='object')
 ","Unknown columns in level 0: Index(['동절기'], dtype='object')"
@@ -232,7 +220,7 @@ cowidev.vax.incremental.pakistan,2.71,True,2022-10-12T11:34:41,,
 cowidev.vax.incremental.philippines,,,2022-10-12T11:34:40,,
 cowidev.vax.incremental.poland,1.28,True,2022-10-12T11:34:41,,
 cowidev.vax.incremental.qatar,,,2022-10-12T11:34:41,,
-cowidev.vax.incremental.russia,1.25,True,2022-10-12T11:34:43,,
+cowidev.vax.incremental.russia,2.78,True,2022-10-13T10:26:10,,
 cowidev.vax.incremental.saint_lucia,,,2022-10-12T11:34:41,,
 cowidev.vax.incremental.serbia,7.55,True,2022-10-12T11:34:49,,
 cowidev.vax.incremental.south_africa,5.97,True,2022-10-12T11:34:48,,
