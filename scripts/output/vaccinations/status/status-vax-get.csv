@@ -1,30 +1,6 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,4.44,True,2022-10-14T07:00:16,,
-cowidev.vax.batch.australia,1.51,False,2022-10-14T07:03:44,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 122, in main
-    Australia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 111, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 62, in pipeline
-    df.pipe(self.pipe_total_vaccinations)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 52 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-09-29']
-",1 chunks of lengths 52 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-09-29']
+cowidev.vax.batch.australia,1.18,True,2022-10-14T09:47:15,,
 cowidev.vax.batch.austria,3.02,True,2022-10-14T07:00:14,,
 cowidev.vax.batch.belgium,3.24,True,2022-10-14T07:00:14,,
 cowidev.vax.batch.bolivia,2.91,True,2022-10-14T07:00:14,,
@@ -43,43 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-10-14T07:00:20,,
 cowidev.vax.batch.ireland,0.42,True,2022-10-14T07:00:20,,
 cowidev.vax.batch.israel,5.29,True,2022-10-14T07:00:25,,
 cowidev.vax.batch.italy,12.94,True,2022-10-14T07:00:34,,
-cowidev.vax.batch.japan,1.47,False,2022-10-14T07:03:46,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,15.18,True,2022-10-14T09:35:59,,
 cowidev.vax.batch.jersey,2.37,True,2022-10-14T07:00:28,,
 cowidev.vax.batch.latvia,32.08,True,2022-10-14T07:01:00,,
 cowidev.vax.batch.lithuania,2.01,True,2022-10-14T07:00:34,,
@@ -96,29 +36,7 @@ cowidev.vax.batch.saudi_arabia,5.54,True,2022-10-14T07:00:44,,
 cowidev.vax.batch.singapore,3.99,True,2022-10-14T07:00:45,,
 cowidev.vax.batch.slovakia,91.17,True,2022-10-14T07:02:16,,
 cowidev.vax.batch.slovenia,10.11,True,2022-10-14T07:00:55,,
-cowidev.vax.batch.south_korea,12.93,False,2022-10-14T07:03:59,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 190, in main
-    SouthKorea().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 173, in export
-    df_base = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 94, in pipeline_base
-    df.pipe(self.pipe_rename_columns_raw)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 48, in pipe_rename_columns_raw
-    self._check_format_multicols(df, columns_lv)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 63, in _check_format_multicols
-    raise ValueError(f""Unknown columns in level {lv}: {diff}"")
-ValueError: Unknown columns in level 0: Index(['동절기'], dtype='object')
-","Unknown columns in level 0: Index(['동절기'], dtype='object')"
+cowidev.vax.batch.south_korea,7.39,True,2022-10-14T10:28:26,,
 cowidev.vax.batch.spc,6.71,True,2022-10-14T07:01:07,,
 cowidev.vax.batch.sweden,21.49,True,2022-10-14T07:01:27,,
 cowidev.vax.batch.switzerland,70.62,True,2022-10-14T07:02:17,,
@@ -200,21 +118,7 @@ cowidev.vax.incremental.pakistan,1.41,True,2022-10-14T07:02:57,,
 cowidev.vax.incremental.philippines,,,2022-10-14T07:02:57,,
 cowidev.vax.incremental.poland,0.39,True,2022-10-14T07:02:57,,
 cowidev.vax.incremental.qatar,,,2022-10-14T07:02:57,,
-cowidev.vax.incremental.russia,0.41,False,2022-10-14T07:04:19,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,2.99,True,2022-10-14T09:35:46,,
 cowidev.vax.incremental.saint_lucia,,,2022-10-14T07:02:57,,
 cowidev.vax.incremental.serbia,7.76,True,2022-10-14T07:03:05,,
 cowidev.vax.incremental.south_africa,6.76,True,2022-10-14T07:03:12,,
