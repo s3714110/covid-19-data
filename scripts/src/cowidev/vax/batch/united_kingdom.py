@@ -72,7 +72,7 @@ class UnitedKingdom(CountryVaxBase):
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_select_output_cols)
             .sort_values(by=["location", "date"])
-            .dropna(subset=["total_vaccinations"])
+            .dropna(subset=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"])
         )
 
     def _filter_location(self, df: pd.DataFrame, location: str) -> pd.DataFrame:
