@@ -22,7 +22,12 @@ class SouthKorea(CountryVaxBase):
             # "일자": "date",
             # "기타": "other",
         }
-        self.rename_cols_lv0 = {"전체": "all", "기타": "others", "일자": "date", **self.vaccines_mapping}
+        self.rename_cols_lv0 = {
+            "전체": "all",
+            "기타": "others",
+            "일자": "date",
+            **self.vaccines_mapping,
+        }
         self.rename_cols_lv1 = {
             "1·2차": "dose_1",
             "1차": "dose_1",
@@ -37,6 +42,10 @@ class SouthKorea(CountryVaxBase):
         if len(dfs) != 1:
             raise ValueError("More than one table detected!")
         df = dfs[0]
+        return df
+
+    def pipe_drop_columns(self, df: pd.DataFrame) -> pd.DataFrame:
+        df = df.drop(columns=["동절기"], level=0)
         return df
 
     def pipe_rename_columns_raw(self, df: pd.DataFrame):
@@ -57,7 +66,7 @@ class SouthKorea(CountryVaxBase):
         return df
 
     def _check_format_multicols(self, df: pd.DataFrame, columns_lv) -> pd.DataFrame:
-        columns_lv_wrong = {i: df.columns.levels[i].difference(k) for i, k in columns_lv.items()}
+        columns_lv_wrong = {i: df.columns.get_level_values(i).difference(k) for i, k in columns_lv.items()}
         for lv, diff in columns_lv_wrong.items():
             if any(diff):
                 raise ValueError(f"Unknown columns in level {lv}: {diff}")
@@ -91,7 +100,8 @@ class SouthKorea(CountryVaxBase):
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
-            df.pipe(self.pipe_rename_columns_raw)
+            df.pipe(self.pipe_drop_columns)
+            .pipe(self.pipe_rename_columns_raw)
             .pipe(self.pipe_check_metrics)
             .pipe(self.pipe_date)
             .pipe(self.pipe_cumsum)
