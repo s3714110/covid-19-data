@@ -47,6 +47,7 @@ class Canada(CountryVaxBase):
         "Medicago Covifenz": "Medicago",
         "Moderna Spikevax": "Moderna",
         "Moderna Spikevax (ages 6 months-5 years)": "Moderna",
+        "Moderna Spikevax Bivalent": "Moderna",
         "Not reported": None,
         "Novavax": "Novavax",
         "Novavax Nuvaxovid": "Novavax",

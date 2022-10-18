@@ -4,23 +4,7 @@ cowidev.vax.batch.australia,2.26,True,2022-10-18T07:00:12,,
 cowidev.vax.batch.austria,2.95,True,2022-10-18T07:00:13,,
 cowidev.vax.batch.belgium,2.87,True,2022-10-18T07:00:13,,
 cowidev.vax.batch.bolivia,2.07,True,2022-10-18T07:00:12,,
-cowidev.vax.batch.canada,7.58,False,2022-10-18T07:06:06,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 276, in main
-    Canada().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 263, in export
-    df_man = df_man.pipe(self.pipeline_manufacturer)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 189, in pipeline_manufacturer
-    validate_vaccines(df, self.vaccine_mapping)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py"", line 261, in validate_vaccines
-    raise ValueError(f""Missing vaccines: {vaccines_wrong}"")
-ValueError: Missing vaccines: {'Moderna Spikevax Bivalent'}
-",Missing vaccines: {'Moderna Spikevax Bivalent'}
+cowidev.vax.batch.canada,6.0,True,2022-10-18T10:55:18,,
 cowidev.vax.batch.chile,1.07,True,2022-10-18T07:00:14,,
 cowidev.vax.batch.czechia,3.54,True,2022-10-18T07:00:17,,
 cowidev.vax.batch.denmark,3.95,True,2022-10-18T07:00:17,,
@@ -35,43 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-10-18T07:00:19,,
 cowidev.vax.batch.ireland,2.22,True,2022-10-18T07:00:21,,
 cowidev.vax.batch.israel,7.24,True,2022-10-18T07:00:27,,
 cowidev.vax.batch.italy,10.85,True,2022-10-18T07:00:32,,
-cowidev.vax.batch.japan,0.77,False,2022-10-18T07:06:06,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,18.05,True,2022-10-18T10:53:27,,
 cowidev.vax.batch.jersey,2.1,True,2022-10-18T07:00:29,,
 cowidev.vax.batch.latvia,23.38,True,2022-10-18T07:00:52,,
 cowidev.vax.batch.lithuania,4.53,True,2022-10-18T07:00:34,,
@@ -113,47 +61,25 @@ cowidev.vax.incremental.croatia,0.23,True,2022-10-18T07:02:15,,
 cowidev.vax.incremental.cuba,3.13,True,2022-10-18T07:02:18,,
 cowidev.vax.incremental.curacao,0.43,True,2022-10-18T07:02:18,,
 cowidev.vax.incremental.cyprus,0.81,True,2022-10-18T07:02:19,,
-cowidev.vax.incremental.dominican_republic,122.19,False,2022-10-18T07:08:09,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 23, in read
-    with webdriver.Chrome(options=op) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
-
-","Message: unknown error: DevToolsActivePort file doesn't exist
-"
+cowidev.vax.incremental.dominican_republic,5.93,True,2022-10-18T10:53:15,,
 cowidev.vax.incremental.el_salvador,0.7,True,2022-10-18T07:02:23,,
 cowidev.vax.incremental.faeroe_islands,0.4,True,2022-10-18T07:02:24,,
 cowidev.vax.incremental.fiji,0.0,True,2022-10-18T07:02:24,,
 cowidev.vax.incremental.finland,0.21,True,2022-10-18T07:02:24,,
 cowidev.vax.incremental.gabon,,,2022-10-18T07:02:24,,
 cowidev.vax.incremental.georgia,0.68,True,2022-10-18T07:02:24,,
-cowidev.vax.incremental.greenland,1.19,False,2022-10-18T07:08:10,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.greenland,1.34,False,2022-10-18T10:55:50,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 74, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 74, in main
     Greenland().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 61, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 61, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 18, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 18, in read
     data = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 22, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 22, in _parse_data
     return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 26, in _parse_data_metrics
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 26, in _parse_data_metrics
     dose_1 = clean_count(re.search(r""Innuttaasut ([\d\.]+)"", counters[1].parent.find_all(""dd"")[-1].text).group(1))
 IndexError: list index out of range
 ",list index out of range
@@ -165,43 +91,21 @@ cowidev.vax.incremental.india,0.88,True,2022-10-18T07:02:28,,
 cowidev.vax.incremental.iran,,,2022-10-18T07:02:28,,
 cowidev.vax.incremental.isle_of_man,1.44,True,2022-10-18T07:02:29,,
 cowidev.vax.incremental.jamaica,1.99,True,2022-10-18T07:02:30,,
-cowidev.vax.incremental.kazakhstan,122.17,False,2022-10-18T07:10:12,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.kazakhstan,6.59,True,2022-10-18T10:53:15,,
+cowidev.vax.incremental.kosovo,6.92,False,2022-10-18T10:55:48,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 78, in main
-    Kazakhstan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 73, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kazakhstan.py"", line 17, in read
-    with webdriver.Chrome(options=op) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
-
-","Message: unknown error: DevToolsActivePort file doesn't exist
-"
-cowidev.vax.incremental.kosovo,3.79,False,2022-10-18T07:10:16,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
     Kosovo().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
     df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
     df = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
     soup = get_soup(link, verify=False)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
     raise ValueError(
 ValueError: Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
 ",Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
@@ -241,80 +145,18 @@ cowidev.vax.incremental.myanmar,,,2022-10-18T07:03:16,,
 cowidev.vax.incremental.nepal,,,2022-10-18T07:03:16,,
 cowidev.vax.incremental.north_macedonia,,,2022-10-18T07:03:16,,
 cowidev.vax.incremental.northern_cyprus,0.78,True,2022-10-18T07:03:17,,
-cowidev.vax.incremental.paho,123.06,False,2022-10-18T07:14:21,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
-    PAHO().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 46, in _parse_data
-    with get_driver(download_folder=self._download_path) as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
-    driver = webdriver.Chrome(options=options)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
-
-","Message: unknown error: DevToolsActivePort file doesn't exist
-"
+cowidev.vax.incremental.paho,48.55,True,2022-10-18T10:53:57,,
 cowidev.vax.incremental.pakistan,3.17,True,2022-10-18T07:03:39,,
 cowidev.vax.incremental.philippines,,,2022-10-18T07:03:39,,
 cowidev.vax.incremental.poland,0.28,True,2022-10-18T07:03:39,,
 cowidev.vax.incremental.qatar,,,2022-10-18T07:03:39,,
-cowidev.vax.incremental.russia,0.56,False,2022-10-18T07:14:22,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
-    soup = get_soup(source)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
-",Source https://gogov.ru/articles/covid-v-stats not reached! Error code 502 Bad Gateway
+cowidev.vax.incremental.russia,3.07,True,2022-10-18T10:53:12,,
 cowidev.vax.incremental.saint_lucia,,,2022-10-18T07:03:40,,
 cowidev.vax.incremental.serbia,6.02,True,2022-10-18T07:03:46,,
 cowidev.vax.incremental.south_africa,6.52,True,2022-10-18T07:03:52,,
 cowidev.vax.incremental.spain,3.61,True,2022-10-18T07:03:56,,
 cowidev.vax.incremental.sri_lanka,,,2022-10-18T07:03:56,,
-cowidev.vax.incremental.suriname,122.18,False,2022-10-18T07:16:24,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 57, in main
-    data = read(source).pipe(pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/suriname.py"", line 13, in read
-    with get_driver() as driver:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 161, in get_driver
-    driver = webdriver.Chrome(options=options)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/chrome/webdriver.py"", line 76, in __init__
-    RemoteWebDriver.__init__(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 157, in __init__
-    self.start_session(capabilities, browser_profile)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 252, in start_session
-    response = self.execute(Command.NEW_SESSION, parameters)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.WebDriverException: Message: unknown error: DevToolsActivePort file doesn't exist
-
-","Message: unknown error: DevToolsActivePort file doesn't exist
-"
+cowidev.vax.incremental.suriname,13.52,True,2022-10-18T10:53:22,,
 cowidev.vax.incremental.taiwan,5.62,True,2022-10-18T07:04:27,,
 cowidev.vax.incremental.thailand,3.57,True,2022-10-18T07:04:30,,
 cowidev.vax.incremental.turkey,0.66,True,2022-10-18T07:04:31,,
