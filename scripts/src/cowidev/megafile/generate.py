@@ -93,6 +93,12 @@ def generate_megafile(logger):
         "human_development_index": "un/human_development_index.csv",
     }
     all_covid = add_macro_variables(all_covid, macro_variables, INPUT_DIR)
+    # Add missing population
+    df_pop_sub = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_POPULATION_SUB_FILE)
+    all_covid = all_covid.merge(df_pop_sub[["iso_code", "population"]], on="iso_code", how="left")
+    all_covid = all_covid.assign(population=all_covid["population_x"].fillna(all_covid["population_y"])).drop(
+        columns=["population_x", "population_y"]
+    )
 
     # Add excess mortality
     all_covid = add_excess_mortality(
