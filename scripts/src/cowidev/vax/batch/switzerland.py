@@ -20,6 +20,7 @@ class Switzerland(CountryVaxBase):
             "johnson_johnson": "Johnson&Johnson",
             "novavax": "Novavax",
             "moderna_bivalent": "Moderna",
+            "pfizer_biontech_bivalent": "Pfizer/BioNTech",
         }
 
     def read(self):
