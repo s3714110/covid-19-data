@@ -34,7 +34,7 @@ def get_base_dataset(logger):
 
     logger.info("Fetching vaccination dataset…")
     vax = get_vax(data_file=os.path.join(DATA_DIR, "vaccinations", "vaccinations.csv"))
-    vax = vax[-vax.location.isin(["England", "Northern Ireland", "Scotland", "Wales"])]
+    # vax = vax[-vax.location.isin(["England", "Northern Ireland", "Scotland", "Wales"])]
 
     logger.info("Fetching OxCGRT dataset…")
     cgrt = get_cgrt(

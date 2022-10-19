@@ -60,6 +60,15 @@ def generate_megafile(logger):
         usecols=["iso_code", "continent"],
         header=0,
     )
+    continets_sub = pd.DataFrame(
+        [
+            {"iso_code": "OWID_NIR", "continent": "Europe"},
+            {"iso_code": "OWID_ENG", "continent": "Europe"},
+            {"iso_code": "OWID_WLS", "continent": "Europe"},
+            {"iso_code": "OWID_SCT", "continent": "Europe"},
+        ]
+    )
+    continents = pd.concat([continents, continets_sub], ignore_index=True)
 
     all_covid = continents.merge(all_covid, on="iso_code", how="right")
 
