@@ -313,8 +313,11 @@ class CountryVaxBase:
         if unknown_vaccines:
             raise ValueError(f"Found unknown values for `{col_name}`: {unknown_vaccines}")
 
-    def pipe_filter_dp(self, df: pd.DataFrame, dates: List[str]) -> pd.DataFrame:
-        df = df[-df.date.isin(dates)]
+    def pipe_filter_dp(self, df: pd.DataFrame, dates: List[str], metrics: List[str] = None) -> pd.DataFrame:
+        if metrics is None:
+            df = df[-df.date.isin(dates)]
+        else:
+            df.loc[df.date.isin(dates), metrics] = None
         return df
 
 
