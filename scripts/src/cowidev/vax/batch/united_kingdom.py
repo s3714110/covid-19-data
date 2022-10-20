@@ -3,7 +3,6 @@ import locale
 import pandas as pd
 from uk_covid19 import Cov19API
 
-from cowidev.vax.utils.utils import make_monotonic
 from cowidev.vax.utils.base import CountryVaxBase
 
 
