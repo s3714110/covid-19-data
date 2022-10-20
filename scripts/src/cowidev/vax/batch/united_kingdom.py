@@ -1,5 +1,3 @@
-import locale
-
 import pandas as pd
 from uk_covid19 import Cov19API
 
@@ -51,6 +49,15 @@ class UnitedKingdom(CountryVaxBase):
 
         return df.assign(vaccine=df.date.apply(_enrich_vaccine))
 
+    def pipe_add_autumn_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
+        # total_boosters does not include autumn 22 boosters, but this data can be collected from vaccinations_age field.
+        # autum22_boosters = df["vaccinations_age"].apply(lambda x: _sum_all_autumn_boosters_age(x))
+        autum22_boosters = (
+            df["total_vaccinations"] - df["people_vaccinated"] - df["people_fully_vaccinated"] - df["total_boosters"]
+        ).fillna(0)
+        df = df.assign(total_boosters=df["total_boosters"] + autum22_boosters)
+        return df
+
     def pipe_select_output_cols(self, df: pd.DataFrame) -> pd.DataFrame:
         return df[
             [
@@ -69,6 +76,7 @@ class UnitedKingdom(CountryVaxBase):
         return (
             df.pipe(self.pipe_source_url)
             .pipe(self.pipe_vaccine)
+            .pipe(self.pipe_add_autumn_boosters)
             .pipe(self.pipe_select_output_cols)
             .sort_values(by=["location", "date"])
             .dropna(subset=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"])
@@ -82,6 +90,13 @@ class UnitedKingdom(CountryVaxBase):
         for location in set(df_base.location):
             df = df_base.pipe(self._filter_location, location).pipe(self.make_monotonic, max_removed_rows=45)
             self.export_datafile(df, filename=location)
+
+
+def _sum_all_autumn_boosters_age(vaccinations_age):
+    if vaccinations_age:
+        values = [v.get("cumPeopleVaccinatedAutumn22ByVaccinationDate", 0) for v in vaccinations_age]
+        return sum(v if v else 0 for v in values)
+    return 0
 
 
 def main():
