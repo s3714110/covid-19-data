@@ -199,7 +199,7 @@ class HospETL:
     def pipe_metadata(self, df):
         print("Adding ISO & population…")
         shape_og = df.shape
-        population = pd.read_csv(PATHS.INTERNAL_INPUT_UN_POPULATION_FILE, usecols=["entity", "iso_code", "population"])
+        population = _load_population()
         df = df.merge(population, on="entity")
         if shape_og[0] != df.shape[0]:
             raise ValueError(f"Dimension 0 after merge is different: {shape_og[0]} --> {df.shape[0]}")
@@ -258,6 +258,15 @@ class HospETL:
             df_meta = self.transform_meta(data["meta"], df, PATHS.DATA_HOSP_META_FILE)
             self.load(df, PATHS.DATA_HOSP_MAIN_FILE)
             self.load(df_meta, PATHS.DATA_HOSP_META_FILE)
+
+
+def _load_population():
+    population = pd.read_csv(PATHS.INTERNAL_INPUT_UN_POPULATION_FILE, usecols=["entity", "iso_code", "population"])
+    population_sub = pd.read_csv(
+        PATHS.INTERNAL_INPUT_OWID_POPULATION_SUB_FILE, usecols=["location", "iso_code", "population"]
+    ).rename(columns={"location": "entity"})
+    population = pd.concat([population, population_sub], ignore_index=True)
+    return population
 
 
 def run_etl(parallel: bool, n_jobs: int, modules: list, modules_skip: list = []):
