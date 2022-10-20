@@ -60,6 +60,7 @@ class Jersey(CountryVaxBase):
             .pipe(self.pipe_enrich_vaccine_name)
             .pipe(self.pipe_enrich_columns)
             .pipe(self.pipe_metrics)
+            .pipe(self.pipe_filter_dp, ["2022-10-02"], ["total_boosters"])
             .sort_values("date")[
                 [
                     "location",
