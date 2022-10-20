@@ -51,10 +51,10 @@ class UnitedKingdom(CountryVaxBase):
 
     def pipe_add_autumn_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
         # total_boosters does not include autumn 22 boosters, but this data can be collected from vaccinations_age field.
-        # autum22_boosters = df["vaccinations_age"].apply(lambda x: _sum_all_autumn_boosters_age(x))
-        autum22_boosters = (
-            df["total_vaccinations"] - df["people_vaccinated"] - df["people_fully_vaccinated"] - df["total_boosters"]
-        ).fillna(0)
+        autum22_boosters = df["vaccinations_age"].apply(lambda x: _sum_all_autumn_boosters_age(x))
+        # autum22_boosters = (
+        #     df["total_vaccinations"] - df["people_vaccinated"] - df["people_fully_vaccinated"] - df["total_boosters"]
+        # ).fillna(0)
         df = df.assign(total_boosters=df["total_boosters"] + autum22_boosters)
         return df
 
@@ -79,7 +79,10 @@ class UnitedKingdom(CountryVaxBase):
             .pipe(self.pipe_add_autumn_boosters)
             .pipe(self.pipe_select_output_cols)
             .sort_values(by=["location", "date"])
-            .dropna(subset=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"])
+            .dropna(
+                subset=["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"],
+                how="all",
+            )
         )
 
     def _filter_location(self, df: pd.DataFrame, location: str) -> pd.DataFrame:
