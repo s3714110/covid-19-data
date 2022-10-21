@@ -4,11 +4,13 @@ vaccines:
       - "MOD"
       - "MODBA.1"
       - "MODBA.4-5"
+      - "MODBIV"
   - owid_name: "Pfizer/BioNTech"
     org_name:
       - "COM"
       - "COMBA.1"
       - "COMBA.4-5"
+      - "COMBIV"
   - owid_name: "Oxford/AstraZeneca"
     org_name: "AZ"
   - owid_name: "Johnson&Johnson"
