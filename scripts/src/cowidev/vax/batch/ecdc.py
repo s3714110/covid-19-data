@@ -1,4 +1,3 @@
-from http.client import USE_PROXY
 import pandas as pd
 
 from cowidev.utils.clean.dates import clean_date, localdate
@@ -99,6 +98,7 @@ COLUMNS = {
     "YearWeekISO",
     "DoseAdditional1",
     "DoseAdditional2",
+    "DoseAdditional3",
     "NumberDosesExported",
 }
 
@@ -114,27 +114,7 @@ class ECDC(CountryVaxBase):
         return self._load_country_mapping(PATHS.INTERNAL_INPUT_ISO_FULL_FILE)
 
     def read(self):
-        df = read_csv_from_url(self.source_url, timeout=30, use_proxy=True)
-        check_known_columns(
-            df,
-            [
-                "YearWeekISO",
-                "ReportingCountry",
-                "Denominator",
-                "NumberDosesReceived",
-                "NumberDosesExported",
-                "FirstDose",
-                "FirstDoseRefused",
-                "SecondDose",
-                "DoseAdditional1",
-                "DoseAdditional2",
-                "UnknownDose",
-                "Region",
-                "TargetGroup",
-                "Vaccine",
-                "Population",
-            ],
-        )
+        df = read_csv_from_url(self.source_url, timeout=30)
         return df
 
     def _load_country_mapping(self, iso_path: str):
@@ -159,12 +139,12 @@ class ECDC(CountryVaxBase):
         df = df.pipe(self.pipe_initial_check)
         df = df.assign(
             total_vaccinations=df[
-                ["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1", "DoseAdditional2"]
+                ["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1", "DoseAdditional2", "DoseAdditional3"]
             ].sum(axis=1),
             people_vaccinated=df.FirstDose,
             people_fully_vaccinated=df.SecondDose,
             people_with_booster=df.DoseAdditional1,
-            total_boosters=df.DoseAdditional1 + df.DoseAdditional2,
+            total_boosters=df.DoseAdditional1 + df.DoseAdditional2 + df.DoseAdditional3,
             date=df.YearWeekISO.apply(self._weekday_to_date),
             location=df.ReportingCountry.replace(self.country_mapping),
         )
