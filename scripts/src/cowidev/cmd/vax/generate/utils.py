@@ -452,6 +452,7 @@ class DatasetGenerator:
         return df[df.date.astype(str) >= "2020-12-01"]
 
     def pipe_manufacturer_checks(self, df: pd.DataFrame) -> pd.DataFrame:
+        # TODO: Add monotonic checks
         vaccines_wrong = set(df.vaccine).difference(VACCINES_ACCEPTED)
         if vaccines_wrong:
             raise ValueError(f"Invalid vaccines found in manufacturer file! {vaccines_wrong}")

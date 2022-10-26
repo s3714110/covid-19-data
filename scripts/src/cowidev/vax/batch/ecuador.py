@@ -80,6 +80,7 @@ class Ecuador(CountryVaxBase):
             .pipe(self.pipe_manuf_vaccine_checks)
             .pipe(self.pipe_manuf_date)
             .assign(location=self.location)
+            .pipe(self.make_monotonic, ["vaccine"])
             .sort_values(["vaccine", "date"])[["location", "date", "vaccine", "total_vaccinations"]]
         )
 

@@ -121,7 +121,17 @@ class HongKong(CountryVaxBase):
         return df[df.total_vaccinations > 0]
 
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.pipe(self.pipe_sum_manufacturer).assign(location=self.location)
+        return (
+            df.pipe(self.pipe_sum_manufacturer)
+            .assign(location=self.location)
+            .pipe(self.pipe_filter_manuf_dp)
+            .pipe(self.make_monotonic, ["vaccine"])
+        )
+
+    def pipe_filter_manuf_dp(self, df):
+        msk_sin = (df.vaccine == "Sinovac") & df.date.isin(["2021-10-13", "2022-01-31"])
+        msk_pfi = (df.vaccine == "Pfizer/BioNTech") & df.date.isin(["2021-10-13", "2022-02-01"])
+        return df[~(msk_sin | msk_pfi)]
 
     def pipe_age_checks(self, df: pd.DataFrame):
         vax_wrong = set(df.vaccine).difference(self.vaccines_valid)
@@ -158,7 +168,7 @@ class HongKong(CountryVaxBase):
         )
 
     def pipe_age_filter(self, df: pd.DataFrame):
-        msk = (df.date=="2022-02-01") & (df.age_group_min=='0')
+        msk = (df.date == "2022-02-01") & (df.age_group_min == "0")
         return df[~msk]
 
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:

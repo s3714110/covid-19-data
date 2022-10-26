@@ -161,6 +161,9 @@ class Switzerland(CountryVaxBase):
             .drop(columns="geoRegion")
             .assign(location="Switzerland")
             .replace(self.vaccine_mapping)
+            .groupby(["location", "date", "vaccine"], as_index=False)
+            .sum()
+            .pipe(self.make_monotonic, ["vaccine"])
         )
 
     def pipe_age_filter_region(self, df, geo_region):

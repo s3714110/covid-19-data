@@ -287,8 +287,8 @@ class CountryVaxBase:
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.rename_columns)
 
-    def force_monotonic(self):
-        df = pd.read_csv(self.output_path).pipe(self.make_monotonic)
+    def force_monotonic(self, **kwargs):
+        df = pd.read_csv(self.output_path).pipe(self.make_monotonic, **kwargs)
         self.export_datafile(df)
 
     def pipe_age_per_capita(self, df: pd.DataFrame) -> pd.DataFrame:

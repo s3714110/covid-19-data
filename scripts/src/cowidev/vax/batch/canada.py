@@ -190,7 +190,9 @@ class Canada(CountryVaxBase):
         validate_vaccines(df, self.vaccine_mapping)
         df = df[df.total_vaccinations > 0].replace(self.vaccine_mapping).dropna()
         df = df.groupby(["date", "vaccine"], as_index=False).sum()
-        return df.assign(location=self.location)
+        df = df.assign(location=self.location)
+        df = df.pipe(self.make_monotonic, ["vaccine"])
+        return df
 
     def pipe_get_totals(self, df: pd.DataFrame) -> pd.DataFrame:
         df = df.fillna(0).sort_values("date")
