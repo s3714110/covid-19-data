@@ -279,7 +279,9 @@ class ECDC(CountryVaxBase):
         ]
 
     def pipe_rename_vaccines(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(vaccine=df.vaccine.replace(self.vaccine_mapping))
+        df = df.assign(vaccine=df.vaccine.replace(self.vaccine_mapping))
+        df = df.groupby(["location", "date", "vaccine"], as_index=False).sum()
+        return df
 
     def pipe_manufacturer_filter_locations(self, df: pd.DataFrame):
         """Filters countries to be excluded and those with a high number of unknown doses."""
@@ -459,7 +461,7 @@ class ECDC(CountryVaxBase):
                     "source_name": "European Centre for Disease Prevention and Control (ECDC)",
                     "source_url": self.source_url_ref,
                 },
-                attach_manufacturer=True,
+                # attach_manufacturer=True,
             )
 
     def export_main(self, df: pd.DataFrame):
@@ -475,6 +477,10 @@ class ECDC(CountryVaxBase):
                 != 0
             )
             df_c = df_c.loc[msk]
+            s0 = df_c.shape
+            df_c = self.make_monotonic(df_c)
+            s1 = df_c.shape
+            assert s0 == s1, f"make_monotonic changed shape from {s0} to {s1}"
             self.export_datafile(df_c, filename=location)
 
     def export(self):
