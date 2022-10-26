@@ -1,10 +1,10 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,3.89,True,2022-10-26T07:00:15,,
-cowidev.vax.batch.australia,1.92,True,2022-10-26T07:00:13,,
+cowidev.vax.batch.australia,24.86,True,2022-10-26T14:23:26,,
 cowidev.vax.batch.austria,2.52,True,2022-10-26T07:00:14,,
 cowidev.vax.batch.belgium,2.46,True,2022-10-26T07:00:14,,
 cowidev.vax.batch.bolivia,2.41,True,2022-10-26T07:00:14,,
-cowidev.vax.batch.canada,5.27,True,2022-10-26T10:45:57,,
+cowidev.vax.batch.canada,24.05,True,2022-10-26T14:23:25,,
 cowidev.vax.batch.chile,0.91,True,2022-10-26T07:00:14,,
 cowidev.vax.batch.czechia,4.09,True,2022-10-26T07:00:18,,
 cowidev.vax.batch.denmark,4.52,True,2022-10-26T07:00:18,,
@@ -20,7 +20,31 @@ cowidev.vax.batch.ireland,0.39,True,2022-10-26T07:00:20,,
 cowidev.vax.batch.israel,11.15,True,2022-10-26T07:00:31,,
 cowidev.vax.batch.italy,10.93,True,2022-10-26T07:00:31,,
 cowidev.vax.batch.japan,30.69,True,2022-10-26T08:26:58,,
-cowidev.vax.batch.jersey,0.66,True,2022-10-26T07:00:31,,
+cowidev.vax.batch.jersey,0.85,False,2022-10-26T14:23:34,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 276, in main
+    Jersey().export()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 268, in export
+    df_age = df_base.pipe(self.pipeline_age)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py"", line 236, in pipeline_age
+    # .pipe(self.make_monotonic, [""age_group""])
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 109, in make_monotonic
+    _df = mkm(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
+    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
+    raise Exception(
+Exception: 1 chunks of lengths 21 have been NaNed for metric people_vaccinated_per_hundred. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-09-11']
+",1 chunks of lengths 21 have been NaNed for metric people_vaccinated_per_hundred. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-09-11']
 cowidev.vax.batch.latvia,18.84,True,2022-10-26T07:00:49,,
 cowidev.vax.batch.lithuania,2.06,True,2022-10-26T07:00:33,,
 cowidev.vax.batch.luxembourg,1.93,True,2022-10-26T07:00:33,,
@@ -39,7 +63,7 @@ cowidev.vax.batch.slovenia,0.6,True,2022-10-26T07:00:49,,
 cowidev.vax.batch.south_korea,36.78,True,2022-10-26T07:01:25,,
 cowidev.vax.batch.spc,16.25,True,2022-10-26T07:01:05,,
 cowidev.vax.batch.sweden,12.32,True,2022-10-26T07:01:02,,
-cowidev.vax.batch.switzerland,6.31,True,2022-10-26T10:47:56,,
+cowidev.vax.batch.switzerland,32.04,True,2022-10-26T14:23:33,,
 cowidev.vax.batch.trinidad_and_tobago,1.7,True,2022-10-26T07:01:07,,
 cowidev.vax.batch.ukraine,,,2022-10-26T07:01:07,,
 cowidev.vax.batch.united_kingdom,8.0,True,2022-10-26T07:01:15,,
