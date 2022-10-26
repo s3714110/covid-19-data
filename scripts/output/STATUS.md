@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`3/112` scripts failed, `23/112` were skipped. Latest update was `2022-10-26T11:16:02`.
+`4/112` scripts failed, `23/112` were skipped. Latest update was `2022-10-26T14:35:34`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,6 +18,13 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>cowidev.vax.batch.jersey</td>
+      <td>❌</td>
+      <td>2022-10-26T14:23:34</td>
+      <td>0.85</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py", line 276, in main<br>    Jersey().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py", line 268, in export<br>    df_age = df_base.pipe(self.pipeline_age)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/jersey.py", line 236, in pipeline_age<br>    # .pipe(self.make_monotonic, ["age_group"])<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 109, in make_monotonic<br>    _df = mkm(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 21 have been NaNed for metric people_vaccinated_per_hundred. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-09-11']<br></pre></details></td>
+    </tr>
     <tr>
       <td>cowidev.vax.incremental.macao</td>
       <td>❌</td>
@@ -201,24 +208,31 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
+      <td>cowidev.vax.batch.canada</td>
       <td>✅</td>
-      <td>2022-10-26T11:14:32</td>
-      <td>1.93</td>
+      <td>2022-10-26T14:35:34</td>
+      <td>4.88</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.switzerland</td>
       <td>✅</td>
-      <td>2022-10-26T10:47:56</td>
-      <td>6.31</td>
+      <td>2022-10-26T14:23:33</td>
+      <td>32.04</td>
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.canada</td>
+      <td>cowidev.vax.batch.australia</td>
       <td>✅</td>
-      <td>2022-10-26T10:45:57</td>
-      <td>5.27</td>
+      <td>2022-10-26T14:23:26</td>
+      <td>24.86</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.hong_kong</td>
+      <td>✅</td>
+      <td>2022-10-26T11:14:32</td>
+      <td>1.93</td>
       <td></td>
     </tr>
     <tr>
@@ -705,13 +719,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.jersey</td>
-      <td>✅</td>
-      <td>2022-10-26T07:00:31</td>
-      <td>0.66</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.greece</td>
       <td>✅</td>
       <td>2022-10-26T07:00:21</td>
@@ -793,13 +800,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-10-26T07:00:14</td>
       <td>0.91</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.australia</td>
-      <td>✅</td>
-      <td>2022-10-26T07:00:13</td>
-      <td>1.92</td>
       <td></td>
     </tr>
   </tbody>
