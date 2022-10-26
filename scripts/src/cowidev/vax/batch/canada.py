@@ -170,6 +170,8 @@ class Canada(CountryVaxBase):
         # Filter rows & columns
         df = df[(df.pruid == 1) & (df.sex == "All sexes") & df.age.str.match(self.age_pattern)]
         df = df[self.cols_age.keys()].rename(columns=self.cols_age)
+        # Filter unneeded age groups (likely bc they were deprecated by the source)
+        df = df[~df.age.isin(["0–17", "70–74", "75–79"])]
         # Parse age groups
         df[["age_group_min", "age_group_max"]] = df.age.str.extract(self.age_pattern).fillna("")
         # Convert data types and calculate per capita metrics
