@@ -229,6 +229,11 @@ class Jersey(CountryVaxBase):
             df.pipe(self.pipe_age_select_columns)
             .pipe(self.pipe_age_create_groups)
             .pipe(self.pipe_age_rename_columns)
+            # .pipe(
+            #     self.pipe_filter_dp,
+            #     ["2022-09-18", "2022-10-02", "2022-10-09", "2022-10-16"],
+            # )
+            # .pipe(self.make_monotonic, ["age_group"])
             .pipe(self.pipe_age_minmax_values)
             .pipe(self.pipe_enrich_columns)
             .pipe(self.pipe_metrics_scale_100)

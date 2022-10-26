@@ -176,7 +176,10 @@ class Canada(CountryVaxBase):
         metrics = df.filter(like="people_").columns
         df[metrics] = df[metrics].astype("float").fillna(0)
         df = df.pipe(self.pipe_age_per_capita)
-        return df.assign(location=self.location)
+        df = df.assign(location=self.location)
+        # Monotonic
+        # df = df.pipe(self.make_monotonic, ["age_group_min", "age_group_max"])
+        return df
 
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
         # Filter rows & columns

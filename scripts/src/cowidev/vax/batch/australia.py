@@ -89,9 +89,11 @@ class Australia(CountryVaxBase):
 
     def pipeline_age(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
-            df.pipe(self.pipe_age_groups)
-            .pipe(self.pipe_age_numeric)
+            df.pipe(self.pipe_age_numeric)
             .pipe(self.pipe_age_metadata)
+            .pipe(self.pipe_filter_dp, ["2022-10-07", "2022-10-14", "2022-10-21"])
+            .pipe(self.make_monotonic, ["date", "age_group"])
+            .pipe(self.pipe_age_groups)
             # .dropna(subset=["people_vaccinated_per_hundred", "people_fully_vaccinated_per_hundred"], how="all")
             .drop_duplicates(subset=["people_vaccinated_per_hundred", "people_fully_vaccinated_per_hundred"])
             .sort_values(["date", "age_group_min"])[

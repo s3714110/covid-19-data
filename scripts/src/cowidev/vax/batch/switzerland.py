@@ -231,6 +231,7 @@ class Switzerland(CountryVaxBase):
             .pipe(self.pipe_age_date)
             .pipe(self.pipe_age_location, location)
             .pipe(self.pipe_age_rename_columns)
+            .pipe(self.make_monotonic, ["age_group"])
             .pipe(self.pipe_age_groups)
             .pipe(self.pipe_age_select_cols)
         )
