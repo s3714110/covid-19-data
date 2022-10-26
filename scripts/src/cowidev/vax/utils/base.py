@@ -320,6 +320,11 @@ class CountryVaxBase:
             df.loc[df.date.isin(dates), metrics] = None
         return df
 
+    def pipe_filer_dp_age(df, ages, dates, column_date="date", column_age="age_group"):
+        assert len(ages) == len(dates), "Length of `ages` and `dates` should be the same!"
+        msk = sum(((df[column_date] == date) & (df[column_age] == age)) for date, age in zip(dates, ages)).astype(bool)
+        return df[~msk]
+
 
 def _build_population_age_group_df(location, df):
     # Read raw population by age
