@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`3/112` scripts failed, `23/112` were skipped. Latest update was `2022-10-26T08:27:17`.
+`3/112` scripts failed, `23/112` were skipped. Latest update was `2022-10-26T11:16:02`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -38,6 +38,13 @@ This file shows the latest status of the data pipeline.
       <td>2022-10-26T07:04:29</td>
       <td>0.21</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 61, in main<br>    Guernsey().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 50, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 15, in read<br>    df = self.parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 31, in parse_data<br>    ds.loc[ds[0] == "Total doses", 1].values[0].replace("*", ""),<br>IndexError: index 0 is out of bounds for axis 0 with size 0<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.nepal</td>
+      <td>⚠️</td>
+      <td>2022-10-26T11:16:02</td>
+      <td>NaN</td>
+      <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
@@ -90,13 +97,6 @@ This file shows the latest status of the data pipeline.
     </tr>
     <tr>
       <td>cowidev.vax.incremental.myanmar</td>
-      <td>⚠️</td>
-      <td>2022-10-26T07:01:46</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.nepal</td>
       <td>⚠️</td>
       <td>2022-10-26T07:01:46</td>
       <td>NaN</td>
@@ -201,17 +201,45 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.paho</td>
+      <td>cowidev.vax.batch.hong_kong</td>
       <td>✅</td>
-      <td>2022-10-26T08:27:17</td>
-      <td>49.35</td>
+      <td>2022-10-26T11:14:32</td>
+      <td>1.93</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.switzerland</td>
+      <td>✅</td>
+      <td>2022-10-26T10:47:56</td>
+      <td>6.31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.canada</td>
+      <td>✅</td>
+      <td>2022-10-26T10:45:57</td>
+      <td>5.27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.ecuador</td>
+      <td>✅</td>
+      <td>2022-10-26T10:43:52</td>
+      <td>1.10</td>
       <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.ecdc</td>
       <td>✅</td>
-      <td>2022-10-26T08:26:58</td>
-      <td>31.25</td>
+      <td>2022-10-26T10:34:56</td>
+      <td>22.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-10-26T08:27:17</td>
+      <td>49.35</td>
       <td></td>
     </tr>
     <tr>
@@ -380,13 +408,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-10-26T07:01:44</td>
       <td>1.39</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.switzerland</td>
-      <td>✅</td>
-      <td>2022-10-26T07:01:43</td>
-      <td>41.30</td>
       <td></td>
     </tr>
     <tr>
@@ -670,13 +691,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.hong_kong</td>
-      <td>✅</td>
-      <td>2022-10-26T07:00:31</td>
-      <td>13.24</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.israel</td>
       <td>✅</td>
       <td>2022-10-26T07:00:31</td>
@@ -712,13 +726,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.canada</td>
-      <td>✅</td>
-      <td>2022-10-26T07:00:19</td>
-      <td>6.28</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.germany</td>
       <td>✅</td>
       <td>2022-10-26T07:00:19</td>
@@ -751,13 +758,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-10-26T07:00:18</td>
       <td>0.43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecuador</td>
-      <td>✅</td>
-      <td>2022-10-26T07:00:17</td>
-      <td>1.74</td>
       <td></td>
     </tr>
     <tr>
