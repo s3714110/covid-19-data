@@ -47,6 +47,7 @@ class VariantsETL:
             "22E (Omicron)": {"rename": "Omicron (BQ.1)", "who": True},
             "S:677H.Robin1": {"rename": "S:677H.Robin1", "who": False},
             "S:677P.Pelican": {"rename": "S:677P.Pelican", "who": False},
+            "recombinant": {"rename": "recombinant", "who": False, "ignore": True},
         }
         self.country_mapping = {
             "USA": "United States",
@@ -65,6 +66,10 @@ class VariantsETL:
             "num_sequences_total",
         ]
         self.num_sequences_total_threshold = 0
+
+    @property
+    def variants(self):
+        return list(self.variants_details.keys())
 
     @property
     def variants_mapping(self):
@@ -94,6 +99,7 @@ class VariantsETL:
             .pipe(self.pipe_filter_by_num_sequences)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_variants)
+            .pipe(self.pipe_filter_variants)
             .pipe(self.pipe_group_by_variants)
             .pipe(self.pipe_check_variants)
             .pipe(self.pipe_location)
@@ -187,7 +193,18 @@ class VariantsETL:
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.column_rename)
 
+    def pipe_filter_variants(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Filter variants"""
+        variants_ignore = [v["rename"] for _, v in self.variants_details.items() if v.get("ignore")]
+        rows_init = df.shape[0]
+        df = df[-df.variant.isin(variants_ignore)]
+        rows_post = df.shape[0]
+        ratio = round((rows_post - rows_init) / rows_init * 100, 2)
+        print(f"Removed: variants {variants_ignore}. Went from {rows_init} to {rows_post} rows ({ratio}%).")
+        return df
+
     def pipe_variants(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Rename variants"""
         # Modify/add columns
         df = df.assign(
             variant=df.cluster.str.replace("cluster_counts.", "", regex=True).replace(self.variants_mapping),
