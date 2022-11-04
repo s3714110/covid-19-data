@@ -1,74 +1,317 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,3.38,True,2022-11-03T07:00:13,,
-cowidev.vax.batch.australia,,,2022-11-03T07:00:10,,
-cowidev.vax.batch.austria,2.04,True,2022-11-03T07:00:12,,
-cowidev.vax.batch.belgium,1.69,True,2022-11-03T07:00:12,,
-cowidev.vax.batch.bolivia,2.1,True,2022-11-03T07:00:12,,
-cowidev.vax.batch.canada,6.28,True,2022-11-03T07:00:16,,
-cowidev.vax.batch.chile,0.69,True,2022-11-03T07:00:12,,
-cowidev.vax.batch.czechia,4.27,True,2022-11-03T07:00:16,,
-cowidev.vax.batch.denmark,3.21,True,2022-11-03T07:00:15,,
-cowidev.vax.batch.ecdc,31.88,True,2022-11-03T11:53:14,,
-cowidev.vax.batch.ecuador,3.51,True,2022-11-03T07:00:17,,
-cowidev.vax.batch.estonia,0.92,True,2022-11-03T07:00:16,,
-cowidev.vax.batch.france,0.45,True,2022-11-03T07:00:17,,
-cowidev.vax.batch.germany,1.6,True,2022-11-03T07:00:18,,
-cowidev.vax.batch.greece,2.77,True,2022-11-03T07:00:19,,
-cowidev.vax.batch.hong_kong,11.98,True,2022-11-03T07:00:29,,
-cowidev.vax.batch.indonesia,,,2022-11-03T07:00:17,,
-cowidev.vax.batch.ireland,0.43,True,2022-11-03T07:00:17,,
-cowidev.vax.batch.israel,7.15,True,2022-11-03T07:00:25,,
-cowidev.vax.batch.italy,10.75,True,2022-11-03T07:00:29,,
-cowidev.vax.batch.japan,24.69,True,2022-11-03T11:53:07,,
-cowidev.vax.batch.jersey,2.01,True,2022-11-03T07:00:27,,
-cowidev.vax.batch.latvia,20.43,True,2022-11-03T07:00:47,,
-cowidev.vax.batch.lithuania,1.44,True,2022-11-03T07:00:30,,
-cowidev.vax.batch.luxembourg,1.38,True,2022-11-03T07:00:30,,
-cowidev.vax.batch.malaysia,0.62,True,2022-11-03T07:00:30,,
-cowidev.vax.batch.malta,0.85,True,2022-11-03T07:00:30,,
-cowidev.vax.batch.netherlands,,,2022-11-03T07:00:30,,
-cowidev.vax.batch.new_zealand,7.7,True,2022-11-03T07:00:38,,
-cowidev.vax.batch.norway,0.41,True,2022-11-03T07:00:31,,
-cowidev.vax.batch.peru,3.93,True,2022-11-03T07:00:34,,
-cowidev.vax.batch.portugal,,,2022-11-03T07:00:31,,
-cowidev.vax.batch.romania,10.78,True,2022-11-03T07:00:41,,
-cowidev.vax.batch.saudi_arabia,10.39,True,2022-11-03T07:00:45,,
-cowidev.vax.batch.singapore,2.36,True,2022-11-03T07:00:40,,
-cowidev.vax.batch.slovakia,38.71,True,2022-11-03T07:01:19,,
-cowidev.vax.batch.slovenia,3.33,True,2022-11-03T07:00:45,,
-cowidev.vax.batch.south_korea,34.78,True,2022-11-03T07:01:19,,
-cowidev.vax.batch.spc,18.58,True,2022-11-03T07:01:03,,
-cowidev.vax.batch.sweden,13.41,True,2022-11-03T07:01:00,,
-cowidev.vax.batch.switzerland,21.92,True,2022-11-03T07:01:22,,
-cowidev.vax.batch.trinidad_and_tobago,2.21,True,2022-11-03T07:01:06,,
-cowidev.vax.batch.ukraine,,,2022-11-03T07:01:06,,
-cowidev.vax.batch.united_kingdom,9.11,True,2022-11-03T07:01:15,,
-cowidev.vax.batch.united_states,28.26,True,2022-11-03T07:01:43,,
-cowidev.vax.batch.uruguay,4.02,True,2022-11-03T07:01:19,,
-cowidev.vax.batch.zimbabwe,0.74,True,2022-11-03T07:01:19,,
-cowidev.vax.incremental.africacdc,,,2022-11-03T07:01:19,,
-cowidev.vax.incremental.antigua_barbuda,,,2022-11-03T07:01:19,,
-cowidev.vax.incremental.aruba,1.33,True,2022-11-03T07:01:20,,
-cowidev.vax.incremental.azerbaijan,,,2022-11-03T07:01:19,,
-cowidev.vax.incremental.bahrain,1.06,True,2022-11-03T07:01:20,,
-cowidev.vax.incremental.bangladesh,20.36,True,2022-11-03T07:01:40,,
-cowidev.vax.incremental.barbados,,,2022-11-03T07:01:20,,
-cowidev.vax.incremental.brazil,0.04,True,2022-11-03T07:01:20,,
-cowidev.vax.incremental.bulgaria,0.99,True,2022-11-03T07:01:21,,
-cowidev.vax.incremental.china,32.55,True,2022-11-03T07:01:53,,
-cowidev.vax.incremental.costa_rica,,,2022-11-03T07:01:21,,
-cowidev.vax.incremental.croatia,0.15,True,2022-11-03T07:01:21,,
-cowidev.vax.incremental.cuba,2.12,True,2022-11-03T07:01:24,,
-cowidev.vax.incremental.curacao,0.35,True,2022-11-03T07:01:23,,
-cowidev.vax.incremental.cyprus,0.6,True,2022-11-03T07:01:23,,
-cowidev.vax.incremental.dominican_republic,7.84,True,2022-11-03T07:01:31,,
-cowidev.vax.incremental.el_salvador,0.59,True,2022-11-03T07:01:24,,
-cowidev.vax.incremental.faeroe_islands,0.35,True,2022-11-03T07:01:24,,
-cowidev.vax.incremental.fiji,0.0,True,2022-11-03T07:01:24,,
-cowidev.vax.incremental.finland,0.25,True,2022-11-03T07:01:25,,
-cowidev.vax.incremental.gabon,,,2022-11-03T07:01:25,,
-cowidev.vax.incremental.georgia,0.48,True,2022-11-03T07:01:25,,
-cowidev.vax.incremental.greenland,1.14,False,2022-11-03T07:04:27,"Traceback (most recent call last):
+cowidev.vax.batch.argentina,3.05,True,2022-11-04T07:00:14,,
+cowidev.vax.batch.australia,,,2022-11-04T07:00:10,,
+cowidev.vax.batch.austria,2.32,True,2022-11-04T07:00:13,,
+cowidev.vax.batch.belgium,1.79,True,2022-11-04T07:00:12,,
+cowidev.vax.batch.bolivia,1.92,True,2022-11-04T07:00:12,,
+cowidev.vax.batch.canada,6.35,True,2022-11-04T07:00:17,,
+cowidev.vax.batch.chile,0.71,True,2022-11-04T07:00:13,,
+cowidev.vax.batch.czechia,4.52,True,2022-11-04T07:00:17,,
+cowidev.vax.batch.denmark,4.66,True,2022-11-04T07:00:17,,
+cowidev.vax.batch.ecdc,60.09,False,2022-11-04T07:04:30,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
+    conn = connection.create_connection(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
+    raise err
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
+    self._validate_conn(conn)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
+    conn.connect()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f3ae8bdefd0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+    retries = retries.increment(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8bdefd0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 498, in main
+    ECDC().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 488, in export
+    df = self.read().pipe(self.pipe_base)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 117, in read
+    df = read_csv_from_url(self.source_url, timeout=30)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 55, in read_csv_from_url
+    download_file_from_url(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 80, in download_file_from_url
+    r = requests.get(url, stream=True, timeout=timeout, verify=verify)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8bdefd0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))
+","HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8bdefd0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))"
+cowidev.vax.batch.ecuador,1.44,True,2022-11-04T07:00:15,,
+cowidev.vax.batch.estonia,0.99,True,2022-11-04T07:00:16,,
+cowidev.vax.batch.france,1.02,True,2022-11-04T07:00:17,,
+cowidev.vax.batch.germany,1.79,True,2022-11-04T07:00:19,,
+cowidev.vax.batch.greece,2.91,True,2022-11-04T07:00:20,,
+cowidev.vax.batch.hong_kong,13.16,True,2022-11-04T07:00:30,,
+cowidev.vax.batch.indonesia,,,2022-11-04T07:00:17,,
+cowidev.vax.batch.ireland,0.43,True,2022-11-04T07:00:18,,
+cowidev.vax.batch.israel,10.59,True,2022-11-04T07:00:28,,
+cowidev.vax.batch.italy,11.65,True,2022-11-04T07:00:30,,
+cowidev.vax.batch.japan,1.33,False,2022-11-04T07:04:31,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
+    Japan().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
+    df = self.read().pipe(self.pipeline_base)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
+    df_latest = self.read_latest().pipe(self.pipe_latest)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
+    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
+    xlsx = pd.ExcelFile(url)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
+    ext = inspect_excel_format(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
+    with get_handle(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
+    with urlopen(req_info) as req:
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
+    response = meth(req, response)
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
+    response = self.parent.error(
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
+    return self._call_chain(*args)
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
+    result = func(*args)
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
+    raise HTTPError(req.full_url, code, msg, hdrs, fp)
+urllib.error.HTTPError: HTTP Error 404: Not Found
+",HTTP Error 404: Not Found
+cowidev.vax.batch.jersey,1.7,True,2022-11-04T07:00:30,,
+cowidev.vax.batch.latvia,18.16,True,2022-11-04T07:00:48,,
+cowidev.vax.batch.lithuania,1.85,True,2022-11-04T07:00:32,,
+cowidev.vax.batch.luxembourg,2.01,True,2022-11-04T07:00:32,,
+cowidev.vax.batch.malaysia,0.74,True,2022-11-04T07:00:31,,
+cowidev.vax.batch.malta,0.99,True,2022-11-04T07:00:32,,
+cowidev.vax.batch.netherlands,,,2022-11-04T07:00:32,,
+cowidev.vax.batch.new_zealand,12.72,True,2022-11-04T07:00:45,,
+cowidev.vax.batch.norway,0.39,True,2022-11-04T07:00:32,,
+cowidev.vax.batch.peru,4.79,True,2022-11-04T07:00:37,,
+cowidev.vax.batch.portugal,,,2022-11-04T07:00:32,,
+cowidev.vax.batch.romania,12.98,True,2022-11-04T07:00:45,,
+cowidev.vax.batch.saudi_arabia,10.42,True,2022-11-04T07:00:47,,
+cowidev.vax.batch.singapore,2.32,True,2022-11-04T07:00:47,,
+cowidev.vax.batch.slovakia,39.23,True,2022-11-04T07:01:25,,
+cowidev.vax.batch.slovenia,0.4,True,2022-11-04T07:00:47,,
+cowidev.vax.batch.south_korea,38.69,True,2022-11-04T07:01:26,,
+cowidev.vax.batch.spc,17.55,True,2022-11-04T07:01:05,,
+cowidev.vax.batch.sweden,10.04,False,2022-11-04T07:04:41,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 244, in main
+    Sweden().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 238, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 140, in pipeline
+    df.pipe(self.pipe_vaccine)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 44, in make_monotonic
+    raise Exception(
+Exception: 51 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
+          date location  ... people_fully_vaccinated total_boosters
+46  2021-11-14   Sweden  ...                 6925338           <NA>
+47  2021-11-21   Sweden  ...                 6990165           <NA>
+48  2021-11-28   Sweden  ...                 7067100           <NA>
+49  2021-12-05   Sweden  ...                 7138275           <NA>
+50  2021-12-12   Sweden  ...                 7209137           <NA>
+51  2021-12-19   Sweden  ...                 7272440           <NA>
+52  2021-12-26   Sweden  ...                 7298643           <NA>
+53  2022-01-02   Sweden  ...                 7315934           <NA>
+54  2022-01-09   Sweden  ...                 7343045           <NA>
+55  2022-01-16   Sweden  ...                 7396733           <NA>
+56  2022-01-23   Sweden  ...                 7440722           <NA>
+57  2022-01-30   Sweden  ...                 7467530           <NA>
+58  2022-02-06   Sweden  ...                 7488672           <NA>
+59  2022-02-13   Sweden  ...                 7510002           <NA>
+60  2022-02-20   Sweden  ...                 7527206           <NA>
+61  2022-02-27   Sweden  ...                 7541261           <NA>
+62  2022-03-06   Sweden  ...                 7550484           <NA>
+63  2022-03-13   Sweden  ...                 7557824           <NA>
+64  2022-03-20   Sweden  ...                 7565207           <NA>
+65  2022-03-27   Sweden  ...                 7570543           <NA>
+66  2022-04-03   Sweden  ...                 7574808           <NA>
+67  2022-04-10   Sweden  ...                 7578286           <NA>
+68  2022-04-17   Sweden  ...                 7581086           <NA>
+69  2022-04-24   Sweden  ...                 7584266           <NA>
+70  2022-05-01   Sweden  ...                 7587569           <NA>
+71  2022-05-08   Sweden  ...                 7590490           <NA>
+72  2022-05-15   Sweden  ...                 7593510           <NA>
+73  2022-05-22   Sweden  ...                 7596641           <NA>
+74  2022-05-29   Sweden  ...                 7599524           <NA>
+75  2022-06-05   Sweden  ...                 7602506           <NA>
+76  2022-06-12   Sweden  ...                 7604892           <NA>
+77  2022-06-19   Sweden  ...                 7607409           <NA>
+78  2022-06-26   Sweden  ...                 7609221           <NA>
+79  2022-07-03   Sweden  ...                 7610930           <NA>
+80  2022-07-10   Sweden  ...                 7612308           <NA>
+81  2022-07-17   Sweden  ...                 7613615           <NA>
+82  2022-07-24   Sweden  ...                 7614651           <NA>
+83  2022-07-31   Sweden  ...                 7615536           <NA>
+84  2022-08-07   Sweden  ...                 7616417           <NA>
+85  2022-08-14   Sweden  ...                 7617435           <NA>
+86  2022-08-21   Sweden  ...                 7618460           <NA>
+87  2022-08-28   Sweden  ...                 7619252           <NA>
+88  2022-09-04   Sweden  ...                 7620225           <NA>
+89  2022-09-11   Sweden  ...                 7621308           <NA>
+90  2022-09-18   Sweden  ...                 7622495           <NA>
+91  2022-09-25   Sweden  ...                 7623644           <NA>
+92  2022-10-02   Sweden  ...                 7624819           <NA>
+93  2022-10-09   Sweden  ...                 7625864           <NA>
+94  2022-10-16   Sweden  ...                 7626821           <NA>
+95  2022-10-23   Sweden  ...                 7627737           <NA>
+96  2022-10-30   Sweden  ...                 7628588           <NA>
+
+[51 rows x 8 columns]
+","51 rows have been removed. That is more than maximum allowed (10) by make_monotonic() - check the data. Check 
+          date location  ... people_fully_vaccinated total_boosters
+46  2021-11-14   Sweden  ...                 6925338           <NA>
+47  2021-11-21   Sweden  ...                 6990165           <NA>
+48  2021-11-28   Sweden  ...                 7067100           <NA>
+49  2021-12-05   Sweden  ...                 7138275           <NA>
+50  2021-12-12   Sweden  ...                 7209137           <NA>
+51  2021-12-19   Sweden  ...                 7272440           <NA>
+52  2021-12-26   Sweden  ...                 7298643           <NA>
+53  2022-01-02   Sweden  ...                 7315934           <NA>
+54  2022-01-09   Sweden  ...                 7343045           <NA>
+55  2022-01-16   Sweden  ...                 7396733           <NA>
+56  2022-01-23   Sweden  ...                 7440722           <NA>
+57  2022-01-30   Sweden  ...                 7467530           <NA>
+58  2022-02-06   Sweden  ...                 7488672           <NA>
+59  2022-02-13   Sweden  ...                 7510002           <NA>
+60  2022-02-20   Sweden  ...                 7527206           <NA>
+61  2022-02-27   Sweden  ...                 7541261           <NA>
+62  2022-03-06   Sweden  ...                 7550484           <NA>
+63  2022-03-13   Sweden  ...                 7557824           <NA>
+64  2022-03-20   Sweden  ...                 7565207           <NA>
+65  2022-03-27   Sweden  ...                 7570543           <NA>
+66  2022-04-03   Sweden  ...                 7574808           <NA>
+67  2022-04-10   Sweden  ...                 7578286           <NA>
+68  2022-04-17   Sweden  ...                 7581086           <NA>
+69  2022-04-24   Sweden  ...                 7584266           <NA>
+70  2022-05-01   Sweden  ...                 7587569           <NA>
+71  2022-05-08   Sweden  ...                 7590490           <NA>
+72  2022-05-15   Sweden  ...                 7593510           <NA>
+73  2022-05-22   Sweden  ...                 7596641           <NA>
+74  2022-05-29   Sweden  ...                 7599524           <NA>
+75  2022-06-05   Sweden  ...                 7602506           <NA>
+76  2022-06-12   Sweden  ...                 7604892           <NA>
+77  2022-06-19   Sweden  ...                 7607409           <NA>
+78  2022-06-26   Sweden  ...                 7609221           <NA>
+79  2022-07-03   Sweden  ...                 7610930           <NA>
+80  2022-07-10   Sweden  ...                 7612308           <NA>
+81  2022-07-17   Sweden  ...                 7613615           <NA>
+82  2022-07-24   Sweden  ...                 7614651           <NA>
+83  2022-07-31   Sweden  ...                 7615536           <NA>
+84  2022-08-07   Sweden  ...                 7616417           <NA>
+85  2022-08-14   Sweden  ...                 7617435           <NA>
+86  2022-08-21   Sweden  ...                 7618460           <NA>
+87  2022-08-28   Sweden  ...                 7619252           <NA>
+88  2022-09-04   Sweden  ...                 7620225           <NA>
+89  2022-09-11   Sweden  ...                 7621308           <NA>
+90  2022-09-18   Sweden  ...                 7622495           <NA>
+91  2022-09-25   Sweden  ...                 7623644           <NA>
+92  2022-10-02   Sweden  ...                 7624819           <NA>
+93  2022-10-09   Sweden  ...                 7625864           <NA>
+94  2022-10-16   Sweden  ...                 7626821           <NA>
+95  2022-10-23   Sweden  ...                 7627737           <NA>
+96  2022-10-30   Sweden  ...                 7628588           <NA>
+
+[51 rows x 8 columns]"
+cowidev.vax.batch.switzerland,25.91,True,2022-11-04T07:01:31,,
+cowidev.vax.batch.trinidad_and_tobago,2.21,True,2022-11-04T07:01:16,,
+cowidev.vax.batch.ukraine,,,2022-11-04T07:01:16,,
+cowidev.vax.batch.united_kingdom,3.3,False,2022-11-04T07:04:44,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 106, in main
+    UnitedKingdom().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 94, in export
+    df = df_base.pipe(self._filter_location, location).pipe(self.make_monotonic, max_removed_rows=45)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
+    return mkm(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
+    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
+    raise Exception(
+Exception: 1 chunks of lengths 149 have been NaNed for metric total_boosters. That is more than maximum allowed (45) by make_monotonic() - check the data. Check dates ['2022-09-24']
+",1 chunks of lengths 149 have been NaNed for metric total_boosters. That is more than maximum allowed (45) by make_monotonic() - check the data. Check dates ['2022-09-24']
+cowidev.vax.batch.united_states,19.07,True,2022-11-04T07:01:35,,
+cowidev.vax.batch.uruguay,1.07,True,2022-11-04T07:01:26,,
+cowidev.vax.batch.zimbabwe,0.82,True,2022-11-04T07:01:27,,
+cowidev.vax.incremental.africacdc,,,2022-11-04T07:01:26,,
+cowidev.vax.incremental.antigua_barbuda,,,2022-11-04T07:01:26,,
+cowidev.vax.incremental.aruba,1.44,True,2022-11-04T07:01:28,,
+cowidev.vax.incremental.azerbaijan,,,2022-11-04T07:01:27,,
+cowidev.vax.incremental.bahrain,1.48,True,2022-11-04T07:01:28,,
+cowidev.vax.incremental.bangladesh,20.9,True,2022-11-04T07:01:48,,
+cowidev.vax.incremental.barbados,,,2022-11-04T07:01:28,,
+cowidev.vax.incremental.brazil,0.06,True,2022-11-04T07:01:28,,
+cowidev.vax.incremental.bulgaria,1.17,True,2022-11-04T07:01:29,,
+cowidev.vax.incremental.china,32.72,True,2022-11-04T07:02:01,,
+cowidev.vax.incremental.costa_rica,,,2022-11-04T07:01:29,,
+cowidev.vax.incremental.croatia,0.19,True,2022-11-04T07:01:29,,
+cowidev.vax.incremental.cuba,2.35,True,2022-11-04T07:01:32,,
+cowidev.vax.incremental.curacao,0.4,True,2022-11-04T07:01:31,,
+cowidev.vax.incremental.cyprus,1.02,True,2022-11-04T07:01:32,,
+cowidev.vax.incremental.dominican_republic,7.67,True,2022-11-04T07:01:39,,
+cowidev.vax.incremental.el_salvador,3.03,True,2022-11-04T07:01:35,,
+cowidev.vax.incremental.faeroe_islands,0.41,True,2022-11-04T07:01:36,,
+cowidev.vax.incremental.fiji,0.0,True,2022-11-04T07:01:35,,
+cowidev.vax.incremental.finland,0.2,True,2022-11-04T07:01:36,,
+cowidev.vax.incremental.gabon,,,2022-11-04T07:01:36,,
+cowidev.vax.incremental.georgia,0.44,True,2022-11-04T07:01:36,,
+cowidev.vax.incremental.greenland,1.13,False,2022-11-04T07:04:45,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 74, in main
@@ -83,8 +326,8 @@ cowidev.vax.incremental.greenland,1.14,False,2022-11-03T07:04:27,"Traceback (mos
     dose_1 = clean_count(re.search(r""Innuttaasut ([\d\.]+)"", counters[1].parent.find_all(""dd"")[-1].text).group(1))
 IndexError: list index out of range
 ",list index out of range
-cowidev.vax.incremental.guatemala,,,2022-11-03T07:01:27,,
-cowidev.vax.incremental.guernsey,0.22,False,2022-11-03T07:04:27,"Traceback (most recent call last):
+cowidev.vax.incremental.guatemala,,,2022-11-04T07:01:36,,
+cowidev.vax.incremental.guernsey,0.22,False,2022-11-04T07:04:46,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 61, in main
@@ -97,17 +340,17 @@ cowidev.vax.incremental.guernsey,0.22,False,2022-11-03T07:04:27,"Traceback (most
     ds.loc[ds[0] == ""Total doses"", 1].values[0].replace(""*"", """"),
 IndexError: index 0 is out of bounds for axis 0 with size 0
 ",index 0 is out of bounds for axis 0 with size 0
-cowidev.vax.incremental.hungary,0.89,True,2022-11-03T07:01:29,,
-cowidev.vax.incremental.iceland,0.85,True,2022-11-03T07:01:30,,
-cowidev.vax.incremental.india,0.87,True,2022-11-03T07:01:31,,
-cowidev.vax.incremental.iran,,,2022-11-03T07:01:31,,
-cowidev.vax.incremental.isle_of_man,0.83,True,2022-11-03T07:01:32,,
-cowidev.vax.incremental.jamaica,7.32,True,2022-11-03T07:01:39,,
-cowidev.vax.incremental.kazakhstan,13.1,True,2022-11-03T07:01:45,,
-cowidev.vax.incremental.kosovo,2.06,True,2022-11-03T07:01:41,,
-cowidev.vax.incremental.kyrgyzstan,1.0,True,2022-11-03T07:01:41,,
-cowidev.vax.incremental.laos,3.69,True,2022-11-03T07:01:44,,
-cowidev.vax.incremental.macao,21.14,False,2022-11-03T07:04:48,"Traceback (most recent call last):
+cowidev.vax.incremental.hungary,0.86,True,2022-11-04T07:01:37,,
+cowidev.vax.incremental.iceland,0.78,True,2022-11-04T07:01:38,,
+cowidev.vax.incremental.india,0.86,True,2022-11-04T07:01:38,,
+cowidev.vax.incremental.iran,,,2022-11-04T07:01:38,,
+cowidev.vax.incremental.isle_of_man,0.92,True,2022-11-04T07:01:39,,
+cowidev.vax.incremental.jamaica,2.0,True,2022-11-04T07:01:40,,
+cowidev.vax.incremental.kazakhstan,65.75,True,2022-11-04T07:02:44,,
+cowidev.vax.incremental.kosovo,1.46,True,2022-11-04T07:01:41,,
+cowidev.vax.incremental.kyrgyzstan,1.16,True,2022-11-04T07:01:41,,
+cowidev.vax.incremental.laos,1.93,True,2022-11-04T07:01:43,,
+cowidev.vax.incremental.macao,20.89,False,2022-11-04T07:05:07,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
   File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 86, in main
@@ -130,93 +373,177 @@ selenium.common.exceptions.NoSuchElementException: Message: no such element: Una
 ","Message: no such element: Unable to locate element: {""method"":""partial link text"",""selector"":""Weekly Bulletin on COVID-19""}
   (Session info: headless chrome=106.0.5249.119)
 "
-cowidev.vax.incremental.moldova,,,2022-11-03T07:01:43,,
-cowidev.vax.incremental.monaco,30.38,True,2022-11-03T07:02:13,,
-cowidev.vax.incremental.mongolia,0.9,True,2022-11-03T07:01:45,,
-cowidev.vax.incremental.montenegro,0.11,True,2022-11-03T07:01:45,,
-cowidev.vax.incremental.morocco,,,2022-11-03T07:01:45,,
-cowidev.vax.incremental.myanmar,,,2022-11-03T07:01:45,,
-cowidev.vax.incremental.nepal,,,2022-11-03T07:01:45,,
-cowidev.vax.incremental.north_macedonia,,,2022-11-03T07:01:45,,
-cowidev.vax.incremental.northern_cyprus,0.79,True,2022-11-03T07:01:46,,
-cowidev.vax.incremental.paho,49.38,True,2022-11-03T11:53:32,,
-cowidev.vax.incremental.pakistan,1.43,True,2022-11-03T07:01:47,,
-cowidev.vax.incremental.philippines,,,2022-11-03T07:01:47,,
-cowidev.vax.incremental.playground_mojmir,4.6,True,2022-11-03T07:01:52,,
-cowidev.vax.incremental.poland,0.28,True,2022-11-03T07:01:52,,
-cowidev.vax.incremental.qatar,,,2022-11-03T07:01:52,,
-cowidev.vax.incremental.russia,0.96,True,2022-11-03T11:52:43,,
-cowidev.vax.incremental.saint_lucia,,,2022-11-03T07:01:53,,
-cowidev.vax.incremental.serbia,12.25,True,2022-11-03T07:02:05,,
-cowidev.vax.incremental.south_africa,5.54,True,2022-11-03T07:01:59,,
-cowidev.vax.incremental.spain,11.03,True,2022-11-03T07:02:10,,
-cowidev.vax.incremental.sri_lanka,,,2022-11-03T07:02:02,,
-cowidev.vax.incremental.suriname,15.19,True,2022-11-03T07:02:17,,
-cowidev.vax.incremental.taiwan,6.96,True,2022-11-03T07:02:12,,
-cowidev.vax.incremental.thailand,3.61,True,2022-11-03T07:02:13,,
-cowidev.vax.incremental.turkey,40.53,False,2022-11-03T11:56:12,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 95, in create_connection
-    raise err
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 85, in create_connection
-    sock.connect(sa)
-TimeoutError: timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
-    self._validate_conn(conn)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
-    conn.connect()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 179, in _new_conn
-    raise ConnectTimeoutError(
-urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fd70e975c90>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)')
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
-    retries = retries.increment(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd70e975c90>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.moldova,,,2022-11-04T07:01:43,,
+cowidev.vax.incremental.monaco,32.29,True,2022-11-04T07:02:15,,
+cowidev.vax.incremental.mongolia,0.96,True,2022-11-04T07:01:49,,
+cowidev.vax.incremental.montenegro,0.12,True,2022-11-04T07:01:50,,
+cowidev.vax.incremental.morocco,,,2022-11-04T07:01:50,,
+cowidev.vax.incremental.myanmar,,,2022-11-04T07:01:50,,
+cowidev.vax.incremental.nepal,,,2022-11-04T07:01:50,,
+cowidev.vax.incremental.north_macedonia,,,2022-11-04T07:01:50,,
+cowidev.vax.incremental.northern_cyprus,0.7,True,2022-11-04T07:01:50,,
+cowidev.vax.incremental.paho,79.33,False,2022-11-04T07:06:26,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py"", line 60, in main
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
+    PAHO().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
+    df = self._parse_data(url)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 57, in _parse_data
+    filename = self._get_downloaded_filename()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 110, in _get_downloaded_filename
+    return max(files, key=os.path.getctime)
+ValueError: max() arg is an empty sequence
+",max() arg is an empty sequence
+cowidev.vax.incremental.pakistan,3.34,True,2022-11-04T07:02:04,,
+cowidev.vax.incremental.philippines,,,2022-11-04T07:02:02,,
+cowidev.vax.incremental.playground_mojmir,4.62,True,2022-11-04T07:02:07,,
+cowidev.vax.incremental.poland,0.29,True,2022-11-04T07:02:04,,
+cowidev.vax.incremental.qatar,,,2022-11-04T07:02:04,,
+cowidev.vax.incremental.russia,0.5,False,2022-11-04T07:06:26,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 445, in _make_request
+    six.raise_from(e, None)
+  File ""<string>"", line 3, in raise_from
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 1349, in getresponse
+    response.begin()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 316, in begin
+    version, status, reason = self._read_status()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 285, in _read_status
+    raise RemoteDisconnected(""Remote end closed connection without""
+http.client.RemoteDisconnected: Remote end closed connection without response
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+    retries = retries.increment(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 532, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/packages/six.py"", line 769, in reraise
+    raise value.with_traceback(tb)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 445, in _make_request
+    six.raise_from(e, None)
+  File ""<string>"", line 3, in raise_from
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 440, in _make_request
+    httplib_response = conn.getresponse()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 1349, in getresponse
+    response.begin()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 316, in begin
+    version, status, reason = self._read_status()
+  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/http/client.py"", line 285, in _read_status
+    raise RemoteDisconnected(""Remote end closed connection without""
+urllib3.exceptions.ProtocolError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
+    Russia().export()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
     data = read(source).pipe(pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py"", line 19, in read
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 11, in read
     soup = get_soup(source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
     raise err
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
     response = requests.get(source, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
     return request('get', url, params=params, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
     return session.request(method=method, url=url, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
     resp = self.send(prep, **send_kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
     r = adapter.send(request, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 507, in send
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+","('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+cowidev.vax.incremental.saint_lucia,,,2022-11-04T07:02:05,,
+cowidev.vax.incremental.serbia,6.54,True,2022-11-04T07:02:12,,
+cowidev.vax.incremental.south_africa,7.06,True,2022-11-04T07:02:14,,
+cowidev.vax.incremental.spain,11.06,True,2022-11-04T07:02:23,,
+cowidev.vax.incremental.sri_lanka,,,2022-11-04T07:02:14,,
+cowidev.vax.incremental.suriname,14.32,True,2022-11-04T07:02:28,,
+cowidev.vax.incremental.taiwan,8.15,True,2022-11-04T07:02:23,,
+cowidev.vax.incremental.thailand,3.98,True,2022-11-04T07:02:27,,
+cowidev.vax.incremental.turkey,40.04,False,2022-11-04T07:07:06,"Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
+    conn = connection.create_connection(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 96, in create_connection
+    raise err
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/connection.py"", line 86, in create_connection
+    sock.connect(sa)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 699, in urlopen
+    httplib_response = self._make_request(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 382, in _make_request
+    self._validate_conn(conn)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 1010, in _validate_conn
+    conn.connect()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f3ae8af7580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connectionpool.py"", line 755, in urlopen
+    retries = retries.increment(
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/util/retry.py"", line 574, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8af7580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py"", line 60, in main
+    data = read(source).pipe(pipeline)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py"", line 19, in read
+    soup = get_soup(source)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+    response = get_response(source, request_method, use_proxy, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
+    raise err
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
+    response = requests.get(source, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/requests/adapters.py"", line 507, in send
     raise ConnectTimeout(e, request=request)
-requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd70e975c90>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))
-","HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd70e975c90>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))"
-cowidev.vax.incremental.united_arab_emirates,,,2022-11-03T07:02:13,,
-cowidev.vax.incremental.vietnam,,,2022-11-03T07:02:13,,
-cowidev.vax.incremental.who,4.6,True,2022-11-03T07:02:18,,
-cowidev.vax.incremental.zambia,1.52,True,2022-11-03T07:02:15,,
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8af7580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))
+","HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f3ae8af7580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))"
+cowidev.vax.incremental.united_arab_emirates,,,2022-11-04T07:02:27,,
+cowidev.vax.incremental.vietnam,,,2022-11-04T07:02:27,,
+cowidev.vax.incremental.who,3.89,True,2022-11-04T07:02:30,,
+cowidev.vax.incremental.zambia,0.74,True,2022-11-04T07:02:29,,
