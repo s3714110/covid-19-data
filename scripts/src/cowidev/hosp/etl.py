@@ -113,17 +113,33 @@ class HospETL:
         # Weird things
         df = df[
             ~(
-                (df.entity == "Serbia")
-                & (df.date == "2020-03-09")
-                & (df.indicator == "Daily hospital occupancy")
-                & (df.value == 2)
+                (
+                    (df.entity == "Serbia")
+                    & (df.date == "2020-03-09")
+                    & (df.indicator == "Daily hospital occupancy")
+                    & (df.value == 2)
+                )
+                | (
+                    (df.entity == "Malta")
+                    & (df.date == "2022-10-09")
+                    & (df.indicator == "Weekly new hospital admissions")
+                )
+                | (
+                    (df.entity == "Malta")
+                    & (df.date == "2022-10-16")
+                    & (df.indicator == "Weekly new hospital admissions")
+                )
+                | (
+                    (df.entity == "Malta")
+                    & (df.date == "2022-10-23")
+                    & (df.indicator == "Weekly new hospital admissions")
+                )
             )
         ]
         # Check
         duplicates = df[df.duplicated(subset=["date", "entity", "indicator"])]
         if len(duplicates) > 0:
-            print(duplicates)
-            raise Exception("Some entity-date-indicator combinations are present more than once!")
+            raise Exception(f"Some entity-date-indicator combinations are present more than once! {duplicates}")
 
         return df, df_meta
 
