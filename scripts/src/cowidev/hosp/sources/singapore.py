@@ -1,7 +1,7 @@
-import io
 import requests
 
-import pandas as pd
+from cowidev.utils.web.download import read_csv_from_url
+
 
 METADATA = {
     "source_url_flow": "https://data.gov.sg/api/action/package_show?id=covid-19-hospital-admissions",
@@ -16,15 +16,13 @@ def import_flow():
 
     for resource in metadata["result"]["resources"]:
         if resource["name"] == "New COVID-19 Hospital Admissions":
-            response = requests.get(resource["url"])
-            hosp_flow = pd.read_csv(io.StringIO(response.content.decode())).sort_values("date")
+            hosp_flow = read_csv_from_url(resource["url"]).sort_values("date")
         if resource["name"] == "New COVID-19 ICU Admissions":
-            response = requests.get(resource["url"])
-            icu_flow = pd.read_csv(io.StringIO(response.content.decode())).sort_values("date")
+            icu_flow = read_csv_from_url(resource["url"]).sort_values("date_of")
 
     hosp_flow["new_hospital_admissions"] = hosp_flow.new_hospital_admissions.rolling(7).sum()
     icu_flow["new_icu_admissions"] = icu_flow.new_icu_admissions.rolling(7).sum()
-
+    icu_flow = icu_flow.rename(columns={"date_of": "date"})
     return hosp_flow, icu_flow
 
 
