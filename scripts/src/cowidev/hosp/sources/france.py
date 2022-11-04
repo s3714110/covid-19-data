@@ -1,6 +1,5 @@
-import datetime
-
 import pandas as pd
+from cowidev.utils.web.download import read_csv_from_url
 
 METADATA = {
     "source_url": {
@@ -15,7 +14,7 @@ METADATA = {
 
 def main() -> pd.DataFrame:
     # Hospital & ICU patients
-    stock = pd.read_csv(METADATA["source_url"]["stock"], usecols=["sexe", "jour", "hosp", "rea"], sep=";")
+    stock = read_csv_from_url(METADATA["source_url"]["stock"], usecols=["sexe", "jour", "hosp", "rea"], sep=";")
     stock = (
         stock[stock.sexe == 0]
         .drop(columns=["sexe"])
@@ -25,7 +24,7 @@ def main() -> pd.DataFrame:
     )
 
     # Hospital & ICU admissions
-    flow = pd.read_csv(METADATA["source_url"]["flow"], usecols=["jour", "incid_hosp", "incid_rea"], sep=";")
+    flow = read_csv_from_url(METADATA["source_url"]["flow"], usecols=["jour", "incid_hosp", "incid_rea"], sep=";")
     flow = flow.rename(columns={"jour": "date"}).groupby("date", as_index=False).sum().sort_values("date")
     flow["incid_hosp"] = flow.incid_hosp.rolling(7).sum()
     flow["incid_rea"] = flow.incid_rea.rolling(7).sum()
