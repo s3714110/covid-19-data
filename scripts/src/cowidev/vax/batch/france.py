@@ -21,6 +21,8 @@ class France(CountryVaxBase):
             4: "Johnson&Johnson",
             5: "Pfizer/BioNTech",
             6: "Novavax",
+            8: "Moderna",
+            9: "Moderna",
         }
         one_dose_vaccines = ["Johnson&Johnson"]
 
@@ -53,6 +55,12 @@ class France(CountryVaxBase):
         )
 
         # Map vaccine names
+        df = df[df.vaccine != 0]
+        missing_vaccines = set(df.vaccine) - set(vaccine_mapping.keys())
+        if len(missing_vaccines) > 0:
+            raise ValueError(
+                f"Unknown vaccine value: {missing_vaccines}.\nSee https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/ to find the vaccine's name."
+            )
         df = df[(df.vaccine.isin(vaccine_mapping.keys())) & (df.n_cum_dose1 > 0)]
         assert set(df["vaccine"].unique()) == set(vaccine_mapping.keys())
         df["vaccine"] = df.vaccine.replace(vaccine_mapping)
