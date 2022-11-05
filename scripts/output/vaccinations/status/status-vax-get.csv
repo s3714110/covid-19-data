@@ -72,7 +72,7 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='opendata.ecdc.euro
 ","HTTPSConnectionPool(host='opendata.ecdc.europa.eu', port=443): Max retries exceeded with url: /covid19/vaccine_tracker/csv/data.csv (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f243aca5eb0>, 'Connection to opendata.ecdc.europa.eu timed out. (connect timeout=30)'))"
 cowidev.vax.batch.ecuador,2.45,True,2022-11-05T07:00:16,,
 cowidev.vax.batch.estonia,0.57,True,2022-11-05T07:00:16,,
-cowidev.vax.batch.france,0.24,True,2022-11-05T17:50:35,,
+cowidev.vax.batch.france,0.25,True,2022-11-05T18:03:30,,
 cowidev.vax.batch.germany,1.88,True,2022-11-05T07:00:18,,
 cowidev.vax.batch.greece,2.81,True,2022-11-05T07:00:19,,
 cowidev.vax.batch.hong_kong,11.95,True,2022-11-05T07:00:28,,
