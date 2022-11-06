@@ -21,7 +21,7 @@ class France(CountryVaxBase):
             4: "Johnson&Johnson",
             5: "Pfizer/BioNTech",
             6: "Novavax",
-            8: "Moderna",
+            8: "Pfizer/BioNTech",
             9: "Moderna",
         }
         one_dose_vaccines = ["Johnson&Johnson"]
