@@ -1,5 +1,7 @@
 import requests
 
+import pandas as pd
+
 from cowidev.utils.web.download import read_csv_from_url
 
 
@@ -22,7 +24,9 @@ def import_flow():
 
     hosp_flow["new_hospital_admissions"] = hosp_flow.new_hospital_admissions.rolling(7).sum()
     icu_flow["new_icu_admissions"] = icu_flow.new_icu_admissions.rolling(7).sum()
-    icu_flow = icu_flow.rename(columns={"date_of": "date"})
+
+    icu_flow["date"] = pd.to_datetime(icu_flow.date_of, dayfirst=True).astype(str)
+    icu_flow = icu_flow.drop(columns=["date_of"])
     return hosp_flow, icu_flow
 
 
