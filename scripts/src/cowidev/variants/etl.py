@@ -45,6 +45,7 @@ class VariantsETL:
             "22C (Omicron)": {"rename": "Omicron (BA.2.12.1)", "who": True},
             "22D (Omicron)": {"rename": "Omicron (BA.2.75)", "who": True},
             "22E (Omicron)": {"rename": "Omicron (BQ.1)", "who": True},
+            "22F (Omicron)": {"rename": "Omicron (XBB)", "who": True},
             "S:677H.Robin1": {"rename": "S:677H.Robin1", "who": False},
             "S:677P.Pelican": {"rename": "S:677P.Pelican", "who": False},
             "recombinant": {"rename": "Recombinant", "who": True},
