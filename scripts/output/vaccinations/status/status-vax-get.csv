@@ -80,61 +80,13 @@ cowidev.vax.batch.indonesia,,,2022-11-09T07:00:19,,
 cowidev.vax.batch.ireland,0.38,True,2022-11-09T07:00:19,,
 cowidev.vax.batch.israel,10.25,True,2022-11-09T07:00:29,,
 cowidev.vax.batch.italy,10.21,True,2022-11-09T07:00:29,,
-cowidev.vax.batch.japan,0.78,False,2022-11-09T07:06:24,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 236, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 220, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 156, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 88, in read_latest
-    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 97, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,6.99,True,2022-11-09T07:49:14,,
 cowidev.vax.batch.jersey,0.63,True,2022-11-09T07:00:30,,
 cowidev.vax.batch.latvia,18.47,True,2022-11-09T07:00:48,,
 cowidev.vax.batch.lithuania,1.4,True,2022-11-09T07:00:31,,
 cowidev.vax.batch.luxembourg,1.93,True,2022-11-09T07:00:32,,
 cowidev.vax.batch.malaysia,0.93,True,2022-11-09T07:00:31,,
-cowidev.vax.batch.malta,0.93,False,2022-11-09T07:06:25,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 106, in main
-    Malta().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 101, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/malta.py"", line 28, in read
-    check_known_columns(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Received one dose', 'Total Omicron booster doses', 'Primary Vaccination', 'Omicron booster doses'}
-","Unknown column(s) found: {'Received one dose', 'Total Omicron booster doses', 'Primary Vaccination', 'Omicron booster doses'}"
+cowidev.vax.batch.malta,0.34,True,2022-11-09T07:58:27,,
 cowidev.vax.batch.netherlands,,,2022-11-09T07:00:31,,
 cowidev.vax.batch.new_zealand,11.18,True,2022-11-09T07:00:42,,
 cowidev.vax.batch.norway,0.46,True,2022-11-09T07:00:32,,
