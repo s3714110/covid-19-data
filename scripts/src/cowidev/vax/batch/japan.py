@@ -62,6 +62,7 @@ class Japan(CountryVaxBase):
         "モデルナ社": "Moderna",
         "アストラゼネカ社": "Oxford/AstraZeneca",
         "武田社(ノババックス)": "Novavax",
+        "武田社\n(ノババックス)": "Novavax",
         "接種回数(合計)": None,
     }
 
