@@ -47,6 +47,10 @@ def update_metadata(df):
     return METADATA
 
 
+def pipe_remove_duplicates(df):
+    return df.drop_duplicates(subset=["entity", "indicator", "date"], keep=False)
+
+
 def pipe_undo_100k(df):
     df = pd.merge(df, POPULATION, on="entity", how="left")
     assert df[df.population.isna()].shape[0] == 0, "Country missing from population file"
@@ -70,7 +74,7 @@ def pipe_week_to_date(df):
 def main():
     df = download_data()
     METADATA = update_metadata(df)
-    df = df.pipe(pipe_undo_100k).pipe(pipe_week_to_date).drop(columns=["population"])
+    df = df.pipe(pipe_remove_duplicates).pipe(pipe_undo_100k).pipe(pipe_week_to_date).drop(columns=["population"])
     return df, METADATA
 
 
