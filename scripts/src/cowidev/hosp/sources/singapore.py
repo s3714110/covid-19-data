@@ -20,13 +20,12 @@ def import_flow():
         if resource["name"] == "New COVID-19 Hospital Admissions":
             hosp_flow = read_csv_from_url(resource["url"]).sort_values("date")
         if resource["name"] == "New COVID-19 ICU Admissions":
-            icu_flow = read_csv_from_url(resource["url"]).sort_values("date_of")
+            icu_flow = read_csv_from_url(resource["url"]).sort_values("date")
 
     hosp_flow["new_hospital_admissions"] = hosp_flow.new_hospital_admissions.rolling(7).sum()
     icu_flow["new_icu_admissions"] = icu_flow.new_icu_admissions.rolling(7).sum()
 
-    icu_flow["date"] = pd.to_datetime(icu_flow.date_of, dayfirst=True).astype(str)
-    icu_flow = icu_flow.drop(columns=["date_of"])
+    icu_flow["date"] = pd.to_datetime(icu_flow.date, dayfirst=True).astype(str)
     return hosp_flow, icu_flow
 
 
