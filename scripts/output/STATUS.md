@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`8/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-16T14:18:53`.
+`7/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-16T15:12:41`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -38,13 +38,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-16T14:18:02</td>
       <td>9.25</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 237, in main<br>    Japan().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 221, in export<br>    df = self.read().pipe(self.pipeline_base)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 157, in read<br>    df_latest = self.read_latest().pipe(self.pipe_latest)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 89, in read_latest<br>    dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py", line 101, in _read_xlsx<br>    raise ValueError(f"Unknown sheets: {sheets_unknown}")<br>ValueError: Unknown sheets: {'初回接種_医療従事者等', '初回接種_職域接種', '初回接種_重複', '初回接種_一般接種'}<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.canada</td>
-      <td>❌</td>
-      <td>2022-11-16T14:17:53</td>
-      <td>5.54</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 284, in main<br>    Canada().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 268, in export<br>    df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 99, in read_age<br>    check_known_columns(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py", line 168, in check_known_columns<br>    raise Exception(f"Previous column(s) missing: {missing_cols}")<br>Exception: Previous column(s) missing: {'Unnamed: 19', 'Unnamed: 23', 'Unnamed: 22', 'Unnamed: 21', 'Unnamed: 18', 'Unnamed: 20'}<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.macao</td>
@@ -247,6 +240,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-16T07:00:11</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.canada</td>
+      <td>✅</td>
+      <td>2022-11-16T15:12:41</td>
+      <td>3.77</td>
       <td></td>
     </tr>
     <tr>
