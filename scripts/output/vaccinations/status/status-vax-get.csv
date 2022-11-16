@@ -4,19 +4,7 @@ cowidev.vax.batch.australia,,,2022-11-16T07:00:11,,
 cowidev.vax.batch.austria,2.03,True,2022-11-16T07:00:13,,
 cowidev.vax.batch.belgium,2.14,True,2022-11-16T07:00:13,,
 cowidev.vax.batch.bolivia,1.84,True,2022-11-16T07:00:13,,
-cowidev.vax.batch.canada,5.54,False,2022-11-16T14:17:53,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 284, in main
-    Canada().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 268, in export
-    df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 99, in read_age
-    check_known_columns(
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 168, in check_known_columns
-    raise Exception(f""Previous column(s) missing: {missing_cols}"")
-Exception: Previous column(s) missing: {'Unnamed: 19', 'Unnamed: 23', 'Unnamed: 22', 'Unnamed: 21', 'Unnamed: 18', 'Unnamed: 20'}
-","Previous column(s) missing: {'Unnamed: 19', 'Unnamed: 23', 'Unnamed: 22', 'Unnamed: 21', 'Unnamed: 18', 'Unnamed: 20'}"
+cowidev.vax.batch.canada,3.77,True,2022-11-16T15:12:41,,
 cowidev.vax.batch.chile,0.62,True,2022-11-16T07:00:13,,
 cowidev.vax.batch.czechia,3.64,True,2022-11-16T07:00:17,,
 cowidev.vax.batch.denmark,4.32,True,2022-11-16T07:00:18,,
