@@ -29,10 +29,10 @@ class Japan(CountryVaxBase):
     age_group_remain: str = "12-64"
     sheets: dict = {
         "総接種回数": None,
-        "一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_groups},
-        "医療従事者等": {"name": "healthcare", "header": [2, 3], "date": "集計日", "ind": []},
-        "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": []},
-        "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": []},
+        "初回接種_一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_groups},
+        "初回接種_医療従事者等": {"name": "healthcare", "header": [2, 3], "date": "集計日", "ind": []},
+        "初回接種_職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": []},
+        "初回接種_重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": []},
     }
     sheets_bst: dict = {
         "総接種回数": None,
