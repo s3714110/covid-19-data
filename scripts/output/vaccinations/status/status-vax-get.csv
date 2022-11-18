@@ -193,7 +193,7 @@ cowidev.vax.incremental.myanmar,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.nepal,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.north_macedonia,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.northern_cyprus,0.76,True,2022-11-18T07:02:02,,
-cowidev.vax.incremental.paho,97.2,False,2022-11-18T12:56:31,"Traceback (most recent call last):
+cowidev.vax.incremental.paho,97.85,False,2022-11-18T13:01:21,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
@@ -223,8 +223,8 @@ cowidev.vax.incremental.paho,97.2,False,2022-11-18T12:56:31,"Traceback (most rec
     sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
   File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 152, in <genexpr>
     sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
-KeyError: 'Moderna – Spikevax Bivalent Original/Omicron BA.1'
-",'Moderna – Spikevax Bivalent Original/Omicron BA.1'
+KeyError: 'Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1'
+",'Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1'
 cowidev.vax.incremental.pakistan,1.39,True,2022-11-18T07:02:06,,
 cowidev.vax.incremental.philippines,,,2022-11-18T07:02:06,,
 cowidev.vax.incremental.playground_mojmir,4.76,True,2022-11-18T07:02:10,,

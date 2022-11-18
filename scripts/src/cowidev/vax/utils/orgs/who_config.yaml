@@ -50,13 +50,18 @@ vaccines:
     org_name:
       - "Moderna - mRNA-1273"
       - "Moderna - Spikevax"
+      - "Moderna – Spikevax Bivalent Original/Omicron BA.1"
+      - "Moderna – Spikevax Bivalent Original/Omicron  - Generic"
   - owid_name: "Novavax"
     org_name:
       - "Novavax - Covavax"
       - "Novavax-NUVAXOVID"
       - "SII - Covovax"
   - owid_name: "Pfizer/BioNTech"
-    org_name: "Pfizer BioNTech - Comirnaty"
+    org_name:
+      - "Pfizer BioNTech - Comirnaty"
+      - "Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1"
+      - "Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.4/BA.5"
   - owid_name: "QazVac"
     org_name:
       - "QazVac"
@@ -69,6 +74,9 @@ vaccines:
       - "Soberana02"
       - "Finlay - Soberana Plus"
       - "Finlay - Soberana-02"
+  - owid_name: "Valneva"
+    org_name:
+      - "Valneva - VLA2001"
   - owid_name: "EpiVacCorona"
     org_name: "SRCVB - EpiVacCorona"
   - owid_name: "Sinopharm/Wuhan"
