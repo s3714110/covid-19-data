@@ -193,38 +193,7 @@ cowidev.vax.incremental.myanmar,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.nepal,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.north_macedonia,,,2022-11-18T07:02:01,,
 cowidev.vax.incremental.northern_cyprus,0.76,True,2022-11-18T07:02:02,,
-cowidev.vax.incremental.paho,97.85,False,2022-11-18T13:01:21,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 191, in main
-    PAHO().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 186, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 166, in pipeline
-    .pipe(self.pipe_vaccine)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 150, in pipe_vaccine
-    vaccine=df_who.vaccine.apply(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 4357, in apply
-    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1043, in apply
-    return self.apply_standard()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1098, in apply_standard
-    mapped = lib.map_infer(
-  File ""pandas/_libs/lib.pyx"", line 2859, in pandas._libs.lib.map_infer
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 152, in <lambda>
-    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 152, in <genexpr>
-    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
-KeyError: 'Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1'
-",'Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1'
+cowidev.vax.incremental.paho,48.4,True,2022-11-18T13:26:35,,
 cowidev.vax.incremental.pakistan,1.39,True,2022-11-18T07:02:06,,
 cowidev.vax.incremental.philippines,,,2022-11-18T07:02:06,,
 cowidev.vax.incremental.playground_mojmir,4.76,True,2022-11-18T07:02:10,,
