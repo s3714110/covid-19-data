@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`7/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-18T12:56:31`.
+`6/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-18T13:26:35`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,13 +18,6 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2022-11-18T12:56:31</td>
-      <td>97.20</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 191, in main<br>    PAHO().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 186, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 166, in pipeline<br>    .pipe(self.pipe_vaccine)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 150, in pipe_vaccine<br>    vaccine=df_who.vaccine.apply(<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py", line 4357, in apply<br>    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1043, in apply<br>    return self.apply_standard()<br>  File "/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1098, in apply_standard<br>    mapped = lib.map_infer(<br>  File "pandas/_libs/lib.pyx", line 2859, in pandas._libs.lib.map_infer<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 152, in <lambda><br>    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split(",") if xx != "Unknown Vaccine"))<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 152, in <genexpr><br>    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split(",") if xx != "Unknown Vaccine"))<br>KeyError: 'Moderna – Spikevax Bivalent Original/Omicron BA.1'<br></pre></details></td>
-    </tr>
     <tr>
       <td>cowidev.vax.incremental.turkey</td>
       <td>❌</td>
@@ -240,6 +233,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-18T07:00:11</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-11-18T13:26:35</td>
+      <td>48.40</td>
       <td></td>
     </tr>
     <tr>
