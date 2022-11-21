@@ -18,6 +18,7 @@ class Taiwan:
         "高端": "Medigen",
         "Moderna 雙價\rBA.1": "Moderna",
         "Moderna": "Moderna",
+        "Moderna雙價 BA.4/5": "Moderna",
         "BioNTech": "Pfizer/BioNTech",
         "Novavax": "Novavax",
     }
@@ -55,7 +56,7 @@ class Taiwan:
         df = dfs[0]
         cols = df.columns
 
-        if df.shape != (33, 4):
+        if df.shape != (36, 4):
             raise ValueError("Table 1: format has changed!")
 
         # Sanity check
@@ -69,12 +70,12 @@ class Taiwan:
         ):
             raise ValueError(f"There are some unknown columns: {cols}")
 
-        row_delimit = 23
-        if df.iloc[row_delimit + 4][0] != "總計":
-            raise ValueError(f"Unexpected value in the key cell: {df.iloc[23][0]}")
-
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
+        row_delimit = 30
+        if df.iloc[row_delimit][0] != "總計":
+            raise ValueError(f"Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}")
+
         for i in range(row_delimit, len(df)):
             if not isinstance(df.iloc[i][3], str) and math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
@@ -84,7 +85,7 @@ class Taiwan:
         # Patch for Novavax
 
         # Index fixes
-        df["劑次"] = df["劑次"].str.replace("\s+", "", regex=True)
+        df["劑次"] = df["劑次"].str.replace(r"\s+", "", regex=True)
         df["廠牌"] = df["廠牌"].fillna(method="ffill")
         df = df.set_index(["廠牌", "劑次"])
         df.columns = ["daily", "total"]
@@ -128,7 +129,7 @@ class Taiwan:
         vaccines_wrong = vaccines.difference(self.vaccines_mapping)
         if vaccines_wrong:
             raise ValueError(f"Invalid vaccines: {vaccines_wrong}")
-        return ", ".join(sorted(self.vaccines_mapping[vax] for vax in vaccines))
+        return ", ".join(set(sorted(self.vaccines_mapping[vax] for vax in vaccines)))
 
     def _parse_date(self, soup) -> str:
         date_raw = soup.find(class_="download").text
