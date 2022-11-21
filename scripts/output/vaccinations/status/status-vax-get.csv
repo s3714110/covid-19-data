@@ -69,33 +69,7 @@ cowidev.vax.batch.peru,3.98,True,2022-11-21T07:00:42,,
 cowidev.vax.batch.portugal,,,2022-11-21T07:00:42,,
 cowidev.vax.batch.romania,8.86,True,2022-11-21T07:00:51,,
 cowidev.vax.batch.saudi_arabia,3.35,True,2022-11-21T07:00:51,,
-cowidev.vax.batch.singapore,2.85,False,2022-11-21T07:05:25,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 120, in main
-    Singapore().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 115, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 46, in read
-    df_boosters = pd.read_csv(os.path.join(tf, ""progress-of-vaccine-booster-programme.csv""))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 51, in __init__
-    self._open_handles(src, kwds)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/parsers/base_parser.py"", line 222, in _open_handles
-    self.handles = get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 702, in get_handle
-    handle = open(
-FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpb0p1q4fz/progress-of-vaccine-booster-programme.csv'
-",[Errno 2] No such file or directory: '/tmp/tmpb0p1q4fz/progress-of-vaccine-booster-programme.csv'
+cowidev.vax.batch.singapore,0.87,True,2022-11-21T17:06:47,,
 cowidev.vax.batch.slovakia,54.21,True,2022-11-21T07:01:46,,
 cowidev.vax.batch.slovenia,2.73,True,2022-11-21T07:01:01,,
 cowidev.vax.batch.south_korea,23.48,True,2022-11-21T07:01:24,,
