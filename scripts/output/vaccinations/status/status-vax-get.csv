@@ -117,23 +117,7 @@ cowidev.vax.incremental.bangladesh,26.8,True,2022-11-21T07:02:02,,
 cowidev.vax.incremental.barbados,,,2022-11-21T07:01:37,,
 cowidev.vax.incremental.brazil,0.42,True,2022-11-21T07:01:38,,
 cowidev.vax.incremental.bulgaria,7.71,True,2022-11-21T07:01:45,,
-cowidev.vax.incremental.china,98.22,False,2022-11-21T07:07:03,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in main
-    China().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 161, in export
-    df = self.read(df_last.date.max())
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 47, in read
-    data_ = self._parse_data(driver, link)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 62, in _parse_data
-    Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ""#xw_box>.clear"")))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py"", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-","Message: 
-"
+cowidev.vax.incremental.china,34.19,True,2022-11-21T16:34:36,,
 cowidev.vax.incremental.costa_rica,,,2022-11-21T07:01:46,,
 cowidev.vax.incremental.croatia,0.15,True,2022-11-21T07:01:46,,
 cowidev.vax.incremental.cuba,2.49,True,2022-11-21T07:01:48,,
