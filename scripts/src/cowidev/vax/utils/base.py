@@ -179,6 +179,7 @@ class CountryVaxBase:
         attach_manufacturer=False,
         reset_index=False,
         valid_cols_only=False,
+        force_monotonic=False,
         **kwargs,
     ):
         """Export country data.
@@ -195,6 +196,7 @@ class CountryVaxBase:
             attach_manufacturer (bool, optional): Set to True to attach to already existing data. Defaults to False.
             valid_cols_only (bool, optional): Export only valid columns. Defaults to False.
             reset_index (bool, optional): Brin index back as a column. Defaults to False.
+            force_monotonic (bool, optional): Force timeseries to be monotonically increasing after exporting.
         """
         if df is not None:
             self._export_datafile_main(
@@ -203,6 +205,7 @@ class CountryVaxBase:
                 attach=attach,
                 reset_index=reset_index,
                 valid_cols_only=valid_cols_only,
+                force_monotonic=force_monotonic,
                 **kwargs,
             )
         if df_age is not None:
@@ -217,7 +220,9 @@ class CountryVaxBase:
         df = merge_with_current_data(df, filename)
         return df
 
-    def _export_datafile_main(self, df, filename, attach=False, reset_index=False, valid_cols_only=False, **kwargs):
+    def _export_datafile_main(
+        self, df, filename, attach=False, reset_index=False, valid_cols_only=False, force_monotonic=False, **kwargs
+    ):
         """Export main data."""
         filename = self.get_output_path(filename)
         if attach:
@@ -230,6 +235,8 @@ class CountryVaxBase:
         if reset_index:
             df = df.reset_index(drop=True)
         df.to_csv(filename, index=False, **kwargs)
+        if force_monotonic:
+            df = self.force_monotonic()
 
     def _export_datafile_age(self, df, metadata, filename, attach):
         """Export age data."""
