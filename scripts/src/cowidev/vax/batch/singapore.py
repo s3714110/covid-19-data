@@ -43,16 +43,19 @@ class Singapore(CountryVaxBase):
                 ],
             )
 
-            df_boosters = pd.read_csv(os.path.join(tf, "progress-of-vaccine-booster-programme.csv"))
-            check_known_columns(
-                df_boosters,
-                [
-                    "vacc_date",
-                    "received_booster_or_three_doses",
-                    "received_booster_or_three_doses_pcttakeup",
-                ],
-            )
-        df = self._merge_primary_and_boosters(df_primary, df_boosters)
+            # df_boosters = pd.read_csv(os.path.join(tf, "progress-of-vaccine-booster-programme.csv"))
+            # check_known_columns(
+            #     df_boosters,
+            #     [
+            #         "vacc_date",
+            #         "received_booster_or_three_doses",
+            #         "received_booster_or_three_doses_pcttakeup",
+            #     ],
+            # )
+        # df = self._merge_primary_and_boosters(df_primary, df_boosters)
+
+        df_primary["vacc_date"] = clean_date_series(df_primary.vacc_date, "%Y-%m-%d")
+        df = df_primary.drop_duplicates(subset=["vacc_date"], keep=False)
         return df
 
     def _merge_primary_and_boosters(self, df_primary, df_boosters):
@@ -80,16 +83,24 @@ class Singapore(CountryVaxBase):
                 "vacc_date": "date",
                 "received_at_least_one_dose": "people_vaccinated",
                 "full_regimen": "people_fully_vaccinated",
-                "received_booster_or_three_doses": "total_boosters",
+                # "received_booster_or_three_doses": "total_boosters",
             }
-        )[["date", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
+        )[
+            [
+                "date",
+                "people_vaccinated",
+                "people_fully_vaccinated",
+                # "total_boosters",
+            ]
+        ]
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
-        df.loc[df.date < "2022-01-01", "total_boosters"] = df.loc[df.date < "2022-01-01", "total_boosters"].fillna(0)
+        # df.loc[df.date < "2022-01-01", "total_boosters"] = df.loc[df.date < "2022-01-01", "total_boosters"].fillna(0)
         return df.assign(
-            total_vaccinations=df.people_vaccinated.fillna(0)
-            + df.people_fully_vaccinated.fillna(0)
-            + df.total_boosters
+            total_vaccinations=pd.NA
+            # total_vaccinations=df.people_vaccinated.fillna(0)
+            # + df.people_fully_vaccinated.fillna(0)
+            # + df.total_boosters
         )
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -102,19 +113,23 @@ class Singapore(CountryVaxBase):
         df = df[~df.date.isin(date_ex)]
         return df
 
+    def pipe_filter_timeseries(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df[df.date > "2022-10-25"]
+
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
             df.pipe(self.pipe_rename_columns)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_metadata)
             # .pipe(self.pipe_filter_dp)
+            .pipe(self.pipe_filter_timeseries)
             .pipe(make_monotonic, max_removed_rows=20)
         )
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df)
-
+        self.export_datafile(df, attach=True)
+        self.force_monotonic()
 
 def main():
     Singapore().export()
