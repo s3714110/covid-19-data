@@ -222,19 +222,7 @@ cowidev.vax.incremental.south_africa,7.91,True,2022-11-21T07:02:31,,
 cowidev.vax.incremental.spain,14.82,True,2022-11-21T07:02:46,,
 cowidev.vax.incremental.sri_lanka,,,2022-11-21T07:02:32,,
 cowidev.vax.incremental.suriname,16.07,True,2022-11-21T07:02:48,,
-cowidev.vax.incremental.taiwan,9.39,False,2022-11-21T07:09:03,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 164, in main
-    Taiwan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 150, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 33, in read
-    df = self._parse_table(url_pdf)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 59, in _parse_table
-    raise ValueError(""Table 1: format has changed!"")
-ValueError: Table 1: format has changed!
-",Table 1: format has changed!
+cowidev.vax.incremental.taiwan,4.92,True,2022-11-21T16:32:59,,
 cowidev.vax.incremental.thailand,4.17,True,2022-11-21T07:02:50,,
 cowidev.vax.incremental.turkey,40.05,False,2022-11-21T07:09:44,"Traceback (most recent call last):
   File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/urllib3/connection.py"", line 174, in _new_conn
