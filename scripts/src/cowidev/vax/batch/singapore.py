@@ -128,8 +128,8 @@ class Singapore(CountryVaxBase):
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df, attach=True)
-        self.force_monotonic()
+        self.export_datafile(df, attach=True, force_monotonic=True)
+
 
 def main():
     Singapore().export()
