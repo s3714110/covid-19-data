@@ -80,43 +80,7 @@ cowidev.vax.batch.indonesia,,,2022-11-22T07:00:17,,
 cowidev.vax.batch.ireland,0.52,True,2022-11-22T07:00:17,,
 cowidev.vax.batch.israel,7.62,True,2022-11-22T07:00:24,,
 cowidev.vax.batch.italy,11.63,True,2022-11-22T07:00:29,,
-cowidev.vax.batch.japan,19.58,False,2022-11-22T07:05:19,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 237, in main
-    Japan().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 221, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 157, in read
-    df_latest = self.read_latest().pipe(self.pipe_latest)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 90, in read_latest
-    dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 98, in _read_xlsx
-    xlsx = pd.ExcelFile(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/venv/lib/python3.9/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 214, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 523, in open
-    response = meth(req, response)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 632, in http_response
-    response = self.parent.error(
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 561, in error
-    return self._call_chain(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 494, in _call_chain
-    result = func(*args)
-  File ""/home/owid/.pyenv/versions/3.9.6/lib/python3.9/urllib/request.py"", line 641, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 404: Not Found
-",HTTP Error 404: Not Found
+cowidev.vax.batch.japan,10.78,True,2022-11-22T17:15:47,,
 cowidev.vax.batch.jersey,3.26,True,2022-11-22T07:00:28,,
 cowidev.vax.batch.latvia,25.87,True,2022-11-22T07:00:54,,
 cowidev.vax.batch.lithuania,3.2,True,2022-11-22T07:00:32,,
