@@ -49,7 +49,12 @@ class Cuba:
 
         for metric in ["people_vaccinated", "people_fully_vaccinated", "total_boosters"]:
             match = re.search(self.regex[metric], soup.text)
-            data[metric] = clean_count(match.group(1))
+            try:
+                data[metric] = clean_count(match.group(1))
+            except AttributeError:
+                raise ValueError(
+                    f"Could not parse `{metric}` using regex '{self.regex[metric]}' from website {self.source_url}"
+                )
         return data
 
     def pipe_vaccine(self, ds: pd.Series) -> pd.Series:
