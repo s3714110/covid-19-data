@@ -57,7 +57,7 @@ class Japan(CountryVaxBase):
         "武田社\n(ノババックス)": "Novavax",
         "接種回数(合計)": None,
         "ファイザー社\n(BA.1)": "Pfizer/BioNTech",
-        "モデルナ社\n(BA.1)": "Modernix",
+        "モデルナ社\n(BA.1)": "Moderna",
         "ファイザー社\n(BA.4-5)": "Pfizer/BioNTech",
     }
 
@@ -144,7 +144,9 @@ class Japan(CountryVaxBase):
                 "metrics": metrics_in_overlap,
             },
         }
-        df = self._read_xlsx(url=self.source_url_latest, sheets_format=sheets_format, metrics_in_overlap=metrics_in_overlap)
+        df = self._read_xlsx(
+            url=self.source_url_latest, sheets_format=sheets_format, metrics_in_overlap=metrics_in_overlap
+        )
         return df
 
     def _read_latest_booster(self) -> pd.DataFrame:
