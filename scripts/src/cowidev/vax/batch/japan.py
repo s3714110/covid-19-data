@@ -1,10 +1,11 @@
+"""This script is very complex and should be re-written from scratch."""
 from datetime import datetime
 
 import pandas as pd
+import numpy as np
 from bs4 import BeautifulSoup
 
 from cowidev.utils.clean import clean_date_series, clean_df_columns_multiindex
-from cowidev.utils.web.utils import to_proxy_url
 from cowidev.utils.web.scraping import get_response
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.checks import validate_vaccines
@@ -14,32 +15,24 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 class Japan(CountryVaxBase):
     location: str = "Japan"
     source_name: str = "Prime Minister's Office"
+    # URL to early data
     source_url_early: str = "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_sesshujisseki.html"
-    source_url: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
-    source_url_bst: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
-    source_url_bst2: str = "https://www.kantei.go.jp/jp/content/booster2nd_data.xlsx"
+    # URL to latest data
+    source_url_latest: str = "https://www.kantei.go.jp/jp/content/vaccination_data5.xlsx"
+    source_url_latest_bst: str = "https://www.kantei.go.jp/jp/content/allbooster_data.xlsx"
+    # Reference URL
     source_url_ref: str = "https://www.kantei.go.jp/jp/headline/kansensho/vaccine.html"
-    cols_early: dict = {
-        "日付": "date",
-        "内１回目": "dose1",
-        "内２回目": "dose2",
-    }
-    age_groups: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
+
     age_groups_bst: dict = {"all": ["すべて"], "65-": ["うち高齢者"], "5-11": ["うち小児接種"]}
     age_group_remain: str = "12-64"
-    sheets: dict = {
-        "総接種回数": None,
-        "初回接種_一般接種": {"name": "general", "header": [2, 3, 4], "date": "接種日", "ind": age_groups},
-        "初回接種_医療従事者等": {"name": "healthcare", "header": [2, 3], "date": "集計日", "ind": []},
-        "初回接種_職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": []},
-        "初回接種_重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": []},
-    }
+    # Formatting of the sheets ()
     sheets_bst: dict = {
         "総接種回数": None,
         "一般接種": {"name": "general", "header": [1, 2], "date": "接種日", "ind": age_groups_bst},
         "職域接種": {"name": "workplace", "header": [2, 3], "date": "集計日", "ind": ["接種回数"]},
         "重複": {"name": "overlap", "header": [2, 3], "date": "公表日", "ind": ["接種回数"]},
     }
+
     sheets_bst2: dict = {
         "総接種回数": None,
         "一般接種": {
@@ -49,7 +42,6 @@ class Japan(CountryVaxBase):
             "ind": ["曜日", "すべて", ""],
         },
     }
-    metrics: dict = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
     metrics_bst: dict = {"dose3": []}
     metrics_bst2: dict = {"dose4": []}
     metrics_age: dict = {
@@ -64,18 +56,35 @@ class Japan(CountryVaxBase):
         "武田社(ノババックス)": "Novavax",
         "武田社\n(ノババックス)": "Novavax",
         "接種回数(合計)": None,
+        "ファイザー社\n(BA.1)": "Pfizer/BioNTech",
+        "モデルナ社\n(BA.1)": "Modernix",
+        "ファイザー社\n(BA.4-5)": "Pfizer/BioNTech",
     }
 
+    # To be removed
+    source_url_bst: str = "https://www.kantei.go.jp/jp/content/booster_data.xlsx"
+    source_url_bst2: str = "https://www.kantei.go.jp/jp/content/booster2nd_data.xlsx"
+
+    def read(self) -> pd.DataFrame:
+        df_early = self.read_early().pipe(self.pipe_read_early)
+        df_latest = self.read_latest().pipe(self.pipe_read_latest)
+        return pd.concat([df_early, df_latest]).reset_index(drop=True)
+
     def read_early(self) -> pd.DataFrame:
-        # Use get_response().content since get_response().text may get incorrect encoding
+        # Early data reported in static HTML page
         soup = BeautifulSoup(get_response(self.source_url_early).content, "lxml")
         dfs = pd.read_html(str(soup), header=0)
         assert len(dfs) == 1, f"Only one table should be present. {len(dfs)} tables detected."
         return dfs[0]
 
-    def pipe_early(self, df: pd.DataFrame) -> pd.DataFrame:
+    def pipe_read_early(self, df: pd.DataFrame) -> pd.DataFrame:
         # Filter columns & rows
-        df = df[self.cols_early.keys()].rename(columns=self.cols_early)
+        cols_early: dict = {
+            "日付": "date",
+            "内１回目": "dose1",
+            "内２回目": "dose2",
+        }
+        df = df[cols_early.keys()].rename(columns=cols_early)
         df = df[df.date != "合計"]
         return df.assign(
             date=clean_date_series(df.date),
@@ -85,42 +94,168 @@ class Japan(CountryVaxBase):
         ).sort_values("date")
 
     def read_latest(self) -> pd.DataFrame:
-        dfs = []
-        dfs.append(self._read_xlsx(self.source_url, self.sheets, self.metrics))
-        dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
-        dfs.append(self._read_xlsx(self.source_url_bst2, self.sheets_bst2, self.metrics_bst2))
-        return pd.concat([df for dfs_ in dfs for name, df in dfs_.items() if name != "overlap"]).reset_index(drop=True)
+        dfs = [
+            self._read_latest_main(),
+            self._read_latest_booster(),
+        ]
+        # dfs.append(self._read_xlsx(self.source_url_bst, self.sheets_bst, self.metrics_bst))
+        # dfs.append(self._read_xlsx(self.source_url_bst2, self.sheets_bst2, self.metrics_bst2))
 
-    def _read_xlsx(self, url: str, sheets: dict, metrics: dict) -> dict:
-        # Download and check Excel sheets
-        # url = to_proxy_url(url)
-        # print(url, url_proxy)
+        # Get rid of 'overlap' sheet
+        dfs = [df for dfs_ in dfs for name, df in dfs_.items() if "overlap" not in name]
+        return pd.concat(dfs).reset_index(drop=True)
+
+    def _read_latest_main(self) -> pd.DataFrame:
+        """Read data from excel main file."""
+        metrics_in_overlap = {"dose1": ["内1回目"], "dose2": ["内2回目"]}
+        sheets_format = {
+            "総接種回数": None,
+            "初回接種_一般接種": {
+                "name": "general",
+                "header": [2, 3, 4],
+                "date": "接種日",
+                "ind": {
+                    "all": ["すべて"],
+                    "65-": ["うち高齢者"],
+                    "5-11": ["うち小児接種"],
+                    "0-5": ["うち乳幼児接種"],
+                },
+                "metrics": metrics_in_overlap,
+            },
+            "初回接種_医療従事者等": {
+                "name": "healthcare",
+                "header": [2, 3],
+                "date": "集計日",
+                "ind": [],
+                "metrics": metrics_in_overlap,
+            },
+            "初回接種_職域接種": {
+                "name": "workplace",
+                "header": [2, 3],
+                "date": "集計日",
+                "ind": [],
+                "metrics": metrics_in_overlap,
+            },
+            "初回接種_重複": {
+                "name": "overlap",
+                "header": [2, 3],
+                "date": "公表日",
+                "ind": [],
+                "metrics": metrics_in_overlap,
+            },
+        }
+        df = self._read_xlsx(url=self.source_url_latest, sheets_format=sheets_format, metrics_in_overlap=metrics_in_overlap)
+        return df
+
+    def _read_latest_booster(self) -> pd.DataFrame:
+        """Read data from excel main file (only booster data)."""
+        metrics_in_overlap = {"dose3": []}
+        sheets_format = {
+            "３回目_総接種回数": None,
+            "３回目_一般接種回数": {
+                "name": "general_3",
+                "header": [1, 2],
+                "date": "接種日",
+                "ind": {
+                    "all": ["すべて"],
+                    "65-": ["うち高齢者"],
+                    "5-11": ["うち小児接種"],
+                    "0-5": ["うち乳幼児接種"],
+                },
+                "metrics": {"dose3": []},
+            },
+            "３回目_職域接種": {
+                "name": "workplace_3",
+                "header": [2, 3],
+                "date": "集計日",
+                "ind": ["接種回数"],
+                "metrics": {"dose3": []},
+            },
+            "３回目_重複": {
+                "name": "overlap_3",
+                "header": [2, 3],
+                "date": "集計日",
+                "ind": ["接種回数"],
+                "metrics": {"dose3": []},
+            },
+            "４回目_総接種回数": None,
+            "４回目_一般接種回数": {
+                "name": "general_4",
+                "header": [0],
+                "date": "接種日",
+                "fct": _fix_general_4,
+                "ind": {
+                    "all": ["すべて"],
+                    "65-": ["うち高齢者(65歳以上)"],
+                },
+                "metrics": {"dose4": []},
+            },
+            "オミクロン株対応ワクチン_総接種回数": None,
+            "オミクロン株対応ワクチン_一般接種（３回目）": None,
+            "オミクロン株対応ワクチン_一般接種（４回目）": None,
+            "オミクロン株対応ワクチン_一般接種（５回目）": {
+                "name": "general_5",
+                "header": [1, 2],
+                "date": "接種日",
+                "ind": {
+                    "all": ["すべて"],
+                    "65-": ["うち高齢者(65歳以上)"],
+                },
+                "metrics": {"dose5": []},
+            },
+        }
+        df = self._read_xlsx(
+            url=self.source_url_latest_bst,
+            sheets_format=sheets_format,
+            metrics_in_overlap=metrics_in_overlap,
+            col_workplace="workplace_3",
+            col_overlap="overlap_3",
+        )
+        return df
+
+    def _read_xlsx(
+        self,
+        url: str,
+        sheets_format: dict,
+        metrics_in_overlap: dict,
+        col_workplace: str = "workplace",
+        col_overlap: str = "overlap",
+    ) -> dict:
+        # Download excel
         xlsx = pd.ExcelFile(url)
-        sheets_unknown = set(xlsx.sheet_names) - set(sheets)
+        # Check Excel sheets are as expected
+        sheets_unknown = set(xlsx.sheet_names) - set(sheets_format.keys())
         if sheets_unknown:
             raise ValueError(f"Unknown sheets: {sheets_unknown}")
+        # Build dfs
         dfs = {}
-        for sheet, sets in sheets.items():
-            if sets:
-                # Parse Excel sheets with predefined settings
-                df = xlsx.parse(sheet_name=sheet, header=sets["header"])
-                if isinstance(sets["ind"], dict):
-                    # Parse Excel sheets with age groups
+        for sheet_name, formatting in sheets_format.items():
+            if formatting:
+                # Change sheet name, set headers
+                df = xlsx.parse(sheet_name=sheet_name, header=formatting["header"]).dropna(how="all", axis=0)
+                # Fixes
+                if "fct" in formatting:
+                    df = formatting["fct"](df)
+                # Parse dataframe (date, age group namings, etc.)
+                if isinstance(formatting["ind"], dict):
                     dfs_ = []
-                    for age_group, ind in sets["ind"].items():
-                        df_ = self._parse_df(df, sets["date"], ind, metrics)
+                    for age_group, ind in formatting["ind"].items():
+                        df_ = self._parse_df(df, formatting["date"], ind, formatting["metrics"])
                         dfs_.append(df_.assign(age_group=age_group))
-                    dfs[sets["name"]] = pd.concat(dfs_).reset_index(drop=True)
+                    dfs[formatting["name"]] = pd.concat(dfs_).reset_index(drop=True)
                 else:
-                    dfs[sets["name"]] = self._parse_df(df, sets["date"], sets["ind"], metrics)
-                    dfs[sets["name"]]["age_group"] = "all"
-        if isinstance(dfs.get("workplace"), pd.DataFrame):
+                    df_ = self._parse_df(df, formatting["date"], formatting["ind"], formatting["metrics"]).assign(
+                        age_group="all"
+                    )
+                    dfs[formatting["name"]] = df_
+
+        if isinstance(dfs.get(col_workplace), pd.DataFrame):
             # Estimate daily metrics for workplace data based on the latest overlap data
-            for metric in metrics.keys():
-                workplace_latest = dfs["workplace"][metric].iat[-1]
-                overlap_latest = dfs["overlap"][metric].iat[-1]
-                dfs["workplace"][metric] -= dfs["workplace"][metric].shift(1, fill_value=0)
-                dfs["workplace"][metric] *= 1 - overlap_latest / workplace_latest
+            for metric in metrics_in_overlap.keys():
+                workplace_latest = dfs[col_workplace][metric].iat[-1]
+                overlap_latest = dfs[col_overlap][metric].iat[-1]
+                dfs[col_workplace][metric] -= dfs[col_workplace][metric].shift(1, fill_value=0)
+                dfs[col_workplace][metric] *= 1 - overlap_latest / workplace_latest
         return dfs
 
     def _parse_df(self, df: pd.DataFrame, date_col: str, ind: list, metrics: dict) -> pd.DataFrame:
@@ -144,18 +279,13 @@ class Japan(CountryVaxBase):
             dfs[0] = dfs[0].merge(dfs.pop(1), on=["date", "vaccine"])
         return dfs[0]
 
-    def pipe_latest(self, df: pd.DataFrame) -> pd.DataFrame:
+    def pipe_read_latest(self, df: pd.DataFrame) -> pd.DataFrame:
         # Check and map vaccine names
         validate_vaccines(df, self.vaccine_mapping)
         df = df.fillna(0).replace(self.vaccine_mapping).dropna()
         # Aggregate metrics by the same date & age group & vaccine
         df = df.groupby(["date", "age_group", "vaccine"], as_index=False).sum()
         return df.assign(source_url=self.source_url_ref)
-
-    def read(self) -> pd.DataFrame:
-        df_early = self.read_early().pipe(self.pipe_early)
-        df_latest = self.read_latest().pipe(self.pipe_latest)
-        return pd.concat([df_early, df_latest]).reset_index(drop=True)
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
         # Get cumulative metrics
@@ -182,7 +312,7 @@ class Japan(CountryVaxBase):
         return df[df.age_group == "all"][["location", "date", "vaccine", "total_vaccinations"]]
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
-        df["total_boosters"] = df.dose3 + df.dose4
+        df["total_boosters"] = df.dose3 + df.dose4 + df.dose5
         return df.rename(columns={"dose1": "people_vaccinated", "dose2": "people_fully_vaccinated"})
 
     def pipe_aggregate(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -235,3 +365,26 @@ class Japan(CountryVaxBase):
 
 def main():
     Japan().export()
+
+
+def _fix_general_4(df: pd.DataFrame):
+    # Assert expected format
+    assert (
+        pd.isnull(df.loc[0, "Unnamed: 2"])
+        and (df.loc[1, "Unnamed: 2"] == "すべて")
+        and pd.isnull(df.loc[0, "Unnamed: 6"])
+        and (df.loc[1, "Unnamed: 6"] == "うち60歳以上")
+        and pd.isnull(df.loc[0, "Unnamed: 9"])
+        and pd.isnull(df.loc[1, "Unnamed: 9"])
+        and (df.loc[2, "Unnamed: 9"] == "うち高齢者（65歳以上）")
+    )
+    # Shift row values up
+    df.loc[[0, 1], "Unnamed: 2"] = ["すべて", np.nan]
+    df.loc[[0, 2], "Unnamed: 9"] = ["うち高齢者（65歳以上）", np.nan]
+    df = df.drop(columns=["Unnamed: 6", "Unnamed: 7", "Unnamed: 8"])
+    # Remove all-NaN rows
+    df = df.dropna(how="all", axis=0)
+    # Set header
+    df.columns = pd.MultiIndex.from_arrays(df.iloc[0:2].ffill(axis=1).values)
+    df = df.iloc[2:]
+    return df
