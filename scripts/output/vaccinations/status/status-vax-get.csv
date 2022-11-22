@@ -155,21 +155,7 @@ cowidev.vax.incremental.bulgaria,1.65,True,2022-11-22T07:01:35,,
 cowidev.vax.incremental.china,43.31,True,2022-11-22T07:02:18,,
 cowidev.vax.incremental.costa_rica,,,2022-11-22T07:01:35,,
 cowidev.vax.incremental.croatia,0.18,True,2022-11-22T07:01:35,,
-cowidev.vax.incremental.cuba,3.18,False,2022-11-22T07:05:22,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 76, in main
-    Cuba().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 62, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 28, in read
-    return self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 34, in _parse_data
-    **self._parse_metrics(soup),
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 52, in _parse_metrics
-    data[metric] = clean_count(match.group(1))
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.cuba,1.79,True,2022-11-22T11:04:52,,
 cowidev.vax.incremental.curacao,0.38,True,2022-11-22T07:01:36,,
 cowidev.vax.incremental.cyprus,0.82,True,2022-11-22T07:01:36,,
 cowidev.vax.incremental.dominican_republic,8.68,True,2022-11-22T07:01:45,,
