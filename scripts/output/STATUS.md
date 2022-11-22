@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`10/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-22T07:08:02`.
+`9/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-22T11:04:52`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -52,13 +52,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-22T07:05:53</td>
       <td>30.64</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 86, in main<br>    Macao().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 72, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 22, in read<br>    data = self._parse_data(elem)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 50, in _parse_data<br>    df = self._parse_pdf_table(url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 33, in _parse_pdf_table<br>    raise ValueError("New columns added!")<br>ValueError: New columns added!<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.cuba</td>
-      <td>❌</td>
-      <td>2022-11-22T07:05:22</td>
-      <td>3.18</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py", line 76, in main<br>    Cuba().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py", line 62, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py", line 28, in read<br>    return self._parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py", line 34, in _parse_data<br>    **self._parse_metrics(soup),<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py", line 52, in _parse_metrics<br>    data[metric] = clean_count(match.group(1))<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.greenland</td>
@@ -261,6 +254,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-22T07:00:10</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.cuba</td>
+      <td>✅</td>
+      <td>2022-11-22T11:04:52</td>
+      <td>1.79</td>
       <td></td>
     </tr>
     <tr>
