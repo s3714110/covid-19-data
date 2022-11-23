@@ -27,9 +27,7 @@ class Guernsey:
                 "date": extract_clean_date(
                     text=str(soup.text), regex=self._regex_date, date_format="%d %B %Y", lang="en"
                 ),
-                "total_vaccinations": clean_count(
-                    ds.loc[ds[0] == "Total doses", 1].values[0].replace("*", ""),
-                ),
+                "total_vaccinations": ds.loc[ds[0] == "Total number of doses delivered", 1].values[0],
             }
         )
 
