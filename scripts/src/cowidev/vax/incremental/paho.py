@@ -64,23 +64,26 @@ class PAHO:
 
     def _download_csv(self, driver, option: str, filename: str):
         # Click on download
+        print("1")
         driver.find_element_by_id("download-ToolbarButton").click()
-        time.sleep(1)
+        time.sleep(5)
         # Click on Crosstab
         driver.find_element_by_xpath(f"//button[contains(text(),'{option}')]").click()
-        time.sleep(3)
+        time.sleep(5)
         # Select RDT Overview option
         driver.find_element_by_xpath(f"//span[contains(text(),'{filename}')]").click()
-        time.sleep(2)
+        time.sleep(5)
         # Choose CSV
+        print("choose csv")
         driver.find_element_by_xpath("//div[contains(text(),'CSV')]").click()
-        time.sleep(2)
+        time.sleep(5)
         # Select RDT Overview option
         # driver.find_element_by_xpath(f"//span[contains(text(),'{filename}')]").click()
         # time.sleep(2)
         # Download
+        print("download")
         driver.find_element_by_xpath("//button[contains(text(),'Download')]").click()
-        time.sleep(5)
+        time.sleep(20)
 
     def _parse_date(self, driver):
         # fix
@@ -105,8 +108,9 @@ class PAHO:
         return date_str
 
     def _get_downloaded_filename(self):
+        print(self._download_path)
         files = glob(os.path.join(self._download_path, "*.csv"))
-        # print(files)
+        print(files)
         return max(files, key=os.path.getctime)
 
     def pipe_check_columns(self, df: pd.DataFrame) -> pd.DataFrame:

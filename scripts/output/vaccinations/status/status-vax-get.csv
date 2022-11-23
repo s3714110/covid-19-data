@@ -91,7 +91,21 @@ cowidev.vax.incremental.myanmar,,,2022-11-23T07:02:01,,
 cowidev.vax.incremental.nepal,,,2022-11-23T07:02:01,,
 cowidev.vax.incremental.north_macedonia,,,2022-11-23T07:02:01,,
 cowidev.vax.incremental.northern_cyprus,0.94,True,2022-11-23T07:02:02,,
-cowidev.vax.incremental.paho,48.53,True,2022-11-23T08:54:17,,
+cowidev.vax.incremental.paho,113.3,False,2022-11-23T17:15:44,"Traceback (most recent call last):
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
+    PAHO().export()
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
+    df = self.read().pipe(self.pipeline)
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
+    df = self._parse_data(url)
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 57, in _parse_data
+    filename = self._get_downloaded_filename()
+  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 114, in _get_downloaded_filename
+    return max(files, key=os.path.getctime)
+ValueError: max() arg is an empty sequence
+",max() arg is an empty sequence
 cowidev.vax.incremental.pakistan,1.63,True,2022-11-23T07:02:06,,
 cowidev.vax.incremental.philippines,,,2022-11-23T07:02:06,,
 cowidev.vax.incremental.playground_mojmir,5.57,True,2022-11-23T07:02:12,,
