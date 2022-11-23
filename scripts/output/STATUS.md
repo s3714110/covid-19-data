@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/112` scripts failed, `26/112` were skipped. Latest update was `2022-11-23T09:07:14`.
+`2/112` scripts failed, `26/112` were skipped. Latest update was `2022-11-23T11:43:04`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,13 +19,6 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.greenland</td>
-      <td>❌</td>
-      <td>2022-11-23T09:07:14</td>
-      <td>0.71</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 74, in main<br>    Greenland().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 61, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 18, in read<br>    data = self._parse_data(soup)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 22, in _parse_data<br>    return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 26, in _parse_data_metrics<br>    dose_1 = clean_count(re.search(r"Innuttaasut ([\d\.]+)", counters[1].parent.find_all("dd")[-1].text).group(1))<br>IndexError: list index out of range<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.russia</td>
       <td>❌</td>
       <td>2022-11-23T08:54:30</td>
@@ -38,13 +31,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-23T07:05:33</td>
       <td>29.60</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 86, in main<br>    Macao().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 72, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 22, in read<br>    data = self._parse_data(elem)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 50, in _parse_data<br>    df = self._parse_pdf_table(url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 33, in _parse_pdf_table<br>    raise ValueError("New columns added!")<br>ValueError: New columns added!<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.guernsey</td>
-      <td>❌</td>
-      <td>2022-11-23T07:05:03</td>
-      <td>0.29</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 61, in main<br>    Guernsey().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 50, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 15, in read<br>    df = self.parse_data(soup)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py", line 31, in parse_data<br>    ds.loc[ds[0] == "Total doses", 1].values[0].replace("*", ""),<br>IndexError: index 0 is out of bounds for axis 0 with size 0<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.turkey</td>
@@ -226,6 +212,20 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-23T07:00:10</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.guernsey</td>
+      <td>✅</td>
+      <td>2022-11-23T11:43:04</td>
+      <td>0.15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.greenland</td>
+      <td>✅</td>
+      <td>2022-11-23T11:27:20</td>
+      <td>0.39</td>
       <td></td>
     </tr>
     <tr>
