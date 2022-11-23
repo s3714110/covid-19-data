@@ -97,17 +97,7 @@ cowidev.vax.incremental.philippines,,,2022-11-23T07:02:06,,
 cowidev.vax.incremental.playground_mojmir,5.57,True,2022-11-23T07:02:12,,
 cowidev.vax.incremental.poland,1.48,True,2022-11-23T07:02:13,,
 cowidev.vax.incremental.qatar,,,2022-11-23T07:02:13,,
-cowidev.vax.incremental.russia,12.85,False,2022-11-23T08:54:30,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 80, in main
-    Russia().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 66, in export
-    data = read(source).pipe(pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py"", line 15, in read
-    date = re.search(r""На сегодня \(([\d\.]{8})\)"", text).group(1)
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.russia,2.22,True,2022-11-23T16:57:28,,
 cowidev.vax.incremental.saint_lucia,,,2022-11-23T07:02:13,,
 cowidev.vax.incremental.serbia,6.44,True,2022-11-23T07:02:20,,
 cowidev.vax.incremental.south_africa,8.02,True,2022-11-23T07:02:22,,
