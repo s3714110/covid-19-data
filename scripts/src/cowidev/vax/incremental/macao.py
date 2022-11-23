@@ -1,4 +1,5 @@
 import time
+import re
 
 import tabula
 
@@ -8,65 +9,65 @@ from cowidev.vax.utils.incremental import increment
 
 
 class Macao:
-    source_url = "https://www.ssm.gov.mo/apps1/covid19vaccine/en.aspx"
+    source_url = "https://www.ssm.gov.mo/apps1/PreventCOVID-19/en.aspx"
     location = "Macao"
 
     def read(self):
         """Create data."""
         with get_driver() as driver:
+            # Get main page
             driver.get(self.source_url)
             time.sleep(5)
             # Get element
-            elem = driver.find_element_by_partial_link_text("Weekly Bulletin on COVID-19")
+            iframe_url = self._get_iframe_url(driver)
             # Build data
-            data = self._parse_data(elem)
+            data = self._parse_data(iframe_url, driver)
             return data
 
-    def _parse_pdf_table(self, url):
-        """Extract table"""
-        dfs = tabula.read_pdf(url)
-        df = dfs[0]
-        # Checks data
-        cols = ["Unnamed: 0", "Unnamed: 1", "滅活疫苗", "Unnamed: 2", "其他種類疫苗", "混合種類", "Unnamed: 3"]
-        # , "Unnamed: 4"]
-        if df.shape[1] != 7:
-            raise ValueError("New columns added!")
-        if not (df.columns == cols).all():
-            raise ValueError("Source data columns changed!")
-        df = df.set_index("Unnamed: 0")
-        return df
+    def _get_iframe_url(self, driver):
+        """Get iframe url."""
+        elem = driver.find_element_by_id("ICovid19Monitor")
+        return elem.get_property("src")
+
+    def _parse_data(self, url, driver):
+        driver.get(url)
+        # Obtain metrics
+        # total_vaccinations
+        elem = self._get_elem_div(driver, "Total doses administered (local and non-local)")
+        total_vaccinations = clean_count(
+            re.search(r"Total doses administered \(local and non-local\) : (\d+).*", elem.text).group(1)
+        )
+        # people_vaccinated
+        elem = self._get_elem_div(driver, "Total number of people vaccinated")
+        people_vaccinated = clean_count(re.search(r"Total number of people vaccinated : (\d+)", elem.text).group(1))
+        # total_vaccinations
+        elem = self._get_elem_div(driver, "Number of people completed 2 or more doses")
+        people_with_2_doses_or_more = clean_count(
+            re.search(r"Number of people completed 2 or more doses : (\d+)", elem.text).group(1)
+        )
+        # Obtain date
+        elem = self._get_elem_div(driver, "updated on:")
+        date = extract_clean_date(elem.text, r"updated on:(\d\d/\d\d/20\d\d)", "%d/%m/%Y")
+        # Build dict
+        data = {
+            "total_vaccinations": total_vaccinations,
+            "people_vaccinated": people_vaccinated,
+            "people_fully_vaccinated": people_with_2_doses_or_more,
+            "total_boosters": total_vaccinations - people_vaccinated - people_with_2_doses_or_more,
+            "source_url": url,
+            "date": date,
+        }
+        return data
+
+    def _get_elem_div(self, driver, text_match):
+        elem = driver.find_elements_by_xpath(f"//div[contains(text(), '{text_match}')]")
+        assert len(elem) == 1
+        return elem[0]
 
     def _parse_date(self, element):
         """Get data from report file title."""
         r = r".* \(Last updated: (\d\d\/\d\d\/20\d\d) .*\)"
         return extract_clean_date(element.text, r, "%d/%m/%Y")
-
-    def _parse_data(self, element):
-        # Obtain pdf url
-        url = element.get_property("href")
-        # Obtain date from element
-        date = self._parse_date(element)
-        # Extract table data
-        df = self._parse_pdf_table(url)
-        # try:
-        total_vaccinations = clean_count(df.loc["Total de doses administradas", "Unnamed: 3"])
-        people_vaccinated = clean_count(df.loc["N o Pessoas inoculadas com pelo menos uma", "Unnamed: 3"])
-        people_only_2_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 2a dose", "Unnamed: 3"])
-        people_only_3_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 3a dose", "Unnamed: 3"])
-        people_only_4_doses = clean_count(df.loc["N.o de pessoas vacinadas com a 4a dose", "Unnamed: 3"])
-        # except Exception as e:
-        #     print(e)
-        #     print(df.index)
-
-        data = {
-            "total_vaccinations": total_vaccinations,
-            "people_vaccinated": people_vaccinated,
-            "people_fully_vaccinated": people_only_2_doses + people_only_3_doses + people_only_4_doses,
-            "total_boosters": people_only_3_doses + people_only_4_doses,
-            "source_url": url,
-            "date": date,
-        }
-        return data
 
     def export(self):
         data = self.read()
@@ -78,6 +79,7 @@ class Macao:
             total_boosters=data["total_boosters"],
             date=data["date"],
             source_url=data["source_url"],
+            # vaccines in use: https://www.ssm.gov.mo/apps1/covid19vaccine/en.aspx#vactype
             vaccine="Pfizer/BioNTech, Sinopharm/Beijing",
         )
 
