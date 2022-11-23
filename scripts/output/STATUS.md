@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`2/112` scripts failed, `26/112` were skipped. Latest update was `2022-11-23T11:43:04`.
+`1/112` scripts failed, `26/112` were skipped. Latest update was `2022-11-23T14:13:08`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -24,13 +24,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-23T08:54:30</td>
       <td>12.85</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 80, in main<br>    Russia().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 66, in export<br>    data = read(source).pipe(pipeline)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/russia.py", line 15, in read<br>    date = re.search(r"На сегодня \(([\d\.]{8})\)", text).group(1)<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.macao</td>
-      <td>❌</td>
-      <td>2022-11-23T07:05:33</td>
-      <td>29.60</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 86, in main<br>    Macao().export()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 72, in export<br>    data = self.read()<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 22, in read<br>    data = self._parse_data(elem)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 50, in _parse_data<br>    df = self._parse_pdf_table(url)<br>  File "/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 33, in _parse_pdf_table<br>    raise ValueError("New columns added!")<br>ValueError: New columns added!<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.turkey</td>
@@ -212,6 +205,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-23T07:00:10</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.macao</td>
+      <td>✅</td>
+      <td>2022-11-23T14:13:08</td>
+      <td>10.06</td>
       <td></td>
     </tr>
     <tr>
