@@ -81,21 +81,7 @@ cowidev.vax.incremental.kazakhstan,15.08,True,2022-11-23T07:02:05,,
 cowidev.vax.incremental.kosovo,1.95,True,2022-11-23T07:01:53,,
 cowidev.vax.incremental.kyrgyzstan,2.56,True,2022-11-23T07:01:54,,
 cowidev.vax.incremental.laos,2.21,True,2022-11-23T07:01:55,,
-cowidev.vax.incremental.macao,29.6,False,2022-11-23T07:05:33,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 86, in main
-    Macao().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 72, in export
-    data = self.read()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 22, in read
-    data = self._parse_data(elem)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 50, in _parse_data
-    df = self._parse_pdf_table(url)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 33, in _parse_pdf_table
-    raise ValueError(""New columns added!"")
-ValueError: New columns added!
-",New columns added!
+cowidev.vax.incremental.macao,10.06,True,2022-11-23T14:13:08,,
 cowidev.vax.incremental.moldova,,,2022-11-23T07:01:55,,
 cowidev.vax.incremental.monaco,31.07,True,2022-11-23T07:02:26,,
 cowidev.vax.incremental.mongolia,0.81,True,2022-11-23T07:02:01,,
