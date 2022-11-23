@@ -28,7 +28,6 @@ def main():
     # Read
     df = read()
     # Sort rows
-    print(df.columns)
     df = df.sort_values("date")
     # Smooth metric
     df["Weekly new hospital admissions"] = df["Weekly new hospital admissions"].rolling(7).sum()
