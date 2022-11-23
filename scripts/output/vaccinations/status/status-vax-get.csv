@@ -68,18 +68,18 @@ cowidev.vax.incremental.fiji,0.0,True,2022-11-23T07:01:44,,
 cowidev.vax.incremental.finland,0.26,True,2022-11-23T07:01:44,,
 cowidev.vax.incremental.gabon,,,2022-11-23T07:01:44,,
 cowidev.vax.incremental.georgia,0.51,True,2022-11-23T07:01:44,,
-cowidev.vax.incremental.greenland,1.54,False,2022-11-23T07:05:03,"Traceback (most recent call last):
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.greenland,0.71,False,2022-11-23T09:07:14,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 74, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 74, in main
     Greenland().export()
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 61, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 61, in export
     data = self.read().pipe(self.pipeline)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 18, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 18, in read
     data = self._parse_data(soup)
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 22, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 22, in _parse_data
     return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}
-  File ""/mnt/owid_live_covid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 26, in _parse_data_metrics
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 26, in _parse_data_metrics
     dose_1 = clean_count(re.search(r""Innuttaasut ([\d\.]+)"", counters[1].parent.find_all(""dd"")[-1].text).group(1))
 IndexError: list index out of range
 ",list index out of range
