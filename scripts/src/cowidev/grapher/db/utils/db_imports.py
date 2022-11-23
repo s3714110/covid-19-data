@@ -8,6 +8,7 @@ Update vaccination by age data.
 import sys
 import os
 import pandas as pd
+import subprocess
 
 import json
 from dotenv import load_dotenv
@@ -75,9 +76,7 @@ def import_dataset(
         )
 
         db_dataset_modified_time = db_dataset_modified_time.replace(tzinfo=tz_db)
-        file_modified_time = datetime.fromtimestamp(os.stat(csv_path).st_mtime).replace(
-            tzinfo=tz_local
-        )
+        file_modified_time = datetime.fromtimestamp(os.stat(csv_path).st_mtime).replace(tzinfo=tz_local)
 
         if file_modified_time <= db_dataset_modified_time:
             print(f"Dataset is up to date: {dataset_name}")
@@ -109,9 +108,7 @@ def import_dataset(
         # Terminate if some entities are missing from the database
         missing_entity_names = set(entity_names) - set(db_entity_id_by_name.keys())
         if len(missing_entity_names) > 0:
-            print_err(
-                f"Entity names missing from database: {str(missing_entity_names)}"
-            )
+            print_err(f"Entity names missing from database: {str(missing_entity_names)}")
             sys.exit(1)
 
         # Fetch the source
@@ -144,14 +141,10 @@ def import_dataset(
         # Remove any variables no longer in the dataset. This is safe because any variables used in
         # charts won't be deleted because of database constrant checks.
 
-        variable_names_to_remove = list(
-            set(db_variable_id_by_name.keys()) - set(variable_names)
-        )
+        variable_names_to_remove = list(set(db_variable_id_by_name.keys()) - set(variable_names))
         if len(variable_names_to_remove):
             print(f"Removing variables: {str(variable_names_to_remove)}")
-            variable_ids_to_remove = [
-                db_variable_id_by_name[n] for n in variable_names_to_remove
-            ]
+            variable_ids_to_remove = [db_variable_id_by_name[n] for n in variable_names_to_remove]
             db.execute(
                 """
                 DELETE FROM data_values
@@ -164,9 +157,7 @@ def import_dataset(
 
         # Add variables that didn't exist before. Make sure to set yearIsDay.
 
-        variable_names_to_insert = list(
-            set(variable_names) - set(db_variable_id_by_name.keys())
-        )
+        variable_names_to_insert = list(set(variable_names) - set(db_variable_id_by_name.keys()))
         if len(variable_names_to_insert):
             print(f"Inserting variables: {str(variable_names_to_insert)}")
             for name in variable_names_to_insert:
@@ -263,19 +254,7 @@ def import_dataset(
             [db_dataset_id],
         )
 
-        # Enqueue deploy
-
-        if DEPLOY_QUEUE_PATH:
-            with open(DEPLOY_QUEUE_PATH, "a") as f:
-                f.write(
-                    json.dumps(
-                        {
-                            "message": f"Automated dataset update: {dataset_name}",
-                            "timeISOString": datetime.now().isoformat(),
-                        }
-                    )
-                    + "\n"
-                )
+        enqueue_deploy(f"Automated dataset update: {dataset_name}")
 
     print("Database update successful.")
 
@@ -284,3 +263,49 @@ def import_dataset(
             channel="corona-data-updates" if not os.getenv("IS_DEV") else "bot-testing",
             title=f"Updated Grapher dataset: {dataset_name}",
         )
+
+
+def enqueue_deploy(message):
+    if DEPLOY_QUEUE_PATH:
+        if ":" in DEPLOY_QUEUE_PATH:
+            server, path = DEPLOY_QUEUE_PATH.split(":")
+            enqueue_remote_deploy(server, path, message)
+
+        else:
+            enqueue_local_deploy(DEPLOY_QUEUE_PATH, message)
+
+
+def enqueue_remote_deploy(server, path, message):
+    "Trigger a deploy on a remote grapher server by writing to its queue file."
+
+    deploy_message = (
+        json.dumps(
+            {
+                "message": message,
+                "timeISOString": datetime.now().isoformat(),
+            }
+        )
+        + "\n"
+    )
+
+    # ssh to the deploy server and add our message to the deploy queue
+    p = subprocess.Popen(
+        f"ssh {server} tee -a {path}",
+        shell=True,
+        stdin=subprocess.PIPE,
+        stdout=sys.stdout,
+        stderr=sys.stderr,
+    )
+    p.communicate(deploy_message.encode("utf-8"))
+
+
+def enqueue_local_deploy(path, message):
+    "Trigger a deploy on this machine by writing to the grapher queue file."
+    deploy_message = json.dumps(
+        {
+            "message": message,
+            "timeISOString": datetime.now().isoformat(),
+        }
+    )
+    with open(path, "a") as f:
+        f.write(deploy_message + "\n")
