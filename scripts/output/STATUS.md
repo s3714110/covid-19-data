@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`1/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-23T16:57:28`.
+`2/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-23T17:15:44`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,6 +18,13 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>❌</td>
+      <td>2022-11-23T17:15:44</td>
+      <td>113.30</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 195, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 57, in _parse_data<br>    filename = self._get_downloaded_filename()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 114, in _get_downloaded_filename<br>    return max(files, key=os.path.getctime)<br>ValueError: max() arg is an empty sequence<br></pre></details></td>
+    </tr>
     <tr>
       <td>cowidev.vax.incremental.turkey</td>
       <td>❌</td>
@@ -226,13 +233,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-11-23T11:27:20</td>
       <td>0.39</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>✅</td>
-      <td>2022-11-23T08:54:17</td>
-      <td>48.53</td>
       <td></td>
     </tr>
     <tr>
