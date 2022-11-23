@@ -4,11 +4,15 @@ import pandas as pd
 
 from cowidev.utils.clean import clean_count, clean_date
 from cowidev.utils.web import get_soup
+from cowidev.utils.web.utils import to_proxy_url
 from cowidev.vax.utils.incremental import enrich_data, increment
 
 
-def read(source: str) -> pd.Series:
-    soup = get_soup(source)
+def read() -> pd.Series:
+    source = "https://gogov.ru/articles/covid-v-stats"
+    url = to_proxy_url(source)
+
+    soup = get_soup(url)
 
     text = soup.find("div", id="data").find("p").text
 
@@ -59,11 +63,9 @@ def pipeline(ds: pd.Series) -> pd.Series:
     return ds.pipe(enrich_location).pipe(enrich_vaccine).pipe(enrich_source)
 
 
-
 class Russia:
     def export(self):
-        source = "https://gogov.ru/articles/covid-v-stats"
-        data = read(source).pipe(pipeline)
+        data = read().pipe(pipeline)
         increment(
             location=data["location"],
             total_vaccinations=data["total_vaccinations"],
