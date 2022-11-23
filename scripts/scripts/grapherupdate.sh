@@ -54,7 +54,7 @@ cowidev-grapher-db
 
 ## Additional individual grapher updates
 minute=$(date +%M)
-if [ $minute == 10 ] ; then
+if [ $minute == 40 ] ; then
   cowid --server jhu grapher-db
   cowid --server decoupling grapher-db
   cowid --server hosp grapher-db
