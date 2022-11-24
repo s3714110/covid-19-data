@@ -22,58 +22,60 @@ class Sweden(CountryVaxBase):
         self.columns_rename = None
 
     def read(self) -> pd.DataFrame:
-        daily = self._read_daily_data()
+        # daily = self._read_daily_data()
+        # weekly = self._read_weekly_data()
+        # weekly = weekly[weekly["date"] < daily["date"].min()]
+        # return pd.concat([daily, weekly]).sort_values("date").reset_index(drop=True)
         weekly = self._read_weekly_data()
-        weekly = weekly[weekly["date"] < daily["date"].min()]
-        return pd.concat([daily, weekly]).sort_values("date").reset_index(drop=True)
+        return weekly.sort_values("date").reset_index(drop=True)
 
-    def _read_daily_data(self) -> pd.DataFrame:
-        """Read daily data (latest) from HTML page."""
-        text = requests.get(self.source_url_daily, verify=False).content
-        dfs = pd.read_html(text, encoding="utf-8")
-        df_doses = self._read_daily_data_doses(dfs[0])
-        df_people = self._read_daily_data_people(dfs[1])
-        df_boosters = self._read_daily_data_boosters(dfs[2], dfs[3])
-        df = self._merge_tables_daily(df_people, df_doses, df_boosters)
-        return df
+    # def _read_daily_data(self) -> pd.DataFrame:
+    #     """Read daily data (latest) from HTML page."""
+    #     text = requests.get(self.source_url_daily, verify=False).content
+    #     dfs = pd.read_html(text, encoding="utf-8")
+    #     df_doses = self._read_daily_data_doses(dfs[0])
+    #     df_people = self._read_daily_data_people(dfs[1])
+    #     df_boosters = self._read_daily_data_boosters(dfs[2], dfs[3])
+    #     df = self._merge_tables_daily(df_people, df_doses, df_boosters)
+    #     return df
 
-    def _read_daily_data_people(self, df):
-        return df.assign(
-            people_vaccinated=df["Antal vaccinerademed minst 1 dos (1)"].apply(clean_count),
-            people_fully_vaccinated=df["Antal vaccinerademed minst 2 doser"].apply(clean_count),
-        )
+    # def _read_daily_data_people(self, df):
+    #     return df.assign(
+    #         people_vaccinated=df["Antal vaccinerademed minst 1 dos (1)"].apply(clean_count),
+    #         people_fully_vaccinated=df["Antal vaccinerademed minst 2 doser"].apply(clean_count),
+    #     )
 
-    def _read_daily_data_doses(self, df):
-        # Total vaccinations
-        return df.assign(
-            total_vaccinations=df["Antal vaccinationer"].apply(clean_count),
-        )
+    # def _read_daily_data_doses(self, df):
+    #     # Total vaccinations
+    #     return df.assign(
+    #         total_vaccinations=df["Antal vaccinationer"].apply(clean_count),
+    #     )
 
-    def _read_daily_data_boosters(self, df_1, df_2):
-        # Total vaccinations
-        return df_1.assign(
-            total_boosters=(
-                df_1["Antal vaccinerade med 3 doser"].apply(clean_count)
-                + df_2["Antal vaccinerade med 4 doser"].apply(clean_count)
-            ),
-        )
+    # def _read_daily_data_boosters(self, df_1, df_2):
+    #     # Total vaccinations
+    #     return df_1.assign(
+    #         total_boosters=(
+    #             df_1["Antal vaccinerade med 3 doser"].apply(clean_count)
+    #             + df_2["Antal vaccinerade med 4 doser"].apply(clean_count)
+    #         ),
+    #     )
 
-    def _merge_tables_daily(self, df_people, df_doses, df_boosters):
-        # Merge
-        df = (
-            df_people.merge(df_doses, on="Datum")
-            .rename(
-                columns={
-                    "Datum": "date",
-                }
-            )
-            .merge(df_boosters, left_on="date", right_on="Datum")
-        )
-        df[["people_vaccinated", "people_fully_vaccinated", "total_boosters"]] = df[
-            ["people_vaccinated", "people_fully_vaccinated", "total_boosters"]
-        ].astype("Int64")
-        df = df[["date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
-        return df
+    # def _merge_tables_daily(self, df_people, df_doses, df_boosters):
+    #     # Merge
+    #     df = (
+    #         df_people.merge(df_doses, on="Datum")
+    #         .rename(
+    #             columns={
+    #                 "Datum": "date",
+    #             }
+    #         )
+    #         .merge(df_boosters, left_on="date", right_on="Datum")
+    #     )
+    #     df[["people_vaccinated", "people_fully_vaccinated", "total_boosters"]] = df[
+    #         ["people_vaccinated", "people_fully_vaccinated", "total_boosters"]
+    #     ].astype("Int64")
+    #     df = df[["date", "total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]]
+    #     return df
 
     def _read_weekly_data(self) -> pd.DataFrame:
         """Read weekly data
@@ -96,14 +98,28 @@ class Sweden(CountryVaxBase):
 
     def _read_weekly_data_doses(self, dfs) -> pd.DataFrame:
         """Read weekly data for number of vaccinations administered."""
-        # DOSES
-        df = dfs["Vaccinationer tidsserie"]
-        # Filter rows and columns of interest
-        df_doses = df.loc[df.Region == "| Sverige |", ["Vecka", "År", "Antal vaccinationer"]]
-        df_doses = df_doses.rename(columns={"Antal vaccinationer": "total_vaccinations"})
+        # Total vaccinations
+        df_doses = self._read_weekly_data_doses_common(
+            dfs, "Vaccinationer tidsserie", "Antal vaccinationer", "total_vaccinations"
+        )
+        # Booster 1
+        df_booster_1 = self._read_weekly_data_doses_common(
+            dfs, "Vaccinerade tidsserie dos 3", "Antal vaccinerade", "booster_1"
+        )
+        # Booster 2
+        df_booster_2 = self._read_weekly_data_doses_common(
+            dfs, "Vaccinerade tidsserie dos 4", "Antal vaccinerade", "booster_2"
+        )
+        # Booster 3
+        df_booster_3 = self._read_weekly_data_doses_common(
+            dfs, "Vaccinerade tidsserie dos 5", "Antal vaccinerade", "booster_3"
+        )
 
-        self.latest_boosdters = (
-            dfs["Vaccinerade kommun dos 4"]["Antal_dos4"].sum() + dfs["Vaccinerade kommun dos 3"]["Antal_dos3"].sum()
+        # Merge
+        df_doses = (
+            df_doses.merge(df_booster_1, on=["Vecka", "År"], how="left")
+            .merge(df_booster_2, on=["Vecka", "År"], how="left")
+            .merge(df_booster_3, on=["Vecka", "År"], how="left")
         )
         # boosters = dfs["Dos 1 till 3 per åldersgrupp"]  # Dos 4 per åldersgrupp
         # boosters = dfs["Dos 4 per åldersgrupp"]
@@ -111,6 +127,13 @@ class Sweden(CountryVaxBase):
         #     (boosters.Region == "| Sverige |") & (boosters["Åldersgrupp"] == "Totalt"), "Antal vaccinerade"
         # ].item()
 
+        return df_doses
+
+    def _read_weekly_data_doses_common(self, dfs, sheet_name, column_value, column_value_rename):
+        df = dfs[sheet_name]
+        # Filter rows and columns of interest
+        df_doses = df.loc[df.Region == "| Sverige |", ["Vecka", "År", column_value]]
+        df_doses = df_doses.rename(columns={column_value: column_value_rename})
         return df_doses
 
     def _read_weekly_data_people(self, dfs) -> pd.DataFrame:
@@ -138,6 +161,7 @@ class Sweden(CountryVaxBase):
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
             df.pipe(self.pipe_vaccine)
+            .pipe(self.pipe_boosters)
             .pipe(self.pipe_columns)
             .pipe(self.pipe_out_columns)
             # .pipe(self.pipe_add_boosters)
@@ -156,6 +180,11 @@ class Sweden(CountryVaxBase):
                 "Novavax": "2022-03-11",
             },
         )
+
+    def pipe_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
+        # Source: https://www.ecdc.europa.eu/en/publications-data/data-covid-19-vaccination-eu-eea
+        df = df.assign(total_boosters=df.booster_1 + df.booster_2 + df.booster_3)
+        return df
 
     def pipe_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(location=self.location, source_url=self.source_url_daily)
