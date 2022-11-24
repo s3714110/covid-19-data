@@ -36,68 +36,7 @@ cowidev.vax.batch.saudi_arabia,11.54,True,2022-11-24T07:00:17,,
 cowidev.vax.batch.singapore,6.11,True,2022-11-24T07:00:11,,
 cowidev.vax.batch.slovakia,65.48,True,2022-11-24T07:01:11,,
 cowidev.vax.batch.slovenia,3.74,True,2022-11-24T07:00:10,,
-cowidev.vax.batch.south_korea,1.35,False,2022-11-24T07:04:34,"Traceback (most recent call last):
-  File ""/usr/lib/python3.10/urllib/request.py"", line 1348, in do_open
-    h.request(req.get_method(), req.selector, req.data, headers,
-  File ""/usr/lib/python3.10/http/client.py"", line 1282, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File ""/usr/lib/python3.10/http/client.py"", line 1328, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File ""/usr/lib/python3.10/http/client.py"", line 1277, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File ""/usr/lib/python3.10/http/client.py"", line 1037, in _send_output
-    self.send(msg)
-  File ""/usr/lib/python3.10/http/client.py"", line 975, in send
-    self.connect()
-  File ""/usr/lib/python3.10/http/client.py"", line 1454, in connect
-    self.sock = self._context.wrap_socket(self.sock,
-  File ""/usr/lib/python3.10/ssl.py"", line 513, in wrap_socket
-    return self.sslsocket_class._create(
-  File ""/usr/lib/python3.10/ssl.py"", line 1071, in _create
-    self.do_handshake()
-  File ""/usr/lib/python3.10/ssl.py"", line 1342, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLError: [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:997)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 200, in main
-    SouthKorea().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 183, in export
-    df_base = self.read().pipe(self.pipeline_base)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 41, in read
-    dfs = pd.read_html(self.source_url, encoding=""utf-8"")
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py"", line 1098, in read_html
-    return _parse(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py"", line 906, in _parse
-    tables = p.parse_tables()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py"", line 222, in parse_tables
-    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py"", line 745, in _build_doc
-    raise e
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py"", line 726, in _build_doc
-    with urlopen(self.io) as f:
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 216, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 519, in open
-    response = self._open(req, data)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 536, in _open
-    result = self._call_chain(self.handle_open, protocol, protocol +
-  File ""/usr/lib/python3.10/urllib/request.py"", line 496, in _call_chain
-    result = func(*args)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 1391, in https_open
-    return self.do_open(http.client.HTTPSConnection, req,
-  File ""/usr/lib/python3.10/urllib/request.py"", line 1351, in do_open
-    raise URLError(err)
-urllib.error.URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:997)>
-",<urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:997)>
+cowidev.vax.batch.south_korea,9.32,True,2022-11-24T09:06:59,,
 cowidev.vax.batch.spc,20.47,True,2022-11-24T07:00:27,,
 cowidev.vax.batch.sweden,,,2022-11-24T07:00:07,,
 cowidev.vax.batch.switzerland,76.71,True,2022-11-24T07:01:23,,
