@@ -6,6 +6,7 @@ import pandas as pd
 from cowidev.utils.clean import clean_count, clean_string, extract_clean_date
 from cowidev.utils.web.scraping import get_soup
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.vax.utils.utils import add_latest_who_values
 
 
 class Hungary(CountryVaxBase):
@@ -137,6 +138,10 @@ class Hungary(CountryVaxBase):
             df = df.pipe(self.pipeline)
             df = df.pipe(self.pipe_drop_duplicates)
             self.export_datafile(df, attach=True)
+        # Add WHO
+        df = self.load_datafile()
+        df = add_latest_who_values(df, "Hungary", ["total_vaccinations"])
+        self.export_datafile(df)
 
 
 def main():
