@@ -22,7 +22,7 @@ class DominicanRepublic(CountryVaxBase):
 
         with webdriver.Chrome(options=op) as driver:
             driver.get(self.source_url)
-            time.sleep(3)
+            time.sleep(10)
             metrics = self._parse_metrics(driver)
             date = self._parse_date(driver)
         data = {
@@ -75,6 +75,7 @@ def _find_h3(driver):
         for e in driver.find_elements_by_tag_name("h3")
         if re.search(r"Estadísticas nacionales \| Acumulados al \d+ de \w+ de 20\d\d", e.text)
     ]
+    print(elem)
     if len(elem) == 1:
         elem = elem[0]
     else:
