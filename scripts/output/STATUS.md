@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-24T07:11:39`.
+`5/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-24T10:02:45`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,6 +19,13 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>❌</td>
+      <td>2022-11-24T10:02:45</td>
+      <td>22.56</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 112, in main<br>    def main():<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 68, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 26, in read<br>    metrics = self._parse_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 35, in _parse_metrics<br>    metric_candidates = _find_potential_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 91, in _find_potential_metrics<br>    def _find_potential_metrics(driver):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 81, in _find_h3<br>    else:<br>ValueError: More than one element found!<br></pre></details></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.incremental.turkey</td>
       <td>❌</td>
       <td>2022-11-24T07:11:39</td>
@@ -31,13 +38,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-24T07:10:59</td>
       <td>113.40</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 195, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 57, in _parse_data<br>    filename = self._get_downloaded_filename()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 114, in _get_downloaded_filename<br>    return max(files, key=os.path.getctime)<br>ValueError: max() arg is an empty sequence<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2022-11-24T07:09:06</td>
-      <td>8.72</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 112, in main<br>    DominicanRepublic().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 68, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 26, in read<br>    metrics = self._parse_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 35, in _parse_metrics<br>    metric_candidates = _find_potential_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 91, in _find_potential_metrics<br>    h3 = _find_h3(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 81, in _find_h3<br>    raise ValueError("More than one element found!")<br>ValueError: More than one element found!<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.china</td>
