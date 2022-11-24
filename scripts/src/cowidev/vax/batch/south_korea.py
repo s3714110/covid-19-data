@@ -4,6 +4,7 @@ from cowidev.utils.clean import clean_date_series
 from cowidev.vax.utils.checks import VACCINES_ONE_DOSE
 from cowidev.vax.utils.utils import build_vaccine_timeline
 from cowidev.vax.utils.base import CountryVaxBase
+from cowidev.utils.web.download import to_proxy_url
 
 
 class SouthKorea(CountryVaxBase):
@@ -38,7 +39,8 @@ class SouthKorea(CountryVaxBase):
         }
 
     def read(self):
-        dfs = pd.read_html(self.source_url, encoding="utf-8")
+        # alternative would be to use `headers` in requests.get
+        dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")
         if len(dfs) != 1:
             raise ValueError("More than one table detected!")
         df = dfs[0]
