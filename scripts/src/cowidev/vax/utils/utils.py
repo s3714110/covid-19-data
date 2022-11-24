@@ -54,8 +54,8 @@ def build_vaccine_timeline(df: pd.DataFrame, vaccine_timeline: dict) -> pd.DataF
 
     vaccine_timeline: dictionary of "vaccine" -> "start_date"
 
-    Example: 
-    
+    Example:
+
     {
         "Pfizer/BioNTech": "2021-02-24",
         "Sinovac": "2021-03-03",
@@ -120,5 +120,4 @@ def add_latest_who_values(df: pd.DataFrame, who_location_name: str, metrics: lis
     who_row["source_url"] = "https://covid19.who.int/"
 
     df = pd.concat([original_rows, who_row], ignore_index=True).sort_values("date")
-
     return df
