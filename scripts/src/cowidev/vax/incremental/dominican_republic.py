@@ -7,7 +7,7 @@ from selenium.webdriver.chrome.options import Options
 
 from cowidev.utils.clean import clean_count
 from cowidev.utils.clean.dates import clean_date
-from cowidev.vax.utils.incremental import enrich_data, increment
+from cowidev.vax.utils.incremental import enrich_data
 from cowidev.vax.utils.base import CountryVaxBase
 
 
