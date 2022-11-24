@@ -5,7 +5,8 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/112` scripts failed, `25/112` were skipped. Latest update was `2022-11-24T10:02:45`.
+`2/112` scripts failed, `24/112` were skipped. Latest update was `2022-11-24T10:02:45
+`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -31,27 +32,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-24T07:11:39</td>
       <td>40.03</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>TimeoutError: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn<br>    conn.connect()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 358, in connect<br>    self.sock = conn = self._new_conn()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7f56ca353190>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen<br>    retries = retries.increment(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f56ca353190>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 60, in main<br>    data = read(source).pipe(pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 19, in read<br>    soup = get_soup(source)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f56ca353190>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2022-11-24T07:10:59</td>
-      <td>113.40</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 195, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 57, in _parse_data<br>    filename = self._get_downloaded_filename()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 114, in _get_downloaded_filename<br>    return max(files, key=os.path.getctime)<br>ValueError: max() arg is an empty sequence<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.china</td>
-      <td>❌</td>
-      <td>2022-11-24T07:08:57</td>
-      <td>262.68</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 174, in main<br>    China().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 161, in export<br>    df = self.read(df_last.date.max())<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py", line 40, in read<br>    with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 159, in get_driver<br>    driver = webdriver.Firefox(options=options)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/firefox/webdriver.py", line 170, in __init__<br>    RemoteWebDriver.__init__(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 157, in __init__<br>    self.start_session(capabilities, browser_profile)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 252, in start_session<br>    response = self.execute(Command.NEW_SESSION, parameters)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.TimeoutException: Message: Failed to read marionette port<br><br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.south_korea</td>
-      <td>❌</td>
-      <td>2022-11-24T07:04:34</td>
-      <td>1.35</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/usr/lib/python3.10/urllib/request.py", line 1348, in do_open<br>    h.request(req.get_method(), req.selector, req.data, headers,<br>  File "/usr/lib/python3.10/http/client.py", line 1282, in request<br>    self._send_request(method, url, body, headers, encode_chunked)<br>  File "/usr/lib/python3.10/http/client.py", line 1328, in _send_request<br>    self.endheaders(body, encode_chunked=encode_chunked)<br>  File "/usr/lib/python3.10/http/client.py", line 1277, in endheaders<br>    self._send_output(message_body, encode_chunked=encode_chunked)<br>  File "/usr/lib/python3.10/http/client.py", line 1037, in _send_output<br>    self.send(msg)<br>  File "/usr/lib/python3.10/http/client.py", line 975, in send<br>    self.connect()<br>  File "/usr/lib/python3.10/http/client.py", line 1454, in connect<br>    self.sock = self._context.wrap_socket(self.sock,<br>  File "/usr/lib/python3.10/ssl.py", line 513, in wrap_socket<br>    return self.sslsocket_class._create(<br>  File "/usr/lib/python3.10/ssl.py", line 1071, in _create<br>    self.do_handshake()<br>  File "/usr/lib/python3.10/ssl.py", line 1342, in do_handshake<br>    self._sslobj.do_handshake()<br>ssl.SSLError: [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:997)<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 200, in main<br>    SouthKorea().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 183, in export<br>    df_base = self.read().pipe(self.pipeline_base)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 41, in read<br>    dfs = pd.read_html(self.source_url, encoding="utf-8")<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 1098, in read_html<br>    return _parse(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 906, in _parse<br>    tables = p.parse_tables()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 222, in parse_tables<br>    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 745, in _build_doc<br>    raise e<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 726, in _build_doc<br>    with urlopen(self.io) as f:<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/usr/lib/python3.10/urllib/request.py", line 519, in open<br>    response = self._open(req, data)<br>  File "/usr/lib/python3.10/urllib/request.py", line 536, in _open<br>    result = self._call_chain(self.handle_open, protocol, protocol +<br>  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/usr/lib/python3.10/urllib/request.py", line 1391, in https_open<br>    return self.do_open(http.client.HTTPSConnection, req,<br>  File "/usr/lib/python3.10/urllib/request.py", line 1351, in do_open<br>    raise URLError(err)<br>urllib.error.URLError: <urlopen error [SSL: UNSAFE_LEGACY_RENEGOTIATION_DISABLED] unsafe legacy renegotiation disabled (_ssl.c:997)><br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
@@ -194,13 +174,6 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>⚠️</td>
-      <td>2022-11-24T07:00:07</td>
-      <td>NaN</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.australia</td>
       <td>⚠️</td>
       <td>2022-11-24T07:00:05</td>
@@ -226,6 +199,34 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-24T07:00:05</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.sweden</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:19</td>
+      <td>3.91</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-11-24T10:37:15</td>
+      <td>75.81</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.china</td>
+      <td>✅</td>
+      <td>2022-11-24T10:36:28</td>
+      <td>29.52</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.south_korea</td>
+      <td>✅</td>
+      <td>2022-11-24T09:06:59</td>
+      <td>9.32</td>
       <td></td>
     </tr>
     <tr>
@@ -808,7 +809,7 @@ This file shows the latest status of the data pipeline.
 
 ### Process (Checks)
 
-`3/223` processes failed, `0/223` were skipped. Latest update was `2022-11-24T07:11:50`.
+`1/223` processes failed, `0/223` were skipped. Latest update was `2022-11-24T11:18:51`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -821,1341 +822,1341 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>Sweden</td>
-      <td>❌</td>
-      <td>2022-11-24T07:11:49</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Sweden -- Column total_vaccinations must be monotonically increasing! Check:<br>   location       date  ... people_fully_vaccinated total_boosters<br>94   Sweden 2022-11-13  ...                 7369199        5540319<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Greenland</td>
-      <td>❌</td>
-      <td>2022-11-24T07:11:45</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Greenland -- Column people_vaccinated must be monotonically increasing! Check:<br>      location       date  ... people_fully_vaccinated total_boosters<br>129  Greenland 2022-03-14  ...                   38511           <NA><br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
       <td>Australia</td>
       <td>❌</td>
-      <td>2022-11-24T07:11:43</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Australia -- Column people_vaccinated must be monotonically increasing! Check:<br>      location       date  ... people_fully_vaccinated total_boosters<br>548  Australia 2022-11-02  ...                21651862       14268128<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Turkey</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkmenistan</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turks and Caicos Islands</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tuvalu</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Uganda</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ukraine</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>United Arab Emirates</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
+      <td>2022-11-24T11:18:44</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Australia -- Column people_vaccinated must be monotonically increasing! Check:<br>      location       date                                            vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters<br>548  Australia 2022-11-02  Johnson&Johnson, Moderna, Novavax, Oxford/Astr...  ...          22234662                 21651862        14268128<br><br>[1 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>United Kingdom</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>United States</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Uruguay</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Uzbekistan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Vanuatu</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Venezuela</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Vietnam</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Wales</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Wallis and Futuna</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Yemen</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Zambia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Zimbabwe</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:50</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Serbia</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Seychelles</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sierra Leone</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Singapore</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sint Maarten (Dutch part)</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Slovakia</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:51</td>
       <td></td>
     </tr>
     <tr>
       <td>Slovenia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Solomon Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Somalia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>South Africa</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>South Korea</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>South Sudan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Spain</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Sri Lanka</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Sudan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Suriname</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sweden</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Switzerland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Syria</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Taiwan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Tajikistan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Tanzania</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Thailand</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Timor</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Togo</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Tokelau</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Tonga</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Trinidad and Tobago</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Tunisia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:49</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
-      <td>Northern Cyprus</td>
+      <td>Turkey</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
-      <td>Northern Ireland</td>
+      <td>Turkmenistan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
-      <td>Norway</td>
+      <td>Turks and Caicos Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
-      <td>Oman</td>
+      <td>Tuvalu</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Uganda</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ukraine</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:50</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>United Arab Emirates</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:50</td>
       <td></td>
     </tr>
     <tr>
       <td>Pakistan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Palestine</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Panama</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Papua New Guinea</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Paraguay</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Peru</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Philippines</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Pitcairn</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Poland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Portugal</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Qatar</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Romania</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Russia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Rwanda</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Helena</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Kitts and Nevis</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Lucia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Vincent and the Grenadines</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Samoa</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>San Marino</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Sao Tome and Principe</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Saudi Arabia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Scotland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Senegal</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:48</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
-      <td>Macao</td>
+      <td>Serbia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
-      <td>Madagascar</td>
+      <td>Seychelles</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
-      <td>Malawi</td>
+      <td>Sierra Leone</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Singapore</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sint Maarten (Dutch part)</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:49</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Slovakia</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:49</td>
       <td></td>
     </tr>
     <tr>
       <td>Malaysia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Maldives</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mali</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Malta</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritania</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritius</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mexico</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Moldova</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Monaco</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mongolia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Montenegro</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Montserrat</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Morocco</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Mozambique</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Myanmar</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Namibia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Nauru</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Nepal</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Netherlands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>New Caledonia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>New Zealand</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Nicaragua</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Niger</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Nigeria</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Niue</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>North Macedonia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:47</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
-      <td>India</td>
+      <td>Northern Cyprus</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Northern Ireland</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Norway</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:48</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Oman</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:48</td>
       <td></td>
     </tr>
     <tr>
       <td>Indonesia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Iran</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Iraq</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Ireland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Isle of Man</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Israel</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Italy</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Jamaica</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Japan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Jersey</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Jordan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kazakhstan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kenya</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kiribati</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kosovo</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kuwait</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Kyrgyzstan</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Laos</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Latvia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Lebanon</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Lesotho</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Liberia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Libya</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Liechtenstein</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Lithuania</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Luxembourg</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:46</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
-      <td>Equatorial Guinea</td>
+      <td>Macao</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:47</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Madagascar</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:47</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Malawi</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:47</td>
       <td></td>
     </tr>
     <tr>
       <td>Estonia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Eswatini</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Ethiopia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Faeroe Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Falkland Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Fiji</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Finland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>France</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>French Polynesia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Gabon</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Gambia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Georgia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Germany</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Ghana</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Gibraltar</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Greece</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Greenland</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Grenada</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Guatemala</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Guernsey</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Guinea</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Guinea-Bissau</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Guyana</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Haiti</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Honduras</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Hong Kong</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Hungary</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Iceland</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:45</td>
+      <td>2022-11-24T11:18:46</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>India</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:46</td>
       <td></td>
     </tr>
     <tr>
       <td>Cameroon</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Canada</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cape Verde</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cayman Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Central African Republic</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Chad</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Chile</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>China</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Colombia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Comoros</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Congo</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cook Islands</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Costa Rica</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cote d'Ivoire</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Croatia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cuba</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Curacao</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Cyprus</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Czechia</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Democratic Republic of Congo</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Denmark</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Djibouti</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Dominica</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Dominican Republic</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Ecuador</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Egypt</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>El Salvador</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>England</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:44</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
-      <td>Anguilla</td>
+      <td>Equatorial Guinea</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Antigua and Barbuda</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Argentina</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Armenia</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Aruba</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Austria</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Azerbaijan</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bahamas</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bahrain</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bangladesh</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Barbados</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Belarus</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Belgium</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Belize</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Benin</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bermuda</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bhutan</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bolivia</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bonaire Sint Eustatius and Saba</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bosnia and Herzegovina</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Botswana</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Brazil</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>British Virgin Islands</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Brunei</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Bulgaria</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Burkina Faso</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Burundi</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Cambodia</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:43</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Afghanistan</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Albania</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Algeria</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:42</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Andorra</td>
-      <td>✅</td>
-      <td>2022-11-24T07:11:42</td>
+      <td>2022-11-24T11:18:45</td>
       <td></td>
     </tr>
     <tr>
       <td>Angola</td>
       <td>✅</td>
-      <td>2022-11-24T07:11:42</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Anguilla</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Antigua and Barbuda</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Argentina</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Armenia</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Aruba</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Austria</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Azerbaijan</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bahamas</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bahrain</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bangladesh</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Barbados</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belarus</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belize</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Benin</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bermuda</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bhutan</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bolivia</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bonaire Sint Eustatius and Saba</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bosnia and Herzegovina</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Botswana</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Brazil</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>British Virgin Islands</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Brunei</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bulgaria</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Burkina Faso</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Burundi</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cambodia</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:44</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Afghanistan</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Albania</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Algeria</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:43</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Andorra</td>
+      <td>✅</td>
+      <td>2022-11-24T11:18:43</td>
       <td></td>
     </tr>
   </tbody>
