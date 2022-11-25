@@ -222,7 +222,7 @@ class Denmark(CountryVaxBase):
         # print(df_current.columns)
         index = self._get_num_gap_days(df_current)
         # Read new
-        df = self.read(index).pipe(self.pipeline, df_current)
+        df = self.read(index).pipe(self.pipeline, df_current).pipe(self.make_monotonic)
         # Export
         df.to_csv(self.output_path, index=False)
 
