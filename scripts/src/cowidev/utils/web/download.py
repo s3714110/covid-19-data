@@ -20,6 +20,7 @@ def read_xlsx_from_url(
     drop=False,
     ciphers_low=False,
     use_proxy=False,
+    headers=None,
     **kwargs,
 ) -> pd.DataFrame:
     """Download and load xls file from URL.
@@ -41,6 +42,7 @@ def read_xlsx_from_url(
             verify=verify,
             ciphers_low=ciphers_low,
             use_proxy=use_proxy,
+            headers=headers,
         )
         df = pd.read_excel(tmp.name, **kwargs)
     if as_series:
@@ -68,6 +70,7 @@ def download_file_from_url(
     verify=True,
     ciphers_low=False,
     use_proxy=False,
+    headers=None,
 ):
     if use_proxy:
         url = to_proxy_url(url)
@@ -75,9 +78,9 @@ def download_file_from_url(
         base_url = get_base_url(url)
         s = requests.Session()
         s.mount(base_url, DESAdapter())
-        r = s.get(url)
+        r = s.get(url, headers=headers)
     else:
-        r = requests.get(url, stream=True, timeout=timeout, verify=verify)
+        r = requests.get(url, stream=True, timeout=timeout, verify=verify, headers=headers)
     with open(save_path, "wb") as fd:
         for chunk in r.iter_content(chunk_size=chunk_size):
             fd.write(chunk)
