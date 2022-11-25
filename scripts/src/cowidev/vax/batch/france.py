@@ -43,6 +43,14 @@ class France(CountryVaxBase):
                 "n_cum_dose3",
                 "n_cum_dose4",
                 "n_cum_rappel",
+                "n_cum_complet",
+                "n_2_rappel",
+                "n_cum_3_rappel",
+                "n_3_rappel",
+                "n_cum_2_rappel",
+                "n_complet",
+                "n_rappel_biv",
+                "n_cum_rappel_biv",
             ],
         )
         df = df[["vaccin", "jour", "n_cum_dose1", "n_cum_dose2", "n_cum_dose3", "n_cum_dose4"]]
@@ -59,7 +67,9 @@ class France(CountryVaxBase):
         missing_vaccines = set(df.vaccine) - set(vaccine_mapping.keys())
         if len(missing_vaccines) > 0:
             raise ValueError(
-                f"Unknown vaccine value: {missing_vaccines}.\nSee https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/ to find the vaccine's name."
+                f"Unknown vaccine value: {missing_vaccines}.\nSee"
+                " https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/"
+                " to find the vaccine's name."
             )
         df = df[(df.vaccine.isin(vaccine_mapping.keys())) & (df.n_cum_dose1 > 0)]
         assert set(df["vaccine"].unique()) == set(vaccine_mapping.keys())
