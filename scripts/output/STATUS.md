@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`4/112` scripts failed, `24/112` were skipped. Latest update was `2022-11-25T07:05:16`.
+`1/112` scripts failed, `24/112` were skipped. Latest update was `2022-11-25T09:32:56`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -24,27 +24,6 @@ This file shows the latest status of the data pipeline.
       <td>2022-11-25T07:05:16</td>
       <td>40.03</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 174, in _new_conn<br>    conn = connection.create_connection(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 95, in create_connection<br>    raise err<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py", line 85, in create_connection<br>    sock.connect(sa)<br>TimeoutError: timed out<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 703, in urlopen<br>    httplib_response = self._make_request(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 386, in _make_request<br>    self._validate_conn(conn)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn<br>    conn.connect()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 358, in connect<br>    self.sock = conn = self._new_conn()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py", line 179, in _new_conn<br>    raise ConnectTimeoutError(<br>urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fd8c854c580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)')<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py", line 440, in send<br>    resp = conn.urlopen(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py", line 787, in urlopen<br>    retries = retries.increment(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/retry.py", line 592, in increment<br>    raise MaxRetryError(_pool, url, error or ResponseError(cause))<br>urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd8c854c580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))<br><br>During handling of the above exception, another exception occurred:<br><br>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 60, in main<br>    data = read(source).pipe(pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 19, in read<br>    soup = get_soup(source)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 49, in get_response<br>    raise err<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 43, in get_response<br>    response = requests.get(source, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py", line 75, in get<br>    return request('get', url, params=params, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py", line 61, in request<br>    return session.request(method=method, url=url, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py", line 529, in request<br>    resp = self.send(prep, **send_kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py", line 645, in send<br>    r = adapter.send(request, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py", line 507, in send<br>    raise ConnectTimeout(e, request=request)<br>requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fd8c854c580>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2022-11-25T07:04:36</td>
-      <td>113.81</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 185, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 37, in read<br>    df = self._parse_data(url)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 57, in _parse_data<br>    filename = self._get_downloaded_filename()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 109, in _get_downloaded_filename<br>    return max(files, key=os.path.getctime)<br>ValueError: max() arg is an empty sequence<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2022-11-25T07:02:42</td>
-      <td>22.76</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 113, in main<br>    DominicanRepublic().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 68, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 26, in read<br>    metrics = self._parse_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 35, in _parse_metrics<br>    metric_candidates = _find_potential_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 92, in _find_potential_metrics<br>    h3 = _find_h3(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 82, in _find_h3<br>    raise ValueError("More than one element found!")<br>ValueError: More than one element found!<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.france</td>
-      <td>❌</td>
-      <td>2022-11-25T07:02:19</td>
-      <td>0.88</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/france.py", line 110, in main<br>    France().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/france.py", line 30, in export<br>    check_known_columns(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 164, in check_known_columns<br>    raise Exception(f"Unknown column(s) found: {unknown_cols}")<br>Exception: Unknown column(s) found: {'n_cum_complet', 'n_2_rappel', 'n_3_rappel', 'n_cum_rappel_biv', 'n_cum_2_rappel', 'n_rappel_biv', 'n_cum_3_rappel', 'n_complet'}<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
@@ -212,6 +191,34 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2022-11-25T07:00:06</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.france</td>
+      <td>✅</td>
+      <td>2022-11-25T09:32:56</td>
+      <td>0.73</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.sweden</td>
+      <td>✅</td>
+      <td>2022-11-25T09:29:51</td>
+      <td>4.19</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2022-11-25T09:28:51</td>
+      <td>76.35</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2022-11-25T09:27:47</td>
+      <td>12.50</td>
       <td></td>
     </tr>
     <tr>
@@ -436,13 +443,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2022-11-25T07:00:23</td>
       <td>17.26</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>✅</td>
-      <td>2022-11-25T07:00:23</td>
-      <td>15.55</td>
       <td></td>
     </tr>
     <tr>
