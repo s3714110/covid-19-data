@@ -79,7 +79,7 @@ class Hungary(CountryVaxBase):
 
         date = extract_clean_date(
             soup.find("p").text,
-            regex="(202\d. .* \d+.) - .*",
+            regex=r"(202\d. .* \d+.) - .*",
             date_format="%Y. %B %d.",
             # loc="hu_HU.UTF-8",
             lang="hu",
@@ -138,10 +138,10 @@ class Hungary(CountryVaxBase):
             df = df.pipe(self.pipeline)
             df = df.pipe(self.pipe_drop_duplicates)
             self.export_datafile(df, attach=True)
-        # Add WHO
-        df = self.load_datafile()
-        df = add_latest_who_values(df, "Hungary", ["total_vaccinations"])
-        self.export_datafile(df)
+        # Add WHO (WHO reportings are not consistent with Hungarian's latest ones)
+        # df = self.load_datafile()
+        # df = add_latest_who_values(df, "Hungary", ["total_vaccinations"])
+        # self.export_datafile(df)
 
 
 def main():
