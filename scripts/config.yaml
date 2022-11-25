@@ -37,7 +37,7 @@ pipeline:
         - Antigua Barbuda # Moved to WHO
         - Moldova # Moved to WHO
         - Barbados # Moved to WHO
-        - Australia # Moved to WHO
+        # - Australia # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
