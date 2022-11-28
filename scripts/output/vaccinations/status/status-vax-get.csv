@@ -1,73 +1,6 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,17.17,True,2022-11-28T07:00:23,,
-cowidev.vax.batch.australia,40.52,False,2022-11-28T07:03:55,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 449, in _make_request
-    six.raise_from(e, None)
-  File ""<string>"", line 3, in raise_from
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 444, in _make_request
-    httplib_response = conn.getresponse()
-  File ""/usr/lib/python3.10/http/client.py"", line 1374, in getresponse
-    response.begin()
-  File ""/usr/lib/python3.10/http/client.py"", line 318, in begin
-    version, status, reason = self._read_status()
-  File ""/usr/lib/python3.10/http/client.py"", line 279, in _read_status
-    line = str(self.fp.readline(_MAXLINE + 1), ""iso-8859-1"")
-  File ""/usr/lib/python3.10/socket.py"", line 705, in readinto
-    return self._sock.recv_into(b)
-  File ""/usr/lib/python3.10/ssl.py"", line 1274, in recv_into
-    return self.read(nbytes, buffer)
-  File ""/usr/lib/python3.10/ssl.py"", line 1130, in read
-    return self._sslobj.read(len, buffer)
-TimeoutError: The read operation timed out
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 787, in urlopen
-    retries = retries.increment(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 550, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/packages/six.py"", line 770, in reraise
-    raise value
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 451, in _make_request
-    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 340, in _raise_timeout
-    raise ReadTimeoutError(
-urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='www.health.gov.au', port=443): Read timed out. (read timeout=20)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 227, in main
-    Australia().export_official()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 211, in export_official
-    df = self.pipeline_latest_from_official_source(self.read_latest_from_official_source())  # Use with attach=True
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 74, in read_latest_from_official_source
-    soup = get_soup(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 532, in send
-    raise ReadTimeout(e, request=request)
-requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='www.health.gov.au', port=443): Read timed out. (read timeout=20)
-","HTTPSConnectionPool(host='www.health.gov.au', port=443): Read timed out. (read timeout=20)"
+cowidev.vax.batch.australia,23.24,True,2022-11-28T10:37:07,,
 cowidev.vax.batch.austria,17.78,True,2022-11-28T07:00:23,,
 cowidev.vax.batch.belgium,2.63,True,2022-11-28T07:00:08,,
 cowidev.vax.batch.bolivia,5.32,True,2022-11-28T07:00:11,,
@@ -105,7 +38,7 @@ cowidev.vax.batch.slovakia,57.98,True,2022-11-28T07:01:04,,
 cowidev.vax.batch.slovenia,4.16,True,2022-11-28T07:00:10,,
 cowidev.vax.batch.south_korea,67.29,True,2022-11-28T07:01:14,,
 cowidev.vax.batch.spc,23.31,True,2022-11-28T07:00:30,,
-cowidev.vax.batch.sweden,18.63,True,2022-11-28T07:00:25,,
+cowidev.vax.batch.sweden,4.15,True,2022-11-28T10:40:23,,
 cowidev.vax.batch.switzerland,74.76,True,2022-11-28T07:01:22,,
 cowidev.vax.batch.trinidad_and_tobago,4.29,True,2022-11-28T07:00:12,,
 cowidev.vax.batch.ukraine,,,2022-11-28T07:00:08,,
@@ -128,23 +61,7 @@ cowidev.vax.incremental.croatia,0.85,True,2022-11-28T07:00:13,,
 cowidev.vax.incremental.cuba,25.63,True,2022-11-28T07:00:38,,
 cowidev.vax.incremental.curacao,1.0,True,2022-11-28T07:00:14,,
 cowidev.vax.incremental.cyprus,3.61,True,2022-11-28T07:00:17,,
-cowidev.vax.incremental.dominican_republic,22.59,False,2022-11-28T07:04:18,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.33,True,2022-11-28T10:21:33,,
 cowidev.vax.incremental.el_salvador,9.73,True,2022-11-28T07:00:26,,
 cowidev.vax.incremental.faeroe_islands,2.5,True,2022-11-28T07:00:19,,
 cowidev.vax.incremental.fiji,0.0,True,2022-11-28T07:00:19,,
@@ -174,21 +91,7 @@ cowidev.vax.incremental.myanmar,,,2022-11-28T07:00:25,,
 cowidev.vax.incremental.nepal,,,2022-11-28T07:00:25,,
 cowidev.vax.incremental.north_macedonia,,,2022-11-28T07:00:25,,
 cowidev.vax.incremental.northern_cyprus,1.1,True,2022-11-28T07:00:26,,
-cowidev.vax.incremental.paho,136.36,False,2022-11-28T07:06:34,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 185, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 57, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 109, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,87.84,True,2022-11-28T10:22:49,,
 cowidev.vax.incremental.pakistan,13.32,True,2022-11-28T07:00:38,,
 cowidev.vax.incremental.philippines,,,2022-11-28T07:00:25,,
 cowidev.vax.incremental.playground_mojmir,4.06,True,2022-11-28T07:00:29,,
