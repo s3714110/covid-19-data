@@ -53,7 +53,6 @@ class Australia(CountryVaxBase):
     columns_rename = {
         "dose_1": "people_vaccinated",
         "dose_2": "people_fully_vaccinated",
-        "dose_3": "total_boosters",
     }
     vaccine_timeline = {
         "Pfizer/BioNTech": "2021-01-01",
@@ -64,7 +63,7 @@ class Australia(CountryVaxBase):
 
     def read(self) -> pd.DataFrame:
         df = read_csv_from_url(self.source_url["main"])
-        check_known_columns(df, ["date", "dose_1", "dose_2", "dose_3"])
+        check_known_columns(df, ["date", "dose_1", "dose_2", "dose_3", "dose_4"])
         return df
 
     def read_latest_from_official_source(self) -> pd.DataFrame:
@@ -118,7 +117,10 @@ class Australia(CountryVaxBase):
         return df
 
     def pipe_total_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(total_vaccinations=df.dose_1 + df.dose_2 + df.dose_3)
+        return df.assign(total_vaccinations=df.dose_1 + df.dose_2 + df.dose_3 + df.dose_4)
+
+    def pipe_total_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df.assign(total_boosters=df.dose_3 + df.dose_4)
 
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.columns_rename)
@@ -128,10 +130,13 @@ class Australia(CountryVaxBase):
         return df
 
     def pipe_patch_data(self, df: pd.DataFrame) -> pd.DataFrame:
+        # total vaccinations
+        msk = (df["date"] < "2022-10-06") & (df["date"] > "2022-08-25")
+        df.loc[msk, "total_vaccinations"] = None
         # people vaccinated
         msk = (df["date"] < "2022-10-06") & (df["date"] > "2022-04-07")
         df.loc[msk, "people_vaccinated"] = None
-        # people fully vaccinated
+        # # people fully vaccinated
         msk = (df["date"] < "2022-10-06") & (df["date"] > "2022-06-17")
         df.loc[msk, "people_fully_vaccinated"] = None
         return df
@@ -145,6 +150,7 @@ class Australia(CountryVaxBase):
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
             df.pipe(self.pipe_total_vaccinations)
+            .pipe(self.pipe_total_boosters)
             .pipe(self.pipe_rename_columns)
             .pipe(self.pipe_date)
             .pipe(self.pipe_vaccine)
@@ -152,7 +158,18 @@ class Australia(CountryVaxBase):
             .pipe(self.pipe_patch_data)
             # .pipe(self.pipe_filter_dp, ["2022-10-06", "2022-10-13", "2022-10-20", "2022-10-27"])
             .pipe(self.make_monotonic)
-            .sort_values("date")
+            .sort_values("date")[
+                [
+                    "date",
+                    "location",
+                    "vaccine",
+                    "source_url",
+                    "total_vaccinations",
+                    "people_vaccinated",
+                    "people_fully_vaccinated",
+                    "total_boosters",
+                ]
+            ]
         )
 
     def pipe_age_groups(self, df):
@@ -203,7 +220,7 @@ class Australia(CountryVaxBase):
             df=df,
             df_age=df_age,
             meta_age={"source_name": "Ministry of Health via covidbaseau.com", "source_url": self.source_url_ref},
-            attach=True,
+            # attach=True,
         )
 
     def export_official(self):
@@ -224,7 +241,7 @@ class Australia(CountryVaxBase):
 
 
 def main():
-    Australia().export_official()
+    Australia().export()
 
 
 def _get_date(res):
