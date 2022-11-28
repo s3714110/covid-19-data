@@ -38,6 +38,8 @@ pipeline:
         - Moldova # Moved to WHO
         - Barbados # Moved to WHO
         # - Australia # Moved to WHO
+        - Mexico  # Moved to PAHO
+        - Ecuador  # Moved to PAHO
     process:
       skip_complete:
         - Pitcairn
