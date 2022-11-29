@@ -1,8 +1,9 @@
 from datetime import datetime
 
 import pandas as pd
+import requests
 
-from cowidev.utils.web import request_json, get_soup
+from cowidev.utils.web import get_soup
 from cowidev.utils.clean import clean_date_series
 from cowidev.vax.utils.checks import validate_vaccines
 from cowidev.vax.utils.base import CountryVaxBase
@@ -42,7 +43,7 @@ class Switzerland(CountryVaxBase):
         return elem.find(class_="btn").get("href")
 
     def _get_file_url(self) -> str:
-        response = request_json("https://www.covid19.admin.ch/api/data/context")
+        response = requests.get("https://www.covid19.admin.ch/api/data/context").json()
         context = response["sources"]["individual"]["csv"]
         doses_url = context["vaccDosesAdministered"]
         people_url = context["vaccPersonsV2"]

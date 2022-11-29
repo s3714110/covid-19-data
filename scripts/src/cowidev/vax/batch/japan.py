@@ -59,6 +59,7 @@ class Japan(CountryVaxBase):
         "ファイザー社\n(BA.1)": "Pfizer/BioNTech",
         "モデルナ社\n(BA.1)": "Moderna",
         "ファイザー社\n(BA.4-5)": "Pfizer/BioNTech",
+        "モデルナ社\n(BA.4-5)": "Moderna",
     }
 
     # To be removed

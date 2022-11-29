@@ -21,6 +21,7 @@ class Taiwan:
         "Moderna雙價 BA.4/5": "Moderna",
         "BioNTech": "Pfizer/BioNTech",
         "Novavax": "Novavax",
+        "Moderna 雙價 BA.4/5": "Novavax",
     }
 
     @property
