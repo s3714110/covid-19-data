@@ -11,72 +11,7 @@ cowidev.vax.batch.denmark,80.22,True,2022-11-29T10:26:11,,
 cowidev.vax.batch.ecdc,86.77,True,2022-11-29T10:26:18,,
 cowidev.vax.batch.ecuador,,,2022-11-29T10:24:51,,
 cowidev.vax.batch.estonia,0.76,True,2022-11-29T10:24:52,,
-cowidev.vax.batch.france,0.44,False,2022-11-29T10:27:23,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
-    conn = connection.create_connection(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 72, in create_connection
-    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
-  File ""/usr/lib/python3.10/socket.py"", line 955, in getaddrinfo
-    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
-socket.gaierror: [Errno -2] Name or service not known
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
-    self._validate_conn(conn)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
-    conn.connect()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
-    conn = self._new_conn()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 186, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fb2406d0a60>: Failed to establish a new connection: [Errno -2] Name or service not known
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
-    retries = retries.increment(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='static.data.gouv.fr', port=443): Max retries exceeded with url: /resources/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/20221128-190104/vacsi-v-fra-2022-11-28-19h01.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2406d0a60>: Failed to establish a new connection: [Errno -2] Name or service not known'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/france.py"", line 120, in main
-    France().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/france.py"", line 29, in export
-    df = read_csv_from_url(self.source_url, sep="";"")
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 57, in read_csv_from_url
-    download_file_from_url(
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 83, in download_file_from_url
-    r = requests.get(url, stream=True, timeout=timeout, verify=verify, headers=headers)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 667, in send
-    history = [resp for resp in gen]
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 667, in <listcomp>
-    history = [resp for resp in gen]
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 237, in resolve_redirects
-    resp = self.send(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 519, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='static.data.gouv.fr', port=443): Max retries exceeded with url: /resources/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/20221128-190104/vacsi-v-fra-2022-11-28-19h01.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2406d0a60>: Failed to establish a new connection: [Errno -2] Name or service not known'))
-","HTTPSConnectionPool(host='static.data.gouv.fr', port=443): Max retries exceeded with url: /resources/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/20221128-190104/vacsi-v-fra-2022-11-28-19h01.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fb2406d0a60>: Failed to establish a new connection: [Errno -2] Name or service not known'))"
+cowidev.vax.batch.france,0.57,True,2022-11-29T10:40:11,,
 cowidev.vax.batch.germany,5.36,True,2022-11-29T10:24:56,,
 cowidev.vax.batch.greece,9.35,True,2022-11-29T10:25:00,,
 cowidev.vax.batch.hong_kong,13.18,True,2022-11-29T10:25:04,,
@@ -84,25 +19,7 @@ cowidev.vax.batch.indonesia,,,2022-11-29T10:24:52,,
 cowidev.vax.batch.ireland,6.14,True,2022-11-29T10:24:58,,
 cowidev.vax.batch.israel,12.2,True,2022-11-29T10:25:04,,
 cowidev.vax.batch.italy,25.3,True,2022-11-29T10:25:22,,
-cowidev.vax.batch.japan,16.54,False,2022-11-29T10:27:40,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 369, in main
-    Japan().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 353, in export
-    df = self.read().pipe(self.pipeline_base)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 70, in read
-    df_latest = self.read_latest().pipe(self.pipe_read_latest)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 286, in pipe_read_latest
-    validate_vaccines(df, self.vaccine_mapping)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py"", line 261, in validate_vaccines
-    raise ValueError(f""Missing vaccines: {vaccines_wrong}"")
-ValueError: Missing vaccines: {'モデルナ社\n(BA.4-5)'}
-",Missing vaccines: {'モデルナ社\n(BA.4-5)'}
+cowidev.vax.batch.japan,8.3,True,2022-11-29T10:41:46,,
 cowidev.vax.batch.jersey,2.59,True,2022-11-29T10:25:01,,
 cowidev.vax.batch.latvia,63.0,True,2022-11-29T10:26:02,,
 cowidev.vax.batch.lithuania,3.13,True,2022-11-29T10:25:04,,
@@ -122,27 +39,7 @@ cowidev.vax.batch.slovenia,1.42,True,2022-11-29T10:25:09,,
 cowidev.vax.batch.south_korea,68.38,True,2022-11-29T10:26:16,,
 cowidev.vax.batch.spc,38.14,True,2022-11-29T10:25:47,,
 cowidev.vax.batch.sweden,22.14,True,2022-11-29T10:25:31,,
-cowidev.vax.batch.switzerland,0.26,False,2022-11-29T10:27:40,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/switzerland.py"", line 269, in main
-    Switzerland().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/switzerland.py"", line 241, in export
-    df, df_manuf, df_age = self.read()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/switzerland.py"", line 27, in read
-    doses_url, people_url, manufacturer_url = self._get_file_url()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/switzerland.py"", line 45, in _get_file_url
-    response = request_json(""https://www.covid19.admin.ch/api/data/context"")
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 107, in request_json
-    return json.loads(text)
-  File ""/usr/lib/python3.10/json/__init__.py"", line 346, in loads
-    return _default_decoder.decode(s)
-  File ""/usr/lib/python3.10/json/decoder.py"", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File ""/usr/lib/python3.10/json/decoder.py"", line 355, in raw_decode
-    raise JSONDecodeError(""Expecting value"", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-",Expecting value: line 1 column 1 (char 0)
+cowidev.vax.batch.switzerland,38.06,True,2022-11-29T10:58:57,,
 cowidev.vax.batch.trinidad_and_tobago,3.9,True,2022-11-29T10:25:14,,
 cowidev.vax.batch.ukraine,,,2022-11-29T10:25:14,,
 cowidev.vax.batch.united_kingdom,17.09,True,2022-11-29T10:25:31,,
@@ -197,32 +94,6 @@ cowidev.vax.incremental.northern_cyprus,3.59,True,2022-11-29T10:26:11,,
 cowidev.vax.incremental.paho,75.43,True,2022-11-29T10:27:23,,
 cowidev.vax.incremental.pakistan,3.64,True,2022-11-29T10:26:11,,
 cowidev.vax.incremental.philippines,,,2022-11-29T10:26:08,,
-cowidev.vax.incremental.playground_mojmir,0.0,False,2022-11-29T10:27:40,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/common/service.py"", line 72, in start
-    self.process = subprocess.Popen(cmd, env=self.env,
-  File ""/usr/lib/python3.10/subprocess.py"", line 969, in __init__
-    self._execute_child(args, executable, preexec_fn, close_fds,
-  File ""/usr/lib/python3.10/subprocess.py"", line 1845, in _execute_child
-    raise child_exception_type(errno_num, err_msg, err_filename)
-FileNotFoundError: [Errno 2] No such file or directory: '/snap/bin/chromium.chromedriver'
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/playground_mojmir.py"", line 85, in main
-    data = read(source)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/playground_mojmir.py"", line 38, in read
-    driver = webdriver.Chrome('/snap/bin/chromium.chromedriver', options=options)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/chrome/webdriver.py"", line 73, in __init__
-    self.service.start()
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/selenium/webdriver/common/service.py"", line 81, in start
-    raise WebDriverException(
-selenium.common.exceptions.WebDriverException: Message: 'chromium.chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
-
-","Message: 'chromium.chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
-"
 cowidev.vax.incremental.poland,1.02,True,2022-11-29T10:26:10,,
 cowidev.vax.incremental.qatar,,,2022-11-29T10:26:09,,
 cowidev.vax.incremental.russia,8.75,True,2022-11-29T10:26:18,,
@@ -232,21 +103,7 @@ cowidev.vax.incremental.south_africa,9.72,True,2022-11-29T10:26:20,,
 cowidev.vax.incremental.spain,9.66,True,2022-11-29T10:26:20,,
 cowidev.vax.incremental.sri_lanka,,,2022-11-29T10:26:11,,
 cowidev.vax.incremental.suriname,12.15,True,2022-11-29T10:26:23,,
-cowidev.vax.incremental.taiwan,12.9,False,2022-11-29T10:27:53,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 165, in main
-    Taiwan().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 151, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 35, in read
-    data = self.parse_data(df, soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 108, in parse_data
-    ""vaccine"": self._parse_vaccines(df),
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 131, in _parse_vaccines
-    raise ValueError(f""Invalid vaccines: {vaccines_wrong}"")
-ValueError: Invalid vaccines: {'Moderna 雙價 BA.4/5'}
-",Invalid vaccines: {'Moderna 雙價 BA.4/5'}
+cowidev.vax.incremental.taiwan,6.01,True,2022-11-29T10:48:50,,
 cowidev.vax.incremental.thailand,5.02,True,2022-11-29T10:26:16,,
 cowidev.vax.incremental.turkey,40.49,False,2022-11-29T10:28:33,"Traceback (most recent call last):
   File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
