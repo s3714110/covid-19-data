@@ -98,6 +98,7 @@ class UnitedStates(CountryVaxBase):
             "Pfizer/BioNTech": "2020-12-01",
             "Moderna": "2020-12-23",
             "Johnson&Johnson": "2021-03-05",
+            "Novavax": "2022-10-20",
         }
         return build_vaccine_timeline(df, schedule)
 
