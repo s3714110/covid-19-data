@@ -54,7 +54,7 @@ class CountryVaxBase:
     location: str = None
 
     def __init__(self):
-        if self.location == None:
+        if self.location is None:
             raise NotImplementedError("Please define class attribute `location`")
 
     def from_ice(self):
@@ -236,7 +236,7 @@ class CountryVaxBase:
             df = df.reset_index(drop=True)
         df.to_csv(filename, index=False, **kwargs)
         if force_monotonic:
-            df = self.force_monotonic()
+            self.force_monotonic(filename)
 
     def _export_datafile_age(self, df, metadata, filename, attach):
         """Export age data."""
@@ -294,9 +294,12 @@ class CountryVaxBase:
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(columns=self.rename_columns)
 
-    def force_monotonic(self, **kwargs):
-        df = pd.read_csv(self.output_path).pipe(self.make_monotonic, **kwargs)
-        self.export_datafile(df)
+    def force_monotonic(self, filename: str = None, **kwargs):
+        if filename is None:
+            filename = self.output_path
+        df = pd.read_csv(filename)
+        df = df.pipe(self.make_monotonic, **kwargs)
+        self.export_datafile(df, filename=filename.replace(".csv", ""))
 
     def pipe_age_per_capita(self, df: pd.DataFrame) -> pd.DataFrame:
         # Build population df by age group
