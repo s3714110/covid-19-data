@@ -168,31 +168,46 @@ def _increment(
     people_fully_vaccinated=None,
     total_boosters=None,
 ):
-    prev = pd.read_csv(filepath)
-    if total_vaccinations <= prev["total_vaccinations"].max() or date < prev["date"].max():
-        df = prev.copy()
-    elif date == prev["date"].max():
-        df = prev.copy()
-        df.loc[df["date"] == date, "total_vaccinations"] = total_vaccinations
-        df.loc[df["date"] == date, "people_vaccinated"] = people_vaccinated
-        if people_partly_vaccinated is not None:
-            df.loc[df["date"] == date, "people_partly_vaccinated"] = people_partly_vaccinated
-        df.loc[df["date"] == date, "people_fully_vaccinated"] = people_fully_vaccinated
-        df.loc[df["date"] == date, "total_boosters"] = total_boosters
-        df.loc[df["date"] == date, "source_url"] = source_url
-    else:
-        new = _build_df(
-            location,
-            total_vaccinations,
-            date,
-            vaccine,
-            source_url,
-            people_vaccinated,
-            people_partly_vaccinated,
-            people_fully_vaccinated,
-            total_boosters,
+    df_current = pd.read_csv(filepath).sort_values("date")
+    last_datapoint = df_current.iloc[-1]
+    # New date equals last reported date, remove last row in df_current
+    if date < last_datapoint["date"]:
+        print(
+            f"New date is older than last reported date. Please check. {date} < {last_datapoint['date']} for"
+            f" {location}"
         )
-        df = pd.concat([prev, new])
+        return df_current
+    elif date == last_datapoint["date"]:
+        df_current = df_current[df_current["date"] != date]
+        last_datapoint = df_current.iloc[-1]
+
+    if total_vaccinations <= last_datapoint["total_vaccinations"]:
+        total_vaccinations = pd.NA
+    if people_vaccinated <= last_datapoint["people_vaccinated"]:
+        people_vaccinated = pd.NA
+    if people_fully_vaccinated <= last_datapoint["people_fully_vaccinated"]:
+        people_fully_vaccinated = pd.NA
+    if total_boosters <= last_datapoint["total_boosters"]:
+        total_boosters = pd.NA
+
+    if people_partly_vaccinated is not None:
+        if people_partly_vaccinated <= last_datapoint["people_partly_vaccinated"]:
+            people_partly_vaccinated = pd.NA
+    new = _build_df(
+        location,
+        total_vaccinations,
+        date,
+        vaccine,
+        source_url,
+        people_vaccinated,
+        people_partly_vaccinated,
+        people_fully_vaccinated,
+        total_boosters,
+    )
+    df = pd.concat([df_current, new])
+    cols_metrics = [col for col in df.columns if col not in ["source_url", "date", "vaccine", "location"]]
+    df = df.dropna(how="all", subset=cols_metrics)
+    df = df.drop_duplicates(keep="last")
     return df.sort_values("date")
 
 
