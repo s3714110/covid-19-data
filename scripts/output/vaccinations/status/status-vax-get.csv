@@ -33,33 +33,31 @@ cowidev.vax.batch.peru,5.07,True,2022-12-01T07:00:11,,
 cowidev.vax.batch.portugal,,,2022-12-01T07:00:06,,
 cowidev.vax.batch.romania,59.88,True,2022-12-01T07:01:05,,
 cowidev.vax.batch.saudi_arabia,7.29,True,2022-12-01T07:00:13,,
-cowidev.vax.batch.singapore,0.95,False,2022-12-01T07:03:49,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.singapore,1.12,False,2022-12-01T11:48:59,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 135, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 137, in main
     Singapore().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 130, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 34, in read
-    df_primary = pd.read_csv(os.path.join(tf, ""primary-series-vaccination-take-up-by-population.csv""))
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 51, in __init__
-    self._open_handles(src, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 222, in _open_handles
-    self.handles = get_handle(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 702, in get_handle
-    handle = open(
-FileNotFoundError: [Errno 2] No such file or directory: '/tmp/tmpywbxx51h/primary-series-vaccination-take-up-by-population.csv'
-",[Errno 2] No such file or directory: '/tmp/tmpywbxx51h/primary-series-vaccination-take-up-by-population.csv'
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/singapore.py"", line 133, in export
+    self.export_datafile(df, attach=True, force_monotonic=True)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 202, in export_datafile
+    self._export_datafile_main(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 239, in _export_datafile_main
+    df = self.force_monotonic()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 298, in force_monotonic
+    df = pd.read_csv(self.output_path).pipe(self.make_monotonic, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
+    return mkm(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
+    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
+    raise Exception(
+Exception: 1 chunks of lengths 157 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-10-24']
+",1 chunks of lengths 157 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2022-10-24']
 cowidev.vax.batch.slovakia,118.58,True,2022-12-01T07:02:04,,
 cowidev.vax.batch.slovenia,2.94,True,2022-12-01T07:00:09,,
 cowidev.vax.batch.south_korea,125.0,True,2022-12-01T07:02:12,,
@@ -117,8 +115,20 @@ cowidev.vax.incremental.myanmar,,,2022-12-01T07:00:24,,
 cowidev.vax.incremental.nepal,,,2022-12-01T07:00:24,,
 cowidev.vax.incremental.north_macedonia,,,2022-12-01T07:00:24,,
 cowidev.vax.incremental.northern_cyprus,8.46,True,2022-12-01T07:00:32,,
-cowidev.vax.incremental.paho,75.54,True,2022-12-01T11:22:39,,
-cowidev.vax.incremental.pakistan,7.03,True,2022-12-01T07:00:31,,
+cowidev.vax.incremental.paho,0.57,True,2022-12-01T12:44:32,,
+cowidev.vax.incremental.pakistan,2.85,False,2022-12-01T11:56:52,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+    module.main()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/pakistan.py"", line 58, in main
+    Pakistan().export()
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/pakistan.py"", line 54, in export
+    self.export_datafile(df=data, attach=True, filename=""Pakistano"")
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 202, in export_datafile
+    self._export_datafile_main(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 232, in _export_datafile_main
+    raise TypeError(f""df must be a pandas DataFrame!. Isntead {type(df).__name__} was detected."")
+TypeError: df must be a pandas DataFrame!. Isntead Series was detected.
+",df must be a pandas DataFrame!. Isntead Series was detected.
 cowidev.vax.incremental.philippines,,,2022-12-01T07:00:24,,
 cowidev.vax.incremental.poland,1.4,True,2022-12-01T07:00:26,,
 cowidev.vax.incremental.qatar,,,2022-12-01T07:00:25,,
