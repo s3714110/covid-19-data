@@ -31,7 +31,7 @@ class Singapore(CountryVaxBase):
             z = zipfile.ZipFile(io.BytesIO(r.content))
             z.extractall(tf)
 
-            df_primary = pd.read_csv(os.path.join(tf, "primary-series-vaccination-take-up-by-population.csv"))
+            df_primary = pd.read_csv(os.path.join(tf, "progress-of-covid-19-vaccination.csv"))
             check_known_columns(
                 df_primary,
                 [
@@ -40,6 +40,8 @@ class Singapore(CountryVaxBase):
                     "full_regimen",
                     "received_one_dose_pcttakeup",
                     "full_regimen_pcttakeup",
+                    "minimum_protection_pcttakeup",
+                    "minimum_protection",
                 ],
             )
 
@@ -128,7 +130,7 @@ class Singapore(CountryVaxBase):
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df, attach=True, force_monotonic=True)
+        self.export_datafile(df, attach=True)
 
 
 def main():
