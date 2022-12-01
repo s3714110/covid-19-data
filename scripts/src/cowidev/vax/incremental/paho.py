@@ -37,6 +37,13 @@ class PAHO:
         df = self._parse_data(url)
         return df
 
+    def read_debug(self):
+        """Used in debugging"""
+        filename = "/path/to/local/data.csv"
+        df = pd.read_csv(filename, sep="\t", encoding=get_file_encoding(filename), thousands=",")
+        df = df.assign(date="2022-11-18")
+        return df
+
     def _parse_iframe_link(self):
         html = get_soup(self.source_url)
         url = html.find("iframe").get("src")
@@ -86,12 +93,12 @@ class PAHO:
         # fix
         driver.find_element_by_id("tableauTabbedNavigation_tab_0").click()
         time.sleep(5)
-        driver.find_element_by_id("tabZoneId77").click()  #87
+        driver.find_element_by_id("tabZoneId77").click()  # 87
         time.sleep(1)
         #
         driver.find_element_by_id("download-ToolbarButton").click()
         time.sleep(2)
-        driver.find_element_by_xpath(f"//button[contains(text(),'Data')]").click()
+        driver.find_element_by_xpath("//button[contains(text(),'Data')]").click()
         time.sleep(4)
         window_after = driver.window_handles[1]
         driver.switch_to.window(window_after)
@@ -109,7 +116,7 @@ class PAHO:
         return max(files, key=os.path.getctime)
 
     def pipe_check_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        df.columns = df.columns.str.replace(" \[\d.*", "", regex=True)
+        df.columns = df.columns.str.replace(r" \[\d.*", "", regex=True)
         columns_missing = set(self.columns_mapping).difference(df.columns)
         if columns_missing:
             raise ValueError(f"Missing column fields: {columns_missing}. Present columns are: {df.columns}")
@@ -178,8 +185,6 @@ class PAHO:
                 vaccine=row["vaccine"],
                 source_url=row["source_url"],
             )
-            country = row["location"]
-            # logger.info(f"\tVAX - vax.incremental.paho.{country}: SUCCESS ✅")
 
     def export(self):
         df = self.read().pipe(self.pipeline)
@@ -190,5 +195,5 @@ def main():
     PAHO().export()
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
