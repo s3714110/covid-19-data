@@ -1,3 +1,5 @@
+import re
+
 import pandas as pd
 
 from cowidev.utils.clean import extract_clean_date
@@ -17,19 +19,31 @@ class Guernsey:
         return df
 
     def parse_data(self, soup):
-        # Get table
+        print(soup)
+        # Date
+        data = {
+            "date": extract_clean_date(
+                soup.find("div", class_="ace-notice-paragraph").text, self._regex_date, "%d %B %Y"
+            ),
+        }
+        # Get tables
         tables = soup.find_all("table")
+        # Table 1
         ds = pd.read_html(str(tables[0]))[0].squeeze()
+        data["total_vaccinations"] = ds.loc[ds[0] == "Total number of doses delivered", 1].values[0]
+        # Table 2
+        totals = pd.read_html(str(tables[1]), header=0)[0].iloc[-1]
+        data["people_vaccinated"] = int(totals["First dose"])
+        data["people_fully_vaccinated"] = int(totals["Second dose"])
+        data["total_boosters"] = (
+            int(totals["Third dose*"])
+            + int(totals["First booster"])
+            + int(re.sub(r"[\*,]*", "", totals["Second booster**"]))
+            + int(re.sub(r"[\*,]*", "", totals["Third booster**"]))
+        )
         # print(ds.loc[ds[0] == "Total doses", 1].values[0])
         # Rename, add/remove columns
-        return pd.Series(
-            {
-                "date": extract_clean_date(
-                    text=str(soup.text), regex=self._regex_date, date_format="%d %B %Y", lang="en"
-                ),
-                "total_vaccinations": ds.loc[ds[0] == "Total number of doses delivered", 1].values[0],
-            }
-        )
+        return pd.Series(data)
 
     def pipe_location(self, ds: pd.Series) -> pd.Series:
         return enrich_data(ds, "location", self.location)
@@ -49,6 +63,9 @@ class Guernsey:
         increment(
             location=data["location"],
             total_vaccinations=data["total_vaccinations"],
+            people_vaccinated=data["people_vaccinated"],
+            people_fully_vaccinated=data["people_fully_vaccinated"],
+            total_boosters=data["total_boosters"],
             date=data["date"],
             source_url=data["source_url"],
             vaccine=data["vaccine"],
