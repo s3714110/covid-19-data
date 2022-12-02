@@ -124,13 +124,20 @@ class Singapore(CountryVaxBase):
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_metadata)
             # .pipe(self.pipe_filter_dp)
-            .pipe(self.pipe_filter_timeseries)
+            # .pipe(self.pipe_filter_timeseries)
             .pipe(make_monotonic, max_removed_rows=20)
         )
 
     def export(self):
         df = self.read().pipe(self.pipeline)
-        self.export_datafile(df, attach=True)
+        # merge
+        df_current = self.load_datafile()
+        df = df.merge(df_current, on=["location", "date"], how="outer", suffixes=("", "_old"))
+        df = df.assign(
+            total_vaccinations=df.total_vaccinations_old,
+            total_boosters=df.total_boosters,
+        )
+        self.export_datafile(df, valid_cols_only=True)
 
 
 def main():
