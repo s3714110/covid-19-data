@@ -389,7 +389,7 @@ def merge_with_current_data(df: pd.DataFrame, filepath: str) -> pd.DataFrame:
             df = df.to_frame().T
         elif not isinstance(df, pd.DataFrame):
             raise TypeError(f"`df` must be a pandas DataFrame!. Instead {type(df).__name__} was detected.")
-        # Merge
+        # remove dates un current that are also present in df (they will be replaced)
         df_current = df_current[~df_current.date.isin(df.date)]
         df = pd.concat([df, df_current]).sort_values(by="date")
     return df
