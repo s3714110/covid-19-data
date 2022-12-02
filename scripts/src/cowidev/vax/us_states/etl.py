@@ -43,11 +43,16 @@ class USStatesETL:
                 "Administered_Dose2",
             ],
             "total_boosters": ["additional_doses"],
+            "total_boosters_2": ["Second_Booster"],
+            "total_boosters_biv": ["Bivalent_Booster"],
+            "single_shots": ["Series_Complete_Janssen"],
         }
         # Mapping
         for k, v in variable_matching.items():
             for cdc_variable in v:
                 if cdc_variable in df.columns:
+                    # if k == "total_boosters":
+                    #     print(k, cdc_variable, filepath)
                     df = df.rename(columns={cdc_variable: k})
                     break
             if k not in df.columns:
@@ -59,6 +64,7 @@ class USStatesETL:
     def transform(self, df: pd.DataFrame):
         return (
             df.pipe(pipe_rename_cols)
+            .pipe(pipe_total_boosters)
             .pipe(pipe_monotonic_by_state)
             .pipe(pipe_per_capita)
             .pipe(pipe_smoothed)
@@ -77,6 +83,24 @@ class USStatesETL:
         data = self.extract()
         df = self.transform(data)
         self.load(df, output_path)
+
+
+def pipe_total_boosters(df: pd.DataFrame):
+    dfg = df.groupby("location")
+    dfs = []
+    for df_ in dfg:
+        df_ = df_[1].sort_values("date")
+        df_ = df_.assign(
+            total_boosters=df_["total_vaccinations"]
+            - df_["people_vaccinated"]
+            - df_["people_fully_vaccinated"]
+            + df_["single_shots"].ffill()
+        )
+        dfs.append(df_)
+    df = pd.concat(dfs, ignore_index=True)
+    df.loc[df.date < "2021-08-27", "total_boosters"] = pd.NA
+    df.loc[df.total_boosters < 0, "total_boosters"] = pd.NA
+    return df
 
 
 def pipe_rename_cols(df):
