@@ -62,7 +62,6 @@ class Greenland:
 
     def export(self):
         data = self.read().pipe(self.pipeline)
-        print(data)
         increment(
             location=data["location"],
             total_vaccinations=data["total_vaccinations"],
