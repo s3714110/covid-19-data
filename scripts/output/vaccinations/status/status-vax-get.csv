@@ -33,7 +33,7 @@ cowidev.vax.batch.peru,4.98,True,2022-12-02T07:00:10,,
 cowidev.vax.batch.portugal,,,2022-12-02T07:00:05,,
 cowidev.vax.batch.romania,56.52,True,2022-12-02T07:01:02,,
 cowidev.vax.batch.saudi_arabia,7.31,True,2022-12-02T07:00:13,,
-cowidev.vax.batch.singapore,4.44,True,2022-12-02T07:00:10,,
+cowidev.vax.batch.singapore,0.84,True,2022-12-02T11:19:51,,
 cowidev.vax.batch.slovakia,114.88,True,2022-12-02T07:02:00,,
 cowidev.vax.batch.slovenia,3.19,True,2022-12-02T07:00:09,,
 cowidev.vax.batch.south_korea,125.57,True,2022-12-02T07:02:11,,
@@ -43,34 +43,12 @@ cowidev.vax.batch.switzerland,124.85,True,2022-12-02T07:02:14,,
 cowidev.vax.batch.trinidad_and_tobago,4.63,True,2022-12-02T07:00:14,,
 cowidev.vax.batch.ukraine,,,2022-12-02T07:00:10,,
 cowidev.vax.batch.united_kingdom,15.42,True,2022-12-02T07:00:25,,
-cowidev.vax.batch.united_states,10.9,False,2022-12-02T07:03:57,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 181, in main
-    UnitedStates().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 166, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 26, in read
-    check_known_columns(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Bivalent_Booster_7_Day_Rolling_Average', 'Bivalent_Booster_Cumulative', 'Bivalent_Booster_Pop_Pct', 'Bivalent_Booster_Daily'}
-","Unknown column(s) found: {'Bivalent_Booster_7_Day_Rolling_Average', 'Bivalent_Booster_Cumulative', 'Bivalent_Booster_Pop_Pct', 'Bivalent_Booster_Daily'}"
+cowidev.vax.batch.united_states,7.2,True,2022-12-02T10:44:53,,
 cowidev.vax.batch.uruguay,4.48,True,2022-12-02T07:00:14,,
 cowidev.vax.batch.zimbabwe,1.01,True,2022-12-02T07:00:11,,
 cowidev.vax.incremental.africacdc,,,2022-12-02T07:00:10,,
 cowidev.vax.incremental.antigua_barbuda,,,2022-12-02T07:00:10,,
-cowidev.vax.incremental.aruba,1.34,False,2022-12-02T07:03:58,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/aruba.py"", line 51, in main
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
+cowidev.vax.incremental.aruba,1.11,True,2022-12-02T10:26:57,,
 cowidev.vax.incremental.azerbaijan,,,2022-12-02T07:00:10,,
 cowidev.vax.incremental.bahrain,6.8,True,2022-12-02T07:00:17,,
 cowidev.vax.incremental.bangladesh,35.35,True,2022-12-02T07:00:46,,
@@ -79,82 +57,20 @@ cowidev.vax.incremental.brazil,0.45,True,2022-12-02T07:00:11,,
 cowidev.vax.incremental.bulgaria,10.39,True,2022-12-02T07:00:21,,
 cowidev.vax.incremental.china,39.38,True,2022-12-02T07:00:50,,
 cowidev.vax.incremental.costa_rica,,,2022-12-02T07:00:13,,
-cowidev.vax.incremental.croatia,0.38,False,2022-12-02T07:03:59,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/croatia.py"", line 47, in main
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
+cowidev.vax.incremental.croatia,0.24,True,2022-12-02T10:27:16,,
 cowidev.vax.incremental.cuba,16.56,True,2022-12-02T07:00:29,,
 cowidev.vax.incremental.curacao,0.83,True,2022-12-02T07:00:15,,
 cowidev.vax.incremental.cyprus,3.5,True,2022-12-02T07:00:17,,
-cowidev.vax.incremental.dominican_republic,22.62,False,2022-12-02T07:04:21,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.67,True,2022-12-02T10:27:52,,
 cowidev.vax.incremental.el_salvador,13.64,True,2022-12-02T07:00:28,,
 cowidev.vax.incremental.faeroe_islands,1.86,True,2022-12-02T07:00:17,,
 cowidev.vax.incremental.fiji,0.0,True,2022-12-02T07:00:16,,
 cowidev.vax.incremental.finland,0.85,True,2022-12-02T07:00:17,,
 cowidev.vax.incremental.gabon,,,2022-12-02T07:00:17,,
-cowidev.vax.incremental.georgia,0.54,False,2022-12-02T07:04:22,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/georgia.py"", line 62, in main
-    Georgia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/georgia.py"", line 50, in export
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
-cowidev.vax.incremental.greenland,0.62,False,2022-12-02T07:04:22,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 78, in main
-    Greenland().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py"", line 66, in export
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
+cowidev.vax.incremental.georgia,0.51,True,2022-12-02T10:27:55,,
+cowidev.vax.incremental.greenland,0.47,True,2022-12-02T10:28:14,,
 cowidev.vax.incremental.guatemala,,,2022-12-02T07:00:17,,
-cowidev.vax.incremental.guernsey,0.28,False,2022-12-02T07:04:23,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 59, in main
-    Guernsey().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 49, in export
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 186, in _increment
-    if people_vaccinated <= last_datapoint[""people_vaccinated""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
+cowidev.vax.incremental.guernsey,0.28,True,2022-12-02T10:28:14,,
 cowidev.vax.incremental.hungary,6.57,True,2022-12-02T07:00:24,,
 cowidev.vax.incremental.iceland,4.03,True,2022-12-02T07:00:21,,
 cowidev.vax.incremental.india,3.0,True,2022-12-02T07:00:20,,
@@ -163,49 +79,8 @@ cowidev.vax.incremental.isle_of_man,2.13,True,2022-12-02T07:00:20,,
 cowidev.vax.incremental.jamaica,11.32,True,2022-12-02T07:00:29,,
 cowidev.vax.incremental.kazakhstan,9.09,True,2022-12-02T07:00:29,,
 cowidev.vax.incremental.kosovo,7.38,True,2022-12-02T07:00:28,,
-cowidev.vax.incremental.kyrgyzstan,1.88,False,2022-12-02T07:04:25,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py"", line 61, in main
-    Kyrgyzstan().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kyrgyzstan.py"", line 49, in export
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-TypeError: '>=' not supported between instances of 'float' and 'NoneType'
-",'>=' not supported between instances of 'float' and 'NoneType'
-cowidev.vax.incremental.laos,3.63,False,2022-12-02T07:04:28,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3361, in get_loc
-    return self._engine.get_loc(casted_key)
-  File ""pandas/_libs/index.pyx"", line 76, in pandas._libs.index.IndexEngine.get_loc
-  File ""pandas/_libs/index.pyx"", line 108, in pandas._libs.index.IndexEngine.get_loc
-  File ""pandas/_libs/hashtable_class_helper.pxi"", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File ""pandas/_libs/hashtable_class_helper.pxi"", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'total_boosters'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py"", line 101, in main
-    Laos().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py"", line 89, in export
-    increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 47, in increment
-    df = _increment(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/incremental.py"", line 190, in _increment
-    if total_boosters <= last_datapoint[""total_boosters""]:
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 942, in __getitem__
-    return self._get_value(key)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 1051, in _get_value
-    loc = self.index.get_loc(label)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3363, in get_loc
-    raise KeyError(key) from err
-KeyError: 'total_boosters'
-",'total_boosters'
+cowidev.vax.incremental.kyrgyzstan,1.31,True,2022-12-02T10:28:15,,
+cowidev.vax.incremental.laos,2.02,True,2022-12-02T10:29:58,,
 cowidev.vax.incremental.macao,10.96,True,2022-12-02T07:00:32,,
 cowidev.vax.incremental.moldova,,,2022-12-02T07:00:24,,
 cowidev.vax.incremental.monaco,125.43,True,2022-12-02T07:02:29,,
@@ -216,21 +91,7 @@ cowidev.vax.incremental.myanmar,,,2022-12-02T07:00:25,,
 cowidev.vax.incremental.nepal,,,2022-12-02T07:00:25,,
 cowidev.vax.incremental.north_macedonia,,,2022-12-02T07:00:25,,
 cowidev.vax.incremental.northern_cyprus,5.04,True,2022-12-02T07:00:30,,
-cowidev.vax.incremental.paho,136.46,False,2022-12-02T07:06:45,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,75.6,True,2022-12-02T10:29:36,,
 cowidev.vax.incremental.pakistan,4.57,True,2022-12-02T07:00:31,,
 cowidev.vax.incremental.philippines,,,2022-12-02T07:00:28,,
 cowidev.vax.incremental.poland,1.31,True,2022-12-02T07:00:29,,
