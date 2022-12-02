@@ -93,7 +93,10 @@ class UnitedStates(CountryVaxBase):
             .sort_values("date")
         )
         df = df[df.total_vaccinations > 0].drop_duplicates(subset=["date"], keep=False)
-        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2 + df.total_boosters_biv)
+
+        # Boosters
+        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2)  # + df.total_boosters_biv)
+        df.loc[df.date > "2022-09-01", "total_boosters"] = pd.NA
         return df
 
     def pipe_add_source(self, df: pd.DataFrame) -> pd.DataFrame:
