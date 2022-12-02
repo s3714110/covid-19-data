@@ -183,11 +183,11 @@ def _increment(
 
     if total_vaccinations <= last_datapoint["total_vaccinations"]:
         total_vaccinations = pd.NA
-    if people_vaccinated <= last_datapoint["people_vaccinated"]:
+    if people_vaccinated and (people_vaccinated <= last_datapoint["people_vaccinated"]):
         people_vaccinated = pd.NA
-    if people_fully_vaccinated <= last_datapoint["people_fully_vaccinated"]:
+    if people_fully_vaccinated and (people_fully_vaccinated <= last_datapoint["people_fully_vaccinated"]):
         people_fully_vaccinated = pd.NA
-    if total_boosters <= last_datapoint["total_boosters"]:
+    if total_boosters and (total_boosters <= last_datapoint["total_boosters"]):
         total_boosters = pd.NA
 
     if people_partly_vaccinated is not None:
