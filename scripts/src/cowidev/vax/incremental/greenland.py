@@ -1,10 +1,9 @@
-from datetime import datetime
 import re
 
 import pandas as pd
 
 from cowidev.utils import clean_count, get_soup
-from cowidev.utils.clean.dates import localdate, extract_clean_date
+from cowidev.utils.clean.dates import extract_clean_date
 from cowidev.vax.utils.incremental import enrich_data, increment
 
 
