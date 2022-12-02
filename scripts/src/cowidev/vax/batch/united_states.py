@@ -51,6 +51,10 @@ class UnitedStates(CountryVaxBase):
                 "Second_Booster_50Plus_Vax_Pct",
                 "Second_Booster_50Plus_7_Day_Rolling_Average",
                 "Second_Booster_50Plus_Cumulative",
+                "Bivalent_Booster_Daily",
+                "Bivalent_Booster_Pop_Pct",
+                "Bivalent_Booster_7_Day_Rolling_Average",
+                "Bivalent_Booster_Cumulative",
             ],
         )
         return df[
@@ -63,6 +67,7 @@ class UnitedStates(CountryVaxBase):
                 "Series_Complete_Cumulative",
                 "Booster_Cumulative",
                 "Second_Booster_50Plus_Cumulative",
+                "Bivalent_Booster_Cumulative",
             ]
         ]
 
@@ -82,12 +87,13 @@ class UnitedStates(CountryVaxBase):
                     "Series_Complete_Cumulative": "people_fully_vaccinated",
                     "Booster_Cumulative": "total_boosters",
                     "Second_Booster_50Plus_Cumulative": "total_boosters_2",
+                    "Bivalent_Booster_Cumulative": "total_boosters_biv",
                 }
             )
             .sort_values("date")
         )
         df = df[df.total_vaccinations > 0].drop_duplicates(subset=["date"], keep=False)
-        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2)
+        df = df.assign(total_boosters=df.total_boosters + df.total_boosters_2 + df.total_boosters_biv)
         return df
 
     def pipe_add_source(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -117,6 +123,7 @@ class UnitedStates(CountryVaxBase):
             "Administered_Pfizer",
             "Administered_Moderna",
             "Administered_Janssen",
+            "Administered_Novavax",
         ]
         dfs = []
         for file in glob(os.path.join(PATHS.INTERNAL_INPUT_CDC_VAX_DIR, "cdc_data_*.csv")):
@@ -144,6 +151,7 @@ class UnitedStates(CountryVaxBase):
                     "Administered_Pfizer": "Pfizer/BioNTech",
                     "Administered_Moderna": "Moderna",
                     "Administered_Janssen": "Johnson&Johnson",
+                    "Administered_Novavax": "Novavax",
                 }
             )
         )
