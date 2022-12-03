@@ -21,6 +21,7 @@ class Macao:
             # Get element
             iframe_url = self._get_iframe_url(driver)
             # Build data
+            print(iframe_url)
             data = self._parse_data(iframe_url, driver)
             return data
 
@@ -35,12 +36,12 @@ class Macao:
         # total_vaccinations
         elem = self._get_elem_div(driver, "Total doses administered (local and non-local)")
         total_vaccinations = clean_count(
-            re.search(r"Total doses administered \(local and non-local\) : (\d+).*", elem.text).group(1)
+            re.search(r"Total doses administered \(local and non-local\) : ([\d,]+).*", elem.text).group(1)
         )
         # people_vaccinated
         elem = self._get_elem_div(driver, "Total number of people vaccinated")
         people_vaccinated = clean_count(re.search(r"Total number of people vaccinated : (\d+)", elem.text).group(1))
-        # total_vaccinations
+        # people_with_2_doses_or_more
         elem = self._get_elem_div(driver, "Number of people completed 2 or more doses")
         people_with_2_doses_or_more = clean_count(
             re.search(r"Number of people completed 2 or more doses : (\d+)", elem.text).group(1)
