@@ -24,16 +24,45 @@ class Finland(CountryVaxBase):
 
     def read(self) -> pd.Series:
         df = pd.read_csv(self.source_url, sep=";")
+        return df
 
-        df = df[df.Product != "All products"].dropna(subset=["val"]).replace(self.vaccine_mapping)
-
-        if "Johnson&Johnson" in df.Product.values:
-            raise Exception("1-dose calculations are not implemented but J&J is now administered!")
-
+    def pipe_checks(self, df: pd.Series) -> pd.Series:
         self.check_column_values(
-            df, "Vaccination dose", ["First dose", "Second dose", "Third dose", "Fourth dose", "All doses"]
+            df,
+            "Vaccination dose",
+            [
+                "First dose",
+                "Second dose",
+                "Third dose",
+                "Fourth dose",
+                "All doses",
+            ],
         )
+        self.check_column_values(
+            df,
+            "Product",
+            [
+                "Comirnaty (BioNTech)",
+                "Spikevax (MODERNA)",
+                "Vaxzevria (AstraZeneca)",
+                "Other products",
+                "All products",
+            ],
+        )
+        self.check_column_values(
+            df,
+            "Measure",
+            [
+                "Administered doses",
+            ],
+        )
+        return df
 
+    def pipe_clean(self, df: pd.DataFrame) -> pd.Series:
+        # Keep only aggregate
+        df = df[df.Product == "All products"]
+
+        # Get metrics
         total_vaccinations = df[df["Vaccination dose"] == "All doses"].val.sum()
         people_vaccinated = df[df["Vaccination dose"] == "First dose"].val.sum()
         people_fully_vaccinated = df[df["Vaccination dose"] == "Second dose"].val.sum()
@@ -61,8 +90,15 @@ class Finland(CountryVaxBase):
     def pipe_source(self, ds: pd.Series) -> pd.Series:
         return enrich_data(ds, "source_url", self.source_url_ref)
 
-    def pipeline(self, ds: pd.Series) -> pd.Series:
-        return ds.pipe(self.pipe_date).pipe(self.pipe_location).pipe(self.pipe_vaccine).pipe(self.pipe_source)
+    def pipeline(self, df: pd.DataFrame) -> pd.Series:
+        return (
+            df.pipe(self.pipe_checks)
+            .pipe(self.pipe_clean)
+            .pipe(self.pipe_date)
+            .pipe(self.pipe_location)
+            .pipe(self.pipe_vaccine)
+            .pipe(self.pipe_source)
+        )
 
     def export(self):
         data = self.read().pipe(self.pipeline)
