@@ -41,13 +41,33 @@ class Zambia(CountryVaxBase):
     def pipe_vaccine(self, ds: pd.Series) -> pd.Series:
         return enrich_data(ds, "vaccine", "Johnson&Johnson, Oxford/AstraZeneca, Sinopharm/Beijing")
 
+    def pipe_to_df(self, ds: pd.Series) -> pd.DataFrame:
+        return pd.DataFrame(ds).T
+
+    def pipe_filter_dp(self, df: pd.DataFrame) -> pd.Series:
+        date = "2022-12-01"
+        msk = df["date"] == date
+        if df.loc[msk, "total_vaccinations"].item() > 80e6:
+            df.loc[msk, "total_vaccinations"] = None
+        if df.loc[msk, "people_fully_vaccinated"].item() > 80e6:
+            df.loc[msk, "people_fully_vaccinated"] = None
+        df = df.dropna(
+            subset=["total_vaccinations", "people_fully_vaccinated", "people_vaccinated"], how="all"
+        )
+        return df
+
     def pipeline(self, ds: pd.Series) -> pd.Series:
-        return ds.pipe(self.pipe_location).pipe(self.pipe_source).pipe(self.pipe_vaccine)
+        return (
+            ds.pipe(self.pipe_location)
+            .pipe(self.pipe_source)
+            .pipe(self.pipe_vaccine)
+            .pipe(self.pipe_to_df)
+            .pipe(add_latest_who_values, "Zambia", ["people_vaccinated"])
+            .pipe(self.pipe_filter_dp)
+        )
 
     def export(self):
-        data = self.read().pipe(self.pipeline)
-        df = pd.DataFrame(data).T
-        df = add_latest_who_values(df, 'Zambia', ['people_vaccinated'])
+        df = self.read().pipe(self.pipeline)
         self.export_datafile(df=df, attach=True)
 
 
