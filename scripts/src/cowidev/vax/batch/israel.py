@@ -39,6 +39,8 @@ class Israel(CountryVaxBase):
                 "vaccinated_expired_perc",
                 "not_vaccinated_perc",
                 "vaccinated_fourth_dose_cum",
+                "vaccinated_omicron_cum",
+                "vaccinated_omicron_population_perc",
             ],
         )
         return df
@@ -56,6 +58,7 @@ class Israel(CountryVaxBase):
                 "vaccinated_seconde_dose_cum": "people_fully_vaccinated",
                 "vaccinated_third_dose_cum": "third_dose",
                 "vaccinated_fourth_dose_cum": "fourth_dose",
+                "vaccinated_omicron_cum": "omicron_dose",
             }
         )
 
@@ -69,7 +72,7 @@ class Israel(CountryVaxBase):
         return df.groupby(["people_vaccinated", "people_fully_vaccinated"], as_index=False).min()
 
     def pipe_total_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
-        return df.assign(total_boosters=df.third_dose + df.fourth_dose)
+        return df.assign(total_boosters=df.third_dose + df.fourth_dose + df.omicron_dose)
 
     def pipe_total_vaccinations(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(total_vaccinations=df.people_vaccinated + df.people_fully_vaccinated + df.total_boosters)
