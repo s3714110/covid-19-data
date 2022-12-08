@@ -17,19 +17,7 @@ cowidev.vax.batch.greece,16.64,True,2022-12-08T07:00:22,,
 cowidev.vax.batch.hong_kong,21.01,True,2022-12-08T07:00:26,,
 cowidev.vax.batch.indonesia,,,2022-12-08T07:00:05,,
 cowidev.vax.batch.ireland,5.02,True,2022-12-08T07:00:10,,
-cowidev.vax.batch.israel,0.7,False,2022-12-08T07:03:53,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/israel.py"", line 186, in main
-    Israel().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/israel.py"", line 172, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/israel.py"", line 23, in read
-    check_known_columns(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'vaccinated_omicron_cum', 'vaccinated_omicron_population_perc'}
-","Unknown column(s) found: {'vaccinated_omicron_cum', 'vaccinated_omicron_population_perc'}"
+cowidev.vax.batch.israel,2.73,True,2022-12-08T11:35:43,,
 cowidev.vax.batch.italy,8.88,True,2022-12-08T07:00:14,,
 cowidev.vax.batch.japan,57.54,True,2022-12-08T07:01:03,,
 cowidev.vax.batch.jersey,5.41,True,2022-12-08T07:00:11,,
@@ -73,23 +61,7 @@ cowidev.vax.incremental.croatia,0.75,True,2022-12-08T07:00:13,,
 cowidev.vax.incremental.cuba,19.11,True,2022-12-08T07:00:32,,
 cowidev.vax.incremental.curacao,0.95,True,2022-12-08T07:00:14,,
 cowidev.vax.incremental.cyprus,2.74,True,2022-12-08T07:00:16,,
-cowidev.vax.incremental.dominican_republic,22.66,False,2022-12-08T07:04:16,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.38,True,2022-12-08T11:33:33,,
 cowidev.vax.incremental.el_salvador,13.98,True,2022-12-08T07:00:28,,
 cowidev.vax.incremental.faeroe_islands,1.64,True,2022-12-08T07:00:16,,
 cowidev.vax.incremental.fiji,0.0,True,2022-12-08T07:00:14,,
@@ -119,21 +91,7 @@ cowidev.vax.incremental.myanmar,,,2022-12-08T07:00:24,,
 cowidev.vax.incremental.nepal,,,2022-12-08T07:00:24,,
 cowidev.vax.incremental.north_macedonia,,,2022-12-08T07:00:24,,
 cowidev.vax.incremental.northern_cyprus,4.71,True,2022-12-08T07:00:29,,
-cowidev.vax.incremental.paho,137.41,False,2022-12-08T07:06:33,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,75.67,True,2022-12-08T11:34:36,,
 cowidev.vax.incremental.pakistan,4.66,True,2022-12-08T07:00:29,,
 cowidev.vax.incremental.philippines,,,2022-12-08T07:00:24,,
 cowidev.vax.incremental.poland,1.5,True,2022-12-08T07:00:26,,
