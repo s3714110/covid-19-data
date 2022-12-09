@@ -96,7 +96,7 @@ class UnitedKingdom(CountryVaxBase):
             "United Kingdom": 10,
             "England": 10,
             "Scotland": 10,
-            "Wales": 10,
+            "Wales": 48,
             "Northern Ireland": 150,
         }
 
