@@ -128,6 +128,15 @@ class ECDC(CountryVaxBase):
         return new_date
 
     def pipe_initial_check(self, df: pd.DataFrame) -> pd.DataFrame:
+        # TODO: to be removed
+        # Currently some rows have NaN in the Vaccine column. We assume that these are UNK for now.
+        # I have reached out to ECDC to ask about this.
+        assert set(df.loc[df["Vaccine"].isna(), "ReportingCountry"]) == {
+            "FR",
+            "IE",
+        }, "More countries with Vaccine=NaN found!"
+        assert df["Vaccine"].isna().sum() == 13, "More Vaccine=NaN detected!"
+        df.loc[df["Vaccine"].isna(), "Vaccine"] = "UNK"
         # Vaccines
         vaccines_wrong = set(df.Vaccine).difference(self.vaccine_mapping)
         if vaccines_wrong:
