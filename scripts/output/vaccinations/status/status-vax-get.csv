@@ -24,27 +24,7 @@ ValueError: Missing vaccines: {'Pfizer-BioNTech Comirnaty Bivalent Original and 
 cowidev.vax.batch.chile,1.14,True,2022-12-12T07:00:07,,
 cowidev.vax.batch.czechia,1.9,True,2022-12-12T07:00:08,,
 cowidev.vax.batch.denmark,86.25,True,2022-12-12T07:01:32,,
-cowidev.vax.batch.ecdc,7.26,False,2022-12-12T11:34:32,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 498, in main
-    ECDC().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 488, in export
-    df = self.read().pipe(self.pipe_base)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 139, in pipe_base
-    df = df.pipe(self.pipe_initial_check)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/ecdc.py"", line 134, in pipe_initial_check
-    raise ValueError(f""Unknown vaccines found. Check {vaccines_wrong}"")
-ValueError: Unknown vaccines found. Check {nan}
-",Unknown vaccines found. Check {nan}
+cowidev.vax.batch.ecdc,23.14,True,2022-12-12T12:08:55,,
 cowidev.vax.batch.ecuador,,,2022-12-12T07:00:06,,
 cowidev.vax.batch.estonia,0.58,True,2022-12-12T07:00:07,,
 cowidev.vax.batch.france,6.79,True,2022-12-12T07:00:13,,
