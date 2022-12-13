@@ -58,6 +58,7 @@ class Canada(CountryVaxBase):
         "Pfizer-BioNTech Comirnaty (ages 12 years and older)": "Pfizer/BioNTech",
         "Pfizer-BioNTech Comirnaty Bivalent Original and BA4/BA5": "Pfizer/BioNTech",
         "Pfizer-BioNTech Comirnaty pediatric 6 months-4 years": "Pfizer/BioNTech",
+        "Pfizer-BioNTech Comirnaty Bivalent Original and BA1": "Pfizer/BioNTech",
         "Total": None,
         "Unknown": None,
     }
