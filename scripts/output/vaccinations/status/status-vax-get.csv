@@ -4,23 +4,7 @@ cowidev.vax.batch.australia,137.76,True,2022-12-13T07:02:23,,
 cowidev.vax.batch.austria,12.83,True,2022-12-13T07:00:18,,
 cowidev.vax.batch.belgium,6.91,True,2022-12-13T07:00:13,,
 cowidev.vax.batch.bolivia,4.86,True,2022-12-13T07:00:10,,
-cowidev.vax.batch.canada,7.65,False,2022-12-13T07:04:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 287, in main
-    Canada().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 274, in export
-    df_man = df_man.pipe(self.pipeline_manufacturer)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 198, in pipeline_manufacturer
-    validate_vaccines(df, self.vaccine_mapping)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py"", line 261, in validate_vaccines
-    raise ValueError(f""Missing vaccines: {vaccines_wrong}"")
-ValueError: Missing vaccines: {'Pfizer-BioNTech Comirnaty Bivalent Original and BA1'}
-",Missing vaccines: {'Pfizer-BioNTech Comirnaty Bivalent Original and BA1'}
+cowidev.vax.batch.canada,4.05,True,2022-12-13T10:27:05,,
 cowidev.vax.batch.chile,1.6,True,2022-12-13T07:00:07,,
 cowidev.vax.batch.czechia,1.77,True,2022-12-13T07:00:07,,
 cowidev.vax.batch.denmark,141.87,True,2022-12-13T07:02:27,,
@@ -45,34 +29,34 @@ cowidev.vax.batch.malta,1.05,True,2022-12-13T07:00:07,,
 cowidev.vax.batch.netherlands,,,2022-12-13T07:00:06,,
 cowidev.vax.batch.new_zealand,10.01,True,2022-12-13T07:00:16,,
 cowidev.vax.batch.norway,0.62,True,2022-12-13T07:00:06,,
-cowidev.vax.batch.peru,0.26,False,2022-12-13T07:04:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.peru,0.42,False,2022-12-13T10:20:49,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 163, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 167, in main
     Peru().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 141, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 145, in export
     df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 88, in pipeline
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 92, in pipeline
     .pipe(self.pipe_filter_only_campaign)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 44, in pipe_filter_only_campaign
-    return df[df.flag_vacunacion_general].drop(columns=[""flag_vacunacion_general""])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/peru.py"", line 48, in pipe_filter_only_campaign
+    return df.drop(columns=[""flag_vacunacion_general""])
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
     return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/frame.py"", line 4906, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/frame.py"", line 4906, in drop
     return super().drop(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4150, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4150, in drop
     obj = obj._drop_axis(labels, axis, level=level, errors=errors)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4185, in _drop_axis
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4185, in _drop_axis
     new_axis = axis.drop(labels, errors=errors)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 6017, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 6017, in drop
     raise KeyError(f""{labels[mask]} not found in axis"")
 KeyError: ""['flag_vacunacion_general'] not found in axis""
 ","""['flag_vacunacion_general'] not found in axis"""
@@ -107,23 +91,7 @@ cowidev.vax.incremental.croatia,1.08,True,2022-12-13T07:00:14,,
 cowidev.vax.incremental.cuba,22.31,True,2022-12-13T07:00:35,,
 cowidev.vax.incremental.curacao,1.38,True,2022-12-13T07:00:14,,
 cowidev.vax.incremental.cyprus,4.23,True,2022-12-13T07:00:18,,
-cowidev.vax.incremental.dominican_republic,22.78,False,2022-12-13T07:04:29,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.76,True,2022-12-13T10:17:29,,
 cowidev.vax.incremental.el_salvador,15.44,True,2022-12-13T07:00:30,,
 cowidev.vax.incremental.faeroe_islands,2.42,True,2022-12-13T07:00:18,,
 cowidev.vax.incremental.fiji,0.0,True,2022-12-13T07:00:17,,
@@ -153,21 +121,7 @@ cowidev.vax.incremental.myanmar,,,2022-12-13T07:00:27,,
 cowidev.vax.incremental.nepal,,,2022-12-13T07:00:27,,
 cowidev.vax.incremental.north_macedonia,,,2022-12-13T07:00:27,,
 cowidev.vax.incremental.northern_cyprus,5.49,True,2022-12-13T07:00:33,,
-cowidev.vax.incremental.paho,136.66,False,2022-12-13T07:06:46,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,75.67,True,2022-12-13T10:18:32,,
 cowidev.vax.incremental.pakistan,5.9,False,2022-12-13T07:06:52,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
