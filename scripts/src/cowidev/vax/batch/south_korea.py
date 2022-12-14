@@ -40,7 +40,8 @@ class SouthKorea(CountryVaxBase):
 
     def read(self):
         # alternative would be to use `headers` in requests.get
-        dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")
+        # dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")
+        dfs = pd.read_html(self.source_url, encoding="utf-8")
         if len(dfs) != 1:
             raise ValueError("More than one table detected!")
         df = dfs[0]
@@ -75,7 +76,8 @@ class SouthKorea(CountryVaxBase):
 
     def pipe_check_metrics(self, df: pd.DataFrame):
         vaccines = list(self.vaccines_mapping.values()) + ["others"]
-        for dose in ["dose_1", "dose_2", "dose_3", "dose_4"]:
+        # Uncomment when boosters are available
+        for dose in ["dose_1", "dose_2"]:  # , "dose_3", "dose_4"]:
             d = 0
             # print(dose)
             for vaccine in vaccines:
@@ -116,15 +118,17 @@ class SouthKorea(CountryVaxBase):
                 "date": df.loc[:, ("date", "date")],
                 "people_vaccinated": df.loc[:, ("all", "dose_1")],
                 "people_fully_vaccinated": df.loc[:, ("all", "dose_2")],
-                "total_boosters": df.loc[:, ("all", "dose_3")] + df.loc[:, ("all", "dose_4")],
+                # Uncomment when boosters are available
+                # "total_boosters": df.loc[:, ("all", "dose_3")] + df.loc[:, ("all", "dose_4")],
                 "single_doses": df.loc[:, (one_dose_cols, "dose_1")].sum(axis=1),
             }
         )
-        df = df.assign(
-            total_vaccinations=(
-                df["people_vaccinated"] + df["people_fully_vaccinated"] + df["total_boosters"] - df["single_doses"]
-            )
-        )
+        # Uncomment when boosters are available
+        # df = df.assign(
+        #     total_vaccinations=(
+        #         df["people_vaccinated"] + df["people_fully_vaccinated"] + df["total_boosters"] - df["single_doses"]
+        #     )
+        # )
         return df
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -153,10 +157,12 @@ class SouthKorea(CountryVaxBase):
                     "date",
                     "vaccine",
                     "source_url",
-                    "total_vaccinations",
+                    # Uncomment when boosters are available
+                    # "total_vaccinations",
                     "people_vaccinated",
                     "people_fully_vaccinated",
-                    "total_boosters",
+                    # Uncomment when boosters are available
+                    # "total_boosters",
                 ]
             ]
             .sort_values("date")
@@ -195,6 +201,7 @@ class SouthKorea(CountryVaxBase):
                 "source_name": "Korea Centers for Disease Control and Prevention",
                 "source_url": self.source_url_ref,
             },
+            merge=True,
         )
 
 
