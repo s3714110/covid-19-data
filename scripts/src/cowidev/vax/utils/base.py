@@ -177,6 +177,7 @@ class CountryVaxBase:
         attach=False,
         attach_age=False,
         attach_manufacturer=False,
+        merge=False,
         reset_index=False,
         valid_cols_only=False,
         force_monotonic=False,
@@ -194,6 +195,7 @@ class CountryVaxBase:
             attach (bool, optional): Set to True to attach to already existing data. Defaults to False.
             attach_age (bool, optional): Set to True to attach to already existing data. Defaults to False.
             attach_manufacturer (bool, optional): Set to True to attach to already existing data. Defaults to False.
+            merge (bool): similar to smart but smarter.
             valid_cols_only (bool, optional): Export only valid columns. Defaults to False.
             reset_index (bool, optional): Brin index back as a column. Defaults to False.
             force_monotonic (bool, optional): Force timeseries to be monotonically increasing after exporting.
@@ -203,6 +205,7 @@ class CountryVaxBase:
                 df,
                 filename=filename,
                 attach=attach,
+                merge=merge,
                 reset_index=reset_index,
                 valid_cols_only=valid_cols_only,
                 force_monotonic=force_monotonic,
@@ -221,11 +224,21 @@ class CountryVaxBase:
         return df
 
     def _export_datafile_main(
-        self, df, filename, attach=False, reset_index=False, valid_cols_only=False, force_monotonic=False, **kwargs
+        self,
+        df,
+        filename,
+        attach=False,
+        merge=False,
+        reset_index=False,
+        valid_cols_only=False,
+        force_monotonic=False,
+        **kwargs,
     ):
         """Export main data."""
         filename = self.get_output_path(filename)
-        if attach:
+        if merge:
+            df = merge_with_current_data(df, filename, smart=True)
+        elif attach:
             df = merge_with_current_data(df, filename)
         if not isinstance(df, pd.DataFrame):
             raise TypeError(f"df must be a pandas DataFrame!. Isntead {type(df).__name__} was detected.")
@@ -380,7 +393,7 @@ def _check_last_update(path, country):
         )
 
 
-def merge_with_current_data(df: pd.DataFrame, filepath: str) -> pd.DataFrame:
+def merge_with_current_data(df: pd.DataFrame, filepath: str, smart: bool = False) -> pd.DataFrame:
     if os.path.isfile(filepath):
         # Load
         df_current = pd.read_csv(filepath)
@@ -389,7 +402,37 @@ def merge_with_current_data(df: pd.DataFrame, filepath: str) -> pd.DataFrame:
             df = df.to_frame().T
         elif not isinstance(df, pd.DataFrame):
             raise TypeError(f"`df` must be a pandas DataFrame!. Instead {type(df).__name__} was detected.")
-        # remove dates un current that are also present in df (they will be replaced)
-        df_current = df_current[~df_current.date.isin(df.date)]
-        df = pd.concat([df, df_current]).sort_values(by="date")
+
+        # Merge: keep all fields from current data and complement with new ones. Using pandas.merge
+        if smart:
+            cols_ex = ["date", "location"]
+            df_current.columns = [f"{col}_current" if col not in cols_ex else col for col in df_current.columns]
+            df.columns = [f"{col}_new" if col not in cols_ex else col for col in df.columns]
+            df = df_current.merge(df, on=["date", "location"], how="outer")
+            print(df.columns)
+            if "total_vaccinations_new" not in df.columns:
+                df["total_vaccinations_new"] = pd.NA
+            if "people_vaccinated_new" not in df.columns:
+                df["people_vaccinated_new"] = pd.NA
+            if "people_fully_vaccinated_new" not in df.columns:
+                df["people_fully_vaccinated_new"] = pd.NA
+            if "total_boosters_new" not in df.columns:
+                df["total_boosters_new"] = pd.NA
+            df = df.assign(
+                total_vaccinations=df["total_vaccinations_new"].fillna(df["total_vaccinations_current"]),
+                people_vaccinated=df["people_vaccinated_new"].fillna(df["people_vaccinated_current"]),
+                people_fully_vaccinated=df["people_fully_vaccinated_new"].fillna(
+                    df["people_fully_vaccinated_current"]
+                ),
+                total_boosters=df["total_boosters_new"].fillna(df["total_boosters_current"]),
+                vaccine=df["vaccine_new"].fillna(df["vaccine_current"]),
+                source_url=df["source_url_new"].fillna(df["source_url_current"]),
+            )
+            df = df[COLUMNS_ORDER]
+        # Attach: Preserve current data up to date from new data. Using pandas.concat.
+        else:
+            # remove dates un current that are also present in df (they will be replaced)
+            df_current = df_current[~df_current.date.isin(df.date)]
+            df = pd.concat([df, df_current])
+        df = df.sort_values(by="date")
     return df
