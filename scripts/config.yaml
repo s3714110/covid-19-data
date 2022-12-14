@@ -39,6 +39,7 @@ pipeline:
         - Barbados # Moved to WHO
         # - Australia # Moved to WHO
         - Ecuador # Moved to PAHO
+        # - South Korea  # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
