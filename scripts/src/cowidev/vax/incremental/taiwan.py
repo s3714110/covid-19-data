@@ -73,8 +73,8 @@ class Taiwan:
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        row_delimit = 30
-        if df.iloc[row_delimit][0] != "總計":
+        row_delimit = 26
+        if df.iloc[row_delimit][0] != "第二劑":
             raise ValueError(f"Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}")
 
         for i in range(row_delimit, len(df)):
@@ -130,7 +130,7 @@ class Taiwan:
         vaccines_wrong = vaccines.difference(self.vaccines_mapping)
         if vaccines_wrong:
             raise ValueError(f"Invalid vaccines: {vaccines_wrong}")
-        return ", ".join(set(sorted(self.vaccines_mapping[vax] for vax in vaccines)))
+        return ", ".join(sorted(set(self.vaccines_mapping[vax] for vax in vaccines)))
 
     def _parse_date(self, soup) -> str:
         date_raw = soup.find(class_="download").text
