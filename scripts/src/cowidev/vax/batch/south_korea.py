@@ -40,8 +40,8 @@ class SouthKorea(CountryVaxBase):
 
     def read(self):
         # alternative would be to use `headers` in requests.get
-        # dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")
-        dfs = pd.read_html(self.source_url, encoding="utf-8")
+        dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")
+        # dfs = pd.read_html(self.source_url, encoding="utf-8")
         if len(dfs) != 1:
             raise ValueError("More than one table detected!")
         df = dfs[0]
