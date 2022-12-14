@@ -163,21 +163,7 @@ cowidev.vax.incremental.south_africa,9.75,True,2022-12-14T07:00:40,,
 cowidev.vax.incremental.spain,24.21,True,2022-12-14T07:00:54,,
 cowidev.vax.incremental.sri_lanka,,,2022-12-14T07:00:30,,
 cowidev.vax.incremental.suriname,15.6,True,2022-12-14T07:00:46,,
-cowidev.vax.incremental.taiwan,12.5,False,2022-12-14T10:13:08,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 166, in main
-    Taiwan().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 152, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 36, in read
-    data = self.parse_data(df, soup)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 109, in parse_data
-    ""vaccine"": self._parse_vaccines(df),
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 132, in _parse_vaccines
-    raise ValueError(f""Invalid vaccines: {vaccines_wrong}"")
-ValueError: Invalid vaccines: {'第二劑', '基礎加強劑', '第二次追加劑'}
-","Invalid vaccines: {'第二劑', '基礎加強劑', '第二次追加劑'}"
+cowidev.vax.incremental.taiwan,4.49,True,2022-12-14T11:23:30,,
 cowidev.vax.incremental.thailand,7.29,True,2022-12-14T07:00:41,,
 cowidev.vax.incremental.turkey,40.04,False,2022-12-14T07:07:29,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
