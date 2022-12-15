@@ -73,8 +73,9 @@ class Taiwan:
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        row_delimit = 26
-        if df.iloc[row_delimit][0] != "第二劑":
+        print(df)
+        row_delimit = 30
+        if df.iloc[row_delimit][0] != "總計":
             raise ValueError(f"Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}")
 
         for i in range(row_delimit, len(df)):
