@@ -73,9 +73,9 @@ class Taiwan:
 
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
-        print(df)
-        row_delimit = 30
-        if df.iloc[row_delimit][0] != "總計":
+        # print(df)
+        row_delimit = 26
+        if df.iloc[row_delimit][0] != "第二劑":
             raise ValueError(f"Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}")
 
         for i in range(row_delimit, len(df)):
@@ -85,7 +85,7 @@ class Taiwan:
         # if df.iloc[27][0] == "總計":
         #     df.iloc[27][0] = float("nan")
         # Patch for Novavax
-
+        # print(df)
         # Index fixes
         df["劑次"] = df["劑次"].str.replace(r"\s+", "", regex=True)
         df["廠牌"] = df["廠牌"].fillna(method="ffill")
