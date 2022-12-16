@@ -97,7 +97,7 @@ class UnitedKingdom(CountryVaxBase):
             "England": 10,
             "Scotland": 10,
             "Wales": 48,
-            "Northern Ireland": 150,
+            "Northern Ireland": 300,
         }
 
         for location in set(df_base.location):
