@@ -61,23 +61,7 @@ cowidev.vax.incremental.croatia,2.63,True,2022-12-20T07:00:18,,
 cowidev.vax.incremental.cuba,30.57,True,2022-12-20T07:00:46,,
 cowidev.vax.incremental.curacao,1.69,True,2022-12-20T07:00:19,,
 cowidev.vax.incremental.cyprus,4.88,True,2022-12-20T07:00:23,,
-cowidev.vax.incremental.dominican_republic,22.77,False,2022-12-20T07:04:13,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.27,True,2022-12-20T11:27:51,,
 cowidev.vax.incremental.el_salvador,13.66,True,2022-12-20T07:00:33,,
 cowidev.vax.incremental.faeroe_islands,2.29,True,2022-12-20T07:00:23,,
 cowidev.vax.incremental.fiji,0.0,True,2022-12-20T07:00:23,,
@@ -86,36 +70,7 @@ cowidev.vax.incremental.gabon,,,2022-12-20T07:00:23,,
 cowidev.vax.incremental.georgia,8.81,True,2022-12-20T07:00:32,,
 cowidev.vax.incremental.greenland,4.79,True,2022-12-20T07:00:28,,
 cowidev.vax.incremental.guatemala,,,2022-12-20T07:00:23,,
-cowidev.vax.incremental.guernsey,0.52,False,2022-12-20T07:04:14,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3361, in get_loc
-    return self._engine.get_loc(casted_key)
-  File ""pandas/_libs/index.pyx"", line 76, in pandas._libs.index.IndexEngine.get_loc
-  File ""pandas/_libs/index.pyx"", line 108, in pandas._libs.index.IndexEngine.get_loc
-  File ""pandas/_libs/hashtable_class_helper.pxi"", line 5198, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File ""pandas/_libs/hashtable_class_helper.pxi"", line 5206, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'First dose'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 76, in main
-    Guernsey().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 62, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 17, in read
-    df = self.parse_data(soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 36, in parse_data
-    data[""people_vaccinated""] = int(totals[""First dose""])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 942, in __getitem__
-    return self._get_value(key)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 1051, in _get_value
-    loc = self.index.get_loc(label)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/base.py"", line 3363, in get_loc
-    raise KeyError(key) from err
-KeyError: 'First dose'
-",'First dose'
+cowidev.vax.incremental.guernsey,0.25,True,2022-12-20T11:41:37,,
 cowidev.vax.incremental.hungary,7.24,True,2022-12-20T07:00:31,,
 cowidev.vax.incremental.iceland,6.59,True,2022-12-20T07:00:30,,
 cowidev.vax.incremental.india,3.4,True,2022-12-20T07:00:27,,
@@ -136,21 +91,7 @@ cowidev.vax.incremental.myanmar,,,2022-12-20T07:00:31,,
 cowidev.vax.incremental.nepal,,,2022-12-20T07:00:31,,
 cowidev.vax.incremental.north_macedonia,,,2022-12-20T07:00:31,,
 cowidev.vax.incremental.northern_cyprus,4.52,True,2022-12-20T07:00:36,,
-cowidev.vax.incremental.paho,137.14,False,2022-12-20T07:06:31,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,76.05,True,2022-12-20T11:28:55,,
 cowidev.vax.incremental.pakistan,0.72,False,2022-12-20T07:06:32,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
@@ -222,19 +163,7 @@ cowidev.vax.incremental.south_africa,10.67,True,2022-12-20T07:00:44,,
 cowidev.vax.incremental.spain,37.0,True,2022-12-20T07:01:11,,
 cowidev.vax.incremental.sri_lanka,,,2022-12-20T07:00:35,,
 cowidev.vax.incremental.suriname,15.35,True,2022-12-20T07:00:50,,
-cowidev.vax.incremental.taiwan,20.55,False,2022-12-20T07:06:52,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 167, in main
-    Taiwan().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 153, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 35, in read
-    df = self._parse_table(url_pdf)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 79, in _parse_table
-    raise ValueError(f""Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}"")
-ValueError: Unexpected value in the key cell 26: nan
-",Unexpected value in the key cell 26: nan
+cowidev.vax.incremental.taiwan,6.11,True,2022-12-20T11:35:43,,
 cowidev.vax.incremental.thailand,7.86,True,2022-12-20T07:00:43,,
 cowidev.vax.incremental.turkey,40.04,False,2022-12-20T07:07:32,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
