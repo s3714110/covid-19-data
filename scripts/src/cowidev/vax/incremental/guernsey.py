@@ -2,7 +2,7 @@ import re
 
 import pandas as pd
 
-from cowidev.utils.clean import extract_clean_date
+from cowidev.utils.clean import extract_clean_date, clean_column_name
 from cowidev.utils.web.scraping import get_soup
 from cowidev.vax.utils.incremental import enrich_data, increment
 
@@ -19,7 +19,7 @@ class Guernsey:
         return df
 
     def parse_data(self, soup):
-        print(soup)
+        # print(soup)
         # Date
         data = {
             "date": extract_clean_date(
@@ -32,7 +32,9 @@ class Guernsey:
         ds = pd.read_html(str(tables[0]))[0].squeeze()
         data["total_vaccinations"] = ds.loc[ds[0] == "Total number of doses delivered", 1].values[0]
         # Table 2
-        totals = pd.read_html(str(tables[1]), header=0)[0].iloc[-1]
+        df = pd.read_html(str(tables[1]), header=0)[0]
+        df.columns = [clean_column_name(col) for col in df.columns]
+        totals = df.iloc[-1]
         data["people_vaccinated"] = int(totals["First dose"])
         data["people_fully_vaccinated"] = int(totals["Second dose"])
         data["total_boosters"] = (
