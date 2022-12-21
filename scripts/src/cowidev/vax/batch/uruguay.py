@@ -31,7 +31,7 @@ class Uruguay(CountryVaxBase):
         last_people_vaccinated = df.sort_values("date").people_vaccinated.values[-1]
         df = df[df.people_vaccinated <= last_people_vaccinated]
 
-        return df[
+        df = df[
             [
                 "location",
                 "date",
@@ -43,6 +43,9 @@ class Uruguay(CountryVaxBase):
                 "total_boosters",
             ]
         ]
+
+        df = df.pipe(self.make_monotonic)
+        return df
 
     def pipeline_manufacturer(self, df: pd.DataFrame) -> pd.DataFrame:
         return (
