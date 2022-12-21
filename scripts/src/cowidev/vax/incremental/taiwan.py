@@ -74,11 +74,18 @@ class Taiwan:
         # The last few columns may be left-shifted and require this small surgery.
         # If math.isnan() raise exception that means the table is changed.
         # print(df)
-        # row_delimit = 26
-        row_delimit = 30
-        if df.iloc[row_delimit][0] != "總計":  # "第二劑" or "總計":
-            raise ValueError(f"Unexpected value in the key cell {row_delimit}: {df.iloc[row_delimit][0]}")
-
+        # usually rows either starting from row_delimit_1 or row_delimit_2 are the ones needing surgery.
+        row_delimit_1 = 26
+        row_delimit_2 = 30
+        if df.iloc[row_delimit_1][0] == "第二劑":
+            row_delimit = row_delimit_1
+        elif df.iloc[row_delimit_2][0] == "總計":
+            row_delimit = row_delimit_2
+        else:
+            raise ValueError(
+                f"Unexpected value in both key cells {row_delimit_1} ({df.iloc[row_delimit_1][0]}) and"
+                f" {row_delimit_2} ({df.iloc[row_delimit_2][0]})"
+            )
         for i in range(row_delimit, len(df)):
             if not isinstance(df.iloc[i][3], str) and math.isnan(df.iloc[i][3]):
                 df.iloc[i][[3, 2, 1]] = df.iloc[i][[2, 1, 0]]
@@ -86,7 +93,7 @@ class Taiwan:
         # if df.iloc[27][0] == "總計":
         #     df.iloc[27][0] = float("nan")
         # Patch for Novavax
-        # print(df)
+        print(df)
         # Index fixes
         df["劑次"] = df["劑次"].str.replace(r"\s+", "", regex=True)
         df["廠牌"] = df["廠牌"].fillna(method="ffill")
