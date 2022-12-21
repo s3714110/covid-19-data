@@ -3,7 +3,6 @@ from cowidev.utils.s3 import obj_to_s3
 from cowidev.vax.batch.latvia import Latvia
 
 
-
 countries = [Latvia()]
 
 
