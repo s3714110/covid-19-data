@@ -19,7 +19,7 @@ class Jamaica(CountryVaxBase):
     def _parse_data(self, soup) -> pd.Series:
         counters = soup.find_all(class_="service-title")
         assert len(counters) == 6, "New counter in dashboard?"
-        total_vaccinations = clean_count(counters[0].text.replace(".", ""))
+        total_vaccinations = clean_count(counters[0].text.replace(" ", ""))
         first_doses = clean_count(counters[1].text)
         second_doses = clean_count(counters[2].text)
         unique_doses = clean_count(counters[3].text)
