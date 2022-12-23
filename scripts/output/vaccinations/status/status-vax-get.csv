@@ -50,16 +50,16 @@ cowidev.vax.incremental.africacdc,,,2022-12-23T07:00:11,,
 cowidev.vax.incremental.antigua_barbuda,,,2022-12-23T07:00:11,,
 cowidev.vax.incremental.aruba,1.49,True,2022-12-23T07:00:12,,
 cowidev.vax.incremental.azerbaijan,,,2022-12-23T07:00:11,,
-cowidev.vax.incremental.bahrain,2.0,False,2022-12-23T07:03:53,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.bahrain,1.78,False,2022-12-23T10:19:10,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 84, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 84, in main
     Bahrain().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 70, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 70, in export
     data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 16, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 16, in read
     return self._parse_data(soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 19, in _parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/bahrain.py"", line 19, in _parse_data
     people_vaccinated = int(soup.find_all(class_=""count"")[0][""data-count""])
 IndexError: list index out of range
 ",list index out of range
@@ -106,23 +106,7 @@ cowidev.vax.incremental.iran,,,2022-12-23T07:00:22,,
 cowidev.vax.incremental.isle_of_man,2.46,True,2022-12-23T07:00:25,,
 cowidev.vax.incremental.jamaica,9.39,True,2022-12-23T07:00:33,,
 cowidev.vax.incremental.kazakhstan,7.34,True,2022-12-23T07:00:31,,
-cowidev.vax.incremental.kosovo,7.07,False,2022-12-23T07:04:23,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
-    Kosovo().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 77, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 23, in read
-    df = self._parse_data(soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 32, in _parse_data
-    soup = get_soup(link, verify=False)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
-    raise ValueError(
-ValueError: Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
-",Source https://msh.rks-gov.net/10.230.0.57+9000/coviddashboard.html not reached! Error code 404 Not Found
+cowidev.vax.incremental.kosovo,1.55,True,2022-12-23T10:23:47,,
 cowidev.vax.incremental.kyrgyzstan,5.2,True,2022-12-23T07:00:30,,
 cowidev.vax.incremental.laos,8.05,True,2022-12-23T07:00:33,,
 cowidev.vax.incremental.macao,10.85,True,2022-12-23T07:00:36,,
@@ -216,18 +200,18 @@ cowidev.vax.incremental.poland,1.56,True,2022-12-23T07:00:29,,
 cowidev.vax.incremental.qatar,,,2022-12-23T07:00:28,,
 cowidev.vax.incremental.russia,50.02,True,2022-12-23T07:01:18,,
 cowidev.vax.incremental.saint_lucia,,,2022-12-23T07:00:29,,
-cowidev.vax.incremental.serbia,0.43,False,2022-12-23T07:06:41,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.incremental.serbia,0.48,False,2022-12-23T10:23:07,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 88, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 88, in main
     Serbia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 74, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 74, in export
     data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 23, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/serbia.py"", line 23, in read
     soup = get_soup(self.source_url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
     response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 52, in get_response
     raise ValueError(
 ValueError: Source https://vakcinacija.gov.rs/ not reached! Error code 503 Service Unavailable
 ",Source https://vakcinacija.gov.rs/ not reached! Error code 503 Service Unavailable
@@ -301,27 +285,5 @@ requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='covid19asi.saglik.
 ","HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Max retries exceeded with url: / (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7f092cd3d420>, 'Connection to covid19asi.saglik.gov.tr timed out. (connect timeout=20)'))"
 cowidev.vax.incremental.united_arab_emirates,,,2022-12-23T07:00:31,,
 cowidev.vax.incremental.vietnam,,,2022-12-23T07:00:31,,
-cowidev.vax.incremental.who,71.62,True,2022-12-23T07:01:43,,
-cowidev.vax.incremental.zambia,1.1,False,2022-12-23T07:07:22,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 75, in main
-    Zambia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 70, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 66, in pipeline
-    .pipe(self.pipe_filter_dp)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 50, in pipe_filter_dp
-    if df.loc[msk, ""total_vaccinations""].item() > 80e6:
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/base.py"", line 331, in item
-    raise ValueError(""can only convert an array of size 1 to a Python scalar"")
-ValueError: can only convert an array of size 1 to a Python scalar
-",can only convert an array of size 1 to a Python scalar
+cowidev.vax.incremental.who,1.67,True,2022-12-23T10:20:59,,
+cowidev.vax.incremental.zambia,1.0,True,2022-12-23T10:30:04,,
