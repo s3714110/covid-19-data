@@ -45,15 +45,14 @@ class Zambia(CountryVaxBase):
         return pd.DataFrame(ds).T
 
     def pipe_filter_dp(self, df: pd.DataFrame) -> pd.Series:
+        """There were duplicates on the 2022-12-01. This was a temporary fix."""
         date = "2022-12-01"
         msk = df["date"] == date
         if df.loc[msk, "total_vaccinations"].item() > 80e6:
             df.loc[msk, "total_vaccinations"] = None
         if df.loc[msk, "people_fully_vaccinated"].item() > 80e6:
             df.loc[msk, "people_fully_vaccinated"] = None
-        df = df.dropna(
-            subset=["total_vaccinations", "people_fully_vaccinated", "people_vaccinated"], how="all"
-        )
+        df = df.dropna(subset=["total_vaccinations", "people_fully_vaccinated", "people_vaccinated"], how="all")
         return df
 
     def pipeline(self, ds: pd.Series) -> pd.Series:
@@ -63,7 +62,7 @@ class Zambia(CountryVaxBase):
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_to_df)
             .pipe(add_latest_who_values, "Zambia", ["people_vaccinated"])
-            .pipe(self.pipe_filter_dp)
+            # .pipe(self.pipe_filter_dp)
         )
 
     def export(self):
