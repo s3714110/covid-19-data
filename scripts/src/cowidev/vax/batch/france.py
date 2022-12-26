@@ -23,6 +23,7 @@ class France(CountryVaxBase):
             6: "Novavax",
             8: "Pfizer/BioNTech",
             9: "Moderna",
+            10: "VidPrevtyn Beta",
         }
         one_dose_vaccines = ["Johnson&Johnson"]
 
@@ -71,7 +72,7 @@ class France(CountryVaxBase):
                 " https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/"
                 " to find the vaccine's name."
             )
-        df = df[(df.vaccine.isin(vaccine_mapping.keys())) & (df.n_cum_dose1 > 0)]
+        df = df[df.vaccine.isin(vaccine_mapping.keys())]
         assert set(df["vaccine"].unique()) == set(vaccine_mapping.keys())
         df["vaccine"] = df.vaccine.replace(vaccine_mapping)
         df = df.groupby(["vaccine", "date"], as_index=False).sum()
