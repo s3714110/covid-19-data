@@ -23,7 +23,7 @@ class France(CountryVaxBase):
             6: "Novavax",
             8: "Pfizer/BioNTech",
             9: "Moderna",
-            10: "VidPrevtyn Beta",
+            10: "Sanofi/GSK",
         }
         one_dose_vaccines = ["Johnson&Johnson"]
 
