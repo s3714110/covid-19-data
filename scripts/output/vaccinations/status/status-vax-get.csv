@@ -11,17 +11,7 @@ cowidev.vax.batch.denmark,129.45,True,2022-12-26T07:02:16,,
 cowidev.vax.batch.ecdc,133.25,True,2022-12-26T07:02:19,,
 cowidev.vax.batch.ecuador,,,2022-12-26T07:00:06,,
 cowidev.vax.batch.estonia,0.61,True,2022-12-26T07:00:07,,
-cowidev.vax.batch.france,1.42,False,2022-12-26T07:03:47,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/france.py"", line 120, in main
-    France().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/france.py"", line 69, in export
-    raise ValueError(
-ValueError: Unknown vaccine value: {10}.
-See https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/ to find the vaccine's name.
-","Unknown vaccine value: {10}.
-See https://www.data.gouv.fr/fr/datasets/donnees-relatives-aux-personnes-vaccinees-contre-la-covid-19-1/ to find the vaccine's name."
+cowidev.vax.batch.france,0.43,True,2022-12-26T08:20:40,,
 cowidev.vax.batch.germany,0.11,True,2022-12-26T07:00:06,,
 cowidev.vax.batch.greece,18.11,True,2022-12-26T07:00:24,,
 cowidev.vax.batch.hong_kong,20.78,True,2022-12-26T07:00:27,,
