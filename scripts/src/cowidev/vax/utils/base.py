@@ -195,7 +195,7 @@ class CountryVaxBase:
             attach (bool, optional): Set to True to attach to already existing data. Defaults to False.
             attach_age (bool, optional): Set to True to attach to already existing data. Defaults to False.
             attach_manufacturer (bool, optional): Set to True to attach to already existing data. Defaults to False.
-            merge (bool): similar to smart but smarter.
+            merge (bool): similar to attach but smarter.
             valid_cols_only (bool, optional): Export only valid columns. Defaults to False.
             reset_index (bool, optional): Brin index back as a column. Defaults to False.
             force_monotonic (bool, optional): Force timeseries to be monotonically increasing after exporting.
