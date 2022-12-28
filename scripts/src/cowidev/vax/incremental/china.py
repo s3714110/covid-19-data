@@ -12,7 +12,7 @@ from cowidev.vax.utils.base import CountryVaxBase
 
 class China(CountryVaxBase):
     location: str = "China"
-    source_url: str = "http://www.nhc.gov.cn/xcs/yqjzqk/list_gzbd.shtml"
+    source_url: str = "https://www.chinacdc.cn/jkzt/crb/zl/szkb_11803/jszl_12208/"
     source_url_complete: str = "http://www.nhc.gov.cn/xcs/s2906/new_list.shtml"
     regex: dict = {
         "title": "新冠病毒疫苗接种情况",
@@ -32,6 +32,7 @@ class China(CountryVaxBase):
     }
     num_links_complete: int = 3
     timeout: int = 30
+    css_selector: str = ".jal-item-list>li>a"
 
     def read(self, last_update: str) -> pd.DataFrame:
         data = []
@@ -40,7 +41,7 @@ class China(CountryVaxBase):
         with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             # Load the page until the list of links is loaded
             driver.get(self.source_url)
-            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".zxxx_list>li>a")))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, self.css_selector)))
             driver.execute_script("window.stop();")
             links = self._get_links(driver)
             for link in links:
@@ -48,20 +49,20 @@ class China(CountryVaxBase):
                 if data_["date"] <= last_update:
                     break
                 data.append(data_)
-            assert data_["date"] <= last_update, "Only read data back to: " + data_["date"]
+            # assert data_["date"] <= last_update, "Only read data back to: " + data_["date"]
         return pd.DataFrame(data)
 
     def _get_links(self, driver):
-        elems = driver.find_elements_by_css_selector(".zxxx_list>li>a")
+        elems = driver.find_elements_by_css_selector(self.css_selector)
         return [elem.get_property("href") for elem in elems if self.regex["title"] in elem.text]
 
     def _parse_data(self, driver, url):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#xw_box>.clear")))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".TRS_Editor")))
         driver.execute_script("window.stop();")
-        elem = driver.find_element_by_id("xw_box")
+        elem = driver.find_element_by_class_name("TRS_Editor")
         # Apply regex and get metrics
         return {
             "date": extract_clean_date(elem.text, self.regex["date"], "%Y %m %d"),
@@ -167,7 +168,7 @@ class China(CountryVaxBase):
             df = df_complete.pipe(self.pipeline).pipe(self.pipeline_merge, df_last, df)
         # Export
         if not df.empty:
-            self.export_datafile(df, attach=True)
+            self.export_datafile(df, merge=True)
 
 
 def main():
