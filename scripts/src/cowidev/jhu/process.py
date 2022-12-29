@@ -15,6 +15,7 @@ from cowidev.jhu.load import (
 ZERO_DAY = "2020-01-21"
 zero_day = datetime.strptime(ZERO_DAY, "%Y-%m-%d")
 
+# add here country-dates where data should be set to NaN
 LARGE_DATA_CORRECTIONS = [
     ("Australia", "2022-04-01", "deaths"),
     ("Austria", "2022-04-21", "deaths"),
@@ -34,6 +35,7 @@ LARGE_DATA_CORRECTIONS = [
     ("Moldova", "2021-12-31", "deaths"),
     ("Norway", "2022-03-17", "deaths"),
     ("Oman", "2022-06-16", "deaths"),
+    ("Peru", "2022-12-26", "cases"),
     ("South Africa", "2021-11-23", "cases"),
     ("South Africa", "2022-01-06", "deaths"),
     ("Spain", "2020-06-19", "deaths"),
