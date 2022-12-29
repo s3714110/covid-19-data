@@ -41,7 +41,8 @@ pipeline:
         - Ecuador # Moved to PAHO
         # - South Korea  # Moved to WHO
         - Bahrain
-        - Pakistan  # Moved to WHO
+        - Pakistan # Moved to WHO
+        - South Africa # Moved to WHO
     process:
       skip_complete:
         - Pitcairn
