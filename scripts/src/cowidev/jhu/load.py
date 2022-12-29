@@ -82,7 +82,9 @@ def _find_closest_year_row(df, year=2021):
 
 def _load_raw_data():
     """Load raw data"""
+    # get cases
     global_cases = _get_metric("confirmed", "global")
+    # get deaths
     global_deaths = _get_metric("deaths", "global")
     return pd.merge(global_cases, global_deaths, on=["date", "Country/Region"], how="outer")
 
