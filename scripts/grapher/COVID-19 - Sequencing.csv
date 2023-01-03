@@ -129,6 +129,10 @@ Angola,671,1,,0.03,811,22.8
 Angola,685,1,,0.03,812,22.83
 Angola,713,62,Omicron (BA.1),1.74,874,24.57
 Angola,727,26,,0.73,900,25.3
+Angola,923,1,,0.03,901,25.33
+Angola,951,7,,0.2,908,25.53
+Angola,979,2,,0.06,910,25.59
+Angola,1007,3,,0.08,913,25.67
 Argentina,111,146,Others,3.21,146,3.21
 Argentina,125,165,Others,3.63,311,6.84
 Argentina,139,67,Others,1.47,378,8.31
@@ -190,14 +194,14 @@ Argentina,909,313,Omicron (BA.5),6.88,14699,322.98
 Argentina,923,389,Omicron (BA.5),8.55,15088,331.53
 Argentina,937,299,Omicron (BA.5),6.57,15387,338.1
 Argentina,951,158,Omicron (BA.4),3.47,15545,341.57
-Argentina,965,116,Omicron (BA.5),2.55,15661,344.12
-Argentina,979,70,Omicron (BA.4),1.54,15731,345.66
-Argentina,993,27,,0.59,15758,346.25
-Argentina,1007,22,,0.48,15780,346.73
-Argentina,1021,15,,0.33,15795,347.06
-Argentina,1035,41,Omicron (BQ.1),0.9,15836,347.96
-Argentina,1049,32,Omicron (BQ.1),0.7,15868,348.66
-Argentina,1063,36,Omicron (BQ.1),0.79,15904,349.45
+Argentina,965,117,Omicron (BA.5),2.57,15662,344.14
+Argentina,979,70,Omicron (BA.4),1.54,15732,345.68
+Argentina,993,27,,0.59,15759,346.27
+Argentina,1007,22,,0.48,15781,346.75
+Argentina,1021,15,,0.33,15796,347.08
+Argentina,1035,45,Omicron (BQ.1),0.99,15841,348.07
+Argentina,1049,46,Omicron (BQ.1),1.01,15887,349.08
+Argentina,1063,36,Omicron (BQ.1),0.79,15923,349.87
 Aruba,209,4,,37.57,4,37.57
 Aruba,223,1,,9.39,5,46.96
 Aruba,363,10,,93.93,15,140.89
@@ -244,7 +248,9 @@ Aruba,979,51,Omicron (BA.5),479.06,3691,34670.62
 Aruba,993,15,,140.9,3706,34811.52
 Aruba,1007,44,Omicron (BA.5),413.3,3750,35224.82
 Aruba,1021,36,Omicron (BA.5),338.16,3786,35562.98
-Aruba,1035,31,Omicron (BQ.1),291.19,3817,35854.17
+Aruba,1035,44,Omicron (BQ.1),413.3,3830,35976.28
+Aruba,1049,15,,140.9,3845,36117.18
+Aruba,1063,3,,28.18,3848,36145.36
 Australia,111,113,Others,4.32,113,4.32
 Australia,125,80,Others,3.06,193,7.38
 Australia,139,87,Others,3.32,280,10.7
@@ -290,30 +296,31 @@ Australia,685,2524,Delta,96.42,41839,1598.27
 Australia,699,4197,Delta,160.33,46036,1758.6
 Australia,713,4716,Omicron (BA.1),180.16,50752,1938.76
 Australia,727,3975,Omicron (BA.1),151.85,54727,2090.61
-Australia,741,2805,Omicron (BA.1),107.15,57532,2197.76
-Australia,755,3150,Omicron (BA.1),120.33,60682,2318.09
-Australia,769,3028,Omicron (BA.1),115.67,63710,2433.76
-Australia,783,4115,Omicron (BA.2),157.2,67825,2590.96
-Australia,797,6299,Omicron (BA.2),240.63,74124,2831.59
-Australia,811,5781,Omicron (BA.2),220.84,79905,3052.43
-Australia,825,4959,Omicron (BA.2),189.44,84864,3241.87
-Australia,839,4913,Omicron (BA.2),187.68,89777,3429.55
-Australia,853,5309,Omicron (BA.2),202.81,95086,3632.36
-Australia,867,5405,Omicron (BA.2),206.48,100491,3838.84
-Australia,881,4252,Omicron (BA.2),162.43,104743,4001.27
-Australia,895,4664,Omicron (BA.5),178.17,109407,4179.44
-Australia,909,4534,Omicron (BA.5),173.2,113941,4352.64
-Australia,923,3775,Omicron (BA.5),144.21,117716,4496.85
-Australia,937,3960,Omicron (BA.5),151.28,121676,4648.13
-Australia,951,3877,Omicron (BA.5),148.1,125553,4796.23
-Australia,965,2854,Omicron (BA.5),109.03,128407,4905.26
-Australia,979,3030,Omicron (BA.5),115.75,131437,5021.01
-Australia,993,3130,Omicron (BA.5),119.57,134567,5140.58
-Australia,1007,3746,Omicron (BA.5),143.1,138313,5283.68
-Australia,1021,4761,Omicron (BA.5),181.87,143074,5465.55
-Australia,1035,4536,Omicron (BA.5),173.28,147610,5638.83
-Australia,1049,3509,Omicron (BA.2.75),134.05,151119,5772.88
-Australia,1063,2192,Omicron (BA.2.75),83.74,153311,5856.62
+Australia,741,2806,Omicron (BA.1),107.19,57533,2197.8
+Australia,755,3150,Omicron (BA.1),120.33,60683,2318.13
+Australia,769,3028,Omicron (BA.1),115.67,63711,2433.8
+Australia,783,4115,Omicron (BA.2),157.2,67826,2591.0
+Australia,797,6299,Omicron (BA.2),240.63,74125,2831.63
+Australia,811,5781,Omicron (BA.2),220.84,79906,3052.47
+Australia,825,4959,Omicron (BA.2),189.44,84865,3241.91
+Australia,839,4913,Omicron (BA.2),187.68,89778,3429.59
+Australia,853,5309,Omicron (BA.2),202.81,95087,3632.4
+Australia,867,5405,Omicron (BA.2),206.48,100492,3838.88
+Australia,881,4252,Omicron (BA.2),162.43,104744,4001.31
+Australia,895,4664,Omicron (BA.5),178.17,109408,4179.48
+Australia,909,4536,Omicron (BA.5),173.28,113944,4352.76
+Australia,923,3775,Omicron (BA.5),144.21,117719,4496.97
+Australia,937,3960,Omicron (BA.5),151.28,121679,4648.25
+Australia,951,3877,Omicron (BA.5),148.1,125556,4796.35
+Australia,965,2854,Omicron (BA.5),109.03,128410,4905.38
+Australia,979,3030,Omicron (BA.5),115.75,131440,5021.13
+Australia,993,3130,Omicron (BA.5),119.57,134570,5140.7
+Australia,1007,3746,Omicron (BA.5),143.1,138316,5283.8
+Australia,1021,4761,Omicron (BA.5),181.87,143077,5465.67
+Australia,1035,4537,Omicron (BA.5),173.32,147614,5638.99
+Australia,1049,3662,Omicron (BA.2.75),139.89,151276,5778.88
+Australia,1063,2775,Omicron (BA.2.75),106.01,154051,5884.89
+Australia,1077,153,Omicron (BA.2.75),5.84,154204,5890.73
 Austria,111,36,Others,4.03,36,4.03
 Austria,125,42,Others,4.7,78,8.73
 Austria,139,3,,0.34,81,9.07
@@ -383,7 +390,7 @@ Austria,1021,732,Omicron (BA.5),81.88,36176,4046.69
 Austria,1035,668,Omicron (BA.5),74.72,36844,4121.41
 Austria,1049,803,Omicron (BA.5),89.82,37647,4211.23
 Austria,1063,489,Omicron (BQ.1),54.7,38136,4265.93
-Austria,1071,28,,3.13,38164,4269.06
+Austria,1077,398,Omicron (BQ.1),44.52,38534,4310.45
 Bahamas,195,1,,2.44,1,2.44
 Bahamas,209,2,,4.88,3,7.32
 Bahamas,223,1,,2.44,4,9.76
@@ -495,41 +502,41 @@ Bangladesh,475,39,Beta,0.23,1878,10.99
 Bangladesh,489,76,Beta,0.44,1954,11.43
 Bangladesh,503,78,Delta,0.46,2032,11.89
 Bangladesh,517,77,Delta,0.45,2109,12.34
-Bangladesh,531,235,Delta,1.37,2344,13.71
-Bangladesh,545,394,Delta,2.3,2738,16.01
-Bangladesh,559,226,Delta,1.32,2964,17.33
-Bangladesh,573,344,Delta,2.01,3308,19.34
-Bangladesh,587,206,Delta,1.2,3514,20.54
-Bangladesh,601,156,Delta,0.91,3670,21.45
-Bangladesh,615,145,Delta,0.85,3815,22.3
-Bangladesh,629,141,Delta,0.82,3956,23.12
-Bangladesh,643,126,Delta,0.74,4082,23.86
-Bangladesh,657,96,Delta,0.56,4178,24.42
-Bangladesh,671,126,Delta,0.74,4304,25.16
-Bangladesh,685,143,Delta,0.84,4447,26.0
-Bangladesh,699,119,Delta,0.7,4566,26.7
-Bangladesh,713,144,Delta,0.84,4710,27.54
-Bangladesh,727,373,Omicron (BA.1),2.18,5083,29.72
-Bangladesh,741,330,Omicron (BA.2),1.93,5413,31.65
-Bangladesh,755,189,Omicron (BA.2),1.1,5602,32.75
-Bangladesh,769,114,Omicron (BA.2),0.67,5716,33.42
-Bangladesh,783,53,Omicron (BA.2),0.31,5769,33.73
-Bangladesh,797,19,,0.11,5788,33.84
-Bangladesh,811,7,,0.04,5795,33.88
-Bangladesh,825,6,,0.04,5801,33.92
-Bangladesh,839,6,,0.04,5807,33.96
-Bangladesh,853,4,,0.02,5811,33.98
-Bangladesh,867,11,,0.06,5822,34.04
-Bangladesh,881,99,Omicron (BA.5),0.58,5921,34.62
-Bangladesh,895,149,Omicron (BA.5),0.87,6070,35.49
-Bangladesh,909,34,Omicron (BA.5),0.2,6104,35.69
-Bangladesh,923,22,,0.13,6126,35.82
-Bangladesh,937,6,,0.04,6132,35.86
-Bangladesh,951,8,,0.05,6140,35.91
-Bangladesh,965,25,,0.15,6165,36.06
-Bangladesh,979,87,Omicron (XBB),0.51,6252,36.57
-Bangladesh,993,75,Omicron (XBB),0.44,6327,37.01
-Bangladesh,1007,36,Omicron (XBB),0.21,6363,37.22
+Bangladesh,531,236,Delta,1.38,2345,13.72
+Bangladesh,545,394,Delta,2.3,2739,16.02
+Bangladesh,559,226,Delta,1.32,2965,17.34
+Bangladesh,573,344,Delta,2.01,3309,19.35
+Bangladesh,587,206,Delta,1.2,3515,20.55
+Bangladesh,601,156,Delta,0.91,3671,21.46
+Bangladesh,615,145,Delta,0.85,3816,22.31
+Bangladesh,629,141,Delta,0.82,3957,23.13
+Bangladesh,643,126,Delta,0.74,4083,23.87
+Bangladesh,657,96,Delta,0.56,4179,24.43
+Bangladesh,671,126,Delta,0.74,4305,25.17
+Bangladesh,685,143,Delta,0.84,4448,26.01
+Bangladesh,699,119,Delta,0.7,4567,26.71
+Bangladesh,713,144,Delta,0.84,4711,27.55
+Bangladesh,727,373,Omicron (BA.1),2.18,5084,29.73
+Bangladesh,741,330,Omicron (BA.2),1.93,5414,31.66
+Bangladesh,755,189,Omicron (BA.2),1.1,5603,32.76
+Bangladesh,769,114,Omicron (BA.2),0.67,5717,33.43
+Bangladesh,783,53,Omicron (BA.2),0.31,5770,33.74
+Bangladesh,797,19,,0.11,5789,33.85
+Bangladesh,811,7,,0.04,5796,33.89
+Bangladesh,825,6,,0.04,5802,33.93
+Bangladesh,839,6,,0.04,5808,33.97
+Bangladesh,853,4,,0.02,5812,33.99
+Bangladesh,867,11,,0.06,5823,34.05
+Bangladesh,881,99,Omicron (BA.5),0.58,5922,34.63
+Bangladesh,895,149,Omicron (BA.5),0.87,6071,35.5
+Bangladesh,909,34,Omicron (BA.5),0.2,6105,35.7
+Bangladesh,923,22,,0.13,6127,35.83
+Bangladesh,937,6,,0.04,6133,35.87
+Bangladesh,951,8,,0.05,6141,35.92
+Bangladesh,965,25,,0.15,6166,36.07
+Bangladesh,979,93,Omicron (XBB),0.54,6259,36.61
+Bangladesh,993,75,Omicron (XBB),0.44,6334,37.05
+Bangladesh,1007,38,Omicron (XBB),0.22,6372,37.27
 Belarus,139,10,,1.05,10,1.05
 Belarus,153,1,,0.1,11,1.15
 Belarus,181,1,,0.1,12,1.25
@@ -627,12 +634,12 @@ Belgium,951,1634,Omicron (BA.5),140.19,153486,13168.09
 Belgium,965,1616,Omicron (BA.5),138.64,155102,13306.73
 Belgium,979,1747,Omicron (BA.5),149.88,156849,13456.61
 Belgium,993,2334,Omicron (BA.5),200.24,159183,13656.85
-Belgium,1007,1752,Omicron (BA.5),150.31,160935,13807.16
-Belgium,1021,801,Omicron (BA.5),68.72,161736,13875.88
-Belgium,1035,580,Omicron (BQ.1),49.76,162316,13925.64
-Belgium,1049,684,Omicron (BQ.1),58.68,163000,13984.32
-Belgium,1063,417,Omicron (BQ.1),35.78,163417,14020.1
-Belgium,1071,20,,1.72,163437,14021.82
+Belgium,1007,1751,Omicron (BA.5),150.22,160934,13807.07
+Belgium,1021,801,Omicron (BA.5),68.72,161735,13875.79
+Belgium,1035,583,Omicron (BQ.1),50.02,162318,13925.81
+Belgium,1049,688,Omicron (BQ.1),59.03,163006,13984.84
+Belgium,1063,650,Omicron (BQ.1),55.77,163656,14040.61
+Belgium,1077,114,Omicron (BQ.1),9.78,163770,14050.39
 Belize,209,3,,7.4,3,7.4
 Belize,223,1,,2.47,4,9.87
 Belize,251,2,,4.93,6,14.8
@@ -828,18 +835,19 @@ Botswana,797,9,,3.42,2624,997.55
 Botswana,811,10,,3.8,2634,1001.35
 Botswana,825,16,,6.08,2650,1007.43
 Botswana,839,12,,4.56,2662,1011.99
-Botswana,853,35,Omicron (BA.4),13.31,2697,1025.3
-Botswana,867,63,Omicron (BA.4),23.95,2760,1049.25
-Botswana,881,245,Omicron (BA.4),93.15,3005,1142.4
-Botswana,895,134,Omicron (BA.4),50.94,3139,1193.34
-Botswana,909,38,Omicron (BA.4),14.45,3177,1207.79
-Botswana,937,4,,1.52,3181,1209.31
-Botswana,951,1,,0.38,3182,1209.69
-Botswana,979,2,,0.76,3184,1210.45
-Botswana,1007,1,,0.38,3185,1210.83
-Botswana,1021,5,,1.9,3190,1212.73
-Botswana,1035,6,,2.28,3196,1215.01
-Botswana,1049,6,,2.28,3202,1217.29
+Botswana,853,37,Omicron (BA.4),14.07,2699,1026.06
+Botswana,867,63,Omicron (BA.4),23.95,2762,1050.01
+Botswana,881,246,Omicron (BA.4),93.53,3008,1143.54
+Botswana,895,134,Omicron (BA.4),50.94,3142,1194.48
+Botswana,909,39,Omicron (BA.4),14.83,3181,1209.31
+Botswana,937,4,,1.52,3185,1210.83
+Botswana,951,1,,0.38,3186,1211.21
+Botswana,979,2,,0.76,3188,1211.97
+Botswana,1007,1,,0.38,3189,1212.35
+Botswana,1021,5,,1.9,3194,1214.25
+Botswana,1035,6,,2.28,3200,1216.53
+Botswana,1049,6,,2.28,3206,1218.81
+Botswana,1063,5,,1.9,3211,1220.71
 Brazil,111,304,Others,1.41,304,1.41
 Brazil,125,194,Others,0.9,498,2.31
 Brazil,139,279,Others,1.3,777,3.61
@@ -885,30 +893,30 @@ Brazil,685,3822,Delta,17.75,105111,488.17
 Brazil,699,2798,Delta,13.0,107909,501.17
 Brazil,713,3779,Omicron (BA.1),17.55,111688,518.72
 Brazil,727,11669,Omicron (BA.1),54.2,123357,572.92
-Brazil,741,9532,Omicron (BA.1),44.27,132889,617.19
-Brazil,755,8482,Omicron (BA.1),39.39,141371,656.58
-Brazil,769,4279,Omicron (BA.1),19.87,145650,676.45
-Brazil,783,3605,Omicron (BA.1),16.74,149255,693.19
-Brazil,797,1367,Omicron (BA.1),6.35,150622,699.54
-Brazil,811,1297,Omicron (BA.2),6.02,151919,705.56
-Brazil,825,1195,Omicron (BA.2),5.55,153114,711.11
-Brazil,839,1462,Omicron (BA.2),6.79,154576,717.9
-Brazil,853,3397,Omicron (BA.2),15.78,157973,733.68
-Brazil,867,3733,Omicron (BA.2),17.34,161706,751.02
-Brazil,881,4534,Omicron (BA.2),21.06,166240,772.08
-Brazil,895,5261,Omicron (BA.5),24.43,171501,796.51
-Brazil,909,5794,Omicron (BA.5),26.91,177295,823.42
-Brazil,923,2647,Omicron (BA.5),12.29,179942,835.71
-Brazil,937,1958,Omicron (BA.5),9.09,181900,844.8
-Brazil,951,602,Omicron (BA.5),2.8,182502,847.6
-Brazil,965,428,Omicron (BA.5),1.99,182930,849.59
-Brazil,979,200,Omicron (BA.5),0.93,183130,850.52
-Brazil,993,299,Omicron (BA.5),1.39,183429,851.91
-Brazil,1007,771,Omicron (BA.5),3.58,184200,855.49
-Brazil,1021,870,Omicron (BA.5),4.04,185070,859.53
-Brazil,1035,1539,Omicron (BQ.1),7.15,186609,866.68
-Brazil,1049,757,Omicron (BQ.1),3.52,187366,870.2
-Brazil,1063,64,Omicron (BQ.1),0.3,187430,870.5
+Brazil,741,9534,Omicron (BA.1),44.28,132891,617.2
+Brazil,755,8482,Omicron (BA.1),39.39,141373,656.59
+Brazil,769,4279,Omicron (BA.1),19.87,145652,676.46
+Brazil,783,3605,Omicron (BA.1),16.74,149257,693.2
+Brazil,797,1367,Omicron (BA.1),6.35,150624,699.55
+Brazil,811,1297,Omicron (BA.2),6.02,151921,705.57
+Brazil,825,1195,Omicron (BA.2),5.55,153116,711.12
+Brazil,839,1462,Omicron (BA.2),6.79,154578,717.91
+Brazil,853,3397,Omicron (BA.2),15.78,157975,733.69
+Brazil,867,3733,Omicron (BA.2),17.34,161708,751.03
+Brazil,881,4539,Omicron (BA.2),21.08,166247,772.11
+Brazil,895,5271,Omicron (BA.5),24.48,171518,796.59
+Brazil,909,5799,Omicron (BA.5),26.93,177317,823.52
+Brazil,923,2684,Omicron (BA.5),12.47,180001,835.99
+Brazil,937,1974,Omicron (BA.5),9.17,181975,845.16
+Brazil,951,603,Omicron (BA.5),2.8,182578,847.96
+Brazil,965,428,Omicron (BA.5),1.99,183006,849.95
+Brazil,979,203,Omicron (BA.5),0.94,183209,850.89
+Brazil,993,300,Omicron (BA.5),1.39,183509,852.28
+Brazil,1007,835,Omicron (BA.5),3.88,184344,856.16
+Brazil,1021,1052,Omicron (BA.5),4.89,185396,861.05
+Brazil,1035,2867,Omicron (BQ.1),13.32,188263,874.37
+Brazil,1049,962,Omicron (BQ.1),4.47,189225,878.84
+Brazil,1063,94,Omicron (BQ.1),0.44,189319,879.28
 Brunei,349,2,,4.45,2,4.45
 Brunei,377,2,,4.45,4,8.9
 Brunei,559,16,,35.63,20,44.53
@@ -926,22 +934,23 @@ Brunei,783,334,Omicron (BA.2),743.87,1885,4198.2
 Brunei,797,137,Omicron (BA.2),305.12,2022,4503.32
 Brunei,811,84,Omicron (BA.2),187.08,2106,4690.4
 Brunei,825,10,,22.27,2116,4712.67
-Brunei,839,48,Omicron (BA.2),106.9,2164,4819.57
-Brunei,853,57,Omicron (BA.2),126.95,2221,4946.52
-Brunei,867,41,Omicron (BA.2),91.31,2262,5037.83
-Brunei,881,162,Omicron (BA.2),360.8,2424,5398.63
-Brunei,895,178,Omicron (BA.5),396.43,2602,5795.06
-Brunei,909,83,Omicron (BA.5),184.85,2685,5979.91
-Brunei,923,25,,55.68,2710,6035.59
-Brunei,937,320,Omicron (BA.5),712.69,3030,6748.28
-Brunei,951,234,Omicron (BA.5),521.16,3264,7269.44
-Brunei,965,159,Omicron (BA.5),354.12,3423,7623.56
-Brunei,979,175,Omicron (BA.5),389.75,3598,8013.31
-Brunei,993,172,Omicron (BA.5),383.07,3770,8396.38
-Brunei,1007,185,Omicron (BA.5),412.02,3955,8808.4
-Brunei,1021,168,Omicron (XBB),374.16,4123,9182.56
-Brunei,1035,177,Omicron (XBB),394.21,4300,9576.77
-Brunei,1049,129,Omicron (XBB),287.3,4429,9864.07
+Brunei,839,49,Omicron (BA.2),109.13,2165,4821.8
+Brunei,853,57,Omicron (BA.2),126.95,2222,4948.75
+Brunei,867,41,Omicron (BA.2),91.31,2263,5040.06
+Brunei,881,179,Omicron (BA.2),398.66,2442,5438.72
+Brunei,895,202,Omicron (BA.5),449.89,2644,5888.61
+Brunei,909,90,Omicron (BA.5),200.44,2734,6089.05
+Brunei,923,26,,57.91,2760,6146.96
+Brunei,937,337,Omicron (BA.5),750.55,3097,6897.51
+Brunei,951,235,Omicron (BA.5),523.38,3332,7420.89
+Brunei,965,159,Omicron (BA.5),354.12,3491,7775.01
+Brunei,979,175,Omicron (BA.5),389.75,3666,8164.76
+Brunei,993,172,Omicron (BA.5),383.07,3838,8547.83
+Brunei,1007,185,Omicron (BA.5),412.02,4023,8959.85
+Brunei,1021,168,Omicron (XBB),374.16,4191,9334.01
+Brunei,1035,177,Omicron (XBB),394.21,4368,9728.22
+Brunei,1049,174,Omicron (XBB),387.53,4542,10115.75
+Brunei,1063,125,Omicron (XBB),278.4,4667,10394.15
 Bulgaria,111,3,,0.44,3,0.44
 Bulgaria,125,3,,0.44,6,0.88
 Bulgaria,181,1,,0.15,7,1.03
@@ -1058,7 +1067,7 @@ Cambodia,1007,19,,1.13,3356,200.16
 Cambodia,1021,11,,0.66,3367,200.82
 Cambodia,1035,16,,0.95,3383,201.77
 Cambodia,1049,44,Omicron (BA.2.75),2.62,3427,204.39
-Cambodia,1063,51,Omicron (BA.2.75),3.04,3478,207.43
+Cambodia,1063,52,Omicron (BA.2.75),3.1,3479,207.49
 Cameroon,111,3,,0.11,3,0.11
 Cameroon,125,11,,0.39,14,0.5
 Cameroon,153,6,,0.21,20,0.71
@@ -1172,13 +1181,14 @@ Canada,923,6744,Omicron (BA.5),175.38,367800,9564.61
 Canada,937,6622,Omicron (BA.5),172.2,374422,9736.81
 Canada,951,7049,Omicron (BA.5),183.31,381471,9920.12
 Canada,965,6753,Omicron (BA.5),175.61,388224,10095.73
-Canada,979,7728,Omicron (BA.5),200.97,395952,10296.7
-Canada,993,7634,Omicron (BA.5),198.52,403586,10495.22
-Canada,1007,7310,Omicron (BA.5),190.1,410896,10685.32
-Canada,1021,6772,Omicron (BA.5),176.11,417668,10861.43
-Canada,1035,4506,Omicron (BA.5),117.18,422174,10978.61
-Canada,1049,4419,Omicron (BQ.1),114.92,426593,11093.53
-Canada,1063,2691,Omicron (BQ.1),69.98,429284,11163.51
+Canada,979,7729,Omicron (BA.5),200.99,395953,10296.72
+Canada,993,7634,Omicron (BA.5),198.52,403587,10495.24
+Canada,1007,7310,Omicron (BA.5),190.1,410897,10685.34
+Canada,1021,6772,Omicron (BA.5),176.11,417669,10861.45
+Canada,1035,4507,Omicron (BA.5),117.2,422176,10978.65
+Canada,1049,4424,Omicron (BQ.1),115.05,426600,11093.7
+Canada,1063,5158,Omicron (BQ.1),134.13,431758,11227.83
+Canada,1077,627,Omicron (BQ.1),16.31,432385,11244.14
 Chile,111,106,Others,5.41,106,5.41
 Chile,125,84,Others,4.28,190,9.69
 Chile,139,80,Others,4.08,270,13.77
@@ -1251,54 +1261,59 @@ Chile,1063,18,,0.92,31861,1625.23
 China,153,4,,0.0,4,0.0
 China,181,2,,0.0,6,0.0
 China,195,4,,0.0,10,0.0
-China,209,6,,0.0,16,0.0
-China,223,11,,0.01,27,0.01
-China,237,2,,0.0,29,0.01
-China,251,2,,0.0,31,0.01
-China,293,1,,0.0,32,0.01
-China,335,3,,0.0,35,0.01
-China,349,16,,0.01,51,0.02
-China,363,17,,0.01,68,0.03
-China,377,24,,0.02,92,0.05
-China,391,6,,0.0,98,0.05
-China,433,2,,0.0,100,0.05
-China,447,90,Others,0.06,190,0.11
-China,461,13,,0.01,203,0.12
-China,475,4,,0.0,207,0.12
-China,489,43,Others,0.03,250,0.15
-China,503,101,Delta,0.07,351,0.22
-China,517,57,Delta,0.04,408,0.26
-China,531,24,,0.02,432,0.28
-China,545,74,Delta,0.05,506,0.33
-China,559,38,Delta,0.03,544,0.36
-China,573,48,Delta,0.03,592,0.39
-China,587,20,,0.01,612,0.4
-China,601,88,Delta,0.06,700,0.46
-China,615,226,Delta,0.16,926,0.62
-China,629,41,Delta,0.03,967,0.65
-China,643,33,Delta,0.02,1000,0.67
-China,657,193,Delta,0.14,1193,0.81
-China,671,205,Delta,0.14,1398,0.95
-China,685,36,Delta,0.03,1434,0.98
-China,699,33,Delta,0.02,1467,1.0
-China,713,12,,0.01,1479,1.01
-China,727,13,,0.01,1492,1.02
-China,741,98,Delta,0.07,1590,1.09
-China,755,18,,0.01,1608,1.1
-China,769,63,Omicron (BA.2),0.04,1671,1.14
-China,783,90,Omicron (BA.2),0.06,1761,1.2
-China,797,18,,0.01,1779,1.21
-China,811,28,,0.02,1807,1.23
-China,825,32,Omicron (BA.2),0.02,1839,1.25
-China,839,18,,0.01,1857,1.26
-China,853,2,,0.0,1859,1.26
-China,867,2,,0.0,1861,1.26
-China,895,4,,0.0,1865,1.26
-China,909,2,,0.0,1867,1.26
-China,937,377,Omicron (BA.5),0.26,2244,1.52
-China,951,4,,0.0,2248,1.52
-China,1021,3,,0.0,2251,1.52
-China,1063,10,,0.01,2261,1.53
+China,209,2,,0.0,12,0.0
+China,223,11,,0.01,23,0.01
+China,237,2,,0.0,25,0.01
+China,251,2,,0.0,27,0.01
+China,293,1,,0.0,28,0.01
+China,335,3,,0.0,31,0.01
+China,349,16,,0.01,47,0.02
+China,363,17,,0.01,64,0.03
+China,377,24,,0.02,88,0.05
+China,391,6,,0.0,94,0.05
+China,433,2,,0.0,96,0.05
+China,447,90,Others,0.06,186,0.11
+China,461,13,,0.01,199,0.12
+China,475,4,,0.0,203,0.12
+China,489,43,Others,0.03,246,0.15
+China,503,101,Delta,0.07,347,0.22
+China,517,57,Delta,0.04,404,0.26
+China,531,24,,0.02,428,0.28
+China,545,74,Delta,0.05,502,0.33
+China,559,38,Delta,0.03,540,0.36
+China,573,48,Delta,0.03,588,0.39
+China,587,20,,0.01,608,0.4
+China,601,88,Delta,0.06,696,0.46
+China,615,226,Delta,0.16,922,0.62
+China,629,41,Delta,0.03,963,0.65
+China,643,33,Delta,0.02,996,0.67
+China,657,193,Delta,0.14,1189,0.81
+China,671,205,Delta,0.14,1394,0.95
+China,685,36,Delta,0.03,1430,0.98
+China,699,33,Delta,0.02,1463,1.0
+China,713,12,,0.01,1475,1.01
+China,727,13,,0.01,1488,1.02
+China,741,98,Delta,0.07,1586,1.09
+China,755,18,,0.01,1604,1.1
+China,769,63,Omicron (BA.2),0.04,1667,1.14
+China,783,90,Omicron (BA.2),0.06,1757,1.2
+China,797,18,,0.01,1775,1.21
+China,811,28,,0.02,1803,1.23
+China,825,32,Omicron (BA.2),0.02,1835,1.25
+China,839,18,,0.01,1853,1.26
+China,853,2,,0.0,1855,1.26
+China,867,2,,0.0,1857,1.26
+China,895,4,,0.0,1861,1.26
+China,909,2,,0.0,1863,1.26
+China,937,377,Omicron (BA.5),0.26,2240,1.52
+China,951,4,,0.0,2244,1.52
+China,993,10,,0.01,2254,1.53
+China,1007,1,,0.0,2255,1.53
+China,1021,3,,0.0,2258,1.53
+China,1035,6,,0.0,2264,1.53
+China,1049,195,Omicron (BA.5),0.14,2459,1.67
+China,1063,282,Omicron (BA.5),0.2,2741,1.87
+China,1077,62,Omicron (BA.5),0.04,2803,1.91
 Colombia,111,80,Others,1.54,80,1.54
 Colombia,125,1,,0.02,81,1.56
 Colombia,139,8,,0.15,89,1.71
@@ -1307,66 +1322,68 @@ Colombia,167,21,,0.4,118,2.26
 Colombia,181,21,,0.4,139,2.66
 Colombia,195,5,,0.1,144,2.76
 Colombia,209,11,,0.21,155,2.97
-Colombia,223,6,,0.12,161,3.09
-Colombia,237,3,,0.06,164,3.15
-Colombia,251,1,,0.02,165,3.17
-Colombia,265,10,,0.19,175,3.36
-Colombia,279,11,,0.21,186,3.57
-Colombia,293,9,,0.17,195,3.74
-Colombia,307,13,,0.25,208,3.99
-Colombia,321,9,,0.17,217,4.16
-Colombia,335,16,,0.31,233,4.47
-Colombia,349,33,Others,0.64,266,5.11
-Colombia,363,45,Others,0.87,311,5.98
-Colombia,377,30,Others,0.58,341,6.56
-Colombia,391,12,,0.23,353,6.79
-Colombia,405,13,,0.25,366,7.04
-Colombia,419,41,Others,0.79,407,7.83
-Colombia,433,59,Others,1.14,466,8.97
-Colombia,447,439,Mu,8.46,905,17.43
-Colombia,461,386,Mu,7.44,1291,24.87
-Colombia,475,247,Mu,4.76,1538,29.63
-Colombia,489,208,Mu,4.01,1746,33.64
-Colombia,503,179,Mu,3.45,1925,37.09
-Colombia,517,204,Mu,3.93,2129,41.02
-Colombia,531,296,Mu,5.71,2425,46.73
-Colombia,545,608,Mu,11.72,3033,58.45
-Colombia,559,615,Mu,11.86,3648,70.31
-Colombia,573,817,Mu,15.75,4465,86.06
-Colombia,587,663,Mu,12.78,5128,98.84
-Colombia,601,313,Delta,6.03,5441,104.87
-Colombia,615,678,Delta,13.07,6119,117.94
-Colombia,629,806,Delta,15.54,6925,133.48
-Colombia,643,600,Delta,11.57,7525,145.05
-Colombia,657,648,Delta,12.49,8173,157.54
-Colombia,671,551,Delta,10.62,8724,168.16
-Colombia,685,497,Delta,9.58,9221,177.74
-Colombia,699,294,Delta,5.67,9515,183.41
-Colombia,713,634,Omicron (BA.1),12.22,10149,195.63
-Colombia,727,1507,Omicron (BA.1),29.05,11656,224.68
-Colombia,741,456,Omicron (BA.1),8.79,12112,233.47
-Colombia,755,395,Omicron (BA.1),7.61,12507,241.08
-Colombia,769,239,Omicron (BA.1),4.61,12746,245.69
-Colombia,783,132,Omicron (BA.1),2.54,12878,248.23
-Colombia,797,129,Omicron (BA.1),2.49,13007,250.72
-Colombia,811,184,Omicron (BA.2),3.55,13191,254.27
-Colombia,825,156,Omicron (BA.2),3.01,13347,257.28
-Colombia,839,259,Omicron (BA.2),4.99,13606,262.27
-Colombia,853,280,Omicron (BA.2),5.4,13886,267.67
-Colombia,867,444,Omicron (BA.2),8.56,14330,276.23
-Colombia,881,793,Omicron (BA.2),15.29,15123,291.52
-Colombia,895,462,Omicron (BA.4),8.91,15585,300.43
-Colombia,909,352,Omicron (BA.4),6.79,15937,307.22
-Colombia,923,350,Omicron (BA.4),6.75,16287,313.97
-Colombia,937,290,Omicron (BA.5),5.59,16577,319.56
-Colombia,951,201,Omicron (BA.5),3.87,16778,323.43
-Colombia,965,90,Omicron (BA.4),1.73,16868,325.16
-Colombia,979,32,Omicron (BA.5),0.62,16900,325.78
-Colombia,993,17,,0.33,16917,326.11
-Colombia,1007,59,Omicron (BA.5),1.14,16976,327.25
-Colombia,1021,144,Omicron (BQ.1),2.78,17120,330.03
-Colombia,1035,181,Omicron (BQ.1),3.49,17301,333.52
-Colombia,1049,113,Omicron (BQ.1),2.18,17414,335.7
+Colombia,223,8,,0.15,163,3.12
+Colombia,237,3,,0.06,166,3.18
+Colombia,251,1,,0.02,167,3.2
+Colombia,265,10,,0.19,177,3.39
+Colombia,279,11,,0.21,188,3.6
+Colombia,293,9,,0.17,197,3.77
+Colombia,307,13,,0.25,210,4.02
+Colombia,321,9,,0.17,219,4.19
+Colombia,335,16,,0.31,235,4.5
+Colombia,349,34,Others,0.66,269,5.16
+Colombia,363,46,Others,0.89,315,6.05
+Colombia,377,30,Others,0.58,345,6.63
+Colombia,391,12,,0.23,357,6.86
+Colombia,405,13,,0.25,370,7.11
+Colombia,419,41,Others,0.79,411,7.9
+Colombia,433,59,Others,1.14,470,9.04
+Colombia,447,439,Mu,8.46,909,17.5
+Colombia,461,387,Mu,7.46,1296,24.96
+Colombia,475,247,Mu,4.76,1543,29.72
+Colombia,489,209,Mu,4.03,1752,33.75
+Colombia,503,179,Mu,3.45,1931,37.2
+Colombia,517,204,Mu,3.93,2135,41.13
+Colombia,531,296,Mu,5.71,2431,46.84
+Colombia,545,608,Mu,11.72,3039,58.56
+Colombia,559,615,Mu,11.86,3654,70.42
+Colombia,573,817,Mu,15.75,4471,86.17
+Colombia,587,663,Mu,12.78,5134,98.95
+Colombia,601,313,Delta,6.03,5447,104.98
+Colombia,615,678,Delta,13.07,6125,118.05
+Colombia,629,807,Delta,15.56,6932,133.61
+Colombia,643,600,Delta,11.57,7532,145.18
+Colombia,657,648,Delta,12.49,8180,157.67
+Colombia,671,551,Delta,10.62,8731,168.29
+Colombia,685,497,Delta,9.58,9228,177.87
+Colombia,699,294,Delta,5.67,9522,183.54
+Colombia,713,634,Omicron (BA.1),12.22,10156,195.76
+Colombia,727,1510,Omicron (BA.1),29.11,11666,224.87
+Colombia,741,457,Omicron (BA.1),8.81,12123,233.68
+Colombia,755,395,Omicron (BA.1),7.61,12518,241.29
+Colombia,769,239,Omicron (BA.1),4.61,12757,245.9
+Colombia,783,133,Omicron (BA.1),2.56,12890,248.46
+Colombia,797,129,Omicron (BA.1),2.49,13019,250.95
+Colombia,811,184,Omicron (BA.2),3.55,13203,254.5
+Colombia,825,156,Omicron (BA.2),3.01,13359,257.51
+Colombia,839,259,Omicron (BA.2),4.99,13618,262.5
+Colombia,853,281,Omicron (BA.2),5.42,13899,267.92
+Colombia,867,444,Omicron (BA.2),8.56,14343,276.48
+Colombia,881,795,Omicron (BA.2),15.33,15138,291.81
+Colombia,895,462,Omicron (BA.4),8.91,15600,300.72
+Colombia,909,353,Omicron (BA.4),6.8,15953,307.52
+Colombia,923,357,Omicron (BA.4),6.88,16310,314.4
+Colombia,937,290,Omicron (BA.5),5.59,16600,319.99
+Colombia,951,201,Omicron (BA.5),3.87,16801,323.86
+Colombia,965,95,Omicron (BA.4),1.83,16896,325.69
+Colombia,979,38,Omicron (BA.5),0.73,16934,326.42
+Colombia,993,18,,0.35,16952,326.77
+Colombia,1007,66,Omicron (BA.5),1.27,17018,328.04
+Colombia,1021,158,Omicron (BQ.1),3.05,17176,331.09
+Colombia,1035,192,Omicron (BQ.1),3.7,17368,334.79
+Colombia,1049,140,Omicron (BQ.1),2.7,17508,337.49
+Colombia,1063,8,,0.15,17516,337.64
+Colombia,1077,1,,0.02,17517,337.66
 Costa Rica,139,8,,1.54,8,1.54
 Costa Rica,153,15,,2.9,23,4.44
 Costa Rica,167,19,,3.67,42,8.11
@@ -1419,19 +1436,19 @@ Costa Rica,811,183,Omicron (BA.2),35.32,3468,669.42
 Costa Rica,825,172,Omicron (BA.2),33.2,3640,702.62
 Costa Rica,839,251,Omicron (BA.2),48.45,3891,751.07
 Costa Rica,853,326,Omicron (BA.2),62.92,4217,813.99
-Costa Rica,867,197,Omicron (BA.2),38.02,4414,852.01
-Costa Rica,881,288,Omicron (BA.2),55.59,4702,907.6
-Costa Rica,895,349,Omicron (BA.2),67.36,5051,974.96
-Costa Rica,909,348,Omicron (BA.5),67.17,5399,1042.13
-Costa Rica,923,336,Omicron (BA.5),64.85,5735,1106.98
-Costa Rica,937,382,Omicron (BA.5),73.73,6117,1180.71
-Costa Rica,951,229,Omicron (BA.5),44.2,6346,1224.91
-Costa Rica,965,218,Omicron (BA.5),42.08,6564,1266.99
-Costa Rica,979,192,Omicron (BA.5),37.06,6756,1304.05
-Costa Rica,993,213,Omicron (BA.5),41.11,6969,1345.16
-Costa Rica,1007,243,Omicron (BA.5),46.9,7212,1392.06
-Costa Rica,1021,266,Omicron (BA.5),51.34,7478,1443.4
-Costa Rica,1035,78,Omicron (BA.5),15.06,7556,1458.46
+Costa Rica,867,209,Omicron (BA.2),40.34,4426,854.33
+Costa Rica,881,312,Omicron (BA.2),60.22,4738,914.55
+Costa Rica,895,349,Omicron (BA.2),67.36,5087,981.91
+Costa Rica,909,348,Omicron (BA.5),67.17,5435,1049.08
+Costa Rica,923,336,Omicron (BA.5),64.85,5771,1113.93
+Costa Rica,937,382,Omicron (BA.5),73.73,6153,1187.66
+Costa Rica,951,230,Omicron (BA.5),44.39,6383,1232.05
+Costa Rica,965,219,Omicron (BA.5),42.27,6602,1274.32
+Costa Rica,979,193,Omicron (BA.5),37.25,6795,1311.57
+Costa Rica,993,213,Omicron (BA.5),41.11,7008,1352.68
+Costa Rica,1007,243,Omicron (BA.5),46.9,7251,1399.58
+Costa Rica,1021,270,Omicron (BA.5),52.12,7521,1451.7
+Costa Rica,1035,265,Omicron (BA.5),51.15,7786,1502.85
 Croatia,223,3,,0.74,3,0.74
 Croatia,237,9,,2.23,12,2.97
 Croatia,251,1,,0.25,13,3.22
@@ -1487,8 +1504,9 @@ Croatia,979,665,Omicron (BA.5),165.0,37947,9415.28
 Croatia,993,637,Omicron (BA.5),158.05,38584,9573.33
 Croatia,1007,520,Omicron (BA.5),129.02,39104,9702.35
 Croatia,1021,443,Omicron (BA.5),109.92,39547,9812.27
-Croatia,1035,340,Omicron (BA.5),84.36,39887,9896.63
-Croatia,1049,229,Omicron (BA.5),56.82,40116,9953.45
+Croatia,1035,344,Omicron (BA.5),85.35,39891,9897.62
+Croatia,1049,340,Omicron (BA.5),84.36,40231,9981.98
+Croatia,1063,69,Omicron (BA.5),17.12,40300,9999.1
 Curacao,209,3,,15.69,3,15.69
 Curacao,265,1,,5.23,4,20.92
 Curacao,279,3,,15.69,7,36.61
@@ -1545,6 +1563,7 @@ Curacao,993,28,,146.46,2060,10775.58
 Curacao,1007,26,,136.0,2086,10911.58
 Curacao,1021,27,,141.23,2113,11052.81
 Curacao,1035,10,,52.31,2123,11105.12
+Curacao,1049,8,,41.85,2131,11146.97
 Cyprus,111,15,,16.74,15,16.74
 Cyprus,125,2,,2.23,17,18.97
 Cyprus,139,7,,7.81,24,26.78
@@ -1643,9 +1662,9 @@ Czechia,979,1427,Omicron (BA.5),135.98,50529,4815.04
 Czechia,993,917,Omicron (BA.5),87.38,51446,4902.42
 Czechia,1007,950,Omicron (BA.5),90.53,52396,4992.95
 Czechia,1021,426,Omicron (BA.5),40.59,52822,5033.54
-Czechia,1035,203,Omicron (BA.5),19.34,53025,5052.88
-Czechia,1049,106,Omicron (BA.5),10.1,53131,5062.98
-Czechia,1063,27,,2.57,53158,5065.55
+Czechia,1035,217,Omicron (BA.5),20.68,53039,5054.22
+Czechia,1049,136,Omicron (BA.5),12.96,53175,5067.18
+Czechia,1063,31,Omicron (BA.5),2.95,53206,5070.13
 Denmark,111,155,Others,26.35,155,26.35
 Denmark,125,137,Others,23.29,292,49.64
 Denmark,139,121,Others,20.57,413,70.21
@@ -1714,8 +1733,8 @@ Denmark,1007,7020,Omicron (BA.5),1193.42,583896,99263.88
 Denmark,1021,5956,Omicron (BA.5),1012.54,589852,100276.42
 Denmark,1035,5433,Omicron (BA.5),923.62,595285,101200.04
 Denmark,1049,6337,Omicron (BQ.1),1077.31,601622,102277.35
-Denmark,1063,6497,Omicron (BQ.1),1104.51,608119,103381.86
-Denmark,1071,623,Omicron (BQ.1),105.91,608742,103487.77
+Denmark,1063,6517,Omicron (BQ.1),1107.91,608139,103385.26
+Denmark,1077,1946,Omicron (BQ.1),330.83,610085,103716.09
 Djibouti,111,2,,1.78,2,1.78
 Djibouti,125,1,,0.89,3,2.67
 Djibouti,139,4,,3.57,7,6.24
@@ -1818,7 +1837,7 @@ Dominican Republic,1007,39,Omicron (BA.4),3.47,1908,169.97
 Dominican Republic,1021,24,,2.14,1932,172.11
 Dominican Republic,1035,123,Omicron (XBB),10.95,2055,183.06
 Dominican Republic,1049,95,Omicron (XBB),8.46,2150,191.52
-Dominican Republic,1063,28,,2.49,2178,194.01
+Dominican Republic,1063,114,Omicron (XBB),10.15,2264,201.67
 Ecuador,111,7,,0.39,7,0.39
 Ecuador,125,4,,0.22,11,0.61
 Ecuador,139,8,,0.44,19,1.05
@@ -1884,9 +1903,9 @@ Ecuador,979,37,Omicron (BA.5),2.06,6717,373.18
 Ecuador,993,46,Omicron (BA.5),2.56,6763,375.74
 Ecuador,1007,41,Omicron (BA.5),2.28,6804,378.02
 Ecuador,1021,61,Omicron (BQ.1),3.39,6865,381.41
-Ecuador,1035,97,Omicron (BQ.1),5.39,6962,386.8
-Ecuador,1049,16,,0.89,6978,387.69
-Ecuador,1063,59,Omicron (BQ.1),3.28,7037,390.97
+Ecuador,1035,104,Omicron (BQ.1),5.78,6969,387.19
+Ecuador,1049,123,Omicron (BQ.1),6.83,7092,394.02
+Ecuador,1063,229,Omicron (BQ.1),12.72,7321,406.74
 Egypt,111,33,Others,0.3,33,0.3
 Egypt,125,20,,0.18,53,0.48
 Egypt,139,104,Others,0.94,157,1.42
@@ -1941,11 +1960,14 @@ Egypt,881,10,,0.09,1123,10.14
 Egypt,895,74,Omicron (BA.5),0.67,1197,10.81
 Egypt,909,26,,0.23,1223,11.04
 Egypt,937,4,,0.04,1227,11.08
-Egypt,951,8,,0.07,1235,11.15
-Egypt,965,4,,0.04,1239,11.19
-Egypt,979,3,,0.03,1242,11.22
-Egypt,993,16,,0.14,1258,11.36
-Egypt,1007,2,,0.02,1260,11.38
+Egypt,951,26,,0.23,1253,11.31
+Egypt,965,39,Omicron (BA.5),0.35,1292,11.66
+Egypt,979,10,,0.09,1302,11.75
+Egypt,993,16,,0.14,1318,11.89
+Egypt,1007,2,,0.02,1320,11.91
+Egypt,1021,1,,0.01,1321,11.92
+Egypt,1035,13,,0.12,1334,12.04
+Egypt,1049,16,,0.14,1350,12.18
 El Salvador,251,1,,0.16,1,0.16
 El Salvador,475,93,Others,14.68,94,14.84
 El Salvador,503,6,,0.95,100,15.79
@@ -2154,8 +2176,8 @@ Finland,993,271,Omicron (BA.5),48.91,39762,7176.28
 Finland,1007,249,Omicron (BA.5),44.94,40011,7221.22
 Finland,1021,412,Omicron (BA.5),74.36,40423,7295.58
 Finland,1035,414,Omicron (BA.5),74.72,40837,7370.3
-Finland,1049,485,Omicron (BA.5),87.53,41322,7457.83
-Finland,1063,330,Omicron (BA.5),59.56,41652,7517.39
+Finland,1049,486,Omicron (BA.5),87.71,41323,7458.01
+Finland,1063,332,Omicron (BA.5),59.92,41655,7517.93
 France,111,195,Others,2.88,195,2.88
 France,125,58,Others,0.86,253,3.74
 France,139,30,Others,0.44,283,4.18
@@ -2218,13 +2240,14 @@ France,923,9276,Omicron (BA.5),136.79,446327,6581.74
 France,937,5712,Omicron (BA.5),84.23,452039,6665.97
 France,951,5041,Omicron (BA.5),74.34,457080,6740.31
 France,965,5139,Omicron (BA.5),75.78,462219,6816.09
-France,979,6437,Omicron (BA.5),94.92,468656,6911.01
-France,993,6786,Omicron (BA.5),100.07,475442,7011.08
-France,1007,7290,Omicron (BA.5),107.5,482732,7118.58
-France,1021,3893,Omicron (BA.5),57.41,486625,7175.99
-France,1035,3501,Omicron (BQ.1),51.63,490126,7227.62
-France,1049,4642,Omicron (BQ.1),68.45,494768,7296.07
-France,1063,1798,Omicron (BQ.1),26.51,496566,7322.58
+France,979,6438,Omicron (BA.5),94.94,468657,6911.03
+France,993,6786,Omicron (BA.5),100.07,475443,7011.1
+France,1007,7291,Omicron (BA.5),107.52,482734,7118.62
+France,1021,3926,Omicron (BA.5),57.89,486660,7176.51
+France,1035,3621,Omicron (BQ.1),53.4,490281,7229.91
+France,1049,5282,Omicron (BQ.1),77.89,495563,7307.8
+France,1063,4264,Omicron (BQ.1),62.88,499827,7370.68
+France,1077,85,Omicron (BQ.1),1.25,499912,7371.93
 Gabon,111,42,Others,17.58,42,17.58
 Gabon,125,14,,5.86,56,23.44
 Gabon,139,10,,4.19,66,27.63
@@ -2433,11 +2456,12 @@ Germany,951,9033,Omicron (BA.5),108.35,767342,9204.07
 Germany,965,10632,Omicron (BA.5),127.53,777974,9331.6
 Germany,979,10553,Omicron (BA.5),126.58,788527,9458.18
 Germany,993,10283,Omicron (BA.5),123.34,798810,9581.52
-Germany,1007,11404,Omicron (BA.5),136.79,810214,9718.31
-Germany,1021,7843,Omicron (BA.5),94.07,818057,9812.38
-Germany,1035,7844,Omicron (BA.5),94.09,825901,9906.47
-Germany,1049,6793,Omicron (BA.5),81.48,832694,9987.95
-Germany,1063,4829,Omicron (BA.5),57.92,837523,10045.87
+Germany,1007,11406,Omicron (BA.5),136.81,810216,9718.33
+Germany,1021,7856,Omicron (BA.5),94.23,818072,9812.56
+Germany,1035,7880,Omicron (BA.5),94.52,825952,9907.08
+Germany,1049,6921,Omicron (BA.5),83.02,832873,9990.1
+Germany,1063,7377,Omicron (BA.5),88.49,840250,10078.59
+Germany,1077,459,Omicron (BA.5),5.51,840709,10084.1
 Ghana,125,17,,0.51,17,0.51
 Ghana,139,7,,0.21,24,0.72
 Ghana,153,3,,0.09,27,0.81
@@ -2483,17 +2507,17 @@ Ghana,727,98,Omicron (BA.1),2.93,2872,85.82
 Ghana,741,15,,0.45,2887,86.27
 Ghana,755,13,,0.39,2900,86.66
 Ghana,769,10,,0.3,2910,86.96
-Ghana,811,2,,0.06,2912,87.02
-Ghana,853,1,,0.03,2913,87.05
-Ghana,867,70,Omicron (BA.4),2.09,2983,89.14
-Ghana,881,107,Omicron (BA.4),3.2,3090,92.34
-Ghana,895,97,Omicron (BA.4),2.9,3187,95.24
-Ghana,909,17,,0.51,3204,95.75
-Ghana,923,4,,0.12,3208,95.87
-Ghana,965,4,,0.12,3212,95.99
-Ghana,979,32,Omicron (BQ.1),0.96,3244,96.95
-Ghana,993,101,Omicron (BQ.1),3.02,3345,99.97
-Ghana,1007,23,,0.69,3368,100.66
+Ghana,811,1,,0.03,2911,86.99
+Ghana,853,1,,0.03,2912,87.02
+Ghana,867,67,Omicron (BA.4),2.0,2979,89.02
+Ghana,881,102,Omicron (BA.4),3.05,3081,92.07
+Ghana,895,97,Omicron (BA.4),2.9,3178,94.97
+Ghana,909,17,,0.51,3195,95.48
+Ghana,923,4,,0.12,3199,95.6
+Ghana,965,4,,0.12,3203,95.72
+Ghana,979,32,Omicron (BQ.1),0.96,3235,96.68
+Ghana,993,101,Omicron (BQ.1),3.02,3336,99.7
+Ghana,1007,23,,0.69,3359,100.39
 Greece,111,7,,0.67,7,0.67
 Greece,125,6,,0.58,13,1.25
 Greece,195,2,,0.19,15,1.44
@@ -2558,6 +2582,7 @@ Greece,1007,275,Omicron (BA.5),26.48,21339,2054.78
 Greece,1021,128,Omicron (BA.5),12.33,21467,2067.11
 Greece,1035,57,Omicron (BA.5),5.49,21524,2072.6
 Greece,1049,83,Omicron (BA.5),7.99,21607,2080.59
+Greece,1063,71,Omicron (BQ.1),6.84,21678,2087.43
 Guadeloupe,363,5,,12.63,5,12.63
 Guadeloupe,377,37,Others,93.49,42,106.12
 Guadeloupe,391,1,,2.53,43,108.65
@@ -2607,6 +2632,7 @@ Guadeloupe,1007,17,,42.96,2017,5096.48
 Guadeloupe,1021,8,,20.21,2025,5116.69
 Guadeloupe,1035,6,,15.16,2031,5131.85
 Guadeloupe,1049,14,,35.37,2045,5167.22
+Guadeloupe,1063,7,,17.69,2052,5184.91
 Guatemala,125,3,,0.17,3,0.17
 Guatemala,139,6,,0.34,9,0.51
 Guatemala,153,19,,1.06,28,1.57
@@ -2670,9 +2696,10 @@ Guatemala,965,24,,1.34,2528,141.67
 Guatemala,979,36,Omicron (BA.5),2.02,2564,143.69
 Guatemala,993,26,,1.46,2590,145.15
 Guatemala,1007,30,Omicron (BA.5),1.68,2620,146.83
-Guatemala,1021,24,,1.34,2644,148.17
-Guatemala,1035,112,Omicron (BQ.1),6.28,2756,154.45
-Guatemala,1049,170,Omicron (XBB),9.53,2926,163.98
+Guatemala,1021,26,,1.46,2646,148.29
+Guatemala,1035,112,Omicron (BQ.1),6.28,2758,154.57
+Guatemala,1049,369,Omicron (XBB),20.68,3127,175.25
+Guatemala,1063,122,Omicron (XBB),6.84,3249,182.09
 Guinea,111,3,,0.22,3,0.22
 Guinea,125,3,,0.22,6,0.44
 Guinea,139,3,,0.22,9,0.66
@@ -2795,36 +2822,36 @@ Hong Kong,587,43,Delta,5.74,2240,299.1
 Hong Kong,601,52,Delta,6.94,2292,306.04
 Hong Kong,615,21,,2.8,2313,308.84
 Hong Kong,629,31,Delta,4.14,2344,312.98
-Hong Kong,643,30,Delta,4.01,2374,316.99
-Hong Kong,657,40,Delta,5.34,2414,322.33
-Hong Kong,671,52,Delta,6.94,2466,329.27
-Hong Kong,685,111,Delta,14.82,2577,344.09
-Hong Kong,699,121,Delta,16.16,2698,360.25
-Hong Kong,713,309,Omicron (BA.1),41.26,3007,401.51
-Hong Kong,727,377,Omicron (BA.1),50.34,3384,451.85
-Hong Kong,741,752,Omicron (BA.2),100.42,4136,552.27
-Hong Kong,755,930,Omicron (BA.2),124.18,5066,676.45
-Hong Kong,769,241,Omicron (BA.2),32.18,5307,708.63
-Hong Kong,783,293,Omicron (BA.2),39.12,5600,747.75
-Hong Kong,797,367,Omicron (BA.2),49.01,5967,796.76
-Hong Kong,811,434,Omicron (BA.2),57.95,6401,854.71
-Hong Kong,825,170,Omicron (BA.2),22.7,6571,877.41
-Hong Kong,839,328,Omicron (BA.2),43.8,6899,921.21
-Hong Kong,853,385,Omicron (BA.2),51.41,7284,972.62
-Hong Kong,867,442,Omicron (BA.2),59.02,7726,1031.64
-Hong Kong,881,550,Omicron (BA.2),73.44,8276,1105.08
-Hong Kong,895,640,Omicron (BA.2),85.46,8916,1190.54
-Hong Kong,909,741,Omicron (BA.2),98.95,9657,1289.49
-Hong Kong,923,513,Omicron (BA.2),68.5,10170,1357.99
-Hong Kong,937,511,Omicron (BA.2),68.23,10681,1426.22
-Hong Kong,951,602,Omicron (BA.5),80.39,11283,1506.61
-Hong Kong,965,571,Omicron (BA.5),76.25,11854,1582.86
-Hong Kong,979,309,Omicron (BA.5),41.26,12163,1624.12
-Hong Kong,993,220,Omicron (BA.5),29.38,12383,1653.5
-Hong Kong,1007,107,Omicron (BA.5),14.29,12490,1667.79
-Hong Kong,1021,78,Omicron (BQ.1),10.42,12568,1678.21
-Hong Kong,1035,116,Omicron (BQ.1),15.49,12684,1693.7
-Hong Kong,1049,99,Omicron (BQ.1),13.22,12783,1706.92
+Hong Kong,643,33,Delta,4.41,2377,317.39
+Hong Kong,657,43,Delta,5.74,2420,323.13
+Hong Kong,671,52,Delta,6.94,2472,330.07
+Hong Kong,685,111,Delta,14.82,2583,344.89
+Hong Kong,699,121,Delta,16.16,2704,361.05
+Hong Kong,713,309,Omicron (BA.1),41.26,3013,402.31
+Hong Kong,727,377,Omicron (BA.1),50.34,3390,452.65
+Hong Kong,741,752,Omicron (BA.2),100.42,4142,553.07
+Hong Kong,755,930,Omicron (BA.2),124.18,5072,677.25
+Hong Kong,769,241,Omicron (BA.2),32.18,5313,709.43
+Hong Kong,783,293,Omicron (BA.2),39.12,5606,748.55
+Hong Kong,797,367,Omicron (BA.2),49.01,5973,797.56
+Hong Kong,811,434,Omicron (BA.2),57.95,6407,855.51
+Hong Kong,825,170,Omicron (BA.2),22.7,6577,878.21
+Hong Kong,839,328,Omicron (BA.2),43.8,6905,922.01
+Hong Kong,853,385,Omicron (BA.2),51.41,7290,973.42
+Hong Kong,867,442,Omicron (BA.2),59.02,7732,1032.44
+Hong Kong,881,550,Omicron (BA.2),73.44,8282,1105.88
+Hong Kong,895,640,Omicron (BA.2),85.46,8922,1191.34
+Hong Kong,909,741,Omicron (BA.2),98.95,9663,1290.29
+Hong Kong,923,513,Omicron (BA.2),68.5,10176,1358.79
+Hong Kong,937,511,Omicron (BA.2),68.23,10687,1427.02
+Hong Kong,951,602,Omicron (BA.5),80.39,11289,1507.41
+Hong Kong,965,571,Omicron (BA.5),76.25,11860,1583.66
+Hong Kong,979,309,Omicron (BA.5),41.26,12169,1624.92
+Hong Kong,993,220,Omicron (BA.5),29.38,12389,1654.3
+Hong Kong,1007,108,Omicron (BA.5),14.42,12497,1668.72
+Hong Kong,1021,78,Omicron (BQ.1),10.42,12575,1679.14
+Hong Kong,1035,119,Omicron (BQ.1),15.89,12694,1695.03
+Hong Kong,1049,99,Omicron (BQ.1),13.22,12793,1708.25
 Hungary,111,7,,0.7,7,0.7
 Hungary,125,5,,0.5,12,1.2
 Hungary,139,10,,1.0,22,2.2
@@ -2903,7 +2930,7 @@ Iceland,1021,160,Omicron (BA.5),429.07,9852,26419.71
 Iceland,1035,230,Omicron (BQ.1),616.78,10082,27036.49
 Iceland,1049,295,Omicron (BQ.1),791.09,10377,27827.58
 Iceland,1063,201,Omicron (BQ.1),539.01,10578,28366.59
-Iceland,1071,40,Omicron (BQ.1),107.27,10618,28473.86
+Iceland,1077,123,Omicron (BQ.1),329.84,10701,28696.43
 India,111,509,Others,0.36,509,0.36
 India,125,535,Others,0.38,1044,0.74
 India,139,549,Others,0.39,1593,1.13
@@ -2963,15 +2990,17 @@ India,881,4209,Omicron (BA.2),2.97,150135,105.95
 India,895,5615,Omicron (BA.2),3.96,155750,109.91
 India,909,4559,Omicron (BA.2),3.22,160309,113.13
 India,923,3494,Omicron (BA.2.75),2.47,163803,115.6
-India,937,2471,Omicron (BA.2.75),1.74,166274,117.34
-India,951,1609,Omicron (BA.2.75),1.14,167883,118.48
-India,965,1723,Omicron (BA.2.75),1.22,169606,119.7
-India,979,1119,Omicron (BA.2.75),0.79,170725,120.49
-India,993,846,Omicron (BA.2.75),0.6,171571,121.09
-India,1007,582,Omicron (XBB),0.41,172153,121.5
-India,1021,287,Omicron (XBB),0.2,172440,121.7
-India,1035,159,Omicron (XBB),0.11,172599,121.81
-India,1049,32,Omicron (XBB),0.02,172631,121.83
+India,937,2474,Omicron (BA.2.75),1.75,166277,117.35
+India,951,1612,Omicron (BA.2.75),1.14,167889,118.49
+India,965,1723,Omicron (BA.2.75),1.22,169612,119.71
+India,979,1125,Omicron (BA.2.75),0.79,170737,120.5
+India,993,858,Omicron (BA.2.75),0.61,171595,121.11
+India,1007,604,Omicron (XBB),0.43,172199,121.54
+India,1021,302,Omicron (XBB),0.21,172501,121.75
+India,1035,174,Omicron (XBB),0.12,172675,121.87
+India,1049,68,Omicron (XBB),0.05,172743,121.92
+India,1063,18,,0.01,172761,121.93
+India,1077,24,,0.02,172785,121.95
 Indonesia,111,10,,0.04,10,0.04
 Indonesia,125,13,,0.05,23,0.09
 Indonesia,139,17,,0.06,40,0.15
@@ -3036,11 +3065,11 @@ Indonesia,951,1206,Omicron (BA.5),4.38,33169,120.38
 Indonesia,965,979,Omicron (BA.5),3.55,34148,123.93
 Indonesia,979,969,Omicron (BA.5),3.52,35117,127.45
 Indonesia,993,764,Omicron (BA.5),2.77,35881,130.22
-Indonesia,1007,1069,Omicron (BA.5),3.88,36950,134.1
-Indonesia,1021,1679,Omicron (BA.5),6.09,38629,140.19
-Indonesia,1035,1563,Omicron (XBB),5.67,40192,145.86
-Indonesia,1049,419,Omicron (XBB),1.52,40611,147.38
-Indonesia,1063,20,,0.07,40631,147.45
+Indonesia,1007,1085,Omicron (BA.5),3.94,36966,134.16
+Indonesia,1021,1757,Omicron (BA.5),6.38,38723,140.54
+Indonesia,1035,1738,Omicron (XBB),6.31,40461,146.85
+Indonesia,1049,555,Omicron (XBB),2.01,41016,148.86
+Indonesia,1063,48,Omicron (XBB),0.17,41064,149.03
 Iran,111,12,,0.14,12,0.14
 Iran,125,18,,0.2,30,0.34
 Iran,139,26,,0.29,56,0.63
@@ -3110,39 +3139,40 @@ Iraq,335,2,,0.04,33,0.72
 Iraq,349,2,,0.04,35,0.76
 Iraq,363,1,,0.02,36,0.78
 Iraq,377,3,,0.07,39,0.85
-Iraq,391,16,,0.36,55,1.21
-Iraq,405,48,Alpha,1.08,103,2.29
-Iraq,419,7,,0.16,110,2.45
-Iraq,433,4,,0.09,114,2.54
-Iraq,447,2,,0.04,116,2.58
-Iraq,461,4,,0.09,120,2.67
-Iraq,475,4,,0.09,124,2.76
-Iraq,489,5,,0.11,129,2.87
-Iraq,503,3,,0.07,132,2.94
-Iraq,517,21,,0.47,153,3.41
-Iraq,531,19,,0.43,172,3.84
-Iraq,545,65,Delta,1.46,237,5.3
-Iraq,559,54,Delta,1.21,291,6.51
-Iraq,573,68,Delta,1.53,359,8.04
-Iraq,587,41,Delta,0.92,400,8.96
-Iraq,601,26,,0.58,426,9.54
-Iraq,615,42,Delta,0.94,468,10.48
-Iraq,629,20,,0.45,488,10.93
-Iraq,643,6,,0.13,494,11.06
-Iraq,657,17,,0.38,511,11.44
-Iraq,671,18,,0.4,529,11.84
-Iraq,685,51,Delta,1.15,580,12.99
-Iraq,699,8,,0.18,588,13.17
-Iraq,713,39,Delta,0.88,627,14.05
-Iraq,727,86,Omicron (BA.1),1.93,713,15.98
-Iraq,741,94,Omicron (BA.1),2.11,807,18.09
-Iraq,755,42,Omicron (BA.1),0.94,849,19.03
-Iraq,769,5,,0.11,854,19.14
-Iraq,853,2,,0.04,856,19.18
-Iraq,881,5,,0.11,861,19.29
-Iraq,951,1,,0.02,862,19.31
-Iraq,979,1,,0.02,863,19.33
-Iraq,1035,1,,0.02,864,19.35
+Iraq,391,17,,0.38,56,1.23
+Iraq,405,48,Alpha,1.08,104,2.31
+Iraq,419,8,,0.18,112,2.49
+Iraq,433,4,,0.09,116,2.58
+Iraq,447,3,,0.07,119,2.65
+Iraq,461,4,,0.09,123,2.74
+Iraq,475,5,,0.11,128,2.85
+Iraq,489,5,,0.11,133,2.96
+Iraq,503,3,,0.07,136,3.03
+Iraq,517,21,,0.47,157,3.5
+Iraq,531,19,,0.43,176,3.93
+Iraq,545,65,Delta,1.46,241,5.39
+Iraq,559,54,Delta,1.21,295,6.6
+Iraq,573,68,Delta,1.53,363,8.13
+Iraq,587,41,Delta,0.92,404,9.05
+Iraq,601,27,,0.61,431,9.66
+Iraq,615,45,Delta,1.01,476,10.67
+Iraq,629,21,,0.47,497,11.14
+Iraq,643,6,,0.13,503,11.27
+Iraq,657,19,,0.43,522,11.7
+Iraq,671,19,,0.43,541,12.13
+Iraq,685,52,Delta,1.17,593,13.3
+Iraq,699,13,,0.29,606,13.59
+Iraq,713,39,Delta,0.88,645,14.47
+Iraq,727,89,Omicron (BA.1),2.0,734,16.47
+Iraq,741,96,Omicron (BA.1),2.16,830,18.63
+Iraq,755,45,Omicron (BA.1),1.01,875,19.64
+Iraq,769,6,,0.13,881,19.77
+Iraq,783,3,,0.07,884,19.84
+Iraq,853,2,,0.04,886,19.88
+Iraq,881,5,,0.11,891,19.99
+Iraq,951,1,,0.02,892,20.01
+Iraq,979,2,,0.04,894,20.05
+Iraq,1035,1,,0.02,895,20.07
 Ireland,111,111,Others,22.1,111,22.1
 Ireland,125,43,Others,8.56,154,30.66
 Ireland,139,8,,1.59,162,32.25
@@ -3276,7 +3306,8 @@ Israel,993,1596,Omicron (BA.5),168.91,109426,11580.68
 Israel,1007,1883,Omicron (BA.5),199.28,111309,11779.96
 Israel,1021,1404,Omicron (BA.5),148.59,112713,11928.55
 Israel,1035,1999,Omicron (BQ.1),211.56,114712,12140.11
-Israel,1049,472,Omicron (BQ.1),49.95,115184,12190.06
+Israel,1049,681,Omicron (BQ.1),72.07,115393,12212.18
+Israel,1063,458,Omicron (BQ.1),48.47,115851,12260.65
 Italy,111,111,Others,1.88,111,1.88
 Italy,125,49,Others,0.83,160,2.71
 Italy,139,35,Others,0.59,195,3.3
@@ -3305,48 +3336,48 @@ Italy,447,3662,Alpha,62.03,22816,386.47
 Italy,461,4303,Alpha,72.89,27119,459.36
 Italy,475,2718,Alpha,46.04,29837,505.4
 Italy,489,2589,Alpha,43.85,32426,549.25
-Italy,503,1607,Alpha,27.22,34033,576.47
-Italy,517,1372,Alpha,23.24,35405,599.71
-Italy,531,2272,Delta,38.48,37677,638.19
-Italy,545,3571,Delta,60.49,41248,698.68
-Italy,559,4319,Delta,73.16,45567,771.84
-Italy,573,3100,Delta,52.51,48667,824.35
-Italy,587,2998,Delta,50.78,51665,875.13
-Italy,601,2488,Delta,42.14,54153,917.27
-Italy,615,2316,Delta,39.23,56469,956.5
-Italy,629,2144,Delta,36.32,58613,992.82
-Italy,643,2281,Delta,38.64,60894,1031.46
-Italy,657,3092,Delta,52.37,63986,1083.83
-Italy,671,3576,Delta,60.57,67562,1144.4
-Italy,685,3076,Delta,52.1,70638,1196.5
-Italy,699,3923,Delta,66.45,74561,1262.95
-Italy,713,4853,Omicron (BA.1),82.2,79414,1345.15
-Italy,727,3827,Omicron (BA.1),64.82,83241,1409.97
-Italy,741,3802,Omicron (BA.1),64.4,87043,1474.37
-Italy,755,4373,Omicron (BA.1),74.07,91416,1548.44
-Italy,769,1959,Omicron (BA.1),33.18,93375,1581.62
-Italy,783,2484,Omicron (BA.2),42.07,95859,1623.69
-Italy,797,2557,Omicron (BA.2),43.31,98416,1667.0
-Italy,811,4036,Omicron (BA.2),68.36,102452,1735.36
-Italy,825,2508,Omicron (BA.2),42.48,104960,1777.84
-Italy,839,3522,Omicron (BA.2),59.66,108482,1837.5
-Italy,853,1896,Omicron (BA.2),32.12,110378,1869.62
-Italy,867,1400,Omicron (BA.2),23.71,111778,1893.33
-Italy,881,2163,Omicron (BA.2),36.64,113941,1929.97
-Italy,895,2006,Omicron (BA.5),33.98,115947,1963.95
-Italy,909,3579,Omicron (BA.5),60.62,119526,2024.57
-Italy,923,2311,Omicron (BA.5),39.14,121837,2063.71
-Italy,937,2199,Omicron (BA.5),37.25,124036,2100.96
-Italy,951,949,Omicron (BA.5),16.07,124985,2117.03
-Italy,965,1350,Omicron (BA.5),22.87,126335,2139.9
-Italy,979,1266,Omicron (BA.5),21.44,127601,2161.34
-Italy,993,1902,Omicron (BA.5),32.22,129503,2193.56
-Italy,1007,1720,Omicron (BA.5),29.13,131223,2222.69
-Italy,1021,1329,Omicron (BA.5),22.51,132552,2245.2
-Italy,1035,1848,Omicron (BA.5),31.3,134400,2276.5
-Italy,1049,1056,Omicron (BQ.1),17.89,135456,2294.39
-Italy,1063,1099,Omicron (BQ.1),18.62,136555,2313.01
-Italy,1071,11,,0.19,136566,2313.2
+Italy,503,1608,Alpha,27.24,34034,576.49
+Italy,517,1372,Alpha,23.24,35406,599.73
+Italy,531,2316,Delta,39.23,37722,638.96
+Italy,545,3574,Delta,60.54,41296,699.5
+Italy,559,4319,Delta,73.16,45615,772.66
+Italy,573,3104,Delta,52.58,48719,825.24
+Italy,587,3000,Delta,50.82,51719,876.06
+Italy,601,2496,Delta,42.28,54215,918.34
+Italy,615,2316,Delta,39.23,56531,957.57
+Italy,629,2144,Delta,36.32,58675,993.89
+Italy,643,2284,Delta,38.69,60959,1032.58
+Italy,657,3110,Delta,52.68,64069,1085.26
+Italy,671,3598,Delta,60.94,67667,1146.2
+Italy,685,3081,Delta,52.19,70748,1198.39
+Italy,699,3932,Delta,66.6,74680,1264.99
+Italy,713,4877,Omicron (BA.1),82.61,79557,1347.6
+Italy,727,3826,Omicron (BA.1),64.81,83383,1412.41
+Italy,741,3802,Omicron (BA.1),64.4,87185,1476.81
+Italy,755,4373,Omicron (BA.1),74.07,91558,1550.88
+Italy,769,1959,Omicron (BA.1),33.18,93517,1584.06
+Italy,783,2484,Omicron (BA.2),42.07,96001,1626.13
+Italy,797,2557,Omicron (BA.2),43.31,98558,1669.44
+Italy,811,4036,Omicron (BA.2),68.36,102594,1737.8
+Italy,825,2508,Omicron (BA.2),42.48,105102,1780.28
+Italy,839,3522,Omicron (BA.2),59.66,108624,1839.94
+Italy,853,1896,Omicron (BA.2),32.12,110520,1872.06
+Italy,867,1400,Omicron (BA.2),23.71,111920,1895.77
+Italy,881,2168,Omicron (BA.2),36.72,114088,1932.49
+Italy,895,2006,Omicron (BA.5),33.98,116094,1966.47
+Italy,909,3583,Omicron (BA.5),60.69,119677,2027.16
+Italy,923,2312,Omicron (BA.5),39.16,121989,2066.32
+Italy,937,2203,Omicron (BA.5),37.32,124192,2103.64
+Italy,951,949,Omicron (BA.5),16.07,125141,2119.71
+Italy,965,1352,Omicron (BA.5),22.9,126493,2142.61
+Italy,979,1266,Omicron (BA.5),21.44,127759,2164.05
+Italy,993,1904,Omicron (BA.5),32.25,129663,2196.3
+Italy,1007,1720,Omicron (BA.5),29.13,131383,2225.43
+Italy,1021,1330,Omicron (BA.5),22.53,132713,2247.96
+Italy,1035,1853,Omicron (BA.5),31.39,134566,2279.35
+Italy,1049,1247,Omicron (BQ.1),21.12,135813,2300.47
+Italy,1063,1476,Omicron (BQ.1),25.0,137289,2325.47
+Italy,1077,191,Omicron (BQ.1),3.24,137480,2328.71
 Jamaica,349,2,,0.71,2,0.71
 Jamaica,377,10,,3.54,12,4.25
 Jamaica,391,3,,1.06,15,5.31
@@ -3441,20 +3472,20 @@ Japan,839,9627,Omicron (BA.2),77.67,299693,2417.81
 Japan,853,11188,Omicron (BA.2),90.26,310881,2508.07
 Japan,867,8854,Omicron (BA.2),71.43,319735,2579.5
 Japan,881,7299,Omicron (BA.2),58.89,327034,2638.39
-Japan,895,10098,Omicron (BA.2),81.47,337132,2719.86
-Japan,909,29904,Omicron (BA.5),241.26,367036,2961.12
-Japan,923,22798,Omicron (BA.5),183.93,389834,3145.05
-Japan,937,14650,Omicron (BA.5),118.19,404484,3263.24
-Japan,951,15365,Omicron (BA.5),123.96,419849,3387.2
-Japan,965,12264,Omicron (BA.5),98.94,432113,3486.14
-Japan,979,10010,Omicron (BA.5),80.76,442123,3566.9
-Japan,993,8085,Omicron (BA.5),65.23,450208,3632.13
-Japan,1007,8423,Omicron (BA.5),67.95,458631,3700.08
-Japan,1021,9363,Omicron (BA.5),75.54,467994,3775.62
-Japan,1035,12816,Omicron (BA.5),103.4,480810,3879.02
-Japan,1049,9297,Omicron (BA.5),75.01,490107,3954.03
-Japan,1063,1483,Omicron (BA.5),11.96,491590,3965.99
-Japan,1071,17,,0.14,491607,3966.13
+Japan,895,10099,Omicron (BA.2),81.48,337133,2719.87
+Japan,909,29955,Omicron (BA.5),241.67,367088,2961.54
+Japan,923,23260,Omicron (BA.5),187.65,390348,3149.19
+Japan,937,16322,Omicron (BA.5),131.68,406670,3280.87
+Japan,951,16479,Omicron (BA.5),132.95,423149,3413.82
+Japan,965,12601,Omicron (BA.5),101.66,435750,3515.48
+Japan,979,10016,Omicron (BA.5),80.81,445766,3596.29
+Japan,993,8088,Omicron (BA.5),65.25,453854,3661.54
+Japan,1007,8432,Omicron (BA.5),68.03,462286,3729.57
+Japan,1021,9393,Omicron (BA.5),75.78,471679,3805.35
+Japan,1035,13377,Omicron (BA.5),107.92,485056,3913.27
+Japan,1049,11204,Omicron (BA.5),90.39,496260,4003.66
+Japan,1063,3472,Omicron (BA.5),28.01,499732,4031.67
+Japan,1077,112,Omicron (BA.5),0.9,499844,4032.57
 Jordan,139,2,,0.18,2,0.18
 Jordan,153,1,,0.09,3,0.27
 Jordan,167,3,,0.27,6,0.54
@@ -3609,7 +3640,8 @@ Kenya,993,6,,0.11,8915,165.04
 Kenya,1007,15,,0.28,8930,165.32
 Kenya,1021,34,Omicron (BQ.1),0.63,8964,165.95
 Kenya,1035,59,Omicron (BQ.1),1.09,9023,167.04
-Kenya,1049,37,Omicron (BQ.1),0.68,9060,167.72
+Kenya,1049,50,Omicron (BQ.1),0.93,9073,167.97
+Kenya,1063,5,,0.09,9078,168.06
 Kosovo,111,1,,0.56,1,0.56
 Kosovo,181,4,,2.24,5,2.8
 Kosovo,195,4,,2.24,9,5.04
@@ -4143,10 +4175,10 @@ Malaysia,965,541,Omicron (BA.5),15.94,28828,849.48
 Malaysia,979,522,Omicron (BA.5),15.38,29350,864.86
 Malaysia,993,379,Omicron (BA.5),11.17,29729,876.03
 Malaysia,1007,501,Omicron (BA.5),14.76,30230,890.79
-Malaysia,1021,704,Omicron (XBB),20.74,30934,911.53
-Malaysia,1035,914,Omicron (XBB),26.93,31848,938.46
-Malaysia,1049,551,Omicron (XBB),16.24,32399,954.7
-Malaysia,1063,222,Omicron (XBB),6.54,32621,961.24
+Malaysia,1021,705,Omicron (XBB),20.77,30935,911.56
+Malaysia,1035,940,Omicron (XBB),27.7,31875,939.26
+Malaysia,1049,614,Omicron (XBB),18.09,32489,957.35
+Malaysia,1063,268,Omicron (XBB),7.9,32757,965.25
 Maldives,111,1,,1.91,1,1.91
 Maldives,125,1,,1.91,2,3.82
 Maldives,139,1,,1.91,3,5.73
@@ -4259,10 +4291,10 @@ Mauritius,937,174,Omicron (BA.5),133.9,3505,2697.22
 Mauritius,951,217,Omicron (BA.5),166.99,3722,2864.21
 Mauritius,965,70,Omicron (BA.5),53.87,3792,2918.08
 Mauritius,979,151,Omicron (BA.5),116.2,3943,3034.28
-Mauritius,993,13,,10.0,3956,3044.28
-Mauritius,1007,29,,22.32,3985,3066.6
-Mauritius,1021,43,Omicron (BA.2.75),33.09,4028,3099.69
-Mauritius,1035,5,,3.85,4033,3103.54
+Mauritius,993,14,,10.77,3957,3045.05
+Mauritius,1007,29,,22.32,3986,3067.37
+Mauritius,1021,43,Omicron (BA.2.75),33.09,4029,3100.46
+Mauritius,1035,26,,20.01,4055,3120.47
 Mexico,111,216,Others,1.69,216,1.69
 Mexico,125,272,Others,2.13,488,3.82
 Mexico,139,287,Others,2.25,775,6.07
@@ -4330,7 +4362,8 @@ Mexico,993,337,Omicron (BA.5),2.64,75266,590.31
 Mexico,1007,207,Omicron (BA.5),1.62,75473,591.93
 Mexico,1021,271,Omicron (BA.5),2.13,75744,594.06
 Mexico,1035,504,Omicron (BA.5),3.95,76248,598.01
-Mexico,1049,442,Omicron (BQ.1),3.47,76690,601.48
+Mexico,1049,537,Omicron (BQ.1),4.21,76785,602.22
+Mexico,1063,228,Omicron (BQ.1),1.79,77013,604.01
 Moldova,153,3,,0.92,3,0.92
 Moldova,237,8,,2.44,11,3.36
 Moldova,377,1,,0.31,12,3.67
@@ -4740,12 +4773,12 @@ Netherlands,937,2229,Omicron (BA.5),126.91,133536,7602.8
 Netherlands,951,1899,Omicron (BA.5),108.12,135435,7710.92
 Netherlands,965,1894,Omicron (BA.5),107.83,137329,7818.75
 Netherlands,979,1981,Omicron (BA.5),112.79,139310,7931.54
-Netherlands,993,2300,Omicron (BA.5),130.95,141610,8062.49
-Netherlands,1007,2357,Omicron (BA.5),134.19,143967,8196.68
-Netherlands,1021,2094,Omicron (BA.5),119.22,146061,8315.9
-Netherlands,1035,1789,Omicron (BA.5),101.86,147850,8417.76
-Netherlands,1049,1357,Omicron (BQ.1),77.26,149207,8495.02
-Netherlands,1063,252,Omicron (BQ.1),14.35,149459,8509.37
+Netherlands,993,2317,Omicron (BA.5),131.92,141627,8063.46
+Netherlands,1007,2399,Omicron (BA.5),136.59,144026,8200.05
+Netherlands,1021,2106,Omicron (BA.5),119.9,146132,8319.95
+Netherlands,1035,1848,Omicron (BA.5),105.22,147980,8425.17
+Netherlands,1049,1587,Omicron (BQ.1),90.36,149567,8515.53
+Netherlands,1063,856,Omicron (BQ.1),48.74,150423,8564.27
 New Zealand,111,8,,1.54,8,1.54
 New Zealand,125,1,,0.19,9,1.73
 New Zealand,153,5,,0.96,14,2.69
@@ -5046,7 +5079,8 @@ Norway,993,373,Omicron (BA.5),68.64,72374,13317.94
 Norway,1007,231,Omicron (BA.5),42.51,72605,13360.45
 Norway,1021,443,Omicron (BA.5),81.52,73048,13441.97
 Norway,1035,440,Omicron (BA.5),80.97,73488,13522.94
-Norway,1049,101,Omicron (BQ.1),18.59,73589,13541.53
+Norway,1049,131,Omicron (BQ.1),24.11,73619,13547.05
+Norway,1063,46,Omicron (BQ.1),8.46,73665,13555.51
 Oman,111,21,,4.59,21,4.59
 Oman,125,51,Others,11.14,72,15.73
 Oman,139,25,,5.46,97,21.19
@@ -5137,29 +5171,29 @@ Pakistan,699,20,,0.08,2273,9.59
 Pakistan,713,49,Omicron (BA.1),0.21,2322,9.8
 Pakistan,727,89,Omicron (BA.1),0.38,2411,10.18
 Pakistan,741,106,Omicron (BA.1),0.45,2517,10.63
-Pakistan,755,128,Omicron (BA.1),0.54,2645,11.17
-Pakistan,769,110,Omicron (BA.2),0.47,2755,11.64
-Pakistan,783,47,Omicron (BA.2),0.2,2802,11.84
-Pakistan,797,21,,0.09,2823,11.93
-Pakistan,811,42,Omicron (BA.2),0.18,2865,12.11
-Pakistan,825,11,,0.05,2876,12.16
-Pakistan,839,10,,0.04,2886,12.2
-Pakistan,853,34,Omicron (BA.2),0.14,2920,12.34
-Pakistan,867,40,Omicron (BA.5),0.17,2960,12.51
-Pakistan,881,132,Omicron (BA.5),0.56,3092,13.07
-Pakistan,895,228,Omicron (BA.5),0.97,3320,14.04
-Pakistan,909,162,Omicron (BA.5),0.69,3482,14.73
-Pakistan,923,163,Omicron (BA.5),0.69,3645,15.42
-Pakistan,937,149,Omicron (BA.5),0.63,3794,16.05
-Pakistan,951,123,Omicron (BA.5),0.52,3917,16.57
-Pakistan,965,123,Omicron (BA.5),0.52,4040,17.09
-Pakistan,979,51,Omicron (BA.5),0.22,4091,17.31
-Pakistan,993,57,Omicron (BA.5),0.24,4148,17.55
-Pakistan,1007,7,,0.03,4155,17.58
-Pakistan,1021,22,,0.09,4177,17.67
-Pakistan,1035,9,,0.04,4186,17.71
-Pakistan,1049,7,,0.03,4193,17.74
-Pakistan,1063,1,,0.0,4194,17.74
+Pakistan,755,131,Omicron (BA.1),0.56,2648,11.19
+Pakistan,769,115,Omicron (BA.2),0.49,2763,11.68
+Pakistan,783,50,Omicron (BA.2),0.21,2813,11.89
+Pakistan,797,21,,0.09,2834,11.98
+Pakistan,811,42,Omicron (BA.2),0.18,2876,12.16
+Pakistan,825,11,,0.05,2887,12.21
+Pakistan,839,10,,0.04,2897,12.25
+Pakistan,853,34,Omicron (BA.2),0.14,2931,12.39
+Pakistan,867,40,Omicron (BA.5),0.17,2971,12.56
+Pakistan,881,132,Omicron (BA.5),0.56,3103,13.12
+Pakistan,895,228,Omicron (BA.5),0.97,3331,14.09
+Pakistan,909,162,Omicron (BA.5),0.69,3493,14.78
+Pakistan,923,163,Omicron (BA.5),0.69,3656,15.47
+Pakistan,937,149,Omicron (BA.5),0.63,3805,16.1
+Pakistan,951,123,Omicron (BA.5),0.52,3928,16.62
+Pakistan,965,123,Omicron (BA.5),0.52,4051,17.14
+Pakistan,979,51,Omicron (BA.5),0.22,4102,17.36
+Pakistan,993,57,Omicron (BA.5),0.24,4159,17.6
+Pakistan,1007,7,,0.03,4166,17.63
+Pakistan,1021,22,,0.09,4188,17.72
+Pakistan,1035,9,,0.04,4197,17.76
+Pakistan,1049,7,,0.03,4204,17.79
+Pakistan,1063,1,,0.0,4205,17.79
 Panama,111,32,Others,7.26,32,7.26
 Panama,125,39,Others,8.85,71,16.11
 Panama,139,43,Others,9.75,114,25.86
@@ -5223,8 +5257,9 @@ Panama,979,32,Omicron (BA.5),7.26,5417,1228.71
 Panama,993,17,,3.86,5434,1232.57
 Panama,1007,8,,1.81,5442,1234.38
 Panama,1021,23,,5.22,5465,1239.6
-Panama,1035,77,Omicron (BA.5),17.47,5542,1257.07
-Panama,1049,113,Omicron (BQ.1),25.63,5655,1282.7
+Panama,1035,86,Omicron (BA.5),19.51,5551,1259.11
+Panama,1049,129,Omicron (BQ.1),29.26,5680,1288.37
+Panama,1063,44,Omicron (BQ.1),9.98,5724,1298.35
 Papua New Guinea,181,4,,0.39,4,0.39
 Papua New Guinea,195,29,,2.86,33,3.25
 Papua New Guinea,209,44,Others,4.34,77,7.59
@@ -5393,8 +5428,9 @@ Peru,979,684,Omicron (BA.5),20.09,36581,1074.33
 Peru,993,330,Omicron (BA.5),9.69,36911,1084.02
 Peru,1007,238,Omicron (BA.5),6.99,37149,1091.01
 Peru,1021,474,Omicron (BA.5),13.92,37623,1104.93
-Peru,1035,1262,Omicron (BA.5),37.06,38885,1141.99
-Peru,1049,422,Omicron (XBB),12.39,39307,1154.38
+Peru,1035,1366,Omicron (BA.5),40.12,38989,1145.05
+Peru,1049,973,Omicron (XBB),28.58,39962,1173.63
+Peru,1063,27,,0.79,39989,1174.42
 Philippines,125,2,,0.02,2,0.02
 Philippines,139,1,,0.01,3,0.03
 Philippines,153,5,,0.04,8,0.07
@@ -5457,9 +5493,9 @@ Philippines,937,836,Omicron (BA.5),7.23,21266,184.02
 Philippines,951,588,Omicron (BA.5),5.09,21854,189.11
 Philippines,965,358,Omicron (BA.5),3.1,22212,192.21
 Philippines,979,178,Omicron (BA.2),1.54,22390,193.75
-Philippines,993,297,Omicron (BA.2),2.57,22687,196.32
-Philippines,1007,408,Omicron (XBB),3.53,23095,199.85
-Philippines,1021,74,Omicron (BA.2),0.64,23169,200.49
+Philippines,993,299,Omicron (BA.2),2.59,22689,196.34
+Philippines,1007,411,Omicron (XBB),3.56,23100,199.9
+Philippines,1021,74,Omicron (BA.2),0.64,23174,200.54
 Poland,111,61,Others,1.53,61,1.53
 Poland,125,26,,0.65,87,2.18
 Poland,139,23,,0.58,110,2.76
@@ -5522,11 +5558,11 @@ Poland,965,449,Omicron (BA.5),11.27,81972,2056.68
 Poland,979,559,Omicron (BA.5),14.03,82531,2070.71
 Poland,993,647,Omicron (BA.5),16.23,83178,2086.94
 Poland,1007,296,Omicron (BA.5),7.43,83474,2094.37
-Poland,1021,244,Omicron (BA.5),6.12,83718,2100.49
-Poland,1035,96,Omicron (BA.5),2.41,83814,2102.9
-Poland,1049,86,Omicron (BA.5),2.16,83900,2105.06
-Poland,1063,133,Omicron (BA.5),3.34,84033,2108.4
-Poland,1071,17,,0.43,84050,2108.83
+Poland,1021,247,Omicron (BA.5),6.2,83721,2100.57
+Poland,1035,102,Omicron (BA.5),2.56,83823,2103.13
+Poland,1049,92,Omicron (BA.5),2.31,83915,2105.44
+Poland,1063,143,Omicron (BA.5),3.59,84058,2109.03
+Poland,1077,17,,0.43,84075,2109.46
 Portugal,111,24,,2.34,24,2.34
 Portugal,125,26,,2.53,50,4.87
 Portugal,139,88,Others,8.57,138,13.44
@@ -5590,8 +5626,8 @@ Portugal,993,538,Omicron (BA.5),52.38,40649,3957.75
 Portugal,1007,243,Omicron (BA.5),23.66,40892,3981.41
 Portugal,1021,242,Omicron (BQ.1),23.56,41134,4004.97
 Portugal,1035,290,Omicron (BQ.1),28.24,41424,4033.21
-Portugal,1049,401,Omicron (BQ.1),39.04,41825,4072.25
-Portugal,1063,75,Omicron (BQ.1),7.3,41900,4079.55
+Portugal,1049,411,Omicron (BQ.1),40.02,41835,4073.23
+Portugal,1063,241,Omicron (BQ.1),23.46,42076,4096.69
 Qatar,111,128,Others,47.49,128,47.49
 Qatar,125,79,Others,29.31,207,76.8
 Qatar,139,148,Others,54.91,355,131.71
@@ -5781,16 +5817,16 @@ Russia,881,128,Omicron (BA.2),0.88,28999,200.38
 Russia,895,432,Omicron (BA.5),2.99,29431,203.37
 Russia,909,1484,Omicron (BA.5),10.25,30915,213.62
 Russia,923,3187,Omicron (BA.5),22.02,34102,235.64
-Russia,937,3648,Omicron (BA.5),25.21,37750,260.85
-Russia,951,3652,Omicron (BA.5),25.24,41402,286.09
-Russia,965,3510,Omicron (BA.5),24.25,44912,310.34
-Russia,979,2996,Omicron (BA.5),20.7,47908,331.04
-Russia,993,2086,Omicron (BA.5),14.41,49994,345.45
-Russia,1007,1502,Omicron (BA.5),10.38,51496,355.83
-Russia,1021,958,Omicron (BA.5),6.62,52454,362.45
-Russia,1035,1101,Omicron (BA.5),7.61,53555,370.06
-Russia,1049,550,Omicron (BA.5),3.8,54105,373.86
-Russia,1063,34,Omicron (BA.5),0.23,54139,374.09
+Russia,937,3649,Omicron (BA.5),25.22,37751,260.86
+Russia,951,3652,Omicron (BA.5),25.24,41403,286.1
+Russia,965,3531,Omicron (BA.5),24.4,44934,310.5
+Russia,979,3091,Omicron (BA.5),21.36,48025,331.86
+Russia,993,2218,Omicron (BA.5),15.33,50243,347.19
+Russia,1007,1575,Omicron (BA.5),10.88,51818,358.07
+Russia,1021,1035,Omicron (BA.5),7.15,52853,365.22
+Russia,1035,1217,Omicron (BA.5),8.41,54070,373.63
+Russia,1049,1298,Omicron (BA.5),8.97,55368,382.6
+Russia,1063,471,Omicron (BA.5),3.25,55839,385.85
 Rwanda,139,1,,0.07,1,0.07
 Rwanda,153,1,,0.07,2,0.14
 Rwanda,195,2,,0.15,4,0.29
@@ -5856,25 +5892,25 @@ Saudi Arabia,573,1,,0.03,652,17.9
 Saudi Arabia,601,2,,0.05,654,17.95
 Saudi Arabia,685,1,,0.03,655,17.98
 Saudi Arabia,699,21,,0.58,676,18.56
-Saudi Arabia,713,42,Omicron (BA.1),1.15,718,19.71
-Saudi Arabia,727,48,Omicron (BA.1),1.32,766,21.03
-Saudi Arabia,741,35,Omicron (BA.1),0.96,801,21.99
-Saudi Arabia,755,61,Omicron (BA.1),1.68,862,23.67
-Saudi Arabia,769,16,,0.44,878,24.11
-Saudi Arabia,783,13,,0.36,891,24.47
-Saudi Arabia,797,41,Omicron (BA.2),1.13,932,25.6
-Saudi Arabia,811,18,,0.49,950,26.09
-Saudi Arabia,825,5,,0.14,955,26.23
-Saudi Arabia,839,3,,0.08,958,26.31
-Saudi Arabia,853,10,,0.27,968,26.58
-Saudi Arabia,881,35,Omicron (BA.5),0.96,1003,27.54
-Saudi Arabia,895,20,,0.55,1023,28.09
-Saudi Arabia,909,24,,0.66,1047,28.75
-Saudi Arabia,923,22,,0.6,1069,29.35
-Saudi Arabia,937,11,,0.3,1080,29.65
-Saudi Arabia,951,3,,0.08,1083,29.73
-Saudi Arabia,965,1,,0.03,1084,29.76
-Saudi Arabia,979,4,,0.11,1088,29.87
+Saudi Arabia,713,43,Omicron (BA.1),1.18,719,19.74
+Saudi Arabia,727,48,Omicron (BA.1),1.32,767,21.06
+Saudi Arabia,741,35,Omicron (BA.1),0.96,802,22.02
+Saudi Arabia,755,61,Omicron (BA.1),1.68,863,23.7
+Saudi Arabia,769,16,,0.44,879,24.14
+Saudi Arabia,783,13,,0.36,892,24.5
+Saudi Arabia,797,41,Omicron (BA.2),1.13,933,25.63
+Saudi Arabia,811,18,,0.49,951,26.12
+Saudi Arabia,825,5,,0.14,956,26.26
+Saudi Arabia,839,3,,0.08,959,26.34
+Saudi Arabia,853,10,,0.27,969,26.61
+Saudi Arabia,881,35,Omicron (BA.5),0.96,1004,27.57
+Saudi Arabia,895,20,,0.55,1024,28.12
+Saudi Arabia,909,24,,0.66,1048,28.78
+Saudi Arabia,923,22,,0.6,1070,29.38
+Saudi Arabia,937,11,,0.3,1081,29.68
+Saudi Arabia,951,3,,0.08,1084,29.76
+Saudi Arabia,965,1,,0.03,1085,29.79
+Saudi Arabia,979,4,,0.11,1089,29.9
 Senegal,111,14,,0.81,14,0.81
 Senegal,125,9,,0.52,23,1.33
 Senegal,139,19,,1.1,42,2.43
@@ -5994,7 +6030,11 @@ Serbia,937,22,,3.2,1554,226.18
 Serbia,951,40,Omicron (BA.5),5.82,1594,232.0
 Serbia,965,87,Omicron (BA.5),12.66,1681,244.66
 Serbia,979,99,Omicron (BA.5),14.41,1780,259.07
-Serbia,993,12,,1.75,1792,260.82
+Serbia,993,23,,3.35,1803,262.42
+Serbia,1007,45,Omicron (BA.5),6.55,1848,268.97
+Serbia,1021,61,Omicron (BA.5),8.88,1909,277.85
+Serbia,1035,117,Omicron (BA.5),17.03,2026,294.88
+Serbia,1049,34,Omicron (BA.5),4.95,2060,299.83
 Seychelles,265,1,,9.33,1,9.33
 Seychelles,349,1,,9.33,2,18.66
 Seychelles,391,3,,28.0,5,46.66
@@ -6104,7 +6144,8 @@ Singapore,1007,724,Omicron (XBB),128.44,24243,4300.71
 Singapore,1021,687,Omicron (XBB),121.87,24930,4422.58
 Singapore,1035,677,Omicron (XBB),120.1,25607,4542.68
 Singapore,1049,539,Omicron (XBB),95.62,26146,4638.3
-Singapore,1063,664,Omicron (XBB),117.79,26810,4756.09
+Singapore,1063,676,Omicron (XBB),119.92,26822,4758.22
+Singapore,1077,162,Omicron (BQ.1),28.74,26984,4786.96
 Sint Maarten (Dutch part),377,10,,226.29,10,226.29
 Sint Maarten (Dutch part),391,12,,271.54,22,497.83
 Sint Maarten (Dutch part),405,30,Others,678.86,52,1176.69
@@ -6153,7 +6194,7 @@ Sint Maarten (Dutch part),993,5,,113.14,2623,59354.66
 Sint Maarten (Dutch part),1007,8,,181.03,2631,59535.69
 Sint Maarten (Dutch part),1021,6,,135.77,2637,59671.46
 Sint Maarten (Dutch part),1035,4,,90.51,2641,59761.97
-Sint Maarten (Dutch part),1049,1,,22.63,2642,59784.6
+Sint Maarten (Dutch part),1049,3,,67.89,2644,59829.86
 Slovakia,111,2,,0.35,2,0.35
 Slovakia,125,1,,0.18,3,0.53
 Slovakia,167,2,,0.35,5,0.88
@@ -6358,27 +6399,27 @@ South Africa,713,1531,Omicron (BA.1),25.56,28103,469.22
 South Africa,727,1286,Omicron (BA.1),21.47,29389,490.69
 South Africa,741,1041,Omicron (BA.2),17.38,30430,508.07
 South Africa,755,478,Omicron (BA.2),7.98,30908,516.05
-South Africa,769,532,Omicron (BA.2),8.88,31440,524.93
-South Africa,783,517,Omicron (BA.2),8.63,31957,533.56
-South Africa,797,559,Omicron (BA.2),9.33,32516,542.89
-South Africa,811,726,Omicron (BA.2),12.12,33242,555.01
-South Africa,825,914,Omicron (BA.4),15.26,34156,570.27
-South Africa,839,1741,Omicron (BA.4),29.07,35897,599.34
-South Africa,853,983,Omicron (BA.4),16.41,36880,615.75
-South Africa,867,822,Omicron (BA.4),13.72,37702,629.47
-South Africa,881,480,Omicron (BA.4),8.01,38182,637.48
-South Africa,895,273,Omicron (BA.5),4.56,38455,642.04
-South Africa,909,246,Omicron (BA.5),4.11,38701,646.15
-South Africa,923,164,Omicron (BA.5),2.74,38865,648.89
-South Africa,937,125,Omicron (BA.5),2.09,38990,650.98
-South Africa,951,131,Omicron (BA.5),2.19,39121,653.17
-South Africa,965,174,Omicron (BA.5),2.91,39295,656.08
-South Africa,979,343,Omicron (BA.5),5.73,39638,661.81
-South Africa,993,308,Omicron (BA.5),5.14,39946,666.95
-South Africa,1007,329,Omicron (BA.5),5.49,40275,672.44
-South Africa,1021,338,Omicron (BA.5),5.64,40613,678.08
-South Africa,1035,141,Omicron (BA.5),2.35,40754,680.43
-South Africa,1049,83,Omicron (BA.5),1.39,40837,681.82
+South Africa,769,548,Omicron (BA.2),9.15,31456,525.2
+South Africa,783,531,Omicron (BA.2),8.87,31987,534.07
+South Africa,797,559,Omicron (BA.2),9.33,32546,543.4
+South Africa,811,752,Omicron (BA.2),12.56,33298,555.96
+South Africa,825,914,Omicron (BA.4),15.26,34212,571.22
+South Africa,839,1741,Omicron (BA.4),29.07,35953,600.29
+South Africa,853,983,Omicron (BA.4),16.41,36936,616.7
+South Africa,867,822,Omicron (BA.4),13.72,37758,630.42
+South Africa,881,480,Omicron (BA.4),8.01,38238,638.43
+South Africa,895,273,Omicron (BA.5),4.56,38511,642.99
+South Africa,909,246,Omicron (BA.5),4.11,38757,647.1
+South Africa,923,164,Omicron (BA.5),2.74,38921,649.84
+South Africa,937,125,Omicron (BA.5),2.09,39046,651.93
+South Africa,951,131,Omicron (BA.5),2.19,39177,654.12
+South Africa,965,174,Omicron (BA.5),2.91,39351,657.03
+South Africa,979,343,Omicron (BA.5),5.73,39694,662.76
+South Africa,993,308,Omicron (BA.5),5.14,40002,667.9
+South Africa,1007,329,Omicron (BA.5),5.49,40331,673.39
+South Africa,1021,343,Omicron (BA.5),5.73,40674,679.12
+South Africa,1035,205,Omicron (BA.5),3.42,40879,682.54
+South Africa,1049,91,Omicron (BA.5),1.52,40970,684.06
 South Korea,111,47,Others,0.91,47,0.91
 South Korea,125,64,Others,1.24,111,2.15
 South Korea,139,165,Others,3.18,276,5.33
@@ -6442,11 +6483,13 @@ South Korea,937,1919,Omicron (BA.5),37.04,50125,967.4
 South Korea,951,3767,Omicron (BA.5),72.7,53892,1040.1
 South Korea,965,2313,Omicron (BA.5),44.64,56205,1084.74
 South Korea,979,3185,Omicron (BA.5),61.47,59390,1146.21
-South Korea,993,2736,Omicron (BA.5),52.8,62126,1199.01
-South Korea,1007,2973,Omicron (BA.5),57.38,65099,1256.39
-South Korea,1021,2611,Omicron (BA.5),50.39,67710,1306.78
-South Korea,1035,2214,Omicron (BA.5),42.73,69924,1349.51
-South Korea,1049,1156,Omicron (BA.5),22.31,71080,1371.82
+South Korea,993,2741,Omicron (BA.5),52.9,62131,1199.11
+South Korea,1007,2973,Omicron (BA.5),57.38,65104,1256.49
+South Korea,1021,2927,Omicron (BA.5),56.49,68031,1312.98
+South Korea,1035,3153,Omicron (BA.5),60.85,71184,1373.83
+South Korea,1049,2862,Omicron (BA.5),55.23,74046,1429.06
+South Korea,1063,1627,Omicron (BA.5),31.4,75673,1460.46
+South Korea,1077,16,,0.31,75689,1460.77
 South Sudan,209,1,,0.09,1,0.09
 South Sudan,363,4,,0.37,5,0.46
 South Sudan,377,13,,1.19,18,1.65
@@ -6480,68 +6523,68 @@ Spain,167,135,Others,2.84,543,11.42
 Spain,181,143,Others,3.01,686,14.43
 Spain,195,165,Others,3.47,851,17.9
 Spain,209,248,Others,5.21,1099,23.11
-Spain,223,278,Others,5.85,1377,28.96
-Spain,237,419,Others,8.81,1796,37.77
-Spain,251,479,Others,10.07,2275,47.84
-Spain,265,495,Others,10.41,2770,58.25
-Spain,279,478,Others,10.05,3248,68.3
-Spain,293,359,Others,7.55,3607,75.85
-Spain,307,382,Others,8.03,3989,83.88
-Spain,321,488,Others,10.26,4477,94.14
-Spain,335,1036,Others,21.78,5513,115.92
-Spain,349,1416,Others,29.77,6929,145.69
-Spain,363,1965,Others,41.32,8894,187.01
-Spain,377,3080,Others,64.76,11974,251.77
-Spain,391,2917,Others,61.33,14891,313.1
-Spain,405,2883,Alpha,60.62,17774,373.72
-Spain,419,3059,Alpha,64.32,20833,438.04
-Spain,433,3153,Alpha,66.3,23986,504.34
-Spain,447,3410,Alpha,71.7,27396,576.04
-Spain,461,3799,Alpha,79.88,31195,655.92
-Spain,475,4132,Alpha,86.88,35327,742.8
-Spain,489,3698,Alpha,77.76,39025,820.56
-Spain,503,3758,Alpha,79.02,42783,899.58
-Spain,517,3509,Alpha,73.78,46292,973.36
-Spain,531,5273,Delta,110.87,51565,1084.23
-Spain,545,7012,Delta,147.44,58577,1231.67
-Spain,559,7207,Delta,151.54,65784,1383.21
-Spain,573,5679,Delta,119.41,71463,1502.62
-Spain,587,4461,Delta,93.8,75924,1596.42
-Spain,601,3521,Delta,74.03,79445,1670.45
-Spain,615,2622,Delta,55.13,82067,1725.58
-Spain,629,2182,Delta,45.88,84249,1771.46
-Spain,643,2512,Delta,52.82,86761,1824.28
-Spain,657,2881,Delta,60.58,89642,1884.86
-Spain,671,4268,Delta,89.74,93910,1974.6
-Spain,685,4813,Delta,101.2,98723,2075.8
-Spain,699,5931,Delta,124.71,104654,2200.51
-Spain,713,4783,Omicron (BA.1),100.57,109437,2301.08
-Spain,727,5301,Omicron (BA.1),111.46,114738,2412.54
-Spain,741,4750,Omicron (BA.1),99.88,119488,2512.42
-Spain,755,4557,Omicron (BA.1),95.82,124045,2608.24
-Spain,769,3810,Omicron (BA.1),80.11,127855,2688.35
-Spain,783,3724,Omicron (BA.2),78.3,131579,2766.65
-Spain,797,3784,Omicron (BA.2),79.56,135363,2846.21
-Spain,811,3054,Omicron (BA.2),64.22,138417,2910.43
-Spain,825,2774,Omicron (BA.2),58.33,141191,2968.76
-Spain,839,3842,Omicron (BA.2),80.78,145033,3049.54
-Spain,853,3850,Omicron (BA.2),80.95,148883,3130.49
-Spain,867,3605,Omicron (BA.2),75.8,152488,3206.29
-Spain,881,3103,Omicron (BA.5),65.25,155591,3271.54
-Spain,895,3792,Omicron (BA.5),79.73,159383,3351.27
-Spain,909,3915,Omicron (BA.5),82.32,163298,3433.59
-Spain,923,2807,Omicron (BA.5),59.02,166105,3492.61
-Spain,937,1905,Omicron (BA.5),40.06,168010,3532.67
-Spain,951,1376,Omicron (BA.5),28.93,169386,3561.6
-Spain,965,1064,Omicron (BA.5),22.37,170450,3583.97
-Spain,979,1091,Omicron (BA.5),22.94,171541,3606.91
-Spain,993,1214,Omicron (BA.5),25.53,172755,3632.44
-Spain,1007,1626,Omicron (BA.5),34.19,174381,3666.63
-Spain,1021,1342,Omicron (BA.5),28.22,175723,3694.85
-Spain,1035,1595,Omicron (BQ.1),33.54,177318,3728.39
-Spain,1049,1131,Omicron (BQ.1),23.78,178449,3752.17
-Spain,1063,307,Omicron (BQ.1),6.46,178756,3758.63
-Spain,1071,16,,0.34,178772,3758.97
+Spain,223,277,Others,5.82,1376,28.93
+Spain,237,418,Others,8.79,1794,37.72
+Spain,251,479,Others,10.07,2273,47.79
+Spain,265,495,Others,10.41,2768,58.2
+Spain,279,478,Others,10.05,3246,68.25
+Spain,293,358,Others,7.53,3604,75.78
+Spain,307,381,Others,8.01,3985,83.79
+Spain,321,488,Others,10.26,4473,94.05
+Spain,335,1036,Others,21.78,5509,115.83
+Spain,349,1416,Others,29.77,6925,145.6
+Spain,363,1963,Others,41.28,8888,186.88
+Spain,377,3080,Others,64.76,11968,251.64
+Spain,391,2916,Others,61.31,14884,312.95
+Spain,405,2883,Alpha,60.62,17767,373.57
+Spain,419,3057,Alpha,64.28,20824,437.85
+Spain,433,3153,Alpha,66.3,23977,504.15
+Spain,447,3410,Alpha,71.7,27387,575.85
+Spain,461,3799,Alpha,79.88,31186,655.73
+Spain,475,4131,Alpha,86.86,35317,742.59
+Spain,489,3698,Alpha,77.76,39015,820.35
+Spain,503,3758,Alpha,79.02,42773,899.37
+Spain,517,3509,Alpha,73.78,46282,973.15
+Spain,531,5273,Delta,110.87,51555,1084.02
+Spain,545,7012,Delta,147.44,58567,1231.46
+Spain,559,7207,Delta,151.54,65774,1383.0
+Spain,573,5679,Delta,119.41,71453,1502.41
+Spain,587,4461,Delta,93.8,75914,1596.21
+Spain,601,3520,Delta,74.01,79434,1670.22
+Spain,615,2622,Delta,55.13,82056,1725.35
+Spain,629,2182,Delta,45.88,84238,1771.23
+Spain,643,2512,Delta,52.82,86750,1824.05
+Spain,657,2881,Delta,60.58,89631,1884.63
+Spain,671,4268,Delta,89.74,93899,1974.37
+Spain,685,4813,Delta,101.2,98712,2075.57
+Spain,699,5931,Delta,124.71,104643,2200.28
+Spain,713,4784,Omicron (BA.1),100.59,109427,2300.87
+Spain,727,5304,Omicron (BA.1),111.53,114731,2412.4
+Spain,741,4750,Omicron (BA.1),99.88,119481,2512.28
+Spain,755,4558,Omicron (BA.1),95.84,124039,2608.12
+Spain,769,3810,Omicron (BA.1),80.11,127849,2688.23
+Spain,783,3724,Omicron (BA.2),78.3,131573,2766.53
+Spain,797,3785,Omicron (BA.2),79.59,135358,2846.12
+Spain,811,3054,Omicron (BA.2),64.22,138412,2910.34
+Spain,825,2774,Omicron (BA.2),58.33,141186,2968.67
+Spain,839,3842,Omicron (BA.2),80.78,145028,3049.45
+Spain,853,3850,Omicron (BA.2),80.95,148878,3130.4
+Spain,867,3605,Omicron (BA.2),75.8,152483,3206.2
+Spain,881,3104,Omicron (BA.5),65.27,155587,3271.47
+Spain,895,3792,Omicron (BA.5),79.73,159379,3351.2
+Spain,909,3916,Omicron (BA.5),82.34,163295,3433.54
+Spain,923,2807,Omicron (BA.5),59.02,166102,3492.56
+Spain,937,1905,Omicron (BA.5),40.06,168007,3532.62
+Spain,951,1376,Omicron (BA.5),28.93,169383,3561.55
+Spain,965,1064,Omicron (BA.5),22.37,170447,3583.92
+Spain,979,1091,Omicron (BA.5),22.94,171538,3606.86
+Spain,993,1216,Omicron (BA.5),25.57,172754,3632.43
+Spain,1007,1634,Omicron (BA.5),34.36,174388,3666.79
+Spain,1021,1354,Omicron (BA.5),28.47,175742,3695.26
+Spain,1035,1630,Omicron (BQ.1),34.27,177372,3729.53
+Spain,1049,1303,Omicron (BQ.1),27.4,178675,3756.93
+Spain,1063,390,Omicron (BQ.1),8.2,179065,3765.13
+Spain,1077,16,,0.34,179081,3765.47
 Sri Lanka,111,1,,0.05,1,0.05
 Sri Lanka,195,3,,0.14,4,0.19
 Sri Lanka,265,1,,0.05,5,0.24
@@ -6723,8 +6766,8 @@ Sweden,993,2196,Omicron (BA.5),208.16,209809,19888.31
 Sweden,1007,2194,Omicron (BA.5),207.97,212003,20096.28
 Sweden,1021,2220,Omicron (BA.5),210.44,214223,20306.72
 Sweden,1035,2043,Omicron (BA.5),193.66,216266,20500.38
-Sweden,1049,2440,Omicron (BQ.1),231.29,218706,20731.67
-Sweden,1063,1083,Omicron (BQ.1),102.66,219789,20834.33
+Sweden,1049,2441,Omicron (BQ.1),231.39,218707,20731.77
+Sweden,1063,1929,Omicron (BQ.1),182.85,220636,20914.62
 Switzerland,111,68,Others,7.78,68,7.78
 Switzerland,125,13,,1.49,81,9.27
 Switzerland,139,19,,2.17,100,11.44
@@ -6848,10 +6891,10 @@ Taiwan,979,7,,0.29,2424,101.41
 Taiwan,993,7,,0.29,2431,101.7
 Taiwan,1007,1,,0.04,2432,101.74
 Taiwan,1021,9,,0.38,2441,102.12
-Taiwan,1035,4,,0.17,2445,102.29
-Taiwan,1049,12,,0.5,2457,102.79
-Taiwan,1063,3,,0.13,2460,102.92
-Taiwan,1071,4,,0.17,2464,103.09
+Taiwan,1035,5,,0.21,2446,102.33
+Taiwan,1049,17,,0.71,2463,103.04
+Taiwan,1063,6,,0.25,2469,103.29
+Taiwan,1077,4,,0.17,2473,103.46
 Thailand,167,2,,0.03,2,0.03
 Thailand,195,6,,0.08,8,0.11
 Thailand,209,3,,0.04,11,0.15
@@ -6904,16 +6947,18 @@ Thailand,867,722,Omicron (BA.2),10.07,21362,297.95
 Thailand,881,757,Omicron (BA.2),10.56,22119,308.51
 Thailand,895,812,Omicron (BA.2),11.33,22931,319.84
 Thailand,909,614,Omicron (BA.5),8.56,23545,328.4
-Thailand,923,630,Omicron (BA.5),8.79,24175,337.19
-Thailand,937,505,Omicron (BA.5),7.04,24680,344.23
-Thailand,951,356,Omicron (BA.5),4.97,25036,349.2
-Thailand,965,238,Omicron (BA.5),3.32,25274,352.52
-Thailand,979,181,Omicron (BA.5),2.52,25455,355.04
-Thailand,993,228,Omicron (BA.5),3.18,25683,358.22
-Thailand,1007,237,Omicron (BA.5),3.31,25920,361.53
-Thailand,1021,415,Omicron (BA.2.75),5.79,26335,367.32
-Thailand,1035,402,Omicron (BA.2.75),5.61,26737,372.93
-Thailand,1049,157,Omicron (BA.2.75),2.19,26894,375.12
+Thailand,923,631,Omicron (BA.5),8.8,24176,337.2
+Thailand,937,507,Omicron (BA.5),7.07,24683,344.27
+Thailand,951,356,Omicron (BA.5),4.97,25039,349.24
+Thailand,965,240,Omicron (BA.5),3.35,25279,352.59
+Thailand,979,182,Omicron (BA.5),2.54,25461,355.13
+Thailand,993,229,Omicron (BA.5),3.19,25690,358.32
+Thailand,1007,237,Omicron (BA.5),3.31,25927,361.63
+Thailand,1021,416,Omicron (BA.2.75),5.8,26343,367.43
+Thailand,1035,436,Omicron (BA.2.75),6.08,26779,373.51
+Thailand,1049,292,Omicron (BA.2.75),4.07,27071,377.58
+Thailand,1063,20,,0.28,27091,377.86
+Thailand,1077,5,,0.07,27096,377.93
 Togo,125,3,,0.34,3,0.34
 Togo,139,4,,0.45,7,0.79
 Togo,181,2,,0.23,9,1.02
@@ -7123,9 +7168,9 @@ Turkey,951,608,Omicron (BA.5),7.12,86346,1011.75
 Turkey,965,785,Omicron (BA.5),9.2,87131,1020.95
 Turkey,979,238,Omicron (BA.5),2.79,87369,1023.74
 Turkey,993,192,Omicron (BA.5),2.25,87561,1025.99
-Turkey,1007,52,Omicron (BA.5),0.61,87613,1026.6
-Turkey,1021,1207,Omicron (BA.5),14.14,88820,1040.74
-Turkey,1035,294,Omicron (BQ.1),3.44,89114,1044.18
+Turkey,1007,54,Omicron (BA.5),0.63,87615,1026.62
+Turkey,1021,1207,Omicron (BA.5),14.14,88822,1040.76
+Turkey,1035,294,Omicron (BQ.1),3.44,89116,1044.2
 Uganda,111,23,,0.49,23,0.49
 Uganda,125,1,,0.02,24,0.51
 Uganda,167,4,,0.08,28,0.59
@@ -7239,11 +7284,11 @@ Ukraine,951,51,Omicron (BA.5),1.28,1349,34.04
 Ukraine,965,57,Omicron (BA.5),1.44,1406,35.48
 Ukraine,979,68,Omicron (BA.5),1.71,1474,37.19
 Ukraine,993,30,Omicron (BA.5),0.76,1504,37.95
-Ukraine,1007,9,,0.23,1513,38.18
-Ukraine,1021,3,,0.08,1516,38.26
-Ukraine,1035,9,,0.23,1525,38.49
-Ukraine,1049,4,,0.1,1529,38.59
-Ukraine,1063,1,,0.03,1530,38.62
+Ukraine,1007,14,,0.35,1518,38.3
+Ukraine,1021,3,,0.08,1521,38.38
+Ukraine,1035,10,,0.25,1531,38.63
+Ukraine,1049,10,,0.25,1541,38.88
+Ukraine,1063,5,,0.13,1546,39.01
 United Arab Emirates,111,133,Others,14.09,133,14.09
 United Arab Emirates,125,891,Others,94.37,1024,108.46
 United Arab Emirates,139,18,,1.91,1042,110.37
@@ -7313,100 +7358,100 @@ United Kingdom,699,136770,Delta,2025.95,1578933,23388.48
 United Kingdom,713,122142,Omicron (BA.1),1809.27,1701075,25197.75
 United Kingdom,727,141242,Omicron (BA.1),2092.2,1842317,27289.95
 United Kingdom,741,135126,Omicron (BA.1),2001.6,1977443,29291.55
-United Kingdom,755,147030,Omicron (BA.1),2177.93,2124473,31469.48
-United Kingdom,769,130466,Omicron (BA.1),1932.57,2254939,33402.05
-United Kingdom,783,137222,Omicron (BA.2),2032.65,2392161,35434.7
-United Kingdom,797,142711,Omicron (BA.2),2113.96,2534872,37548.66
-United Kingdom,811,49476,Omicron (BA.2),732.88,2584348,38281.54
-United Kingdom,825,37987,Omicron (BA.2),562.7,2622335,38844.24
-United Kingdom,839,19709,Omicron (BA.2),291.95,2642044,39136.19
-United Kingdom,853,9983,Omicron (BA.2),147.88,2652027,39284.07
-United Kingdom,867,7576,Omicron (BA.2),112.22,2659603,39396.29
-United Kingdom,881,15738,Omicron (BA.5),233.12,2675341,39629.41
-United Kingdom,895,26527,Omicron (BA.5),392.94,2701868,40022.35
-United Kingdom,909,23651,Omicron (BA.5),350.34,2725519,40372.69
-United Kingdom,923,16934,Omicron (BA.5),250.84,2742453,40623.53
-United Kingdom,937,10705,Omicron (BA.5),158.57,2753158,40782.1
-United Kingdom,951,6682,Omicron (BA.5),98.98,2759840,40881.08
-United Kingdom,965,5790,Omicron (BA.5),85.77,2765630,40966.85
-United Kingdom,979,7723,Omicron (BA.5),114.4,2773353,41081.25
-United Kingdom,993,12427,Omicron (BA.5),184.08,2785780,41265.33
-United Kingdom,1007,11849,Omicron (BA.5),175.52,2797629,41440.85
-United Kingdom,1021,7152,Omicron (BA.5),105.94,2804781,41546.79
-United Kingdom,1035,5529,Omicron (BQ.1),81.9,2810310,41628.69
-United Kingdom,1049,6829,Omicron (BQ.1),101.16,2817139,41729.85
-United Kingdom,1063,5498,Omicron (BQ.1),81.44,2822637,41811.29
-United Kingdom,1071,18,,0.27,2822655,41811.56
+United Kingdom,755,147031,Omicron (BA.1),2177.95,2124474,31469.5
+United Kingdom,769,130466,Omicron (BA.1),1932.57,2254940,33402.07
+United Kingdom,783,137222,Omicron (BA.2),2032.65,2392162,35434.72
+United Kingdom,797,142711,Omicron (BA.2),2113.96,2534873,37548.68
+United Kingdom,811,49476,Omicron (BA.2),732.88,2584349,38281.56
+United Kingdom,825,37987,Omicron (BA.2),562.7,2622336,38844.26
+United Kingdom,839,19709,Omicron (BA.2),291.95,2642045,39136.21
+United Kingdom,853,9983,Omicron (BA.2),147.88,2652028,39284.09
+United Kingdom,867,7576,Omicron (BA.2),112.22,2659604,39396.31
+United Kingdom,881,15738,Omicron (BA.5),233.12,2675342,39629.43
+United Kingdom,895,26527,Omicron (BA.5),392.94,2701869,40022.37
+United Kingdom,909,23651,Omicron (BA.5),350.34,2725520,40372.71
+United Kingdom,923,16934,Omicron (BA.5),250.84,2742454,40623.55
+United Kingdom,937,10705,Omicron (BA.5),158.57,2753159,40782.12
+United Kingdom,951,6682,Omicron (BA.5),98.98,2759841,40881.1
+United Kingdom,965,5790,Omicron (BA.5),85.77,2765631,40966.87
+United Kingdom,979,7723,Omicron (BA.5),114.4,2773354,41081.27
+United Kingdom,993,12427,Omicron (BA.5),184.08,2785781,41265.35
+United Kingdom,1007,11849,Omicron (BA.5),175.52,2797630,41440.87
+United Kingdom,1021,7152,Omicron (BA.5),105.94,2804782,41546.81
+United Kingdom,1035,5531,Omicron (BQ.1),81.93,2810313,41628.74
+United Kingdom,1049,7086,Omicron (BQ.1),104.96,2817399,41733.7
+United Kingdom,1063,8335,Omicron (BQ.1),123.47,2825734,41857.17
+United Kingdom,1077,1340,Omicron (BQ.1),19.85,2827074,41877.02
 United States,111,6030,Others,17.82,6030,17.82
 United States,125,5081,Others,15.02,11111,32.84
 United States,139,4711,Others,13.93,15822,46.77
 United States,153,6597,Others,19.5,22419,66.27
 United States,167,8585,Others,25.38,31004,91.65
-United States,181,9935,Others,29.37,40939,121.02
-United States,195,7128,Others,21.07,48067,142.09
-United States,209,5854,Others,17.3,53921,159.39
-United States,223,5844,Others,17.28,59765,176.67
-United States,237,5695,Others,16.83,65460,193.5
-United States,251,7686,Others,22.72,73146,216.22
-United States,265,8815,Others,26.06,81961,242.28
-United States,279,9082,Others,26.85,91043,269.13
-United States,293,15383,Others,45.47,106426,314.6
-United States,307,16260,Others,48.07,122686,362.67
-United States,321,15585,Others,46.07,138271,408.74
-United States,335,24462,Others,72.31,162733,481.05
-United States,349,20579,Others,60.83,183312,541.88
-United States,363,39147,Others,115.72,222459,657.6
-United States,377,33013,Others,97.59,255472,755.19
-United States,391,37916,Others,112.08,293388,867.27
-United States,405,33178,Others,98.08,326566,965.35
-United States,419,41389,Others,122.35,367955,1087.7
-United States,433,56383,Others,166.67,424338,1254.37
-United States,447,73527,Alpha,217.35,497865,1471.72
-United States,461,68291,Alpha,201.87,566156,1673.59
-United States,475,58790,Alpha,173.79,624946,1847.38
-United States,489,36262,Alpha,107.19,661208,1954.57
-United States,503,19972,Alpha,59.04,681180,2013.61
-United States,517,20300,Alpha,60.01,701480,2073.62
-United States,531,26686,Delta,78.89,728166,2152.51
-United States,545,58494,Delta,172.91,786660,2325.42
-United States,559,122768,Delta,362.91,909428,2688.33
-United States,573,145029,Delta,428.71,1054457,3117.04
-United States,587,130557,Delta,385.93,1185014,3502.97
-United States,601,140932,Delta,416.6,1325946,3919.57
-United States,615,118560,Delta,350.47,1444506,4270.04
-United States,629,112978,Delta,333.97,1557484,4604.01
-United States,643,102106,Delta,301.83,1659590,4905.84
-United States,657,110687,Delta,327.2,1770277,5233.04
-United States,671,118672,Delta,350.8,1888949,5583.84
-United States,685,110915,Delta,327.87,1999864,5911.71
-United States,699,129424,Delta,382.58,2129288,6294.29
-United States,713,176192,Omicron (BA.1),520.83,2305480,6815.12
-United States,727,206841,Omicron (BA.1),611.43,2512321,7426.55
-United States,741,173284,Omicron (BA.1),512.24,2685605,7938.79
-United States,755,138371,Omicron (BA.1),409.03,2823976,8347.82
-United States,769,77076,Omicron (BA.1),227.84,2901052,8575.66
-United States,783,37779,Omicron (BA.1),111.68,2938831,8687.34
-United States,797,35903,Omicron (BA.2),106.13,2974734,8793.47
-United States,811,50551,Omicron (BA.2),149.43,3025285,8942.9
-United States,825,64692,Omicron (BA.2),191.23,3089977,9134.13
-United States,839,71166,Omicron (BA.2),210.37,3161143,9344.5
-United States,853,83704,Omicron (BA.2.12.1),247.43,3244847,9591.93
-United States,867,79206,Omicron (BA.2.12.1),234.14,3324053,9826.07
-United States,881,72232,Omicron (BA.2.12.1),213.52,3396285,10039.59
-United States,895,70974,Omicron (BA.5),209.8,3467259,10249.39
-United States,909,81517,Omicron (BA.5),240.97,3548776,10490.36
-United States,923,72538,Omicron (BA.5),214.43,3621314,10704.79
-United States,937,61959,Omicron (BA.5),183.15,3683273,10887.94
-United States,951,58010,Omicron (BA.5),171.48,3741283,11059.42
-United States,965,46330,Omicron (BA.5),136.95,3787613,11196.37
-United States,979,44826,Omicron (BA.5),132.51,3832439,11328.88
-United States,993,31404,Omicron (BA.5),92.83,3863843,11421.71
-United States,1007,29515,Omicron (BA.5),87.25,3893358,11508.96
-United States,1021,30961,Omicron (BA.5),91.52,3924319,11600.48
-United States,1035,31806,Omicron (BA.5),94.02,3956125,11694.5
-United States,1049,33419,Omicron (BQ.1),98.79,3989544,11793.29
-United States,1063,13761,Omicron (BQ.1),40.68,4003305,11833.97
-United States,1071,35,Omicron (BQ.1),0.1,4003340,11834.07
+United States,181,9945,Others,29.4,40949,121.05
+United States,195,7128,Others,21.07,48077,142.12
+United States,209,5854,Others,17.3,53931,159.42
+United States,223,5844,Others,17.28,59775,176.7
+United States,237,5695,Others,16.83,65470,193.53
+United States,251,7686,Others,22.72,73156,216.25
+United States,265,8815,Others,26.06,81971,242.31
+United States,279,9082,Others,26.85,91053,269.16
+United States,293,15383,Others,45.47,106436,314.63
+United States,307,16272,Others,48.1,122708,362.73
+United States,321,15640,Others,46.23,138348,408.96
+United States,335,24513,Others,72.46,162861,481.42
+United States,349,20579,Others,60.83,183440,542.25
+United States,363,39148,Others,115.72,222588,657.97
+United States,377,33013,Others,97.59,255601,755.56
+United States,391,38009,Others,112.36,293610,867.92
+United States,405,33223,Others,98.21,326833,966.13
+United States,419,41401,Others,122.38,368234,1088.51
+United States,433,56411,Others,166.75,424645,1255.26
+United States,447,73543,Alpha,217.4,498188,1472.66
+United States,461,68311,Alpha,201.93,566499,1674.59
+United States,475,58802,Alpha,173.82,625301,1848.41
+United States,489,36290,Alpha,107.27,661591,1955.68
+United States,503,19982,Alpha,59.07,681573,2014.75
+United States,517,20311,Alpha,60.04,701884,2074.79
+United States,531,26687,Delta,78.89,728571,2153.68
+United States,545,58516,Delta,172.98,787087,2326.66
+United States,559,122782,Delta,362.95,909869,2689.61
+United States,573,145030,Delta,428.72,1054899,3118.33
+United States,587,130559,Delta,385.94,1185458,3504.27
+United States,601,140945,Delta,416.64,1326403,3920.91
+United States,615,118573,Delta,350.51,1444976,4271.42
+United States,629,112986,Delta,333.99,1557962,4605.41
+United States,643,102124,Delta,301.88,1660086,4907.29
+United States,657,110761,Delta,327.41,1770847,5234.7
+United States,671,118767,Delta,351.08,1889614,5585.78
+United States,685,110951,Delta,327.98,2000565,5913.76
+United States,699,129474,Delta,382.73,2130039,6296.49
+United States,713,176209,Omicron (BA.1),520.88,2306248,6817.37
+United States,727,207049,Omicron (BA.1),612.05,2513297,7429.42
+United States,741,173328,Omicron (BA.1),512.37,2686625,7941.79
+United States,755,138521,Omicron (BA.1),409.47,2825146,8351.26
+United States,769,77135,Omicron (BA.1),228.01,2902281,8579.27
+United States,783,37784,Omicron (BA.1),111.69,2940065,8690.96
+United States,797,35912,Omicron (BA.2),106.16,2975977,8797.12
+United States,811,50558,Omicron (BA.2),149.45,3026535,8946.57
+United States,825,64711,Omicron (BA.2),191.29,3091246,9137.86
+United States,839,71175,Omicron (BA.2),210.4,3162421,9348.26
+United States,853,83708,Omicron (BA.2.12.1),247.44,3246129,9595.7
+United States,867,79219,Omicron (BA.2.12.1),234.17,3325348,9829.87
+United States,881,72237,Omicron (BA.2.12.1),213.54,3397585,10043.41
+United States,895,70976,Omicron (BA.5),209.81,3468561,10253.22
+United States,909,81510,Omicron (BA.5),240.95,3550071,10494.17
+United States,923,72558,Omicron (BA.5),214.48,3622629,10708.65
+United States,937,61963,Omicron (BA.5),183.17,3684592,10891.82
+United States,951,58013,Omicron (BA.5),171.49,3742605,11063.31
+United States,965,46343,Omicron (BA.5),136.99,3788948,11200.3
+United States,979,44843,Omicron (BA.5),132.56,3833791,11332.86
+United States,993,31532,Omicron (BA.5),93.21,3865323,11426.07
+United States,1007,29605,Omicron (BA.5),87.51,3894928,11513.58
+United States,1021,31117,Omicron (BA.5),91.98,3926045,11605.56
+United States,1035,32428,Omicron (BA.5),95.86,3958473,11701.42
+United States,1049,35988,Omicron (BQ.1),106.38,3994461,11807.8
+United States,1063,23606,Omicron (BQ.1),69.78,4018067,11877.58
+United States,1077,755,Omicron (XBB),2.23,4018822,11879.81
 Uruguay,111,14,,4.09,14,4.09
 Uruguay,125,13,,3.8,27,7.89
 Uruguay,139,9,,2.63,36,10.52
@@ -7542,13 +7587,14 @@ Vietnam,909,191,Omicron (BA.2),1.95,5076,51.67
 Vietnam,923,258,Omicron (BA.5),2.63,5334,54.3
 Vietnam,937,371,Omicron (BA.5),3.78,5705,58.08
 Vietnam,951,356,Omicron (BA.5),3.63,6061,61.71
-Vietnam,965,177,Omicron (BA.5),1.8,6238,63.51
-Vietnam,979,159,Omicron (BA.5),1.62,6397,65.13
-Vietnam,993,112,Omicron (BA.5),1.14,6509,66.27
-Vietnam,1007,74,Omicron (BA.2.75),0.75,6583,67.02
-Vietnam,1021,68,Omicron (BA.2.75),0.69,6651,67.71
-Vietnam,1035,57,Omicron (BA.2.75),0.58,6708,68.29
-Vietnam,1049,9,,0.09,6717,68.38
+Vietnam,965,178,Omicron (BA.5),1.81,6239,63.52
+Vietnam,979,160,Omicron (BA.5),1.63,6399,65.15
+Vietnam,993,112,Omicron (BA.5),1.14,6511,66.29
+Vietnam,1007,79,Omicron (BA.2.75),0.8,6590,67.09
+Vietnam,1021,73,Omicron (BA.2.75),0.74,6663,67.83
+Vietnam,1035,66,Omicron (BA.2.75),0.67,6729,68.5
+Vietnam,1049,27,,0.27,6756,68.77
+Vietnam,1063,12,,0.12,6768,68.89
 Zambia,111,4,,0.2,4,0.2
 Zambia,139,16,,0.8,20,1.0
 Zambia,153,24,,1.2,44,2.2
