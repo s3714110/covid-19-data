@@ -1,7 +1,7 @@
 column,source,category,description
 iso_code,International Organization for Standardization,Others,ISO 3166-1 alpha-3 – three-letter country codes. Note that OWID-defined regions (e.g. continents like 'Europe') contain prefix 'OWID_'.
 continent,Our World in Data,Others,Continent of the geographical location
-location,Our World in Data,Others,Geographical location. Location 'International' considers special regions ("Diamond Princess" and "MS Zaandam" cruises). 
+location,Our World in Data,Others,Geographical location
 date,Our World in Data,Others,Date of observation
 total_cases,COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University,Confirmed cases,"Total confirmed cases of COVID-19. Counts can include probable cases, where reported."
 new_cases,COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University,Confirmed cases,"New confirmed cases of COVID-19. Counts can include probable cases, where reported. In rare cases where our source reports a negative daily change due to a data correction, we set this metric to NA."
