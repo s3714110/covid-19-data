@@ -33,6 +33,7 @@ LARGE_DATA_CORRECTIONS = [
     ("Mexico", "2020-10-05", "deaths"),
     ("Mexico", "2021-06-01", "deaths"),
     ("Moldova", "2021-12-31", "deaths"),
+    ("Netherlands", "2023-01-04", "deaths"),
     ("Norway", "2022-03-17", "deaths"),
     ("Oman", "2022-06-16", "deaths"),
     ("Peru", "2022-12-26", "cases"),
