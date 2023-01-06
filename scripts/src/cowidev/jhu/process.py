@@ -44,6 +44,7 @@ LARGE_DATA_CORRECTIONS = [
     ("United Kingdom", "2022-02-01", "deaths"),
     ("United Kingdom", "2022-04-06", "deaths"),
     ("United Kingdom", "2022-08-22", "deaths"),
+    ("United Kingdom", "2023-01-05", "deaths"),
     ("Vietnam", "2022-08-04", "cases"),
     ("Vietnam", "2022-08-06", "cases"),
 ]
