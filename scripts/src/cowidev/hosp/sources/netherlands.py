@@ -5,7 +5,8 @@ from cowidev.utils.web.download import read_csv_from_url
 
 
 METADATA = {
-    "source_url": "https://lcps.nu/wp-content/uploads/covid-19-datafeed.csv",
+    # to be changed to https://lcps.nu/wp-content/uploads/covid-19-datafeed.csv
+    "source_url": "https://lcps.nu/wp-content/uploads/covid-19-datafeed-oud-v1.csv",
     "source_url_ref": "https://lcps.nu/datafeed/",
     "source_name": "National Coordination Center Patient Distribution",
     "entity": "Netherlands",
@@ -18,8 +19,8 @@ def main() -> pd.DataFrame:
         usecols=[
             "Datum",
             "Kliniek_Bedden_Nederland",
-            "IC_Bedden_COVID_Nederland",
             "Kliniek_Nieuwe_Opnames_COVID_Nederland",
+            "IC_Bedden_COVID_Nederland",
             "IC_Nieuwe_Opnames_COVID_Nederland",
         ],
     )
