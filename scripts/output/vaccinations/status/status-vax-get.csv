@@ -58,44 +58,10 @@ cowidev.vax.incremental.bulgaria,13.07,True,2023-01-12T07:00:25,,
 cowidev.vax.incremental.china,29.19,True,2023-01-12T07:00:41,,
 cowidev.vax.incremental.costa_rica,,,2023-01-12T07:00:12,,
 cowidev.vax.incremental.croatia,0.97,True,2023-01-12T07:00:13,,
-cowidev.vax.incremental.cuba,3.63,False,2023-01-12T07:03:56,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 81, in main
-    Cuba().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 67, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 28, in read
-    return self._parse_data(soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 34, in _parse_data
-    **self._parse_metrics(soup),
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/cuba.py"", line 53, in _parse_metrics
-    data[metric] = clean_count(match.group(1))
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/clean/numbers.py"", line 91, in clean_count
-    return cleaner.run(count)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/clean/numbers.py"", line 83, in run
-    raise ValueError(""The format of the number seems to be not correct! Please review."")
-ValueError: The format of the number seems to be not correct! Please review.
-",The format of the number seems to be not correct! Please review.
+cowidev.vax.incremental.cuba,1.71,True,2023-01-12T12:24:01,,
 cowidev.vax.incremental.curacao,1.03,True,2023-01-12T07:00:13,,
 cowidev.vax.incremental.cyprus,4.68,True,2023-01-12T07:00:18,,
-cowidev.vax.incremental.dominican_republic,22.65,False,2023-01-12T07:04:18,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.33,True,2023-01-12T12:16:14,,
 cowidev.vax.incremental.el_salvador,15.77,True,2023-01-12T07:00:29,,
 cowidev.vax.incremental.faeroe_islands,2.81,True,2023-01-12T07:00:17,,
 cowidev.vax.incremental.fiji,0.0,True,2023-01-12T07:00:15,,
@@ -155,29 +121,7 @@ cowidev.vax.incremental.myanmar,,,2023-01-12T07:00:26,,
 cowidev.vax.incremental.nepal,,,2023-01-12T07:00:26,,
 cowidev.vax.incremental.north_macedonia,,,2023-01-12T07:00:26,,
 cowidev.vax.incremental.northern_cyprus,6.39,True,2023-01-12T07:00:33,,
-cowidev.vax.incremental.paho,81.98,False,2023-01-12T07:05:48,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 55, in _parse_data
-    driver.get(url)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 333, in get
-    self.execute(Command.GET, {'url': url})
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.InvalidArgumentException: Message: invalid argument
-  (Session info: headless chrome=108.0.5359.124)
-
-","Message: invalid argument
-  (Session info: headless chrome=108.0.5359.124)
-"
+cowidev.vax.incremental.paho,77.04,True,2023-01-12T12:17:19,,
 cowidev.vax.incremental.pakistan,,,2023-01-12T07:00:27,,
 cowidev.vax.incremental.philippines,,,2023-01-12T07:00:27,,
 cowidev.vax.incremental.poland,1.88,True,2023-01-12T07:00:29,,
