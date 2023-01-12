@@ -18,7 +18,8 @@ class Cuba:
                 r"Al cierre del (\d{1,2}(?:ro)? de [a-z]+)\s+se acumulan en el país ([\d\s]+) (?:de )?dosis"
                 r" administradas"
             ),
-            "people_vaccinated": r"al menos una dosis [^\.]+, ([\d ]+) personas",
+            # "people_vaccinated": r"al menos una dosis [^\.]+, ([\d ]+) personas",
+            "people_vaccinated": r"al menos una dosis de una de las vacunas cubanas SOBERANA 02, SOBERANA Plus y ABDALA, ([\d ]+) personas",
             "people_fully_vaccinated": r"Tienen esquema de vacunación completo ([\d ]+) personas",
             "total_boosters": r"Cuentan con dosis de refuerzo un total de ([\d ]+) personas",
         }
@@ -50,7 +51,7 @@ class Cuba:
         for metric in ["people_vaccinated", "people_fully_vaccinated", "total_boosters"]:
             match = re.search(self.regex[metric], soup.text)
             try:
-                data[metric] = clean_count(match.group(1))
+                data[metric] = clean_count(match.group(1).replace(" ", ""))
             except AttributeError:
                 raise ValueError(
                     f"Could not parse `{metric}` using regex '{self.regex[metric]}' from website {self.source_url}"
