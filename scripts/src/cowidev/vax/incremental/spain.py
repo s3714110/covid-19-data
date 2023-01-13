@@ -77,7 +77,7 @@ class Spain(CountryVaxBase):
             ),
             "source_url": source,
         }
-        if (col_boosters := "Nº Personas con 1 dosis de refuerzo (2)") in df_2.columns:
+        if (col_boosters := "Nº Personas con 1ª dosis de recuerdo(2)") in df_2.columns:
             # print("EEE")
             data["total_boosters"] = clean_count(df_2.loc["Totales", col_boosters])
 
