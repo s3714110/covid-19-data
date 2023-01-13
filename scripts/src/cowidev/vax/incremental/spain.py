@@ -9,6 +9,10 @@ from cowidev.utils import clean_count, clean_date_series, clean_date
 from cowidev.vax.utils.base import CountryVaxBase
 
 
+# When checking which vaccines are listed, we want to ignore these columns
+COLUMNS_VAX_IGNORE = ["Dosis entregadas total (1)"]
+
+
 class Spain(CountryVaxBase):
     location = "Spain"
     vaccine_mapping = {
@@ -17,8 +21,8 @@ class Spain(CountryVaxBase):
         "AstraZeneca": "Oxford/AstraZeneca",
         "Janssen": "Johnson&Johnson",
     }
-    _date_field_raw = "Fecha de la última vacuna registrada (2)"
-    _max_days_back = 20
+    _date_field_raw = "Fecha de la última vacuna registrada(1)"
+    _max_days_back = 70
 
     def read(self, last_update: str) -> pd.Series:
         return self._parse_data(last_update)
@@ -35,16 +39,18 @@ class Spain(CountryVaxBase):
             # print(f"{date_it} > {last_update}?")
             if date_it > last_update:
                 source = self._get_source_url(date_it.replace("-", ""))
+                
                 try:
-                    df_ = pd.read_excel(source, index_col=0, parse_dates=[self._date_field_raw])
+                    df_1 = pd.read_excel(source, sheet_name="Comunicacion_1", index_col=0)
+                    df_2 = pd.read_excel(source, sheet_name="Comunicacion_2", index_col=0, parse_dates=[self._date_field_raw])
                 except HTTPError:
                     # print(f"Date {date_it} not available!")
-                    pass
-                    # logging.info(f"Date {date_it} not available!")
+                    print(f"Date {date_it} not available!")
                 else:
                     # print("Adding!")
-                    self._check_vaccine_names(df_)
-                    ds = self._parse_data_day(df_, source)
+                    print(date_it, source)
+                    self._check_vaccine_names(df_1)
+                    ds = self._parse_data_day(df_1, df_2, source)
                     records.append(ds)
             else:
                 # print("End!")
@@ -54,32 +60,35 @@ class Spain(CountryVaxBase):
         print("No data being added to Spain")
         return None
 
-    def _parse_data_day(self, df: pd.DataFrame, source: str) -> pd.Series:
+    def _parse_data_day(self, df_1: pd.DataFrame, df_2: pd.DataFrame, source: str) -> pd.Series:
         """Parse data for a single day"""
-        df.loc[~df.index.isin(["Sanidad Exterior"]), self._date_field_raw].dropna().max()
+        # Get data from Comunicacion_2
+        df_2.loc[~df_2.index.isin(["Sanidad Exterior"]), self._date_field_raw].dropna().max()
         data = {
-            "total_vaccinations": clean_count(round(df.loc["Totales", "Dosis administradas (2)"])),
-            "people_vaccinated": clean_count(df.loc["Totales", "Nº Personas con al menos 1 dosis"]),
-            "people_fully_vaccinated": clean_count(df.loc["Totales", "Nº Personas vacunadas(pauta completada)"]),
+            "people_vaccinated": clean_count(df_2.loc["Totales", "Nº Personas con al menos 1 dosis"]),
+            "people_fully_vaccinated": clean_count(df_2.loc["Totales", "Nº Personas con pauta completa"]),
             "date": clean_date(
-                df.loc[
-                    ~df.index.isin(["Sanidad Exterior"]),
-                    "Fecha de la última vacuna registrada (2)",
+                df_2.loc[
+                    ~df_2.index.isin(["Sanidad Exterior"]),
+                    self._date_field_raw,
                 ]
                 .dropna()
                 .max()
             ),
             "source_url": source,
-            "vaccine": ", ".join(self._get_vaccine_names(df, translate=True)),
         }
-        if (col_boosters := "Nº Personas con dosis adicional") in df.columns:
+        if (col_boosters := "Nº Personas con 1 dosis de refuerzo (2)") in df_2.columns:
             # print("EEE")
-            data["total_boosters"] = clean_count(df.loc["Totales", col_boosters])
+            data["total_boosters"] = clean_count(df_2.loc["Totales", col_boosters])
+
+        # Get data from Comunicacion_1
+        data["total_vaccinations"] = clean_count(round(df_1.loc["Totales", "Dosis administradas (2)*"]))
+        data["vaccine"] = ", ".join(self._get_vaccine_names(df_1, translate=True))
         return pd.Series(data=data)
 
     def _get_source_url(self, dt_str):
         return (
-            "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
+            "https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/documentos/"
             f"Informe_Comunicacion_{dt_str}.ods"
         )
 
@@ -89,13 +98,13 @@ class Spain(CountryVaxBase):
             return sorted(
                 [
                     self.vaccine_mapping[re.search(regex_vaccines, col).group(1)]
-                    for col in df.columns
+                    for col in df.columns if col not in COLUMNS_VAX_IGNORE
                     if re.match(regex_vaccines, col)
                 ]
             )
         else:
             return sorted(
-                [re.search(regex_vaccines, col).group(1) for col in df.columns if re.match(regex_vaccines, col)]
+                [re.search(regex_vaccines, col).group(1) for col in df.columns if re.match(regex_vaccines, col) and col not in COLUMNS_VAX_IGNORE]
             )
 
     def _check_vaccine_names(self, df: pd.DataFrame):
