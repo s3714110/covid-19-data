@@ -13,7 +13,7 @@ from cowidev.vax.utils.base import CountryVaxBase
 class China(CountryVaxBase):
     location: str = "China"
     source_url: str = "https://www.chinacdc.cn/jkzt/crb/zl/szkb_11803/jszl_12208/"
-    source_url_complete: str = "http://www.nhc.gov.cn/xcs/s2906/new_list.shtml"
+    source_url_complete: str = "https://www.chinacdc.cn/jkzt/crb/zl/szkb_11803/jszl_13141/"
     regex: dict = {
         "title": "新冠病毒疫苗接种情况",
         "date": r"截至(20\d{2})年(\d{1,2})月(\d{1,2})日",
@@ -24,11 +24,16 @@ class China(CountryVaxBase):
     metric_ignore: str = r"(?:\d+亿[\u4e00-\u96f5\u96f7-\u9fff，]{1,5})?"
     metric: str = r"((?:\d+亿零?)?[\d\.]+万)"
     regex_complete: dict = {
-        "title": r"国务院(?:联防联控机制|新闻办公室)(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会",
+        # "title": r"国务院(?:联防联控机制|新闻办公室)(20\d{2})年(\d{1,2})月(\d{1,2})日新闻发布会",
+        "title": r"全国新型冠状病毒感染疫情情况",
         "summary": f"截{chinese}{month_day}{chinese}接种{chinese}{metric_ignore}{metric}剂",
         "fully": f"全程接种{chinese}{metric_ignore}{metric}",
         "vaccinated": f"接种{chinese}总人数{chinese}{metric_ignore}{metric}",
         "boosters": f"加强免疫{chinese}接种{chinese}{metric_ignore}{metric}",
+        "total_vaccinations": fr"和新疆生产建设兵团累计报告接种新冠病毒疫苗{metric}剂次",
+        "people_vaccinated": fr"接种总人数({metric})人",
+        "people_fully_vaccinated": fr"完成全程接种({metric})人",
+        "total_boosters": fr"完成第一剂次加强免疫接种({metric})人",
     }
     num_links_complete: int = 3
     timeout: int = 30
@@ -77,7 +82,7 @@ class China(CountryVaxBase):
         with get_driver(options=options, firefox=True, timeout=self.timeout) as driver:
             # Load the page until the list of links is loaded
             driver.get(self.source_url_complete)
-            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".zxxx_list>li>a")))
+            Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".jal-item-list>li>a")))
             driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
             for link in links[: self.num_links_complete]:
@@ -87,7 +92,7 @@ class China(CountryVaxBase):
         return pd.DataFrame(data)
 
     def _get_links_complete(self, driver):
-        elems = driver.find_elements_by_css_selector(".zxxx_list>li>a")
+        elems = driver.find_elements_by_css_selector(".jal-item-list>li>a")
         return [elem.get_property("href") for elem in elems if re.search(self.regex_complete["title"], elem.text)]
 
     def _parse_data_complete(self, driver, url):
@@ -101,28 +106,28 @@ class China(CountryVaxBase):
         # Load the page until the end of the text is loaded
         driver.get(url)
         Wait(driver, self.timeout).until(EC.url_to_be(url))
-        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, "#xw_box>.clear")))
+        Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".TRS_Editor")))
         driver.execute_script("window.stop();")
-        elem = driver.find_element_by_id("xw_box")
-        # Apply regex
-        year = re.search(self.regex_complete["title"], driver.title).group(1)
-        summary = re.search(self.regex_complete["summary"], elem.text)
-        fully = re.search(self.regex_complete["fully"], elem.text)
-        if summary and fully:
-            month, day, total_vaccinations = summary.groups()
-        else:
-            return
-        vaccinated = re.search(self.regex_complete["vaccinated"], elem.text)
-        boosters = re.search(self.regex_complete["boosters"], elem.text)
-        # Get metrics
-        return {
-            "date": clean_date(f"{year}-{month}-{day}", "%Y-%m-%d"),
+        elem = driver.find_element_by_class_name("TRS_Editor")
+        # Get date
+        data = {
+            # "date": clean_date(driver.find_element_by_class_name("info-date").text, "%Y-%m-%d"),
             "source_url": url,
-            "total_vaccinations": _clean_count(total_vaccinations),
-            "people_vaccinated": _clean_count(vaccinated.group(1)) if vaccinated else None,
-            "people_fully_vaccinated": _clean_count(fully.group(1)),
-            "total_boosters": _clean_count(boosters.group(1)) if boosters else None,
         }
+        # Get date
+        match = re.search(r"二、疫苗接种情况 \n截至(20\d\d)年(\d\d?)月(\d\d?)日", elem.text)
+        if not match:
+            raise ValueError("No date could be found!")
+        year, month, day = match.group(1, 2, 3)
+        data["date"] = clean_date(f"{year}-{month}-{day}", "%Y-%m-%d")
+        # Find metrics
+        metrics = ["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]
+        for metric in metrics:
+            match = re.search(self.regex_complete[metric], elem.text)
+            if match:
+                data[metric] = _clean_count(match.group(1))
+        # Get metrics
+        return data
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(location=self.location)
