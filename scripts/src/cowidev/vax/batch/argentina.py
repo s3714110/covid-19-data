@@ -7,6 +7,7 @@ from cowidev.utils import clean_date
 from cowidev.utils.clean.dates import clean_date_series
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.checks import VACCINES_ONE_DOSE
+from cowidev.utils.utils import check_known_columns
 
 
 class Argentina(CountryVaxBase):
@@ -32,6 +33,8 @@ class Argentina(CountryVaxBase):
         "Sputnik V COVID19 Instituto Gamaleya": "Sputnik V",
         "Moderna ARNm": "Moderna",
         "Moderna Pediátrica": "Moderna",
+        "Moderna ARNm 020 mg mL": "Moderna",
+        "Moderna 010 mg mL": "Moderna",
         "Pfizer Pediátrica": "Pfizer/BioNTech",
         "COVISHIELD ChAdOx1nCoV COVID 19": "Oxford/AstraZeneca",
         "Pfizer BioNTech Comirnaty": "Pfizer/BioNTech",
@@ -63,6 +66,20 @@ class Argentina(CountryVaxBase):
         return df
 
     def _build_df(self, data):
+        # Check columns
+        columns_expected = {
+            "fecha_inicial",
+            "denominacion",
+            "dosis1",
+            "dosis2",
+            "adicional",
+            "esquemacompleto",
+            "refuerzo",
+            "dias",
+        }
+        columns_unknown = set(data.keys()).difference(columns_expected)
+        if columns_unknown:
+            raise ValueError(f"Unknown columns detected! {columns_unknown}")
         # Get dates
         dt = clean_date(data["fecha_inicial"], "%Y-%m-%dT%H:%M:%S%z", as_datetime=False)
         dates = pd.date_range(dt, periods=data["dias"], freq="D")
