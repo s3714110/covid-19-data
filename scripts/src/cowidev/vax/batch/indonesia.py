@@ -6,7 +6,6 @@ from tableauscraper import TableauScraper as TS
 from cowidev.vax.utils.utils import build_vaccine_timeline
 from cowidev.vax.utils.base import CountryVaxBase
 from cowidev.vax.utils.files import load_data
-from cowidev.vax.utils.utils import make_monotonic
 
 
 class Indonesia(CountryVaxBase):
@@ -100,7 +99,7 @@ class Indonesia(CountryVaxBase):
             df.pipe(self.pipe_metadata)
             .pipe(self.pipe_metrics)
             .pipe(self.pipe_add_latest_boosters)
-            .pipe(make_monotonic)
+            .pipe(self.make_monotonic)
             .pipe(self.pipe_merge_legacy)
             .pipe(self.pipe_merge_current, df_current)
             .pipe(self.pipe_vaccine)[

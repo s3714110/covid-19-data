@@ -6,7 +6,6 @@ import pandas as pd
 from cowidev.utils.web import request_json
 from cowidev.vax.utils.orgs import SPC_COUNTRIES
 from cowidev.vax.utils.files import load_data
-from cowidev.vax.utils.utils import make_monotonic
 from cowidev.vax.utils.base import CountryVaxBase
 
 from cowidev.vax.incremental.fiji import check_booster as fiji_booster
@@ -132,7 +131,7 @@ class SPC(CountryVaxBase):
             ["people_vaccinated", "people_fully_vaccinated"],
         ] = pd.NA
         # Make monotonic
-        df = df.pipe(make_monotonic)
+        df = df.pipe(self.make_monotonic)
         # Add vaccine info
         df = df.pipe(self.pipe_vacine, country)
         # Add Boosters

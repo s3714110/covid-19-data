@@ -3,7 +3,6 @@ import pandas as pd
 
 from cowidev.utils.clean import clean_date_series
 from cowidev.utils.utils import check_known_columns
-from cowidev.vax.utils.utils import make_monotonic
 
 
 class Malta(CountryVaxBase):
@@ -98,7 +97,7 @@ class Malta(CountryVaxBase):
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_exclude_data_points)
-            .pipe(make_monotonic)
+            .pipe(self.make_monotonic)
         )
 
     def export(self):

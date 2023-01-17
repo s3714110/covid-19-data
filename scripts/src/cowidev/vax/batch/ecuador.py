@@ -2,7 +2,7 @@ import pandas as pd
 
 from cowidev.utils.clean import clean_date_series
 from cowidev.utils.utils import check_known_columns
-from cowidev.vax.utils.utils import make_monotonic, build_vaccine_timeline
+from cowidev.vax.utils.utils import build_vaccine_timeline
 from cowidev.vax.utils.base import CountryVaxBase
 
 

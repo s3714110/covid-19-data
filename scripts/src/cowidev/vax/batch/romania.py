@@ -4,7 +4,7 @@ from cowidev.utils.utils import check_known_columns
 from cowidev.utils.web import request_json
 from cowidev.vax.utils.checks import VACCINES_ONE_DOSE
 from cowidev.vax.utils.base import CountryVaxBase
-from cowidev.vax.utils.utils import make_monotonic, build_vaccine_timeline, add_latest_who_values
+from cowidev.vax.utils.utils import build_vaccine_timeline, add_latest_who_values
 
 
 class Romania(CountryVaxBase):
@@ -124,7 +124,7 @@ class Romania(CountryVaxBase):
             .pipe(self.pipe_source)
             .pipe(self.pipe_vaccines)
             .pipe(add_latest_who_values, "Romania", ["people_vaccinated"])
-            .pipe(make_monotonic)
+            .pipe(self.make_monotonic)
         )
 
     def pipe_filter_rows_columns(self, df: pd.DataFrame) -> pd.DataFrame:

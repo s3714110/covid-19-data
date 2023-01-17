@@ -4,7 +4,6 @@ import requests
 
 import pandas as pd
 
-from cowidev.vax.utils.utils import make_monotonic
 
 
 class Lithuania(CountryVaxBase):
@@ -122,7 +121,7 @@ class Lithuania(CountryVaxBase):
             pd.merge(coverage, doses, how="inner", on="date")
             .pipe(self.pipe_add_vaccines)
             .pipe(self.pipe_metadata)
-            .pipe(make_monotonic, max_removed_rows=20)
+            .pipe(self.make_monotonic, max_removed_rows=20)
         )
         self.export_datafile(df)
 
