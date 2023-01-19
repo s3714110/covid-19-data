@@ -20,6 +20,7 @@ class Malta(CountryVaxBase):
         "Total 2nd Booster doses": "total_boosters_2",
         "Total Omicron booster doses": "total_boosters_omicron",
         "Omicron booster doses": "_",
+        "Week number & Year": "_",
     }
 
     def read(self) -> pd.DataFrame:
@@ -29,6 +30,7 @@ class Malta(CountryVaxBase):
         check_known_columns(
             df,
             [
+                "Week number & Year",
                 "Date of Vaccination",
                 "Total Vaccination Doses",
                 "Total Booster doses",
