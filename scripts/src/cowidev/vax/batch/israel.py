@@ -18,7 +18,7 @@ class Israel(CountryVaxBase):
     source_url_age_old = "https://github.com/dancarmoz/israel_moh_covid_dashboard_data/raw/master/old_files/vaccinated_by_age_2022_01_25.csv"
 
     def read(self) -> pd.DataFrame:
-        data = request_json(self.source_url)
+        data = request_json(self.source_url, verify=False)
         df = pd.DataFrame.from_records(data)
         check_known_columns(
             df,
