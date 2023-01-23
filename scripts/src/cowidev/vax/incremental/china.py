@@ -85,6 +85,7 @@ class China(CountryVaxBase):
             Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".jal-item-list>li>a")))
             driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
+            print(links)
             for link in links[: self.num_links_complete]:
                 data_ = self._parse_data_complete(driver, link)
                 if data_:
@@ -115,11 +116,16 @@ class China(CountryVaxBase):
             "source_url": url,
         }
         # Get date
-        match = re.search(r"二、疫苗接种情况 \n截至(20\d\d)年(\d\d?)月(\d\d?)日", elem.text)
-        if not match:
+        match_1 = re.search(r"二、疫苗接种情况 \n截至(20\d\d)年(\d\d?)月(\d\d?)日", elem.text)
+        match_2 = re.search(r"二、疫苗接种情况 \n截至(\d\d?)月(\d\d?)日", elem.text)
+        if match_1:
+            year, month, day = match_1.group(1, 2, 3)
+            data["date"] = clean_date(f"{year}-{month}-{day}", "%Y-%m-%d")
+        elif match_2:
+            month, day = match_2.group(1, 2)
+            data["date"] = clean_date(f"2023-{month}-{day}", "%Y-%m-%d")
+        else:
             raise ValueError("No date could be found!")
-        year, month, day = match.group(1, 2, 3)
-        data["date"] = clean_date(f"{year}-{month}-{day}", "%Y-%m-%d")
         # Find metrics
         metrics = ["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]
         for metric in metrics:
