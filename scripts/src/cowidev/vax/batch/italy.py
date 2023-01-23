@@ -18,6 +18,7 @@ class Italy(CountryVaxBase):
         "db1",
         # "dbi",
         "db2",
+        "db3",
     ]
     columns_rename: dict = {
         "data": "date",
@@ -62,7 +63,7 @@ class Italy(CountryVaxBase):
             total_vaccinations=df.d1 + df.d2 + df.dpi + df.db1
             # + df.dbi
             + df.db2,
-            total_boosters=df.db1 + df.db2,  # + df.dbi ,
+            total_boosters=df.db1 + df.db2 + df.db3, # + df.dbi ,
         )
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
