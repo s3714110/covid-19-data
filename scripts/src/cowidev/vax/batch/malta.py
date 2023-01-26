@@ -12,6 +12,7 @@ class Malta(CountryVaxBase):
     )
     source_url_ref: str = "https://github.com/COVID19-Malta/COVID19-Cases"
     columns_rename: dict = {
+        "Covering Dates & Week": "_",
         "Date of Vaccination": "date",
         "Total Vaccination Doses": "total_vaccinations",
         "Primary Vaccination": "people_fully_vaccinated",
@@ -20,7 +21,6 @@ class Malta(CountryVaxBase):
         "Total 2nd Booster doses": "total_boosters_2",
         "Total Omicron booster doses": "total_boosters_omicron",
         "Omicron booster doses": "_",
-        "Week number & Year": "_",
     }
 
     def read(self) -> pd.DataFrame:
@@ -30,15 +30,15 @@ class Malta(CountryVaxBase):
         check_known_columns(
             df,
             [
-                "Week number & Year",
+                "Covering Dates & Week",
                 "Date of Vaccination",
                 "Total Vaccination Doses",
+                "Primary Vaccination",
+                "Received one dose",
                 "Total Booster doses",
                 "Total 2nd Booster doses",
                 "Omicron booster doses",
                 "Total Omicron booster doses",
-                "Primary Vaccination",
-                "Received one dose",
             ],
         )
         return df
