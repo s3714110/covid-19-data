@@ -182,8 +182,18 @@ class HongKong(CountryVaxBase):
             .assign(location=self.location)
         )
 
+    def check_number_age_groups_latest(self, df: pd.DataFrame):
+        """Check that there are 9 age groups in the 10 latest dates. If not, raise an error."""
+        x = df.groupby("date").age_group.nunique()
+        x = df.groupby("date").age_group.nunique()
+        wrong_rows = x.tail(10)[x < 9]
+        if wrong_rows.any():
+            raise ValueError(f"Missing age groups! Check dates {wrong_rows.index.tolist()}")
+
     def export(self):
         df_base = self.read().pipe(self.pipeline_base)
+        # Check on age groups
+        self.check_number_age_groups_latest(df_base)
         # Main data
         df = df_base.pipe(self.pipeline)
         # Manufacturer
