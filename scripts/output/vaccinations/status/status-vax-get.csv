@@ -4,19 +4,7 @@ cowidev.vax.batch.australia,116.54,True,2023-01-30T07:02:02,,
 cowidev.vax.batch.austria,20.59,True,2023-01-30T07:00:26,,
 cowidev.vax.batch.belgium,7.5,True,2023-01-30T07:00:13,,
 cowidev.vax.batch.bolivia,3.95,True,2023-01-30T07:00:09,,
-cowidev.vax.batch.canada,5.68,False,2023-01-30T07:03:43,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 282, in main
-    Canada().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 266, in export
-    df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 103, in read_age
-    check_known_columns(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 164, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'Unnamed: 21', 'Unnamed: 20', 'Unnamed: 19', 'Unnamed: 22', 'Unnamed: 24', 'Unnamed: 23', 'Unnamed: 18'}
-","Unknown column(s) found: {'Unnamed: 21', 'Unnamed: 20', 'Unnamed: 19', 'Unnamed: 22', 'Unnamed: 24', 'Unnamed: 23', 'Unnamed: 18'}"
+cowidev.vax.batch.canada,4.35,True,2023-01-30T14:30:49,,
 cowidev.vax.batch.chile,0.95,True,2023-01-30T07:00:06,,
 cowidev.vax.batch.czechia,15.38,True,2023-01-30T07:00:21,,
 cowidev.vax.batch.denmark,118.21,True,2023-01-30T07:02:04,,
@@ -26,17 +14,7 @@ cowidev.vax.batch.estonia,0.54,True,2023-01-30T07:00:06,,
 cowidev.vax.batch.france,8.79,True,2023-01-30T07:00:14,,
 cowidev.vax.batch.germany,0.14,True,2023-01-30T07:00:06,,
 cowidev.vax.batch.greece,24.17,True,2023-01-30T07:00:30,,
-cowidev.vax.batch.hong_kong,2.69,False,2023-01-30T07:03:46,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 214, in main
-    HongKong().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 196, in export
-    self.check_number_age_groups_latest(df_base)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 191, in check_number_age_groups_latest
-    raise ValueError(f""Missing age groups! Check dates {wrong_rows.index.tolist()}"")
-ValueError: Missing age groups! Check dates ['2023-01-22', '2023-01-23']
-","Missing age groups! Check dates ['2023-01-22', '2023-01-23']"
+cowidev.vax.batch.hong_kong,1.48,True,2023-01-30T14:34:55,,
 cowidev.vax.batch.indonesia,,,2023-01-30T07:00:05,,
 cowidev.vax.batch.ireland,6.41,True,2023-01-30T07:00:12,,
 cowidev.vax.batch.israel,15.01,True,2023-01-30T07:00:20,,
@@ -77,41 +55,13 @@ cowidev.vax.incremental.bangladesh,132.43,True,2023-01-30T07:02:24,,
 cowidev.vax.incremental.barbados,,,2023-01-30T07:00:12,,
 cowidev.vax.incremental.brazil,2.9,True,2023-01-30T07:00:15,,
 cowidev.vax.incremental.bulgaria,17.2,True,2023-01-30T07:00:30,,
-cowidev.vax.incremental.china,33.17,False,2023-01-30T07:04:19,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 186, in main
-    China().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 174, in export
-    df_complete = self.read_complete()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 90, in read_complete
-    data_ = self._parse_data_complete(driver, link)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/china.py"", line 128, in _parse_data_complete
-    raise ValueError(""No date could be found!"")
-ValueError: No date could be found!
-",No date could be found!
+cowidev.vax.incremental.china,22.25,True,2023-01-30T14:48:35,,
 cowidev.vax.incremental.costa_rica,,,2023-01-30T07:00:14,,
 cowidev.vax.incremental.croatia,2.15,True,2023-01-30T07:00:16,,
 cowidev.vax.incremental.cuba,14.39,True,2023-01-30T07:00:29,,
 cowidev.vax.incremental.curacao,1.54,True,2023-01-30T07:00:17,,
 cowidev.vax.incremental.cyprus,4.54,True,2023-01-30T07:00:21,,
-cowidev.vax.incremental.dominican_republic,22.69,False,2023-01-30T07:04:41,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.59,True,2023-01-30T13:57:35,,
 cowidev.vax.incremental.el_salvador,14.21,True,2023-01-30T07:00:31,,
 cowidev.vax.incremental.faeroe_islands,1.67,True,2023-01-30T07:00:22,,
 cowidev.vax.incremental.fiji,0.0,True,2023-01-30T07:00:21,,
@@ -171,21 +121,7 @@ cowidev.vax.incremental.myanmar,,,2023-01-30T07:00:30,,
 cowidev.vax.incremental.nepal,,,2023-01-30T07:00:30,,
 cowidev.vax.incremental.north_macedonia,,,2023-01-30T07:00:30,,
 cowidev.vax.incremental.northern_cyprus,3.59,True,2023-01-30T07:00:33,,
-cowidev.vax.incremental.paho,136.75,False,2023-01-30T07:07:04,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,76.06,True,2023-01-30T13:59:53,,
 cowidev.vax.incremental.pakistan,,,2023-01-30T07:00:30,,
 cowidev.vax.incremental.philippines,,,2023-01-30T07:00:30,,
 cowidev.vax.incremental.poland,1.21,True,2023-01-30T07:00:31,,
