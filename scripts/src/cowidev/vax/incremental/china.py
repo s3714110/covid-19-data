@@ -85,12 +85,12 @@ class China(CountryVaxBase):
             Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".jal-item-list>li>a")))
             driver.execute_script("window.stop();")
             links = self._get_links_complete(driver)
-            print(links)
             for link in links[: self.num_links_complete]:
                 data_ = self._parse_data_complete(driver, link)
                 if data_:
                     data.append(data_)
-        return pd.DataFrame(data)
+        df = pd.DataFrame(data)
+        return df
 
     def _get_links_complete(self, driver):
         elems = driver.find_elements_by_css_selector(".jal-item-list>li>a")
@@ -110,11 +110,8 @@ class China(CountryVaxBase):
         Wait(driver, self.timeout).until(EC.presence_of_element_located((By.CSS_SELECTOR, ".TRS_Editor")))
         driver.execute_script("window.stop();")
         elem = driver.find_element_by_class_name("TRS_Editor")
-        # Get date
-        data = {
-            # "date": clean_date(driver.find_element_by_class_name("info-date").text, "%Y-%m-%d"),
-            "source_url": url,
-        }
+        # Declare dictionary
+        data = {}
         # Get date
         match_1 = re.search(r"二、疫苗接种情况 \n截至(20\d\d)年(\d\d?)月(\d\d?)日", elem.text)
         match_2 = re.search(r"二、疫苗接种情况 \n截至(\d\d?)月(\d\d?)日", elem.text)
@@ -125,14 +122,17 @@ class China(CountryVaxBase):
             month, day = match_2.group(1, 2)
             data["date"] = clean_date(f"2023-{month}-{day}", "%Y-%m-%d")
         else:
-            raise ValueError("No date could be found!")
+            print("No date could be found!")
+            return {}
+            # raise ValueError("No date could be found!")
         # Find metrics
         metrics = ["total_vaccinations", "people_vaccinated", "people_fully_vaccinated", "total_boosters"]
         for metric in metrics:
             match = re.search(self.regex_complete[metric], elem.text)
             if match:
                 data[metric] = _clean_count(match.group(1))
-        # Get metrics
+        # Source url
+        data["source_url"] = url
         return data
 
     def pipe_metadata(self, df: pd.DataFrame) -> pd.DataFrame:
