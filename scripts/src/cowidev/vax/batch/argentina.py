@@ -40,6 +40,7 @@ class Argentina(CountryVaxBase):
         "Pfizer BioNTech Comirnaty": "Pfizer/BioNTech",
         "AstraZeneca ChAdOx1 S recombinante": "Oxford/AstraZeneca",
         "Sinopharm Vacuna SARSCOV 2 inactivada": "Sinopharm/Beijing",
+        "Pfizer Bivariante BA 4 5": "Pfizer/BioNTech",
     }
 
     def read(self):
