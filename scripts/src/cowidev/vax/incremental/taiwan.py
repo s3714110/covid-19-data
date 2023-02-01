@@ -149,7 +149,7 @@ class Taiwan:
         date_raw = soup.find(class_="download").text
         regex = r"(\d{4})\s*COVID-19疫苗"
         date_str = re.search(regex, date_raw).group(1)
-        date_str = clean_date(f"2022{date_str}", fmt="%Y%m%d")
+        date_str = clean_date(f"2023{date_str}", fmt="%Y%m%d")
         return date_str
 
     def pipe_location(self, ds: pd.Series) -> pd.Series:
