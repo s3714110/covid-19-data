@@ -9,24 +9,63 @@ from cowidev import PATHS
 from cowidev.utils.utils import export_timestamp
 from cowidev.utils.clean import clean_date
 
+from owid import catalog
+
+
+COLUMNS = [
+    "location",
+    "date",
+    "p_scores_all_ages",
+    "p_scores_15_64",
+    "p_scores_65_74",
+    "p_scores_75_84",
+    "p_scores_85plus",
+    "deaths_2020_all_ages",
+    "average_deaths_2015_2019_all_ages",
+    "deaths_2015_all_ages",
+    "deaths_2016_all_ages",
+    "deaths_2017_all_ages",
+    "deaths_2018_all_ages",
+    "deaths_2019_all_ages",
+    "deaths_2010_all_ages",
+    "deaths_2011_all_ages",
+    "deaths_2012_all_ages",
+    "deaths_2013_all_ages",
+    "deaths_2014_all_ages",
+    "deaths_2021_all_ages",
+    "time",
+    "time_unit",
+    "p_scores_0_14",
+    "projected_deaths_since_2020_all_ages",
+    "excess_proj_all_ages",
+    "cum_excess_proj_all_ages",
+    "cum_proj_deaths_all_ages",
+    "cum_p_proj_all_ages",
+    "p_proj_all_ages",
+    "p_proj_0_14",
+    "p_proj_15_64",
+    "p_proj_65_74",
+    "p_proj_75_84",
+    "p_proj_85p",
+    "cum_excess_per_million_proj_all_ages",
+    "excess_per_million_proj_all_ages",
+    "deaths_2022_all_ages",
+    "deaths_since_2020_all_ages",
+]
+
 
 class XMortalityETL:
-    def __init__(self) -> None:
-        self.source_url = (
-            "https://github.com/owid/owid-datasets/raw/master/datasets/"
-            "Excess%20Mortality%20Data%20%E2%80%93%20OWID%20(2022)/"
-            "Excess%20Mortality%20Data%20%E2%80%93%20OWID%20(2022).csv"
-        )
-
     def extract(self):
-        return pd.read_csv(self.source_url)
+        cat = catalog.RemoteCatalog(channels=["grapher"])
+        t = cat.find_latest(namespace="excess_mortality", dataset="excess_mortality", table="excess_mortality")
+        return pd.DataFrame(t)
 
     def pipeline(self, df: pd.DataFrame):
         # Rename columns
         df = df.rename(
             columns={
-                "Entity": "location",
-                "Year": "date",
+                "country": "location",
+                "year": "date",
                 "p_avg_all_ages": "p_scores_all_ages",
                 "p_avg_0_14": "p_scores_0_14",
                 "p_avg_15_64": "p_scores_15_64",
@@ -37,6 +76,7 @@ class XMortalityETL:
                 "average_deaths_2015_2019_all_ages": "average_deaths_2015_2019_all_ages",
             }
         )
+        df = df[COLUMNS]
         # Fix date
         df.loc[:, "date"] = [clean_date(datetime(2020, 1, 1) + timedelta(days=d)) for d in df.date]
         # Sort rows
