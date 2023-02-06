@@ -6,7 +6,7 @@ from cowidev.utils.clean import clean_date_series
 METADATA = {
     "source_url": "",
     "source_url_ref": (
-        "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm"
+        "https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/capacidadAsistencial.htm"
     ),
     "source_name": "Ministry of Health, Consumption and Social Welfare",
     "entity": "Spain",
@@ -16,7 +16,7 @@ METADATA = {
 def main() -> pd.DataFrame:
     soup = get_soup(METADATA["source_url_ref"])
     url = soup.find(class_="informacion").find("a")["href"]
-    url = "https://www.mscbs.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/" + url
+    url = "https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/" + url
 
     df = pd.read_csv(
         url,
