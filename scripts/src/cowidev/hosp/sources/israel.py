@@ -1,4 +1,5 @@
 import pandas as pd
+from cowidev.utils.web import request_json
 
 
 METADATA = {
@@ -11,9 +12,11 @@ METADATA = {
 
 def main():
 
-    df = pd.read_json(METADATA["source_url"])[
-        ["dayDate", "newHospitalized", "countHospitalized", "countBreathCum", "countCriticalStatus"]
-    ].rename(columns={"dayDate": "date"})
+    data = request_json(METADATA["source_url"], verify=False)
+    df = pd.DataFrame.from_records(
+        data,
+        columns=["dayDate", "newHospitalized", "countHospitalized", "countBreathCum", "countCriticalStatus"],
+    ).rename(columns={"dayDate": "date"})
 
     df["date"] = df.date.str.slice(0, 10)
 
