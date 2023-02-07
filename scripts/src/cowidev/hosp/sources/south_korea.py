@@ -5,7 +5,9 @@ METADATA = {
     "source_url_hosp_stock": "https://raw.githubusercontent.com/WWolf/korea-covid19-hosp-data/main/beds.csv",
     "source_url_hosp_flow_icu_stock": "https://github.com/WWolf/korea-covid19-hosp-data/raw/main/hospitalization.csv",
     "source_url_icu_flow": "https://raw.githubusercontent.com/WWolf/korea-covid19-hosp-data/main/weekly_icu.csv",
-    "source_url_ref": "http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id=",
+    "source_url_ref": (
+        "http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=161&dataGubun=&ncvContSeq=&contSeq=&board_id="
+    ),
     "source_name": "Ministry of Health and Welfare, via WWolf on GitHub",
     "entity": "South Korea",
 }
@@ -67,6 +69,8 @@ def main():
 
     df["entity"] = METADATA["entity"]
 
+    # Filter outlier
+    df = df[df.date != "2023-02-23"]
     return df, METADATA
 
 
