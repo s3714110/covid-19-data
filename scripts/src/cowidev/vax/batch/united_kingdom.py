@@ -99,11 +99,15 @@ class UnitedKingdom(CountryVaxBase):
             "Wales": 48,
             "Northern Ireland": 300,
         }
-
+        # Dates to filter by nation
+        dates_filter = {
+            "Northern Ireland": ["2023-02-03"],
+        }
         for location in set(df_base.location):
-            df = df_base.pipe(self._filter_location, location).pipe(
-                self.make_monotonic, max_removed_rows=max_removed_rows_dict[location]
-            )
+            df = df_base.pipe(self._filter_location, location)
+            if location in dates_filter:
+                df = df[~df.date.isin(dates_filter[location])]
+            df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
             self.export_datafile(df, filename=location)
 
 
