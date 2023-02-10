@@ -1,44 +1,36 @@
-import re
-
 import pandas as pd
-
-from cowidev.utils.web.scraping import get_soup
+from cowidev.utils.web.download import read_csv_from_url
 
 METADATA = {
-    "source_url_ref": "https://www.folkhalsomyndigheten.se/smittskydd-beredskap/utbrott/aktuella-utbrott/covid-19/statistik-och-analyser/analys-och-prognoser/",
-    "source_name": "Swedish Public Health Agency",
+    "source_url_ref": "https://www.socialstyrelsen.se/statistik-och-data/statistik/statistik-om-covid-19/",
+    "source_name": "The Swedish National Board of Health and Welfare",
     "entity": "Sweden",
 }
 
+URL_HOSP = "https://static.dwcdn.net/data/oedm6.csv"
+URL_ICU = "https://static.dwcdn.net/data/16JTc.csv"
+
 
 def main() -> pd.DataFrame:
-    soup = get_soup(METADATA["source_url_ref"])
-
-    file_url = soup.find(
-        class_="xlsx", text=re.compile(".*Underlag för Vårdbelastning aktuell beläggning över tid.*")
-    ).get("href")
-    file_url = "https://www.folkhalsomyndigheten.se" + file_url
-
-    hosp = pd.read_excel(file_url, sheet_name="Slutenvård Total", usecols=["Datum", "Riket_(17_av_21)"]).rename(
-        columns={"Riket_(17_av_21)": "hospital_stock", "Datum": "date"}
-    )
-
-    icu = pd.read_excel(
-        file_url, sheet_name="inom intensivvårdsavdelning", usecols=["Datum", "Riket_(17_av_21)"]
-    ).rename(columns={"Riket_(17_av_21)": "icu_stock", "Datum": "date"})
-
-    df = (
-        pd.merge(hosp, icu, on="date", how="outer", validate="one_to_one")
-        .melt("date", var_name="indicator")
-        .dropna(subset=["value"])
-    )
-    df["indicator"] = df.indicator.replace(
-        {
-            "hospital_stock": "Daily hospital occupancy",
-            "icu_stock": "Daily ICU occupancy",
+    # Load hospitalization data
+    df_hosp = read_csv_from_url(URL_HOSP).rename(
+        columns={
+            "ReportDate": "date",
+            "Uppskattad total": "Daily hospital occupancy",
         }
     )
-
+    df_icu = read_csv_from_url(URL_ICU).rename(
+        columns={
+            "ReportDate": "date",
+            "Uppskattad total": "Daily ICU occupancy",
+        }
+    )
+    # Merge data from both sources and keep relevant columns
+    df = pd.merge(df_hosp, df_icu, on="date", how="outer", validate="one_to_one")
+    df = df[["date", "Daily hospital occupancy", "Daily ICU occupancy"]]
+    # Melt dataframe into long format
+    df = df.melt("date", var_name="indicator").dropna(subset=["value"])
+    # Assign entity name
     df["entity"] = METADATA["entity"]
 
     return df, METADATA
