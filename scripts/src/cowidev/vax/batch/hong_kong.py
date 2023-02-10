@@ -103,7 +103,7 @@ class HongKong(CountryVaxBase):
         )
 
     def pipe_filter_dp(self, df: pd.DataFrame) -> pd.DataFrame:
-        msk = df.date.isin(["2021-10-13", "2022-02-01"])
+        msk = df.date.isin(["2021-10-13", "2022-02-01", "2023-01-22", "2023-01-23"])
         return df[~msk]
 
     def pipeline(self, df: pd.DataFrame) -> pd.DataFrame:
@@ -129,8 +129,10 @@ class HongKong(CountryVaxBase):
         )
 
     def pipe_filter_manuf_dp(self, df):
-        msk_sin = (df.vaccine == "Sinovac") & df.date.isin(["2021-10-13", "2022-01-31"])
-        msk_pfi = (df.vaccine == "Pfizer/BioNTech") & df.date.isin(["2021-10-13", "2022-02-01"])
+        msk_sin = (df.vaccine == "Sinovac") & df.date.isin(["2021-10-13", "2022-01-31", "2023-01-22", "2023-01-23"])
+        msk_pfi = (df.vaccine == "Pfizer/BioNTech") & df.date.isin(
+            ["2021-10-13", "2022-02-01", "2023-01-22", "2023-01-23"]
+        )
         return df[~(msk_sin | msk_pfi)]
 
     def pipe_age_checks(self, df: pd.DataFrame):
@@ -192,7 +194,7 @@ class HongKong(CountryVaxBase):
             df = df[~df["date"].isin(wrong_dates)]
             if raise_error:
                 raise ValueError(f"Missing age groups! Check dates {wrong_rows.index.tolist()}")
-        # Ignore date
+        # Ignore dates
         df = df[~df["date"].isin(["2023-01-21"])]
         return df
 
