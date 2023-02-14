@@ -87,6 +87,10 @@ def increment(
     if make_series_monotonic:
         df = make_monotonic(df)
 
+    # drop duplicates and keep first
+    df = df.drop_duplicates(subset=col_ints_have, keep="first")
+
+    # Export
     df.to_csv(PATHS.out_vax(location), index=False)
     # print(f"NEW: {total_vaccinations} doses on {date}")
 
