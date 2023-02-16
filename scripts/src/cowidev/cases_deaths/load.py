@@ -17,9 +17,11 @@ from cowidev.cases_deaths.params import (
 
 def export_grapher_file(df, logger):
     # The rest of the CSVs
-    succeed = _export_grapher_file(df, PATHS.DATA_JHU_DIR, DATASET_NAME)
+    succeed = _export_grapher_file(df, PATHS.DATA_CASES_DEATHS_DIR, DATASET_NAME)
     if succeed:
-        logger.info("Successfully exported CSVs to %s\n" % colored(os.path.abspath(PATHS.DATA_JHU_DIR), "magenta"))
+        logger.info(
+            "Successfully exported CSVs to %s\n" % colored(os.path.abspath(PATHS.DATA_CASES_DEATHS_DIR), "magenta")
+        )
     else:
         logger.error("JHU export failed.\n")
         raise ValueError("JHU export failed.")
