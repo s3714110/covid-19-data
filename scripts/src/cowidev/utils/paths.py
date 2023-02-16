@@ -59,6 +59,9 @@ DATA_VAX_READ_FILE = os.path.join(DATA_VAX_DIR, "README.md")
 DATA_JHU_DIR = os.path.join(DATA_DIR, "jhu")
 DATA_JHU_CASES_FILE = os.path.join(DATA_JHU_DIR, "total_cases.csv")
 DATA_JHU_DEATHS_FILE = os.path.join(DATA_JHU_DIR, "total_deaths.csv")
+## Data cases/deaths
+DATA_CASES_DEATHS_DIR = os.path.join(DATA_DIR, "cases_deaths")
+
 ## Internal
 DATA_INTERNAL_DIR = os.path.join(DATA_DIR, "internal")
 DATA_INTERNAL_VAX_TABLE = os.path.join(DATA_INTERNAL_DIR, "vaccinations-source-table.html")
