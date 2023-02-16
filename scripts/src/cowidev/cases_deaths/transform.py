@@ -49,6 +49,17 @@ def process_data(df):
 # ================================================
 # Discard rows
 # ================================================
+
+
+def format_date(df: pd.DataFrame) -> pd.DataFrame:
+    print("Formatting date…")
+    df["date"] = pd.to_datetime(df["date"], format="%Y-%m-%d")
+    return df
+
+
+# ================================================
+# Discard rows
+# ================================================
 def discard_rows(df):
     print("Discarding rows…")
     # For all rows where new_cases or new_deaths is negative, we keep the cumulative value but set
