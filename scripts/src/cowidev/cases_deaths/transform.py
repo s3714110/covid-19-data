@@ -18,6 +18,7 @@ from cowidev.cases_deaths.utils import load_population
 def process_data(df):
     df = (
         df[["date", "location", "new_cases", "new_deaths", "total_cases", "total_deaths"]]
+        .pipe(format_date)
         .pipe(discard_rows)
         .pipe(inject_owid_aggregates)
         .pipe(inject_weekly_growth)
@@ -49,6 +50,7 @@ def process_data(df):
 # Discard rows
 # ================================================
 def discard_rows(df):
+    print("Discarding rows…")
     # For all rows where new_cases or new_deaths is negative, we keep the cumulative value but set
     # the daily change to NA. This also sets the 7-day rolling average to NA for the next 7 days.
     df.loc[df.new_cases < 0, "new_cases"] = np.nan
@@ -91,6 +93,8 @@ def hide_recent_zeros(df: pd.DataFrame) -> pd.DataFrame:
 # OWID aggregates
 # ================================================
 def inject_owid_aggregates(df):
+    print("Adding aggregates…")
+
     def _sum_aggregate(df, name, include=None, exclude=None):
         df = df.copy()
         if include:
@@ -117,10 +121,12 @@ def inject_owid_aggregates(df):
 
 
 def inject_weekly_growth(df):
+    print("Adding weekly growth…")
     return _inject_growth(df, "weekly", 7)
 
 
 def inject_biweekly_growth(df):
+    print("Adding biweekly growth…")
     return _inject_growth(df, "biweekly", 14)
 
 
@@ -158,6 +164,7 @@ def _inject_growth(df, prefix, periods):
 
 
 def inject_doubling_days(df):
+    print("Adding doubling days…")
     for col, spec in DOUBLING_DAYS_SPEC.items():
         value_col = spec["value_col"]
         periods = spec["periods"]
@@ -183,6 +190,7 @@ def pct_change_to_doubling_days(pct_change, periods):
 
 
 def inject_per_million(df, measures):
+    print("Adding per-capita metrics…")
     df = inject_population(df)
     for measure in measures:
         pop_measure = measure + "_per_million"
@@ -207,6 +215,7 @@ def drop_population(df):
 
 
 def inject_rolling_avg(df):
+    print("Adding rolling-average metrics…")
     df = df.copy().sort_values(by="date")
     for col, spec in ROLLING_AVG_SPEC.items():
         df[col] = df[spec["col"]].astype("float")
@@ -230,6 +239,8 @@ def inject_rolling_avg(df):
 
 
 def inject_cfr(df):
+    print("Adding case-fatality-rate metrics…")
+
     def _apply_row_cfr_100(row):
         if pd.notnull(row["total_cases"]) and row["total_cases"] >= 100:
             return row["cfr"]
@@ -247,6 +258,8 @@ def inject_cfr(df):
 
 
 def inject_days_since(df):
+    print("Adding days-since metrics…")
+
     def _days_since(df, spec):
         def _get_date_of_threshold(df, col, threshold):
             try:
@@ -286,6 +299,7 @@ def inject_days_since(df):
 
 
 def inject_exemplars(df):
+    print("Adding exemplars metrics…")
     df = inject_population(df)
 
     # Inject days since 100th case IF population ≥ 5M
