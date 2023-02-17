@@ -83,16 +83,16 @@ cowidev.vax.incremental.greenland,0.17,False,2023-02-16T07:04:24,"Traceback (mos
     assert len(counter_1) == len(counter_2) == 1
 AssertionError
 ",
-cowidev.vax.incremental.guatemala,,,2023-02-16T07:00:20,,
-cowidev.vax.incremental.guernsey,12.67,True,2023-02-16T07:00:33,,
-cowidev.vax.incremental.hungary,124.28,True,2023-02-16T07:02:24,,
-cowidev.vax.incremental.iceland,4.89,True,2023-02-16T07:00:26,,
-cowidev.vax.incremental.india,5.8,True,2023-02-16T07:00:27,,
-cowidev.vax.incremental.iran,,,2023-02-16T07:00:21,,
-cowidev.vax.incremental.isle_of_man,3.51,True,2023-02-16T07:00:25,,
-cowidev.vax.incremental.jamaica,10.53,True,2023-02-16T07:00:32,,
-cowidev.vax.incremental.kazakhstan,8.57,True,2023-02-16T07:00:33,,
-cowidev.vax.incremental.kosovo,4.91,False,2023-02-16T07:04:29,"Traceback (most recent call last):
+cowidev.vax.incremental.guatemala,,,2023-02-17T07:00:18,,
+cowidev.vax.incremental.guernsey,13.71,True,2023-02-17T07:00:32,,
+cowidev.vax.incremental.hungary,113.26,True,2023-02-17T07:02:12,,
+cowidev.vax.incremental.iceland,4.86,True,2023-02-17T07:00:24,,
+cowidev.vax.incremental.india,5.88,True,2023-02-17T07:00:26,,
+cowidev.vax.incremental.iran,,,2023-02-17T07:00:22,,
+cowidev.vax.incremental.isle_of_man,4.45,True,2023-02-17T07:00:26,,
+cowidev.vax.incremental.jamaica,9.84,True,2023-02-17T07:00:33,,
+cowidev.vax.incremental.kazakhstan,8.1,True,2023-02-17T07:00:32,,
+cowidev.vax.incremental.kosovo,5.84,False,2023-02-17T07:06:20,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
   File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/kosovo.py"", line 82, in main
@@ -200,7 +200,7 @@ Traceback (most recent call last):
     raise ReadTimeout(e, request=request)
 requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Read timed out. (read timeout=20)
 ","HTTPSConnectionPool(host='covid19asi.saglik.gov.tr', port=443): Read timed out. (read timeout=20)"
-cowidev.vax.incremental.united_arab_emirates,,,2023-02-16T07:00:34,,
-cowidev.vax.incremental.vietnam,,,2023-02-16T07:00:34,,
-cowidev.vax.incremental.who,64.66,True,2023-02-16T07:01:38,,
-cowidev.vax.incremental.zambia,2.41,True,2023-02-16T07:00:36,,
+cowidev.vax.incremental.united_arab_emirates,,,2023-02-17T07:00:33,,
+cowidev.vax.incremental.vietnam,,,2023-02-17T07:00:33,,
+cowidev.vax.incremental.who,58.8,True,2023-02-17T07:01:32,,
+cowidev.vax.incremental.zambia,2.06,True,2023-02-17T07:00:36,,
