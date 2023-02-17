@@ -4,37 +4,7 @@ cowidev.vax.batch.australia,127.81,True,2023-02-16T07:02:13,,
 cowidev.vax.batch.austria,14.45,True,2023-02-16T07:00:20,,
 cowidev.vax.batch.belgium,15.08,True,2023-02-16T07:00:21,,
 cowidev.vax.batch.bolivia,3.83,True,2023-02-16T07:00:09,,
-cowidev.vax.batch.canada,8.4,False,2023-02-16T07:04:01,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 289, in main
-    Canada().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 277, in export
-    df = df.pipe(self.pipeline, df_man)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 257, in pipeline
-    .pipe(self.pipe_make_monotonic)[
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 237, in pipe_make_monotonic
-    df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 36 have been NaNed for metric people_vaccinated. That is more than maximum allowed (22) by make_monotonic() - check the data. Check dates ['2023-01-26']
-",1 chunks of lengths 36 have been NaNed for metric people_vaccinated. That is more than maximum allowed (22) by make_monotonic() - check the data. Check dates ['2023-01-26']
+cowidev.vax.batch.canada,5.6,True,2023-02-17T11:37:23,,
 cowidev.vax.batch.chile,0.78,True,2023-02-16T07:00:06,,
 cowidev.vax.batch.czechia,50.36,True,2023-02-16T07:00:56,,
 cowidev.vax.batch.denmark,129.22,True,2023-02-16T07:02:15,,
@@ -43,7 +13,7 @@ cowidev.vax.batch.ecuador,,,2023-02-16T07:00:06,,
 cowidev.vax.batch.estonia,0.63,True,2023-02-16T07:00:06,,
 cowidev.vax.batch.france,6.31,True,2023-02-16T07:00:12,,
 cowidev.vax.batch.germany,0.25,True,2023-02-16T07:00:06,,
-cowidev.vax.batch.greece,19.25,True,2023-02-16T07:00:25,,
+cowidev.vax.batch.greece,3.29,True,2023-02-17T11:35:52,,
 cowidev.vax.batch.hong_kong,23.02,True,2023-02-16T07:00:29,,
 cowidev.vax.batch.indonesia,,,2023-02-16T07:00:06,,
 cowidev.vax.batch.ireland,14.59,True,2023-02-16T07:00:20,,
@@ -91,7 +61,7 @@ cowidev.vax.incremental.croatia,1.66,True,2023-02-16T07:00:16,,
 cowidev.vax.incremental.cuba,13.13,True,2023-02-16T07:00:28,,
 cowidev.vax.incremental.curacao,1.16,True,2023-02-16T07:00:17,,
 cowidev.vax.incremental.cyprus,3.42,True,2023-02-16T07:00:20,,
-cowidev.vax.incremental.dominican_republic,12.0,True,2023-02-16T09:59:16,,
+cowidev.vax.incremental.dominican_republic,12.15,True,2023-02-17T11:32:44,,
 cowidev.vax.incremental.el_salvador,13.78,True,2023-02-16T07:00:31,,
 cowidev.vax.incremental.faeroe_islands,1.81,True,2023-02-16T07:00:20,,
 cowidev.vax.incremental.fiji,0.0,True,2023-02-16T07:00:20,,
@@ -151,7 +121,7 @@ cowidev.vax.incremental.myanmar,,,2023-02-16T07:00:28,,
 cowidev.vax.incremental.nepal,,,2023-02-16T07:00:28,,
 cowidev.vax.incremental.north_macedonia,,,2023-02-16T07:00:28,,
 cowidev.vax.incremental.northern_cyprus,5.92,True,2023-02-16T07:00:34,,
-cowidev.vax.incremental.paho,76.2,True,2023-02-16T10:00:20,,
+cowidev.vax.incremental.paho,76.02,True,2023-02-17T11:33:48,,
 cowidev.vax.incremental.pakistan,,,2023-02-16T07:00:28,,
 cowidev.vax.incremental.philippines,,,2023-02-16T07:00:28,,
 cowidev.vax.incremental.poland,1.73,True,2023-02-16T07:00:30,,
