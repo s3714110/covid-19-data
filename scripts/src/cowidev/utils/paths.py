@@ -59,6 +59,9 @@ DATA_VAX_READ_FILE = os.path.join(DATA_VAX_DIR, "README.md")
 DATA_JHU_DIR = os.path.join(DATA_DIR, "jhu")
 DATA_JHU_CASES_FILE = os.path.join(DATA_JHU_DIR, "total_cases.csv")
 DATA_JHU_DEATHS_FILE = os.path.join(DATA_JHU_DIR, "total_deaths.csv")
+## Data cases/deaths
+DATA_CASES_DEATHS_DIR = os.path.join(DATA_DIR, "cases_deaths")
+
 ## Internal
 DATA_INTERNAL_DIR = os.path.join(DATA_DIR, "internal")
 DATA_INTERNAL_VAX_TABLE = os.path.join(DATA_INTERNAL_DIR, "vaccinations-source-table.html")
@@ -72,6 +75,9 @@ DATA_TIMESTAMP_TEST_FILE = os.path.join(DATA_TIMESTAMP_DIR, "owid-covid-data-las
 DATA_TIMESTAMP_VAX_FILE = os.path.join(DATA_TIMESTAMP_DIR, "owid-covid-data-last-updated-timestamp-vaccination.txt")
 DATA_TIMESTAMP_XM_FILE = os.path.join(DATA_TIMESTAMP_DIR, "owid-covid-data-last-updated-timestamp-xm.txt")
 DATA_TIMESTAMP_JHU_FILE = os.path.join(DATA_TIMESTAMP_DIR, "owid-covid-data-last-updated-timestamp-jhu.txt")
+DATA_TIMESTAMP_CASES_DEATHS_FILE = os.path.join(
+    DATA_TIMESTAMP_DIR, "owid-covid-data-last-updated-timestamp-cases-deaths.txt"
+)
 DATA_TIMESTAMP_OLD_FILE = os.path.join(DATA_TIMESTAMP_DIR, "owid-covid-data-last-updated-timestamp.txt")
 
 # Internal ########
@@ -142,6 +148,11 @@ INTERNAL_INPUT_WB_DIR = os.path.join(INTERNAL_INPUT_DIR, "wb")
 INTERNAL_INPUT_WB_INCOME_FILE = os.path.join(INTERNAL_INPUT_WB_DIR, "income_groups.csv")
 INTERNAL_INPUT_SWEDEN_DIR = os.path.join(INTERNAL_INPUT_DIR, "sweden")
 INTERNAL_INPUT_SWEDEN_DEATHS_FILE = os.path.join(INTERNAL_INPUT_SWEDEN_DIR, "sweden_deaths_per_day.csv")
+### Input cases/deaths
+INTERNAL_INPUT_WHO_DIR = os.path.join(INTERNAL_INPUT_DIR, "who")
+INTERNAL_INPUT_WHO_CASES_DEATHS_COUNTRY_STD_FILE = os.path.join(
+    INTERNAL_INPUT_WHO_DIR, "cases_deaths.countries_mapping.json"
+)
 ### Input templates
 INTERNAL_INPUT_TEMPLATE = os.path.join(INTERNAL_INPUT_DIR, "templates")
 INTERNAL_INPUT_TEMPLATE_STATUS = os.path.join(INTERNAL_INPUT_TEMPLATE, "status.md")

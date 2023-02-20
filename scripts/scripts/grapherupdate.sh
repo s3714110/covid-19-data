@@ -56,6 +56,7 @@ cowidev-grapher-db
 minute=$(date +%M)
 if [ $minute == 40 ] ; then
   cowid --server jhu grapher-db
+  cowid --server casedeath grapher-db
   cowid --server decoupling grapher-db
   cowid --server hosp grapher-db
   # cowid --server gmobility grapher-db

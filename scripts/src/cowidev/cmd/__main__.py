@@ -6,6 +6,7 @@ from cowidev.cmd.commons.utils import OrderedGroup
 from cowidev.cmd.testing import click_test
 from cowidev.cmd.vax import click_vax
 from cowidev.cmd.hosp import click_hosp
+from cowidev.cmd.cases_deaths import click_cases_deaths
 from cowidev.cmd.jhu import click_jhu
 from cowidev.cmd.xm import click_xm
 from cowidev.cmd.gmobility import click_gm
@@ -57,6 +58,7 @@ cli.add_command(click_test)
 cli.add_command(click_vax)
 cli.add_command(click_hosp)
 cli.add_command(click_jhu)
+cli.add_command(click_cases_deaths)
 cli.add_command(click_variants)
 cli.add_command(click_xm)
 cli.add_command(click_gm)
