@@ -11,8 +11,7 @@ Consequently, the dataset is updated multiple times a day (_at least_ at 06:00 a
 ## Overview
 The dataset pipeline is built from several pipelines, which are executed independently and whose outputs are combined in
 a final step. The complexity of the pipelines varies. For instance, for vaccinations, testing and hospitalization
-we are responsible for collecting, processing and publishing the data but for cases/deaths we leave the collection step to [Johns
-Hopkins Coronavirus Resource Center](https://coronavirus.jhu.edu/map.html) and then transform and publish the data. Note
+we are responsible for collecting, processing and publishing the data but for cases/deaths we leave the collection step to the [WHO](https://covid19.who.int/) and then transform and publish the data. Note
 that on 23 June 2022, we stopped adding new data points to our COVID-19 testing dataset ([read more)](https://github.com/owid/covid-19-data/discussions/2667)).
 
 The table below lists all the constituent pipelines, along with their execution frequencies, and what are the pipelines'
@@ -23,7 +22,7 @@ tasks.
 | [Vaccinations](#vaccinations-pipeline)               | every weekday at 12:00 UTC           | {abbr}`Collection (Scraping primary sources (e.g. country governmental sites) and extracting relevant datapoints.)`, {abbr}`transformation (Transforming and cleaning the downloaded data into a human-readable format.)`, {abbr}`presentation (Presenting the cleaned data to the public (e.g. charts, dataset files, etc.).)` |
 | [Testing](#testing-pipeline)                   | Phased out ([read more](https://github.com/owid/covid-19-data/discussions/2667))             | Collection, transformation, presentation |
 | [Hospitalization & ICU](#hospitalization-icu-pipeline)     | daily at 06:00 and 18:00 UTC | Collection, transformation, presentation |
-| [Cases & Deaths (JHU)](#cases-deaths-jhu-pipeline)      | daily at 04:00, 10:00, 16:00 and 22:00 UTC     | Transformation, presentation             |
+| [Cases & Deaths](#cases-deaths-pipeline)      | daily (multiple times)     | Transformation, presentation             |
 | [Excess mortality](#excess-mortality-pipeline)          | weekly | Transformation, presentation             |
 | [Variants](#variants-pipeline)                  | daily at 20:00 UTC           | Transformation, presentation             |
 | [Reproduction rate](#reproduction-rate-pipeline)         | daily                        | Presentation                             |
@@ -98,27 +97,23 @@ cowid hosp grapher-db
 [Intermediate dataset and data technical details](https://github.com/owid/covid-19-data/tree/master/public/data/hospitalizations).
 ```
 
-## Cases & Deaths (JHU) pipeline
-We source cases and death figures from the [COVID-19 Data Repository by the Center for Systems Science and Engineering
-(CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19). We transform some of the variables and
+## Cases & Deaths pipeline
+We source cases and death figures from the [COVID-19 Dashboard by the WHO](https://covid19.who.int/). We transform some of the variables and
 re-publish the dataset.
 ### Execution steps
 
 ```
-# Download data
-cowid jhu download
-
 # Generate dataset
-cowid jhu generate
+cowid casedeath generate
 
 # Update Grapher database
-cowid jhu grapher-db
+cowid casedeath grapher-db
 ```
 
 
 ```{seealso}
 
-[Intermediate dataset](https://github.com/owid/covid-19-data/tree/master/public/data/jhu).
+[Intermediate datasets](https://github.com/owid/covid-19-data/tree/master/public/data/cases_deaths).
 ```
 
 ## Excess Mortality pipeline
