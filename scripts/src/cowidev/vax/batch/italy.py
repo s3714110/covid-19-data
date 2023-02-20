@@ -33,6 +33,7 @@ class Italy(CountryVaxBase):
         "Janssen": "Johnson&Johnson",
         "Novavax": "Novavax",
         "ND": "unknown",
+        "Sanofi": "Sanofi/GSK",
     }
     one_dose_vaccines: list = ["Johnson&Johnson"]
     vax_date_mapping = None
@@ -63,7 +64,7 @@ class Italy(CountryVaxBase):
             total_vaccinations=df.d1 + df.d2 + df.dpi + df.db1
             # + df.dbi
             + df.db2,
-            total_boosters=df.db1 + df.db2 + df.db3, # + df.dbi ,
+            total_boosters=df.db1 + df.db2 + df.db3,  # + df.dbi ,
         )
 
     def pipeline_base(self, df: pd.DataFrame) -> pd.DataFrame:
