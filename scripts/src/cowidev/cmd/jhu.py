@@ -7,7 +7,7 @@ from cowidev.jhu.__main__ import download_csv, generate_dataset, update_db
 @click.group(name="jhu", chain=True, cls=OrderedGroup)
 @click.pass_context
 def click_jhu(ctx):
-    """COVID-19 Cases/Deaths data pipeline."""
+    """COVID-19 Cases/Deaths data pipeline. [DEPRECATED]"""
     pass
 
 
