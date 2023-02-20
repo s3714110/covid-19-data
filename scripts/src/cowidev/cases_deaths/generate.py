@@ -35,7 +35,7 @@ def update_db():
     import_dataset(
         dataset_name=DATASET_NAME,
         namespace="owid",
-        csv_path=os.path.join(PATHS.DATA_JHU_DIR, DATASET_NAME + ".csv"),
+        csv_path=os.path.join(PATHS.DATA_CASES_DEATHS_DIR, DATASET_NAME + ".csv"),
         default_variable_display={"yearIsDay": True, "zeroDay": ZERO_DAY},
         source_name="World Health Organization",
         slack_notifications=False,
