@@ -71,8 +71,6 @@ if [ $hour == 00 ] || [ $hour == 6 || [ $hour == 12 || [ $hour == 18] ; then
   cowid --server casedeath generate
   # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
   git_push "case-death"
-else
-  echo "Case/Death export is up to date"
 fi
 
 # =====================================================================
