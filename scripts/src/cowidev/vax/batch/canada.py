@@ -121,13 +121,6 @@ class Canada(CountryVaxBase):
                 "proptotal_additional",
                 "proptotal_2nd_additional",
                 "proptotal_recent_fullyoradditional",
-                "Unnamed: 19",
-                "Unnamed: 22",
-                "Unnamed: 23",
-                "Unnamed: 24",
-                "Unnamed: 21",
-                "Unnamed: 20",
-                "Unnamed: 18",
             ],
         )
         return df
