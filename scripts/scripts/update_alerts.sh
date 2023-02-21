@@ -49,6 +49,7 @@ hour=$(TZ=Europe/Paris date +%H)
 
 if [ $hour == 7 ] ; then
   cowid --server check jhu
+  cowid --server check casedeath
 fi
 
 if [ $hour == 9 ] ; then
