@@ -1,21 +1,23 @@
 # Data on COVID-19 (coronavirus) by _Our World in Data_
 
+
 ### 🗂️ Download our complete COVID-19 dataset : [CSV](https://covid.ourworldindata.org/data/owid-covid-data.csv) | [XLSX](https://covid.ourworldindata.org/data/owid-covid-data.xlsx) | [JSON](https://covid.ourworldindata.org/data/owid-covid-data.json)
 
 Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by [_Our World in Data_](https://ourworldindata.org/coronavirus). We will update it daily throughout the duration of the COVID-19 pandemic (more information on our updating process and schedule [here](https://docs.owid.io/projects/covid/en/latest/data-pipeline.html#overview)). It includes the following data:
 
-| Metrics                     | Source                                                    | Updated                                | Countries |
-| --------------------------- | --------------------------------------------------------- | -------------------------------------- | --------- |
-| Vaccinations                | Official data collated by the Our World in Data team      | Daily                                  | 218       |
-| Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more at #2667) | 193       |
-| Hospital & ICU              | Official data collated by the Our World in Data team      | Daily                                  | 47        |
-| Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily                                  | 219       |
-| Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily                                  | 219       |
-| Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily                                  | 196       |
-| Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily                                  | 187       |
-| Other variables of interest | International organizations (UN, World Bank, OECD, IHME…) | Fixed                                  | 241       |
+| Metrics                     | Source                                                    | Updated | Countries |
+|-----------------------------|-----------------------------------------------------------|---------|-----------|
+| Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
+| Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more at #2667)  | 193       |
+| Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
+| Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 219        |
+| Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 219       |
+| Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily   | 196        |
+| Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily   | 187        |
+| Other variables of interest | International organizations (UN, World Bank, OECD, IHME…) | Fixed   | 241       |
 
 A [specific section of this repository](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations) is also dedicated to **vaccinations**, with a lighter dataset containing only vaccination data.
+
 
 ## The data you find here and our data sources
 
@@ -23,13 +25,14 @@ A [specific section of this repository](https://github.com/owid/covid-19-data/tr
   - Note: confirmed cases and deaths are collected by Johns Hopkins University by date of report, rathen than date of test/death. Therefore the number they report on a given day does not necessarily represent the actual number on that date, because of the long reporting chain that exists between a new case/death and its inclusion in statistics. This also means that time series can show sudden changes (negative or positive) when a country corrects historical data, because it had previously under- or overestimated the number of cases/deaths.
 - **Hospitalizations and intensive care unit (ICU) admissions:** our data is collected from official sources and collated by Our World in Data. The complete list of country-by-country sources is available [here](https://github.com/owid/covid-19-data/blob/master/public/data/hospitalizations/locations.csv).
 - **Testing for COVID-19:** this data is collected by the _Our World in Data_ team from official reports; you can find
-  further details in our post on COVID-19 testing, including our [checklist of questions to understand testing
-  data](https://ourworldindata.org/coronavirus-testing#our-checklist-for-covid-19-testing-data), information on
-  [geographical and temporal
-  coverage](https://ourworldindata.org/coronavirus-testing#which-countries-do-we-have-testing-data-for), and [detailed
-  country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset.** You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).
+further details in our post on COVID-19 testing, including our [checklist of questions to understand testing
+data](https://ourworldindata.org/coronavirus-testing#our-checklist-for-covid-19-testing-data), information on
+[geographical and temporal
+coverage](https://ourworldindata.org/coronavirus-testing#which-countries-do-we-have-testing-data-for), and [detailed
+country-by-country source information](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country). **On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset.** You can read more [here](https://github.com/owid/covid-19-data/discussions/2667).
 - **Vaccinations against COVID-19:** this data is collected by the _Our World in Data_ team from official reports.
 - **Other variables:** this data is collected from a variety of sources (United Nations, World Bank, Global Burden of Disease, Blavatnik School of Government, etc.). More information is available in [our codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv).
+
 
 ## The complete _Our World in Data_ COVID-19 dataset
 
@@ -42,7 +45,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 ### Confirmed cases
 
 | Variable                         | Description                                                                                                                                                                                            |
-| :------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:---------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_cases`                    | Total confirmed cases of COVID-19. Counts can include probable cases, where reported.                                                                                                                  |
 | `new_cases`                      | New confirmed cases of COVID-19. Counts can include probable cases, where reported. In rare cases where our source reports a negative daily change due to a data correction, we set this metric to NA. |
 | `new_cases_smoothed`             | New confirmed cases of COVID-19 (7-day smoothed). Counts can include probable cases, where reported.                                                                                                   |
@@ -53,7 +56,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 ### Confirmed deaths
 
 | Variable                          | Description                                                                                                                                                                                               |
-| :-------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_deaths`                    | Total deaths attributed to COVID-19. Counts can include probable deaths, where reported.                                                                                                                  |
 | `new_deaths`                      | New deaths attributed to COVID-19. Counts can include probable deaths, where reported. In rare cases where our source reports a negative daily change due to a data correction, we set this metric to NA. |
 | `new_deaths_smoothed`             | New deaths attributed to COVID-19 (7-day smoothed). Counts can include probable deaths, where reported.                                                                                                   |
@@ -62,13 +65,12 @@ The variables represent all of our main data related to confirmed cases, deaths,
 | `new_deaths_smoothed_per_million` | New deaths attributed to COVID-19 (7-day smoothed) per 1,000,000 people. Counts can include probable deaths, where reported.                                                                              |
 
 #### Notes:
-
-- Due to varying protocols and challenges in the attribution of the cause of death, the number of confirmed deaths may not accurately represent the true number of deaths caused by COVID-19.
+* Due to varying protocols and challenges in the attribution of the cause of death, the number of confirmed deaths may not accurately represent the true number of deaths caused by COVID-19.
 
 ### Excess mortality
 
 | Variable                                  | Description                                                                                                                                                                                                                                                                                   |
-| :---------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `excess_mortality`                        | Percentage difference between the reported number of weekly or monthly deaths in 2020–2021 and the projected number of deaths for the same period based on previous years. For more information, see https://github.com/owid/covid-19-data/tree/master/public/data/excess_mortality           |
 | `excess_mortality_cumulative`             | Percentage difference between the cumulative number of deaths since 1 January 2020 and the cumulative projected deaths for the same period based on previous years. For more information, see https://github.com/owid/covid-19-data/tree/master/public/data/excess_mortality                  |
 | `excess_mortality_cumulative_absolute`    | Cumulative difference between the reported number of deaths since 1 January 2020 and the projected number of deaths for the same period based on previous years. For more information, see https://github.com/owid/covid-19-data/tree/master/public/data/excess_mortality                     |
@@ -77,7 +79,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 ### Hospital & ICU
 
 | Variable                             | Description                                                                                                                                               |
-| :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|:-------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `icu_patients`                       | Number of COVID-19 patients in intensive care units (ICUs) on a given day                                                                                 |
 | `icu_patients_per_million`           | Number of COVID-19 patients in intensive care units (ICUs) on a given day per 1,000,000 people                                                            |
 | `hosp_patients`                      | Number of COVID-19 patients in hospital on a given day                                                                                                    |
@@ -90,34 +92,33 @@ The variables represent all of our main data related to confirmed cases, deaths,
 ### Policy responses
 
 | Variable           | Description                                                                                                                                                                                                         |
-| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|:-------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `stringency_index` | Government Response Stringency Index: composite measure based on 9 response indicators including school closures, workplace closures, and travel bans, rescaled to a value from 0 to 100 (100 = strictest response) |
 
 ### Reproduction rate
 
 | Variable            | Description                                                                                                                                   |
-| :------------------ | :-------------------------------------------------------------------------------------------------------------------------------------------- |
+|:--------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
 | `reproduction_rate` | Real-time estimate of the effective reproduction rate (R) of COVID-19. See https://github.com/crondonm/TrackingR/tree/main/Estimates-Database |
 
 ### Tests & positivity
-
 On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing dataset. You can read more at https://github.com/owid/covid-19-data/discussions/2667.
-| Variable | Description |
+| Variable                          | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 |:----------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `total_tests` | Total tests for COVID-19 |
-| `new_tests` | New tests for COVID-19 (only calculated for consecutive days) |
-| `total_tests_per_thousand` | Total tests for COVID-19 per 1,000 people |
-| `new_tests_per_thousand` | New tests for COVID-19 per 1,000 people |
-| `new_tests_smoothed` | New tests for COVID-19 (7-day smoothed). For countries that don't report testing data on a daily basis, we assume that testing changed equally on a daily basis over any periods in which no data was reported. This produces a complete series of daily figures, which is then averaged over a rolling 7-day window |
-| `new_tests_smoothed_per_thousand` | New tests for COVID-19 (7-day smoothed) per 1,000 people |
-| `positive_rate` | The share of COVID-19 tests that are positive, given as a rolling 7-day average (this is the inverse of tests_per_case) |
-| `tests_per_case` | Tests conducted per new confirmed case of COVID-19, given as a rolling 7-day average (this is the inverse of positive_rate) |
-| `tests_units` | Units used by the location to report its testing data. A country file can't contain mixed units. All metrics concerning testing data use the specified test unit. Valid units are 'people tested' (number of people tested), 'tests performed' (number of tests performed. a single person can be tested more than once in a given day) and 'samples tested' (number of samples tested. In some cases, more than one sample may be required to perform a given test.) |
+| `total_tests`                     | Total tests for COVID-19                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `new_tests`                       | New tests for COVID-19 (only calculated for consecutive days)                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `total_tests_per_thousand`        | Total tests for COVID-19 per 1,000 people                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `new_tests_per_thousand`          | New tests for COVID-19 per 1,000 people                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `new_tests_smoothed`              | New tests for COVID-19 (7-day smoothed). For countries that don't report testing data on a daily basis, we assume that testing changed equally on a daily basis over any periods in which no data was reported. This produces a complete series of daily figures, which is then averaged over a rolling 7-day window                                                                                                                                                  |
+| `new_tests_smoothed_per_thousand` | New tests for COVID-19 (7-day smoothed) per 1,000 people                                                                                                                                                                                                                                                                                                                                                                                                              |
+| `positive_rate`                   | The share of COVID-19 tests that are positive, given as a rolling 7-day average (this is the inverse of tests_per_case)                                                                                                                                                                                                                                                                                                                                               |
+| `tests_per_case`                  | Tests conducted per new confirmed case of COVID-19, given as a rolling 7-day average (this is the inverse of positive_rate)                                                                                                                                                                                                                                                                                                                                           |
+| `tests_units`                     | Units used by the location to report its testing data. A country file can't contain mixed units. All metrics concerning testing data use the specified test unit. Valid units are 'people tested' (number of people tested), 'tests performed' (number of tests performed. a single person can be tested more than once in a given day) and 'samples tested' (number of samples tested. In some cases, more than one sample may be required to perform a given test.) |
 
 ### Vaccinations
 
 | Variable                                     | Description                                                                                                                                                                                                                                                                                                                                       |
-| :------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|:---------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `total_vaccinations`                         | Total number of COVID-19 vaccination doses administered                                                                                                                                                                                                                                                                                           |
 | `people_vaccinated`                          | Total number of people who received at least one vaccine dose                                                                                                                                                                                                                                                                                     |
 | `people_fully_vaccinated`                    | Total number of people who received all doses prescribed by the initial vaccination protocol                                                                                                                                                                                                                                                      |
@@ -135,8 +136,8 @@ On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing datase
 ### Others
 
 | Variable                     | Description                                                                                                                                                                                                                                |
-| :--------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `iso_code`                   | ISO 3166-1 alpha-3 – three-letter country codes. Note that OWID-defined regions (e.g. continents like 'Europe') contain prefix 'OWID\_'.                                                                                                   |
+|:-----------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `iso_code`                   | ISO 3166-1 alpha-3 – three-letter country codes. Note that OWID-defined regions (e.g. continents like 'Europe') contain prefix 'OWID_'.                                                                                                    |
 | `continent`                  | Continent of the geographical location                                                                                                                                                                                                     |
 | `location`                   | Geographical location                                                                                                                                                                                                                      |
 | `date`                       | Date of observation                                                                                                                                                                                                                        |
@@ -156,7 +157,9 @@ On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing datase
 | `life_expectancy`            | Life expectancy at birth in 2019                                                                                                                                                                                                           |
 | `human_development_index`    | A composite index measuring average achievement in three basic dimensions of human development—a long and healthy life, knowledge and a decent standard of living. Values for 2019, imported from http://hdr.undp.org/en/indicators/137506 |
 
+
 A [full codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv) is made available, with a description and source for each variable in the dataset.
+
 
 ## Additional files and information
 
@@ -171,6 +174,7 @@ If you are interested in the individual files that make up the complete dataset,
 - [`vaccinations`](https://github.com/owid/covid-19-data/tree/master/public/data/vaccinations): data from various official sources, related to COVID-19 vaccinations in each country;
 - [`archived`](https://github.com/owid/covid-19-data/tree/master/public/data/archived): data from other providers that we've stopped using and updating;
 - [`internal`](https://github.com/owid/covid-19-data/tree/master/public/data/internal): data extracts intended for internal use at _Our World in Data_. They may change or be deleted without notice so we discourage using them.
+
 
 ## Changelog
 
@@ -218,6 +222,7 @@ If you are interested in the individual files that make up the complete dataset,
 - We may correct or discard inconsistencies that we detect in the original data.
 - Testing data is collected from many different sources. A detailed documentation for each country is available in [our post on COVID-19 testing](https://ourworldindata.org/coronavirus-testing#source-information-country-by-country).
 
+
 ## Stable URLs
 
 The `/public` path of this repository is hosted at `https://covid.ourworldindata.org/`. For example, you can access the
@@ -226,19 +231,19 @@ at `https://covid.ourworldindata.org/data/latest/owid-covid-latest.csv`.
 
 We have the goal to keep all stable URLs working, even when we have to restructure this repository. If you need regular updates, please consider using the `covid.ourworldindata.org` URLs rather than pointing to GitHub.
 
+
 ## License
 
 All visualizations, data, and code produced by _Our World in Data_ are completely open access under the [Creative Commons BY license](https://creativecommons.org/licenses/by/4.0/). You have the permission to use, distribute, and reproduce these in any medium, provided the source and authors are credited.
 
 In the case of our vaccination dataset, please give the following citation:
-
 > Mathieu, E., Ritchie, H., Ortiz-Ospina, E. _et al._ A global database of COVID-19 vaccinations. _Nat Hum Behav_ (2021). [https://doi.org/10.1038/s41562-021-01122-8](https://doi.org/10.1038/s41562-021-01122-8)
 
 In the case of our testing dataset, please give the following citation:
-
 > Hasell, J., Mathieu, E., Beltekian, D. _et al._ A cross-country database of COVID-19 testing. _Sci Data_ **7**, 345 (2020). [https://doi.org/10.1038/s41597-020-00688-8](https://doi.org/10.1038/s41597-020-00688-8)
 
 The data produced by third parties and made available by _Our World in Data_ is subject to the license terms from the original third-party authors. We will always indicate the original source of the data in our database, and you should always check the license of any such third-party data before use.
+
 
 ## Authors
 
