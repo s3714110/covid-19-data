@@ -8,6 +8,7 @@ import click
 from cowidev.cmd.commons.utils import OrderedGroup, feedback_log
 
 
+CASES_DEATHS_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/cases_deaths/full_data.csv"
 JHU_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/jhu/full_data.csv"
 VAX_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
 TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv"
@@ -24,7 +25,7 @@ def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
         raise Exception(
             f"Data is not updated (exceeded maximum allowed days of {allowed_days})! Last date is {max_date}. "
-            f"Please check if something is broken in our pipeline and/or if someone is in charge of today's "
+            "Please check if something is broken in our pipeline and/or if someone is in charge of today's "
             f"update. URL is '{url}'"
         )
     if local_check:
@@ -32,9 +33,8 @@ def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_
         filepath = url.split("https://raw.githubusercontent.com/owid/covid-19-data/master/")[-1]
         statbuf = os.stat(filepath)
         ts_modified = datetime.datetime.fromtimestamp(statbuf.st_mtime, pytz.utc)
-        if (
-            (diff_sec := (datetime.datetime.now(pytz.utc) - ts_modified).total_seconds()) >
-            (max_sec := allowed_days * (60 * 60 * 24))
+        if (diff_sec := (datetime.datetime.now(pytz.utc) - ts_modified).total_seconds()) > (
+            max_sec := allowed_days * (60 * 60 * 24)
         ):
             raise Exception(
                 f"File was modified more than {allowed_days} days: `{diff_sec} sec > {max_sec} sec `! "
@@ -65,7 +65,26 @@ def click_check_vax(ctx):
         domain="Check",
         step="vaccinations",
         hide_success=True,
-        channel="covid-19"
+        channel="covid-19",
+    )
+
+
+@click.command(name="casedeath", short_help="Cases/Death data.")
+@click.pass_context
+def click_check_casedeath(ctx):
+    """Upload dataset to DB."""
+    feedback_log(
+        func=check_updated,
+        url=CASES_DEATHS_URL,
+        date_col="date",
+        allowed_days=1,
+        weekends=True,
+        server=ctx.obj["server"],
+        domain="Check",
+        step="casedeath",
+        hide_success=True,
+        local_check=True,
+        channel="covid-19",
     )
 
 
@@ -84,7 +103,7 @@ def click_check_jhu(ctx):
         step="jhu",
         hide_success=True,
         local_check=True,
-        channel="covid-19"
+        channel="covid-19",
     )
 
 
@@ -102,7 +121,7 @@ def click_check_test(ctx):
         domain="Check",
         step="vaccinations",
         hide_success=True,
-        channel="covid-19"
+        channel="covid-19",
     )
 
 
@@ -120,7 +139,7 @@ def clich_check_hosp(ctx):
         domain="Check",
         step="hospital",
         hide_success=True,
-        channel="covid-19"
+        channel="covid-19",
     )
 
 
@@ -138,7 +157,7 @@ def clich_check_megafile(ctx):
         domain="Check",
         step="megafile",
         hide_success=True,
-        channel="covid-19"
+        channel="covid-19",
     )
 
 
@@ -146,4 +165,5 @@ click_check.add_command(click_check_vax)
 click_check.add_command(click_check_jhu)
 click_check.add_command(click_check_test)
 click_check.add_command(clich_check_hosp)
+click_check.add_command(click_check_casedeath)
 click_check.add_command(clich_check_megafile)
