@@ -77,7 +77,7 @@ def click_check_casedeath(ctx):
         func=check_updated,
         url=CASES_DEATHS_URL,
         date_col="date",
-        allowed_days=1,
+        allowed_days=5,
         weekends=True,
         server=ctx.obj["server"],
         domain="Check",
