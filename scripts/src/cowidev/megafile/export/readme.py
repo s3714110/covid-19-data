@@ -7,8 +7,8 @@ from cowidev import PATHS
 INPUT_DIR = PATHS.INTERNAL_INPUT_DIR
 VACCINATIONS_CSV = PATHS.DATA_VAX_MAIN_FILE
 TESTING_CSV = PATHS.DATA_TEST_MAIN_FILE
-CASES_CSV = PATHS.DATA_JHU_CASES_FILE
-DEATHS_CSV = PATHS.DATA_JHU_DEATHS_FILE
+CASES_CSV = PATHS.DATA_CASES_FILE
+DEATHS_CSV = PATHS.DATA_DEATHS_FILE
 HOSP_CSV = os.path.join(PATHS.INTERNAL_GRAPHER_DIR, "COVID-2019 - Hospital & ICU.csv")
 REPR_CSV = "https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv"
 POL_CSV = PATHS.INTERNAL_INPUT_BSG_FILE
@@ -42,7 +42,7 @@ def get_num_countries_by_location(csv_filepath, location_colname, low_memory=Tru
     return len(locations)
 
 
-def get_num_countries_jhu(csv_filepath):
+def get_num_countries_cases_deaths(csv_filepath):
     df = pd.read_csv(csv_filepath, low_memory=False)
     columns = df.columns
     return len(columns[~columns.isin(EXCLUDE_LOCATIONS)]) - 1
@@ -119,8 +119,8 @@ def get_placeholder():
             csv_filepath=VACCINATIONS_CSV, iso_code_colname="iso_code"
         ),
         "num_countries_testing": get_num_countries_by_iso(csv_filepath=TESTING_CSV, iso_code_colname="ISO code"),
-        "num_countries_cases": get_num_countries_jhu(csv_filepath=CASES_CSV),
-        "num_countries_deaths": get_num_countries_jhu(csv_filepath=DEATHS_CSV),
+        "num_countries_cases": get_num_countries_cases_deaths(csv_filepath=CASES_CSV),
+        "num_countries_deaths": get_num_countries_cases_deaths(csv_filepath=DEATHS_CSV),
         "num_countries_hospital": get_num_countries_by_location(csv_filepath=HOSP_CSV, location_colname="Country"),
         "num_countries_reproduction": get_num_countries_by_location(
             csv_filepath=REPR_CSV, location_colname="Country/Region"
