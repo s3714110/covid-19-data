@@ -4,17 +4,17 @@ from functools import reduce
 import pandas as pd
 
 
-def get_jhu(jhu_dir: str):
+def get_casedeath(dataset_dir: str):
     """
-    Reads each COVID-19 JHU dataset located in /public/data/jhu/
-    Melts the dataframe to vertical format (1 row per country and date)
-    Merges all JHU dataframes into one with outer joins
+    Reads each COVID-19 Cases/Deaths dataset located in `dataset_dir`.
+    Melts the dataframe to vertical format (1 row per country and date).
+    Merges all dataframes into one with outer joins.
 
     Returns:
-        jhu {dataframe}
+        df {dataframe}
     """
 
-    jhu_variables = [
+    varnames = [
         "total_cases",
         "new_cases",
         "weekly_cases",
@@ -32,24 +32,25 @@ def get_jhu(jhu_dir: str):
     data_frames = []
 
     # Process each file and melt it to vertical format
-    for jhu_var in jhu_variables:
-        tmp = pd.read_csv(os.path.join(jhu_dir, f"{jhu_var}.csv"))
+    for varname in varnames:
+        tmp = pd.read_csv(os.path.join(dataset_dir, f"{varname}.csv"))
         country_cols = list(tmp.columns)
         country_cols.remove("date")
 
         # Carrying last observation forward for International totals to avoid discrepancies
-        if jhu_var[:5] == "total":
+        if varname[:5] == "total":
             tmp = tmp.sort_values("date")
-            tmp["International"] = tmp["International"].ffill()
+            if "International" in tmp.columns:
+                tmp["International"] = tmp["International"].ffill()
 
         tmp = (
             pd.melt(tmp, id_vars="date", value_vars=country_cols)
-            .rename(columns={"value": jhu_var, "variable": "location"})
+            .rename(columns={"value": varname, "variable": "location"})
             .dropna()
         )
 
-        if jhu_var[:7] == "weekly_":
-            tmp[jhu_var] = tmp[jhu_var].div(7).round(3)
+        if varname[:7] == "weekly_":
+            tmp[varname] = tmp[varname].div(7).round(3)
             tmp = tmp.rename(
                 errors="ignore",
                 columns={
@@ -60,16 +61,16 @@ def get_jhu(jhu_dir: str):
                 },
             )
         else:
-            tmp[jhu_var] = tmp[jhu_var].round(3)
+            tmp[varname] = tmp[varname].round(3)
         data_frames.append(tmp)
 
     # Outer join between all files
-    jhu = reduce(
+    df = reduce(
         lambda left, right: pd.merge(left, right, on=["date", "location"], how="outer"),
         data_frames,
     )
 
-    return jhu
+    return df
 
 
 def add_cumulative_deaths_last12m(df: pd.DataFrame) -> pd.DataFrame:
