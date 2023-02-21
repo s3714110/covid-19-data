@@ -127,7 +127,7 @@ def click_check_test(ctx):
 
 @click.command(name="hosp", short_help="Hospital & ICU data.")
 @click.pass_context
-def clich_check_hosp(ctx):
+def click_check_hosp(ctx):
     """Upload dataset to DB."""
     feedback_log(
         func=check_updated,
@@ -145,7 +145,7 @@ def clich_check_hosp(ctx):
 
 @click.command(name="megafile", short_help="Complete dataset.")
 @click.pass_context
-def clich_check_megafile(ctx):
+def click_check_megafile(ctx):
     """Upload dataset to DB."""
     feedback_log(
         func=check_updated,
@@ -164,6 +164,6 @@ def clich_check_megafile(ctx):
 click_check.add_command(click_check_vax)
 click_check.add_command(click_check_jhu)
 click_check.add_command(click_check_test)
-click_check.add_command(clich_check_hosp)
+click_check.add_command(click_check_hosp)
 click_check.add_command(click_check_casedeath)
-click_check.add_command(clich_check_megafile)
+click_check.add_command(click_check_megafile)
