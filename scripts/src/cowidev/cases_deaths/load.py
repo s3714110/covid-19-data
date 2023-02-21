@@ -23,8 +23,8 @@ def export_grapher_file(df, logger):
             "Successfully exported CSVs to %s\n" % colored(os.path.abspath(PATHS.DATA_CASES_DEATHS_DIR), "magenta")
         )
     else:
-        logger.error("JHU export failed.\n")
-        raise ValueError("JHU export failed.")
+        logger.error("Case/Death export failed.\n")
+        raise ValueError("Case/Death export failed.")
 
 
 def _export_grapher_file(df, output_path, grapher_name):
