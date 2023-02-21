@@ -3,7 +3,7 @@ import os
 from cowidev import PATHS
 from cowidev.megafile.steps.cgrt import get_cgrt
 from cowidev.megafile.steps.hosp import get_hosp
-from cowidev.megafile.steps.jhu import get_jhu
+from cowidev.megafile.steps.cases_deaths import get_casedeath
 from cowidev.megafile.steps.reprod import get_reprod
 from cowidev.megafile.steps.test import get_testing
 from cowidev.megafile.steps.variants import get_variants
@@ -15,10 +15,15 @@ GRAPHER_DIR = PATHS.INTERNAL_GRAPHER_DIR
 DATA_DIR = PATHS.DATA_DIR
 
 
-def get_base_dataset(logger):
-    """Get owid datasets from: jhu, reproduction rate, hospitalizations, testing ,vaccinations, CGRT."""
-    logger.info("Fetching JHU dataset…")
-    jhu = get_jhu(jhu_dir=PATHS.DATA_JHU_DIR)
+def get_base_dataset(logger, new=False):
+    """Get owid datasets from: who, reproduction rate, hospitalizations, testing, vaccinations, CGRT."""
+    if new:
+        path = PATHS.DATA_CASES_DEATHS_DIR
+    else:
+        path = PATHS.DATA_JHU_DIR
+
+    logger.info("Fetching Case/Death dataset…")
+    cases_deaths = get_casedeath(dataset_dir=path)
 
     logger.info("Fetching reproduction rate…")
     reprod = get_reprod(
@@ -46,12 +51,12 @@ def get_base_dataset(logger):
     logger.info("Fetching variants dataset…")
     variants = get_variants(
         variants_file="s3://covid-19/internal/variants/covid-variants.csv",
-        cases_file=os.path.join(DATA_DIR, "jhu", "full_data.csv"),
+        cases_file=os.path.join(path, "full_data.csv"),
     )
 
     # Big merge
     return (
-        jhu.merge(reprod, on=["date", "location"], how="outer")
+        cases_deaths.merge(reprod, on=["date", "location"], how="outer")
         .merge(hosp, on=["date", "location"], how="outer")
         .merge(testing, on=["date", "location"], how="outer")
         .merge(vax, on=["date", "location"], how="outer")

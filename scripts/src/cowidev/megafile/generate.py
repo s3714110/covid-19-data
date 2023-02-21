@@ -29,10 +29,59 @@ ANNOTATIONS_PATH = PATHS.INTERNAL_INPUT_OWID_ANNOTATIONS_FILE
 README_TMP = PATHS.INTERNAL_INPUT_OWID_READ_FILE
 README_FILE = PATHS.DATA_READ_FILE
 
+# Macro variables
+# - the key is the name of the variable of interest
+# - the value is the path to the corresponding file
+MACRO_VARIABLES = {
+    "population": "un/population_latest.csv",
+    "population_density": "wb/population_density.csv",
+    "median_age": "un/median_age.csv",
+    "aged_65_older": "wb/aged_65_older.csv",
+    "aged_70_older": "un/aged_70_older.csv",
+    "gdp_per_capita": "wb/gdp_per_capita.csv",
+    "extreme_poverty": "wb/extreme_poverty.csv",
+    "cardiovasc_death_rate": "gbd/cardiovasc_death_rate.csv",
+    "diabetes_prevalence": "wb/diabetes_prevalence.csv",
+    "female_smokers": "wb/female_smokers.csv",
+    "male_smokers": "wb/male_smokers.csv",
+    "handwashing_facilities": "un/handwashing_facilities.csv",
+    "hospital_beds_per_thousand": "owid/hospital_beds.csv",
+    "life_expectancy": "owid/life_expectancy.csv",
+    "human_development_index": "un/human_development_index.csv",
+}
+
 
 def generate_megafile(logger):
     """Generate megafile data."""
-    all_covid = get_base_dataset(logger)
+    logger.info("## STANDARD MEGAFILE PROCESS ##")
+    # Load data
+    all_covid = load_data(logger)
+    # Create internal datasets
+    export_internal(
+        logger,
+        all_covid,
+        output_dir=os.path.join(DATA_DIR, "internal"),
+    )
+    # Minor tweaks for final/public dataset
+    all_covid = process_for_public(all_covid)
+    # Create final/public datasets
+    export_public(logger, all_covid)
+
+    # Experimental: Use new cases/deaths source
+    logger.info("## EXPERIMENTAL MEGAFILE PROCESS ##")
+    all_covid = load_data(logger, new=True)
+    export_internal(
+        logger,
+        all_covid,
+        output_dir=os.path.join(DATA_DIR, "internal_new"),
+        categories_filter=["cases-tests", "deaths", "all-reduced"],
+    )
+    all_covid = process_for_public(all_covid)
+    create_dataset(all_covid, MACRO_VARIABLES, logger, "owid-covid-data-new")
+
+
+def load_data(logger, new=False):
+    all_covid = get_base_dataset(logger, new)
 
     # Remove today's datapoint
     all_covid = all_covid[all_covid["date"] < str(date.today())]
@@ -73,26 +122,7 @@ def generate_megafile(logger):
     all_covid = continents.merge(all_covid, on="iso_code", how="right")
 
     # Add macro variables
-    # - the key is the name of the variable of interest
-    # - the value is the path to the corresponding file
-    macro_variables = {
-        "population": "un/population_latest.csv",
-        "population_density": "wb/population_density.csv",
-        "median_age": "un/median_age.csv",
-        "aged_65_older": "wb/aged_65_older.csv",
-        "aged_70_older": "un/aged_70_older.csv",
-        "gdp_per_capita": "wb/gdp_per_capita.csv",
-        "extreme_poverty": "wb/extreme_poverty.csv",
-        "cardiovasc_death_rate": "gbd/cardiovasc_death_rate.csv",
-        "diabetes_prevalence": "wb/diabetes_prevalence.csv",
-        "female_smokers": "wb/female_smokers.csv",
-        "male_smokers": "wb/male_smokers.csv",
-        "handwashing_facilities": "un/handwashing_facilities.csv",
-        "hospital_beds_per_thousand": "owid/hospital_beds.csv",
-        "life_expectancy": "owid/life_expectancy.csv",
-        "human_development_index": "un/human_development_index.csv",
-    }
-    all_covid = add_macro_variables(all_covid, macro_variables, INPUT_DIR)
+    all_covid = add_macro_variables(all_covid, MACRO_VARIABLES, INPUT_DIR)
     # Add missing population (UK nations)
     df_pop_sub = pd.read_csv(PATHS.INTERNAL_INPUT_OWID_POPULATION_SUB_FILE)
     all_covid = all_covid.merge(df_pop_sub[["iso_code", "population"]], on="iso_code", how="left")
@@ -119,15 +149,22 @@ def generate_megafile(logger):
     # Check that we only have 1 unique row for each location/date pair
     assert all_covid.drop_duplicates(subset=["location", "date"]).shape == all_covid.shape
 
+    return all_covid
+
+
+def export_internal(logger, all_covid, output_dir, categories_filter=None):
     logger.info("Creating internal files…")
     create_internal(
         df=all_covid,
-        output_dir=os.path.join(DATA_DIR, "internal"),
+        output_dir=output_dir,
         annotations_path=ANNOTATIONS_PATH,
         country_data=DATA_VAX_COUNTRIES_DIR,
         logger=logger,
+        categories_filter=categories_filter,
     )
 
+
+def process_for_public(all_covid):
     # Drop columns not included in final dataset
     cols_drop = [
         "excess_mortality_count_week",
@@ -166,13 +203,16 @@ def generate_megafile(logger):
         "cumulative_estimated_daily_excess_deaths_ci_95_bot_last12m_per_100k",
     ]
     all_covid = all_covid.drop(columns=cols_drop)
+    return all_covid
 
+
+def export_public(logger, all_covid):
     # Create light versions of complete dataset with only the latest data point
     logger.info("Writing latest…")
     create_latest(all_covid, logger)
 
     # Create datasets
-    create_dataset(all_covid, macro_variables, logger)
+    create_dataset(all_covid, MACRO_VARIABLES, logger)
 
     # Store the last updated time
     # export_timestamp(PATHS.DATA_TIMESTAMP_OLD_FILE, force_directory=PATHS.DATA_DIR)  # @deprecate
@@ -204,6 +244,7 @@ def generate_timestamp():
         PATHS.DATA_TIMESTAMP_VAX_FILE,
         PATHS.DATA_TIMESTAMP_XM_FILE,
         PATHS.DATA_TIMESTAMP_JHU_FILE,
+        PATHS.DATA_TIMESTAMP_CASES_DEATHS_FILE,
     ]
     timestamps = []
     for f in files:

@@ -61,7 +61,8 @@ DATA_JHU_CASES_FILE = os.path.join(DATA_JHU_DIR, "total_cases.csv")
 DATA_JHU_DEATHS_FILE = os.path.join(DATA_JHU_DIR, "total_deaths.csv")
 ## Data cases/deaths
 DATA_CASES_DEATHS_DIR = os.path.join(DATA_DIR, "cases_deaths")
-
+DATA_CASES_FILE = os.path.join(DATA_CASES_DEATHS_DIR, "total_cases.csv")
+DATA_DEATHS_FILE = os.path.join(DATA_CASES_DEATHS_DIR, "total_deaths.csv")
 ## Internal
 DATA_INTERNAL_DIR = os.path.join(DATA_DIR, "internal")
 DATA_INTERNAL_VAX_TABLE = os.path.join(DATA_INTERNAL_DIR, "vaccinations-source-table.html")

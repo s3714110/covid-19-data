@@ -91,9 +91,9 @@ def handle_country_issues(df: pd.DataFrame) -> pd.DataFrame:
     Example: "Bonaire, Sint Eustatius and Saba" does not come as a country, but as its individual entities.
     """
     # Remove 'Others'
-    df = df[df["location"] != "Others"]
-    # Estimate "Bonaire, Sint Eustatius and Saba" as the sum of its individual entities
+    df = df[~df["location"].isin(["Other", "Others"])]
+    # Estimate "Bonaire Sint Eustatius and Saba" as the sum of its individual entities
     countries = ["Sint Eustatius", "Bonaire", "Saba"]
-    df.loc[df["location"].isin(countries), "location"] = "Bonaire, Sint Eustatius and Saba"
+    df.loc[df["location"].isin(countries), "location"] = "Bonaire Sint Eustatius and Saba"
     df = df.groupby(["location", "date"], as_index=False).sum()
     return df
