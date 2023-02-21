@@ -1,4 +1,4 @@
-"""Collect JHU Cases/Deaths data"""
+"""Collect Cases/Deaths data"""
 import os
 
 from cowidev import PATHS
@@ -6,7 +6,6 @@ from cowidev.cases_deaths.extract import load_data
 from cowidev.cases_deaths.transform import process_data
 from cowidev.cases_deaths.load import export_grapher_file
 from cowidev.cases_deaths.params import DATASET_NAME, ZERO_DAY
-from cowidev.jhu.subnational import create_subnational
 from cowidev.utils.utils import export_timestamp
 from cowidev.grapher.db.utils.db_imports import import_dataset
 

@@ -9,7 +9,7 @@ URL = "https://covid19.who.int/WHO-COVID-19-global-data.csv"
 
 
 def load_data(server_mode):
-    """Load JHU data"""
+    """Load WHO data"""
     # Load data
     try:
         df = pd.read_csv(URL)
@@ -97,17 +97,3 @@ def handle_country_issues(df: pd.DataFrame) -> pd.DataFrame:
     df.loc[df["location"].isin(countries), "location"] = "Bonaire, Sint Eustatius and Saba"
     df = df.groupby(["location", "date"], as_index=False).sum()
     return df
-
-
-def check_data_correctness(df, logger, server_mode):
-    """Check that everything is alright in df"""
-    # Check for duplicate rows
-    if df.duplicated(subset=["date", "location"]).any():
-        if server_mode:
-            API.send_warning(
-                channel="#corona-data-updates",
-                title="JHU: Duplicate rows!",
-                message=f"Found duplicate rows in the JHU dataset: {df[df.duplicated(subset=['date', 'location'])]}",
-            )
-        print_err("\n" + ERROR + " Found duplicate rows:")
-        print_err(df[df.duplicated(subset=["date", "location"])])
