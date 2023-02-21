@@ -119,8 +119,8 @@ def get_placeholder():
             csv_filepath=VACCINATIONS_CSV, iso_code_colname="iso_code"
         ),
         "num_countries_testing": get_num_countries_by_iso(csv_filepath=TESTING_CSV, iso_code_colname="ISO code"),
-        "num_countries_cases": get_num_countries_cases_deaths(csv_filepath=CASES_CSV),
-        "num_countries_deaths": get_num_countries_cases_deaths(csv_filepath=DEATHS_CSV),
+        "num_countries_cases": "219",  # get_num_countries_cases_deaths(csv_filepath=CASES_CSV),
+        "num_countries_deaths": "219",  # get_num_countries_cases_deaths(csv_filepath=DEATHS_CSV),
         "num_countries_hospital": get_num_countries_by_location(csv_filepath=HOSP_CSV, location_colname="Country"),
         "num_countries_reproduction": get_num_countries_by_location(
             csv_filepath=REPR_CSV, location_colname="Country/Region"
