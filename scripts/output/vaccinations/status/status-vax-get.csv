@@ -4,19 +4,37 @@ cowidev.vax.batch.australia,119.74,True,2023-02-21T07:02:05,,
 cowidev.vax.batch.austria,15.29,True,2023-02-21T07:00:20,,
 cowidev.vax.batch.belgium,10.83,True,2023-02-21T07:00:16,,
 cowidev.vax.batch.bolivia,3.92,True,2023-02-21T07:00:09,,
-cowidev.vax.batch.canada,5.58,False,2023-02-21T07:03:46,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.canada,8.53,False,2023-02-21T09:43:35,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 289, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 282, in main
     Canada().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 273, in export
-    df, df_age, df_man = self.read(), self.read_age(), self.read_manufacturer()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 103, in read_age
-    check_known_columns(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 168, in check_known_columns
-    raise Exception(f""Previous column(s) missing: {missing_cols}"")
-Exception: Previous column(s) missing: {'Unnamed: 18', 'Unnamed: 23', 'Unnamed: 20', 'Unnamed: 22', 'Unnamed: 21', 'Unnamed: 19', 'Unnamed: 24'}
-","Previous column(s) missing: {'Unnamed: 18', 'Unnamed: 23', 'Unnamed: 20', 'Unnamed: 22', 'Unnamed: 21', 'Unnamed: 19', 'Unnamed: 24'}"
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 270, in export
+    df = df.pipe(self.pipeline, df_man)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 250, in pipeline
+    .pipe(self.pipe_make_monotonic)[
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/canada.py"", line 230, in pipe_make_monotonic
+    df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+    return com.pipe(self, func, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+    return func(obj, *args, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
+    return mkm(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
+    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
+    raise Exception(
+Exception: 1 chunks of lengths 36 have been NaNed for metric people_vaccinated. That is more than maximum allowed (22) by make_monotonic() - check the data. Check dates ['2023-01-26']
+",1 chunks of lengths 36 have been NaNed for metric people_vaccinated. That is more than maximum allowed (22) by make_monotonic() - check the data. Check dates ['2023-01-26']
 cowidev.vax.batch.chile,1.0,True,2023-02-21T07:00:06,,
 cowidev.vax.batch.czechia,38.87,True,2023-02-21T07:00:44,,
 cowidev.vax.batch.denmark,122.0,True,2023-02-21T07:02:07,,
@@ -73,23 +91,7 @@ cowidev.vax.incremental.croatia,1.0,True,2023-02-21T07:00:14,,
 cowidev.vax.incremental.cuba,14.02,True,2023-02-21T07:00:28,,
 cowidev.vax.incremental.curacao,1.52,True,2023-02-21T07:00:15,,
 cowidev.vax.incremental.cyprus,3.96,True,2023-02-21T07:00:18,,
-cowidev.vax.incremental.dominican_republic,22.78,False,2023-02-21T07:04:09,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.23,True,2023-02-21T09:42:34,,
 cowidev.vax.incremental.el_salvador,13.94,True,2023-02-21T07:00:29,,
 cowidev.vax.incremental.faeroe_islands,2.14,True,2023-02-21T07:00:18,,
 cowidev.vax.incremental.fiji,0.0,True,2023-02-21T07:00:16,,
@@ -149,21 +151,7 @@ cowidev.vax.incremental.myanmar,,,2023-02-21T07:00:28,,
 cowidev.vax.incremental.nepal,,,2023-02-21T07:00:28,,
 cowidev.vax.incremental.north_macedonia,,,2023-02-21T07:00:28,,
 cowidev.vax.incremental.northern_cyprus,4.06,True,2023-02-21T07:00:32,,
-cowidev.vax.incremental.paho,137.04,False,2023-02-21T07:06:31,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,75.9,True,2023-02-21T09:43:38,,
 cowidev.vax.incremental.pakistan,,,2023-02-21T07:00:28,,
 cowidev.vax.incremental.philippines,,,2023-02-21T07:00:28,,
 cowidev.vax.incremental.poland,1.59,True,2023-02-21T07:00:30,,
