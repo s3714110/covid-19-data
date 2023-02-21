@@ -11,18 +11,20 @@ from cowidev.utils.utils import dict_to_compact_json
 DATA_DIR = PATHS.DATA_DIR
 
 
-def create_dataset(df, macro_variables, logger):
+def create_dataset(df, macro_variables, logger, filename=None):
     """Export dataset as CSV, XLSX and JSON (complete time series)."""
+    if filename is None:
+        filename = "owid-covid-data"
     logger.info("Writing to CSV…")
-    filename = os.path.join(DATA_DIR, "owid-covid-data.csv")
+    filename = os.path.join(DATA_DIR, f"{filename}.csv")
     df.to_csv(filename, index=False)
-    S3().upload_to_s3(filename, "s3://covid-19/public/owid-covid-data.csv", public=True)
+    S3().upload_to_s3(filename, f"s3://covid-19/public/{filename}.csv", public=True)
 
     logger.info("Writing to XLSX…")
     # filename = os.path.join(DATA_DIR, "owid-covid-data.xlsx")
     # all_covid.to_excel(os.path.join(DATA_DIR, "owid-covid-data.xlsx"), index=False, engine="xlsxwriter")
     # upload_to_s3(filename, "public/owid-covid-data.xlsx", public=True)
-    obj_to_s3(df, s3_path="s3://covid-19/public/owid-covid-data.xlsx", public=True)
+    obj_to_s3(df, s3_path=f"s3://covid-19/public/{filename}.xlsx", public=True)
 
     logger.info("Writing to JSON…")
     data = df_to_dict(
@@ -30,7 +32,7 @@ def create_dataset(df, macro_variables, logger):
         macro_variables.keys(),
         valid_json=True,
     )
-    obj_to_s3(data, "s3://covid-19/public/owid-covid-data.json", public=True)
+    obj_to_s3(data, f"s3://covid-19/public/{filename}.json", public=True)
 
 
 def create_latest(df, logger):
