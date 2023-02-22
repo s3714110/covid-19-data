@@ -58,7 +58,8 @@ class XMortalityETL:
     def extract(self):
         cat = catalog.RemoteCatalog(channels=["grapher"])
         t = cat.find_latest(namespace="excess_mortality", dataset="excess_mortality", table="excess_mortality")
-        return pd.DataFrame(t)
+        date_accessed = max(s.date_accessed for s in t.metadata.dataset.sources)
+        return pd.DataFrame(t), date_accessed
 
     def pipeline(self, df: pd.DataFrame):
         # Rename columns
@@ -86,17 +87,18 @@ class XMortalityETL:
     def transform(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.pipe(self.pipeline)
 
-    def load(self, df: pd.DataFrame, output_path: str) -> None:
+    def load(self, df: pd.DataFrame, output_path: str, date_accessed: str) -> None:
+        ts_accessed = datetime.strptime(date_accessed, "%Y-%M-%d").isoformat()
         df_current = pd.read_csv(output_path)
         if not df.equals(df_current):
             # Export data
             df.to_csv(output_path, index=False)
-            export_timestamp(PATHS.DATA_TIMESTAMP_XM_FILE)
+            export_timestamp(PATHS.DATA_TIMESTAMP_XM_FILE, timestamp=ts_accessed)
 
     def run(self):
-        df = self.extract()
+        df, date_accessed = self.extract()
         df = self.transform(df)
-        self.load(df, PATHS.DATA_XM_MAIN_FILE)
+        self.load(df, PATHS.DATA_XM_MAIN_FILE, date_accessed)
 
 
 def run_etl():
