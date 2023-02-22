@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`6/111` scripts failed, `27/111` were skipped. Latest update was `2023-02-22T07:05:57`.
+`4/111` scripts failed, `27/111` were skipped. Latest update was `2023-02-22T10:30:33`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -26,13 +26,6 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 60, in main<br>    data = read(source).pipe(pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/turkey.py", line 19, in read<br>    soup = get_soup(source)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 83, in get_soup<br>    response = get_response(source, request_method, use_proxy, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py", line 52, in get_response<br>    raise ValueError(<br>ValueError: Source https://covid19asi.saglik.gov.tr/ not reached! Error code 504 Gateway Timeout<br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2023-02-22T07:05:44</td>
-      <td>162.30</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 195, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 167, in pipeline<br>    df.pipe(self.pipe_check_columns)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 122, in pipe_check_columns<br>    raise ValueError(f"Missing column fields: {columns_missing}. Present columns are: {df.columns}")<br>ValueError: Missing column fields: {'Country/ Territory', '1st additional dose', 'Total doses', 'Country code', '2nd additional dose', 'First dose', 'Single dose', 'Second dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated', 'date'], dtype='object')<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.kosovo</td>
       <td>❌</td>
       <td>2023-02-22T07:03:02</td>
@@ -45,13 +38,6 @@ This file shows the latest status of the data pipeline.
       <td>2023-02-22T07:02:57</td>
       <td>0.59</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 76, in main<br>    Greenland().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 63, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 17, in read<br>    data = self._parse_data(soup)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 21, in _parse_data<br>    return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 31, in _parse_data_metrics<br>    assert len(counter_1) == len(counter_2) == 1<br>AssertionError<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2023-02-22T07:02:56</td>
-      <td>22.65</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 113, in main<br>    DominicanRepublic().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 68, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 26, in read<br>    metrics = self._parse_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 35, in _parse_metrics<br>    metric_candidates = _find_potential_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 92, in _find_potential_metrics<br>    h3 = _find_h3(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 82, in _find_h3<br>    raise ValueError("More than one element found!")<br>ValueError: More than one element found!<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.canada</td>
@@ -247,6 +233,20 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2023-02-22T07:00:05</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2023-02-22T10:30:33</td>
+      <td>75.56</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2023-02-22T10:29:30</td>
+      <td>12.66</td>
       <td></td>
     </tr>
     <tr>
@@ -801,7 +801,7 @@ This file shows the latest status of the data pipeline.
 
 ### Process (Checks)
 
-`2/223` processes failed, `0/223` were skipped. Latest update was `2023-02-22T07:06:09`.
+`0/223` processes failed, `0/223` were skipped. Latest update was `2023-02-22T10:31:32`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -814,1341 +814,1341 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>Turkmenistan</td>
-      <td>❌</td>
-      <td>2023-02-22T07:06:08</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Turkmenistan -- Column people_vaccinated must be monotonically increasing! Check:<br>       location       date  ... people_fully_vaccinated total_boosters<br>4  Turkmenistan 2023-02-05  ...                 3358426        3171535<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Anguilla</td>
-      <td>❌</td>
-      <td>2023-02-22T07:06:01</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 95, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Anguilla -- Column total_boosters must be monotonically increasing! Check:<br>    location       date  ... people_fully_vaccinated total_boosters<br>67  Anguilla 2023-02-10  ...                   10380           3003<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Zambia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:09</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Zimbabwe</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:09</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Switzerland</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Syria</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Taiwan</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tajikistan</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tanzania</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Thailand</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Timor</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Togo</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tokelau</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tonga</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Trinidad and Tobago</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tunisia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkey</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turks and Caicos Islands</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tuvalu</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Uganda</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ukraine</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>United Arab Emirates</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>United Kingdom</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>United States</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Uruguay</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
-      <td></td>
-    </tr>
-    <tr>
       <td>Uzbekistan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Vanuatu</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Venezuela</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Vietnam</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Wales</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Wallis and Futuna</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Yemen</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:08</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
-      <td>Rwanda</td>
+      <td>Zambia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
-      <td>Saint Helena</td>
+      <td>Zimbabwe</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saint Kitts and Nevis</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saint Lucia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saint Vincent and the Grenadines</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Samoa</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>San Marino</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sao Tome and Principe</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saudi Arabia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Scotland</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Senegal</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Serbia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Seychelles</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sierra Leone</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Singapore</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sint Maarten (Dutch part)</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Slovakia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Slovenia</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Solomon Islands</td>
-      <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:32</td>
       <td></td>
     </tr>
     <tr>
       <td>Somalia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>South Africa</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>South Korea</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>South Sudan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Spain</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Sri Lanka</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Sudan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Suriname</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Sweden</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:07</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Namibia</td>
+      <td>Switzerland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nauru</td>
+      <td>Syria</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nepal</td>
+      <td>Taiwan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Netherlands</td>
+      <td>Tajikistan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>New Caledonia</td>
+      <td>Tanzania</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>New Zealand</td>
+      <td>Thailand</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nicaragua</td>
+      <td>Timor</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Niger</td>
+      <td>Togo</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nigeria</td>
+      <td>Tokelau</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Niue</td>
+      <td>Tonga</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>North Macedonia</td>
+      <td>Trinidad and Tobago</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Northern Cyprus</td>
+      <td>Tunisia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Northern Ireland</td>
+      <td>Turkey</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Norway</td>
+      <td>Turkmenistan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
-      <td>Oman</td>
+      <td>Turks and Caicos Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tuvalu</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Uganda</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ukraine</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>United Arab Emirates</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>United Kingdom</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>United States</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Uruguay</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:31</td>
       <td></td>
     </tr>
     <tr>
       <td>Pakistan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Palestine</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Panama</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Papua New Guinea</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Paraguay</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Peru</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Philippines</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Pitcairn</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Poland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Portugal</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Qatar</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Romania</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Russia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:06</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Kyrgyzstan</td>
+      <td>Rwanda</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Laos</td>
+      <td>Saint Helena</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Latvia</td>
+      <td>Saint Kitts and Nevis</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Lebanon</td>
+      <td>Saint Lucia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Lesotho</td>
+      <td>Saint Vincent and the Grenadines</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Liberia</td>
+      <td>Samoa</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Libya</td>
+      <td>San Marino</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Liechtenstein</td>
+      <td>Sao Tome and Principe</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Lithuania</td>
+      <td>Saudi Arabia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Luxembourg</td>
+      <td>Scotland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
-      <td>Macao</td>
+      <td>Senegal</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Serbia</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Seychelles</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sierra Leone</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Singapore</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sint Maarten (Dutch part)</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Slovakia</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Slovenia</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Solomon Islands</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:30</td>
       <td></td>
     </tr>
     <tr>
       <td>Madagascar</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Malawi</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Malaysia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Maldives</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mali</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Malta</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritania</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritius</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mexico</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Moldova</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Monaco</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mongolia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Montenegro</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Montserrat</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Morocco</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Mozambique</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Myanmar</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:05</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guatemala</td>
+      <td>Namibia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guernsey</td>
+      <td>Nauru</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guinea</td>
+      <td>Nepal</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guinea-Bissau</td>
+      <td>Netherlands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Guyana</td>
+      <td>New Caledonia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Haiti</td>
+      <td>New Zealand</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Honduras</td>
+      <td>Nicaragua</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
-      <td>Hong Kong</td>
+      <td>Niger</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Nigeria</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Niue</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>North Macedonia</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Northern Cyprus</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Northern Ireland</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Norway</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Oman</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:29</td>
       <td></td>
     </tr>
     <tr>
       <td>Hungary</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Iceland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>India</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Indonesia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Iran</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Iraq</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Ireland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Isle of Man</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Israel</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Italy</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Jamaica</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Japan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Jersey</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Jordan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Kazakhstan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Kenya</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Kiribati</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Kosovo</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Kuwait</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:04</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Denmark</td>
+      <td>Kyrgyzstan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Djibouti</td>
+      <td>Laos</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Dominica</td>
+      <td>Latvia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
-      <td>Dominican Republic</td>
+      <td>Lebanon</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lesotho</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Liberia</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Libya</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Liechtenstein</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lithuania</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Luxembourg</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Macao</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:28</td>
       <td></td>
     </tr>
     <tr>
       <td>Ecuador</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Egypt</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>El Salvador</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>England</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Equatorial Guinea</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Estonia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Eswatini</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Ethiopia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Faeroe Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Falkland Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Fiji</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Finland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>France</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>French Polynesia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Gabon</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Gambia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Georgia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Germany</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Ghana</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Gibraltar</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Greece</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Greenland</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Grenada</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:03</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
-      <td>Botswana</td>
+      <td>Guatemala</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guernsey</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guinea</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guinea-Bissau</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guyana</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Haiti</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Honduras</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Hong Kong</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:27</td>
       <td></td>
     </tr>
     <tr>
       <td>Brazil</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>British Virgin Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Brunei</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Bulgaria</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Burkina Faso</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Burundi</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cambodia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cameroon</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Canada</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cape Verde</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cayman Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Central African Republic</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Chad</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Chile</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>China</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Colombia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Comoros</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Congo</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cook Islands</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Costa Rica</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cote d'Ivoire</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Croatia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cuba</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Curacao</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Cyprus</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Czechia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Democratic Republic of Congo</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:02</td>
+      <td>2023-02-22T10:31:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Denmark</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Djibouti</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Dominica</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:26</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Dominican Republic</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:26</td>
       <td></td>
     </tr>
     <tr>
       <td>Afghanistan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Albania</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Algeria</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Andorra</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Angola</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Anguilla</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Antigua and Barbuda</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Argentina</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Armenia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Aruba</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Australia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Austria</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Azerbaijan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bahamas</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bahrain</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bangladesh</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Barbados</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Belarus</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Belgium</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Belize</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Benin</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bermuda</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bhutan</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bolivia</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bonaire Sint Eustatius and Saba</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
     <tr>
       <td>Bosnia and Herzegovina</td>
       <td>✅</td>
-      <td>2023-02-22T07:06:01</td>
+      <td>2023-02-22T10:31:25</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Botswana</td>
+      <td>✅</td>
+      <td>2023-02-22T10:31:25</td>
       <td></td>
     </tr>
   </tbody>
