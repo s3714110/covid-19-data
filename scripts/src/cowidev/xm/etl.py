@@ -88,7 +88,7 @@ class XMortalityETL:
         return df.pipe(self.pipeline)
 
     def load(self, df: pd.DataFrame, output_path: str, date_accessed: str) -> None:
-        ts_accessed = datetime.strptime(date_accessed, "%Y-%M-%d").isoformat()
+        ts_accessed = datetime.strptime(date_accessed, "%Y-%m-%d").isoformat()
         df_current = pd.read_csv(output_path)
         if not df.equals(df_current):
             # Export data
