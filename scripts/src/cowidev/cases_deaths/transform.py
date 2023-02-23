@@ -203,6 +203,8 @@ def pct_change_to_doubling_days(pct_change, periods):
 def inject_per_million(df, measures):
     print("Adding per-capita metrics…")
     df = inject_population(df)
+    # Fix population value for France (Should not include overseas territories for the WHO)
+    df.loc[df.location == "France", "population"] = 64626624
     for measure in measures:
         pop_measure = measure + "_per_million"
         series = df[measure] / (df["population"] / 1e6)
