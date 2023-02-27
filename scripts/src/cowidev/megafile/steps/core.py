@@ -26,10 +26,16 @@ def get_base_dataset(logger, new=False):
     cases_deaths = get_casedeath(dataset_dir=path)
 
     logger.info("Fetching reproduction rate…")
-    reprod = get_reprod(
-        file_url="https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
-        country_mapping=os.path.join(INPUT_DIR, "reproduction", "reprod_country_standardized.csv"),
-    )
+    try:
+        reprod = get_reprod(
+            file_url="https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+            country_mapping=os.path.join(INPUT_DIR, "reproduction", "reprod_country_standardized.csv"),
+        )
+    except:
+        reprod = get_reprod(
+            file_url="https://github.com/crondonm/TrackingR/raw/main/Estimates-Database/database_7.csv",
+            country_mapping=os.path.join(INPUT_DIR, "reproduction", "reprod_country_standardized.csv"),
+        )
 
     logger.info("Fetching hospital dataset…")
     hosp = get_hosp(data_file=os.path.join(GRAPHER_DIR, "COVID-2019 - Hospital & ICU.csv"))
