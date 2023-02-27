@@ -53,7 +53,6 @@ MACRO_VARIABLES = {
 
 def generate_megafile(logger):
     """Generate megafile data."""
-    logger.info("## STANDARD MEGAFILE PROCESS ##")
     # Load data
     all_covid = load_data(logger)
     # Create internal datasets
@@ -67,21 +66,9 @@ def generate_megafile(logger):
     # Create final/public datasets
     export_public(logger, all_covid)
 
-    # Experimental: Use new cases/deaths source
-    logger.info("## EXPERIMENTAL MEGAFILE PROCESS ##")
-    all_covid = load_data(logger, new=True)
-    export_internal(
-        logger,
-        all_covid,
-        output_dir=os.path.join(DATA_DIR, "internal_new"),
-        categories_filter=["cases-tests", "deaths", "all-reduced"],
-    )
-    all_covid = process_for_public(all_covid)
-    create_dataset(all_covid, MACRO_VARIABLES, logger, "owid-covid-data-new")
 
-
-def load_data(logger, new=False):
-    all_covid = get_base_dataset(logger, new)
+def load_data(logger, old=False):
+    all_covid = get_base_dataset(logger, old)
 
     # Remove today's datapoint
     all_covid = all_covid[all_covid["date"] < str(date.today())]
@@ -243,7 +230,6 @@ def generate_timestamp():
         PATHS.DATA_TIMESTAMP_TEST_FILE,
         PATHS.DATA_TIMESTAMP_VAX_FILE,
         PATHS.DATA_TIMESTAMP_XM_FILE,
-        PATHS.DATA_TIMESTAMP_JHU_FILE,
         PATHS.DATA_TIMESTAMP_CASES_DEATHS_FILE,
     ]
     timestamps = []
