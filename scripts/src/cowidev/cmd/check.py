@@ -13,14 +13,21 @@ JHU_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/da
 VAX_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv"
 TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/testing/covid-testing-all-observations.csv"
 HOSP_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv"
-FULL_URL = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
+FULL_URL_CSV = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
+FULL_URL_XLSX = "https://covid.ourworldindata.org/data/owid-covid-data.xlsx"
+FULL_URL_JSON = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
 
 def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_local=None) -> None:
     if not weekends and datetime.datetime.today().weekday() in [5, 6]:
         print("Today is a weekend, skipping...")
         return
-    df = pd.read_csv(url)
+    if url.endswith(".csv"):
+        df = pd.read_csv(url)
+    elif url.endswith(".xlsx"):
+        df = pd.read_excel(url)
+    elif url.endswith(".json"):
+        df = pd.read_json(url)
     max_date = df[date_col].max()
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
         raise Exception(
@@ -147,9 +154,37 @@ def click_check_hosp(ctx):
 @click.pass_context
 def click_check_megafile(ctx):
     """Upload dataset to DB."""
+    # CSV file
     feedback_log(
         func=check_updated,
-        url=FULL_URL,
+        url=FULL_URL_CSV,
+        date_col="date",
+        allowed_days=1,
+        weekends=True,
+        server=ctx.obj["server"],
+        domain="Check",
+        step="megafile",
+        hide_success=True,
+        channel="covid-19",
+    )
+    # XLSX file
+    feedback_log(
+        func=check_updated,
+        url=FULL_URL_XLSX,
+        date_col="date",
+        allowed_days=1,
+        weekends=True,
+        server=ctx.obj["server"],
+        domain="Check",
+        step="megafile",
+        hide_success=True,
+        channel="covid-19",
+    )
+
+    # JSON file
+    feedback_log(
+        func=check_updated,
+        url=FULL_URL_JSON,
         date_col="date",
         allowed_days=1,
         weekends=True,
