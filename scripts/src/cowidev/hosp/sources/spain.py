@@ -17,15 +17,14 @@ def main() -> pd.DataFrame:
     soup = get_soup(METADATA["source_url_ref"])
     url = soup.find(class_="informacion").find("a")["href"]
     url = "https://www.sanidad.gob.es/profesionales/saludPublica/ccayes/alertasActual/nCov/" + url
-
     df = pd.read_csv(
         url,
         usecols=["Fecha", "Unidad", "OCUPADAS_COVID19", "INGRESOS_COVID19", "Provincia", "CCAA"],
         encoding="Latin-1",
-        sep=";",
+        sep=",",
     )
 
-    df["Fecha"] = clean_date_series(df.Fecha, "%d/%m/%Y", errors="coerce")
+    df["Fecha"] = clean_date_series(df.Fecha, "%m/%d/%Y", errors="coerce")
     df = (
         df.dropna(subset=["Fecha"])
         .drop_duplicates(subset=["Fecha", "Unidad", "Provincia", "CCAA"], keep="first")
