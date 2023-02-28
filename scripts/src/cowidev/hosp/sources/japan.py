@@ -19,6 +19,9 @@ def main():
         }
     )
 
+    # Drop outliers
+    df = df[~df["date"].isin(["2023-02-08"])]
+
     df["entity"] = METADATA["entity"]
 
     return df, METADATA
