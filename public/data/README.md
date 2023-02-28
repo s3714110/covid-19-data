@@ -1,5 +1,7 @@
 # Data on COVID-19 (coronavirus) by _Our World in Data_
 
+> **Warning**
+> Johns Hopkins University will stop publishing data on confirmed COVID-19 cases and deaths. Our team will replace our entire time series with WHO’s weekly-updated data on 8 March. This change will not affect users of our charts and dataset. [Read more.](https://github.com/owid/covid-19-data/issues/2784)
 
 ### 🗂️ Download our complete COVID-19 dataset : [CSV](https://covid.ourworldindata.org/data/owid-covid-data.csv) | [XLSX](https://covid.ourworldindata.org/data/owid-covid-data.xlsx) | [JSON](https://covid.ourworldindata.org/data/owid-covid-data.json)
 
@@ -8,7 +10,7 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 | Metrics                     | Source                                                    | Updated | Countries |
 |-----------------------------|-----------------------------------------------------------|---------|-----------|
 | Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
-| Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more at #2667)  | 193       |
+| Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more: https://github.com/owid/covid-19-data/discussions/2667)  | 193       |
 | Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
 | Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 219        |
 | Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 219       |
