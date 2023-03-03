@@ -25,7 +25,7 @@ cowidev.vax.batch.australia,0.39,False,2023-03-03T07:03:11,"Traceback (most rece
     raise Exception(
 Exception: 1 chunks of lengths 13 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-02-16']
 ",1 chunks of lengths 13 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-02-16']
-cowidev.vax.batch.austria,10.95,True,2023-03-03T07:00:16,,
+cowidev.vax.batch.austria_old,,,2023-03-03T11:24:13,,
 cowidev.vax.batch.belgium,12.11,True,2023-03-03T07:00:18,,
 cowidev.vax.batch.bolivia,4.62,True,2023-03-03T07:00:10,,
 cowidev.vax.batch.canada,10.71,False,2023-03-03T07:03:22,"Traceback (most recent call last):
@@ -62,7 +62,7 @@ Exception: 1 chunks of lengths 36 have been NaNed for metric people_vaccinated. 
 cowidev.vax.batch.chile,0.86,True,2023-03-03T07:00:06,,
 cowidev.vax.batch.czechia,2.69,True,2023-03-03T10:26:34,,
 cowidev.vax.batch.denmark,85.13,True,2023-03-03T07:01:31,,
-cowidev.vax.batch.ecdc,88.38,True,2023-03-03T07:01:34,,
+cowidev.vax.batch.ecdc,25.84,True,2023-03-03T11:53:04,,
 cowidev.vax.batch.ecuador,,,2023-03-03T07:00:05,,
 cowidev.vax.batch.estonia,0.66,True,2023-03-03T07:00:06,,
 cowidev.vax.batch.france,5.99,True,2023-03-03T07:00:11,,
@@ -103,6 +103,7 @@ cowidev.vax.batch.zimbabwe,1.25,True,2023-03-03T07:00:11,,
 cowidev.vax.incremental.africacdc,,,2023-03-03T07:00:11,,
 cowidev.vax.incremental.antigua_barbuda,,,2023-03-03T07:00:11,,
 cowidev.vax.incremental.aruba,2.0,True,2023-03-03T07:00:13,,
+cowidev.vax.incremental.austria,0.5,True,2023-03-03T11:51:53,,
 cowidev.vax.incremental.azerbaijan,,,2023-03-03T07:00:11,,
 cowidev.vax.incremental.bahrain,,,2023-03-03T07:00:11,,
 cowidev.vax.incremental.bangladesh,39.48,True,2023-03-03T07:00:50,,

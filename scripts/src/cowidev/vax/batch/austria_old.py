@@ -7,7 +7,7 @@ from cowidev.vax.utils.base import CountryVaxBase
 
 class Austria(CountryVaxBase):
     location: str = "Austria"
-    source_url: str = "https://info.gesundheitsministerium.gv.at/data/COVID19_vaccination_doses_timeline_v202206.csv"
+    source_url: str = "https://info.gesundheitsministerium.gv.at/data/COVID19_vaccination_doses_timeline_v202206.csv"    
     source_url_ref: str = "https://info.gesundheitsministerium.gv.at/opendata/"
     vaccine_mapping: dict = {
         "BioNTechPfizer": "Pfizer/BioNTech",

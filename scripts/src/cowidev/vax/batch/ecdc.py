@@ -58,7 +58,7 @@ AGE_GROUPS_RELEVANT = AGE_GROUPS_UNDERAGE | AGE_GROUPS_MUST_HAVE
 
 
 LOCATIONS_MAIN_INCLUDED = [
-    # "Austria",
+    "Austria",
     "Portugal",
     "Netherlands",
 ]
