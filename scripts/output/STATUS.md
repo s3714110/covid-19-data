@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`5/111` scripts failed, `27/111` were skipped. Latest update was `2023-03-03T10:52:28`.
+`5/112` scripts failed, `28/112` were skipped. Latest update was `2023-03-03T11:53:04`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -52,6 +52,13 @@ This file shows the latest status of the data pipeline.
       <td>2023-03-03T07:03:11</td>
       <td>0.39</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 46, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py", line 244, in main<br>    Australia().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py", line 216, in export<br>    df = self.read().pipe(self.pipeline)  # Use with attach=False<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py", line 160, in pipeline<br>    .pipe(self.make_monotonic)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 120, in make_monotonic<br>    return mkm(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 13 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-02-16']<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.austria_old</td>
+      <td>⚠️</td>
+      <td>2023-03-03T11:24:13</td>
+      <td>NaN</td>
+      <td></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.united_arab_emirates</td>
@@ -243,6 +250,20 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.batch.ecdc</td>
+      <td>✅</td>
+      <td>2023-03-03T11:53:04</td>
+      <td>25.84</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.austria</td>
+      <td>✅</td>
+      <td>2023-03-03T11:51:53</td>
+      <td>0.50</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.peru</td>
       <td>✅</td>
       <td>2023-03-03T10:52:28</td>
@@ -282,13 +303,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2023-03-03T07:01:35</td>
       <td>85.51</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>✅</td>
-      <td>2023-03-03T07:01:34</td>
-      <td>88.38</td>
       <td></td>
     </tr>
     <tr>
@@ -590,13 +604,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2023-03-03T07:00:17</td>
       <td>11.40</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.austria</td>
-      <td>✅</td>
-      <td>2023-03-03T07:00:16</td>
-      <td>10.95</td>
       <td></td>
     </tr>
     <tr>
