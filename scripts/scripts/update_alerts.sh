@@ -47,12 +47,12 @@ source $SCRIPTS_DIR/venv/bin/activate
 
 hour=$(TZ=Europe/Paris date +%H)
 
-if [ $hour == 7 ] ; then
+if [ $hour == 07 ] ; then
   cowid --server check jhu
   cowid --server check casedeath
 fi
 
-if [ $hour == 9 ] ; then
+if [ $hour == 09 ] ; then
   cowid --server check megafile
 fi
 

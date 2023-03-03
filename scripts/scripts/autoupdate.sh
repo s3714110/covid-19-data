@@ -66,7 +66,7 @@ else
 fi
 
 hour=$(date +%H)
-if [ $hour == 00 ] || [ $hour == 6 || [ $hour == 12 || [ $hour == 18] ; then
+if [ $hour == 00 ] || [ $hour == 06] || [ $hour == 12] || [ $hour == 18] ; then
   echo "Generating Case/Death files..."
   cowid --server casedeath generate
   # python $SCRIPTS_DIR/scripts/jhu.py --skip-download
@@ -112,7 +112,6 @@ if [ $hour == 07 ] ; then
   cowid --server vax process generate
   git_push "vax"
 fi
-
 
 # =====================================================================
 # Google Mobility
