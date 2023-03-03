@@ -17,7 +17,7 @@ def create_dataset(df, macro_variables, logger, filename=None):
         filename = "owid-covid-data"
     logger.info("Writing to CSV…")
     filename_local = os.path.join(DATA_DIR, f"{filename}.csv")
-    df.to_csv(filename, index=False)
+    df.to_csv(filename_local, index=False)
     S3().upload_to_s3(filename_local, f"s3://covid-19/public/{filename}.csv", public=True)
 
     logger.info("Writing to XLSX…")

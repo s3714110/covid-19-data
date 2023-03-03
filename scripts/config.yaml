@@ -20,6 +20,8 @@ pipeline:
         # - Denmark  # Moved to ECDC
         # - Colombia  # Moved to PAHO
         # - Vietnam  # Moved to WHO
+        - austria_old # using ECDC
+        - austria # using ECDC
         - Sri Lanka # Moved to WHO
         - Ukraine # Moved to WHO
         - Portugal # Temporary moved to ECDC

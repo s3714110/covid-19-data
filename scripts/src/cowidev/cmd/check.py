@@ -26,8 +26,6 @@ def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_
         df = pd.read_csv(url)
     elif url.endswith(".xlsx"):
         df = pd.read_excel(url)
-    elif url.endswith(".json"):
-        df = pd.read_json(url)
     max_date = df[date_col].max()
     if max_date < str(datetime.date.today() - datetime.timedelta(days=allowed_days)):
         raise Exception(

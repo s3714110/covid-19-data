@@ -6,18 +6,23 @@ from cowidev.vax.utils.utils import build_vaccine_timeline
 
 vaccine_mapping = {
     "Comirnaty": "Pfizer/BioNTech",
+    "Comirnaty 6m-4": "Pfizer/BioNTech",
     "Comirnaty 5-11": "Pfizer/BioNTech",
     "Comirnaty Original/Omicron BA.1": "Pfizer/BioNTech",
     "Comirnaty Original/Omicron BA.4/BA.5": "Pfizer/BioNTech",
-    "COVID-19 Vaccine Janssen": "Johnson&Johnson",
-    "Covishield": "Oxford/AstraZeneca",
-    "Nuvaxovid": "Novavax",
-    "Sinopharm": "Sinopharm/Beijing",
-    "Sinovac": "Sinovac",
     "SPIKEVAX": "Moderna",
     "Spikevax bivalent Original/Omicron BA.1": "Moderna",
+    "SPIKEVAX BIVALENT ORIGINAL/OMICRON BA.4-5": "Moderna",
+    "Covishield": "Oxford/AstraZeneca",
     "VAXZEVRIA": "Oxford/AstraZeneca",
+    "COVID-19 Vaccine Janssen": "Johnson&Johnson",
+    "Nuvaxovid": "Novavax",
+    "Covovax": "Novavax",
+    "Sinopharm": "Sinopharm/Beijing",
+    "Sinovac": "Sinovac",
     "COVAXIN": "Covaxin",
+    "Sputnik V": "Sputnik V",
+    "Valneva": "Valneva",
 }
 one_dose_vaccines = ["Johnson&Johnson"]
 

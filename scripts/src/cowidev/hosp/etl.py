@@ -138,7 +138,7 @@ class HospETL:
             )
         ]
         # Check
-        duplicates = df[df.duplicated(subset=["date", "entity", "indicator"])]
+        duplicates = df[df.duplicated(subset=["date", "entity", "indicator"], keep=False)]
         if len(duplicates) > 0:
             raise Exception(f"Some entity-date-indicator combinations are present more than once! {duplicates}")
 
@@ -195,7 +195,8 @@ class HospETL:
         if (msk := df["date"] > dt).any():
             ent = df.loc[msk, "entity"].values[0]
             dt = set(df.loc[msk, "date"])
-            raise ValueError(f"The date column contains dates in the future! Entity {ent} has date(s) {dt}")
+            error_msg = f"The date column contains dates in the future! Entity `{ent}` has date(s): `{dt}`"
+            raise ValueError(error_msg)
 
     def _build_time_df(self, execution):
         """Build execution time dataframe."""

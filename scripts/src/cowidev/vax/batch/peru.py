@@ -95,7 +95,26 @@ class Peru(CountryVaxBase):
         )
 
     def read_age(self):
-        return pd.read_csv(self.source_url_age)
+        df = pd.read_csv(self.source_url_age)
+        check_known_columns(
+            df,
+            [
+                "location",
+                "fecha_corte",
+                "epi_year",
+                "epi_week",
+                "last_day_of_epi_week",
+                "complete_epi_week",
+                "age_group_min",
+                "age_group_max",
+                "people_vaccinated_per_hundred",
+                "people_fully_vaccinated_per_hundred",
+                "people_receiving_booster_per_hundred",
+                "people_receiving_second_booster_per_hundred",
+                "people_receiving_third_booster_per_hundred",
+            ],
+        )
+        return df
 
     def pipe_age_checks(self, df: pd.DataFrame) -> pd.DataFrame:
         # print(df.columns)
