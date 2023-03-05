@@ -15,7 +15,7 @@ TESTING_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/publi
 HOSP_URL = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv"
 FULL_URL_CSV = "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 FULL_URL_XLSX = "https://covid.ourworldindata.org/data/owid-covid-data.xlsx"
-FULL_URL_JSON = "https://covid.ourworldindata.org/data/owid-covid-data.json"
+# FULL_URL_JSON = "https://covid.ourworldindata.org/data/owid-covid-data.json"
 
 
 def check_updated(url, date_col, allowed_days, weekends, local_check=False, url_local=None) -> None:
@@ -180,18 +180,18 @@ def click_check_megafile(ctx):
     )
 
     # JSON file
-    feedback_log(
-        func=check_updated,
-        url=FULL_URL_JSON,
-        date_col="date",
-        allowed_days=1,
-        weekends=True,
-        server=ctx.obj["server"],
-        domain="Check",
-        step="megafile",
-        hide_success=True,
-        channel="covid-19",
-    )
+    # feedback_log(
+    #     func=check_updated,
+    #     url=FULL_URL_JSON,
+    #     date_col="date",
+    #     allowed_days=1,
+    #     weekends=True,
+    #     server=ctx.obj["server"],
+    #     domain="Check",
+    #     step="megafile",
+    #     hide_success=True,
+    #     channel="covid-19",
+    # )
 
 
 click_check.add_command(click_check_vax)
