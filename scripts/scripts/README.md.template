@@ -23,9 +23,8 @@ A [specific section of this repository](https://github.com/owid/covid-19-data/tr
 ## The data you find here and our data sources
 
 - **Confirmed cases and deaths:** this data is collected from the [World Health Organization Coronavirus Dashboard](https://covid19.who.int/data). The cases & deaths dataset is updated daily.
-  - Note 1.1: Time/date stamps reflect when the data was last updated by WHO. Due to the time required to process and validate the incoming data, there is a delay between reporting to WHO and the update of the dashboard. To account for different time zones across WHO Regions and data transmission methods, and improve the timeliness of data availability, updates to the global dashboard are applied three times per day.
-  - Note 1.2: Counts and corrections made after these times will be carried forward to the next reporting cycle for that specific region. Delayed reporting for any specific country, territory or area may result in pooled counts for multiple days being presented, with a retrospective update to counts on previous days to accurately reflect trends. Significant data errors detected or reported to WHO may be corrected at more frequent intervals.
-  - Note 2: Due to the incremental updates to the dashboard, global case and death counts visualised for the current day may reflect partial data until counts have been fully updated for all regions that day. This must be taken into consideration when interpreting global epidemic curves and trends.
+  - Note 1: Time/date stamps reflect when the data was last updated by WHO. Due to the time required to process and validate the incoming data, there is a delay between reporting to WHO and the update of the dashboard.
+  - Note 2: Counts and corrections made after these times will be carried forward to the next reporting cycle for that specific region. Delayed reporting for any specific country, territory or area may result in pooled counts for multiple days being presented, with a retrospective update to counts on previous days to accurately reflect trends. Significant data errors detected or reported to WHO may be corrected at more frequent intervals.
 - **Hospitalizations and intensive care unit (ICU) admissions:** our data is collected from official sources and collated by Our World in Data. The complete list of country-by-country sources is available [here](https://github.com/owid/covid-19-data/blob/master/public/data/hospitalizations/locations.csv).
 - **Testing for COVID-19:** this data is collected by the _Our World in Data_ team from official reports; you can find
 further details in our post on COVID-19 testing, including our [checklist of questions to understand testing
@@ -49,6 +48,7 @@ The variables represent all of our main data related to confirmed cases, deaths,
 
 A [full codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv) is made available, with a description and source for each variable in the dataset.
 
+Prior to 8 March 2023 we relied on Johns Hopkins University for confirmed cases and deaths (we now use WHO's data). Our dataset as it was on that date can be downloaded [here](https://covid.ourworldindata.org/data/owid-covid-data-old.csv).
 
 ## Additional files and information
 
