@@ -2,7 +2,6 @@
 
 > **Warning**
 > Johns Hopkins University has stopped publishing on confirmed COVID-19 cases and deaths. We have replaced the entire time series with WHO’s weekly-updated data. This change will not affect users of our charts and dataset. [Read more.](https://github.com/owid/covid-19-data/issues/2784)
-
 ### 🗂️ Download our complete COVID-19 dataset : [CSV](https://covid.ourworldindata.org/data/owid-covid-data.csv) | [XLSX](https://covid.ourworldindata.org/data/owid-covid-data.xlsx) | [JSON](https://covid.ourworldindata.org/data/owid-covid-data.json)
 
 Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by [_Our World in Data_](https://ourworldindata.org/coronavirus). We will update it daily throughout the duration of the COVID-19 pandemic (more information on our updating process and schedule [here](https://docs.owid.io/projects/covid/en/latest/data-pipeline.html#overview)). It includes the following data:
@@ -12,8 +11,8 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 | Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
 | Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more: https://github.com/owid/covid-19-data/discussions/2667)  | 193       |
 | Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
-| Confirmed cases             | JHU CSSE COVID-19 Data                                    | Daily   | 219        |
-| Confirmed deaths            | JHU CSSE COVID-19 Data                                    | Daily   | 219       |
+| Confirmed cases             | WHO COVID-19 Data                                    | Daily   | 219        |
+| Confirmed deaths            | WHO COVID-19 Data                                    | Daily   | 219       |
 | Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily   | 196        |
 | Policy responses            | Oxford COVID-19 Government Response Tracker               | Daily   | 187        |
 | Other variables of interest | International organizations (UN, World Bank, OECD, IHME…) | Fixed   | 242       |
@@ -23,8 +22,10 @@ A [specific section of this repository](https://github.com/owid/covid-19-data/tr
 
 ## The data you find here and our data sources
 
-- **Confirmed cases and deaths:** our data comes from the [COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19) (JHU). We discuss how and when JHU collects and publishes this data [here](https://ourworldindata.org/coronavirus-source-data). The cases & deaths dataset is updated daily.
-  - Note: confirmed cases and deaths are collected by Johns Hopkins University by date of report, rathen than date of test/death. Therefore the number they report on a given day does not necessarily represent the actual number on that date, because of the long reporting chain that exists between a new case/death and its inclusion in statistics. This also means that time series can show sudden changes (negative or positive) when a country corrects historical data, because it had previously under- or overestimated the number of cases/deaths.
+- **Confirmed cases and deaths:** this data is collected from the [World Health Organization Coronavirus Dashboard](https://covid19.who.int/data). The cases & deaths dataset is updated daily.
+  - Note 1.1: Time/date stamps reflect when the data was last updated by WHO. Due to the time required to process and validate the incoming data, there is a delay between reporting to WHO and the update of the dashboard. To account for different time zones across WHO Regions and data transmission methods, and improve the timeliness of data availability, updates to the global dashboard are applied three times per day.
+  - Note 1.2: Counts and corrections made after these times will be carried forward to the next reporting cycle for that specific region. Delayed reporting for any specific country, territory or area may result in pooled counts for multiple days being presented, with a retrospective update to counts on previous days to accurately reflect trends. Significant data errors detected or reported to WHO may be corrected at more frequent intervals.
+  - Note 2: Due to the incremental updates to the dashboard, global case and death counts visualised for the current day may reflect partial data until counts have been fully updated for all regions that day. This must be taken into consideration when interpreting global epidemic curves and trends.
 - **Hospitalizations and intensive care unit (ICU) admissions:** our data is collected from official sources and collated by Our World in Data. The complete list of country-by-country sources is available [here](https://github.com/owid/covid-19-data/blob/master/public/data/hospitalizations/locations.csv).
 - **Testing for COVID-19:** this data is collected by the _Our World in Data_ team from official reports; you can find
 further details in our post on COVID-19 testing, including our [checklist of questions to understand testing
@@ -168,7 +169,7 @@ A [full codebook](https://github.com/owid/covid-19-data/tree/master/public/data/
 If you are interested in the individual files that make up the complete dataset, or more detailed information, other files can be found in the subfolders:
 
 - [`latest`](https://github.com/owid/covid-19-data/tree/master/public/data/latest): shortened version of our complete dataset with only the latest value for each location and metric (within a limit of 2 weeks in the past). This file is available in CSV, XLSX, and JSON formats.
-- [`jhu`](https://github.com/owid/covid-19-data/tree/master/public/data/jhu): data from the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University, related to confirmed cases and deaths. We also automatically export JHU's subnational case and death data for a few countries (Australia, Canada, China, Denmark, France, Netherlands, New Zealand, United Kingdom, United States) to a reshaped and compressed file ([`subnational_cases_deaths.zip`](https://covid.ourworldindata.org/data/jhu/subnational_cases_deaths.zip)).
+- [`cases_death`](https://github.com/owid/covid-19-data/tree/master/public/data/cases_death): data from the COVID-19 dashboard by the WHO, related to confirmed cases and deaths.
 - [`testing`](https://github.com/owid/covid-19-data/tree/master/public/data/testing): data from various official sources, related to COVID-19 tests performed in each country. This folder contains two files with more detailed information:
   - [`covid-testing-all-observations.csv`](https://github.com/owid/covid-19-data/blob/master/public/data/testing/covid-testing-all-observations.csv) includes, for each historical observation, the source of the individual data point, and sometimes notes on data collection;
   - [`covid-testing-latest-data-source-details.csv`](https://github.com/owid/covid-19-data/blob/master/public/data/testing/covid-testing-latest-data-source-details.csv) includes, for each country in our testing dataset, the latest figures and a detailed description of how the country’s data is collected;
@@ -215,6 +216,7 @@ If you are interested in the individual files that make up the complete dataset,
 - On 15 November 2021, we added the metrics `new_people_vaccinated_smoothed` and `new_people_vaccinated_smoothed_per_hundred` to our vaccination data. They count the daily number of people receiving their first vaccine dose.
 - On 27 December 2021, we added a [specific folder for our hospitalizations & ICU data](https://github.com/owid/covid-19-data/tree/master/public/data/hospitalizations).
 - Since 29 March 2022, vaccination data is no longer updated on a daily basis. Updates now are only on weekdays (Monday until Friday).
+- On 10 March 2023, we changed our source for confirmed cases and deaths to the [WHO COVID-19 dashboard](https://covid19.who.int/). Our previous source for confirmed cases and deaths, the COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University (JHU), [had announced in February 2023](https://coronavirus.jhu.edu/from-our-experts/johns-hopkins-to-cease-live-covid-19-data-reporting-on-march-10) that it would no longer update their data from March 2023. _Our World in Data_ therefore had to transition away from the JHU as a source to continue to provide daily updates of confirmed cases and deaths. The format (variable names and types) of our complete COVID-19 dataset remains the same.
 
 ## Data alterations
 
