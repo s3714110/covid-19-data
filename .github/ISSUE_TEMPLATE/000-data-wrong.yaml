@@ -6,7 +6,7 @@ labels: ["report"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for contributing! Before doing so, please check our [contribution guideline](https://docs.owid.io/projects/covid/en/latest/contribute.html). If your issue is about reported numbers of cases or deaths, we take all our data for these metrics from the JHU CSSE COVID-19 Data – issues should be reported [in their repository](https://github.com/CSSEGISandData/COVID-19/issues)."
+      value: "Thanks for contributing! Before doing so, please check our [contribution guideline](https://docs.owid.io/projects/covid/en/latest/contribute.html)."
   - type: input
     id: country
     attributes:
