@@ -162,6 +162,7 @@ On 23 June 2022, we stopped adding new datapoints to our COVID-19 testing datase
 
 A [full codebook](https://github.com/owid/covid-19-data/tree/master/public/data/owid-covid-codebook.csv) is made available, with a description and source for each variable in the dataset.
 
+Prior to 8 March 2023 we relied on Johns Hopkins University for confirmed cases and deaths (we now use WHO's data). Our dataset as it was on that date can be downloaded [here](https://covid.ourworldindata.org/data/owid-covid-data-old.csv).
 
 ## Additional files and information
 
