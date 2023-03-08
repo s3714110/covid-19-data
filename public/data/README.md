@@ -1,7 +1,7 @@
 # Data on COVID-19 (coronavirus) by _Our World in Data_
 
 > **Warning**
-> Johns Hopkins University https://github.com/CSSEGISandData/COVID-19/issues/6577 on confirmed COVID-19 cases and deaths. We have replaced the entire time series with WHO’s weekly-updated data. This change will not affect users of our charts and dataset. [Read more.](https://github.com/owid/covid-19-data/issues/2784)
+> Johns Hopkins University [has stopped publishing](https://github.com/CSSEGISandData/COVID-19/issues/6577) on confirmed COVID-19 cases and deaths. We have replaced the entire time series with WHO’s weekly-updated data. This change will not affect users of our charts and dataset. [Read more.](https://github.com/owid/covid-19-data/issues/2784)
 
 ### 🗂️ Download our complete COVID-19 dataset : [CSV](https://covid.ourworldindata.org/data/owid-covid-data.csv) | [XLSX](https://covid.ourworldindata.org/data/owid-covid-data.xlsx) | [JSON](https://covid.ourworldindata.org/data/owid-covid-data.json)
 
