@@ -1,4 +1,5 @@
 import re
+import numpy as np
 import pandas as pd
 
 from cowidev.vax.utils.base import CountryVaxBase
@@ -43,6 +44,9 @@ class Uruguay(CountryVaxBase):
                 "total_boosters",
             ]
         ]
+
+        # Remove outliers
+        df = df[~df["date"].isin(["2023-03-11"])]
 
         df = df.pipe(self.make_monotonic)
         return df
