@@ -5,7 +5,8 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`11/112` scripts failed, `29/112` were skipped. Latest update was `2023-03-13T07:07:30`.
+`11/112` scripts failed, `29/112` were skipped. Latest update was `2023-03-13T07:07:30
+`.
 
 <table border="1" class="dataframe">
   <thead>
