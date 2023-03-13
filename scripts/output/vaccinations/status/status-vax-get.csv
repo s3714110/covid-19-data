@@ -73,27 +73,72 @@ cowidev.vax.batch.indonesia,,,2023-03-13T07:00:07,,
 cowidev.vax.batch.ireland,8.66,True,2023-03-13T07:00:15,,
 cowidev.vax.batch.israel,11.91,True,2023-03-13T07:00:19,,
 cowidev.vax.batch.italy,10.54,True,2023-03-13T07:00:17,,
-cowidev.vax.batch.japan,17.06,False,2023-03-13T07:03:48,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
+cowidev.vax.batch.japan,57.29,False,2023-03-13T19:01:57,"Traceback (most recent call last):
+  File ""/usr/lib/python3.10/urllib/request.py"", line 1348, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File ""/usr/lib/python3.10/http/client.py"", line 1282, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File ""/usr/lib/python3.10/http/client.py"", line 1328, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File ""/usr/lib/python3.10/http/client.py"", line 1277, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File ""/usr/lib/python3.10/http/client.py"", line 1037, in _send_output
+    self.send(msg)
+  File ""/usr/lib/python3.10/http/client.py"", line 975, in send
+    self.connect()
+  File ""/usr/lib/python3.10/http/client.py"", line 1447, in connect
+    super().connect()
+  File ""/usr/lib/python3.10/http/client.py"", line 941, in connect
+    self.sock = self._create_connection(
+  File ""/usr/lib/python3.10/socket.py"", line 824, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File ""/usr/lib/python3.10/socket.py"", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 370, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 374, in main
     Japan().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 354, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 358, in export
     df = self.read().pipe(self.pipeline_base)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 71, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 71, in read
     df_latest = self.read_latest().pipe(self.pipe_read_latest)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 100, in read_latest
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 100, in read_latest
     self._read_latest_booster(),
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 210, in _read_latest_booster
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 210, in _read_latest_booster
     df = self._read_xlsx(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 246, in _read_xlsx
-    df_ = self._parse_df(df, formatting[""date""], ind, formatting[""metrics""])
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 275, in _parse_df
-    df_ = df[tuple(ind + index)].stack().reset_index()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5487, in __getattr__
-    return object.__getattribute__(self, name)
-AttributeError: 'Series' object has no attribute 'stack'
-",'Series' object has no attribute 'stack'
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/japan.py"", line 228, in _read_xlsx
+    xlsx = pd.ExcelFile(url)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 1233, in __init__
+    self._reader = self._engines[engine](self._io, storage_options=storage_options)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/excel/_openpyxl.py"", line 522, in __init__
+    super().__init__(filepath_or_buffer, storage_options=storage_options)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 410, in __init__
+    self.handles = get_handle(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 609, in get_handle
+    ioargs = _get_filepath_or_buffer(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
+    with urlopen(req_info) as req:
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
+    return urllib.request.urlopen(*args, **kwargs)
+  File ""/usr/lib/python3.10/urllib/request.py"", line 216, in urlopen
+    return opener.open(url, data, timeout)
+  File ""/usr/lib/python3.10/urllib/request.py"", line 519, in open
+    response = self._open(req, data)
+  File ""/usr/lib/python3.10/urllib/request.py"", line 536, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File ""/usr/lib/python3.10/urllib/request.py"", line 496, in _call_chain
+    result = func(*args)
+  File ""/usr/lib/python3.10/urllib/request.py"", line 1391, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File ""/usr/lib/python3.10/urllib/request.py"", line 1351, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno -3] Temporary failure in name resolution>
+",<urlopen error [Errno -3] Temporary failure in name resolution>
 cowidev.vax.batch.jersey,5.69,True,2023-03-13T07:00:12,,
 cowidev.vax.batch.latvia,82.2,True,2023-03-13T07:01:29,,
 cowidev.vax.batch.lithuania,5.06,True,2023-03-13T07:00:12,,
@@ -116,51 +161,9 @@ cowidev.vax.batch.sweden,15.44,True,2023-03-13T07:00:23,,
 cowidev.vax.batch.switzerland,97.94,True,2023-03-13T07:01:45,,
 cowidev.vax.batch.trinidad_and_tobago,3.8,True,2023-03-13T07:00:11,,
 cowidev.vax.batch.ukraine,,,2023-03-13T07:00:10,,
-cowidev.vax.batch.united_kingdom,5.96,False,2023-03-13T07:03:54,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 122, in main
-    UnitedKingdom().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 110, in export
-    df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 310 have been NaNed for metric total_boosters. That is more than maximum allowed (48) by make_monotonic() - check the data. Check dates ['2023-03-01']
-",1 chunks of lengths 310 have been NaNed for metric total_boosters. That is more than maximum allowed (48) by make_monotonic() - check the data. Check dates ['2023-03-01']
+cowidev.vax.batch.united_kingdom,21.97,True,2023-03-13T18:38:53,,
 cowidev.vax.batch.united_states,97.74,True,2023-03-13T07:01:48,,
-cowidev.vax.batch.uruguay,1.64,False,2023-03-13T07:03:55,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/uruguay.py"", line 147, in main
-    Uruguay().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/uruguay.py"", line 125, in export
-    df = df_base.pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/uruguay.py"", line 47, in pipeline
-    df = df.pipe(self.make_monotonic)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 549 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-11']
-",1 chunks of lengths 549 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-11']
+cowidev.vax.batch.uruguay,0.51,True,2023-03-13T18:23:17,,
 cowidev.vax.batch.zimbabwe,1.29,True,2023-03-13T07:00:12,,
 cowidev.vax.incremental.africacdc,,,2023-03-13T07:00:11,,
 cowidev.vax.incremental.antigua_barbuda,,,2023-03-13T07:00:11,,
@@ -178,23 +181,7 @@ cowidev.vax.incremental.croatia,1.68,True,2023-03-13T07:00:14,,
 cowidev.vax.incremental.cuba,9.54,True,2023-03-13T07:00:22,,
 cowidev.vax.incremental.curacao,2.3,True,2023-03-13T07:00:15,,
 cowidev.vax.incremental.cyprus,4.38,True,2023-03-13T07:00:18,,
-cowidev.vax.incremental.dominican_republic,22.65,False,2023-03-13T07:04:18,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 113, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 92, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 82, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.57,True,2023-03-13T18:15:08,,
 cowidev.vax.incremental.el_salvador,11.43,True,2023-03-13T07:00:26,,
 cowidev.vax.incremental.faeroe_islands,1.16,True,2023-03-13T07:00:16,,
 cowidev.vax.incremental.fiji,0.0,True,2023-03-13T07:00:15,,
@@ -315,21 +302,7 @@ cowidev.vax.incremental.myanmar,,,2023-03-13T07:00:23,,
 cowidev.vax.incremental.nepal,,,2023-03-13T07:00:23,,
 cowidev.vax.incremental.north_macedonia,,,2023-03-13T07:00:23,,
 cowidev.vax.incremental.northern_cyprus,4.84,True,2023-03-13T07:00:27,,
-cowidev.vax.incremental.paho,138.22,False,2023-03-13T07:07:18,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 46, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 37, in read
-    df = self._parse_data(url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 64, in _parse_data
-    filename = self._get_downloaded_filename()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 116, in _get_downloaded_filename
-    return max(files, key=os.path.getctime)
-ValueError: max() arg is an empty sequence
-",max() arg is an empty sequence
+cowidev.vax.incremental.paho,82.4,True,2023-03-13T18:16:18,,
 cowidev.vax.incremental.pakistan,,,2023-03-13T07:00:24,,
 cowidev.vax.incremental.philippines,,,2023-03-13T07:00:24,,
 cowidev.vax.incremental.poland,2.09,True,2023-03-13T07:00:26,,
@@ -414,5 +387,5 @@ requests.exceptions.ConnectionError: ('Connection aborted.', RemoteDisconnected(
 ","('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
 cowidev.vax.incremental.united_arab_emirates,,,2023-03-13T07:00:27,,
 cowidev.vax.incremental.vietnam,,,2023-03-13T07:00:27,,
-cowidev.vax.incremental.who,43.77,True,2023-03-13T07:01:11,,
+cowidev.vax.incremental.who,7.18,True,2023-03-13T18:27:39,,
 cowidev.vax.incremental.zambia,0.89,True,2023-03-13T07:00:29,,

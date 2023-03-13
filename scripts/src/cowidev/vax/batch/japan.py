@@ -272,10 +272,14 @@ class Japan(CountryVaxBase):
         dfs = []
         for metric, index in metrics.items():
             # Get, check, convert and rename metric columns
-            df_ = df[tuple(ind + index)].stack().reset_index()
+            df_ = df[tuple(ind + index)]
+            if isinstance(df_, pd.Series):
+                df_ = pd.DataFrame(df_)
+                df_ = df_.rename(columns={"すべて": 0})
+            df_ = df_.stack().reset_index()
             cols_unknown = set(df_.columns) - {date_col, "level_1", 0}
             if cols_unknown:
-                raise ValueError(f"Unknown columns: {cols_unknown}")
+                raise ValueError(f"Unknown columns: {cols_unknown}, {df_.columns}")
             df_[0] = pd.to_numeric(df_[0], errors="coerce")
             dfs.append(df_.rename(columns={date_col: "date", "level_1": "vaccine", 0: metric}))
         while len(dfs) > 1:

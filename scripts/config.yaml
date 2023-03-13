@@ -45,6 +45,7 @@ pipeline:
         - Bahrain
         - Pakistan # Moved to WHO
         - South Africa # Moved to WHO
+        # - Japan # Moved to WHO
     process:
       skip_complete:
         - Pitcairn

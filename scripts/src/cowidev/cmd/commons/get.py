@@ -41,6 +41,7 @@ class CountryDataGetter:
         # Start country scraping
         self.logger.info(f"{self.log_header} - {module_name}: started")
         module = importlib.import_module(module_name)
+        num_retries = 1
         for i in range(num_retries):
             try:
                 module.main()
