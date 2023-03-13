@@ -48,7 +48,7 @@ source $SCRIPTS_DIR/venv/bin/activate
 hour=$(TZ=Europe/Paris date +%H)
 
 if [ $hour == 07 ] ; then
-  cowid --server check jhu
+  # cowid --server check jhu
   cowid --server check casedeath
 fi
 
