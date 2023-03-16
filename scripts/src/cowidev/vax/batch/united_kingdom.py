@@ -108,8 +108,11 @@ class UnitedKingdom(CountryVaxBase):
             df = df_base.pipe(self._filter_location, location)
             if location in dates_filter:
                 df = df[~df.date.isin(dates_filter[location])]
-            print(location)
-            df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
+            try:
+                df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
+            except Exception as e:
+                print(df.tail(20))
+                raise (e)
             self.export_datafile(df, filename=location)
 
 
