@@ -1,9 +1,9 @@
 location,success,skipped,error,error_short,timestamp
-Afghanistan,True,False,,,2023-03-21T07:03:56
-Albania,True,False,,,2023-03-21T07:03:56
-Algeria,True,False,,,2023-03-21T07:03:56
-Andorra,True,False,,,2023-03-21T07:03:56
-Angola,True,False,,,2023-03-21T07:03:56
+Afghanistan,True,False,,,2023-03-22T07:03:56
+Albania,True,False,,,2023-03-22T07:03:56
+Algeria,True,False,,,2023-03-22T07:03:56
+Andorra,True,False,,,2023-03-22T07:03:56
+Angola,True,False,,,2023-03-22T07:03:56
 Anguilla,False,False,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py"", line 95, in _process_location_and_move_file
     df = process_location(df, monotonic_check_skip, anomaly_check_skip)
@@ -26,74 +26,74 @@ ValueError: Anguilla -- Column total_boosters must be monotonically increasing! 
     location       date  ... people_fully_vaccinated total_boosters
 67  Anguilla 2023-02-10  ...                   10380           3003
 
-[1 rows x 8 columns]",2023-03-21T07:03:56
-Antigua and Barbuda,True,False,,,2023-03-21T07:03:56
-Argentina,True,False,,,2023-03-21T07:03:56
-Armenia,True,False,,,2023-03-21T07:03:56
-Aruba,True,False,,,2023-03-21T07:03:56
-Australia,True,False,,,2023-03-21T07:03:56
-Austria,True,False,,,2023-03-21T07:03:56
-Azerbaijan,True,False,,,2023-03-21T07:03:56
-Bahamas,True,False,,,2023-03-21T07:03:56
-Bahrain,True,False,,,2023-03-21T07:03:56
-Bangladesh,True,False,,,2023-03-21T07:03:56
-Barbados,True,False,,,2023-03-21T07:03:56
-Belarus,True,False,,,2023-03-21T07:03:56
-Belgium,True,False,,,2023-03-21T07:03:57
-Belize,True,False,,,2023-03-21T07:03:57
-Benin,True,False,,,2023-03-21T07:03:57
-Bermuda,True,False,,,2023-03-21T07:03:57
-Bhutan,True,False,,,2023-03-21T07:03:57
-Bolivia,True,False,,,2023-03-21T07:03:57
-Bonaire Sint Eustatius and Saba,True,False,,,2023-03-21T07:03:57
-Bosnia and Herzegovina,True,False,,,2023-03-21T07:03:57
-Botswana,True,False,,,2023-03-21T07:03:57
-Brazil,True,False,,,2023-03-21T07:03:57
-British Virgin Islands,True,False,,,2023-03-21T07:03:57
-Brunei,True,False,,,2023-03-21T07:03:57
-Bulgaria,True,False,,,2023-03-21T07:03:57
-Burkina Faso,True,False,,,2023-03-21T07:03:57
-Burundi,True,False,,,2023-03-21T07:03:57
-Cambodia,True,False,,,2023-03-21T07:03:57
-Cameroon,True,False,,,2023-03-21T07:03:57
-Canada,True,False,,,2023-03-21T07:03:57
-Cape Verde,True,False,,,2023-03-21T07:03:57
-Cayman Islands,True,False,,,2023-03-21T07:03:57
-Central African Republic,True,False,,,2023-03-21T07:03:57
-Chad,True,False,,,2023-03-21T07:03:57
-Chile,True,False,,,2023-03-21T07:03:57
-China,True,False,,,2023-03-21T07:03:57
-Colombia,True,False,,,2023-03-21T07:03:57
-Comoros,True,False,,,2023-03-21T07:03:57
-Congo,True,False,,,2023-03-21T07:03:57
-Cook Islands,True,False,,,2023-03-21T07:03:58
-Costa Rica,True,False,,,2023-03-21T07:03:58
-Cote d'Ivoire,True,False,,,2023-03-21T07:03:58
-Croatia,True,False,,,2023-03-21T07:03:58
-Cuba,True,False,,,2023-03-21T07:03:58
-Curacao,True,False,,,2023-03-21T07:03:58
-Cyprus,True,False,,,2023-03-21T07:03:58
-Czechia,True,False,,,2023-03-21T07:03:58
-Democratic Republic of Congo,True,False,,,2023-03-21T07:03:58
-Denmark,True,False,,,2023-03-21T07:03:58
-Djibouti,True,False,,,2023-03-21T07:03:58
-Dominica,True,False,,,2023-03-21T07:03:58
-Dominican Republic,True,False,,,2023-03-21T07:03:58
-Ecuador,True,False,,,2023-03-21T07:03:58
-Egypt,True,False,,,2023-03-21T07:03:58
-El Salvador,True,False,,,2023-03-21T07:03:58
-England,True,False,,,2023-03-21T07:03:58
-Equatorial Guinea,True,False,,,2023-03-21T07:03:58
-Estonia,True,False,,,2023-03-21T07:03:58
-Eswatini,True,False,,,2023-03-21T07:03:58
-Ethiopia,True,False,,,2023-03-21T07:03:58
-Faeroe Islands,True,False,,,2023-03-21T07:03:58
-Falkland Islands,True,False,,,2023-03-21T07:03:58
-Fiji,True,False,,,2023-03-21T07:03:58
-Finland,True,False,,,2023-03-21T07:03:58
-France,True,False,,,2023-03-21T07:03:58
-French Polynesia,True,False,,,2023-03-21T07:03:58
-Gabon,True,False,,,2023-03-21T07:03:59
+[1 rows x 8 columns]",2023-03-22T07:03:56
+Antigua and Barbuda,True,False,,,2023-03-22T07:03:56
+Argentina,True,False,,,2023-03-22T07:03:56
+Armenia,True,False,,,2023-03-22T07:03:56
+Aruba,True,False,,,2023-03-22T07:03:56
+Australia,True,False,,,2023-03-22T07:03:56
+Austria,True,False,,,2023-03-22T07:03:56
+Azerbaijan,True,False,,,2023-03-22T07:03:56
+Bahamas,True,False,,,2023-03-22T07:03:56
+Bahrain,True,False,,,2023-03-22T07:03:56
+Bangladesh,True,False,,,2023-03-22T07:03:56
+Barbados,True,False,,,2023-03-22T07:03:56
+Belarus,True,False,,,2023-03-22T07:03:56
+Belgium,True,False,,,2023-03-22T07:03:56
+Belize,True,False,,,2023-03-22T07:03:56
+Benin,True,False,,,2023-03-22T07:03:56
+Bermuda,True,False,,,2023-03-22T07:03:56
+Bhutan,True,False,,,2023-03-22T07:03:56
+Bolivia,True,False,,,2023-03-22T07:03:56
+Bonaire Sint Eustatius and Saba,True,False,,,2023-03-22T07:03:56
+Bosnia and Herzegovina,True,False,,,2023-03-22T07:03:56
+Botswana,True,False,,,2023-03-22T07:03:56
+Brazil,True,False,,,2023-03-22T07:03:57
+British Virgin Islands,True,False,,,2023-03-22T07:03:57
+Brunei,True,False,,,2023-03-22T07:03:57
+Bulgaria,True,False,,,2023-03-22T07:03:57
+Burkina Faso,True,False,,,2023-03-22T07:03:57
+Burundi,True,False,,,2023-03-22T07:03:57
+Cambodia,True,False,,,2023-03-22T07:03:57
+Cameroon,True,False,,,2023-03-22T07:03:57
+Canada,True,False,,,2023-03-22T07:03:57
+Cape Verde,True,False,,,2023-03-22T07:03:57
+Cayman Islands,True,False,,,2023-03-22T07:03:57
+Central African Republic,True,False,,,2023-03-22T07:03:57
+Chad,True,False,,,2023-03-22T07:03:57
+Chile,True,False,,,2023-03-22T07:03:57
+China,True,False,,,2023-03-22T07:03:57
+Colombia,True,False,,,2023-03-22T07:03:57
+Comoros,True,False,,,2023-03-22T07:03:57
+Congo,True,False,,,2023-03-22T07:03:57
+Cook Islands,True,False,,,2023-03-22T07:03:57
+Costa Rica,True,False,,,2023-03-22T07:03:57
+Cote d'Ivoire,True,False,,,2023-03-22T07:03:57
+Croatia,True,False,,,2023-03-22T07:03:57
+Cuba,True,False,,,2023-03-22T07:03:57
+Curacao,True,False,,,2023-03-22T07:03:57
+Cyprus,True,False,,,2023-03-22T07:03:57
+Czechia,True,False,,,2023-03-22T07:03:58
+Democratic Republic of Congo,True,False,,,2023-03-22T07:03:58
+Denmark,True,False,,,2023-03-22T07:03:58
+Djibouti,True,False,,,2023-03-22T07:03:58
+Dominica,True,False,,,2023-03-22T07:03:58
+Dominican Republic,True,False,,,2023-03-22T07:03:58
+Ecuador,True,False,,,2023-03-22T07:03:58
+Egypt,True,False,,,2023-03-22T07:03:58
+El Salvador,True,False,,,2023-03-22T07:03:58
+England,True,False,,,2023-03-22T07:03:58
+Equatorial Guinea,True,False,,,2023-03-22T07:03:58
+Estonia,True,False,,,2023-03-22T07:03:58
+Eswatini,True,False,,,2023-03-22T07:03:58
+Ethiopia,True,False,,,2023-03-22T07:03:58
+Faeroe Islands,True,False,,,2023-03-22T07:03:58
+Falkland Islands,True,False,,,2023-03-22T07:03:58
+Fiji,True,False,,,2023-03-22T07:03:58
+Finland,True,False,,,2023-03-22T07:03:58
+France,True,False,,,2023-03-22T07:03:58
+French Polynesia,True,False,,,2023-03-22T07:03:58
+Gabon,True,False,,,2023-03-22T07:03:58
 Gambia,False,False,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py"", line 95, in _process_location_and_move_file
     df = process_location(df, monotonic_check_skip, anomaly_check_skip)
@@ -116,17 +116,17 @@ ValueError: Gambia -- Column people_vaccinated must be monotonically increasing!
    location       date  ... people_fully_vaccinated total_boosters
 43   Gambia 2023-03-12  ...                  532070          51739
 
-[1 rows x 8 columns]",2023-03-21T07:03:59
-Georgia,True,False,,,2023-03-21T07:03:59
-Germany,True,False,,,2023-03-21T07:03:59
-Ghana,True,False,,,2023-03-21T07:03:59
-Gibraltar,True,False,,,2023-03-21T07:03:59
-Greece,True,False,,,2023-03-21T07:03:59
-Greenland,True,False,,,2023-03-21T07:03:59
-Grenada,True,False,,,2023-03-21T07:03:59
-Guatemala,True,False,,,2023-03-21T07:03:59
-Guernsey,True,False,,,2023-03-21T07:03:59
-Guinea,True,False,,,2023-03-21T07:03:59
+[1 rows x 8 columns]",2023-03-22T07:03:58
+Georgia,True,False,,,2023-03-22T07:03:58
+Germany,True,False,,,2023-03-22T07:03:58
+Ghana,True,False,,,2023-03-22T07:03:58
+Gibraltar,True,False,,,2023-03-22T07:03:58
+Greece,True,False,,,2023-03-22T07:03:59
+Greenland,True,False,,,2023-03-22T07:03:59
+Grenada,True,False,,,2023-03-22T07:03:59
+Guatemala,True,False,,,2023-03-22T07:03:59
+Guernsey,True,False,,,2023-03-22T07:03:59
+Guinea,True,False,,,2023-03-22T07:03:59
 Guinea-Bissau,False,False,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py"", line 95, in _process_location_and_move_file
     df = process_location(df, monotonic_check_skip, anomaly_check_skip)
@@ -149,17 +149,17 @@ ValueError: Guinea-Bissau -- Column people_vaccinated must be monotonically incr
          location       date  ... people_fully_vaccinated total_boosters
 51  Guinea-Bissau 2023-03-12  ...                  362014            962
 
-[1 rows x 8 columns]",2023-03-21T07:03:59
-Guyana,True,False,,,2023-03-21T07:03:59
-Haiti,True,False,,,2023-03-21T07:03:59
-Honduras,True,False,,,2023-03-21T07:03:59
-Hong Kong,True,False,,,2023-03-21T07:03:59
-Hungary,True,False,,,2023-03-21T07:03:59
-Iceland,True,False,,,2023-03-21T07:03:59
-India,True,False,,,2023-03-21T07:03:59
-Indonesia,True,False,,,2023-03-21T07:03:59
-Iran,True,False,,,2023-03-21T07:03:59
-Iraq,True,False,,,2023-03-21T07:03:59
+[1 rows x 8 columns]",2023-03-22T07:03:59
+Guyana,True,False,,,2023-03-22T07:03:59
+Haiti,True,False,,,2023-03-22T07:03:59
+Honduras,True,False,,,2023-03-22T07:03:59
+Hong Kong,True,False,,,2023-03-22T07:03:59
+Hungary,True,False,,,2023-03-22T07:03:59
+Iceland,True,False,,,2023-03-22T07:03:59
+India,True,False,,,2023-03-22T07:03:59
+Indonesia,True,False,,,2023-03-22T07:03:59
+Iran,True,False,,,2023-03-22T07:03:59
+Iraq,True,False,,,2023-03-22T07:03:59
 Ireland,False,False,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py"", line 95, in _process_location_and_move_file
     df = process_location(df, monotonic_check_skip, anomaly_check_skip)
@@ -175,123 +175,123 @@ Ireland,False,False,"Traceback (most recent call last):
     raise ValueError(
 ValueError: Ireland -- Column total_vaccinations must be monotonically increasing! Check:
     location       date  ... people_fully_vaccinated total_boosters
-796  Ireland 2023-03-17  ...                       0        3185316
+796  Ireland 2023-03-17  ...                       0        3185296
 
 [1 rows x 8 columns]
 ","Ireland -- Column total_vaccinations must be monotonically increasing! Check:
     location       date  ... people_fully_vaccinated total_boosters
-796  Ireland 2023-03-17  ...                       0        3185316
+796  Ireland 2023-03-17  ...                       0        3185296
 
-[1 rows x 8 columns]",2023-03-21T07:03:59
-Isle of Man,True,False,,,2023-03-21T07:03:59
-Israel,True,False,,,2023-03-21T07:03:59
-Italy,True,False,,,2023-03-21T07:03:59
-Jamaica,True,False,,,2023-03-21T07:03:59
-Japan,True,False,,,2023-03-21T07:03:59
-Jersey,True,False,,,2023-03-21T07:04:00
-Jordan,True,False,,,2023-03-21T07:04:00
-Kazakhstan,True,False,,,2023-03-21T07:04:00
-Kenya,True,False,,,2023-03-21T07:04:00
-Kiribati,True,False,,,2023-03-21T07:04:00
-Kosovo,True,False,,,2023-03-21T07:04:00
-Kuwait,True,False,,,2023-03-21T07:04:00
-Kyrgyzstan,True,False,,,2023-03-21T07:04:00
-Laos,True,False,,,2023-03-21T07:04:00
-Latvia,True,False,,,2023-03-21T07:04:00
-Lebanon,True,False,,,2023-03-21T07:04:00
-Lesotho,True,False,,,2023-03-21T07:04:00
-Liberia,True,False,,,2023-03-21T07:04:00
-Libya,True,False,,,2023-03-21T07:04:00
-Liechtenstein,True,False,,,2023-03-21T07:04:00
-Lithuania,True,False,,,2023-03-21T07:04:00
-Luxembourg,True,False,,,2023-03-21T07:04:00
-Macao,True,False,,,2023-03-21T07:04:00
-Madagascar,True,False,,,2023-03-21T07:04:00
-Malawi,True,False,,,2023-03-21T07:04:00
-Malaysia,True,False,,,2023-03-21T07:04:00
-Maldives,True,False,,,2023-03-21T07:04:00
-Mali,True,False,,,2023-03-21T07:04:00
-Malta,True,False,,,2023-03-21T07:04:00
-Mauritania,True,False,,,2023-03-21T07:04:00
-Mauritius,True,False,,,2023-03-21T07:04:00
-Mexico,True,False,,,2023-03-21T07:04:00
-Moldova,True,False,,,2023-03-21T07:04:00
-Monaco,True,False,,,2023-03-21T07:04:01
-Mongolia,True,False,,,2023-03-21T07:04:01
-Montenegro,True,False,,,2023-03-21T07:04:01
-Montserrat,True,False,,,2023-03-21T07:04:01
-Morocco,True,False,,,2023-03-21T07:04:01
-Mozambique,True,False,,,2023-03-21T07:04:01
-Myanmar,True,False,,,2023-03-21T07:04:01
-Namibia,True,False,,,2023-03-21T07:04:01
-Nauru,True,False,,,2023-03-21T07:04:01
-Nepal,True,False,,,2023-03-21T07:04:01
-Netherlands,True,False,,,2023-03-21T07:04:01
-New Caledonia,True,False,,,2023-03-21T07:04:01
-New Zealand,True,False,,,2023-03-21T07:04:01
-Nicaragua,True,False,,,2023-03-21T07:04:01
-Niger,True,False,,,2023-03-21T07:04:01
-Nigeria,True,False,,,2023-03-21T07:04:01
-Niue,True,False,,,2023-03-21T07:04:01
-North Macedonia,True,False,,,2023-03-21T07:04:01
-Northern Cyprus,True,False,,,2023-03-21T07:04:01
-Northern Ireland,True,False,,,2023-03-21T07:04:01
-Norway,True,False,,,2023-03-21T07:04:01
-Oman,True,False,,,2023-03-21T07:04:01
-Pakistan,True,False,,,2023-03-21T07:04:01
-Palestine,True,False,,,2023-03-21T07:04:01
-Panama,True,False,,,2023-03-21T07:04:01
-Papua New Guinea,True,False,,,2023-03-21T07:04:01
-Paraguay,True,False,,,2023-03-21T07:04:01
-Peru,True,False,,,2023-03-21T07:04:01
-Philippines,True,False,,,2023-03-21T07:04:01
-Pitcairn,True,False,,,2023-03-21T07:04:02
-Poland,True,False,,,2023-03-21T07:04:02
-Portugal,True,False,,,2023-03-21T07:04:02
-Qatar,True,False,,,2023-03-21T07:04:02
-Romania,True,False,,,2023-03-21T07:04:02
-Russia,True,False,,,2023-03-21T07:04:02
-Rwanda,True,False,,,2023-03-21T07:04:02
-Saint Helena,True,False,,,2023-03-21T07:04:02
-Saint Kitts and Nevis,True,False,,,2023-03-21T07:04:02
-Saint Lucia,True,False,,,2023-03-21T07:04:02
-Saint Vincent and the Grenadines,True,False,,,2023-03-21T07:04:02
-Samoa,True,False,,,2023-03-21T07:04:02
-San Marino,True,False,,,2023-03-21T07:04:02
-Sao Tome and Principe,True,False,,,2023-03-21T07:04:02
-Saudi Arabia,True,False,,,2023-03-21T07:04:02
-Scotland,True,False,,,2023-03-21T07:04:02
-Senegal,True,False,,,2023-03-21T07:04:02
-Serbia,True,False,,,2023-03-21T07:04:02
-Seychelles,True,False,,,2023-03-21T07:04:02
-Sierra Leone,True,False,,,2023-03-21T07:04:02
-Singapore,True,False,,,2023-03-21T07:04:02
-Sint Maarten (Dutch part),True,False,,,2023-03-21T07:04:02
-Slovakia,True,False,,,2023-03-21T07:04:02
-Slovenia,True,False,,,2023-03-21T07:04:02
-Solomon Islands,True,False,,,2023-03-21T07:04:02
-Somalia,True,False,,,2023-03-21T07:04:02
-South Africa,True,False,,,2023-03-21T07:04:02
-South Korea,True,False,,,2023-03-21T07:04:02
-South Sudan,True,False,,,2023-03-21T07:04:03
-Spain,True,False,,,2023-03-21T07:04:03
-Sri Lanka,True,False,,,2023-03-21T07:04:03
-Sudan,True,False,,,2023-03-21T07:04:03
-Suriname,True,False,,,2023-03-21T07:04:03
-Sweden,True,False,,,2023-03-21T07:04:03
-Switzerland,True,False,,,2023-03-21T07:04:03
-Syria,True,False,,,2023-03-21T07:04:03
-Taiwan,True,False,,,2023-03-21T07:04:03
-Tajikistan,True,False,,,2023-03-21T07:04:03
-Tanzania,True,False,,,2023-03-21T07:04:03
-Thailand,True,False,,,2023-03-21T07:04:03
-Timor,True,False,,,2023-03-21T07:04:03
-Togo,True,False,,,2023-03-21T07:04:03
-Tokelau,True,False,,,2023-03-21T07:04:03
-Tonga,True,False,,,2023-03-21T07:04:03
-Trinidad and Tobago,True,False,,,2023-03-21T07:04:03
-Tunisia,True,False,,,2023-03-21T07:04:03
-Turkey,True,False,,,2023-03-21T07:04:03
+[1 rows x 8 columns]",2023-03-22T07:03:59
+Isle of Man,True,False,,,2023-03-22T07:03:59
+Israel,True,False,,,2023-03-22T07:03:59
+Italy,True,False,,,2023-03-22T07:03:59
+Jamaica,True,False,,,2023-03-22T07:03:59
+Japan,True,False,,,2023-03-22T07:03:59
+Jersey,True,False,,,2023-03-22T07:03:59
+Jordan,True,False,,,2023-03-22T07:03:59
+Kazakhstan,True,False,,,2023-03-22T07:03:59
+Kenya,True,False,,,2023-03-22T07:03:59
+Kiribati,True,False,,,2023-03-22T07:04:00
+Kosovo,True,False,,,2023-03-22T07:04:00
+Kuwait,True,False,,,2023-03-22T07:04:00
+Kyrgyzstan,True,False,,,2023-03-22T07:04:00
+Laos,True,False,,,2023-03-22T07:04:00
+Latvia,True,False,,,2023-03-22T07:04:00
+Lebanon,True,False,,,2023-03-22T07:04:00
+Lesotho,True,False,,,2023-03-22T07:04:00
+Liberia,True,False,,,2023-03-22T07:04:00
+Libya,True,False,,,2023-03-22T07:04:00
+Liechtenstein,True,False,,,2023-03-22T07:04:00
+Lithuania,True,False,,,2023-03-22T07:04:00
+Luxembourg,True,False,,,2023-03-22T07:04:00
+Macao,True,False,,,2023-03-22T07:04:00
+Madagascar,True,False,,,2023-03-22T07:04:00
+Malawi,True,False,,,2023-03-22T07:04:00
+Malaysia,True,False,,,2023-03-22T07:04:00
+Maldives,True,False,,,2023-03-22T07:04:00
+Mali,True,False,,,2023-03-22T07:04:00
+Malta,True,False,,,2023-03-22T07:04:00
+Mauritania,True,False,,,2023-03-22T07:04:00
+Mauritius,True,False,,,2023-03-22T07:04:00
+Mexico,True,False,,,2023-03-22T07:04:00
+Moldova,True,False,,,2023-03-22T07:04:00
+Monaco,True,False,,,2023-03-22T07:04:00
+Mongolia,True,False,,,2023-03-22T07:04:00
+Montenegro,True,False,,,2023-03-22T07:04:01
+Montserrat,True,False,,,2023-03-22T07:04:01
+Morocco,True,False,,,2023-03-22T07:04:01
+Mozambique,True,False,,,2023-03-22T07:04:01
+Myanmar,True,False,,,2023-03-22T07:04:01
+Namibia,True,False,,,2023-03-22T07:04:01
+Nauru,True,False,,,2023-03-22T07:04:01
+Nepal,True,False,,,2023-03-22T07:04:01
+Netherlands,True,False,,,2023-03-22T07:04:01
+New Caledonia,True,False,,,2023-03-22T07:04:01
+New Zealand,True,False,,,2023-03-22T07:04:01
+Nicaragua,True,False,,,2023-03-22T07:04:01
+Niger,True,False,,,2023-03-22T07:04:01
+Nigeria,True,False,,,2023-03-22T07:04:01
+Niue,True,False,,,2023-03-22T07:04:01
+North Macedonia,True,False,,,2023-03-22T07:04:01
+Northern Cyprus,True,False,,,2023-03-22T07:04:01
+Northern Ireland,True,False,,,2023-03-22T07:04:01
+Norway,True,False,,,2023-03-22T07:04:01
+Oman,True,False,,,2023-03-22T07:04:01
+Pakistan,True,False,,,2023-03-22T07:04:01
+Palestine,True,False,,,2023-03-22T07:04:01
+Panama,True,False,,,2023-03-22T07:04:01
+Papua New Guinea,True,False,,,2023-03-22T07:04:01
+Paraguay,True,False,,,2023-03-22T07:04:01
+Peru,True,False,,,2023-03-22T07:04:02
+Philippines,True,False,,,2023-03-22T07:04:02
+Pitcairn,True,False,,,2023-03-22T07:04:02
+Poland,True,False,,,2023-03-22T07:04:02
+Portugal,True,False,,,2023-03-22T07:04:02
+Qatar,True,False,,,2023-03-22T07:04:02
+Romania,True,False,,,2023-03-22T07:04:02
+Russia,True,False,,,2023-03-22T07:04:02
+Rwanda,True,False,,,2023-03-22T07:04:02
+Saint Helena,True,False,,,2023-03-22T07:04:02
+Saint Kitts and Nevis,True,False,,,2023-03-22T07:04:02
+Saint Lucia,True,False,,,2023-03-22T07:04:02
+Saint Vincent and the Grenadines,True,False,,,2023-03-22T07:04:02
+Samoa,True,False,,,2023-03-22T07:04:02
+San Marino,True,False,,,2023-03-22T07:04:02
+Sao Tome and Principe,True,False,,,2023-03-22T07:04:02
+Saudi Arabia,True,False,,,2023-03-22T07:04:02
+Scotland,True,False,,,2023-03-22T07:04:02
+Senegal,True,False,,,2023-03-22T07:04:02
+Serbia,True,False,,,2023-03-22T07:04:02
+Seychelles,True,False,,,2023-03-22T07:04:02
+Sierra Leone,True,False,,,2023-03-22T07:04:02
+Singapore,True,False,,,2023-03-22T07:04:02
+Sint Maarten (Dutch part),True,False,,,2023-03-22T07:04:02
+Slovakia,True,False,,,2023-03-22T07:04:02
+Slovenia,True,False,,,2023-03-22T07:04:03
+Solomon Islands,True,False,,,2023-03-22T07:04:03
+Somalia,True,False,,,2023-03-22T07:04:03
+South Africa,True,False,,,2023-03-22T07:04:03
+South Korea,True,False,,,2023-03-22T07:04:03
+South Sudan,True,False,,,2023-03-22T07:04:03
+Spain,True,False,,,2023-03-22T07:04:03
+Sri Lanka,True,False,,,2023-03-22T07:04:03
+Sudan,True,False,,,2023-03-22T07:04:03
+Suriname,True,False,,,2023-03-22T07:04:03
+Sweden,True,False,,,2023-03-22T07:04:03
+Switzerland,True,False,,,2023-03-22T07:04:03
+Syria,True,False,,,2023-03-22T07:04:03
+Taiwan,True,False,,,2023-03-22T07:04:03
+Tajikistan,True,False,,,2023-03-22T07:04:03
+Tanzania,True,False,,,2023-03-22T07:04:03
+Thailand,True,False,,,2023-03-22T07:04:03
+Timor,True,False,,,2023-03-22T07:04:03
+Togo,True,False,,,2023-03-22T07:04:03
+Tokelau,True,False,,,2023-03-22T07:04:03
+Tonga,True,False,,,2023-03-22T07:04:03
+Trinidad and Tobago,True,False,,,2023-03-22T07:04:03
+Tunisia,True,False,,,2023-03-22T07:04:03
+Turkey,True,False,,,2023-03-22T07:04:03
 Turkmenistan,False,False,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py"", line 95, in _process_location_and_move_file
     df = process_location(df, monotonic_check_skip, anomaly_check_skip)
@@ -314,21 +314,21 @@ ValueError: Turkmenistan -- Column people_vaccinated must be monotonically incre
        location       date  ... people_fully_vaccinated total_boosters
 4  Turkmenistan 2023-02-05  ...                 3358426        3171535
 
-[1 rows x 8 columns]",2023-03-21T07:04:03
-Turks and Caicos Islands,True,False,,,2023-03-21T07:04:03
-Tuvalu,True,False,,,2023-03-21T07:04:03
-Uganda,True,False,,,2023-03-21T07:04:03
-Ukraine,True,False,,,2023-03-21T07:04:03
-United Arab Emirates,True,False,,,2023-03-21T07:04:03
-United Kingdom,True,False,,,2023-03-21T07:04:03
-United States,True,False,,,2023-03-21T07:04:03
-Uruguay,True,False,,,2023-03-21T07:04:03
-Uzbekistan,True,False,,,2023-03-21T07:04:03
-Vanuatu,True,False,,,2023-03-21T07:04:04
-Venezuela,True,False,,,2023-03-21T07:04:04
-Vietnam,True,False,,,2023-03-21T07:04:04
-Wales,True,False,,,2023-03-21T07:04:04
-Wallis and Futuna,True,False,,,2023-03-21T07:04:04
-Yemen,True,False,,,2023-03-21T07:04:04
-Zambia,True,False,,,2023-03-21T07:04:04
-Zimbabwe,True,False,,,2023-03-21T07:04:04
+[1 rows x 8 columns]",2023-03-22T07:04:03
+Turks and Caicos Islands,True,False,,,2023-03-22T07:04:03
+Tuvalu,True,False,,,2023-03-22T07:04:04
+Uganda,True,False,,,2023-03-22T07:04:04
+Ukraine,True,False,,,2023-03-22T07:04:04
+United Arab Emirates,True,False,,,2023-03-22T07:04:04
+United Kingdom,True,False,,,2023-03-22T07:04:04
+United States,True,False,,,2023-03-22T07:04:04
+Uruguay,True,False,,,2023-03-22T07:04:04
+Uzbekistan,True,False,,,2023-03-22T07:04:04
+Vanuatu,True,False,,,2023-03-22T07:04:04
+Venezuela,True,False,,,2023-03-22T07:04:04
+Vietnam,True,False,,,2023-03-22T07:04:04
+Wales,True,False,,,2023-03-22T07:04:04
+Wallis and Futuna,True,False,,,2023-03-22T07:04:04
+Yemen,True,False,,,2023-03-22T07:04:04
+Zambia,True,False,,,2023-03-22T07:04:04
+Zimbabwe,True,False,,,2023-03-22T07:04:04
