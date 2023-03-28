@@ -50,6 +50,7 @@ COLUMNS = [
     "cum_excess_per_million_proj_all_ages",
     "excess_per_million_proj_all_ages",
     "deaths_2022_all_ages",
+    "deaths_2023_all_ages",
     "deaths_since_2020_all_ages",
 ]
 
