@@ -46,6 +46,7 @@ pipeline:
         - Pakistan # Moved to WHO
         - South Africa # Moved to WHO
         # - Japan # Moved to WHO
+        - Denmark  # Moved to ECDC
     process:
       skip_complete:
         - Pitcairn

@@ -61,6 +61,7 @@ LOCATIONS_MAIN_INCLUDED = [
     "Austria",
     "Portugal",
     "Netherlands",
+    "Denmark",
 ]
 
 LOCATIONS_AGE_EXCLUDED = [
