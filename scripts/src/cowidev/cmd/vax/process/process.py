@@ -7,10 +7,9 @@ from pandas.errors import ParserError
 import click
 
 from cowidev import PATHS
-from cowidev.utils.log import get_logger
 from cowidev.utils.params import CONFIG
 from cowidev.utils.utils import export_timestamp, get_traceback
-from cowidev.cmd.vax.process.utils import process_location, VaccinationGSheet
+from cowidev.cmd.vax.process.utils import process_location
 from cowidev.cmd.commons.utils import StepReport
 
 
@@ -67,19 +66,17 @@ def main_process_data(
     # TODO: Generalize
     logger.info("-- Processing data... --")
     # Get data from sheets (i.e. manual data)
-    logger.info("Getting data from Google Spreadsheet...")
-    gsheet = VaccinationGSheet()
-    dfs_manual = gsheet.df_list()
+    logger.info("Getting data from vax metadata...")
+    df_countries = pd.read_csv(PATHS.INTERNAL_INPUT_VAX_COUNTRIES_FILE)
     # Get automated-country data
     logger.info("Getting data from internal output...")
-    automated = gsheet.automated_countries
-    filepaths_auto = [os.path.join(path_input_files, f"{country}.csv") for country in automated]
-    dfs_auto = [read_csv(filepath) for filepath in filepaths_auto]
+    locations = df_countries.loc[:, "location"].tolist()
+    filepaths = [os.path.join(path_input_files, f"{location}.csv") for location in locations]
+    dfs = [read_csv(filepath) for filepath in filepaths]
     # Concatenate list of dataframes
-    dfs = dfs_manual + dfs_auto
 
     # Check that no location is present in both manual and automated data
-    _check_no_overlapping_manual_auto(dfs_manual, dfs_auto)
+    # _check_no_overlapping_manual_auto(dfs_manual, dfs_auto)
 
     # vax = [v for v in vax if v.location.iloc[0] == "Pakistan"]  # DEBUG
     # Process locations
@@ -132,7 +129,9 @@ def main_process_data(
     df_status = pd.DataFrame([_process_location_and_move_file(df) for df in dfs]).set_index("location")
 
     # Export metadata
-    gsheet.metadata.to_csv(path_output_meta, index=False)
+    df_countries = df_countries[df_countries["include"]].sort_values(by="location")
+    _check_metadata(df_countries)
+    df_countries.to_csv(path_output_meta, index=False)
     logger.info("Exported ✅")
 
     # Export status
@@ -178,3 +177,42 @@ def _check_no_overlapping_manual_auto(dfs_manual, dfs_auto):
     locations_common = locations_auto.intersection(locations_manual)
     if len(locations_common) > 0:
         raise DataError(f"The following locations have data in both output/main_data and GSheet: {locations_common}")
+
+
+def _check_metadata(df: pd.DataFrame):
+    """Check metadata LOCATIONS tab has valid format."""
+    # Check columns
+    cols_stable = [
+        "location",
+        "source_name",
+        "automated",
+        "include",
+    ]
+    cols_extra = [
+        "1d_approved",
+        "1d_used",
+        "1d_codeready",
+        "WHO_from",
+        "WHO_to",
+    ]
+    cols = cols_stable + cols_extra
+    cols_missing = [col for col in cols if col not in df.columns]
+    cols_wrong = [col for col in df.columns if col not in cols]
+    if cols_missing:
+        raise ValueError(f"LOCATIONS missing column(s): {cols_missing}.")
+    if cols_wrong:
+        raise ValueError(f"LOCATIONS has invalid column(s): {cols_wrong}.")
+    # Check duplicated rows
+    location_counts = df.location.value_counts()
+    if (location_counts > 1).any(None):
+        locations_dup = location_counts[location_counts > 1].index.tolist()
+        raise ValueError(f"Duplicated location(s) found in LOCATIONS. Check {locations_dup}")
+    if df[cols_stable].isnull().any(None):
+        raise ValueError("Check LOCATIONS. Some fields missing (empty / NaNs)")
+    # Ensure booleanity of columns automated, include
+    if not df.automated.isin([True, False]).all():
+        vals = df.automated.unique()
+        raise ValueError(f"LOCATIONS column `automated` should only contain TRUE/FALSE. Check {vals}")
+    if not df.include.isin([True, False]).all():
+        vals = df.include.unique()
+        raise ValueError(f"LOCATIONS column `include` should only contain TRUE/FALSE. Check {vals}")
