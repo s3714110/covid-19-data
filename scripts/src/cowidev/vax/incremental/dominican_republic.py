@@ -75,7 +75,6 @@ def _find_h3(driver):
         for e in driver.find_elements_by_tag_name("h3")
         if re.search(r"Estadísticas nacionales \| Acumulados al \d+ de \w+ de 20\d\d", e.text)
     ]
-    print(elem)
     if len(elem) == 1:
         elem = elem[0]
     else:
