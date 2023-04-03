@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`12/112` scripts failed, `29/112` were skipped. Latest update was `2023-04-03T08:37:04`.
+`11/112` scripts failed, `29/112` were skipped. Latest update was `2023-04-03T20:52:19`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -80,13 +80,6 @@ This file shows the latest status of the data pipeline.
       <td>2023-04-03T07:02:15</td>
       <td>0.63</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 76, in main<br>    Greenland().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 63, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 17, in read<br>    data = self._parse_data(soup)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 21, in _parse_data<br>    return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 31, in _parse_data_metrics<br>    assert len(counter_1) == len(counter_2) == 1<br>AssertionError<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.sweden</td>
-      <td>❌</td>
-      <td>2023-04-03T07:01:56</td>
-      <td>0.39</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py", line 273, in main<br>    Sweden().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py", line 267, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py", line 29, in read<br>    weekly = self._read_weekly_data()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py", line 85, in _read_weekly_data<br>    dfs = pd.read_excel(self.source_url_weekly, sheet_name=None)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 364, in read_excel<br>    io = ExcelFile(io, storage_options=storage_options, engine=engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1191, in __init__<br>    ext = inspect_excel_format(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py", line 1070, in inspect_excel_format<br>    with get_handle(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py", line 609, in get_handle<br>    ioargs = _get_filepath_or_buffer(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py", line 312, in _get_filepath_or_buffer<br>    with urlopen(req_info) as req:<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/usr/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/usr/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/usr/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/usr/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 403: Forbidden<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.canada</td>
@@ -303,6 +296,13 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2023-04-03T07:00:07</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.sweden</td>
+      <td>✅</td>
+      <td>2023-04-03T20:52:19</td>
+      <td>2.59</td>
       <td></td>
     </tr>
     <tr>
