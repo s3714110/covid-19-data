@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`12/112` scripts failed, `29/112` were skipped. Latest update was `2023-04-03T07:04:11`.
+`12/112` scripts failed, `29/112` were skipped. Latest update was `2023-04-03T08:37:04`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -18,6 +18,20 @@ This file shows the latest status of the data pipeline.
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>cowidev.vax.batch.united_states</td>
+      <td>❌</td>
+      <td>2023-04-03T08:37:04</td>
+      <td>9.02</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 192, in main<br>    UnitedStates().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 179, in export<br>    df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)<br>  File "/home/lucas/.pyenv/versions/3.10.9/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/.pyenv/versions/3.10.9/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 172, in pipeline_manufacturer<br>    df = df.pipe(self.make_monotonic, "vaccine")<br>  File "/home/lucas/.pyenv/versions/3.10.9/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/lucas/.pyenv/versions/3.10.9/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 109, in make_monotonic<br>    _df = mkm(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 26 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-22']<br></pre></details></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.denmark</td>
+      <td>❌</td>
+      <td>2023-04-03T08:31:16</td>
+      <td>2.56</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 246, in main<br>    Denmark().export()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 227, in export<br>    df = self.read(index).pipe(self.pipeline, df_current).pipe(self.make_monotonic)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 43, in read<br>    url = self._parse_link_zip()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 68, in _parse_link_zip<br>    url = soup.find("a", string="Download her").get("href")<br>AttributeError: 'NoneType' object has no attribute 'get'<br></pre></details></td>
+    </tr>
     <tr>
       <td>cowidev.vax.incremental.turkey</td>
       <td>❌</td>
@@ -68,13 +82,6 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 76, in main<br>    Greenland().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 63, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 17, in read<br>    data = self._parse_data(soup)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 21, in _parse_data<br>    return {**self._parse_data_metrics(soup), **self._parse_data_date(soup)}<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/greenland.py", line 31, in _parse_data_metrics<br>    assert len(counter_1) == len(counter_2) == 1<br>AssertionError<br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.batch.united_states</td>
-      <td>❌</td>
-      <td>2023-04-03T07:02:03</td>
-      <td>7.75</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 192, in main<br>    UnitedStates().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 179, in export<br>    df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py", line 172, in pipeline_manufacturer<br>    df = df.pipe(self.make_monotonic, "vaccine")<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 109, in make_monotonic<br>    _df = mkm(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 26 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-22']<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.sweden</td>
       <td>❌</td>
       <td>2023-04-03T07:01:56</td>
@@ -87,13 +94,6 @@ This file shows the latest status of the data pipeline.
       <td>2023-04-03T07:01:55</td>
       <td>5.14</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 282, in main<br>    Canada().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 270, in export<br>    df = df.pipe(self.pipeline, df_man)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 250, in pipeline<br>    .pipe(self.pipe_make_monotonic)[<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/canada.py", line 230, in pipe_make_monotonic<br>    df = df.pipe(self.make_monotonic, max_removed_rows=self.max_removed_rows)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py", line 120, in make_monotonic<br>    return mkm(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 23, in make_monotonic<br>    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 94, in make_monotonic_new<br>    raise Exception(<br>Exception: 1 chunks of lengths 36 have been NaNed for metric people_vaccinated. That is more than maximum allowed (22) by make_monotonic() - check the data. Check dates ['2023-01-26']<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.denmark</td>
-      <td>❌</td>
-      <td>2023-04-03T07:01:55</td>
-      <td>0.42</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 245, in main<br>    Denmark().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 226, in export<br>    df = self.read(index).pipe(self.pipeline, df_current).pipe(self.make_monotonic)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 43, in read<br>    url = self._parse_link_zip()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/denmark.py", line 67, in _parse_link_zip<br>    url = soup.find("a", string="Download her").get("href")<br>AttributeError: 'NoneType' object has no attribute 'get'<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.australia</td>
@@ -306,6 +306,13 @@ This file shows the latest status of the data pipeline.
       <td></td>
     </tr>
     <tr>
+      <td>cowidev.vax.batch.ecdc</td>
+      <td>✅</td>
+      <td>2023-04-03T08:36:06</td>
+      <td>35.62</td>
+      <td></td>
+    </tr>
+    <tr>
       <td>cowidev.vax.batch.zimbabwe</td>
       <td>✅</td>
       <td>2023-04-03T07:02:04</td>
@@ -317,13 +324,6 @@ This file shows the latest status of the data pipeline.
       <td>✅</td>
       <td>2023-04-03T07:01:43</td>
       <td>83.64</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.ecdc</td>
-      <td>✅</td>
-      <td>2023-04-03T07:01:35</td>
-      <td>87.66</td>
       <td></td>
     </tr>
     <tr>
