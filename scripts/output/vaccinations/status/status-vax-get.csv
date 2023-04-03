@@ -104,45 +104,7 @@ cowidev.vax.batch.slovakia,49.78,True,2023-04-03T07:00:57,,
 cowidev.vax.batch.slovenia,3.94,True,2023-04-03T07:00:11,,
 cowidev.vax.batch.south_korea,70.73,True,2023-04-03T07:01:18,,
 cowidev.vax.batch.spc,21.02,True,2023-04-03T07:00:28,,
-cowidev.vax.batch.sweden,0.39,False,2023-04-03T07:01:56,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 273, in main
-    Sweden().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 267, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 29, in read
-    weekly = self._read_weekly_data()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/sweden.py"", line 85, in _read_weekly_data
-    dfs = pd.read_excel(self.source_url_weekly, sheet_name=None)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 364, in read_excel
-    io = ExcelFile(io, storage_options=storage_options, engine=engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 1191, in __init__
-    ext = inspect_excel_format(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 1070, in inspect_excel_format
-    with get_handle(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 609, in get_handle
-    ioargs = _get_filepath_or_buffer(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 312, in _get_filepath_or_buffer
-    with urlopen(req_info) as req:
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py"", line 212, in urlopen
-    return urllib.request.urlopen(*args, **kwargs)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 216, in urlopen
-    return opener.open(url, data, timeout)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 525, in open
-    response = meth(req, response)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 634, in http_response
-    response = self.parent.error(
-  File ""/usr/lib/python3.10/urllib/request.py"", line 563, in error
-    return self._call_chain(*args)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 496, in _call_chain
-    result = func(*args)
-  File ""/usr/lib/python3.10/urllib/request.py"", line 643, in http_error_default
-    raise HTTPError(req.full_url, code, msg, hdrs, fp)
-urllib.error.HTTPError: HTTP Error 403: Forbidden
-",HTTP Error 403: Forbidden
+cowidev.vax.batch.sweden,2.59,True,2023-04-03T20:52:19,,
 cowidev.vax.batch.switzerland,84.94,True,2023-04-03T07:01:33,,
 cowidev.vax.batch.trinidad_and_tobago,5.51,True,2023-04-03T07:00:14,,
 cowidev.vax.batch.ukraine,,,2023-04-03T07:00:09,,
