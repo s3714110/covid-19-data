@@ -348,6 +348,11 @@ class CountryVaxBase:
         msk = sum(((df[column_date] == date) & (df[column_age] == age)) for date, age in zip(dates, ages)).astype(bool)
         return df[~msk]
 
+    def load_archived_data(self, filename: str = None, **kwargs) -> pd.DataFrame:
+        if filename is None:
+            filename = f"{self.location}.csv"
+        filename = os.path.join(PATHS.INTERNAL_OUTPUT_VAX_MAIN_DIR, "archived", filename)
+        return pd.read_csv(filename, **kwargs)
 
 def _build_population_age_group_df(location, df):
     # Read raw population by age
