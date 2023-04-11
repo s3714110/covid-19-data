@@ -176,11 +176,11 @@ class UnitedStates(CountryVaxBase):
         # Main
         df = self.read().pipe(self.pipeline)
         # Manufacturer
-        df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)
+        # df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)
         # Export
         self.export_datafile(
             df,
-            df_manufacturer=df_manufacturer,
+            # df_manufacturer=df_manufacturer,
             meta_manufacturer={
                 "source_name": "Centers for Disease Control and Prevention",
                 "source_url": "https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccination_data",

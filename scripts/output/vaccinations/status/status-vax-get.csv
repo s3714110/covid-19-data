@@ -129,31 +129,7 @@ cowidev.vax.batch.switzerland,90.02,True,2023-04-11T07:01:38,,
 cowidev.vax.batch.trinidad_and_tobago,4.28,True,2023-04-11T07:00:12,,
 cowidev.vax.batch.ukraine,,,2023-04-11T07:00:08,,
 cowidev.vax.batch.united_kingdom,15.48,True,2023-04-11T07:00:23,,
-cowidev.vax.batch.united_states,7.89,False,2023-04-11T07:02:22,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 192, in main
-    UnitedStates().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 179, in export
-    df_manufacturer = self.read_manufacturer().pipe(self.pipeline_manufacturer)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_states.py"", line 172, in pipeline_manufacturer
-    df = df.pipe(self.make_monotonic, ""vaccine"")
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 109, in make_monotonic
-    _df = mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 26 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-22']
-",1 chunks of lengths 26 have been NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-03-22']
+cowidev.vax.batch.united_states,15.94,True,2023-04-11T21:47:02,,
 cowidev.vax.batch.uruguay,6.59,True,2023-04-11T07:00:17,,
 cowidev.vax.batch.zimbabwe,1.46,True,2023-04-11T07:00:12,,
 cowidev.vax.incremental.africacdc,,,2023-04-11T07:00:11,,
