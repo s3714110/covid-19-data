@@ -15,8 +15,10 @@ class Taiwan:
     location = "Taiwan"
     vaccines_mapping = {
         "AstraZeneca": "Oxford/AstraZeneca",
+        "AZ": "Oxford/AstraZeneca",
         "高端": "Medigen",
         "Moderna 雙價\rBA.1": "Moderna",
+        "Moderna 雙價 BA.1": "Moderna",
         "Moderna": "Moderna",
         "Moderna雙價 BA.4/5": "Moderna",
         "BioNTech": "Pfizer/BioNTech",
@@ -53,11 +55,12 @@ class Taiwan:
         return f"{self.source_url}{a['href']}"
 
     def _parse_table(self, url_pdf: str):
+        print(url_pdf)
         dfs = self._parse_tables_all(url_pdf)
         df = dfs[0]
         cols = df.columns
 
-        shape_expected = (39, 4)
+        shape_expected = (42, 4)
         if df.shape != shape_expected:
             raise ValueError(f"Table 1: format has changed! It has shape {df.shape} instead of {shape_expected}")
 
@@ -76,8 +79,9 @@ class Taiwan:
         # If math.isnan() raise exception that means the table is changed.
         # print(df)
         # usually rows either starting from row_delimit_1 or row_delimit_2 are the ones needing surgery.
+        print(df)
         row_delimit_1 = 28
-        row_delimit_2 = 32
+        row_delimit_2 = 34
         if df.iloc[row_delimit_1][0] == "第二劑":
             row_delimit = row_delimit_1
         elif df.iloc[row_delimit_2][0] == "總計":
@@ -130,12 +134,13 @@ class Taiwan:
         num_add_2 = clean_count(df.loc["總計", "第二次追加劑"]["total"])
         num_add_3 = clean_count(df.loc["總計", "第三次追加劑"]["total"])
         num_add_4 = clean_count(df.loc["總計", "第四次追加劑"]["total"])
+        num_add_5 = clean_count(df.loc["總計", "第五次追加劑"]["total"])
 
         return {
-            "total_vaccinations": num_dose1 + num_dose2 + num_booster1 + num_add + num_add_2 + num_add_3 + num_add_4,
+            "total_vaccinations": num_dose1 + num_dose2 + num_booster1 + num_add + num_add_2 + num_add_3 + num_add_4 + num_add_5,
             "people_vaccinated": num_dose1,
             "people_fully_vaccinated": num_dose2,
-            "total_boosters": num_booster1 + num_add + num_add_2 + num_add_3 + num_add_4,
+            "total_boosters": num_booster1 + num_add + num_add_2 + num_add_3 + num_add_4 + num_add_5,
         }
 
     def _parse_vaccines(self, df: pd.DataFrame) -> str:

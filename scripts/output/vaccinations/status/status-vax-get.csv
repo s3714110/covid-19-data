@@ -232,16 +232,16 @@ cowidev.vax.incremental.greenland,0.48,False,2023-04-11T07:03:13,"Traceback (mos
 AssertionError
 ",
 cowidev.vax.incremental.guatemala,,,2023-04-11T07:00:16,,
-cowidev.vax.incremental.guernsey,1.21,False,2023-04-11T07:03:14,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.guernsey,1.49,False,2023-04-11T22:15:46,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 78, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 78, in main
     Guernsey().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 64, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 64, in export
     data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 17, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 17, in read
     df = self.parse_data(soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 26, in parse_data
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/guernsey.py"", line 26, in parse_data
     soup.find(""div"", class_=""ace-notice-paragraph"").text, self._regex_date, ""%d %B %Y""
 AttributeError: 'NoneType' object has no attribute 'text'
 ",'NoneType' object has no attribute 'text'
@@ -322,19 +322,7 @@ cowidev.vax.incremental.south_africa,,,2023-04-11T07:00:21,,
 cowidev.vax.incremental.spain,9.63,True,2023-04-11T07:00:31,,
 cowidev.vax.incremental.sri_lanka,,,2023-04-11T07:00:22,,
 cowidev.vax.incremental.suriname,14.77,True,2023-04-11T07:00:37,,
-cowidev.vax.incremental.taiwan,47.12,False,2023-04-11T21:57:27,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 180, in main
-    Taiwan().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 166, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 35, in read
-    df = self._parse_table(url_pdf)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 63, in _parse_table
-    raise ValueError(f""Table 1: format has changed! It has shape {df.shape} instead of {shape_expected}"")
-ValueError: Table 1: format has changed! It has shape (42, 4) instead of (39, 4)
-","Table 1: format has changed! It has shape (42, 4) instead of (39, 4)"
+cowidev.vax.incremental.taiwan,16.61,True,2023-04-11T22:16:06,,
 cowidev.vax.incremental.thailand,5.93,True,2023-04-11T07:00:29,,
 cowidev.vax.incremental.turkey,6.33,False,2023-04-11T07:05:06,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
