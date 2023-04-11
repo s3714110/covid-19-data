@@ -209,23 +209,7 @@ Traceback (most recent call last):
     raise ConnectionError(e, request=request)
 requests.exceptions.ConnectionError: HTTPSConnectionPool(host='www.moh.gov.cy', port=443): Max retries exceeded with url: /moh/moh.nsf/All/0EFA027144C9E54AC22586BE0032B2F5 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbef26325f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
 ","HTTPSConnectionPool(host='www.moh.gov.cy', port=443): Max retries exceeded with url: /moh/moh.nsf/All/0EFA027144C9E54AC22586BE0032B2F5 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fbef26325f0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
-cowidev.vax.incremental.dominican_republic,11.52,False,2023-04-11T07:03:13,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 91, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 81, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,18.01,True,2023-04-11T21:55:50,,
 cowidev.vax.incremental.el_salvador,8.94,True,2023-04-11T07:00:23,,
 cowidev.vax.incremental.faeroe_islands,1.1,True,2023-04-11T07:00:15,,
 cowidev.vax.incremental.fiji,0.0,True,2023-04-11T07:00:15,,
@@ -295,27 +279,38 @@ cowidev.vax.incremental.myanmar,,,2023-04-11T07:00:20,,
 cowidev.vax.incremental.nepal,,,2023-04-11T07:00:20,,
 cowidev.vax.incremental.north_macedonia,,,2023-04-11T07:00:20,,
 cowidev.vax.incremental.northern_cyprus,5.54,True,2023-04-11T07:00:25,,
-cowidev.vax.incremental.paho,84.9,False,2023-04-11T07:04:54,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.paho,87.22,False,2023-04-11T21:49:32,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
     PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
     df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 167, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 172, in pipeline
+    .pipe(self.pipe_vaccine)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 122, in pipe_check_columns
-    raise ValueError(f""Missing column fields: {columns_missing}. Present columns are: {df.columns}"")
-ValueError: Missing column fields: {'2nd additional dose', 'Single dose', 'First dose', 'Second dose', 'Total doses', '1st additional dose', 'Country code', 'Country/ Territory'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')
-","Missing column fields: {'2nd additional dose', 'Single dose', 'First dose', 'Second dose', 'Total doses', '1st additional dose', 'Country code', 'Country/ Territory'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')"
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 156, in pipe_vaccine
+    vaccine=df_who.vaccine.apply(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 4357, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1043, in apply
+    return self.apply_standard()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1098, in apply_standard
+    mapped = lib.map_infer(
+  File ""pandas/_libs/lib.pyx"", line 2859, in pandas._libs.lib.map_infer
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 158, in <lambda>
+    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 158, in <genexpr>
+    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
+KeyError: 'Moderna – Spikevax Bivalent Original/Omicron BA.4/BA.5'
+",'Moderna – Spikevax Bivalent Original/Omicron BA.4/BA.5'
 cowidev.vax.incremental.pakistan,,,2023-04-11T07:00:21,,
 cowidev.vax.incremental.philippines,,,2023-04-11T07:00:21,,
 cowidev.vax.incremental.poland,1.55,True,2023-04-11T07:00:22,,
@@ -327,16 +322,16 @@ cowidev.vax.incremental.south_africa,,,2023-04-11T07:00:21,,
 cowidev.vax.incremental.spain,9.63,True,2023-04-11T07:00:31,,
 cowidev.vax.incremental.sri_lanka,,,2023-04-11T07:00:22,,
 cowidev.vax.incremental.suriname,14.77,True,2023-04-11T07:00:37,,
-cowidev.vax.incremental.taiwan,5.0,False,2023-04-11T07:04:59,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.taiwan,47.12,False,2023-04-11T21:57:27,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 179, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 180, in main
     Taiwan().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 165, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 166, in export
     data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 35, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 35, in read
     df = self._parse_table(url_pdf)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 62, in _parse_table
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 63, in _parse_table
     raise ValueError(f""Table 1: format has changed! It has shape {df.shape} instead of {shape_expected}"")
 ValueError: Table 1: format has changed! It has shape (42, 4) instead of (39, 4)
 ","Table 1: format has changed! It has shape (42, 4) instead of (39, 4)"
