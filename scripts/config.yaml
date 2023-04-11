@@ -47,6 +47,12 @@ pipeline:
         - South Africa # Moved to WHO
         # - Japan # Moved to WHO
         - Denmark # Moved to ECDC
+
+        # No longer publishing data or page unavailable
+        - Guernsey # No longer publishing data
+        - Greenland # No longer publishing data
+        - Kosovo # Page not available
+        - Turkey # Blocked external IP
     process:
       skip_complete:
         - Pitcairn
