@@ -81,25 +81,7 @@ cowidev.vax.batch.luxembourg,3.23,True,2023-04-11T07:00:10,,
 cowidev.vax.batch.malaysia,0.67,True,2023-04-11T07:00:07,,
 cowidev.vax.batch.malta,1.19,True,2023-04-11T07:00:08,,
 cowidev.vax.batch.netherlands,,,2023-04-11T07:00:07,,
-cowidev.vax.batch.new_zealand,3.28,False,2023-04-11T07:02:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 116, in main
-    NewZealand().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 111, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/new_zealand.py"", line 43, in read
-    df = read_xlsx_from_url(link, sheet_name=""Date"")
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 47, in read_xlsx_from_url
-    df = pd.read_excel(tmp.name, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 364, in read_excel
-    io = ExcelFile(io, storage_options=storage_options, engine=engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/excel/_base.py"", line 1195, in __init__
-    raise ValueError(
-ValueError: Excel file format cannot be determined, you must specify an engine manually.
-","Excel file format cannot be determined, you must specify an engine manually."
+cowidev.vax.batch.new_zealand,33.53,True,2023-04-11T21:43:24,,
 cowidev.vax.batch.norway,0.41,True,2023-04-11T07:00:07,,
 cowidev.vax.batch.peru,5.3,True,2023-04-11T07:00:12,,
 cowidev.vax.batch.portugal,,,2023-04-11T07:00:07,,

@@ -64,7 +64,10 @@ class NewZealand(CountryVaxBase):
     def _parse_file_link(self, soup: BeautifulSoup) -> str:
         """Parses the link from the soup."""
         href = soup.find(id="download").find_next("a")["href"]
+        if "system" not in href:
+            href = f"/system/files/documents/pages{href}"
         link = f"{self.base_url}{href}"
+        print(link)
         return link
 
     def pipe_cumsum(self, df: pd.DataFrame) -> pd.DataFrame:
