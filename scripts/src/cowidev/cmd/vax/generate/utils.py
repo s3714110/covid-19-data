@@ -280,7 +280,7 @@ class DatasetGenerator:
         # together data from multiple territories and federal agencies to build national figures.
         # To ensure that we use the correct territorial boundaries in the denominator, we use the
         # population figure provided by the CDC in its data.
-        pop.loc[pop.location == "United States", "population"] = 332008832
+        pop.loc[pop.location == "United States", "population"] = 332008968
 
         return pop
 
