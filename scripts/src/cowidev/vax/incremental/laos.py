@@ -18,7 +18,7 @@ class Laos:
 
     def read(self) -> pd.Series:
         """Reads data from source."""
-        soup = get_soup(self.source_url)
+        soup = get_soup(self.source_url, verify=False)
         data = self._parse_data(soup)
         return pd.Series(data)
 
