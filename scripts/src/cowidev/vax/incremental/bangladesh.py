@@ -35,7 +35,7 @@ class Bangladesh:
 
     def _parse_single_doses(self):
         url = "http://103.247.238.92/webportal/pages/covid19-vaccination-johnson.php"
-        soup = get_soup(url, timeout=30)
+        soup = get_soup(url, timeout=60)
         metrics = self._parse_metrics_raw(soup, raise_err=False)
         if metrics["people_vaccinated"] != 0:
             raise ValueError("First dose for one dose vaccines should be 0!")
