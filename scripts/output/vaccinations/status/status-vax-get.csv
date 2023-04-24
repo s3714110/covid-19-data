@@ -70,7 +70,7 @@ cowidev.vax.batch.germany,0.28,True,2023-04-24T07:00:07,,
 cowidev.vax.batch.greece,17.34,True,2023-04-24T07:00:24,,
 cowidev.vax.batch.hong_kong,19.05,True,2023-04-24T07:00:26,,
 cowidev.vax.batch.indonesia,,,2023-04-24T07:00:07,,
-cowidev.vax.batch.ireland,4.8,True,2023-04-24T07:00:11,,
+cowidev.vax.batch.ireland,1.23,True,2023-04-24T14:52:04,,
 cowidev.vax.batch.israel,10.98,True,2023-04-24T07:00:18,,
 cowidev.vax.batch.italy,11.74,True,2023-04-24T07:00:18,,
 cowidev.vax.batch.japan,44.08,True,2023-04-24T07:00:51,,
@@ -90,36 +90,36 @@ cowidev.vax.batch.saudi_arabia,12.03,True,2023-04-24T07:00:19,,
 cowidev.vax.batch.singapore,5.67,True,2023-04-24T07:00:12,,
 cowidev.vax.batch.slovakia,59.66,True,2023-04-24T07:01:06,,
 cowidev.vax.batch.slovenia,2.48,True,2023-04-24T07:00:09,,
-cowidev.vax.batch.south_korea,10.77,False,2023-04-24T07:03:21,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.batch.south_korea,23.87,False,2023-04-24T14:26:56,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 209, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 209, in main
     SouthKorea().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 191, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 191, in export
     df_base = self.read().pipe(self.pipeline_base)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 107, in pipeline_base
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 107, in pipeline_base
     df.pipe(self.pipe_drop_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 51, in pipe_drop_columns
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py"", line 51, in pipe_drop_columns
     df = df.drop(columns=[""동절기""], level=0)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
     return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/frame.py"", line 4906, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/frame.py"", line 4906, in drop
     return super().drop(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4150, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4150, in drop
     obj = obj._drop_axis(labels, axis, level=level, errors=errors)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4183, in _drop_axis
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 4183, in _drop_axis
     new_axis = axis.drop(labels, level=level, errors=errors)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/multi.py"", line 2190, in drop
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/multi.py"", line 2190, in drop
     return self._drop_from_level(codes, level, errors)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/indexes/multi.py"", line 2242, in _drop_from_level
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/indexes/multi.py"", line 2242, in _drop_from_level
     raise KeyError(f""labels {not_found} not found in level"")
 KeyError: ""labels ['동절기'] not found in level""
 ","""labels ['동절기'] not found in level"""
@@ -208,23 +208,7 @@ cowidev.vax.incremental.croatia,2.5,True,2023-04-24T07:00:15,,
 cowidev.vax.incremental.cuba,9.61,True,2023-04-24T07:00:22,,
 cowidev.vax.incremental.curacao,1.87,True,2023-04-24T07:00:15,,
 cowidev.vax.incremental.cyprus,2.87,True,2023-04-24T07:00:17,,
-cowidev.vax.incremental.dominican_republic,11.35,False,2023-04-24T07:04:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 91, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 81, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,18.35,True,2023-04-24T14:25:29,,
 cowidev.vax.incremental.el_salvador,8.72,True,2023-04-24T07:00:24,,
 cowidev.vax.incremental.faeroe_islands,1.48,True,2023-04-24T07:00:17,,
 cowidev.vax.incremental.fiji,0.0,True,2023-04-24T07:00:16,,
@@ -243,67 +227,7 @@ cowidev.vax.incremental.jamaica,9.46,True,2023-04-24T07:00:28,,
 cowidev.vax.incremental.kazakhstan,7.41,True,2023-04-24T07:00:26,,
 cowidev.vax.incremental.kosovo,,,2023-04-24T07:00:19,,
 cowidev.vax.incremental.kyrgyzstan,7.37,True,2023-04-24T07:00:26,,
-cowidev.vax.incremental.laos,1.11,False,2023-04-24T07:04:08,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
-    httplib_response = self._make_request(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
-    self._validate_conn(conn)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1042, in _validate_conn
-    conn.connect()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 414, in connect
-    self.sock = ssl_wrap_socket(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 449, in ssl_wrap_socket
-    ssl_sock = _ssl_wrap_socket_impl(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/ssl_.py"", line 493, in _ssl_wrap_socket_impl
-    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
-  File ""/usr/lib/python3.10/ssl.py"", line 513, in wrap_socket
-    return self.sslsocket_class._create(
-  File ""/usr/lib/python3.10/ssl.py"", line 1071, in _create
-    self.do_handshake()
-  File ""/usr/lib/python3.10/ssl.py"", line 1342, in do_handshake
-    self._sslobj.do_handshake()
-ssl.SSLCertVerificationError: [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
-    resp = conn.urlopen(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 787, in urlopen
-    retries = retries.increment(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
-    raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.covid19.gov.la', port=443): Max retries exceeded with url: /index.php (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)')))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py"", line 101, in main
-    Laos().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py"", line 88, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/laos.py"", line 21, in read
-    soup = get_soup(self.source_url)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 83, in get_soup
-    response = get_response(source, request_method, use_proxy, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 49, in get_response
-    raise err
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 43, in get_response
-    response = requests.get(source, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
-    return request('get', url, params=params, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
-    return session.request(method=method, url=url, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
-    resp = self.send(prep, **send_kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
-    r = adapter.send(request, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 517, in send
-    raise SSLError(e, request=request)
-requests.exceptions.SSLError: HTTPSConnectionPool(host='www.covid19.gov.la', port=443): Max retries exceeded with url: /index.php (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)')))
-","HTTPSConnectionPool(host='www.covid19.gov.la', port=443): Max retries exceeded with url: /index.php (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:997)')))"
+cowidev.vax.incremental.laos,1.59,True,2023-04-24T14:28:32,,
 cowidev.vax.incremental.macao,7.02,False,2023-04-24T07:04:15,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
@@ -338,27 +262,38 @@ cowidev.vax.incremental.myanmar,,,2023-04-24T07:00:22,,
 cowidev.vax.incremental.nepal,,,2023-04-24T07:00:22,,
 cowidev.vax.incremental.north_macedonia,,,2023-04-24T07:00:22,,
 cowidev.vax.incremental.northern_cyprus,6.35,True,2023-04-24T07:00:28,,
-cowidev.vax.incremental.paho,85.22,False,2023-04-24T07:05:40,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.paho,80.4,False,2023-04-24T14:28:22,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
     PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
     df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 167, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 172, in pipeline
+    .pipe(self.pipe_vaccine)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 122, in pipe_check_columns
-    raise ValueError(f""Missing column fields: {columns_missing}. Present columns are: {df.columns}"")
-ValueError: Missing column fields: {'Single dose', 'Country/ Territory', 'First dose', 'Second dose', '1st additional dose', 'Total doses', '2nd additional dose', 'Country code'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')
-","Missing column fields: {'Single dose', 'Country/ Territory', 'First dose', 'Second dose', '1st additional dose', 'Total doses', '2nd additional dose', 'Country code'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')"
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 156, in pipe_vaccine
+    vaccine=df_who.vaccine.apply(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/series.py"", line 4357, in apply
+    return SeriesApply(self, func, convert_dtype, args, kwargs).apply()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1043, in apply
+    return self.apply_standard()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/apply.py"", line 1098, in apply_standard
+    mapped = lib.map_infer(
+  File ""pandas/_libs/lib.pyx"", line 2859, in pandas._libs.lib.map_infer
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 158, in <lambda>
+    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 158, in <genexpr>
+    sorted(set(WHO_VACCINES[xx.strip()] for xx in x.split("","") if xx != ""Unknown Vaccine""))
+KeyError: 'Moderna – Spikevax Bivalent Original/Omicron BA.4/BA.5'
+",'Moderna – Spikevax Bivalent Original/Omicron BA.4/BA.5'
 cowidev.vax.incremental.pakistan,,,2023-04-24T07:00:22,,
 cowidev.vax.incremental.philippines,,,2023-04-24T07:00:22,,
 cowidev.vax.incremental.poland,1.7,True,2023-04-24T07:00:24,,
