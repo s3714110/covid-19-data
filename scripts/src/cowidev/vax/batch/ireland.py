@@ -92,6 +92,8 @@ class Ireland(CountryVaxBase):
                 "2023-01-01",
                 "2023-01-02",
                 "2023-03-17",
+                "2023-04-08",
+                "2023-04-09",
             ]
         )
         if (df.loc[msk, ["people_vaccinated", "people_fully_vaccinated"]] == 0).any(axis=None):
