@@ -48,7 +48,7 @@ class SouthKorea(CountryVaxBase):
         return df
 
     def pipe_drop_columns(self, df: pd.DataFrame) -> pd.DataFrame:
-        df = df.drop(columns=["동절기"], level=0)
+        # df = df.drop(columns=["동절기"], level=0)
         return df
 
     def pipe_rename_columns_raw(self, df: pd.DataFrame):
