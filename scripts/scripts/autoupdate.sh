@@ -182,7 +182,7 @@ fi
 # Excess Mortality
 hour=$(date +%H)
 if [ $hour == 21 ] ; then
-  echo "Generating CoVariants dataset..."
+  echo "Generating XM dataset..."
   cowid --server xm generate
   git_push "xm"
 fi
