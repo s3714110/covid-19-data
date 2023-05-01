@@ -100,6 +100,8 @@ COLUMNS = {
     "DoseAdditional1",
     "DoseAdditional2",
     "DoseAdditional3",
+    "DoseAdditional4",
+    "DoseAdditional5",
     "NumberDosesExported",
 }
 
@@ -149,12 +151,12 @@ class ECDC(CountryVaxBase):
         df = df.pipe(self.pipe_initial_check)
         df = df.assign(
             total_vaccinations=df[
-                ["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1", "DoseAdditional2", "DoseAdditional3"]
+                ["FirstDose", "SecondDose", "UnknownDose", "DoseAdditional1", "DoseAdditional2", "DoseAdditional3", "DoseAdditional4", "DoseAdditional5"]
             ].sum(axis=1),
             people_vaccinated=df.FirstDose,
             people_fully_vaccinated=df.SecondDose,
             people_with_booster=df.DoseAdditional1,
-            total_boosters=df.DoseAdditional1 + df.DoseAdditional2 + df.DoseAdditional3,
+            total_boosters=df["DoseAdditional1"] + df["DoseAdditional2"] + df["DoseAdditional3"] + df["DoseAdditional4"] + df["DoseAdditional5"],
             date=df.YearWeekISO.apply(self._weekday_to_date),
             location=df.ReportingCountry.replace(self.country_mapping),
         )
