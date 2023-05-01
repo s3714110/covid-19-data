@@ -1,30 +1,67 @@
 module,execution_time (sec),success,timestamp,error,error_short
 cowidev.vax.batch.argentina,18.82,True,2023-05-01T07:00:24,,
-cowidev.vax.batch.australia,0.23,False,2023-05-01T07:01:49,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.batch.australia,25.63,False,2023-05-01T10:47:30,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
+    conn = connection.create_connection(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 72, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File ""/usr/lib/python3.10/socket.py"", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
+    httplib_response = self._make_request(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
+    self._validate_conn(conn)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
+    conn.connect()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 186, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f3640fa86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
+    resp = conn.urlopen(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
+    retries = retries.increment(
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covidbaseau.com', port=443): Max retries exceeded with url: /historical/Vaccinations%20By%20Age%20Group%20and%20State%20First.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3640fa86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 244, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 244, in main
     Australia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 216, in export
-    df = self.read().pipe(self.pipeline)  # Use with attach=False
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 160, in pipeline
-    .pipe(self.make_monotonic)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 94, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 24 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-04-20']
-",1 chunks of lengths 24 have been NaNed for metric people_vaccinated. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-04-20']
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 218, in export
+    df_age = self.read_age().pipe(self.pipeline_age)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/australia.py"", line 112, in read_age
+    df_1 = read_csv_from_url(self.source_url[""age_1d""], header=1).dropna(axis=1, how=""all"")
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 57, in read_csv_from_url
+    download_file_from_url(
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/utils/web/download.py"", line 83, in download_file_from_url
+    r = requests.get(url, stream=True, timeout=timeout, verify=verify, headers=headers)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
+    return request('get', url, params=params, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
+    resp = self.send(prep, **send_kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
+    r = adapter.send(request, **kwargs)
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covidbaseau.com', port=443): Max retries exceeded with url: /historical/Vaccinations%20By%20Age%20Group%20and%20State%20First.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3640fa86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+","HTTPSConnectionPool(host='covidbaseau.com', port=443): Max retries exceeded with url: /historical/Vaccinations%20By%20Age%20Group%20and%20State%20First.csv (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f3640fa86a0>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))"
 cowidev.vax.batch.austria_old,,,2023-05-01T07:00:06,,
 cowidev.vax.batch.belgium,7.71,True,2023-05-01T07:00:13,,
 cowidev.vax.batch.bolivia,5.52,True,2023-05-01T07:00:11,,
