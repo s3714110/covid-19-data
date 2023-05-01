@@ -19,6 +19,7 @@ class Macao:
             driver.get(self.source_url)
             time.sleep(5)
             # Get element
+            # iframe_url = "https://www.ssm.gov.mo/apps1/COVID19Case/en.aspx"
             iframe_url = self._get_iframe_url(driver)
             # Build data
             print(iframe_url)
