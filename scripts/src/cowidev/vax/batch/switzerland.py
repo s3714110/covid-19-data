@@ -64,14 +64,15 @@ class Switzerland(CountryVaxBase):
         )
         accepted_types = {
             "COVID19AtLeastOneDosePersons",
-            "COVID19FullyVaccPersons",
+            # "COVID19FullyVaccPersons",
             "COVID19PartiallyVaccPersons",
             "COVID19FirstBoosterPersons",
             "COVID19NotVaccPersons",
             "COVID19SecondBoosterPersons",
             "COVID19VaccSixMonthsPersons",
         }
-        assert set(people.type) == accepted_types, "New type found! Check people.type"
+        vax_missing = set(people["type"]).difference(accepted_types)
+        assert not vax_missing, f"New type found! Check people.type: {set(vax_missing)}"
         people = people[people.age_group == "total_population"].drop(columns=["age_group"])
         manufacturer = pd.read_csv(
             manufacturer_url,
@@ -104,7 +105,7 @@ class Switzerland(CountryVaxBase):
     def pipe_rename_columns(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.rename(
             columns={
-                "COVID19FullyVaccPersons": "people_fully_vaccinated",
+                # "COVID19FullyVaccPersons": "people_fully_vaccinated",
                 "COVID19VaccDosesAdministered": "total_vaccinations",
                 "COVID19AtLeastOneDosePersons": "people_vaccinated",
                 "COVID19FirstBoosterPersons": "total_boosters",
@@ -148,7 +149,7 @@ class Switzerland(CountryVaxBase):
                     "source_url",
                     "total_vaccinations",
                     "people_vaccinated",
-                    "people_fully_vaccinated",
+                    # "people_fully_vaccinated",
                     "total_boosters",
                 ]
             ]
@@ -200,7 +201,7 @@ class Switzerland(CountryVaxBase):
             columns={
                 "altersklasse_covid19": "age_group",
                 "COVID19AtLeastOneDosePersons": "people_vaccinated_per_hundred",
-                "COVID19FullyVaccPersons": "people_fully_vaccinated_per_hundred",
+                # "COVID19FullyVaccPersons": "people_fully_vaccinated_per_hundred",
             }
         )
 
@@ -217,7 +218,7 @@ class Switzerland(CountryVaxBase):
                 "age_group_min",
                 "age_group_max",
                 "people_vaccinated_per_hundred",
-                "people_fully_vaccinated_per_hundred",
+                # "people_fully_vaccinated_per_hundred",
             ]
         ]
 
