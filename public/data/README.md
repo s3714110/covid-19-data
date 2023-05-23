@@ -10,7 +10,7 @@ Our complete COVID-19 dataset is a collection of the COVID-19 data maintained by
 |-----------------------------|-----------------------------------------------------------|---------|-----------|
 | Vaccinations                | Official data collated by the Our World in Data team      | Daily   | 218       |
 | Tests & positivity          | Official data collated by the Our World in Data team      | No longer updated (read more: https://github.com/owid/covid-19-data/discussions/2667)  | 193       |
-| Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 47        |
+| Hospital & ICU              | Official data collated by the Our World in Data team      | Daily   | 46        |
 | Confirmed cases             | WHO COVID-19 Data                                    | Daily   | 219        |
 | Confirmed deaths            | WHO COVID-19 Data                                    | Daily   | 219       |
 | Reproduction rate           | Arroyo-Marioli F, Bullano F, Kucinskas S, Rondón-Moreno C | Daily   | 196        |
