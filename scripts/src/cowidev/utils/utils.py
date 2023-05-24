@@ -46,7 +46,7 @@ def make_monotonic(
             df_wrong = df_wrong[["date"] + column_metrics]
             # df_wrong = df_before[["date"] + column_metrics]
             raise Exception(
-                f"{num_removed_rows} rows have been removed. That is more than maximum allowed ({max_removed_rows})"
+                f"{num_removed_rows} rows would be removed. That is more than maximum allowed ({max_removed_rows})"
                 f" by make_monotonic() - check the data. Check \n{df_wrong}"  # {', '.join(sorted(dates_wrong))}"
             )
 
@@ -64,6 +64,8 @@ def make_monotonic_new(
     # and therefore removes previous higher values.
     df = df.sort_values(column_date)
     df_before = df.copy()
+
+    locations = set(df["location"])
 
     # Build and apply mask
     # diff = df[column_metrics].ffill().fillna(0).diff()
@@ -92,9 +94,9 @@ def make_monotonic_new(
             length_chunks = [str(yy) for yy in y[exceed].tolist()]
             dates_chunks = sorted(df_before.loc[exceed, "date"].tolist())
             raise Exception(
-                f"{num_chunks} chunks of lengths {', '.join(length_chunks)} have been NaNed for metric {metric}. That"
+                f"{num_chunks} chunks of lengths {', '.join(length_chunks)} would be NaNed for metric {metric}. That"
                 f" is more than maximum allowed ({max_removed_rows_per_chunk}) by make_monotonic() - check the data."
-                f" Check dates {dates_chunks}"
+                f" Check dates {dates_chunks}. Location(s) affected: {locations}"
             )
     # Drop rows with all-None values
     df = df.dropna(subset=column_metrics, how="all")
