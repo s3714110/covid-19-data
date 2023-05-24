@@ -44,12 +44,14 @@ class HongKong(CountryVaxBase):
                 "Sinovac 4th dose",
                 "Sinovac 5th dose",
                 "Sinovac 6th dose",
+                'Sinovac 7th dose',
                 "BioNTech 1st dose",
                 "BioNTech 2nd dose",
                 "BioNTech 3rd dose",
                 "BioNTech 4th dose",
                 "BioNTech 5th dose",
                 "BioNTech 6th dose",
+                'BioNTech 7th dose',
             ],
         )
         return df
