@@ -53,6 +53,8 @@ pipeline:
         - Greenland # No longer publishing data
         - Kosovo # Page not available
         - Turkey # Blocked external IP
+        - Curacao # Moved to PAHO
+        - Australia # Moved to WHO
     process:
       skip_complete:
         - Pitcairn

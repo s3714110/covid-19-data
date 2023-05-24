@@ -20,6 +20,10 @@ ADDITIONAL_VACCINES_USED = {
     "Burundi": ["Johnson&Johnson"],
 }
 
+# Add here metrics to ignore for certain countries
+METRICS_IGNORE = {
+    "Australia": ["total_boosters"]
+}
 
 class WHO(CountryVaxBase):
     location = "WHO"
@@ -74,6 +78,7 @@ class WHO(CountryVaxBase):
 
         - Countries not coming from OWID (avoid loop)
         - Rows with total_vaccinations >= people_vaccinated >= people_fully_vaccinated
+        - Only preserve countries which are in the WHO_COUNTRIES dict (those set in the config file)
         """
         df = df[df.DATA_SOURCE == "REPORTING"].copy()
         mask_1 = (
@@ -136,6 +141,12 @@ class WHO(CountryVaxBase):
     def pipe_add_boosters(self, df: pd.DataFrame) -> pd.DataFrame:
         return add_latest_from_acdc(df, ["total_boosters"], priority=True)
 
+    def filter_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
+        for location, metrics in METRICS_IGNORE.items():
+            print(location)
+            df.loc[df.location == location, metrics] = pd.NA
+        return df
+
     def increment_countries(self, df: pd.DataFrame):
         locations = set(df.location)
         for location in locations:
@@ -156,6 +167,7 @@ class WHO(CountryVaxBase):
             .pipe(self.pipe_vaccine_checks)
             .pipe(self.pipe_map_vaccines)
             .pipe(self.pipe_calculate_metrics)
+            .pipe(self.filter_metrics)
             # .pipe(self.pipe_add_boosters)
         )
 
