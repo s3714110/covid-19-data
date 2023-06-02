@@ -1,4 +1,13 @@
 date,indicator,value,entity
+2020-03-06,Daily hospital occupancy,1.0,Belgium
+2020-03-07,Daily hospital occupancy,0.0,Belgium
+2020-03-08,Daily hospital occupancy,0.0,Belgium
+2020-03-09,Daily hospital occupancy,1.0,Belgium
+2020-03-10,Daily hospital occupancy,7.0,Belgium
+2020-03-11,Daily hospital occupancy,14.0,Belgium
+2020-03-12,Daily hospital occupancy,64.0,Belgium
+2020-03-13,Daily hospital occupancy,101.0,Belgium
+2020-03-14,Daily hospital occupancy,184.0,Belgium
 2020-03-15,Daily hospital occupancy,263.0,Belgium
 2020-03-16,Daily hospital occupancy,370.0,Belgium
 2020-03-17,Daily hospital occupancy,493.0,Belgium
@@ -1128,42 +1137,58 @@ date,indicator,value,entity
 2023-04-15,Daily hospital occupancy,1199.0,Belgium
 2023-04-16,Daily hospital occupancy,1199.0,Belgium
 2023-04-17,Daily hospital occupancy,1223.0,Belgium
-2023-04-18,Daily hospital occupancy,1185.0,Belgium
-2023-04-19,Daily hospital occupancy,1133.0,Belgium
-2023-04-20,Daily hospital occupancy,1063.0,Belgium
-2023-04-21,Daily hospital occupancy,1026.0,Belgium
-2023-04-22,Daily hospital occupancy,993.0,Belgium
-2023-04-23,Daily hospital occupancy,991.0,Belgium
-2023-04-24,Daily hospital occupancy,1003.0,Belgium
-2023-04-25,Daily hospital occupancy,965.0,Belgium
-2023-04-26,Daily hospital occupancy,953.0,Belgium
-2023-04-27,Daily hospital occupancy,914.0,Belgium
-2023-04-28,Daily hospital occupancy,867.0,Belgium
-2023-04-29,Daily hospital occupancy,812.0,Belgium
-2023-04-30,Daily hospital occupancy,813.0,Belgium
-2023-05-01,Daily hospital occupancy,821.0,Belgium
-2023-05-02,Daily hospital occupancy,836.0,Belgium
-2023-05-03,Daily hospital occupancy,774.0,Belgium
-2023-05-04,Daily hospital occupancy,743.0,Belgium
-2023-05-05,Daily hospital occupancy,697.0,Belgium
-2023-05-06,Daily hospital occupancy,680.0,Belgium
-2023-05-07,Daily hospital occupancy,690.0,Belgium
-2023-05-08,Daily hospital occupancy,699.0,Belgium
-2023-05-09,Daily hospital occupancy,660.0,Belgium
-2023-05-10,Daily hospital occupancy,688.0,Belgium
-2023-05-11,Daily hospital occupancy,631.0,Belgium
-2023-05-12,Daily hospital occupancy,594.0,Belgium
-2023-05-13,Daily hospital occupancy,572.0,Belgium
-2023-05-14,Daily hospital occupancy,581.0,Belgium
-2023-05-15,Daily hospital occupancy,589.0,Belgium
-2023-05-16,Daily hospital occupancy,563.0,Belgium
+2023-04-18,Daily hospital occupancy,1184.0,Belgium
+2023-04-19,Daily hospital occupancy,1132.0,Belgium
+2023-04-20,Daily hospital occupancy,1061.0,Belgium
+2023-04-21,Daily hospital occupancy,1022.0,Belgium
+2023-04-22,Daily hospital occupancy,989.0,Belgium
+2023-04-23,Daily hospital occupancy,987.0,Belgium
+2023-04-24,Daily hospital occupancy,999.0,Belgium
+2023-04-25,Daily hospital occupancy,960.0,Belgium
+2023-04-26,Daily hospital occupancy,948.0,Belgium
+2023-04-27,Daily hospital occupancy,909.0,Belgium
+2023-04-28,Daily hospital occupancy,861.0,Belgium
+2023-04-29,Daily hospital occupancy,806.0,Belgium
+2023-04-30,Daily hospital occupancy,807.0,Belgium
+2023-05-01,Daily hospital occupancy,815.0,Belgium
+2023-05-02,Daily hospital occupancy,830.0,Belgium
+2023-05-03,Daily hospital occupancy,768.0,Belgium
+2023-05-04,Daily hospital occupancy,738.0,Belgium
+2023-05-05,Daily hospital occupancy,692.0,Belgium
+2023-05-06,Daily hospital occupancy,675.0,Belgium
+2023-05-07,Daily hospital occupancy,685.0,Belgium
+2023-05-08,Daily hospital occupancy,694.0,Belgium
+2023-05-09,Daily hospital occupancy,655.0,Belgium
+2023-05-10,Daily hospital occupancy,683.0,Belgium
+2023-05-11,Daily hospital occupancy,626.0,Belgium
+2023-05-12,Daily hospital occupancy,589.0,Belgium
+2023-05-13,Daily hospital occupancy,568.0,Belgium
+2023-05-14,Daily hospital occupancy,573.0,Belgium
+2023-05-15,Daily hospital occupancy,582.0,Belgium
+2023-05-16,Daily hospital occupancy,555.0,Belgium
 2023-05-17,Daily hospital occupancy,0.0,Belgium
 2023-05-18,Daily hospital occupancy,0.0,Belgium
 2023-05-19,Daily hospital occupancy,0.0,Belgium
 2023-05-20,Daily hospital occupancy,0.0,Belgium
 2023-05-21,Daily hospital occupancy,0.0,Belgium
 2023-05-22,Daily hospital occupancy,0.0,Belgium
-2023-05-23,Daily hospital occupancy,450.0,Belgium
+2023-05-23,Daily hospital occupancy,401.0,Belgium
+2023-05-24,Daily hospital occupancy,0.0,Belgium
+2023-05-25,Daily hospital occupancy,0.0,Belgium
+2023-05-26,Daily hospital occupancy,0.0,Belgium
+2023-05-27,Daily hospital occupancy,0.0,Belgium
+2023-05-28,Daily hospital occupancy,0.0,Belgium
+2023-05-29,Daily hospital occupancy,0.0,Belgium
+2023-05-30,Daily hospital occupancy,337.0,Belgium
+2020-03-06,Daily ICU occupancy,0.0,Belgium
+2020-03-07,Daily ICU occupancy,0.0,Belgium
+2020-03-08,Daily ICU occupancy,0.0,Belgium
+2020-03-09,Daily ICU occupancy,0.0,Belgium
+2020-03-10,Daily ICU occupancy,0.0,Belgium
+2020-03-11,Daily ICU occupancy,2.0,Belgium
+2020-03-12,Daily ICU occupancy,15.0,Belgium
+2020-03-13,Daily ICU occupancy,26.0,Belgium
+2020-03-14,Daily ICU occupancy,35.0,Belgium
 2020-03-15,Daily ICU occupancy,53.0,Belgium
 2020-03-16,Daily ICU occupancy,79.0,Belgium
 2020-03-17,Daily ICU occupancy,100.0,Belgium
@@ -2297,38 +2322,54 @@ date,indicator,value,entity
 2023-04-19,Daily ICU occupancy,73.0,Belgium
 2023-04-20,Daily ICU occupancy,61.0,Belgium
 2023-04-21,Daily ICU occupancy,60.0,Belgium
-2023-04-22,Daily ICU occupancy,65.0,Belgium
-2023-04-23,Daily ICU occupancy,60.0,Belgium
-2023-04-24,Daily ICU occupancy,60.0,Belgium
-2023-04-25,Daily ICU occupancy,60.0,Belgium
-2023-04-26,Daily ICU occupancy,51.0,Belgium
-2023-04-27,Daily ICU occupancy,51.0,Belgium
-2023-04-28,Daily ICU occupancy,50.0,Belgium
-2023-04-29,Daily ICU occupancy,44.0,Belgium
-2023-04-30,Daily ICU occupancy,48.0,Belgium
-2023-05-01,Daily ICU occupancy,50.0,Belgium
-2023-05-02,Daily ICU occupancy,45.0,Belgium
-2023-05-03,Daily ICU occupancy,51.0,Belgium
-2023-05-04,Daily ICU occupancy,51.0,Belgium
-2023-05-05,Daily ICU occupancy,46.0,Belgium
-2023-05-06,Daily ICU occupancy,44.0,Belgium
-2023-05-07,Daily ICU occupancy,47.0,Belgium
-2023-05-08,Daily ICU occupancy,49.0,Belgium
-2023-05-09,Daily ICU occupancy,41.0,Belgium
-2023-05-10,Daily ICU occupancy,37.0,Belgium
-2023-05-11,Daily ICU occupancy,36.0,Belgium
-2023-05-12,Daily ICU occupancy,31.0,Belgium
-2023-05-13,Daily ICU occupancy,39.0,Belgium
-2023-05-14,Daily ICU occupancy,42.0,Belgium
-2023-05-15,Daily ICU occupancy,44.0,Belgium
-2023-05-16,Daily ICU occupancy,43.0,Belgium
+2023-04-22,Daily ICU occupancy,64.0,Belgium
+2023-04-23,Daily ICU occupancy,59.0,Belgium
+2023-04-24,Daily ICU occupancy,59.0,Belgium
+2023-04-25,Daily ICU occupancy,59.0,Belgium
+2023-04-26,Daily ICU occupancy,50.0,Belgium
+2023-04-27,Daily ICU occupancy,50.0,Belgium
+2023-04-28,Daily ICU occupancy,49.0,Belgium
+2023-04-29,Daily ICU occupancy,43.0,Belgium
+2023-04-30,Daily ICU occupancy,47.0,Belgium
+2023-05-01,Daily ICU occupancy,49.0,Belgium
+2023-05-02,Daily ICU occupancy,44.0,Belgium
+2023-05-03,Daily ICU occupancy,50.0,Belgium
+2023-05-04,Daily ICU occupancy,50.0,Belgium
+2023-05-05,Daily ICU occupancy,45.0,Belgium
+2023-05-06,Daily ICU occupancy,43.0,Belgium
+2023-05-07,Daily ICU occupancy,46.0,Belgium
+2023-05-08,Daily ICU occupancy,48.0,Belgium
+2023-05-09,Daily ICU occupancy,40.0,Belgium
+2023-05-10,Daily ICU occupancy,36.0,Belgium
+2023-05-11,Daily ICU occupancy,35.0,Belgium
+2023-05-12,Daily ICU occupancy,30.0,Belgium
+2023-05-13,Daily ICU occupancy,38.0,Belgium
+2023-05-14,Daily ICU occupancy,40.0,Belgium
+2023-05-15,Daily ICU occupancy,42.0,Belgium
+2023-05-16,Daily ICU occupancy,41.0,Belgium
 2023-05-17,Daily ICU occupancy,0.0,Belgium
 2023-05-18,Daily ICU occupancy,0.0,Belgium
 2023-05-19,Daily ICU occupancy,0.0,Belgium
 2023-05-20,Daily ICU occupancy,0.0,Belgium
 2023-05-21,Daily ICU occupancy,0.0,Belgium
 2023-05-22,Daily ICU occupancy,0.0,Belgium
-2023-05-23,Daily ICU occupancy,27.0,Belgium
+2023-05-23,Daily ICU occupancy,29.0,Belgium
+2023-05-24,Daily ICU occupancy,0.0,Belgium
+2023-05-25,Daily ICU occupancy,0.0,Belgium
+2023-05-26,Daily ICU occupancy,0.0,Belgium
+2023-05-27,Daily ICU occupancy,0.0,Belgium
+2023-05-28,Daily ICU occupancy,0.0,Belgium
+2023-05-29,Daily ICU occupancy,0.0,Belgium
+2023-05-30,Daily ICU occupancy,30.0,Belgium
+2020-03-12,Weekly new hospital admissions,34.0,Belgium
+2020-03-13,Weekly new hospital admissions,95.0,Belgium
+2020-03-14,Weekly new hospital admissions,151.0,Belgium
+2020-03-15,Weekly new hospital admissions,221.0,Belgium
+2020-03-16,Weekly new hospital admissions,308.0,Belgium
+2020-03-17,Weekly new hospital admissions,433.0,Belgium
+2020-03-18,Weekly new hospital admissions,605.0,Belgium
+2020-03-19,Weekly new hospital admissions,792.0,Belgium
+2020-03-20,Weekly new hospital admissions,1025.0,Belgium
 2020-03-21,Weekly new hospital admissions,1291.0,Belgium
 2020-03-22,Weekly new hospital admissions,1499.0,Belgium
 2020-03-23,Weekly new hospital admissions,1679.0,Belgium
@@ -3468,23 +3509,30 @@ date,indicator,value,entity
 2023-05-01,Weekly new hospital admissions,346.0,Belgium
 2023-05-02,Weekly new hospital admissions,327.0,Belgium
 2023-05-03,Weekly new hospital admissions,312.0,Belgium
-2023-05-04,Weekly new hospital admissions,320.0,Belgium
-2023-05-05,Weekly new hospital admissions,315.0,Belgium
-2023-05-06,Weekly new hospital admissions,321.0,Belgium
-2023-05-07,Weekly new hospital admissions,323.0,Belgium
-2023-05-08,Weekly new hospital admissions,330.0,Belgium
-2023-05-09,Weekly new hospital admissions,322.0,Belgium
-2023-05-10,Weekly new hospital admissions,333.0,Belgium
-2023-05-11,Weekly new hospital admissions,312.0,Belgium
-2023-05-12,Weekly new hospital admissions,302.0,Belgium
-2023-05-13,Weekly new hospital admissions,284.0,Belgium
-2023-05-14,Weekly new hospital admissions,266.0,Belgium
-2023-05-15,Weekly new hospital admissions,249.0,Belgium
-2023-05-16,Weekly new hospital admissions,261.0,Belgium
-2023-05-17,Weekly new hospital admissions,273.0,Belgium
-2023-05-18,Weekly new hospital admissions,293.0,Belgium
-2023-05-19,Weekly new hospital admissions,304.0,Belgium
-2023-05-20,Weekly new hospital admissions,319.0,Belgium
-2023-05-21,Weekly new hospital admissions,333.0,Belgium
-2023-05-22,Weekly new hospital admissions,346.0,Belgium
-2023-05-23,Weekly new hospital admissions,328.0,Belgium
+2023-05-04,Weekly new hospital admissions,322.0,Belgium
+2023-05-05,Weekly new hospital admissions,317.0,Belgium
+2023-05-06,Weekly new hospital admissions,323.0,Belgium
+2023-05-07,Weekly new hospital admissions,325.0,Belgium
+2023-05-08,Weekly new hospital admissions,332.0,Belgium
+2023-05-09,Weekly new hospital admissions,326.0,Belgium
+2023-05-10,Weekly new hospital admissions,337.0,Belgium
+2023-05-11,Weekly new hospital admissions,314.0,Belgium
+2023-05-12,Weekly new hospital admissions,305.0,Belgium
+2023-05-13,Weekly new hospital admissions,288.0,Belgium
+2023-05-14,Weekly new hospital admissions,270.0,Belgium
+2023-05-15,Weekly new hospital admissions,254.0,Belgium
+2023-05-16,Weekly new hospital admissions,267.0,Belgium
+2023-05-17,Weekly new hospital admissions,285.0,Belgium
+2023-05-18,Weekly new hospital admissions,307.0,Belgium
+2023-05-19,Weekly new hospital admissions,322.0,Belgium
+2023-05-20,Weekly new hospital admissions,341.0,Belgium
+2023-05-21,Weekly new hospital admissions,355.0,Belgium
+2023-05-22,Weekly new hospital admissions,372.0,Belgium
+2023-05-23,Weekly new hospital admissions,369.0,Belgium
+2023-05-24,Weekly new hospital admissions,342.0,Belgium
+2023-05-25,Weekly new hospital admissions,336.0,Belgium
+2023-05-26,Weekly new hospital admissions,337.0,Belgium
+2023-05-27,Weekly new hospital admissions,316.0,Belgium
+2023-05-28,Weekly new hospital admissions,319.0,Belgium
+2023-05-29,Weekly new hospital admissions,321.0,Belgium
+2023-05-30,Weekly new hospital admissions,287.0,Belgium
