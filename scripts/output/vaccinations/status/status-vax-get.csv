@@ -85,40 +85,40 @@ ValueError: Unknown sheets: {'５回目_一般接種回数', '5.8以降接種_�
 cowidev.vax.batch.jersey,3.0,True,2023-06-02T07:00:10,,
 cowidev.vax.batch.latvia,53.45,True,2023-06-02T07:01:00,,
 cowidev.vax.batch.lithuania,4.51,True,2023-06-02T07:00:11,,
-cowidev.vax.batch.luxembourg,0.8,False,2023-06-02T07:02:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.batch.luxembourg,1.17,False,2023-06-02T10:54:37,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 88, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 88, in main
     Luxembourg().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 83, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 83, in export
     df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 78, in pipeline
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 78, in pipeline
     .pipe(self.pipe_correct_time_series)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
     return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
     return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 47, in pipe_correct_time_series
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 47, in pipe_correct_time_series
     df = add_latest_who_values(df, ""Luxembourg"", [""people_fully_vaccinated""])
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
     who = pd.read_csv(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
     return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
     return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
     parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
     self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
     return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
     self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
     raise ValueError(
 ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
 ","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
@@ -298,23 +298,7 @@ cowidev.vax.incremental.croatia,0.94,True,2023-06-02T07:00:12,,
 cowidev.vax.incremental.cuba,13.18,True,2023-06-02T07:00:24,,
 cowidev.vax.incremental.curacao,,,2023-06-02T07:00:11,,
 cowidev.vax.incremental.cyprus,3.86,True,2023-06-02T07:00:15,,
-cowidev.vax.incremental.dominican_republic,12.53,False,2023-06-02T07:03:19,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 91, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 81, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.83,True,2023-06-02T10:55:49,,
 cowidev.vax.incremental.el_salvador,11.44,True,2023-06-02T07:00:23,,
 cowidev.vax.incremental.faeroe_islands,1.35,True,2023-06-02T07:00:15,,
 cowidev.vax.incremental.fiji,0.0,True,2023-06-02T07:00:15,,
@@ -368,27 +352,7 @@ cowidev.vax.incremental.myanmar,,,2023-06-02T07:00:20,,
 cowidev.vax.incremental.nepal,,,2023-06-02T07:00:20,,
 cowidev.vax.incremental.north_macedonia,,,2023-06-02T07:00:20,,
 cowidev.vax.incremental.northern_cyprus,5.35,True,2023-06-02T07:00:25,,
-cowidev.vax.incremental.paho,83.06,False,2023-06-02T07:04:51,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 167, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 122, in pipe_check_columns
-    raise ValueError(f""Missing column fields: {columns_missing}. Present columns are: {df.columns}"")
-ValueError: Missing column fields: {'Total doses', '1st additional dose', 'Country/ Territory', 'First dose', 'Country code', '2nd additional dose', 'Single dose', 'Second dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')
-","Missing column fields: {'Total doses', '1st additional dose', 'Country/ Territory', 'First dose', 'Country code', '2nd additional dose', 'Single dose', 'Second dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')"
+cowidev.vax.incremental.paho,76.2,True,2023-06-02T10:56:52,,
 cowidev.vax.incremental.pakistan,,,2023-06-02T07:00:22,,
 cowidev.vax.incremental.philippines,,,2023-06-02T07:00:22,,
 cowidev.vax.incremental.poland,1.87,True,2023-06-02T07:00:24,,
@@ -419,29 +383,7 @@ cowidev.vax.incremental.thailand,5.97,True,2023-06-02T07:00:30,,
 cowidev.vax.incremental.turkey,,,2023-06-02T07:00:24,,
 cowidev.vax.incremental.united_arab_emirates,,,2023-06-02T07:00:24,,
 cowidev.vax.incremental.vietnam,,,2023-06-02T07:00:24,,
-cowidev.vax.incremental.who,0.48,False,2023-06-02T07:04:57,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py"", line 180, in main
-    WHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py"", line 175, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py"", line 164, in pipeline
-    df.pipe(self.pipe_checks)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py"", line 42, in pipe_checks
-    check_known_columns(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 166, in check_known_columns
-    raise Exception(f""Unknown column(s) found: {unknown_cols}"")
-Exception: Unknown column(s) found: {'PERSONS_LAST_DOSE', 'PERSONS_LAST_DOSE_PER100'}
-","Unknown column(s) found: {'PERSONS_LAST_DOSE', 'PERSONS_LAST_DOSE_PER100'}"
+cowidev.vax.incremental.who,2.53,True,2023-06-02T11:36:25,,
 cowidev.vax.incremental.zambia,1.05,False,2023-06-02T07:04:58,"Traceback (most recent call last):
   File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
