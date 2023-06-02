@@ -5,7 +5,7 @@ This file shows the latest status of the data pipeline.
 ## Vaccinations
 ### Get (scraping)
 
-`14/112` scripts failed, `36/112` were skipped. Latest update was `2023-06-02T07:04:58`.
+`6/112` scripts failed, `36/112` were skipped. Latest update was `2023-06-02T11:39:23`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -19,32 +19,11 @@ This file shows the latest status of the data pipeline.
   </thead>
   <tbody>
     <tr>
-      <td>cowidev.vax.incremental.zambia</td>
-      <td>❌</td>
-      <td>2023-06-02T07:04:58</td>
-      <td>1.05</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py", line 74, in main<br>    Zambia().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py", line 69, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py", line 64, in pipeline<br>    .pipe(add_latest_who_values, "Zambia", ["people_vaccinated"])<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 89, in add_latest_who_values<br>    who = pd.read_csv(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__<br>    self._validate_usecols_names(usecols, self.orig_names)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 866, in _validate_usecols_names<br>    raise ValueError(<br>ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.incremental.taiwan</td>
       <td>❌</td>
       <td>2023-06-02T07:04:57</td>
       <td>6.01</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 184, in main<br>    Taiwan().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 170, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 38, in read<br>    data = self.parse_data(df, soup)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 122, in parse_data<br>    "date": self._parse_date(soup),<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py", line 156, in _parse_date<br>    date_str = re.search(regex, date_raw).group(1)<br>AttributeError: 'NoneType' object has no attribute 'group'<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.who</td>
-      <td>❌</td>
-      <td>2023-06-02T07:04:57</td>
-      <td>0.48</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py", line 180, in main<br>    WHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py", line 175, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py", line 164, in pipeline<br>    df.pipe(self.pipe_checks)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/who.py", line 42, in pipe_checks<br>    check_known_columns(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py", line 166, in check_known_columns<br>    raise Exception(f"Unknown column(s) found: {unknown_cols}")<br>Exception: Unknown column(s) found: {'PERSONS_LAST_DOSE', 'PERSONS_LAST_DOSE_PER100'}<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.paho</td>
-      <td>❌</td>
-      <td>2023-06-02T07:04:51</td>
-      <td>83.06</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 195, in main<br>    PAHO().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 190, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 167, in pipeline<br>    df.pipe(self.pipe_check_columns)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py", line 122, in pipe_check_columns<br>    raise ValueError(f"Missing column fields: {columns_missing}. Present columns are: {df.columns}")<br>ValueError: Missing column fields: {'Total doses', '1st additional dose', 'Country/ Territory', 'First dose', 'Country code', '2nd additional dose', 'Single dose', 'Second dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.incremental.macao</td>
@@ -54,46 +33,11 @@ This file shows the latest status of the data pipeline.
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 90, in main<br>    Macao().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 75, in export<br>    data = self.read()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 23, in read<br>    iframe_url = self._get_iframe_url(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py", line 31, in _get_iframe_url<br>    elem = driver.find_element_by_id("ICovid19Monitor")<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 360, in find_element_by_id<br>    return self.find_element(by=By.ID, value=id_)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 976, in find_element<br>    return self.execute(Command.FIND_ELEMENT, {<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py", line 321, in execute<br>    self.error_handler.check_response(response)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py", line 242, in check_response<br>    raise exception_class(message, screen, stacktrace)<br>selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"css selector","selector":"[id="ICovid19Monitor"]"}<br>  (Session info: headless chrome=113.0.5672.126)<br><br></pre></details></td>
     </tr>
     <tr>
-      <td>cowidev.vax.incremental.dominican_republic</td>
-      <td>❌</td>
-      <td>2023-06-02T07:03:19</td>
-      <td>12.53</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 112, in main<br>    DominicanRepublic().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 68, in export<br>    data = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 26, in read<br>    metrics = self._parse_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 35, in _parse_metrics<br>    metric_candidates = _find_potential_metrics(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 91, in _find_potential_metrics<br>    h3 = _find_h3(driver)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py", line 81, in _find_h3<br>    raise ValueError("More than one element found!")<br>ValueError: More than one element found!<br></pre></details></td>
-    </tr>
-    <tr>
       <td>cowidev.vax.batch.south_korea</td>
       <td>❌</td>
       <td>2023-06-02T07:03:06</td>
       <td>56.20</td>
       <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 209, in main<br>    SouthKorea().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 191, in export<br>    df_base = self.read().pipe(self.pipeline_base)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/south_korea.py", line 43, in read<br>    dfs = pd.read_html(to_proxy_url(self.source_url), encoding="utf-8")<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 1098, in read_html<br>    return _parse(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 906, in _parse<br>    tables = p.parse_tables()<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 222, in parse_tables<br>    tables = self._parse_tables(self._build_doc(), self.match, self.attrs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 745, in _build_doc<br>    raise e<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/html.py", line 726, in _build_doc<br>    with urlopen(self.io) as f:<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/common.py", line 212, in urlopen<br>    return urllib.request.urlopen(*args, **kwargs)<br>  File "/usr/lib/python3.10/urllib/request.py", line 216, in urlopen<br>    return opener.open(url, data, timeout)<br>  File "/usr/lib/python3.10/urllib/request.py", line 525, in open<br>    response = meth(req, response)<br>  File "/usr/lib/python3.10/urllib/request.py", line 634, in http_response<br>    response = self.parent.error(<br>  File "/usr/lib/python3.10/urllib/request.py", line 563, in error<br>    return self._call_chain(*args)<br>  File "/usr/lib/python3.10/urllib/request.py", line 496, in _call_chain<br>    result = func(*args)<br>  File "/usr/lib/python3.10/urllib/request.py", line 643, in http_error_default<br>    raise HTTPError(req.full_url, code, msg, hdrs, fp)<br>urllib.error.HTTPError: HTTP Error 500: Internal Server Error<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.incremental.bulgaria</td>
-      <td>❌</td>
-      <td>2023-06-02T07:03:06</td>
-      <td>0.92</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py", line 68, in main<br>    Bulgaria().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py", line 63, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py", line 59, in pipeline<br>    .pipe(add_latest_who_values, self.location, ["people_vaccinated"])<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 89, in add_latest_who_values<br>    who = pd.read_csv(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__<br>    self._validate_usecols_names(usecols, self.orig_names)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 866, in _validate_usecols_names<br>    raise ValueError(<br>ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.saudi_arabia</td>
-      <td>❌</td>
-      <td>2023-06-02T07:02:09</td>
-      <td>0.94</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py", line 82, in main<br>    SaudiArabia().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py", line 77, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py", line 59, in pipeline<br>    return df.pipe(self.make_monotonic).pipe(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 89, in add_latest_who_values<br>    who = pd.read_csv(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__<br>    self._validate_usecols_names(usecols, self.orig_names)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 866, in _validate_usecols_names<br>    raise ValueError(<br>ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.romania</td>
-      <td>❌</td>
-      <td>2023-06-02T07:02:08</td>
-      <td>2.36</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py", line 159, in main<br>    Romania().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py", line 144, in export<br>    df = df_base.copy().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py", line 126, in pipeline<br>    .pipe(add_latest_who_values, "Romania", ["people_vaccinated"])<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 89, in add_latest_who_values<br>    who = pd.read_csv(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__<br>    self._validate_usecols_names(usecols, self.orig_names)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 866, in _validate_usecols_names<br>    raise ValueError(<br>ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>cowidev.vax.batch.luxembourg</td>
-      <td>❌</td>
-      <td>2023-06-02T07:02:06</td>
-      <td>0.80</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py", line 47, in run<br>    module.main()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py", line 88, in main<br>    Luxembourg().export()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py", line 83, in export<br>    df = self.read().pipe(self.pipeline)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py", line 78, in pipeline<br>    .pipe(self.pipe_correct_time_series)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py", line 5430, in pipe<br>    return com.pipe(self, func, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py", line 471, in pipe<br>    return func(obj, *args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py", line 47, in pipe_correct_time_series<br>    df = add_latest_who_values(df, "Luxembourg", ["people_fully_vaccinated"])<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py", line 89, in add_latest_who_values<br>    who = pd.read_csv(<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py", line 311, in wrapper<br>    return func(*args, **kwargs)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 586, in read_csv<br>    return _read(filepath_or_buffer, kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 482, in _read<br>    parser = TextFileReader(filepath_or_buffer, **kwds)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 811, in __init__<br>    self._engine = self._make_engine(self.engine)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py", line 1040, in _make_engine<br>    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 135, in __init__<br>    self._validate_usecols_names(usecols, self.orig_names)<br>  File "/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py", line 866, in _validate_usecols_names<br>    raise ValueError(<br>ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']<br></pre></details></td>
     </tr>
     <tr>
       <td>cowidev.vax.batch.japan</td>
@@ -366,6 +310,62 @@ This file shows the latest status of the data pipeline.
       <td>⚠️</td>
       <td>2023-06-02T07:00:07</td>
       <td>NaN</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.romania</td>
+      <td>✅</td>
+      <td>2023-06-02T11:39:23</td>
+      <td>2.63</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.luxembourg</td>
+      <td>✅</td>
+      <td>2023-06-02T11:39:22</td>
+      <td>1.96</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.bulgaria</td>
+      <td>✅</td>
+      <td>2023-06-02T11:39:21</td>
+      <td>1.01</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.zambia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:39:21</td>
+      <td>0.98</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.batch.saudi_arabia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:39:21</td>
+      <td>0.97</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.who</td>
+      <td>✅</td>
+      <td>2023-06-02T11:36:25</td>
+      <td>2.53</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.paho</td>
+      <td>✅</td>
+      <td>2023-06-02T10:56:52</td>
+      <td>76.20</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>cowidev.vax.incremental.dominican_republic</td>
+      <td>✅</td>
+      <td>2023-06-02T10:55:49</td>
+      <td>12.83</td>
       <td></td>
     </tr>
     <tr>
@@ -808,7 +808,7 @@ This file shows the latest status of the data pipeline.
 
 ### Process (Checks)
 
-`4/223` processes failed, `0/223` were skipped. Latest update was `2023-06-02T07:05:08`.
+`2/223` processes failed, `0/223` were skipped. Latest update was `2023-06-02T11:50:19`.
 
 <table border="1" class="dataframe">
   <thead>
@@ -823,1339 +823,1339 @@ This file shows the latest status of the data pipeline.
     <tr>
       <td>United Kingdom</td>
       <td>❌</td>
-      <td>2023-06-02T07:05:08</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: United Kingdom -- Column people_vaccinated must be monotonically increasing! Check:<br>           location       date  ... people_fully_vaccinated total_boosters<br>437  United Kingdom 2022-03-23  ...                49341160       38701747<br>610  United Kingdom 2023-04-03  ...                42951064       33906503<br><br>[2 rows x 8 columns]<br></pre></details></td>
+      <td>2023-06-02T11:50:19</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: United Kingdom -- Column people_vaccinated must be monotonically increasing! Check:<br>           location       date                                       vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters<br>437  United Kingdom 2022-03-23  Moderna, Oxford/AstraZeneca, Pfizer/BioNTech  ...          52754119                 49341160        38701747<br>610  United Kingdom 2023-04-03  Moderna, Oxford/AstraZeneca, Pfizer/BioNTech  ...          45417090                 42951064        33906503<br><br>[2 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>New Zealand</td>
       <td>❌</td>
-      <td>2023-06-02T07:05:06</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 171, in check_metrics<br>    self._check_metrics_inequalities(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 209, in _check_metrics_inequalities<br>    raise ValueError(<br>ValueError: New Zealand -- people_vaccinated can't be < people_fully_vaccinated!<br>        location       date  ... people_fully_vaccinated total_boosters<br>792  New Zealand 2023-04-19  ...                 4303264        3616334<br>793  New Zealand 2023-04-20  ...                 4314635        3621501<br>794  New Zealand 2023-04-21  ...                 4324426        3626739<br>795  New Zealand 2023-04-22  ...                 4327657        3629325<br>796  New Zealand 2023-04-23  ...                 4328446        3630146<br>797  New Zealand 2023-04-24  ...                 4336847        3634962<br>798  New Zealand 2023-04-25  ...                 4337184        3635249<br>799  New Zealand 2023-04-26  ...                 4347391        3640084<br>800  New Zealand 2023-04-27  ...                 4357407        3645035<br>801  New Zealand 2023-04-28  ...                 4366398        3650036<br>802  New Zealand 2023-04-29  ...                 4369093        3652410<br>803  New Zealand 2023-04-30  ...                 4369725        3653233<br>804  New Zealand 2023-05-01  ...                 4376276        3656872<br>805  New Zealand 2023-05-02  ...                 4383698        3660870<br><br>[14 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Luxembourg</td>
-      <td>❌</td>
-      <td>2023-06-02T07:05:05</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 174, in check_metrics<br>    self._check_metrics_anomalies(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 216, in _check_metrics_anomalies<br>    self._check_anomalies(df, metric)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 238, in _check_anomalies<br>    raise ValueError(f"{self.location} -- Potential anomalies found ⚠️:\n{anomalies}")<br>ValueError: Luxembourg -- Potential anomalies found ⚠️:<br>        date  ...  people_fully_vaccinated_ratio<br>0 2023-05-14  ...                      13.883283<br><br>[1 rows x 4 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Guinea-Bissau</td>
-      <td>❌</td>
-      <td>2023-06-02T07:05:03</td>
-      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 169, in check_metrics<br>    self._check_metrics_monotonic(df)<br>  File "/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 185, in _check_metrics_monotonic<br>    raise ValueError(<br>ValueError: Guinea-Bissau -- Column total_boosters must be monotonically increasing! Check:<br>         location       date  ... people_fully_vaccinated total_boosters<br>57  Guinea-Bissau 2023-05-21  ...                  533741          48801<br><br>[1 rows x 8 columns]<br></pre></details></td>
-    </tr>
-    <tr>
-      <td>Tajikistan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tanzania</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Thailand</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Timor</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tokelau</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Togo</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tonga</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Trinidad and Tobago</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Tunisia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkey</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turkmenistan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Turks and Caicos Islands</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
+      <td>2023-06-02T11:50:16</td>
+      <td><details><summary>show</summary><pre>Traceback (most recent call last):<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/process.py", line 92, in _process_location_and_move_file<br>    df = process_location(df, monotonic_check_skip, anomaly_check_skip)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/vax/process/utils.py", line 57, in process_location<br>    country_df_sanity_checks(<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 72, in country_df_sanity_checks<br>    checker.run()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 252, in run<br>    self.check_metrics()<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 171, in check_metrics<br>    self._check_metrics_inequalities(df)<br>  File "/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/checks.py", line 209, in _check_metrics_inequalities<br>    raise ValueError(<br>ValueError: New Zealand -- people_vaccinated can't be < people_fully_vaccinated!<br>        location       date                                       vaccine  ... people_vaccinated  people_fully_vaccinated  total_boosters<br>792  New Zealand 2023-04-19  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4301938                  4303264         3616334<br>793  New Zealand 2023-04-20  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4301995                  4314635         3621501<br>794  New Zealand 2023-04-21  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302050                  4324426         3626739<br>795  New Zealand 2023-04-22  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302073                  4327657         3629325<br>796  New Zealand 2023-04-23  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302082                  4328446         3630146<br>797  New Zealand 2023-04-24  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302142                  4336847         3634962<br>798  New Zealand 2023-04-25  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302146                  4337184         3635249<br>799  New Zealand 2023-04-26  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302170                  4347391         3640084<br>800  New Zealand 2023-04-27  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302222                  4357407         3645035<br>801  New Zealand 2023-04-28  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302252                  4366398         3650036<br>802  New Zealand 2023-04-29  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302280                  4369093         3652410<br>803  New Zealand 2023-04-30  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302292                  4369725         3653233<br>804  New Zealand 2023-05-01  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302312                  4376276         3656872<br>805  New Zealand 2023-05-02  Novavax, Oxford/AstraZeneca, Pfizer/BioNTech  ...           4302330                  4383698         3660870<br><br>[14 rows x 8 columns]<br></pre></details></td>
     </tr>
     <tr>
       <td>Tuvalu</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Uganda</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Ukraine</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>United Arab Emirates</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>United States</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Uruguay</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Uzbekistan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Vanuatu</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Venezuela</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Vietnam</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Wales</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Wallis and Futuna</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Yemen</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Zambia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Zimbabwe</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:08</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saint Vincent and the Grenadines</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Samoa</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>San Marino</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Sao Tome and Principe</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Saudi Arabia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Scotland</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Senegal</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Serbia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:19</td>
       <td></td>
     </tr>
     <tr>
       <td>Seychelles</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Sierra Leone</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Singapore</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Sint Maarten (Dutch part)</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Slovakia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Slovenia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Solomon Islands</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Somalia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>South Africa</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>South Korea</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>South Sudan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Spain</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Sri Lanka</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Sudan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Suriname</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Sweden</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Switzerland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Syria</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>Taiwan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:07</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nicaragua</td>
+      <td>Tajikistan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
-      <td>Niger</td>
+      <td>Tanzania</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
-      <td>Nigeria</td>
+      <td>Thailand</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Timor</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tokelau</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Togo</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tonga</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Trinidad and Tobago</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Tunisia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Turkey</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Turkmenistan</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Turks and Caicos Islands</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:18</td>
       <td></td>
     </tr>
     <tr>
       <td>North Macedonia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Northern Cyprus</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Northern Ireland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Norway</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Niue</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Oman</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Pakistan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Palestine</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Panama</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Papua New Guinea</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Paraguay</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Peru</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Philippines</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Pitcairn</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Poland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Portugal</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Qatar</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Romania</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Russia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Rwanda</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Helena</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Kitts and Nevis</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Saint Lucia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:06</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Saint Vincent and the Grenadines</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Samoa</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>San Marino</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Sao Tome and Principe</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Saudi Arabia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Scotland</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Senegal</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Serbia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:17</td>
       <td></td>
     </tr>
     <tr>
       <td>Liberia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Libya</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Liechtenstein</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Lithuania</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Luxembourg</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Macao</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Madagascar</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Malawi</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Malaysia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Maldives</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mali</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Malta</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritania</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mauritius</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mexico</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Moldova</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Monaco</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mongolia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Montenegro</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Montserrat</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Morocco</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Mozambique</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Myanmar</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Namibia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Nauru</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Nepal</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Netherlands</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>New Caledonia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:05</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
-      <td>Honduras</td>
+      <td>Nicaragua</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
-      <td>Hong Kong</td>
+      <td>Niger</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
-      <td>Hungary</td>
+      <td>Nigeria</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Iceland</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>India</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Indonesia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Iran</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Iraq</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ireland</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Isle of Man</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Israel</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Italy</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Jamaica</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Japan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Jersey</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Jordan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kazakhstan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kenya</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kiribati</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kosovo</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kuwait</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Kyrgyzstan</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Laos</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Latvia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Lebanon</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Lesotho</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:04</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>El Salvador</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>England</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Equatorial Guinea</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Estonia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Eswatini</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ethiopia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Faeroe Islands</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Falkland Islands</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Fiji</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Finland</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>France</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>French Polynesia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Gabon</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Gambia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Georgia</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Germany</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Ghana</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Gibraltar</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Greece</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Greenland</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Grenada</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Guatemala</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Guernsey</td>
-      <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
+      <td>2023-06-02T11:50:16</td>
       <td></td>
     </tr>
     <tr>
       <td>Guinea</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guinea-Bissau</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
       <td>Guyana</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
       <td>Haiti</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:03</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cambodia</td>
+      <td>Honduras</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cameroon</td>
+      <td>Hong Kong</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Canada</td>
+      <td>Hungary</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cape Verde</td>
+      <td>Iceland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cayman Islands</td>
+      <td>India</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Central African Republic</td>
+      <td>Indonesia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Chad</td>
+      <td>Iran</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Chile</td>
+      <td>Iraq</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>China</td>
+      <td>Ireland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Colombia</td>
+      <td>Isle of Man</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Comoros</td>
+      <td>Israel</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Congo</td>
+      <td>Italy</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cook Islands</td>
+      <td>Jamaica</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Costa Rica</td>
+      <td>Japan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cote d'Ivoire</td>
+      <td>Jersey</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Croatia</td>
+      <td>Jordan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cuba</td>
+      <td>Kazakhstan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Curacao</td>
+      <td>Kenya</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
-      <td>Cyprus</td>
+      <td>Kiribati</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kosovo</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kuwait</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Kyrgyzstan</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Laos</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Latvia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lebanon</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Lesotho</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:15</td>
       <td></td>
     </tr>
     <tr>
       <td>Czechia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Democratic Republic of Congo</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Denmark</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Djibouti</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Dominica</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Dominican Republic</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Ecuador</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Egypt</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:02</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Argentina</td>
+      <td>El Salvador</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Armenia</td>
+      <td>England</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Aruba</td>
+      <td>Equatorial Guinea</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Australia</td>
+      <td>Estonia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Austria</td>
+      <td>Eswatini</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Azerbaijan</td>
+      <td>Ethiopia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Bahamas</td>
+      <td>Faeroe Islands</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Bahrain</td>
+      <td>Falkland Islands</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Bangladesh</td>
+      <td>Fiji</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Barbados</td>
+      <td>Finland</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Belarus</td>
+      <td>France</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Belgium</td>
+      <td>French Polynesia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Belize</td>
+      <td>Gabon</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
-      <td>Benin</td>
+      <td>Gambia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Georgia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Germany</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ghana</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Gibraltar</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Greece</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Greenland</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Grenada</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guatemala</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Guernsey</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:14</td>
       <td></td>
     </tr>
     <tr>
       <td>Bermuda</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Bhutan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Bolivia</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Bonaire Sint Eustatius and Saba</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Bosnia and Herzegovina</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Botswana</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Brazil</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>British Virgin Islands</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Brunei</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Bulgaria</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Burkina Faso</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Burundi</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:01</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cambodia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cameroon</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Canada</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cape Verde</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cayman Islands</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Central African Republic</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Chad</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Chile</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>China</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Colombia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Comoros</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Congo</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cook Islands</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Costa Rica</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cote d'Ivoire</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Croatia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cuba</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Curacao</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Cyprus</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:13</td>
       <td></td>
     </tr>
     <tr>
       <td>Afghanistan</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Albania</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Algeria</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Andorra</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Angola</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Anguilla</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
     <tr>
       <td>Antigua and Barbuda</td>
       <td>✅</td>
-      <td>2023-06-02T07:05:00</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Argentina</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Armenia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Aruba</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Australia</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Austria</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Azerbaijan</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bahamas</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bahrain</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Bangladesh</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Barbados</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belarus</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belgium</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Belize</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Benin</td>
+      <td>✅</td>
+      <td>2023-06-02T11:50:12</td>
       <td></td>
     </tr>
   </tbody>
