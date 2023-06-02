@@ -18,6 +18,7 @@ vaccines:
       - "AstraZeneca - AZD1222"
       - "AstraZeneca - Vaxzevria"
       - "SII - Covishield"
+      - "Oxford/AstraZeneca"
   - owid_name: "Sinopharm/Beijing"
     org_name:
       - "Beijing CNBG - BBIBP-CorV"
@@ -38,6 +39,7 @@ vaccines:
     org_name:
       - "Gamaleya - Sputnik V"
       - "Gamaleya - Gam-Covid-Vac"
+      - "Sputnik V"
   - owid_name: "Sputnik Light"
     org_name: "Gamaleya - Sputnik-Light"
   - owid_name: "Johnson&Johnson"
@@ -64,13 +66,16 @@ vaccines:
       - "Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.1"
       - "Pfizer BioNTech - Comirnaty Bivalent Original/Omicron BA.4/BA.5"
       - "Pfizer BioNTech - Comirnaty Bivalent Original/Omicron - Generic"
+      - "Pfizer/BioNTech"
   - owid_name: "QazVac"
     org_name:
       - "QazVac"
       - "RIBSP - QazCovid"
       - "RIBSP - QazVac"
   - owid_name: "Sinovac"
-    org_name: "Sinovac - CoronaVac"
+    org_name: 
+      - "Sinovac - CoronaVac"
+      - "Sinovac"
   - owid_name: "Soberana02"
     org_name:
       - "Soberana02"

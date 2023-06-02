@@ -28,15 +28,20 @@ METRICS_IGNORE = {
 class WHO(CountryVaxBase):
     location = "WHO"
     source_url = "https://covid19.who.int/who-data/vaccination-data.csv"
+    source_url_meta = "https://covid19.who.int/who-data/vaccination-metadata.csv"
     source_url_ref = "https://covid19.who.int/"
     rename_columns = {
         "DATE_UPDATED": "date",
         "COUNTRY": "location",
         "VACCINES_USED": "vaccine",
+        "VACCINE_NAME": "vaccine",
     }
 
     def read(self) -> pd.DataFrame:
         return pd.read_csv(self.source_url)
+
+    def read_meta(self) -> pd.DataFrame:
+        return pd.read_csv(self.source_url_meta)
 
     def pipe_checks(self, df: pd.DataFrame) -> pd.DataFrame:
         check_known_columns(
@@ -46,13 +51,13 @@ class WHO(CountryVaxBase):
                 "WHO_REGION",
                 "ISO3",
                 "PERSONS_VACCINATED_1PLUS_DOSE_PER100",
-                "PERSONS_FULLY_VACCINATED",
+                "PERSONS_LAST_DOSE",
                 "DATA_SOURCE",
                 "TOTAL_VACCINATIONS",
                 "NUMBER_VACCINES_TYPES_USED",
                 "TOTAL_VACCINATIONS_PER100",
                 "FIRST_VACCINE_DATE",
-                "PERSONS_FULLY_VACCINATED_PER100",
+                "PERSONS_LAST_DOSE_PER100",
                 "PERSONS_VACCINATED_1PLUS_DOSE",
                 "VACCINES_USED",
                 "DATE_UPDATED",
@@ -84,28 +89,60 @@ class WHO(CountryVaxBase):
         mask_1 = (
             df.TOTAL_VACCINATIONS >= df.PERSONS_VACCINATED_1PLUS_DOSE
         ) | df.PERSONS_VACCINATED_1PLUS_DOSE.isnull()
-        mask_2 = (df.TOTAL_VACCINATIONS >= df.PERSONS_FULLY_VACCINATED) | df.PERSONS_FULLY_VACCINATED.isnull()
+        mask_2 = (df.TOTAL_VACCINATIONS >= df.PERSONS_LAST_DOSE) | df.PERSONS_LAST_DOSE.isnull()
         mask_3 = (
-            (df.PERSONS_VACCINATED_1PLUS_DOSE >= df.PERSONS_FULLY_VACCINATED)
+            (df.PERSONS_VACCINATED_1PLUS_DOSE >= df.PERSONS_LAST_DOSE)
             | df.PERSONS_VACCINATED_1PLUS_DOSE.isnull()
-            | df.PERSONS_FULLY_VACCINATED.isnull()
+            | df.PERSONS_LAST_DOSE.isnull()
         )
         df = df[(mask_1 & mask_2 & mask_3)]
         df = df[df.COUNTRY.isin(WHO_COUNTRIES.values())]
         return df
 
-    def pipe_vaccine_checks(self, df: pd.DataFrame) -> pd.DataFrame:
-        vaccines_used = set(df.VACCINES_USED.dropna().apply(lambda x: [xx.strip() for xx in x.split(",")]).sum())
+    def pipe_vaccines(self, df: pd.DataFrame, df_meta: pd.DataFrame) -> pd.DataFrame:
+        # Format metadata
+        df_meta = df_meta[df_meta["DATA_SOURCE"] == "REPORTING"]
+        df_meta = (
+            pd.DataFrame(df_meta.groupby("ISO3")["VACCINE_NAME"].apply(lambda x: ", ".join(x.unique()))).reset_index()
+        )
+
+        # Add metadata to main df, and run some checks
+        df = self._add_metadata_to_main_df(df, df_meta)
+
+        # Check
+        vaccines_used = set(df["VACCINE_NAME"].dropna().apply(lambda x: [xx.strip() for xx in x.split(",")]).sum())
         vaccines_unknown = vaccines_used.difference(set(WHO_VACCINES.keys()) | {"Unknown Vaccine"})
         if vaccines_unknown:
             raise ValueError(f"Unknown vaccines {vaccines_unknown}. Update `vax.utils.who.config` accordingly.")
         return df
 
+    def _add_metadata_to_main_df(self, df: pd.DataFrame, df_meta: pd.DataFrame):
+        # Checks (alignment between df and df_meta)
+        isos_df = set(df["ISO3"].unique())
+        isos_meta = set(df_meta["ISO3"].unique())
+        in_df = isos_df.difference(isos_meta)
+        if "BIH" in in_df:
+            df_meta = df_meta.append(
+                {
+                    "ISO3": "BIH", "VACCINE_NAME": "Oxford/AstraZeneca, Pfizer/BioNTech, Sinovac, Sputnik V"
+                },
+                ignore_index=True
+            )
+        isos_meta = set(df_meta["ISO3"].unique())
+        in_df = isos_df.difference(isos_meta)
+        if in_df:
+            raise ValueError(f"ISO3 codes in `df` but not in `df_meta`: {in_df}. Consequently, we can't get vaccine info for these countries!")
+        # Add metadata to main df
+        df = df.drop(columns=["VACCINES_USED"])
+        df = df.merge(df_meta[["ISO3", "VACCINE_NAME"]], on="ISO3", how="left")
+        return df
+
     def _map_vaccines_func(self, row) -> tuple:
         """Replace vaccine names and create column `only_2_doses`."""
-        if pd.isna(row.VACCINES_USED):
+        # print(row)
+        if pd.isna(row.VACCINE_NAME):
             raise ValueError("Vaccine field is NaN")
-        vaccines = pd.Series(row.VACCINES_USED.split(",")).str.strip()
+        vaccines = pd.Series(row.VACCINE_NAME.split(",")).str.strip()
         vaccines = vaccines.replace(WHO_VACCINES)
         only_2doses = all(-vaccines.isin(pd.Series(VACCINES_ONE_DOSE)))
 
@@ -123,12 +160,12 @@ class WHO(CountryVaxBase):
         calculated as total_vaccinations - people_vaccinated.
         Vaccines check
         """
-        df[["VACCINES_USED", "only_2doses"]] = df.apply(self._map_vaccines_func, axis=1)
+        df[["VACCINE_NAME", "only_2doses"]] = df.apply(self._map_vaccines_func, axis=1)
         return df
 
     def pipe_calculate_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         df[["people_vaccinated", "people_fully_vaccinated"]] = (
-            df[["PERSONS_VACCINATED_1PLUS_DOSE", "PERSONS_FULLY_VACCINATED"]].astype("Int64").fillna(pd.NA)
+            df[["PERSONS_VACCINATED_1PLUS_DOSE", "PERSONS_LAST_DOSE"]].astype("Int64").fillna(pd.NA)
         )
         df = df.assign(
             source_url=self.source_url_ref,
@@ -143,7 +180,6 @@ class WHO(CountryVaxBase):
 
     def filter_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         for location, metrics in METRICS_IGNORE.items():
-            print(location)
             df.loc[df.location == location, metrics] = pd.NA
         return df
 
@@ -159,12 +195,12 @@ class WHO(CountryVaxBase):
                 self.export_datafile(df_c, filename=location, attach=True, valid_cols_only=True)
                 # logger.info(f"\tcowidev.vax.incremental.who.{location}: SUCCESS ✅")
 
-    def pipeline(self, df: pd.DataFrame):
+    def pipeline(self, df: pd.DataFrame, df_meta: pd.DataFrame) -> pd.DataFrame:
         return (
             df.pipe(self.pipe_checks)
             .pipe(self.pipe_rename_countries)
             .pipe(self.pipe_filter_entries)
-            .pipe(self.pipe_vaccine_checks)
+            .pipe(self.pipe_vaccines, df_meta)
             .pipe(self.pipe_map_vaccines)
             .pipe(self.pipe_calculate_metrics)
             .pipe(self.filter_metrics)
@@ -172,7 +208,11 @@ class WHO(CountryVaxBase):
         )
 
     def export(self):
-        df = self.read().pipe(self.pipeline)
+        # Read data and metadata
+        df = self.read()
+        df_meta = self.read_meta()
+        # Process data
+        df = self.pipeline(df, df_meta)
         self.increment_countries(df)
 
 
