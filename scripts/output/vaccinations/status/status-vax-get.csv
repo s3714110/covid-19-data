@@ -85,43 +85,7 @@ ValueError: Unknown sheets: {'５回目_一般接種回数', '5.8以降接種_�
 cowidev.vax.batch.jersey,3.0,True,2023-06-02T07:00:10,,
 cowidev.vax.batch.latvia,53.45,True,2023-06-02T07:01:00,,
 cowidev.vax.batch.lithuania,4.51,True,2023-06-02T07:00:11,,
-cowidev.vax.batch.luxembourg,1.17,False,2023-06-02T10:54:37,"Traceback (most recent call last):
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 88, in main
-    Luxembourg().export()
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 83, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 78, in pipeline
-    .pipe(self.pipe_correct_time_series)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/luxembourg.py"", line 47, in pipe_correct_time_series
-    df = add_latest_who_values(df, ""Luxembourg"", [""people_fully_vaccinated""])
-  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
-    who = pd.read_csv(
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
-    self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
-    raise ValueError(
-ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
-","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
+cowidev.vax.batch.luxembourg,1.96,True,2023-06-02T11:39:22,,
 cowidev.vax.batch.malaysia,0.95,True,2023-06-02T07:00:08,,
 cowidev.vax.batch.malta,1.05,True,2023-06-02T07:00:08,,
 cowidev.vax.batch.netherlands,,,2023-06-02T07:00:07,,
@@ -129,76 +93,8 @@ cowidev.vax.batch.new_zealand,15.75,True,2023-06-02T07:00:22,,
 cowidev.vax.batch.norway,0.69,True,2023-06-02T07:00:07,,
 cowidev.vax.batch.peru,4.25,True,2023-06-02T07:00:11,,
 cowidev.vax.batch.portugal,,,2023-06-02T07:00:07,,
-cowidev.vax.batch.romania,2.36,False,2023-06-02T07:02:08,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py"", line 159, in main
-    Romania().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py"", line 144, in export
-    df = df_base.copy().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/romania.py"", line 126, in pipeline
-    .pipe(add_latest_who_values, ""Romania"", [""people_vaccinated""])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
-    who = pd.read_csv(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
-    self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
-    raise ValueError(
-ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
-","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
-cowidev.vax.batch.saudi_arabia,0.94,False,2023-06-02T07:02:09,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py"", line 82, in main
-    SaudiArabia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py"", line 77, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/saudi_arabia.py"", line 59, in pipeline
-    return df.pipe(self.make_monotonic).pipe(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
-    who = pd.read_csv(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
-    self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
-    raise ValueError(
-ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
-","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
+cowidev.vax.batch.romania,2.63,True,2023-06-02T11:39:23,,
+cowidev.vax.batch.saudi_arabia,0.97,True,2023-06-02T11:39:21,,
 cowidev.vax.batch.singapore,4.12,True,2023-06-02T07:00:11,,
 cowidev.vax.batch.slovakia,43.33,True,2023-06-02T07:00:50,,
 cowidev.vax.batch.slovenia,2.24,True,2023-06-02T07:00:09,,
@@ -257,41 +153,7 @@ cowidev.vax.incremental.bahrain,,,2023-06-02T07:00:10,,
 cowidev.vax.incremental.bangladesh,49.69,True,2023-06-02T07:00:59,,
 cowidev.vax.incremental.barbados,,,2023-06-02T07:00:10,,
 cowidev.vax.incremental.brazil,0.83,True,2023-06-02T07:00:11,,
-cowidev.vax.incremental.bulgaria,0.92,False,2023-06-02T07:03:06,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py"", line 68, in main
-    Bulgaria().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py"", line 63, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/bulgaria.py"", line 59, in pipeline
-    .pipe(add_latest_who_values, self.location, [""people_vaccinated""])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
-    who = pd.read_csv(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
-    self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
-    raise ValueError(
-ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
-","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
+cowidev.vax.incremental.bulgaria,1.01,True,2023-06-02T11:39:21,,
 cowidev.vax.incremental.china,19.0,True,2023-06-02T07:00:30,,
 cowidev.vax.incremental.costa_rica,,,2023-06-02T07:00:11,,
 cowidev.vax.incremental.croatia,0.94,True,2023-06-02T07:00:12,,
@@ -384,38 +246,4 @@ cowidev.vax.incremental.turkey,,,2023-06-02T07:00:24,,
 cowidev.vax.incremental.united_arab_emirates,,,2023-06-02T07:00:24,,
 cowidev.vax.incremental.vietnam,,,2023-06-02T07:00:24,,
 cowidev.vax.incremental.who,2.53,True,2023-06-02T11:36:25,,
-cowidev.vax.incremental.zambia,1.05,False,2023-06-02T07:04:58,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 74, in main
-    Zambia().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 69, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/zambia.py"", line 64, in pipeline
-    .pipe(add_latest_who_values, ""Zambia"", [""people_vaccinated""])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/utils.py"", line 89, in add_latest_who_values
-    who = pd.read_csv(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/util/_decorators.py"", line 311, in wrapper
-    return func(*args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 586, in read_csv
-    return _read(filepath_or_buffer, kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 482, in _read
-    parser = TextFileReader(filepath_or_buffer, **kwds)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 811, in __init__
-    self._engine = self._make_engine(self.engine)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/readers.py"", line 1040, in _make_engine
-    return mapping[engine](self.f, **self.options)  # type: ignore[call-arg]
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/c_parser_wrapper.py"", line 135, in __init__
-    self._validate_usecols_names(usecols, self.orig_names)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/io/parsers/base_parser.py"", line 866, in _validate_usecols_names
-    raise ValueError(
-ValueError: Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']
-","Usecols do not match columns, columns expected but not found: ['PERSONS_FULLY_VACCINATED']"
+cowidev.vax.incremental.zambia,0.98,True,2023-06-02T11:39:21,,
