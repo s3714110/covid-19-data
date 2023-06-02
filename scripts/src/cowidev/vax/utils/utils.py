@@ -94,7 +94,7 @@ def add_latest_who_values(df: pd.DataFrame, who_location_name: str, metrics: lis
             "DATE_UPDATED",
             "TOTAL_VACCINATIONS",
             "PERSONS_VACCINATED_1PLUS_DOSE",
-            "PERSONS_FULLY_VACCINATED",
+            "PERSONS_LAST_DOSE",
         ],
     )
 
@@ -113,7 +113,7 @@ def add_latest_who_values(df: pd.DataFrame, who_location_name: str, metrics: lis
         who.PERSONS_VACCINATED_1PLUS_DOSE.values[0] if "people_vaccinated" in metrics else pd.NA
     )
     who_row["people_fully_vaccinated"] = (
-        who.PERSONS_FULLY_VACCINATED.values[0] if "people_fully_vaccinated" in metrics else pd.NA
+        who.PERSONS_LAST_DOSE.values[0] if "people_fully_vaccinated" in metrics else pd.NA
     )
     if "total_boosters" in who_row.columns:
         who_row["total_boosters"] = pd.NA
