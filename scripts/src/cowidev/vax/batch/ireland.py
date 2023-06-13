@@ -38,7 +38,11 @@ class Ireland(CountryVaxBase):
             }
             for x in data["features"]
         ]
-        return pd.DataFrame.from_records(records)
+        df = pd.DataFrame.from_records(records)
+        # Sort
+        df = df.sort_values("date")
+        df = df.pipe(self.pipe_date)
+        return df
 
     def _parse_data_boosters(self, data: dict) -> int:
         records = [
@@ -49,7 +53,11 @@ class Ireland(CountryVaxBase):
             }
             for x in data["features"]
         ]
-        return pd.DataFrame.from_records(records)
+        df = pd.DataFrame.from_records(records)
+        # Sort
+        df = df.sort_values("date")
+        df = df.pipe(self.pipe_date)
+        return df
 
     def pipe_metrics(self, df: pd.DataFrame) -> pd.DataFrame:
         return df.assign(
@@ -108,7 +116,7 @@ class Ireland(CountryVaxBase):
         return (
             df.fillna(0)
             .pipe(self.pipe_metrics)
-            .pipe(self.pipe_date)
+            # .pipe(self.pipe_date)
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_vaccine)
             .pipe(self.pipe_filter)
