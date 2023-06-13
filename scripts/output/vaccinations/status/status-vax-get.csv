@@ -1,62 +1,62 @@
 module,execution_time (sec),success,timestamp,error,error_short
-cowidev.vax.batch.argentina,0.46,False,2023-06-13T07:02:00,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
+cowidev.vax.batch.argentina,0.3,False,2023-06-13T09:15:26,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 174, in _new_conn
     conn = connection.create_connection(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 95, in create_connection
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 95, in create_connection
     raise err
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 85, in create_connection
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/connection.py"", line 85, in create_connection
     sock.connect(sa)
 ConnectionRefusedError: [Errno 111] Connection refused
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 703, in urlopen
     httplib_response = self._make_request(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 386, in _make_request
     self._validate_conn(conn)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1042, in _validate_conn
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 1040, in _validate_conn
     conn.connect()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
-    self.sock = conn = self._new_conn()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 186, in _new_conn
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 358, in connect
+    conn = self._new_conn()
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connection.py"", line 186, in _new_conn
     raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f345df72dd0>: Failed to establish a new connection: [Errno 111] Connection refused
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fa27ca81f00>: Failed to establish a new connection: [Errno 111] Connection refused
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 440, in send
     resp = conn.urlopen(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 787, in urlopen
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/connectionpool.py"", line 785, in urlopen
     retries = retries.increment(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/urllib3/util/retry.py"", line 592, in increment
     raise MaxRetryError(_pool, url, error or ResponseError(cause))
-urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f345df72dd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa27ca81f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 248, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 248, in main
     Argentina().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 224, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 224, in export
     df_base = self.read().pipe(self.pipeline_base)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 49, in read
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/batch/argentina.py"", line 49, in read
     data = requests.get(self.source_url).json()
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 75, in get
     return request('get', url, params=params, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/api.py"", line 61, in request
     return session.request(method=method, url=url, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 529, in request
     resp = self.send(prep, **send_kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/sessions.py"", line 645, in send
     r = adapter.send(request, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/requests/adapters.py"", line 519, in send
+  File ""/home/lucas/repos/covid-19-data/venv/lib/python3.10/site-packages/requests/adapters.py"", line 519, in send
     raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f345df72dd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
-","HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f345df72dd0>: Failed to establish a new connection: [Errno 111] Connection refused'))"
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa27ca81f00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+","HTTPSConnectionPool(host='covidstats.com.ar', port=443): Max retries exceeded with url: /ws/vacunadosargentina?portipovacuna=1 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fa27ca81f00>: Failed to establish a new connection: [Errno 111] Connection refused'))"
 cowidev.vax.batch.australia,,,2023-06-13T07:00:07,,
 cowidev.vax.batch.austria_old,,,2023-06-13T07:00:07,,
 cowidev.vax.batch.belgium,13.59,True,2023-06-13T07:00:21,,
@@ -101,49 +101,9 @@ cowidev.vax.batch.estonia,1.14,True,2023-06-13T07:00:09,,
 cowidev.vax.batch.france,9.73,True,2023-06-13T07:00:17,,
 cowidev.vax.batch.germany,0.34,True,2023-06-13T07:00:08,,
 cowidev.vax.batch.greece,24.36,True,2023-06-13T07:00:32,,
-cowidev.vax.batch.hong_kong,10.01,False,2023-06-13T07:02:15,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 224, in main
-    HongKong().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 208, in export
-    df = df_base.pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 117, in pipeline
-    .pipe(self.make_monotonic)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 96, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 225 would be NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-05-20']. Location(s) affected: {'Hong Kong'}
-",1 chunks of lengths 225 would be NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-05-20']. Location(s) affected: {'Hong Kong'}
+cowidev.vax.batch.hong_kong,3.0,True,2023-06-13T09:43:32,,
 cowidev.vax.batch.indonesia,,,2023-06-13T07:00:07,,
-cowidev.vax.batch.ireland,0.35,False,2023-06-13T07:02:15,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/ireland.py"", line 135, in main
-    Ireland().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/ireland.py"", line 130, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/ireland.py"", line 27, in read
-    return pd.merge(data_primary, data_booster, how=""outer"", on=""date"", validate=""one_to_one"")
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/reshape/merge.py"", line 106, in merge
-    op = _MergeOperation(
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/reshape/merge.py"", line 709, in __init__
-    self._validate(validate)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/reshape/merge.py"", line 1429, in _validate
-    raise MergeError(
-pandas.errors.MergeError: Merge keys are not unique in right dataset; not a one-to-one merge
-",Merge keys are not unique in right dataset; not a one-to-one merge
+cowidev.vax.batch.ireland,0.43,True,2023-06-13T10:04:26,,
 cowidev.vax.batch.israel,8.87,True,2023-06-13T07:00:16,,
 cowidev.vax.batch.italy,15.95,True,2023-06-13T07:00:23,,
 cowidev.vax.batch.japan,9.64,False,2023-06-13T07:02:25,"Traceback (most recent call last):
@@ -245,23 +205,7 @@ cowidev.vax.incremental.croatia,2.41,True,2023-06-13T07:00:14,,
 cowidev.vax.incremental.cuba,16.27,True,2023-06-13T07:00:28,,
 cowidev.vax.incremental.curacao,,,2023-06-13T07:00:12,,
 cowidev.vax.incremental.cyprus,3.72,True,2023-06-13T07:00:16,,
-cowidev.vax.incremental.dominican_republic,13.2,False,2023-06-13T07:02:52,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 91, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 81, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.24,True,2023-06-13T09:14:51,,
 cowidev.vax.incremental.el_salvador,12.99,True,2023-06-13T07:00:26,,
 cowidev.vax.incremental.faeroe_islands,1.36,True,2023-06-13T07:00:15,,
 cowidev.vax.incremental.fiji,0.0,True,2023-06-13T07:00:14,,
@@ -315,27 +259,7 @@ cowidev.vax.incremental.myanmar,,,2023-06-13T07:00:23,,
 cowidev.vax.incremental.nepal,,,2023-06-13T07:00:23,,
 cowidev.vax.incremental.north_macedonia,,,2023-06-13T07:00:23,,
 cowidev.vax.incremental.northern_cyprus,7.39,True,2023-06-13T07:00:30,,
-cowidev.vax.incremental.paho,87.08,False,2023-06-13T07:04:28,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 167, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 122, in pipe_check_columns
-    raise ValueError(f""Missing column fields: {columns_missing}. Present columns are: {df.columns}"")
-ValueError: Missing column fields: {'Second dose', 'Country code', 'Single dose', 'Total doses', 'First dose', '2nd additional dose', '1st additional dose', 'Country/ Territory'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')
-","Missing column fields: {'Second dose', 'Country code', 'Single dose', 'Total doses', 'First dose', '2nd additional dose', '1st additional dose', 'Country/ Territory'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')"
+cowidev.vax.incremental.paho,75.47,True,2023-06-13T09:15:55,,
 cowidev.vax.incremental.pakistan,,,2023-06-13T07:00:23,,
 cowidev.vax.incremental.philippines,,,2023-06-13T07:00:23,,
 cowidev.vax.incremental.poland,1.99,True,2023-06-13T07:00:25,,
