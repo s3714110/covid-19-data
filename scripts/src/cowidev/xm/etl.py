@@ -113,7 +113,6 @@ class XMortalityEconomistETL:
         df_current = pd.read_csv(output_path)
         if not df.equals(df_current):
             # Export data
-            __import__('ipdb').set_trace()
             df.to_csv(output_path, index=False)
 
     def run(self):
