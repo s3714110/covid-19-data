@@ -4,13 +4,10 @@
 from datetime import datetime, timedelta
 
 import pandas as pd
-
 from cowidev import PATHS
-from cowidev.utils.utils import export_timestamp
 from cowidev.utils.clean import clean_date
-
+from cowidev.utils.utils import export_timestamp
 from owid import catalog
-
 
 COLUMNS = [
     "location",
@@ -102,6 +99,31 @@ class XMortalityETL:
         self.load(df, PATHS.DATA_XM_MAIN_FILE, date_accessed)
 
 
+class XMortalityEconomistETL:
+    def extract(self):
+        cat = catalog.RemoteCatalog(channels=["garden"])
+        t = cat.find_latest(namespace="excess_mortality", dataset="excess_mortality_economist", table="excess_mortality_economist")
+        date_accessed = max(s.date_accessed for s in t.metadata.dataset.sources)
+        return pd.DataFrame(t), date_accessed
+
+    def transform(self, df: pd.DataFrame) -> pd.DataFrame:
+        return df.sort_values(["country", "date"])
+
+    def load(self, df: pd.DataFrame, output_path: str, date_accessed: str) -> None:
+        df_current = pd.read_csv(output_path)
+        if not df.equals(df_current):
+            # Export data
+            df.to_csv(output_path, index=False)
+
+    def run(self):
+        df, date_accessed = self.extract()
+        df = self.transform(df)
+        self.load(df, PATHS.DATA_XM_ECON_FILE, date_accessed)
+
+
 def run_etl():
     etl = XMortalityETL()
     etl.run()
+
+    etl_econ = XMortalityEconomistETL()
+    etl_econ.run()
