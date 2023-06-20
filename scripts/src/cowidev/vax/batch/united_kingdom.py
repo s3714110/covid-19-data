@@ -136,6 +136,10 @@ class UnitedKingdom(CountryVaxBase):
                 df = df_base.pipe(self._filter_location, location)
                 if location in dates_filter:
                     df = df[~df.date.isin(dates_filter[location])]
+                # Remove boosters
+                if location == "England":
+                    df.loc[df["date"] >= "2023-05-31", "total_boosters"] = None
+                # Check monotonicity
                 try:
                     # df = df
                     df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
