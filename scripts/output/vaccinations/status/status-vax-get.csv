@@ -44,31 +44,7 @@ cowidev.vax.batch.estonia,1.01,True,2023-06-20T07:00:08,,
 cowidev.vax.batch.france,7.7,True,2023-06-20T07:00:15,,
 cowidev.vax.batch.germany,0.22,True,2023-06-20T07:00:07,,
 cowidev.vax.batch.greece,28.23,True,2023-06-20T07:00:35,,
-cowidev.vax.batch.hong_kong,4.75,False,2023-06-20T07:02:10,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 226, in main
-    HongKong().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 210, in export
-    df = df_base.pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/hong_kong.py"", line 117, in pipeline
-    .pipe(self.make_monotonic)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 96, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 384 would be NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-06-03']. Location(s) affected: {'Hong Kong'}
-",1 chunks of lengths 384 would be NaNed for metric total_vaccinations. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-06-03']. Location(s) affected: {'Hong Kong'}
+cowidev.vax.batch.hong_kong,2.83,True,2023-06-20T09:59:03,,
 cowidev.vax.batch.indonesia,,,2023-06-20T07:00:07,,
 cowidev.vax.batch.ireland,15.79,True,2023-06-20T07:00:23,,
 cowidev.vax.batch.israel,6.72,True,2023-06-20T07:00:14,,
@@ -132,27 +108,7 @@ cowidev.vax.batch.sweden,14.77,True,2023-06-20T07:00:22,,
 cowidev.vax.batch.switzerland,58.16,True,2023-06-20T07:01:06,,
 cowidev.vax.batch.trinidad_and_tobago,5.09,True,2023-06-20T07:00:13,,
 cowidev.vax.batch.ukraine,,,2023-06-20T07:00:08,,
-cowidev.vax.batch.united_kingdom,4.65,False,2023-06-20T07:02:34,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 156, in main
-    UnitedKingdom().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 144, in export
-    raise (e)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/batch/united_kingdom.py"", line 141, in export
-    df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/utils/base.py"", line 120, in make_monotonic
-    return mkm(
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 23, in make_monotonic
-    return make_monotonic_new(df, column_date, column_metrics, max_removed_rows)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/utils.py"", line 96, in make_monotonic_new
-    raise Exception(
-Exception: 1 chunks of lengths 261 would be NaNed for metric total_boosters. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-05-31']. Location(s) affected: {'England'}
-",1 chunks of lengths 261 would be NaNed for metric total_boosters. That is more than maximum allowed (10) by make_monotonic() - check the data. Check dates ['2023-05-31']. Location(s) affected: {'England'}
+cowidev.vax.batch.united_kingdom,2.73,True,2023-06-20T10:03:00,,
 cowidev.vax.batch.united_states,26.95,True,2023-06-20T07:00:35,,
 cowidev.vax.batch.uruguay,6.52,True,2023-06-20T07:00:16,,
 cowidev.vax.batch.zimbabwe,2.19,True,2023-06-20T07:00:11,,
@@ -190,25 +146,7 @@ cowidev.vax.incremental.dominican_republic,13.25,False,2023-06-20T07:02:47,"Trac
 ValueError: More than one element found!
 ",More than one element found!
 cowidev.vax.incremental.el_salvador,8.78,True,2023-06-20T07:00:22,,
-cowidev.vax.incremental.faeroe_islands,0.46,False,2023-06-20T07:02:47,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/faeroe_islands.py"", line 62, in main
-    FaeroeIslands().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/faeroe_islands.py"", line 48, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/faeroe_islands.py"", line 15, in read
-    data = request_json(self.source_url)[""stats""]
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/utils/web/scraping.py"", line 107, in request_json
-    return json.loads(text)
-  File ""/usr/lib/python3.10/json/__init__.py"", line 346, in loads
-    return _default_decoder.decode(s)
-  File ""/usr/lib/python3.10/json/decoder.py"", line 337, in decode
-    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
-  File ""/usr/lib/python3.10/json/decoder.py"", line 355, in raw_decode
-    raise JSONDecodeError(""Expecting value"", s, err.value) from None
-json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
-",Expecting value: line 1 column 1 (char 0)
+cowidev.vax.incremental.faeroe_islands,0.66,True,2023-06-20T10:05:03,,
 cowidev.vax.incremental.fiji,0.0,True,2023-06-20T07:00:15,,
 cowidev.vax.incremental.finland,0.69,True,2023-06-20T07:00:15,,
 cowidev.vax.incremental.gabon,,,2023-06-20T07:00:15,,
@@ -226,31 +164,21 @@ cowidev.vax.incremental.kazakhstan,11.1,True,2023-06-20T07:00:29,,
 cowidev.vax.incremental.kosovo,,,2023-06-20T07:00:19,,
 cowidev.vax.incremental.kyrgyzstan,4.44,True,2023-06-20T07:00:23,,
 cowidev.vax.incremental.laos,10.74,True,2023-06-20T07:00:31,,
-cowidev.vax.incremental.macao,6.58,False,2023-06-20T07:02:54,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
+cowidev.vax.incremental.macao,1.49,False,2023-06-20T10:11:35,"Traceback (most recent call last):
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
     module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 90, in main
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 97, in main
     Macao().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 75, in export
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 82, in export
     data = self.read()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 23, in read
-    iframe_url = self._get_iframe_url(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 31, in _get_iframe_url
-    elem = driver.find_element_by_id(""ICovid19Monitor"")
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 360, in find_element_by_id
-    return self.find_element(by=By.ID, value=id_)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 976, in find_element
-    return self.execute(Command.FIND_ELEMENT, {
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/webdriver.py"", line 321, in execute
-    self.error_handler.check_response(response)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/selenium/webdriver/remote/errorhandler.py"", line 242, in check_response
-    raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""[id=""ICovid19Monitor""]""}
-  (Session info: headless chrome=114.0.5735.106)
-
-","Message: no such element: Unable to locate element: {""method"":""css selector"",""selector"":""[id=""ICovid19Monitor""]""}
-  (Session info: headless chrome=114.0.5735.106)
-"
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 32, in read
+    data = self._parse_data(url, driver)
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 44, in _parse_data
+    elem = self._get_elem_div(driver, ""Total doses administered (local and non-local)"")
+  File ""/home/lucas/repos/covid-19-data/scripts/src/cowidev/vax/incremental/macao.py"", line 73, in _get_elem_div
+    assert len(elem) == 1
+AssertionError
+",
 cowidev.vax.incremental.moldova,,,2023-06-20T07:00:20,,
 cowidev.vax.incremental.monaco,90.72,True,2023-06-20T07:01:51,,
 cowidev.vax.incremental.mongolia,1.35,True,2023-06-20T07:00:22,,
@@ -292,21 +220,7 @@ cowidev.vax.incremental.south_africa,,,2023-06-20T07:00:23,,
 cowidev.vax.incremental.spain,15.89,True,2023-06-20T07:00:39,,
 cowidev.vax.incremental.sri_lanka,,,2023-06-20T07:00:27,,
 cowidev.vax.incremental.suriname,14.11,True,2023-06-20T07:00:41,,
-cowidev.vax.incremental.taiwan,5.66,False,2023-06-20T07:04:22,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 184, in main
-    Taiwan().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 170, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 38, in read
-    data = self.parse_data(df, soup)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 122, in parse_data
-    ""date"": self._parse_date(soup),
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/taiwan.py"", line 156, in _parse_date
-    date_str = re.search(regex, date_raw).group(1)
-AttributeError: 'NoneType' object has no attribute 'group'
-",'NoneType' object has no attribute 'group'
+cowidev.vax.incremental.taiwan,7.28,True,2023-06-20T11:04:28,,
 cowidev.vax.incremental.thailand,6.55,True,2023-06-20T07:00:35,,
 cowidev.vax.incremental.turkey,,,2023-06-20T07:00:29,,
 cowidev.vax.incremental.united_arab_emirates,,,2023-06-20T07:00:29,,
