@@ -205,7 +205,7 @@ class HongKong(CountryVaxBase):
         # Check on age groups
         df_base = self.check_number_age_groups_latest(df_base)
         # Filter date
-        df_base = df_base[~df_base["date"].isin(["2023-05-21"])]
+        df_base = df_base[~df_base["date"].isin(["2023-05-21", "2023-06-04"])]
         # Main data
         df = df_base.pipe(self.pipeline)
         # Manufacturer
