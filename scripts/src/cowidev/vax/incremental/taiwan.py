@@ -2,6 +2,7 @@ import re
 import math
 import pandas as pd
 import tabula
+from typing import Tuple
 
 from bs4 import BeautifulSoup
 
@@ -32,15 +33,17 @@ class Taiwan:
 
     def read(self) -> pd.Series:
         soup = get_soup(self.source_data_url)
-        url_pdf = self._parse_pdf_link(soup)
+        url_pdf, filename_pdf = self._parse_pdf_link(soup)
         print(url_pdf)
         df = self._parse_table(url_pdf)
-        data = self.parse_data(df, soup)
+        data = self.parse_data(df, filename_pdf)
         return data
 
-    def _parse_pdf_link(self, soup) -> str:
+    def _parse_pdf_link(self, soup) -> Tuple[str, str]:
+        filename = ""
         for a in soup.find(class_="download").find_all("a"):
             if "疫苗接種統計資料" in a["title"]:
+                filename = a.text
                 break
         url_pdf = f"{self.source_url}{a['href']}"
         for i in range(10):
@@ -52,7 +55,7 @@ class Taiwan:
             a = soup.find(class_="viewer-button")
             if a is not None:
                 break
-        return f"{self.source_url}{a['href']}"
+        return f"{self.source_url}{a['href']}", filename
 
     def _parse_table(self, url_pdf: str):
         print(url_pdf)
@@ -111,7 +114,7 @@ class Taiwan:
         dfs = tabula.read_pdf(url_pdf, pages=1, **kwargs)
         return dfs
 
-    def parse_data(self, df: pd.DataFrame, soup):
+    def parse_data(self, df: pd.DataFrame, filename_pdf: str):
         stats = self._parse_stats(df)
         data = pd.Series(
             {
@@ -119,7 +122,7 @@ class Taiwan:
                 "total_vaccinations": stats["total_vaccinations"],
                 "people_vaccinated": stats["people_vaccinated"],
                 "people_fully_vaccinated": stats["people_fully_vaccinated"],
-                "date": self._parse_date(soup),
+                "date": self._parse_date(filename_pdf),
                 "vaccine": self._parse_vaccines(df),
             }
         )
@@ -150,11 +153,10 @@ class Taiwan:
             raise ValueError(f"Invalid vaccines: {vaccines_wrong}")
         return ", ".join(sorted(set(self.vaccines_mapping[vax] for vax in vaccines)))
 
-    def _parse_date(self, soup) -> str:
-        date_raw = soup.find(class_="download").text
-        regex = r"(\d{4})\s*COVID-19疫苗"
-        date_str = re.search(regex, date_raw).group(1)
-        date_str = clean_date(f"2023{date_str}", fmt="%Y%m%d")
+    def _parse_date(self, filename_pdf) -> str:
+        regex = r"112年(\d{1,2})月(\d{1,2})日COVID-19疫苗接種統計資料\.pdf"
+        month, day = re.search(regex, filename_pdf).group(1, 2)
+        date_str = clean_date(f"2023{month}{day}", fmt="%Y%m%d")
         return date_str
 
     def pipe_location(self, ds: pd.Series) -> pd.Series:
