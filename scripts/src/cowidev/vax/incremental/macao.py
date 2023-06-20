@@ -1,8 +1,6 @@
 import time
 import re
 
-import tabula
-
 from cowidev.utils.clean import clean_count, extract_clean_date
 from cowidev.utils.web import get_driver
 from cowidev.vax.utils.incremental import increment
@@ -12,7 +10,7 @@ class Macao:
     source_url = "https://www.ssm.gov.mo/apps1/PreventCOVID-19/en.aspx"
     location = "Macao"
 
-    def read(self):
+    def read_old(self):
         """Create data."""
         with get_driver() as driver:
             # Get main page
@@ -24,6 +22,12 @@ class Macao:
             # Build data
             print(iframe_url)
             data = self._parse_data(iframe_url, driver)
+            return data
+
+    def read(self):
+        with get_driver() as driver:
+            url = "https://www.ssm.gov.mo/apps1/COVID19Case/en.aspx"
+            data = self._parse_data(url, driver)
             return data
 
     def _get_iframe_url(self, driver):
@@ -63,6 +67,7 @@ class Macao:
 
     def _get_elem_div(self, driver, text_match):
         elem = driver.find_elements_by_xpath(f"//div[contains(text(), '{text_match}')]")
+        print(elem)
         assert len(elem) == 1
         return elem[0]
 
