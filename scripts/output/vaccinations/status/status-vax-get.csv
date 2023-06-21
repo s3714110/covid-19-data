@@ -128,23 +128,7 @@ cowidev.vax.incremental.croatia,2.11,True,2023-06-21T07:00:14,,
 cowidev.vax.incremental.cuba,8.58,True,2023-06-21T07:00:20,,
 cowidev.vax.incremental.curacao,,,2023-06-21T07:00:12,,
 cowidev.vax.incremental.cyprus,3.24,True,2023-06-21T07:00:15,,
-cowidev.vax.incremental.dominican_republic,12.82,False,2023-06-21T07:03:10,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 112, in main
-    DominicanRepublic().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 68, in export
-    data = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 26, in read
-    metrics = self._parse_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 35, in _parse_metrics
-    metric_candidates = _find_potential_metrics(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 91, in _find_potential_metrics
-    h3 = _find_h3(driver)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/dominican_republic.py"", line 81, in _find_h3
-    raise ValueError(""More than one element found!"")
-ValueError: More than one element found!
-",More than one element found!
+cowidev.vax.incremental.dominican_republic,12.27,True,2023-06-21T12:09:31,,
 cowidev.vax.incremental.el_salvador,8.04,True,2023-06-21T07:00:20,,
 cowidev.vax.incremental.faeroe_islands,1.54,True,2023-06-21T07:00:15,,
 cowidev.vax.incremental.fiji,0.0,True,2023-06-21T07:00:15,,
@@ -188,27 +172,7 @@ cowidev.vax.incremental.myanmar,,,2023-06-21T07:00:19,,
 cowidev.vax.incremental.nepal,,,2023-06-21T07:00:19,,
 cowidev.vax.incremental.north_macedonia,,,2023-06-21T07:00:19,,
 cowidev.vax.incremental.northern_cyprus,3.61,True,2023-06-21T07:00:22,,
-cowidev.vax.incremental.paho,84.47,False,2023-06-21T07:04:38,"Traceback (most recent call last):
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/cmd/commons/get.py"", line 47, in run
-    module.main()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 195, in main
-    PAHO().export()
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 190, in export
-    df = self.read().pipe(self.pipeline)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 167, in pipeline
-    df.pipe(self.pipe_check_columns)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/generic.py"", line 5430, in pipe
-    return com.pipe(self, func, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/venv/lib/python3.10/site-packages/pandas/core/common.py"", line 471, in pipe
-    return func(obj, *args, **kwargs)
-  File ""/home/owid/covid-19-data/scripts/src/cowidev/vax/incremental/paho.py"", line 122, in pipe_check_columns
-    raise ValueError(f""Missing column fields: {columns_missing}. Present columns are: {df.columns}"")
-ValueError: Missing column fields: {'Total doses', 'Country code', 'Country/ Territory', 'Single dose', 'First dose', '1st additional dose', 'Second dose', '2nd additional dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')
-","Missing column fields: {'Total doses', 'Country code', 'Country/ Territory', 'Single dose', 'First dose', '1st additional dose', 'Second dose', '2nd additional dose'}. Present columns are: Index(['date,location,total_vaccinations,people_vaccinated,people_fully_vaccinated,total_boosters,new_vaccinations,new_vaccinations_interpolated,new_people_vaccinated_interpolated,new_vaccinations_smoothed,new_people_vaccinated_smoothed', 'date'], dtype='object')"
+cowidev.vax.incremental.paho,76.2,True,2023-06-21T12:10:35,,
 cowidev.vax.incremental.pakistan,,,2023-06-21T07:00:19,,
 cowidev.vax.incremental.philippines,,,2023-06-21T07:00:19,,
 cowidev.vax.incremental.poland,1.38,True,2023-06-21T07:00:21,,
