@@ -55,6 +55,7 @@ pipeline:
         - Turkey # Blocked external IP
         - Curacao # Moved to PAHO
         - Australia # Moved to WHO
+        - Macao # Stop reporting bc website returns 403 error
     process:
       skip_complete:
         - Pitcairn
