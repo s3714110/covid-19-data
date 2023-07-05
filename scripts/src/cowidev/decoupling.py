@@ -246,10 +246,10 @@ def process_isr() -> pd.DataFrame:
 
 def main():
     usa = process_usa()
-    germany = process_deu()
+    # germany = process_deu()
     spain = process_esp()
     israel = process_isr()
-    df = pd.concat([usa, spain, israel, germany], ignore_index=True).rename(columns={"date": "Year"})
+    df = pd.concat([usa, spain, israel], ignore_index=True).rename(columns={"date": "Year"})
     df["Year"] = (pd.to_datetime(df.Year) - pd.to_datetime(ZERO_DAY)).dt.days
     df = df[
         [
