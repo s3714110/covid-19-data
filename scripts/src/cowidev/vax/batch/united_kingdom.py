@@ -129,24 +129,25 @@ class UnitedKingdom(CountryVaxBase):
         dates_filter = {
             "Northern Ireland": ["2023-02-03"],
             "Wales": ["2023-03-01"],
+            "United Kingdom": ["2022-03-23", "2023-04-03"]
         }
         for location in set(df_base.location):
             # TODO: There is an error in UK data. Drop from 2022-09-11 to 2023-04-03
-            if location != "United Kingdom":
-                df = df_base.pipe(self._filter_location, location)
-                if location in dates_filter:
-                    df = df[~df.date.isin(dates_filter[location])]
-                # Remove boosters
-                if location == "England":
-                    df.loc[df["date"] >= "2023-05-31", "total_boosters"] = None
-                # Check monotonicity
-                try:
-                    # df = df
-                    df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
-                except Exception as e:
-                    print(df.tail(20))
-                    raise (e)
-                self.export_datafile(df, filename=location)
+            # if location != "United Kingdom":
+            df = df_base.pipe(self._filter_location, location)
+            if location in dates_filter:
+                df = df[~df.date.isin(dates_filter[location])]
+            # Remove boosters
+            if location == "England":
+                df.loc[df["date"] >= "2023-05-31", "total_boosters"] = None
+            # Check monotonicity
+            try:
+                # df = df
+                df = df.pipe(self.make_monotonic, max_removed_rows=max_removed_rows_dict[location])
+            except Exception as e:
+                print(df.tail(20))
+                raise (e)
+            self.export_datafile(df, filename=location)
 
 
 def _sum_all_autumn_boosters_age(vaccinations_age):
