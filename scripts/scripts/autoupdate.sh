@@ -132,18 +132,18 @@ fi
 # =====================================================================
 # Swedish Public Health Agency
 
-hour=$(date +%H)
-if [ $hour == 11 ] ; then
-  # Attempt to download data
-  cowid --server sweden get
-  if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
-    echo "Generating Swedish Public Health Agency dataset..."
-    cowid --server sweden generate
-    git_push "sweden"
-  else
-    echo "Swedish Public Health Agency export is up to date"
-  fi
-fi
+# hour=$(date +%H)
+# if [ $hour == 11 ] ; then
+#   # Attempt to download data
+#   cowid --server sweden get
+#   if has_changed './scripts/input/sweden/sweden_deaths_per_day.csv'; then
+#     echo "Generating Swedish Public Health Agency dataset..."
+#     cowid --server sweden generate
+#     git_push "sweden"
+#   else
+#     echo "Swedish Public Health Agency export is up to date"
+#   fi
+# fi
 
 # =====================================================================
 # UK subnational data
