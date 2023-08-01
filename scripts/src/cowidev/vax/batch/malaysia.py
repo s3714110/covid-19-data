@@ -172,7 +172,19 @@ class Malaysia(CountryVaxBase):
             )
             .pipe(self.pipe_metadata)
             .pipe(self.pipe_columns_out)
+            .pipe(self.pipe_filter_dp)
         )
+
+    def pipe_filter_dp(self, df: pd.DataFrame) -> pd.DataFrame:
+        dates_ignore = [
+            "2023-04-23",
+            "2023-05-14",
+            "2023-07-04",
+            "2023-07-05",
+            "2023-07-06",
+            "2023-07-07",
+        ]
+        return df[-df["date"].isin(dates_ignore)]
 
     def export(self):
         df = self.read().pipe(self.pipeline)
